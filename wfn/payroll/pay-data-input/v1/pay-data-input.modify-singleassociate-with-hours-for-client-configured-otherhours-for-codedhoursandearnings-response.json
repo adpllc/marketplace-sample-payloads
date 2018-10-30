@@ -8,14 +8,14 @@
           },
           "payrollProcessingJobID": "HoursforCodedHours"
         },
-        "transform": {
+        "output": {
           "payDataInput": {
             "payeePayInputs": [
               {
-                "associateOID": "G372T336YEJ00G3E",
-                "payNumber": "1",
+                "configurationTags": [],
                 "payrollProfilePayInputs": [
                   {
+                    "payrollFileNumber": "009669",
                     "payInputs": [
                       {
                         "earningInputs": [
@@ -23,10 +23,10 @@
                             "earningCode": {
                               "codeValue": "R"
                             },
-                            "numberOfHours": 40,
                             "rate": {
-                              "rateValue": "40.456"
-                            }
+                              "rateValue": 40.456
+                            },
+                            "numberOfHours": 40
                           },
                           {
                             "earningCode": {
@@ -46,7 +46,39 @@
                             }
                           }
                         ],
-                        "_modificationTypeCode": "Add",
+                        "codedHoursEarningInputs": [
+                          {
+                            "hoursEarningCode": {
+                              "codeValue": "OH"
+                            },
+                            "numberOfHours": 10
+                          }
+                        ],
+                        "deductionInputs": [
+                          {
+                            "deductionCode": {
+                              "codeValue": "12"
+                            },
+                            "deductionRate": {
+                              "rateValue": 300.56,
+                              "currencyCode": "USD",
+                              "baseUnitCode": {
+                                "codeValue": "Pay Period"
+                              }
+                            },
+                            "configurationTags": [
+                              {
+                                "tagCode": "Deduction Type",
+                                "tagType": {
+                                  "dataTypeCode": "String"
+                                },
+                                "tagValues": [
+                                  "T"
+                                ]
+                              }
+                            ]
+                          }
+                        ],
                         "reimbursementInputs": [
                           {
                             "reimbursementCode": {
@@ -68,62 +100,21 @@
                               }
                             ]
                           }
-                        ],
-                        "deductionInputs": [
-                          {
-                            "deductionRate": {
-                              "rateValue": 300.56,
-                              "currencyCode": "USD",
-                              "baseUnitCode": {
-                                "codeValue": "Pay Period"
-                              }
-                            },
-                            "deductionCode": {
-                              "codeValue": "12"
-                            },
-                            "configurationTags": [
-                              {
-                                "tagCode": "Deduction Type",
-                                "tagType": {
-                                  "dataTypeCode": "String"
-                                },
-                                "tagValues": [
-                                  "T"
-                                ]
-                              }
-                            ]
-                          }
-                        ],
-                        "reportableEarningAndBenefitInputs": [
-                          {
-                            "reportableEarningAndBenefitCode": {
-                              "codeValue": "T"
-                            },
-                            "reportableEarningAndBenefitAmount": {
-                              "amountValue": 6000,
-                              "currencyCode": "CAD"
-                            }
-                          }
-                        ],
-                        "codedHoursEarningInputs": [
-                          {
-                            "hoursEarningCode": {
-                              "codeValue": "OH"
-                            },
-                           
-                            "numberOfHours": 10
-                          }
                         ]
                       }
-                    ],
-                    "payrollFileNumber": "009669"
+                    ]
                   }
                 ]
               }
-            ]
+            ],
+            "payrollGroupCode": {
+              "codeValue": "938"
+            },
+            "payrollProcessingJobID": "HoursforCodedHours"
           }
         }
-      }
+      },
+      "links": []
     }
   ]
 }
