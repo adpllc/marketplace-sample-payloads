@@ -1,0 +1,1951 @@
+{
+	"info": {
+		"name": "ADP APIs",
+		"_postman_id": "dd97c527-5c24-59dc-24a7-49c8e2a28e86",
+		"description": "ADP API endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Core",
+			"description": "",
+			"item": [
+				{
+					"name": "Event Notification Message V1 (Latest)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "roleCode",
+								"value": "practitioner"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/core/v1/event-notification-messages",
+						"description": "Request the latest event notificaiton message."
+					},
+					"response": []
+				},
+				{
+					"name": "Event Notification Message V1  (Delete)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/core/v1/event-notification-messages/{adp-msg-msgid}",
+						"description": "Remove an event notification.  Replace {adp-msg-msgid} with the message id returned in the header of the response."
+					},
+					"response": []
+				},
+				{
+					"name": "Table V1 > Codelists - Emp. Profile and Ben. Grps. (For List Name)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/codelists/hr/v3/worker-management/{list-name}/WFN/1",
+						"description": "Exposes WFN validation table data for the **Employment Profile** tables (Business Unit, Department, Location, Union Code, Union Local, Job Title, Pay Grade and Cost Number) and the **Benefits** tables (Eligibility Class).  Replace `{list-name}` with a valid value from the data dictionary.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Table V1 > Codelists - Personal Information Group (For List Name)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/codelists/talent/v3/worker-ksaoc-management/{list-name}/WFN/1",
+						"description": "Exposes WFN validation table data for the **Personal Information** tables (Learning Institution, Education Major/Minor, Degree/Achievement Level).  Replace `{list-name}` with a valid value from the data dictionary."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HR",
+			"description": "",
+			"item": [
+				{
+					"name": "Personal Contact V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/hr/v2/associates/{{anthony-albright-aoid}}/personal-contacts",
+						"description": "Request the personal contacts for a single worker given their AOID."
+					},
+					"response": []
+				},
+				{
+					"name": "Organization Departments V1",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/hr/v1/organization-departments",
+						"description": "Request a collection of departments."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Additional Remuneration Add (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.work-assignment.additional-remuneration.add/meta",
+						"description": "Metadata for removing an additional pay rate for a worker."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Additional Remuneration Remove (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.work-assignment.additional-remuneration.remove/meta",
+						"description": "Metadata for removing an additional pay rate for a worker."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Additional Remuneration Remove",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"G37FPGW57N71G26K\",\r\n          \"workAssignment\" : {\r\n              \"itemID\" : \"71674_1129\",\r\n              \"additionalRemuneration\": {\r\n                  \"itemID\" : \"Rate 2\"\r\n              }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
+						},
+						"url": "{{service-root}}/events/hr/v1/worker.work-assignment.additional-remuneration.remove",
+						"description": "Remove an additional pay rate for a worker."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Birth Name Change  (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.birth-name.change/meta",
+						"description": "Metadata for changing the birth name of a worker"
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Personal Communication Email > Add (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.personal-communication.email.add/meta",
+						"description": "Metadata for a request to add a worker email."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Personal Communication Email > Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"G37FPGW57N71G26K\"\r\n        }\r\n      },\r\n      \"transform\" : {\r\n        \"worker\" : {\r\n          \"person\" : {\r\n            \"communication\" : {\r\n              \"email\" : {\r\n                \"emailUri\" : \"myemail21@gmail.com\"\r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
+						},
+						"url": "{{service-root}}/events/hr/v1/worker.personal-communication.email.add",
+						"description": "Add an email address.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Personal Communication Email > Change (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.personal-communication.email.change/meta",
+						"description": "Metadata for a request to change a worker email."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Personal Communication Email > Change",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"G37FPGW57N71G26K\"\r\n        }\r\n      },\r\n      \"transform\" : {\r\n        \"worker\" : {\r\n          \"person\" : {\r\n            \"communication\" : {\r\n              \"email\" : {\r\n                \"emailUri\" : \"myemail21@gmail.com\"\r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
+						},
+						"url": "{{service-root}}/events/hr/v1/worker.personal-communication.email.change",
+						"description": "Change an email address.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Personal Communication Email > Remove (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.personal-communication.email.remove/meta",
+						"description": "Metadata for a request to remove a worker email."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1  > Personal Communication Email > Remove",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"G37FPGW57N71G26K\"\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
+						},
+						"url": "{{service-root}}/events/hr/v1/worker.personal-communication.email.remove",
+						"description": "Remove an email address.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Hire (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.hire/meta",
+						"description": "Metadata for a Worker Hire API request."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Hire",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"transform\": {\r\n                \"eventReasonCode\": {\r\n                    \"codeValue\": \"NEW\"\r\n                },\r\n                \"worker\": {\r\n                \t\"workerID\":{\r\n                \t\t\"idValue\":\"myassociateid\"\r\n                \t},\r\n                    \"person\": {\r\n                        \"governmentIDs\": [\r\n                            {\r\n                                \"idValue\": \"164746105\",\r\n                                \"nameCode\": {\r\n                                    \"codeValue\": \"SSN\"\r\n                                }\r\n                            }\r\n                        ],\r\n                        \"legalName\": {\r\n                            \"givenName\": \"Jimmy\",\r\n                            \"familyName1\": \"James\"\r\n                        },\r\n                        \"legalAddress\": {\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"PersonalAddress1\"\r\n                            },\r\n                            \"lineOne\": \"123 Dark Street\",\r\n                            \"cityName\": \"Atlanta\",\r\n                            \"countrySubdivisionLevel1\": {\r\n                                \"codeValue\": \"GA\"\r\n                            },\r\n                            \"countryCode\": \"US\",\r\n                            \"postalCode\": \"30092\"\r\n                        },\r\n                        \"birthDate\": \"1972-01-01\",\r\n                        \"genderCode\": {\r\n                            \"codeValue\": \"M\"\r\n                        }\r\n                    },\r\n                    \"workAssignment\": {\r\n                        \"hireDate\": \"2016-01-04\",\r\n                        \"payrollGroupCode\": \"AA4\",\r\n                        \"payrollFileNumber\": \"123468\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}"
+						},
+						"url": "{{service-root}}/events/hr/v1/worker.hire",
+						"description": "Hire a new worker\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Legal Name Change  (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.legal-name.change/meta",
+						"description": "Metadata for changing the legal name of a worker"
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Military Classification Change  (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.military-classification.change/meta",
+						"description": "Metadata for changing the military classification of a worker."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Military Status Change  (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.military-status.change/meta",
+						"description": "Metadata for changing the military status of a worker."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Race Change  (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/hr/v1/worker.race.change/meta",
+						"description": "Metadata for changing the race of a worker"
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Rehire (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\":{\n                \"transform\":\n                    {\n                        \"effectiveDateTime\": \"2016-04-15\",\n                        \"worker\":\n                        {\n                            \"associateOID\": \"G37FPGW57N715WC5\",\n                            \"workerDates\":\n                            {\n                                \"rehireDate\": \"2016-04-15\"\n                            },\n                            \"workerStatus\":\n                            {\n                                \"reasonCode\": {\n                                    \"codeValue\": \"IMPORT\"\n                                }\n                            }\n                        }\n                    }\n                \n            }\n        }\n    ]\n}"
+						},
+						"url": "https://api.adp.com/events/hr/v1/worker.rehire/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V1 > Rehire",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\":{\n                \"transform\":\n                    {\n                        \"effectiveDateTime\": \"2016-04-15\",\n                        \"worker\":\n                        {\n                            \"associateOID\": \"G37FPGW57N715WC5\",\n                            \"workerDates\":\n                            {\n                                \"rehireDate\": \"2016-04-15\"\n                            },\n                            \"workerStatus\":\n                            {\n                                \"reasonCode\": {\n                                    \"codeValue\": \"IMPORT\"\n                                }\n                            }\n                        }\n                    }\n                \n            }\n        }\n    ]\n}"
+						},
+						"url": "https://api.adp.com/events/hr/v1/worker.rehire",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V2 (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/hr/v2/workers/meta",
+						"description": "Request metadata for the Workers V2 API."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V2 (List with Top 5 and Prevent Cache)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/workers?$top=5&preventCache=TIMESTAMP",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"workers"
+							],
+							"query": [
+								{
+									"key": "$top",
+									"value": "5"
+								},
+								{
+									"key": "preventCache",
+									"value": "TIMESTAMP"
+								}
+							]
+						},
+						"description": "Request a collection of the top 5 workers using a URI cache-buster."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V2 (Single by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/workers/{{anthony-albright-aoid}}?preventCache=TIMESTAMP",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"workers",
+								"{{anthony-albright-aoid}}"
+							],
+							"query": [
+								{
+									"key": "preventCache",
+									"value": "TIMESTAMP"
+								}
+							]
+						},
+						"description": "Request a single worker given their AOID."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V2 (List Filtered by Department)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/workers?$filter=workers/workAssignments/homeOrganizationalUnits/typeCode/codeValue eq 'Department' and workers/workAssignments/homeOrganizationalUnits/nameCode/codeValue eq '001000'",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"workers"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "workers/workAssignments/homeOrganizationalUnits/typeCode/codeValue eq 'Department' and workers/workAssignments/homeOrganizationalUnits/nameCode/codeValue eq '001000'"
+								}
+							]
+						},
+						"description": "Request a collection of workers filtered by department."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V2 (List Filtered by Reports To Position ID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/workers?$filter=workers/workAssignments/reportsTo/positionID eq 'AA4000345'",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"workers"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "workers/workAssignments/reportsTo/positionID eq 'AA4000345'"
+								}
+							]
+						},
+						"description": "Request a collection of workers filtered by the Reports To\nPosition ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V2 (List Filtered by Status)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/workers?$filter=workers/workAssignments/assignmentStatus/statusCode/codeValue eq 'T'",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"workers"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "workers/workAssignments/assignmentStatus/statusCode/codeValue eq 'T'"
+								}
+							]
+						},
+						"description": "Request a collection of workers filtered by status."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V2 (List Async)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Prefer",
+								"value": "respond-async"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/hr/v2/workers",
+						"description": "Request a collection of workers using async."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker V2 (Check Async Request Status)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/core/v1/operations/workerInformationManagement/hr.v2.workers/{key}?$select=processingStatus",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"core",
+								"v1",
+								"operations",
+								"workerInformationManagement",
+								"hr.v2.workers",
+								"{key}"
+							],
+							"query": [
+								{
+									"key": "$select",
+									"value": "processingStatus"
+								}
+							]
+						},
+						"description": "Check the status of an async request to the Worker API given the key returned as part of the original asyn response's \"link\" header."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker Demographics V2 (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/hr/v2/worker-demographics/meta",
+						"description": "Request metadata for the Worker Demographics V2 API."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker Demographics V2 (List with Top 5 and Prevent Cache)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/worker-demographics?$top=5&preventCache=TIMESTAMP",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"worker-demographics"
+							],
+							"query": [
+								{
+									"key": "$top",
+									"value": "5"
+								},
+								{
+									"key": "preventCache",
+									"value": "TIMESTAMP"
+								}
+							]
+						},
+						"description": "Request demographic data for a collection of the top 5 workers using a URI cache-buster."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker Demographics V2 (Single by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/worker-demographics/{{anthony-albright-aoid}}?preventCache=TIMESTAMP",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"worker-demographics",
+								"{{anthony-albright-aoid}}"
+							],
+							"query": [
+								{
+									"key": "preventCache",
+									"value": "TIMESTAMP"
+								}
+							]
+						},
+						"description": "Request demographic data for a single worker given their AOID."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker Demographics V2 (List Filtered by Department)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/worker-demographics?$filter=workers/workAssignments/homeOrganizationalUnits/typeCode/codeValue eq 'Department' and workers/workAssignments/homeOrganizationalUnits/nameCode/codeValue eq '001000'",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"worker-demographics"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "workers/workAssignments/homeOrganizationalUnits/typeCode/codeValue eq 'Department' and workers/workAssignments/homeOrganizationalUnits/nameCode/codeValue eq '001000'"
+								}
+							]
+						},
+						"description": "Request demographic data for a collection of workers filtered by department."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker Demographics V2 (List Filtered by Reports To Position ID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/worker-demographics?$filter=workers/workAssignments/reportsTo/positionID eq 'AA4000345'",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"worker-demographics"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "workers/workAssignments/reportsTo/positionID eq 'AA4000345'"
+								}
+							]
+						},
+						"description": "Request demographic data for a collection of workers filtered by the Reports To\nPosition ID."
+					},
+					"response": []
+				},
+				{
+					"name": "Worker Demographics V2 (List Filtered by Status)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/hr/v2/worker-demographics?$filter=workers/workAssignments/assignmentStatus/statusCode/codeValue eq 'T'",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"hr",
+								"v2",
+								"worker-demographics"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "workers/workAssignments/assignmentStatus/statusCode/codeValue eq 'T'"
+								}
+							]
+						},
+						"description": "Request demographic data for a collection of workers filtered by status."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payroll",
+			"description": "",
+			"item": [
+				{
+					"name": "Pay Data Input V1 > Modify (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/payroll/v1/pay-data-input.modify/meta",
+						"description": "Metadata for a request to create a new paydata batch."
+					},
+					"response": []
+				},
+				{
+					"name": "Pay Data Input V1 > Modify",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": {\r\n                \"payrollGroupCode\": {\r\n                    \"codeValue\": \"AA4\"\r\n                },\r\n                \"payrollProcessingJobID\": \"SWD_2017_03_09\"\r\n            },\r\n            \"transform\": {\r\n                \"payDataInput\": {\r\n                    \"payeePayInputs\": [{\r\n                            \"associateOID\": \"G37FPGW57N71G26K\",\r\n                            \"payNumber\": \"1\",\r\n                            \"payrollProfilePayInputs\": [{\r\n                                \"payrollFileNumber\": \"001110\",\r\n                                \"payInputs\": [{\r\n                                    \"earningInputs\": [{\r\n                                        \"earningCode\": {\r\n                                            \"codeValue\": \"R\"\r\n                                        },\r\n                                        \"rate\": {\r\n                                            \"rateValue\": \"44.50\"\r\n                                        },\r\n                                        \"numberOfHours\": 40\r\n                                    }, {\r\n                                        \"earningCode\": {\r\n                                            \"codeValue\": \"O\"\r\n                                        },\r\n                                        \"numberOfHours\": 4\r\n                                    }],\r\n                                    \"deductionInputs\": [{\r\n                                        \"deductionCode\": {\r\n                                            \"codeValue\": \"A\"\r\n                                        },\r\n                                        \"deductionRate\": {\r\n                                            \"rateValue\": 10.50,\r\n                                            \"currencyCode\": \"USD\"\r\n                                        }\r\n                                    }],\r\n                                    \"reimbursementInputs\": [{\r\n                                    \t\"reimbursementCode\": {\r\n                                    \t\t\"codeValue\": \"B\"\r\n                                    \t},\r\n                                    \t\"reimbursementAmount\":{\r\n                                    \t\t\"amountValue\": 25.00,\r\n                                    \t\t\"currencyCode\": \"USD\"\r\n                                    \t}\r\n                                    }]\r\n                                }]\r\n                            }]\r\n                        }, {\r\n                            \"associateOID\": \"G3JV6MKPVRHR86CW\",\r\n                            \"payNumber\": \"1\",\r\n                            \"payrollProfilePayInputs\": [{\r\n                                \"payrollFileNumber\": \"001150\",\r\n                                \"payInputs\": [{\r\n                                    \"earningInputs\": [{\r\n                                            \"earningCode\": {\r\n                                                \"codeValue\": \"R\"\r\n                                            },\r\n\r\n                                            \"rate\": {\r\n                                                \"rateValue\": \"15.00\"\r\n                                            },\r\n                                            \"numberOfHours\": 40\r\n                                        }, {\r\n                                            \"earningCode\": {\r\n                                                \"codeValue\": \"O\"\r\n                                            },\r\n                                            \"numberOfHours\": 16\r\n                                        }\r\n\r\n                                    ]\r\n                                }]\r\n                            }]\r\n                        }\r\n\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}"
+						},
+						"url": "{{service-root}}/events/payroll/v1/pay-data-input.modify",
+						"description": "Create a new paydata batch.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Pay Distributions V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/payroll/v2/workers/{{anthony-albright-aoid}}/pay-distributions",
+						"description": "Returns direct deposit info for a single worker (Pay > Direct Deposit in WFN).\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Pay Distributions V1 > Pay Distribution Change (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change/meta",
+						"description": "Metadata for changing a direct deposit."
+					},
+					"response": []
+				},
+				{
+					"name": "Payroll Instructions V1 (List for  Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/payroll/v1/workers/{{anthony-albright-aoid}}/payroll-instructions",
+						"description": "Returns scheduled deductions and garnishments for a single worker (Pay > Deductions and Pay > Liens in WFN)\n\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Payroll Instructions V1 > Gen. Ded. Instr. Change (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change/meta",
+						"description": "Metadata for changing a scheduled deduction."
+					},
+					"response": []
+				},
+				{
+					"name": "Payroll Instructions V1 > Gen. Ded. Instr. Change",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": {\r\n                \"worker\": {\r\n                    \"associateOID\": \"G3Y43A1SCMYJZD4B\"\r\n                },\r\n                \"payrollInstruction\": {\r\n                    \"payrollGroupCode\": {\r\n                        \"codeValue\": \"AA4\"\r\n                    },\r\n                    \"payrollFileNumber\": \"5685\",\r\n                    \"payrollAgreementID\": \"CC1_1479572135\",\r\n                    \"itemID\": \"1481671640_7471\",\r\n                    \"generalDeductionInstruction\": {\r\n                        \"deductionCode\": {\r\n                            \"codeValue\": \"A\"\r\n                        }\r\n                    }\r\n                }\r\n            },\r\n            \"transform\": {\r\n                \"effectiveDateTime\": \"2016-08-01\",\r\n                \"payrollInstruction\": {\r\n                    \"generalDeductionInstruction\": {\r\n                        \"deductionRate\": {\r\n                            \"rateValue\": 99,\r\n                            \"currencyCode\": \"USD\"\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}\r\n"
+						},
+						"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change",
+						"description": "Change a scheduled deduction."
+					},
+					"response": []
+				},
+				{
+					"name": "Payroll Instructions V1 > Gen. Ded. Instr. Start (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start/meta",
+						"description": "Metadata for starting a scheduled deduction."
+					},
+					"response": []
+				},
+				{
+					"name": "Payroll Instructions V1 > Gen. Ded. Instr. Start",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": \r\n            {\r\n                \"worker\": \r\n                {\r\n                    \"associateOID\": \"G37FPGW57N71G26K\"\r\n                },\r\n                \"payrollInstruction\": \r\n                {\r\n                    \"payrollGroupCode\": \r\n                    {\r\n                        \"codeValue\": \"AA4\"\r\n                    },\r\n                    \"payrollFileNumber\": \"1110\",\r\n                    \"payrollAgreementID\": \"71674:1129\"\r\n                }\r\n            },\r\n            \"transform\": {\r\n                \"effectiveDateTime\": \"2017-05-01\",\r\n                \"payrollInstruction\": \r\n                {\r\n                    \"generalDeductionInstruction\": \r\n                    {\r\n                        \"deductionCode\": \r\n                        {\r\n                            \"codeValue\": \"1\"\r\n                        },\r\n                        \"deductionRate\": \r\n                        {\r\n                            \"rateValue\": 55,\r\n                            \"currencyCode\": \"USD\"\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}\r\n"
+						},
+						"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start",
+						"description": "Add a new deduction or restart an existing deduction that has been previously stopped.  You need the Payroll Agreement ID for the worker, which you can get by sending a GET to the Payroll Instructions V1 API for the desired worker."
+					},
+					"response": []
+				},
+				{
+					"name": "Payroll Instructions V1 > Gen. Ded. Instr. Stop (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop/meta",
+						"description": "Metadata for stopping a scheduled deduction."
+					},
+					"response": []
+				},
+				{
+					"name": "Payroll Outputs V1 (List for Region / Company Code / Year / Week)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/payroll/v1/payroll-output?$filter=payrollScheduleReference/payrollYear eq 2018 and payrollScheduleReference/payrollWeekNumber eq 10 and payrollGroupCode/codeValue eq %26Y%26 and payrollRegionCode/codeValue eq BALT&$count=true&use-cache=false",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"payroll-output"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "payrollScheduleReference/payrollYear eq 2018 and payrollScheduleReference/payrollWeekNumber eq 10 and payrollGroupCode/codeValue eq %26Y%26 and payrollRegionCode/codeValue eq BALT",
+									"equals": true
+								},
+								{
+									"key": "$count",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "use-cache",
+									"value": "false",
+									"equals": true
+								}
+							]
+						},
+						"description": "Fetches a list of payroll outputs given a Region Code, Company Code, Year and Week."
+					},
+					"response": []
+				},
+				{
+					"name": "Payroll Outputs V1 (Single  w/ Detail for  Region Code / Company Code / Payroll Job ID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{service-root}}/payroll/v1/payroll-output?$filter=payrollProcessingJobID eq fdd0ff77-5772-4667-a2c4-273abb84a7b5 and payrollGroupCode/codeValue eq %26Y%26 and payrollRegionCode/codeValue eq BALT&level=details&$select=earnings,reportableEarningsAndBenefits,reimbursements,statutoryDeductions,nonStatutoryDeductions,memos,configurationTags&$count=true&use-cache=false",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"payroll-output"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "payrollProcessingJobID eq fdd0ff77-5772-4667-a2c4-273abb84a7b5 and payrollGroupCode/codeValue eq %26Y%26 and payrollRegionCode/codeValue eq BALT",
+									"equals": true
+								},
+								{
+									"key": "level",
+									"value": "details",
+									"equals": true
+								},
+								{
+									"key": "$select",
+									"value": "earnings,reportableEarningsAndBenefits,reimbursements,statutoryDeductions,nonStatutoryDeductions,memos,configurationTags",
+									"equals": true
+								},
+								{
+									"key": "$count",
+									"value": "true",
+									"equals": true
+								},
+								{
+									"key": "use-cache",
+									"value": "false",
+									"equals": true
+								}
+							]
+						},
+						"description": "Fetches detailed payroll output by for a Region Code, Company Code and Payroll Job ID.  Note all three filter parameters required for this request can be found in the payroll-processing.job.status.change event notification message payload."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Staffing",
+			"description": "",
+			"item": [
+				{
+					"name": "Job Applications V1 (List)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/staffing/v1/job-applications",
+						"description": "\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Job Applications V1 (Single by Item ID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/staffing/v1/job-applications/{application-id}",
+						"description": "Gets a job application given an itemID."
+					},
+					"response": []
+				},
+				{
+					"name": "Job Applications V1 > Applicant On-board (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/staffing/v1/applicant.onboard/meta",
+						"description": "Metadata for an Applicant Onboard API request."
+					},
+					"response": []
+				},
+				{
+					"name": "Job Applications V1 > Applicant On-board",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"transform\": {\r\n                \"eventReasonCode\": {\r\n                    \"codeValue\": \"CURR\"\r\n                },\r\n                \"jobOffer\": {\r\n                    \"offerAssignment\": {\r\n                        \"jobCode\": {\r\n                            \"codeValue\": \"CFO\"\r\n                        },\r\n                        \"workerTypeCode\": {\r\n                            \"codeValue\": \"F\"\r\n                        },\r\n                        \"homeOrganizationalUnits\": [\r\n                        {\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"123456-123\"\r\n                            },\r\n                            \"typeCode\": {\r\n                                \"codeValue\": \"Cost Number\"\r\n                            }\r\n                        }, \r\n                        {\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"00100\"\r\n                            },\r\n                            \"typeCode\": {\r\n                                \"codeValue\": \"Location\"\r\n                            }\r\n                        }, \r\n                        {\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"192255\"\r\n                            },\r\n                            \"typeCode\": {\r\n                                \"codeValue\": \"Department\"\r\n                            }\r\n                        }, \r\n                        {\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"BU1\"\r\n                            },\r\n                            \"typeCode\": {\r\n                                \"codeValue\": \"Business Unit\"\r\n                            }\r\n                        }],\r\n                        \"payrollGroupCode\": \"AA4\"\r\n                    },\r\n                    \"offerTerms\": {\r\n                        \"expectedStartDate\": \"2016-05-05\",\r\n                        \"compensation\": {\r\n                            \"payCycleCode\": {\r\n                                \"codeValue\": \"W\"\r\n                            },\r\n                            \"baseRemuneration\": {\r\n                                \"payPeriodRateAmount\": {\r\n                                    \"nameCode\": {\r\n                                        \"codeValue\": \"S\"\r\n                                    },\r\n                                    \"amountValue\": 50\r\n                                }\r\n                            },\r\n                            \"additionalRemunerations\": [{\r\n                                \"rate\": {\r\n                                    \"amountValue\": 444.44\r\n                                }\r\n                            }]\r\n                        }\r\n                    }\r\n                },\r\n                \"applicant\": {\r\n                    \"person\": {\r\n                        \"genderCode\": {\r\n                            \"codeValue\": \"M\"\r\n                        },\r\n                        \"maritalStatusCode\": {\r\n                            \"codeValue\": \"M\"\r\n                        },\r\n                        \"raceCode\": {\r\n                            \"identificationMethodCode\": {\r\n                                \"codeValue\": \"SID\"\r\n                            },\r\n                            \"codeValue\": \"1\"\r\n                        },\r\n                        \"governmentIDs\": [{\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"SSN\"\r\n                            },\r\n                            \"idValue\": \"191151921\"\r\n                        }],\r\n                        \"socialInsurancePrograms\": [{\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"Medicare\"\r\n                            },\r\n                            \"coveredIndicator\": true\r\n                        }, {\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"Medicaid\"\r\n                            },\r\n                            \"coveredIndicator\": true\r\n                        }],\r\n                        \"legalName\": {\r\n                            \"preferredSalutations\": [{\r\n                                \"salutationCode\": {\r\n                                    \"codeValue\": \"Dr.\"\r\n                                }\r\n                            }],\r\n                            \"generationAffixCode\": {\r\n                                \"codeValue\": \"V\"\r\n                            },\r\n                            \"qualificationAffixCode\": {\r\n                                \"codeValue\": \"PA\"\r\n                            },\r\n                            \"givenName\": \"Amy\",\r\n                            \"middleName\": \"A\",\r\n                            \"familyName1\": \"Foobar\",\r\n                            \"nickName\": \"Ames\"\r\n                        },\r\n                        \"communication\": {\r\n                            \"landlines\": [{\r\n                                \"nameCode\": {\r\n                                    \"codeValue\": \"HomePhone\"\r\n                                },\r\n                                \"areaDialing\": \"732\",\r\n                                \"dialNumber\": \"5551234\"\r\n                            }],\r\n                            \"mobiles\": [{\r\n                                \"nameCode\": {\r\n                                    \"codeValue\": \"PersonalCell\"\r\n                                },\r\n                                \"areaDialing\": \"732\",\r\n                                \"dialNumber\": \"5551234\"\r\n                            }],\r\n                            \"emails\": [{\r\n                                \"emailUri\": \"john.smith@adp.com\"\r\n                            }]\r\n                        },\r\n                        \"birthDate\": \"1970-01-01\",\r\n                        \"legalAddress\": {\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"PersonalAddress1\"\r\n                            },\r\n                            \"lineOne\": \"3295RiverDr\",\r\n                            \"lineTwo\": \"TowerB\",\r\n                            \"lineThree\": \"4thFloor\",\r\n                            \"cityName\": \"Alpharetta\",\r\n                            \"countrySubdivisionLevel1\": {\r\n                                \"subdivisionType\": \"StateTerritory\",\r\n                                \"codeValue\": \"GA\"\r\n                            },\r\n                            \"countrySubdivisionLevel2\": {\r\n                                \"subdivisionType\": \"County\",\r\n                                \"codeValue\": \"Fulton\"\r\n                            },\r\n                            \"countryCode\": \"US\",\r\n                            \"postalCode\": \"30067\"\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}"
+						},
+						"url": "{{service-root}}/events/staffing/v1/applicant.onboard",
+						"description": "Start the new hire wizard for a new hire and allow someone to finish \nthe hire from within the UI.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Job Applications V1 > Submit (Meta)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/events/staffing/v1/job-application.submit/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Job Applications V1 > Submit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": {\r\n                \"requisitionID\": \"1000\",\r\n                \"postingChannelID\": \"OT\"\r\n            },\r\n            \"transform\": {\r\n                \"jobApplication\": {\r\n                    \"applicant\": {\r\n                        \"person\": {\r\n                            \"personName\": {\r\n                                \"familyName1\": \"Alan\",\r\n                                \"givenName\": \"Smith\"\r\n                            },\r\n                            \"communication\": {\r\n                                \"landlines\": [{\r\n                                    \"areaDialing\": \"678\",\r\n                                    \"dialNumber\": \"4852983\"\r\n                                }],\r\n                                \"mobiles\": [{\r\n                                    \"areaDialing\": \"770\",\r\n                                    \"dialNumber\": \"4852983\"\r\n                                }],\r\n                                \"emails\": [{\r\n                                    \"emailUri\": \"john.smith@acme.com\"\r\n                                }]\r\n                            },\r\n                            \"address\": {\r\n                                \"lineOne\": \"3295 River Road\",\r\n                                \"lineTwo\": \"Suite 2002\",\r\n                                \"cityName\": \"Atlanta\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"codeValue\": \"GA\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"30328\"\r\n                            },\r\n                            \"genderCode\": {\r\n                                \"codeValue\": \"M\"\r\n                            },\r\n                            \"raceCode\": {\r\n                                \"codeValue\": \"1\",\r\n                                \"identificationMethodCode\": {\r\n                                    \"codeValue\": \"SID\"\r\n                                }\r\n                            },\r\n                            \"militaryStatusCode\": {\r\n                                \"codeValue\": \"D\"\r\n                            },\r\n                            \"disabilityTypeCodes\": [{\r\n                                \"codeValue\": \"N\"\r\n                            }]\r\n                        },\r\n                        \"competencies\": [{\r\n                            \"competencyNameCode\": {\r\n                                \"codeValue\": \"COL\"\r\n                            },\r\n                            \"acquisitionDate\": \"2011-01-20\",\r\n                            \"lastUsedDate\": \"2014-02-01\",\r\n                            \"selfAssessedProficiencyScore\": {\r\n                                \"scoreCode\": {\r\n                                    \"codeValue\": \"ADV\",\r\n                                    \"shortName\": \"Advanced\"\r\n                                }\r\n                            }\r\n                        }],\r\n                        \"educationalDegrees\": [{\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"BS\"\r\n                            },\r\n                            \"educationalInstitution\": {\r\n                                \"nameCode\": {\r\n                                    \"codeValue\": \"USGA019\"\r\n                                }\r\n                            },\r\n                            \"startDate\": \"2012-05-01\",\r\n                            \"actualCompletionDate\": \"2014-05-13\"\r\n                        }],\r\n                        \"employmentHistory\": [{\r\n                            \"employerName\": \"ADP\",\r\n                            \"employerCommunication\": {\r\n                                \"landlines\": [{\r\n                                    \"areaDialing\": \"678\",\r\n                                    \"dialNumber\": \"5433432\"\r\n                                }]\r\n                            },\r\n                            \"currentEmployerIndicator\": true,\r\n                            \"allowContactEmployerIndicator\": true,\r\n                            \"employerAddress\": {\r\n                                \"countryCode\": \"US\",\r\n                                \"lineOne\": \"2575 Westside Parkway\",\r\n                                \"cityName\": \"Alpharetta\",\r\n                                \"postalCode\": \"30338\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"codeValue\": \"GA\"\r\n                                }\r\n                            },\r\n                            \"positionHistory\": [{\r\n                                \"positionTitle\": \"Data Architect\",\r\n                                \"positionStartDate\": \"2015-01-01\"\r\n                            }]\r\n                        }]\r\n                    },\r\n                    \"applicationSource\": {\r\n                        \"submittedDate\": \"2016-06-01\"\r\n                    },\r\n                    \"attestations\": [{\r\n                        \"nameCode\": {\r\n                            \"codeValue\": \"ATTEST\"\r\n                        },\r\n                        \"acceptedIndicator\": true\r\n                    }],\r\n                    \"requestedPayRate\": {\r\n                        \"annualRateAmount\": {\r\n                            \"amountValue\": 99999.88,\r\n                            \"currencyCode\": \"USD\"\r\n                        }\r\n                    },\r\n                    \"attachments\": [{\r\n                        \"textValue\": \"This is my resume. Please accept me for this position.\"\r\n                    }]\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}"
+						},
+						"url": "{{service-root}}/events/staffing/v1/job-application.submit",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Job Requisitions V1 (List)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/staffing/v1/job-requisitions",
+						"description": "\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Job Requisitions V1 (Single by Item ID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/staffing/v1/job-requisitions/{requisition-id}",
+						"description": "GET single job requisition based on the itemID of the requisition."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Talent",
+			"description": "",
+			"item": [
+				{
+					"name": "Certification V1 > Add (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Certification V1 > Change (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.change/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Certification V1 > Remove (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.remove/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Certification V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/talent/v2/associates/{{anthony-albright-aoid}}/associate-certifications",
+						"description": "Request the certifications for a single worker.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Competency V1 > Add (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.competency.add/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Competency V1 > Change (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.competenciy.change/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Competency V1 > Remove (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.competency.remove/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Competency V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/talent/v2/associates/{{anthony-albright-aoid}}/associate-competencies",
+						"description": "Request the competencies for a single worker.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Educational Degree V1 > Add (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.educational-degree.add/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Educational Degree V1 > Change (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.educational-degree.change/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Educational Degree V1 > Remove (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.educational-degree.remove/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Educational Degree V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/talent/v2/associates/{{anthony-albright-aoid}}/associate-educational-degrees",
+						"description": "Request the educational degrees for a single worker.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "KSAOCs V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/talent/v2/associates/{{anthony-albright-aoid}}/associate-ksaocs",
+						"description": "Request the KSAOCs for a single worker.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Language V1 > Add (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.language.add/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Language V1 > Change (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.language.change/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Language V1 > Remove (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.language.remove/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Language V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/talent/v2/associates/{{anthony-albright-aoid}}/associate-languages",
+						"description": "Request the languanges for a single worker.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "License V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/talent/v2/associates/{{anthony-albright-aoid}}/associate-licenses",
+						"description": "Request the licenses for a single worker.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Membership V1 > Add (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.membership.add/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Membership V1 > Change (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.membership.change/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Membership V1 > Remove (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.membership.remove/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Membership V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/talent/v2/associates/{{anthony-albright-aoid}}/associate-memberships",
+						"description": "Request the memberships for a single worker.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Recognition V1 > Add (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.recognition.add/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Recognition V1 > Change (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.recognition.change/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Recognition V1 > Remove (Meta)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": "{{service-root}}/events/talent/v1/associate.ksaoc.recognition.remove/meta",
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Recognition V2 (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/talent/v2/associates/{{anthony-albright-aoid}}/associate-recognitions",
+						"description": "Request the recognitions for a single worker.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Time",
+			"description": "",
+			"item": [
+				{
+					"name": "Time Off V2 > Balances (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/time/v2/workers/{{anthony-albright-aoid}}/time-off-details/time-off-balances",
+						"description": "Request for time off balances for a worker.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Time Off V2 > Requests (List for Worker by AOID)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer TOKEN"
+							}
+						],
+						"body": {},
+						"url": "{{service-root}}/time/v2/workers/{{anthony-albright-aoid}}/time-off-details/time-off-requests",
+						"description": "Request for time off balances for a worker.\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Token Request",
+			"description": "Request an OAuth Bearer Token",
+			"item": [
+				{
+					"name": "Token Request (Authorization Header)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic {{credentials}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{security-token-service}}/auth/oauth/v2/token?grant_type=client_credentials",
+							"host": [
+								"{{security-token-service}}"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials"
+								}
+							]
+						},
+						"description": "A request to get an OAuth bearer token for our demo ADP Workforce Now by adding an Authorization header containing the base-64 encoded credentials."
+					},
+					"response": []
+				},
+				{
+					"name": "Token Request (Request Body)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{security-token-service}}/auth/oauth/v2/token",
+						"description": "A request to get an OAuth bearer token for our demo ADP Workforce Now by adding an adding the grant type and credentials to the request body."
+					},
+					"response": []
+				},
+				{
+					"name": "Token Request (Query String)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{security-token-service}}/auth/oauth/v2/token?grant_type=client_credentials&client_id={{client-id}}&client_secret={{client-secret}}",
+							"host": [
+								"{{security-token-service}}"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							],
+							"query": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials"
+								},
+								{
+									"key": "client_id",
+									"value": "{{client-id}}"
+								},
+								{
+									"key": "client_secret",
+									"value": "{{client-secret}}"
+								}
+							]
+						},
+						"description": "A request to get an OAuth bearer token for our demo ADP Workforce Now by adding an adding the grant type and credentials to the URI query string."
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
