@@ -1,0 +1,65 @@
+{
+    "meta": {
+        "/data/eventContext": [
+            {
+                "/worker": {
+                    "optional": false,
+                    "dataType": "object"
+                },
+                "/worker/associateOID": {
+                    "optional": false,
+                    "dataType": "string"
+                },
+                "/payrollInstruction": {
+                    "optional": false,
+                    "dataType": "object"
+                },
+                "/payrollInstruction/generalDeductionInstruction": {
+                    "optional": false,
+                    "dataType": "object"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionCode": {
+                    "optional": false,
+                    "dataType": "object",
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/payroll/v1/payrollInstructionManagement/deductions/run",
+                                "mediaType": "application/json",
+                                "method": "GET"
+                            }
+                        ]
+                    }
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionCode/codeValue": {
+                    "optional": false,
+                    "dataType": "string"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                }
+            }
+        ],
+        "/data/transforms": [
+            {
+                "/eventStatusCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/eventStatusCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/eventStatusCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/eventStatusCode/longName": {
+                    "optional": true,
+                    "dataType": "string"
+                }
+            }
+        ]
+    }
+}

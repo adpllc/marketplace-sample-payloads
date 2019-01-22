@@ -1,0 +1,86 @@
+{
+    "meta": {
+        "/data/eventContext": [
+            {
+                "/worker": {
+                    "optional": false,
+                    "dataType": "object"
+                },
+                "/worker/associateOID": {
+                    "optional": false,
+                    "dataType": "string"
+                }
+            }
+        ],
+        "/data/transforms": [
+            {
+                "/eventStatusCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/eventStatusCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/eventStatusCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/eventStatusCode/longName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payrollInstruction": {
+                    "optional": false,
+                    "dataType": "object"
+                },
+                "/payrollInstruction/generalDeductionInstruction": {
+                    "optional": false,
+                    "dataType": "object"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate": {
+                    "optional": false,
+                    "dataType": "object"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate/rateValue": {
+                    "optional": false,
+                    "dataType": "number"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate/currencyCode": {
+                    "optional": true,
+                    "pattern": "USD",
+                    "dataType": "string"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate/unitCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate/unitCode/codeValue": {
+                    "optional": true,
+                    "pattern": "Percent",
+                    "dataType": "string"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate/unitCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalLimitAmount": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalLimitAmount/amountValue": {
+                    "optional": true,
+                    "dataType": "number"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalLimitAmount/currencyCode": {
+                    "optional": true,
+                    "dataType": "string"
+                }
+            }
+        ]
+    }
+}
