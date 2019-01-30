@@ -1,1 +1,1 @@
-Sample request and response payload for ADP Vantage HCM® 
+Sample request and response payloads for ADP Vantage HCM® 
