@@ -1,40 +1,44 @@
 {
-  "events": [
-    {
-      "data": {
-        "eventContext": {
-          "worker": {
-            "associateOID": "G372T336YEJ07AWG"
-          },
-          "payDistribution": {
-            "itemID": "26849471_194297"
-          }
-        },
-        "transform": {
-          "effectiveDateTime": "2018-12-17",
-          "payDistribution": {
-            "distributionInstructions": [
-              {
-                "distributionPercentage": "25",
-                "depositAccount": {
-                  "financialAccount": {
-                    "accountNumber": "123456778",
-                    "typeCode": {
-                      "codeValue": "Y"
-                    }
-                  },
-                  "financialParty": {
-                    "routingTransitID": {
-                      "idValue": "823456789"
-                    }
-                  }
-                  
-                }
-              }
-            ]
-          }
-        }
+   "events":[
+      {
+         "data":{
+            "eventContext":{
+               "worker":{
+                  "associateOID":"G3HFNJJBD96F6355"
+               },
+               "payDistribution":{
+                  "itemID":"1045_4"
+               }
+            },
+            "transform":{
+               "payDistribution":{
+               		"effectiveDateTime":"2019-02-06",
+               		
+                	"distributionInstructions": [
+                		{
+                		"prenoteBypassIndicator":true,
+                		
+                		"distributionAmount": {
+                  "amountValue":"10"
+                },
+                    	"depositAccount": {
+                        	"financialParty": {
+                            	"routingTransitID": {
+                                	"idValue": "031207607"
+                            	}
+                        	},
+                        	"financialAccount": {
+                            	"accountNumber": "4172678660116",
+                            	"typeCode": {
+                                	"codeValue": "Y"
+                        	   }
+                        	}
+                    	}
+                		}
+        			]
+               }
+            }
+         }
       }
-    }
-  ]
+   ]
 }
