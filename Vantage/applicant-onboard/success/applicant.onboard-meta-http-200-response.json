@@ -1,0 +1,1764 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/applicant/applicantID/idValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "default": "NEW",
+                    "maxLength": 11
+                },
+                "/applicant/person/governmentIDs": {
+                    "minItems": 0,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                },
+                "/applicant/person/governmentIDs/nameCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Government ID Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "SSN",
+                                "longName": "Social Security Number"
+                            },
+                            {
+                                "codeValue": "SIN",
+                                "longName": "Social Insurance Number"
+                            }
+                        ]
+                    }
+                },
+                "/applicant/person/governmentIDs/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(SSN)$",
+                                    "attributes": {
+                                        "/applicant/person/governmentIDs/idValue": {
+                                            "helperMessage": "In some countries, Social Security Number can only be used for certain purposes, such as for payroll processing or tax reporting. We recommend that you consult with local counsel to determine when collection of this information is permissible.",
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "maxLength": 9,
+                                            "shortLabelName": "Social Security Number",
+                                            "longLabelName": "Social Security Number"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(SIN)$",
+                                    "attributes": {
+                                        "/applicant/person/governmentIDs/idValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 9
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/applicant/person/legalName": {
+                    "optional": false
+                },
+                "/applicant/person/legalName/givenName": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "First",
+                    "longLabelName": "First"
+                },
+                "/applicant/person/legalName/middleName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "Middle",
+                    "longLabelName": "Middle"
+                },
+                "/applicant/person/legalName/familyName1": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "shortLabelName": "Last",
+                    "longLabelName": "Last"
+                },
+                "/applicant/person/legalName/preferredSalutations": {
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "optional": true
+                },
+                "/applicant/person/legalName/preferredSalutations/salutationCode/longName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 10,
+                    "shortLabelName": "Prefix",
+                    "longLabelName": "Prefix"
+                },
+                "/applicant/person/legalName/generationAffixCode/longName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 6,
+                    "shortLabelName": "Suffix",
+                    "longLabelName": "Suffix"
+                },
+                "/applicant/person/legalName/titleAffixCodes": {
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "optional": true
+                },
+                "/applicant/person/legalName/titleAffixCodes/affixCode/longName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "Formal Title",
+                    "longLabelName": "Formal Title"
+                },
+                "/applicant/person/legalAddress": {
+                    "optional": false
+                },
+                "/applicant/person/legalAddress/lineOne": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "dependencies": {
+                        "maxLength": {
+                            "oneOf": {
+                                "value": 30,
+                                "attributes": {
+                                    "/applicant/person/legalAddress/countryCode": {
+                                        "pattern": "(US|CA)"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Address",
+                    "longLabelName": "Address"
+                },
+                "/applicant/person/legalAddress/lineTwo": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "dependencies": {
+                        "maxLength": {
+                            "oneOf": {
+                                "value": 30,
+                                "attributes": {
+                                    "/applicant/person/legalAddress/countryCode": {
+                                        "pattern": "(US|CA)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/applicant/person/legalAddress/cityName": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "City",
+                    "longLabelName": "City"
+                },
+                "/applicant/person/legalAddress/postalCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 10,
+                    "dependencies": {
+                        "optional": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/applicant/person/legalAddress/countryCode": {
+                                        "pattern": "(US|CA)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/applicant/person/legalAddress/countryCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(US)$",
+                                    "attributes": {
+                                        "/applicant/person/legalAddress/countrySubdivisionLevel1": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/statenamevalues?country={#/applicant/person/legalAddress/countryCode}",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "State",
+                                            "longLabelName": "State"
+                                        },
+                                        "/applicant/person/legalAddress/countrySubdivisionLevel1/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "shortLabelName": "State",
+                                            "longLabelName": "State"
+                                        },
+                                        "/applicant/person/legalAddress/countrySubdivisionLevel2/longName": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 15
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(CA)$",
+                                    "attributes": {
+                                        "/applicant/person/legalAddress/countrySubdivisionLevel1": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/statenamevalues?country={#/applicant/person/legalAddress/countryCode}",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "State",
+                                            "longLabelName": "State"
+                                        },
+                                        "/applicant/person/legalAddress/countrySubdivisionLevel1/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "shortLabelName": "State",
+                                            "longLabelName": "State"
+                                        },
+                                        "/applicant/person/legalAddress/countrySubdivisionLevel2/longName": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "maxLength": 15
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^((?!(US|CA)).)*$",
+                                    "attributes": {
+                                        "/applicant/person/legalAddress/lineThree": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 40
+                                        },
+                                        "/applicant/person/legalAddress/lineFour": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 40
+                                        },
+                                        "/applicant/person/legalAddress/lineFive": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 40
+                                        },
+                                        "/applicant/person/legalAddress/countrySubdivisionLevel1": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/statenamevalues?country={#/applicant/person/legalAddress/countryCode}",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "/applicant/person/legalAddress/countrySubdivisionLevel1/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false
+                                        },
+                                        "/applicant/person/legalAddress/countrySubdivisionLevel2/longName": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "maxLength": 15
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/countryvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Country",
+                    "longLabelName": "Country"
+                },
+                "/applicant/person/otherPersonalAddresses": {
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "optional": true
+                },
+                "/applicant/person/otherPersonalAddresses/lineOne": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "dependencies": {
+                        "maxLength": {
+                            "oneOf": {
+                                "value": 30,
+                                "attributes": {
+                                    "/applicant/person/otherPersonalAddresses/countryCode": {
+                                        "pattern": "(US|CA)"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Address",
+                    "longLabelName": "Address"
+                },
+                "/applicant/person/otherPersonalAddresses/lineTwo": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "dependencies": {
+                        "maxLength": {
+                            "oneOf": {
+                                "value": 30,
+                                "attributes": {
+                                    "/applicant/person/otherPersonalAddresses/countryCode": {
+                                        "pattern": "(US|CA)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/applicant/person/otherPersonalAddresses/cityName": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "City",
+                    "longLabelName": "City"
+                },
+                "/applicant/person/otherPersonalAddresses/postalCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 10,
+                    "dependencies": {
+                        "optional": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/applicant/person/otherPersonalAddresses/countryCode": {
+                                        "pattern": "(US|CA)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/applicant/person/otherPersonalAddresses/countryCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/countryvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(US|CA)$",
+                                    "attributes": {
+                                        "/applicant/person/otherPersonalAddresses/countrySubdivisionLevel1": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/statenamevalues?country={#/applicant/person/otherPersonalAddresses/countryCode}",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "State",
+                                            "longLabelName": "State"
+                                        },
+                                        "/applicant/person/otherPersonalAddresses/countrySubdivisionLevel1/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "shortLabelName": "State",
+                                            "longLabelName": "State"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^((?!(US|CA)).)*$",
+                                    "attributes": {
+                                        "/applicant/person/otherPersonalAddresses/lineThree": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 40
+                                        },
+                                        "/applicant/person/otherPersonalAddresses/lineFour": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 40
+                                        },
+                                        "/applicant/person/otherPersonalAddresses/lineFive": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 40
+                                        },
+                                        "/applicant/person/otherPersonalAddresses/countrySubdivisionLevel1": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/statenamevalues?country={#/applicant/person/otherPersonalAddresses/countryCode}",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "/applicant/person/otherPersonalAddresses/countrySubdivisionLevel1/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "shortLabelName": "Country",
+                    "longLabelName": "Country"
+                },
+                "/applicant/person/otherPersonalAddresses/sameAsAddressIndicator": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dataType": "boolean"
+                },
+                "/applicant/person/communication/emails": {
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "optional": true
+                },
+                "/applicant/person/communication/emails/emailUri": {
+                    "helperMessage": "In some countries, collection of an employee\u0092s personal contact information may be restricted. We recommend that you consult with local counsel to determine whether collection of this information is permissible.",
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 70,
+                    "shortLabelName": "Personal",
+                    "longLabelName": "Personal"
+                },
+                "/applicant/person/raceCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "9",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/racevalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Race/ Ethnicity",
+                    "longLabelName": "Race/ Ethnicity"
+                },
+                "/applicant/person/raceCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "9",
+                    "shortLabelName": "Race/ Ethnicity",
+                    "longLabelName": "Race/ Ethnicity"
+                },
+                "/applicant/person/ethnicityCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "7",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/ethnicityvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Ethnic Group",
+                    "longLabelName": "Ethnic Group"
+                },
+                "/applicant/person/ethnicityCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "7",
+                    "shortLabelName": "Ethnic Group",
+                    "longLabelName": "Ethnic Group"
+                },
+                "/applicant/person/genderCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "default": "N",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/gendervalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Gender",
+                    "longLabelName": "Gender"
+                },
+                "/applicant/person/genderCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "default": "N",
+                    "shortLabelName": "Gender",
+                    "longLabelName": "Gender"
+                },
+                "/applicant/person/maritalStatusCode": {
+                    "helperMessage": "In some countries, an employee\u0092s marital status can be collected only for certain purposes, such as when needed for payment of compensation. We recommend that you consult with local counsel to determine whether collection of this information is permissible.",
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "default": "N",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/maritalstatusvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Marital Status",
+                    "longLabelName": "Marital Status"
+                },
+                "/applicant/person/maritalStatusCode/codeValue": {
+                    "helperMessage": "In some countries, an employee\u0092s marital status can be collected only for certain purposes, such as when needed for payment of compensation. We recommend that you consult with local counsel to determine whether collection of this information is permissible.",
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "default": "N",
+                    "shortLabelName": "Marital Status",
+                    "longLabelName": "Marital Status"
+                },
+                "/applicant/person/maritalStatusCode/effectiveDate": {
+                    "helperMessage": "In some countries, an employee\u0092s marital status can be collected only for certain purposes, such as when needed for payment of compensation. We recommend that you consult with local counsel to determine whether collection of this information is permissible.",
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "shortLabelName": "Marital Status Date",
+                    "longLabelName": "Marital Status Date"
+                },
+                "/applicant/person/birthDate": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "shortLabelName": "Birth Date",
+                    "longLabelName": "Birth Date"
+                },
+                "/jobOffer/offerAssignment/jobTitle": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 50,
+                    "shortLabelName": "Business Title",
+                    "longLabelName": "Business Title"
+                },
+                "/applicant/person/highestEducationLevelCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "A",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/highesteducationlevelvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Highest Educational Level",
+                    "longLabelName": "Highest Educational Level"
+                },
+                "/applicant/person/highestEducationLevelCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "A",
+                    "shortLabelName": "Highest Educational Level",
+                    "longLabelName": "Highest Educational Level"
+                },
+                "/applicant/person/disabledIndicator": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "default": false,
+                    "dataType": "boolean",
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/applicant/person/disabilityIdentificationDeclinedIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "default": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/applicant/person/disabilityIdentificationDeclinedIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Disabled",
+                    "longLabelName": "Disabled"
+                },
+                "/applicant/person/disabilityIdentificationDeclinedIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": false,
+                    "dataType": "boolean",
+                    "shortLabelName": "Disabled",
+                    "longLabelName": "Disabled"
+                },
+                "/applicant/person/disabilityTypeCodes": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": [
+                                {
+                                    "value": true,
+                                    "attributes": {
+                                        "/applicant/person/disabledIndicator": {
+                                            "equals": [
+                                                "false"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/disabilitytypevalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Disability Type",
+                    "longLabelName": "Disability Type"
+                },
+                "/applicant/person/disabilityTypeCodes/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": [
+                                {
+                                    "value": true,
+                                    "attributes": {
+                                        "/applicant/person/disabledIndicator": {
+                                            "equals": [
+                                                "false"
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "shortLabelName": "Disability Type",
+                    "longLabelName": "Disability Type"
+                },
+                "/applicant/person/militaryClassificationCodes": {
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "1",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/militaryclassificationvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Military Status",
+                    "longLabelName": "Military Status"
+                },
+                "/applicant/person/militaryClassificationCodes/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "1",
+                    "shortLabelName": "Military Status",
+                    "longLabelName": "Military Status"
+                },
+                "/applicant/person/militaryStatusCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "12",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/militarystatusvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Protected Veteran Status",
+                    "longLabelName": "Protected Veteran Status"
+                },
+                "/applicant/person/militaryStatusCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "12",
+                    "shortLabelName": "Protected Veteran Status",
+                    "longLabelName": "Protected Veteran Status"
+                },
+                "/applicant/person/militaryDischargeDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "shortLabelName": "Military Discharge Date",
+                    "longLabelName": "Military Discharge Date"
+                },
+                "/applicant/person/communication/landlines": {
+                    "minItems": 0,
+                    "maxItems": 2,
+                    "optional": true
+                },
+                "/applicant/person/communication/landlines/nameCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/personallandlinetelephonetypevalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Home",
+                    "longLabelName": "Home"
+                },
+                "/applicant/person/communication/landlines/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Home",
+                    "longLabelName": "Home"
+                },
+                "/applicant/person/communication/landlines/countryDialing": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 4,
+                    "shortLabelName": "Country Dialing Code Home",
+                    "longLabelName": "Country Dialing Code Home"
+                },
+                "/applicant/person/communication/landlines/formattedNumber": {
+                    "helperMessage": "In some countries, collection of an employee\u0092s personal contact information may be restricted. We recommend that you consult with local counsel to determine whether collection of this information is permissible.",
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 15,
+                    "shortLabelName": "Home",
+                    "longLabelName": "Home"
+                },
+                "/applicant/person/communication/mobiles": {
+                    "minItems": 0,
+                    "maxItems": 4,
+                    "optional": true
+                },
+                "/applicant/person/communication/mobiles/nameCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/personalmobiletelephonetypevalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Cell",
+                    "longLabelName": "Cell"
+                },
+                "/applicant/person/communication/mobiles/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Cell",
+                    "longLabelName": "Cell"
+                },
+                "/applicant/person/communication/mobiles/countryDialing": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 4,
+                    "shortLabelName": "Country Dialing Code Cell",
+                    "longLabelName": "Country Dialing Code Cell"
+                },
+                "/applicant/person/communication/mobiles/formattedNumber": {
+                    "helperMessage": "In some countries, collection of an employee\u0092s personal contact information may be restricted. We recommend that you consult with local counsel to determine whether collection of this information is permissible.",
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 15,
+                    "shortLabelName": "Cell",
+                    "longLabelName": "Cell"
+                },
+                "/applicant/person/communication/faxes": {
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "optional": true
+                },
+                "/applicant/person/communication/faxes/nameCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Personal Fax Telephone Type Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "FAXH",
+                                "longName": "Home Fax"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Home Fax",
+                    "longLabelName": "Home Fax"
+                },
+                "/applicant/person/communication/faxes/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Home Fax",
+                    "longLabelName": "Home Fax"
+                },
+                "/applicant/person/communication/faxes/countryDialing": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 4,
+                    "shortLabelName": "Home Fax",
+                    "longLabelName": "Home Fax"
+                },
+                "/applicant/person/communication/faxes/formattedNumber": {
+                    "helperMessage": "In some countries, collection of an employee\u0092s personal contact information may be restricted. We recommend that you consult with local counsel to determine whether collection of this information is permissible.",
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 15,
+                    "shortLabelName": "Home Fax",
+                    "longLabelName": "Home Fax"
+                },
+                "/applicant/person/communication/pagers": {
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "optional": true
+                },
+                "/applicant/person/communication/pagers/nameCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Personal Pager Telephone Type Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "PGR",
+                                "longName": "Pager"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Pager",
+                    "longLabelName": "Pager"
+                },
+                "/applicant/person/communication/pagers/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Pager",
+                    "longLabelName": "Pager"
+                },
+                "/applicant/person/communication/pagers/countryDialing": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 4,
+                    "shortLabelName": "Country Dialing Code Pager",
+                    "longLabelName": "Country Dialing Code Pager"
+                },
+                "/applicant/person/communication/pagers/extension": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 7,
+                    "shortLabelName": "Pin",
+                    "longLabelName": "Pin"
+                },
+                "/applicant/person/communication/pagers/formattedNumber": {
+                    "helperMessage": "In some countries, collection of an employee\u0092s personal contact information may be restricted. We recommend that you consult with local counsel to determine whether collection of this information is permissible.",
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 15,
+                    "shortLabelName": "Pager",
+                    "longLabelName": "Pager"
+                },
+                "/jobOffer/offerTerms/expectedStartDate": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$"
+                },
+                "/eventReasonCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/reason-code-values?action=HIR",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                },
+                "/eventReasonCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                },
+                "/jobOffer/offerAssignment/legalEntityID": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/company-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Company",
+                    "longLabelName": "Company"
+                },
+                "/jobOffer/offerAssignment/payrollGroupCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/paygroupcodevalues?$filter=company eq %27{#/jobOffer/offerAssignment/legalEntityID}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Pay Group",
+                    "longLabelName": "Pay Group"
+                },
+                "/jobOffer/offerAssignment/assignedOrganizationalUnits": {
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "uniqueItems": true,
+                    "optional": false,
+                    "dependencies": {
+                        "optional": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/jobOffer/offerAssignment/assignedOrganizationalUnits/typeCode/codeValue": {
+                                        "pattern": "(PAYDEPTID)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/jobOffer/offerAssignment/assignedOrganizationalUnits/typeCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Assigned Organizational Units",
+                        "listItems": [
+                            {
+                                "codeValue": "DEPTID",
+                                "longName": "Department Number"
+                            },
+                            {
+                                "codeValue": "PAYDEPTID",
+                                "longName": "Payroll Department Number"
+                            }
+                        ]
+                    }
+                },
+                "/jobOffer/offerAssignment/assignedOrganizationalUnits/typeCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(DEPTID)$",
+                                    "attributes": {
+                                        "/jobOffer/offerAssignment/assignedOrganizationalUnits/nameCode": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/departmentcodevalues?$filter=company eq %27{#/jobOffer/offerAssignment/legalEntityID}%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Department",
+                                            "longLabelName": "Department"
+                                        },
+                                        "/jobOffer/offerAssignment/assignedOrganizationalUnits/nameCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "shortLabelName": "Department",
+                                            "longLabelName": "Department"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(PAYDEPTID)$",
+                                    "attributes": {
+                                        "/jobOffer/offerAssignment/assignedOrganizationalUnits/nameCode": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/payroll/v3/payroll-instruction-management/payroll-department-number-code-values?$filter=payrollGroupCode eq %27{#/jobOffer/offerAssignment/payrollGroupCode}%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Payroll Department Number",
+                                            "longLabelName": "Payroll Department Number"
+                                        },
+                                        "/jobOffer/offerAssignment/assignedOrganizationalUnits/nameCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Payroll Department Number",
+                                            "longLabelName": "Payroll Department Number"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/jobOffer/offerAssignment/jobCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/job-title-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/jobOffer/offerAssignment/jobCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Job Title",
+                    "longLabelName": "Job Title"
+                },
+                "/jobOffer/offerAssignment/reportsTo": {
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "uniqueItems": true,
+                    "optional": false,
+                    "dependencies": {
+                        "optional": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/jobOffer/offerAssignment/reportsTo/reportsToRelationshipCode/codeValue": {
+                                        "pattern": "(SUPERVISOR)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/jobOffer/offerAssignment/reportsTo/reportsToRelationshipCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Reports To Relationship Code",
+                        "listItems": [
+                            {
+                                "codeValue": "MANAGER",
+                                "longName": "Reports To Manager"
+                            },
+                            {
+                                "codeValue": "SUPERVISOR",
+                                "longName": "Secondary Manager"
+                            }
+                        ]
+                    }
+                },
+                "/jobOffer/offerAssignment/reportsTo/reportsToRelationshipCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(MANAGER)$",
+                                    "attributes": {
+                                        "/jobOffer/offerAssignment/reportsTo/workerID/idValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/reports-to-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Reports to",
+                                            "longLabelName": "Reports to"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(SUPERVISOR)$",
+                                    "attributes": {
+                                        "/jobOffer/offerAssignment/reportsTo/workerID/idValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/supervisors-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Secondary Manager",
+                                            "longLabelName": "Secondary Manager"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/jobOffer/offerAssignment/standardHours/payPeriodHoursQuantity": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^\\d{1,2}(\\.\\d{1,2})?$",
+                    "minValue": 5,
+                    "maxValue": 40,
+                    "default": 63.23,
+                    "shortLabelName": "Standard Hours",
+                    "longLabelName": "Standard Hours"
+                },
+                "/jobOffer/offerAssignment/workerTypeCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/employee-classification-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Employee Classification",
+                    "longLabelName": "Employee Classification"
+                },
+                "/jobOffer/offerAssignment/workerTypeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Employee Classification",
+                    "longLabelName": "Employee Classification"
+                },
+                "/jobOffer/offerAssignment/occupationalClassifications": {
+                    "minItems": 0,
+                    "maxItems": 2,
+                    "uniqueItems": true,
+                    "optional": true
+                },
+                "/jobOffer/offerAssignment/occupationalClassifications/nameCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Occupational Classification Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "EEOC",
+                                "longName": "EEOC"
+                            },
+                            {
+                                "codeValue": "WRKCOMP",
+                                "longName": "Workers Compensation Code"
+                            }
+                        ]
+                    }
+                },
+                "/jobOffer/offerAssignment/occupationalClassifications/nameCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(EEOC)$",
+                                    "attributes": {
+                                        "/jobOffer/offerAssignment/occupationalClassifications/classificationCode": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "default": "N",
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/eeo-exclusion-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Exclude from EEO Report",
+                                            "longLabelName": "Exclude from EEO Report"
+                                        },
+                                        "/jobOffer/offerAssignment/occupationalClassifications/classificationCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "default": "N",
+                                            "shortLabelName": "Exclude from EEO Report",
+                                            "longLabelName": "Exclude from EEO Report"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(WRKCOMP)$",
+                                    "attributes": {
+                                        "/jobOffer/offerAssignment/occupationalClassifications/classificationCode": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/workers-comp-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Worker's Comp Code",
+                                            "longLabelName": "Worker's Comp Code"
+                                        },
+                                        "/jobOffer/offerAssignment/occupationalClassifications/classificationCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Worker's Comp Code",
+                                            "longLabelName": "Worker's Comp Code"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/jobOffer/offerAssignment/assignmentTermCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "default": "R",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/regular-temp-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Regular/Temp",
+                    "longLabelName": "Regular/Temp"
+                },
+                "/jobOffer/offerAssignment/assignmentTermCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "default": "R",
+                    "shortLabelName": "Regular/Temp",
+                    "longLabelName": "Regular/Temp"
+                },
+                "/jobOffer/offerAssignment/assignedWorkLocations": {
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "optional": false
+                },
+                "/jobOffer/offerAssignment/assignedWorkLocations/nameCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/location-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Work Location",
+                    "longLabelName": "Work Location"
+                },
+                "/jobOffer/offerAssignment/assignedWorkLocations/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Work Location",
+                    "longLabelName": "Work Location"
+                },
+                "/jobOffer/offerAssignment/homeWorkLocation/nameCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/location-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Reporting Location",
+                    "longLabelName": "Reporting Location"
+                },
+                "/jobOffer/offerAssignment/homeWorkLocation/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Reporting Location",
+                    "longLabelName": "Reporting Location"
+                },
+                "/jobOffer/offerAssignment/workLevelCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "F",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/full-part-time-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Full-Time/Part-Time",
+                    "longLabelName": "Full-Time/Part-Time"
+                },
+                "/jobOffer/offerAssignment/workLevelCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "F",
+                    "shortLabelName": "Full-Time/Part-Time",
+                    "longLabelName": "Full-Time/Part-Time"
+                },
+                "/jobOffer/offerTerms/compensation/remunerationBasisCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/employee-type-code-values?$filter=company eq %27{#/jobOffer/offerAssignment/legalEntityID}%27 and payrollGroupCode eq %27{#/jobOffer/offerAssignment/payrollGroupCode}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/jobOffer/offerTerms/compensation/remunerationBasisCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/jobOffer/offerTerms/compensation/baseRemuneration": {
+                    "optional": false
+                },
+                "/jobOffer/offerTerms/compensation/baseRemuneration/recordingBasisCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/compensation-frequency-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/jobOffer/offerTerms/compensation/baseRemuneration/recordingBasisCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^A$",
+                                    "attributes": {
+                                        "/jobOffer/offerTerms/compensation/baseRemuneration/annualRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,2})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^H$",
+                                    "attributes": {
+                                        "/jobOffer/offerTerms/compensation/baseRemuneration/hourlyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,6}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^D$",
+                                    "attributes": {
+                                        "/jobOffer/offerTerms/compensation/baseRemuneration/dailyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,6}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^W$",
+                                    "attributes": {
+                                        "/jobOffer/offerTerms/compensation/baseRemuneration/weeklyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^B$",
+                                    "attributes": {
+                                        "/jobOffer/offerTerms/compensation/baseRemuneration/biweeklyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^S$",
+                                    "attributes": {
+                                        "/jobOffer/offerTerms/compensation/baseRemuneration/semiMonthlyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^M$",
+                                    "attributes": {
+                                        "/jobOffer/offerTerms/compensation/baseRemuneration/monthlyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/jobOffer/offerTerms/compensation/baseRemuneration/payPeriodRateAmount/currencyCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/currency-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/jobOffer/offerAssignment/payrollFileNumber": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 6,
+                    "shortLabelName": "File Number",
+                    "longLabelName": "File Number"
+                },
+                "/jobOffer/offerAssignment/homeOrganizationalUnits": {
+                    "minItems": 0,
+                    "maxItems": 1
+                },
+                "/jobOffer/offerAssignment/homeOrganizationalUnits/nameCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/cost-number-code-values?$filter=payrollGroupCode eq %27{#/jobOffer/offerAssignment/payrollGroupCode}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Cost Number",
+                    "longLabelName": "Cost Number"
+                },
+                "/jobOffer/offerAssignment/homeOrganizationalUnits/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Cost Number",
+                    "longLabelName": "Cost Number"
+                }
+            }
+        ]
+    }
+}
