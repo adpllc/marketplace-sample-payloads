@@ -1,0 +1,313 @@
+{
+    "meta": {
+        "/serviceCategoryCode/codeValue": "PAYROLL",
+        "/eventNameCode/codeValue": "WORKER_GENERAL_DEDUCTION_INSTRUCTION_START",
+        "/data/eventContext": {
+            "/worker": {
+                "readOnly": true,
+                "optional": false
+            },
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/payrollInstruction": {
+                "readOnly": true,
+                "optional": false
+            },
+            "/payrollInstruction/payrollGroupCode": {
+                "codeList": {
+                    "listItems": [
+                        {
+                            "valueDescription": "Visiting Nurses Serv",
+                            "codeValue": "938"
+                        },
+                        {
+                            "valueDescription": "Perk Me Up Llc",
+                            "codeValue": "94N"
+                        }
+                    ]
+                },
+                "readOnly": true,
+                "optional": true
+            },
+            "/payrollInstruction/payrollGroupCode/codeValue": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/payrollInstruction/payrollFileNumber": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/payrollInstruction/payrollAgreementID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Change Effective On",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction": {
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionCode": {
+                    "codeList": {
+                        "codeListTitle": "Deduction Code",
+                        "listItems": [
+                            {
+                                "codeValue": "C",
+                                "shortName": "C"
+                            },
+                            {
+                                "codeValue": "D",
+                                "shortName": "D"
+                            },
+                            {
+                                "codeValue": "G",
+                                "shortName": "G - Garnisment"
+                            },
+                            {
+                                "codeValue": "H",
+                                "shortName": "H"
+                            },
+                            {
+                                "valueDescription": "LIFE",
+                                "codeValue": "I",
+                                "shortName": "I - Life Insur"
+                            },
+                            {
+                                "valueDescription": "MISC",
+                                "codeValue": "M",
+                                "shortName": "M - Misc"
+                            },
+                            {
+                                "codeValue": "R",
+                                "shortName": "R"
+                            },
+                            {
+                                "codeValue": "U",
+                                "shortName": "U"
+                            },
+                            {
+                                "codeValue": "W",
+                                "shortName": "W"
+                            },
+                            {
+                                "codeValue": "X",
+                                "shortName": "X"
+                            },
+                            {
+                                "codeValue": "Y",
+                                "shortName": "Y"
+                            },
+                            {
+                                "codeValue": "Z",
+                                "shortName": "Z"
+                            },
+                            {
+                                "valueDescription": "BANK$",
+                                "codeValue": "70",
+                                "shortName": "70 - bankruptcy"
+                            },
+                            {
+                                "valueDescription": "TAXLY$",
+                                "codeValue": "71",
+                                "shortName": "71 - tax levy"
+                            },
+                            {
+                                "valueDescription": "TAXLY$",
+                                "codeValue": "72",
+                                "shortName": "72 - tax levy"
+                            },
+                            {
+                                "valueDescription": "GRNSH$",
+                                "codeValue": "73",
+                                "shortName": "73 - Garn"
+                            },
+                            {
+                                "valueDescription": "GRNSH$",
+                                "codeValue": "74",
+                                "shortName": "74 - Garn"
+                            },
+                            {
+                                "valueDescription": "SPPRT$",
+                                "codeValue": "75",
+                                "shortName": "75 - child support"
+                            },
+                            {
+                                "valueDescription": "SPPRT$",
+                                "codeValue": "76",
+                                "shortName": "76 - child support"
+                            },
+                            {
+                                "valueDescription": "SPPRT$",
+                                "codeValue": "77",
+                                "shortName": "77 - support order"
+                            },
+                            {
+                                "valueDescription": "SPPRT$",
+                                "codeValue": "78",
+                                "shortName": "78 - child support"
+                            },
+                            {
+                                "valueDescription": "WAGE",
+                                "codeValue": "79",
+                                "shortName": "79 - wage agreement"
+                            },
+                            {
+                                "valueDescription": "BANK%",
+                                "codeValue": "90",
+                                "shortName": "90 - bankruptcy%"
+                            },
+                            {
+                                "valueDescription": "LEVY%",
+                                "codeValue": "91",
+                                "shortName": "91 - tax levy%"
+                            },
+                            {
+                                "valueDescription": "LEVY%",
+                                "codeValue": "92",
+                                "shortName": "92 - tax levy%"
+                            },
+                            {
+                                "valueDescription": "GARN%",
+                                "codeValue": "93",
+                                "shortName": "93 - Garn%"
+                            },
+                            {
+                                "valueDescription": "GARN%",
+                                "codeValue": "94",
+                                "shortName": "94 - Garn%"
+                            },
+                            {
+                                "valueDescription": "CHILD%",
+                                "codeValue": "95",
+                                "shortName": "95 - child support%"
+                            },
+                            {
+                                "valueDescription": "CHILD%",
+                                "codeValue": "96",
+                                "shortName": "96 - child support%"
+                            },
+                            {
+                                "valueDescription": "AUTO",
+                                "codeValue": "A",
+                                "shortName": "A - AUTO EXPENSE"
+                            },
+                            {
+                                "valueDescription": "DENTAL",
+                                "codeValue": "D",
+                                "shortName": "D - DENTAL"
+                            },
+                            {
+                                "codeValue": "E",
+                                "shortName": "E - EMI"
+                            },
+                            {
+                                "valueDescription": "GARN",
+                                "codeValue": "G",
+                                "shortName": "G - GARN"
+                            },
+                            {
+                                "codeValue": "I",
+                                "shortName": "I - test"
+                            },
+                            {
+                                "codeValue": "K",
+                                "shortName": "K - Savings"
+                            },
+                            {
+                                "valueDescription": "LOAN",
+                                "codeValue": "L",
+                                "shortName": "L - LOAN"
+                            },
+                            {
+                                "valueDescription": "MED",
+                                "codeValue": "M",
+                                "shortName": "M - MEDICAL"
+                            },
+                            {
+                                "codeValue": "TAX",
+                                "shortName": "TAX - Tax"
+                            },
+                            {
+                                "valueDescription": "CHECK1",
+                                "codeValue": "W",
+                                "shortName": "W - CHECKING"
+                            },
+                            {
+                                "valueDescription": "CHECK2",
+                                "codeValue": "X",
+                                "shortName": "X - CHECKING"
+                            },
+                            {
+                                "valueDescription": "SAVE",
+                                "codeValue": "Y",
+                                "shortName": "Y - SAVINGS"
+                            },
+                            {
+                                "valueDescription": "SAVE2",
+                                "codeValue": "Z",
+                                "shortName": "Z - SAVINGS"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Deduction Code"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate": {
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate/rateValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Deduction Amount",
+                    "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$",
+                    "dependencies": {
+                        "maxLength": {
+                            "allOf": [
+                                {
+                                    "attributes": {
+                                        "worker/generalInstruction/generalDeductionInstruction/deductionCode/codeValue": {
+                                            "pattern": "^[^(81|82|83|84|85|86|87|88|89|90|91|92|93|94|95|96)]?$"
+                                        }
+                                    },
+                                    "value": 8
+                                },
+                                {
+                                    "attributes": {
+                                        "worker/generalInstruction/generalDeductionInstruction/deductionCode/codeValue": {
+                                            "pattern": "^[81|82|83|84|85|86|87|88|89|90|91|92|93|94|95|96]?$"
+                                        }
+                                    },
+                                    "value": 6
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
