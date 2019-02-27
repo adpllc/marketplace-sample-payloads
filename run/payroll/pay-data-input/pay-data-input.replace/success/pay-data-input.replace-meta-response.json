@@ -1,0 +1,222 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "payDataInput": {
+                "/itemId": {
+                    "optional": false,
+                    "dataType": "string"
+                }
+            }
+        },
+        "/data/transforms": [
+            {
+                "/payDataInput": {
+                    "optional": false,
+                    "dataType": "object"
+                },
+                "/payDataInput/payeePayInputs": {
+                    "optional": false,
+                    "minItems": 1,
+                    "maxItems": 2147483647,
+                    "dataType": "array"
+                },
+                "/payDataInput/payeePayInputs/associateOID": {
+                    "optional": true,
+                    "minLength": 16,
+                    "maxLength": 16,
+                    "pattern": "^[a-zA-Z0-9]*$",
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/workerID": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/payDataInput/payeePayInputs/workerID/idValue": {
+                    "optional": false,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/workerID/schemeCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/payDataInput/payeePayInputs/workerID/schemeCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/workerID/schemeCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payPeriodStartDate": {
+                    "optional": false,
+                    "dataType": "string[date]"
+                },
+                "/payDataInput/payeePayInputs/payPeriodEndDate": {
+                    "optional": false,
+                    "dataType": "string[date]"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs": {
+                    "optional": false,
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "dataType": "array"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs": {
+                    "optional": false,
+                    "minItems": 1,
+                    "maxItems": 2147483647,
+                    "dataType": "array"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs": {
+                    "optional": false,
+                    "minItems": 1,
+                    "maxItems": 2147483647,
+                    "dataType": "array"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earningCode": {
+                    "optional": false,
+                    "dataType": "object",
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/payroll/v1/payroll-processing/earnings/run",
+                                "mediaType": "application/json",
+                                "method": "GET"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earningCode/codeValue": {
+                    "optional": false,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earningCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rateCode": {
+                    "optional": true,
+                    "dataType": "object",
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/payroll/v1/payroll-processing/pay-rates/run",
+                                "mediaType": "application/json",
+                                "method": "GET"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rateCode/codeValue": {
+                    "optional": false,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rateCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate/rateValue": {
+                    "optional": true,
+                    "minValue": 0,
+                    "maxValue": 9999999.99,
+                    "dataType": "number"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate/currencyCode": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate/baseUnitCode": {
+                    "optional": true,
+                    "dataType": "object",
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "hour",
+                                "shortName": "Hourly Pay rate",
+                                "longName": "Hourly Pay rate"
+                            },
+                            {
+                                "codeValue": "W",
+                                "shortName": "Weekly Salary/Amount",
+                                "longName": "Weekly Salary/Amount"
+                            },
+                            {
+                                "codeValue": "B",
+                                "shortName": "Biweekly Salary/Amount",
+                                "longName": "Biweekly Salary/Amount"
+                            },
+                            {
+                                "codeValue": "S",
+                                "shortName": "Semimonthly Salary/Amount",
+                                "longName": "Semimonthly Salary/Amount"
+                            },
+                            {
+                                "codeValue": "M",
+                                "shortName": "Monthly Salary/Amount",
+                                "longName": "Monthly Salary/Amount"
+                            },
+                            {
+                                "codeValue": "Q",
+                                "shortName": "Quarterly Salary/Amount",
+                                "longName": "Quarterly Salary/Amount"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate/baseUnitCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate/baseUnitCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/numberOfHours": {
+                    "optional": true,
+                    "minValue": 0,
+                    "maxValue": 9999.99,
+                    "dataType": "number"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationTypeCode": {
+                    "optional": true,
+                    "dataType": "object",
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "DEPARTMENT",
+                                "shortName": "Department",
+                                "longName": "Department"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationTypeCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationTypeCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationID": {
+                    "optional": true,
+                    "pattern": "^[a-zA-Z0-9]*$",
+                    "dataType": "string"
+                },
+                "/payDataInput/payeePayInputs/payNumber": {
+                    "optional": true,
+                    "pattern": "^[0-9]$",
+                    "dataType": "string"
+                }
+            }
+        ]
+    }
+}
