@@ -1,0 +1,124 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/worker": {
+                "readOnly": true,
+                "optional": false
+            },
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/payDistribution": {
+                "readOnly": true,
+                "optional": false
+            },
+            "/payDistribution/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Effective On",
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/payDistribution": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/payDistribution/distributionInstructions": {
+                    "minItems": 0,
+                    "maxItems": 3
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID/idValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Transit ABA Number",
+                    "minLength": 0,
+                    "maxLength": 9,
+                    "pattern": "^[0-9]*$"
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialAccount": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialAccount/accountNumber": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "longLabelName": "Bank Deposit Account Number",
+                    "minLength": 0,
+                    "maxLength": 17,
+                    "pattern": "^[-A-Z0-9]*$"
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialAccount/typeCode": {
+                    "codeList": {
+                        "codeListTitle": "Deposit Type",
+                        "listItems": [
+                            {
+                                "codeValue": "W",
+                                "shortName": "Checking Acct"
+                            },
+                            {
+                                "codeValue": "X",
+                                "shortName": "Savings Account"
+                            },
+                            {
+                                "codeValue": "Y",
+                                "shortName": "Checking"
+                            },
+                            {
+                                "codeValue": "Z",
+                                "shortName": "Savings Account"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialAccount/typeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Deposit Type"
+                },
+                "/payDistribution/distributionInstructions/distributionAmount": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/payDistribution/distributionInstructions/distributionAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Deduction Amount"
+                },
+                "/payDistribution/distributionInstructions/distributionPercentage": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Full Deposit",
+                    "pattern": "^(100)?$"
+                },
+                "/payDistribution/distributionInstructions/itemID": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": true
+                }
+            }
+        ],
+        "/serviceCategoryCode/codeValue": "payroll",
+        "/eventNameCode/codeValue": "worker.payDistribution.change"
+    }
+}
