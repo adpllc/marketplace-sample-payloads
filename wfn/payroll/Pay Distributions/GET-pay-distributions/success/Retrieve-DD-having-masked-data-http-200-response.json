@@ -1,0 +1,60 @@
+{
+    "payDistributions": [
+        {
+            "itemID": "1045_4",
+            "requestedStartDate": "2019-01-14",
+            "distributionStatusCode": {
+                "codeValue": "A",
+                "shortName": "Active"
+            },
+            "distributionInstructions": [
+                {
+                    "itemID": "2616640574_1",
+                    "depositAccount": {
+                        "financialParty": {
+                            "routingTransitID": {
+                                "idValue": "XXXXXXXXX"
+                            }
+                        },
+                        "financialAccount": {
+                            "accountNumber": "XXXXXXXXXXXXXXXXX",
+                            "typeCode": {
+                                "codeValue": "X",
+                                "shortName": "Savings Account"
+                            }
+                        }
+                    },
+                    "distributionAmount": {
+                        "amountValue": 36
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "operationID": "worker.payDistribution.change",
+                    "canonicalUri": "/payroll/payrollManagement/payrollInstructionManagement/payDistributionManagement/worker.payDistribution.change",
+                    "actionTypeCode": "callback",
+                    "confirmationRequiredIndicator": true,
+                    "defaultIndicator": false,
+                    "attestation": {
+                        "actionBlockIndicator": true,
+                        "messageTxt": "By selecting this check box and clicking Done, you have agreed to the following statement: I authorize ADP, LLC and the specified bank to deposit my net pay or portion thereof, as indicated, into my account each pay date. If funds to which I am not entitled are deposited into my account, I authorize ADP, LLC to direct the bank to return said funds to ADP, LLC. I understand that my deposit may not be credited to my account until 5:00 PM on the pay date indicated on the check voucher. I understand that it is my responsibility to ensure that my wages are being deposited correctly into my account each pay date."
+                    },
+                    "links": [
+                        {
+                            "href": "/events/payroll/v1/worker.pay-distribution.change",
+                            "rel": "/adp/invoke",
+                            "title": "Update Pay Distribution",
+                            "method": "POST"
+                        }
+                    ]
+                }
+            ],
+            "payrollGroupCode": {
+                "codeValue": "1W6",
+                "shortName": "1W6"
+            },
+            "payrollFileNumber": "100"
+        }
+    ]
+}
