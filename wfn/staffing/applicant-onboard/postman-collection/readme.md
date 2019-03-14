@@ -20,7 +20,7 @@ The Feature call (aka API call) are configured to authenticate using a Authoriza
 
 ## REST APIs
 
-Our real-time REST APIs give you flexibility and customization when verifying and enriching your contact data before it hits your database.
+Our real-time REST APIs give you flexibility and customization to your needs.
 
 ## Collections include -
 
