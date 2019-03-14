@@ -42,9 +42,9 @@ TEMPLATE -  HR + Time - This request will result in a successful employee in wor
 
 ### Error Requests - 4XX Series Requests
 
-TEMPLATE - QuickHire - http 400 Template Invalid - This Template is not supported by Work Force Know and is a limitation.
+TEMPLATE - QuickHire - http 400 Template Invalid - This Template is not supported by Work Force now and is a limitation.
 
-TEMPLATE - International Employees - http 400 Template Invalid - This Template is not supported by Work Force Know and is a limitation.
+TEMPLATE - International Employees - http 400 Template Invalid - This Template is not supported by Work Force now and is a limitation.
 
 http 400 Applicant Onboard WFN - First Name as blank - This is a mandatory field and if not passed in the request will result in a client error.
 
