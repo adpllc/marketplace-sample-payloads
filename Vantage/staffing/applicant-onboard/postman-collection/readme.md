@@ -1,7 +1,7 @@
 
 
 
-# **Applicant Onboard - Post man collection**
+# **Applicant Onboard - Postman collection**
 
 A Postman collection for Onboarding an employee in ADP Vantage HCM.
 
@@ -39,11 +39,35 @@ Applicant Onboard Vantage - This request will result in a successful employee in
 ### Error Requests - 4XX Series Requests
 
 
-http 400 Applicant Onboard - First Name as blank - This is a mandatory field and if not passed in the request will result in a client error.
+http 400 Applicant Onboard Vantage Without SSN - This is a mandatory field and if not passed in the request will result in a client error.
 
-http 400 Applicant Onboard - Last Name as blank - This is a mandatory field and if not passed in the request will result in a client error.
+http 400 Applicant Onboard Vantage First Name as blank - This is a mandatory field and if not passed in the request will result in a client error.
 
-http 400 Applicant Onboard Expected Start Date as Blank - This is a mandatory field and if not passed in the request will result in a client error.
+http 400 Applicant Onboard Vantage Last Name as blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400  Applicant Onboard Vantage Address Line One empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400  Applicant Onboard Vantage cityName Blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400  Applicant Onboard Vantage countrySubdivisionLevel Blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Applicant Onboard Vantage postalCode is Blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Applicant Onboard Vantage Reports To ID is blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Applicant Onboard Vantage Legal entity ID is blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Applicant Onboard Vantage Department ID is blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Applicant Onboard Vantage Assigned Work Location is blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Applicant Onboard Vantage Home Work Location is blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Applicant Onboard Vantage Full Time or part Time Blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Applicant Onboard Vantage Expected Start Date as Blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+
 
 There is more help available for you, you can read [Make Your First API Call Using Postman](https://developers.adp.com/services/elasticsearch/articles/general/a20954ea9cb1ee5210dab5d9b3a3e5fc56f27953/doc/MakeYourFirstAPICallUsingPostman.pdf) and start your api journey.
 
