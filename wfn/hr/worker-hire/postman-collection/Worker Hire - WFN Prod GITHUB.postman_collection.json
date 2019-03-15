@@ -1,0 +1,750 @@
+{
+	"info": {
+		"_postman_id": "dd5ebadc-9c8d-420f-99f2-3a8037379fa6",
+		"name": "Worker Hire - WFN Prod GITHUB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4e7e4164-8c49-4c37-82e4-ee93091b1bbe",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-prod\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "Paste the Client ID",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Paste the Client Secret",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://api.adp.com/auth/oauth/v2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "GET New Hire Meta Call",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken-prod}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire/meta"
+			},
+			"response": []
+		},
+		{
+			"name": "New Hire",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"DA\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"HR\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - Event reason code is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"94N\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - Government ID Value is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - Government ID codeValue is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - Family Name is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - Given Name is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - Legal Address Line 1 is emoty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - City Name is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire countrySubdivisionLevel1 is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire Postal Code is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - Birth Date is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"type": "text",
+						"value": "practitioner"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - Hire Date is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - payPeriodAmount codeValue is blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"DA\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"HR\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - payrollGroupCode is empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433{{number3}}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"PT\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"B\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 New Hire - SSN Number not in correct format 675-43-3",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "172c5ddf-cdf2-4cbe-8748-8db5f8adb3ae",
+						"exec": [
+							"postman.setGlobalVariable('filenumber', Math.floor(Math.random() * 786));",
+							"",
+							"postman.setGlobalVariable('number3', Math.floor(Math.random() * 786));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-prod}}"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"NEW\"\n          },\n          \"worker\": {\n            \"person\": {\n              \"birthDate\": \"1981-01-01\",\n              \"genderCode\": {\n                \"codeValue\": \"M\"\n              },\n              \"maritalStatusCode\": {\n                \"codeValue\": \"S\"\n              },\n              \"socialInsurancePrograms\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Medicare\"\n                  },\n                  \"coveredIndicator\": true\n                }\n              ],\n              \"tobaccoUserIndicator\": false,\n              \"raceCode\": {\n                \"identificationMethodCode\": {\n                  \"codeValue\": \"SID\"\n                },\n                \"codeValue\": \"1\"\n              },\n              \"governmentIDs\": [\n                {\n                  \"idValue\": \"675433}\",\n                  \"nameCode\": {\n                    \"codeValue\": \"SSN\"\n                  },\n                  \"countryCode\": \"US\"\n                }\n              ],\n              \"legalName\": {\n                \"givenName\": \"test{{number3}}\",\n                \"middleName\": \"two\",\n                \"familyName1\": \"NewHire\",\n                \"preferredSalutations\": [\n                  {\n                    \"salutationCode\": {\n                      \"codeValue\": \"Mr\",\n                      \"shortName\": \"Mr\"\n                    },\n                    \"typeCode\": {\n                      \"codeValue\": \"S\",\n                      \"shortName\": \"Social\"\n                    }\n                  }\n                ]\n              },\n              \"legalAddress\": {\n                \"lineOne\": \"line 1\",\n                \"lineTwo\": \"line 2\",\n                \"lineThree\": \"Address line 3\",\n                \"cityName\": \"New Jersey\",\n                \"countrySubdivisionLevel1\": {\n                  \"codeValue\": \"NJ\"\n                },\n                \"countryCode\": \"US\",\n                \"postalCode\": \"30041\"\n              },\n              \"communication\": {\n                \"landlines\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Phone\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"973\",\n                    \"dialNumber\": \"2345432\"\n                  }\n                ],\n                \"mobiles\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Cell\"\n                    },\n                    \"countryDialing\": \"1\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2398790\",\n                    \"access\": \"\"\n                  }\n                ],\n                \"faxes\": [\n                  {\n                    \"nameCode\": {\n                      \"codeValue\": \"Home Fax\"\n                    },\n                    \"countryDialing\": \"91\",\n                    \"areaDialing\": \"770\",\n                    \"dialNumber\": \"2345432890890790\",\n                    \"access\": \"429\"\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"emailUri\": \"test{{number3}}@newhirepersonal.com\"\n                  }\n                ]\n              }\n            },\n            \"businessCommunication\": {\n              \"landlines\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Phone\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890793\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"mobiles\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Cell\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890794\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"faxes\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Fax\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890795\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"pagers\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Work Pager\"\n                  },\n                  \"countryDialing\": \"91\",\n                  \"areaDialing\": \"770\",\n                  \"dialNumber\": \"2345432890890796\",\n                  \"access\": \"429\"\n                }\n              ],\n              \"emails\": [\n                {\n                  \"emailUri\": \"test{{number3}}@lnewhireprofessional.com\"\n                }\n              ]\n            },\n            \"workAssignment\": {\n              \"primaryIndicator\": true,\n              \"hireDate\": \"2014-01-01\",\n              \"workerTypeCode\": {\n                \"codeValue\": \"F\"\n              },\n              \"workerGroups\": [\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"Benefits Eligibility Class\"\n                  },\n                  \"groupCode\": {\n                    \"codeValue\": \" \"\n                  }\n                }\n              ],\n              \"jobCode\": {\n                \"codeValue\": \"DA\"\n              },\n              \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                  \"codeValue\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                  \"codeValue\": \"E\"\n                }\n              },\n              \"standardHours\": {\n                \"hoursQuantity\": 40\n              },\n              \"fullTimeEquivalenceRatio\": 0,\n              \"homeOrganizationalUnits\": [\n                {\n                  \"typeCode\": {\n                    \"codeValue\": \"Department\"\n                  }\n                },\n                {\n                  \"nameCode\": {\n                    \"codeValue\": \"HR\"\n                  },\n                  \"typeCode\": {\n                    \"codeValue\": \"Business Unit\"\n                  }\n                }\n              ],\n              \"homeWorkLocation\": {\n                \"nameCode\": {\n                  \"codeValue\": \"US\"\n                }\n              },\n              \"payCycleCode\": {\n                \"codeValue\": \"W\"\n              },\n              \"baseRemuneration\": {\n                \"payPeriodRateAmount\": {\n                  \"nameCode\": {\n                    \"codeValue\": \"S\"\n                  },\n                  \"amountValue\": \"12332\"\n                }\n              },\n              \"payrollGroupCode\": \"1W6\",\n              \"payrollFileNumber\": \"23{{filenumber}}\",\n              \"payGradeCode\": {\n                \"codeValue\": \"\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": "https://api.adp.com/events/hr/v1/worker.hire"
+			},
+			"response": []
+		}
+	]
+}
