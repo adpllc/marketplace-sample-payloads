@@ -33,7 +33,7 @@ This call will provide the values that are supported for the request payloads an
 
 ### Happy Path - 200 Requests
 
-TEMPLATE -  Applicant Onboard - This request will result in a successful employee in work in progress using the template applicant onboard.
+Worker Hire- This request will result in a successful employee in work in progress using the template applicant onboard.
 
 
 
@@ -41,10 +41,34 @@ TEMPLATE -  Applicant Onboard - This request will result in a successful employe
 ### Error Requests - 4XX Series Requests
 
 
-http 400 Applicant Onboard WFN - First Name as blank - This is a mandatory field and if not passed in the request will result in a client error.
+http 400 Worker Hire - Event reason code is empty - This is a mandatory field and if not passed in the request will result in a client error.
 
-http 400 Applicant Onboard WFN - Last Name as blank - This is a mandatory field and if not passed in the request will result in a client error.
+http 400 Worker Hire - Government ID Value is empty - This is a mandatory field and if not passed in the request will result in a client error.
 
-http 400 Applicant Onboard WFN Expected Start Date as Blank - This is a mandatory field and if not passed in the request will result in a client error.
+http 400 Worker Hire - Government ID codeValue is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire - Family Name is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire - Given Name is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire - Legal Address Line 1 is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire - City Name is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire countrySubdivisionLevel1 is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+
+http 400 Worker Hire Postal Code is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire - Birth Date is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire - Hire Date is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire - payPeriodAmount codeValue is blank - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire - payrollGroupCode is empty - This is a mandatory field and if not passed in the request will result in a client error.
+
+http 400 Worker Hire - SSN Number not in correct format 675-43-3 - This is a mandatory field and if not passed in the request will result in a client error.
+
 
 There is more help available for you, you can read [Make Your First API Call Using Postman](https://developers.adp.com/services/elasticsearch/articles/general/a20954ea9cb1ee5210dab5d9b3a3e5fc56f27953/doc/MakeYourFirstAPICallUsingPostman.pdf) and start your api journey.
