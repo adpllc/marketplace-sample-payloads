@@ -1,6 +1,6 @@
 
 
-# **Applicant Onboard - Post man collection**
+# **Applicant Onboard - Postman collection**
 
 A Postman collection for Onboarding an employee in ADP Workforce Now.
 
