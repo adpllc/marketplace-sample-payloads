@@ -33,7 +33,7 @@ This call will provide the values that are supported for the request payloads an
 
 ### Happy Path - 200 Requests
 
-Worker Hire- This request will result in a successful employee in work in progress using the template applicant onboard.
+Worker Hire- This request will result in a successful posting of a new hire.
 
 
 
