@@ -1,0 +1,800 @@
+{
+	"info": {
+		"_postman_id": "b03c3d2f-316c-48f0-9c28-f3b624e559b1",
+		"name": "Applicant Onboard Vantage Production GITHUB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - ACCESS TOKEN CALL Vantage",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-vantage-prod\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "Paste the Client ID",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Paste the Client Secret",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://api.adp.com/auth/oauth/v2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "GET Applicant Onboard  META CALL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard/meta"
+			},
+			"response": []
+		},
+		{
+			"name": "POST Applicant Onboard Vantage",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken-vantage-prod}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage  Without SSN",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "478b6891-68a2-4ff8-8986-d37b84bae2f2",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage  First Name Blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "da6ebad8-e891-4b09-a0ac-df72ccab418a",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400  Applicant Onboard Vantage Last name Blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "022c0fa2-42f8-4fd1-bdb5-e6f19bb2b52f",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400  Applicant Onboard Vantage Address Line One empty",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "78dd1bbb-e727-4d3d-9c46-d3db939d21ea",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400  Applicant Onboard Vantage cityName Blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "22780eb7-a53e-4f4b-a61b-63b0ec485c61",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400  Applicant Onboard Vantage countrySubdivisionLevel Blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4c06d0a-f28d-4637-8cb2-78396287360f",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage postalCode is Blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4c06d0a-f28d-4637-8cb2-78396287360f",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage Reports To ID is blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f83baf72-4679-4e30-bacd-3fd2341380c0",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage Legal entity ID is blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage Department ID is blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage Assigned Work Location is blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage Home Work Location is blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"F\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage Full Time or part Time Blank",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896dc04f-e26f-4e8f-9924-7c9a8fb0d0bc",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 7865));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"YYYY/MM/DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-vantage-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"transform\": {\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"NPS\"\n\t\t\t\t},\n\t\t\t\t\"applicant\": {\n\t\t\t\t\t\"applicantID\": {\n\t\t\t\t\t\t\"idValue\": \"NEW\"\n\t\t\t\t\t},\n\t\t\t\t\t\"person\": {\n\t\t\t\t\t\t\"governmentIDs\": [{\n\t\t\t\t\t\t\t\"idValue\": \"546-12-{{number}}\",\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"SSN\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"legalName\": {\n\t\t\t\t\t\t\t\"givenName\": \"Test\",\n\t\t\t\t\t\t\t\"middleName\": \"M\",\n\t\t\t\t\t\t\t\"familyName1\": \"Onboard{{number}}\",\n\t\t\t\t\t\t\t\"preferredSalutations\": [{\n\t\t\t\t\t\t\t\t\"salutationCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Mr\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"generationAffixCode\": {\n\t\t\t\t\t\t\t\t\"longName\": \"III\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"titleAffixCodes\": [{\n\t\t\t\t\t\t\t\t\"affixCode\": {\n\t\t\t\t\t\t\t\t\t\"longName\": \"Honorable\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"legalAddress\": {\n\t\t\t\t\t\t\t\"lineOne\": \"2100 Cypress\",\n\t\t\t\t\t\t\t\"lineTwo\": \"Building 1\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"US\",\n\t\t\t\t\t\t\t\"cityName\": \"Alpharetta\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"GA\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"30005\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel2\": {\n\t\t\t\t\t\t\t\t\"longName\": \"Fulton\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"otherPersonalAddresses\": [{\n\t\t\t\t\t\t\t\"lineOne\": \"\",\n\t\t\t\t\t\t\t\"lineTwo\": \"\",\n\t\t\t\t\t\t\t\"lineThree\": \"\",\n\t\t\t\t\t\t\t\"lineFour\": \"\",\n\t\t\t\t\t\t\t\"lineFive\": \"\",\n\t\t\t\t\t\t\t\"countryCode\": \"\",\n\t\t\t\t\t\t\t\"cityName\": \"\",\n\t\t\t\t\t\t\t\"countrySubdivisionLevel1\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"postalCode\": \"\",\n\t\t\t\t\t\t\t\"sameAsAddressIndicator\": true\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"communication\": {\n\t\t\t\t\t\t\t\"emails\": [{\n\t\t\t\t\t\t\t\t\"emailUri\": \"testOnboard{{number}}@onboardtest.com\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"landlines\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"HOME\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-4444\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"mobiles\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"CEL1\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-5555\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"faxes\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"FAXH\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-222-2000\"\n\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\"pagers\": [{\n\t\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"PGR\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"countryDialing\": \"01\",\n\t\t\t\t\t\t\t\t\"formattedNumber\": \"770-888-2100\",\n\t\t\t\t\t\t\t\t\"extension\": \"2356\"\n\t\t\t\t\t\t\t}]\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"raceCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"9\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"ethnicityCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"genderCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"maritalStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"birthDate\": \"1986-6-25\",\n\t\t\t\t\t\t\"highestEducationLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"G\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"disabledIndicator\": false,\n\t\t\t\t\t\t\"disabilityTypeCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"AU\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryClassificationCodes\": [{\n\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"militaryStatusCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"12\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"militaryDischargeDate\": \"2013-04-19\"\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t\"jobOffer\": {\n\t\t\t\t\t\"offerAssignment\": {\n\t\t\t\t\t\t\"jobTitle\": \"Executive\",\n\t\t\t\t\t\t\"reportsTo\": [\n\n\t\t\t\t\t\t\t{\n\n\t\t\t\t\t\t\t\t\"workerID\": {\n\n\t\t\t\t\t\t\t\t\t\"idValue\": \"10541\",\n\n\t\t\t\t\t\t\t\t\t\"schemeCode\": {\n\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"MANAGER\"\n\n\t\t\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t\t\t}\n\n\n\n\t\t\t\t\t\t\t}\n\n\t\t\t\t\t\t],\n\t\t\t\t\t\t\"legalEntityID\": \"COR\",\n\t\t\t\t\t\t\"assignedOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"10001\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"DEPTID\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"payrollGroupCode\": \"VK1\",\n\t\t\t\t\t\t\"jobCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"1001\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"standardHours\": {\n\t\t\t\t\t\t\t\"payPeriodHoursQuantity\": \"40\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workerTypeCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"occupationalClassifications\": [{\n\t\t\t\t\t\t\t\"classificationCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"W\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"assignmentTermCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"R\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"assignedWorkLocations\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}],\n\t\t\t\t\t\t\"homeWorkLocation\": {\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"ATHS1\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"workLevelCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"homeOrganizationalUnits\": [{\n\t\t\t\t\t\t\t\"nameCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"typeCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"CNUM\"\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}]\n\t\t\t\t\t},\n\t\t\t\t\t\"offerTerms\": {\n\t\t\t\t\t\t\"expectedStartDate\": \"{{timestamp}}}\",\n\t\t\t\t\t\t\"compensation\": {\n\t\t\t\t\t\t\t\"remunerationBasisCode\": {\n\t\t\t\t\t\t\t\t\"codeValue\": \"H\"\n\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"amountValue\": \"156984\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": "https://api.adp.com/events/staffing/v1/applicant.onboard"
+			},
+			"response": []
+		},
+		{
+			"name": "http 400 Applicant Onboard Vantage Expected Start Date is blank",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "orgoid",
+						"value": "G3CP4RSATFTA1GEC",
+						"type": "text"
+					},
+					{
+						"key": "associateoid",
+						"value": "G3DKVW69A4E66DSF",
+						"type": "text"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "realm",
+						"value": "iSI",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "sm_serversessionid",
+						"value": "abcd",
+						"type": "text"
+					},
+					{
+						"key": "sm_transactionid",
+						"value": "12345",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "http://apimpiat.gslb.es.oneadp.com/codelists/hr/v3/worker-management/workers-comp-code-values"
+			},
+			"response": []
+		}
+	]
+}
