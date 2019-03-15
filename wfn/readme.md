@@ -1,4 +1,4 @@
-# ADP API's are categorized into domains for classification 
+# ADP API's are categorized  as
 
 ## Staffing
 ## HR
