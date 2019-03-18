@@ -32,18 +32,18 @@ This call will provide the values that are supported for the request payloads an
 ### Happy Path - 200 Requests
  For example
  
-1.Retrieve the direct deposit
-2.Add a direct deposit for an Associate when there are no existing deposits. 
-3.A user has a list of direct deposits.Update one of the direct deposit with Amount only, effective immediately.
+Retrieve the direct deposit
+Add a direct deposit for an Associate when there are no existing deposits. 
+A user has a list of direct deposits.Update one of the direct deposit with Amount only, effective immediately.
 
 
 
 ### Error Requests - 4XX Series Requests
  For example
 
-1.Add a Direct Deposit with a routing number in the wrong format.
-2.Add a Direct Deposit for an existing Deduction Code for an employee.
-3.Add a Full Net Direct Deposit when there is existing "Full Net" Deposit
+Add a Direct Deposit with a routing number in the wrong format.
+Add a Direct Deposit for an existing Deduction Code for an employee.
+Add a Full Net Direct Deposit when there is existing "Full Net" Deposit
 
 
 There is more help available for you, you can read [Make Your First API Call Using Postman](https://developers.adp.com/services/elasticsearch/articles/general/a20954ea9cb1ee5210dab5d9b3a3e5fc56f27953/doc/MakeYourFirstAPICallUsingPostman.pdf) and start your api journey.
