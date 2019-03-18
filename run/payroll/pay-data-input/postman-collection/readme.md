@@ -1,10 +1,10 @@
 
 
-# **Pay data input modify - Postman collection**
+# **Pay data input - Postman collection**
 
-A Postman collection for creating a batch for an employee in ADP Workforce Now.
+A Postman collection for Adding and Replacing a pay data batch details for an employee in ADP Workforce Now.
 
-Full API documentation can be found at [Payroll Data Input API Guide - ADP Workforce Now](https://developers.adp.com/services/elasticsearch/articles/guides/2290c84affffb44938074db32d803471db31fd6b/doc/PayrollDataInputAPIGuide-ADPWorkforceNow.pdf).
+Full API documentation can be found at [Pay Data Input API Guide-RUN](https://developers.adp.com/services/elasticsearch/articles/guides/ccbe89dcee99365523e0506ad7a09b7462be2d4c/doc/PayDataInputAPIGuide-RUN.pdf).
 
 Postman is a GUI REST client. By importing the collections you can explore our APIs and get a better understanding of the requests and responses.
 
@@ -28,28 +28,48 @@ Our real-time REST APIs give you flexibility and customization to your needs.
 
 This call will provide the values that are supported for the request payloads and will assist you in building the payload for the API.
 
-## /events/payroll/v1/pay-data-input.modify
+## /payroll/v1/pay-data-input
 ### Happy Path - 200 Requests
 For Example
 
-1. Add a pay data batch with different codes for Multiple associates for codedHoursEarningInputs.
-2. Add a pay data batch with Hours for Regular Earning.
-3. Add a pay data batch with Amount for Regular Earning.
-4. Add a pay data batch with Hours for OverTime Earning Code.
-5. Add a pay data batch with Amount for OverTime Earning Code.
-6. Add a pay data batch with Temp Rate and Hours for Regular Earning.
-7. Add a pay data batch with Temp Rate and Hours for OverTime Earning
+Retrieve the pay data batch details
 
 
+## /events/payroll/v1/pay-data-input.add
+
+### Happy Path - 200 Requests
+For Example
+
+1. Add a PayDataInput batch for anAssociate with pay Frequency as "Weekly"
+2. Add a PayData batch with Different Earning codes for the same Associate
+3. Add a pay data Batch with Regular Earning Code passing hours and amount.
+4. Add a pay data Batch with OverTime Earning Code passing hours and Amount
 
 ### Error Requests - 4XX Series Requests
 For Example
 
-1. Add a pay data batch when the payroll cycle Status is not in Entering Payroll Information or Correcting Input.
-2. When an invalid Company code is passed in the request.
-3. When an invalid Associate Organization ID (AOID). This is AOID associated to the file number passed in the request.	
-4. When Invalid payrollFileNumber is passed in the request.
-5. When an invalid pay Number is passed in the request.
+1. Add a pay data batch when there is an existing pay data file
+2. Add a pay data batch when payrollGroupCode code is blank
+3. Add a pay data batch when payrollGroupCode code is not valid
+4. Add a pay data batch when hours for earning is negative value
 
+## /events/payroll/v1/pay-data-input.replace
+
+### Happy Path - 200 Requests
+For Example
+
+1. Replace a PayDataInput batch for anAssociate with pay Frequency as "Weekly"
+2. Replace a PayData batch with Different Earning codes for the same Associate
+3. Replace a pay data Batch with Regular Earning Code passing hours and amount.
+4. Add a pay data Batch with OverTime Earning Code passing hours and Amount.
+5. Replace a Pay data batch when using Department
+
+### Error Requests - 4XX Series Requests
+For Example
+
+1. Replace the pay data batch when invalid item ID is passed
+2. Replace a pay data batch when hours for earning is negative value
+3. Replace a pay data batch when earning amount(rateValue) is negative
+4. Replace a pay data batch when check number is not in following range(0-9)
 
 There is more help available for you, you can read [Make Your First API Call Using Postman](https://developers.adp.com/services/elasticsearch/articles/general/a20954ea9cb1ee5210dab5d9b3a3e5fc56f27953/doc/MakeYourFirstAPICallUsingPostman.pdf) and start your api journey.
