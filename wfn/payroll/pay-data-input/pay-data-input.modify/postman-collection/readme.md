@@ -42,6 +42,7 @@ For Example
 
 
 ### Error Requests - 4XX Series Requests
+For Example
 
 1. Add a pay data batch when the payroll cycle Status is not in Entering Payroll Information or Correcting Input.
 2. When an invalid Company code is passed in the request.
