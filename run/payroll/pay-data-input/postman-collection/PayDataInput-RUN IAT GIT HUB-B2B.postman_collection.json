@@ -1,0 +1,996 @@
+{
+	"info": {
+		"_postman_id": "d50ea4e6-3349-4349-b36b-6b4fb37d8c02",
+		"name": "PayDataInput-RUN IAT GIT HUB-B2B",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pay-data-input.replace",
+			"item": [
+				{
+					"name": "Acces token ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "paste client_id here",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "paste client_secret here",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.replace",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer c28bcb1a-6619-417d-bbd5-58e5049bc20e",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payDataInput\": {\n            \"ItemID\": \"9e138e97-9956-4c59-a3ec-ade224bb8716\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                             \"numberOfHours\": \"10\",\n                            \"rate\": {\n                              \"rateValue\": \"6.00\"\n                              \n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              }\n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.replace",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.replace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.replace meta call",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer c28bcb1a-6619-417d-bbd5-58e5049bc20e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payDataInput\": {\n            \"ItemID\": \"9e138e97-9956-4c59-a3ec-ade224bb8716\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                             \"numberOfHours\": \"10\",\n                            \"rate\": {\n                              \"rateValue\": \"6.00\"\n                              \n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              }\n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.replace/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.replace",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.replace_with hours and amount for Regular earning",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer c28bcb1a-6619-417d-bbd5-58e5049bc20e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payDataInput\": {\n            \"ItemID\": \"c12ae8a3-ac31-4704-b298-e1b1f1b00dc2\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"10\",\n                            \"rate\": {\n                              \"rateValue\": \"15.00\"\n                              \n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              }\n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.replace",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.replace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.replace_with hours and amount for Overtime",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer c28bcb1a-6619-417d-bbd5-58e5049bc20e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payDataInput\": {\n            \"ItemID\": \"eb82ce89-f6fe-42ee-9fd8-dfeef19870e9\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"OVT\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"10\",\n                            \"rate\": {\n                              \"rateValue\": \"15.00\"\n                              \n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              }\n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.replace",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.replace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.replace_using department",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 358c323c-702b-4841-a492-f8de8d6aeff4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payDataInput\": {\n            \"ItemID\": \"dc41dc2f-feb2-4d54-855e-905899d39781\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"10\",\n                            \"rate\": {\n                              \"rateValue\": \"5.00\"\n                              \n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"DEPARTMENT\"\n                          },\n                          \"allocationID\": \"D1\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              }\n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.replace",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.replace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.replace_using diff payrates",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 358c323c-702b-4841-a492-f8de8d6aeff4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payDataInput\": {\n            \"ItemID\": \"98c37c75-aca6-428c-9673-d5fc21761819\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"10\",\n                            \"rate\": {\n                              \"rateValue\": \"5.00\"\n                              \n                            }\n                          },\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"RATE_2\"\n                            },\n                            \"numberOfHours\": \"10\",\n                            \"rate\": {\n                              \"rateValue\": \"6.00\"\n                              \n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              }\n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.replace",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.replace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.replace_using custom rate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 358c323c-702b-4841-a492-f8de8d6aeff4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payDataInput\": {\n            \"ItemID\": \"3573024f-4645-4bb2-bd11-af5182d64f7f\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"10\",\n                            \"rate\": {\n                              \"rateValue\": \"5.00\",\n                              \"baseUnitCode\": {\n                                \"codeValue\": \"hour\"\n                              }\n                              \n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"DEPARTMENT\"\n                          },\n                          \"allocationID\": \"D1\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              }\n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.replace",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.replace"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.replace_different check numbers(separate checks)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 358c323c-702b-4841-a492-f8de8d6aeff4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payDataInput\": {\n            \"ItemID\": \"e4b321aa-408f-486c-9df1-7e17379bd49b\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"10\",\n                            \"rate\": {\n                              \"rateValue\": \"5.00\"\n                              \n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              },\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"BON\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"20\",\n                            \"rate\": {\n                              \"rateValue\": \"6.00\"\n                              \n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"1\"\n              } \n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.replace",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.replace"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pay-data-input.add",
+			"item": [
+				{
+					"name": "Access Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "paste the client_id here",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "paste the client_secret  here",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer cd7fa150-1f83-47b0-87eb-891d702f4d59",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r  \"events\": [\r    {\r      \"data\": {\r        \"eventContext\": {\r          \"payrollGroupCode\": {\r            \"codeValue\": \"B\"\r          }\r        },\r        \"transform\": {\r          \"payDataInput\": {\r            \"payeePayInputs\": [\r              {\r                \"associateOID\": \"G3810QSEY62SJMQ3\",\r                \"payPeriodStartDate\": \"2019-03-08\",\r                \"payPeriodEndDate\": \"2019-03-21\",\r                \"payrollProfilePayInputs\": [\r                  {\r                    \"payInputs\": [\r                      {\r                        \"earningInputs\": [\r                          {\r                            \"earningCode\": {\r                              \"codeValue\": \"REG\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                             \"numberOfHours\": \"10.00\",\r                            \"rate\": {\r                              \"rateValue\": \"5.00\"\r                            }\r                          }\r                        ],\r                        \"payAllocation\": {\r                          \"allocationTypeCode\": {\r                            \"codeValue\": \"\"\r                          },\r                          \"allocationID\": \"\"\r                        }\r                      }\r                    ]\r                  }\r                ],\r                \"payNumber\": \"0\"\r              }\r            ]\r          },\r          \"eventStatusCode\": {\r            \"codeValue\": \"Submitted\"\r          }\r        }\r      }\r    }\r  ]\r}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add meta call",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer cd7fa150-1f83-47b0-87eb-891d702f4d59"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"events\": [\r\n      {\r\n         \"data\": {\r\n            \"eventContext\": {\r\n               \"payrollGroupCode\": {\r\n                  \"codeValue\": \"W\"\r\n               }\r\n            },\r\n            \"transform\": {\r\n               \"payDataInput\": {\r\n                  \"payeePayInputs\": [\r\n                     {\r\n                        \"associateOID\": \"G394F2NX6W82N3AF\",\r\n                        \"payPeriodStartDate\": \"2019-02-12\",\r\n                        \"payPeriodEndDate\": \"2019-02-18\",\r\n                        \"payrollProfilePayInputs\": [\r\n                           {\r\n                              \"payInputs\": [\r\n                                 {\r\n                                    \"earningInputs\": [\r\n                                       {\r\n                                          \"earningCode\": {\r\n                                             \"codeValue\": \"REG\"\r\n                                          },\r\n                                          \"rateCode\": {\r\n                                             \"codeValue\": \"BASE\"\r\n                                          },\r\n                                          \"numberOfHours\": \"0\",\r\n                                          \"rate\": {\r\n                                             \"rateValue\": \"100.00\"\r\n\r\n                                          }\r\n                                          \r\n                                       },\r\n                                       {\r\n                                          \"earningCode\": {\r\n                                             \"codeValue\": \"REG\"\r\n                                          },\r\n                                          \"rateCode\": {\r\n                                             \"codeValue\": \"BASE\"\r\n                                          },\r\n                                          \"numberOfHours\": \"10\",\r\n                                          \"rate\": {\r\n                                             \"rateValue\": \"20.00\"\r\n\r\n                                          }\r\n                                          \r\n                                       }\r\n                                    ],\r\n                                    \"payAllocation\": {\r\n                                       \"allocationTypeCode\": {\r\n                                          \"codeValue\": \"1\"\r\n                                       },\r\n                                       \"allocationID\": \"\"\r\n                                    }\r\n                                 }\r\n                              ]\r\n                           }\r\n                        ],\r\n                        \"payNumber\": \"0\"\r\n                     },\r\n                     \r\n                           {\r\n                        \"associateOID\": \"G394F2NX6W82E6JJ\",\r\n                        \"payPeriodStartDate\": \"2019-02-12\",\r\n                        \"payPeriodEndDate\": \"2019-02-18\",\r\n                        \"payrollProfilePayInputs\": [\r\n                           {\r\n                              \"payInputs\": [\r\n                                 {\r\n                                    \"earningInputs\": [\r\n                                       {\r\n                                          \"earningCode\": {\r\n                                             \"codeValue\": \"REG\"\r\n                                          },\r\n                                          \"rateCode\": {\r\n                                             \"codeValue\": \"BASE\"\r\n                                          },\r\n                                          \"numberOfHours\": \"40.00\",\r\n                                          \"rate\": {\r\n                                             \"rateValue\": \"1.00\",\r\n                                             \"baseUnitCode\": {\r\n                                \"codeValue\": \"hour\"\r\n                              }\r\n\r\n                                          }\r\n                                          \r\n                                       }\r\n                                    ],\r\n                                    \"payAllocation\": {\r\n                                       \"allocationTypeCode\": {\r\n                                          \"codeValue\": \"1\"\r\n                                       },\r\n                                       \"allocationID\": \"\"\r\n                                    }\r\n                                 }\r\n                              ]\r\n                           }\r\n                        ],\r\n                        \"payNumber\": \"1\"\r\n                     }\r\n                     \r\n                  ]\r\n               },\r\n               \"eventStatusCode\": {\r\n                  \"codeValue\": \"Submitted\"\r\n               }\r\n            }\r\n         }\r\n      }\r\n   ]\r\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add_single Associate_Biweekly payfrequency",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 9819552b-3f0e-4d04-a80c-72f59d7d839e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r  \"events\": [\r    {\r      \"data\": {\r        \"eventContext\": {\r          \"payrollGroupCode\": {\r            \"codeValue\": \"B\"\r          }\r        },\r        \"transform\": {\r          \"payDataInput\": {\r            \"payeePayInputs\": [\r              {\r                \"associateOID\": \"G3JET4WV5PS21130\",\r                \"payPeriodStartDate\": \"2019-03-20\",\r                \"payPeriodEndDate\": \"2019-04-02\",\r                \"payrollProfilePayInputs\": [\r                  {\r                    \"payInputs\": [\r                      {\r                        \"earningInputs\": [\r                          {\r                            \"earningCode\": {\r                              \"codeValue\": \"VAC\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                             \"numberOfHours\": \"10.00\",\r                            \"rate\": {\r                              \"rateValue\": \"5.00\"\r                            }\r                          }\r                        ],\r                        \"payAllocation\": {\r                          \"allocationTypeCode\": {\r                            \"codeValue\": \"\"\r                          },\r                          \"allocationID\": \"\"\r                        }\r                      }\r                    ]\r                  }\r                ],\r                \"payNumber\": \"0\"\r              }\r            ]\r          },\r          \"eventStatusCode\": {\r            \"codeValue\": \"Submitted\"\r          }\r        }\r      }\r    }\r  ]\r}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add_single Associate_hours and amount for regular earning code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 33138f3f-5747-4fe5-af0d-5799b26c5f80"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r  \"events\": [\r    {\r      \"data\": {\r        \"eventContext\": {\r          \"payrollGroupCode\": {\r            \"codeValue\": \"B\"\r          }\r        },\r        \"transform\": {\r          \"payDataInput\": {\r            \"payeePayInputs\": [\r              {\r                \"associateOID\": \"G3810QSEY62SJMQ3\",\r                \"payPeriodStartDate\": \"2019-03-08\",\r                \"payPeriodEndDate\": \"2019-03-21\",\r                \"payrollProfilePayInputs\": [\r                  {\r                    \"payInputs\": [\r                      {\r                        \"earningInputs\": [\r                          {\r                            \"earningCode\": {\r                              \"codeValue\": \"REG\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                             \"numberOfHours\": \"10.00\",\r                            \"rate\": {\r                              \"rateValue\": \"5.00\"\r                            }\r                          }\r                        ],\r                        \"payAllocation\": {\r                          \"allocationTypeCode\": {\r                            \"codeValue\": \"\"\r                          },\r                          \"allocationID\": \"\"\r                        }\r                      }\r                    ]\r                  }\r                ],\r                \"payNumber\": \"0\"\r              }\r            ]\r          },\r          \"eventStatusCode\": {\r            \"codeValue\": \"Submitted\"\r          }\r        }\r      }\r    }\r  ]\r}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add_single Associate_hours and amount for OverTime Earning code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 33138f3f-5747-4fe5-af0d-5799b26c5f80"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r  \"events\": [\r    {\r      \"data\": {\r        \"eventContext\": {\r          \"payrollGroupCode\": {\r            \"codeValue\": \"B\"\r          }\r        },\r        \"transform\": {\r          \"payDataInput\": {\r            \"payeePayInputs\": [\r              {\r                \"associateOID\": \"G3810QSEY62SJMQ3\",\r                \"payPeriodStartDate\": \"2019-03-08\",\r                \"payPeriodEndDate\": \"2019-03-21\",\r                \"payrollProfilePayInputs\": [\r                  {\r                    \"payInputs\": [\r                      {\r                        \"earningInputs\": [\r                          {\r                            \"earningCode\": {\r                              \"codeValue\": \"OVT\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                             \"numberOfHours\": \"10.00\",\r                            \"rate\": {\r                              \"rateValue\": \"5.00\"\r                            }\r                          }\r                        ],\r                        \"payAllocation\": {\r                          \"allocationTypeCode\": {\r                            \"codeValue\": \"\"\r                          },\r                          \"allocationID\": \"\"\r                        }\r                      }\r                    ]\r                  }\r                ],\r                \"payNumber\": \"0\"\r              }\r            ]\r          },\r          \"eventStatusCode\": {\r            \"codeValue\": \"Submitted\"\r          }\r        }\r      }\r    }\r  ]\r}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add_Multile associate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 75fa2203-624d-4c5a-853a-abba0eb6a727"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payrollGroupCode\": {\n            \"codeValue\": \"B\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"10.00\",\n                            \"rate\": {\n                              \"rateValue\": \"5.00\"\n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              },\n              {\n                \"associateOID\": \"G3810QSEY62SGKEP\",\n                \"payPeriodStartDate\": \"2019-03-06\",\n                \"payPeriodEndDate\": \"2019-03-19\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"10.00\",\n                            \"rate\": {\n                              \"rateValue\": \"5.00\"\n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n          }\n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add_single Associate_Department",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer de0f555b-5c6a-45af-af28-ffba06ec97d1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r  \"events\": [\r    {\r      \"data\": {\r        \"eventContext\": {\r          \"payrollGroupCode\": {\r            \"codeValue\": \"B\"\r          }\r        },\r        \"transform\": {\r          \"payDataInput\": {\r            \"payeePayInputs\": [\r              {\r                \"associateOID\": \"G3810QSEY62SWB64\",\r                \"payPeriodStartDate\": \"2019-03-06\",\r                \"payPeriodEndDate\": \"2019-03-19\",\r                \"payrollProfilePayInputs\": [\r                  {\r                    \"payInputs\": [\r                      {\r                        \"earningInputs\": [\r                          {\r                            \"earningCode\": {\r                              \"codeValue\": \"REG\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                            \"numberOfHours\": \"10.00\",\r                            \"rate\": {\r                              \"rateValue\": \"6.00\"\r                              \r                            }\r                          }\r                        ],\r                        \"payAllocation\": {\r                          \"allocationTypeCode\": {\r                            \"codeValue\": \"DEPARTMENT\"\r                          },\r                          \"allocationID\": \"D1\"\r                        }\r                      }\r                    ]\r                  }\r                ],\r                \"payNumber\": \"0\"\r              }\r            ]\r          },\r          \"eventStatusCode\": {\r            \"codeValue\": \"Submitted\"\r          }\r        }\r      }\r    }\r  ]\r}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add_single Associate_Custom rate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer c04ddf5c-e634-491b-b2d5-8b5a7bfe03ae"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r  \"events\": [\r    {\r      \"data\": {\r        \"eventContext\": {\r          \"payrollGroupCode\": {\r            \"codeValue\": \"B\"\r          }\r        },\r        \"transform\": {\r          \"payDataInput\": {\r            \"payeePayInputs\": [\r              {\r                \"associateOID\": \"G3810QSEY62SWB64\",\r                \"payPeriodStartDate\": \"2019-03-06\",\r                \"payPeriodEndDate\": \"2019-03-19\",\r                \"payrollProfilePayInputs\": [\r                  {\r                    \"payInputs\": [\r                      {\r                        \"earningInputs\": [\r                          {\r                            \"earningCode\": {\r                              \"codeValue\": \"REG\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                            \"numberOfHours\": \"10.00\",\r                            \"rate\": {\r                              \"rateValue\": \"6.00\",\r                              \"baseUnitCode\": {\r                                \"codeValue\": \"hour\"\r                              }\r                            }\r                          }\r                        ],\r                        \"payAllocation\": {\r                          \"allocationTypeCode\": {\r                            \"codeValue\": \"DEPARTMENT\"\r                          },\r                          \"allocationID\": \"D1\"\r                        }\r                      }\r                    ]\r                  }\r                ],\r                \"payNumber\": \"0\"\r              }\r            ]\r          },\r          \"eventStatusCode\": {\r            \"codeValue\": \"Submitted\"\r          }\r        }\r      }\r    }\r  ]\r}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add_single Associate_with different check number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 9819552b-3f0e-4d04-a80c-72f59d7d839e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payrollGroupCode\": {\n            \"codeValue\": \"B\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-20\",\n                \"payPeriodEndDate\": \"2019-04-02\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"REG\"\n                            },\n                            \"rateCode\": {\n                              \"codeValue\": \"BASE\"\n                            },\n                            \"numberOfHours\": \"40.00\",\n                            \"rate\": {\n                              \"rateValue\": \"100.00\"\n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"0\"\n              },\n              {\n                \"associateOID\": \"G3810QSEY62SWB64\",\n                \"payPeriodStartDate\": \"2019-03-20\",\n                \"payPeriodEndDate\": \"2019-04-02\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payInputs\": [\n                      {\n                        \"earningInputs\": [\n                          {\n                            \"earningCode\": {\n                              \"codeValue\": \"BON\"\n                            },\n                            \"rate\": {\n                              \"rateValue\": \"100.00\"\n                            }\n                          }\n                        ],\n                        \"payAllocation\": {\n                          \"allocationTypeCode\": {\n                            \"codeValue\": \"\"\n                          },\n                          \"allocationID\": \"\"\n                        }\n                      }\n                    ]\n                  }\n                ],\n                \"payNumber\": \"1\"\n              }\n            ]\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"Submitted\"\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add_single Associate_with different pay rates",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer de0f555b-5c6a-45af-af28-ffba06ec97d1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r   \"events\": [\r      {\r         \"data\": {\r            \"eventContext\": {\r               \"payrollGroupCode\": {\r                  \"codeValue\": \"B\"\r               }\r            },\r            \"transform\": {\r               \"payDataInput\": {\r                  \"payeePayInputs\": [\r                 \r                           {\r                        \"associateOID\": \"G3810QSEY62SWB64\",\r                        \"payPeriodStartDate\": \"2019-03-06\",\r                        \"payPeriodEndDate\": \"2019-03-19\",\r                        \"payrollProfilePayInputs\": [\r                           {\r                              \"payInputs\": [\r                                 {\r                                    \"earningInputs\": [\r                                       {\r                                          \"earningCode\": {\r                                             \"codeValue\": \"REG\"\r                                          },\r                                          \"rateCode\": {\r                                             \"codeValue\": \"BASE\"\r                                          },\r                                          \"numberOfHours\": \"10.00\",\r                                          \"rate\": {\r                                             \"rateValue\": \"5\"\r                                          \r \r                                          }\r                                         \r                                       },\r                                       {\r                                          \"earningCode\": {\r                                             \"codeValue\": \"REG\"\r                                          },\r                                          \"rateCode\": {\r                                             \"codeValue\": \"RATE_2\"\r                                          },\r                                          \"numberOfHours\": \"15.00\",\r                                          \"rate\": {\r                                             \"rateValue\": \"6\"\r                                          \r \r                                          }\r                                       }   \r                                       \r                                    ],\r                                    \"payAllocation\": {\r                                       \"allocationTypeCode\": {\r                                          \"codeValue\": \"\"\r                                       },\r                                       \"allocationID\": \"\"\r                                    }\r                                 }\r                              ]\r                           }\r                        ],\r                        \"payNumber\": \"0\"\r                     }\r                    \r                  ]\r               },\r               \"eventStatusCode\": {\r                  \"codeValue\": \"Submitted\"\r               }\r            }\r         }\r      }\r   ]\r}\r "
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-data-input.add_single Associate_Different Earning codes for the same Associate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer e4922222-c6c3-4a43-85a8-da89a8f2fe43"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r  \"events\": [\r    {\r      \"data\": {\r        \"eventContext\": {\r          \"payrollGroupCode\": {\r            \"codeValue\": \"B\"\r          }\r        },\r        \"transform\": {\r          \"payDataInput\": {\r            \"payeePayInputs\": [\r              {\r                \"associateOID\": \"G3810QSEY62SWB64\",\r                \"payPeriodStartDate\": \"2019-03-06\",\r                \"payPeriodEndDate\": \"2019-03-19\",\r                \"payrollProfilePayInputs\": [\r                  {\r                    \"payInputs\": [\r                      {\r                        \"earningInputs\": [\r                          {\r                            \"earningCode\": {\r                              \"codeValue\": \"REG\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                            \"numberOfHours\": \"40.00\",\r                            \"rate\": {\r                              \"rateValue\": \"20.00\"\r                            }\r                          },\r                          {\r                            \"earningCode\": {\r                              \"codeValue\": \"OVT\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                            \"numberOfHours\": \"10.00\"\r                            \r                          },\r                          {\r                            \"earningCode\": {\r                              \"codeValue\": \"VAC\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                            \"numberOfHours\": \"30.00\"\r                            \r                      },\r                      {\r                        \r                            \"earningCode\": {\r                              \"codeValue\": \"OTH\"\r                            },\r                            \"rateCode\": {\r                              \"codeValue\": \"BASE\"\r                            },\r                             \"rate\": {\r                              \"rateValue\": \"10.00\"\r                            }\r                            \r                      \r                      }\r                          \r                        ],\r                        \"payAllocation\": {\r                          \"allocationTypeCode\": {\r                            \"codeValue\": \"\"\r                          },\r                          \"allocationID\": \"\"\r                        }\r                      }\r                    ]\r                  }\r                ],\r                \"payNumber\": \"0\"\r              }\r            ]\r          },\r          \"eventStatusCode\": {\r            \"codeValue\": \"Submitted\"\r          }\r        }\r      }\r    }\r  ]\r}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"pay-data-input.add"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pay-data-input_retrieve the pay data batch details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 55db9457-e386-4c1e-a860-b24bd287be38"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/payroll/v1/pay-data-input",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"pay-data-input"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Workers API",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 33138f3f-5747-4fe5-af0d-5799b26c5f80"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Proxy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "orgoid",
+						"value": "G3P3QYJJXG795X08",
+						"type": "text"
+					},
+					{
+						"key": "associateoid",
+						"value": "G597D9GGAP80GR2E",
+						"type": "text"
+					},
+					{
+						"key": "roleCode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "realm",
+						"value": "iSI",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "sm_serversessionid",
+						"value": "abcd",
+						"type": "text"
+					},
+					{
+						"key": "sm_transactionid",
+						"value": "123456",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://mkplproxy-iat.gslb.es.oneadp.com/hr/v2/workers",
+					"protocol": "http",
+					"host": [
+						"mkplproxy-iat",
+						"gslb",
+						"es",
+						"oneadp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
