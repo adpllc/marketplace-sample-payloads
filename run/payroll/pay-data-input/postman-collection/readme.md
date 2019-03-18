@@ -28,14 +28,14 @@ Our real-time REST APIs give you flexibility and customization to your needs.
 
 This call will provide the values that are supported for the request payloads and will assist you in building the payload for the API.
 
-## /payroll/v1/pay-data-input
+## GET /payroll/v1/pay-data-input
 ### Happy Path - 200 Requests
 For Example
 
 Retrieve the pay data batch details
 
 
-## /events/payroll/v1/pay-data-input.add
+## POST /events/payroll/v1/pay-data-input.add
 
 ### Happy Path - 200 Requests
 For Example
@@ -53,7 +53,7 @@ For Example
 3. Add a pay data batch when payrollGroupCode code is not valid
 4. Add a pay data batch when hours for earning is negative value
 
-## /events/payroll/v1/pay-data-input.replace
+## POST /events/payroll/v1/pay-data-input.replace
 
 ### Happy Path - 200 Requests
 For Example
