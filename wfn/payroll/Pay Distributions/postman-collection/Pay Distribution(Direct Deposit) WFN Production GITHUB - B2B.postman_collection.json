@@ -1,0 +1,622 @@
+{
+	"info": {
+		"_postman_id": "016e8487-cc2e-4ac5-a0da-8463e833929e",
+		"name": "Pay Distribution(Direct Deposit) WFN Production GITHUB - B2B",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pay-distribution.change",
+			"item": [
+				{
+					"name": "Access token call",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "4f1ef067-5cd9-4aa5-a282-0c0e2f1811c7",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "2875bafd-da16-4694-92bf-702afb3a3cbf",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change/meta call",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 80992920-be90-4d60-bc52-51adf8962f96"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED759H96\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"1045_4\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2019-03-01\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n            \t\n              {\n              \n                 \"distributionAmount\": {\n                  \"amountValue\":\"\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"X\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                  \n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change/meta",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Add DD with Effective Date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 87dd33d3-b0ba-42cc-ada9-6c9a0e0ea283"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED759H96\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"1045_4\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2019-04-01\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                \"distributionPercentage\": \"50\",\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"Z\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Update DD",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 8d0a0492-e1ff-459a-b90c-2d957b6cd480"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED759H96\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"1045_4\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2019-03-14\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n               \"itemID\": \"2616797078_1\",\n                \"distributionPercentage\": \"30\",\n               \n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"X\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                  \n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Update DD with Amount to deposit as Percent Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 8d0a0492-e1ff-459a-b90c-2d957b6cd480"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED759H96\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"1045_4\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2019-03-14\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n               \"itemID\": \"2616797078_1\",\n                \"distributionPercentage\": \"30\",\n               \n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"X\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                  \n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Update DD with Amount to deposit as Partial Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 6b7d0cef-bfd6-4152-a8e0-13d1374827d5"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED759H96\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"1045_4\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2019-03-14\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \"itemID\": \"2616797078_1\",\n                 \"distributionAmount\": {\n                  \"amountValue\":\"200\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"X\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                  \n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Add DD with Amount to deposit as Percent Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 87dd33d3-b0ba-42cc-ada9-6c9a0e0ea283"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED759H96\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"1045_4\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2019-03-14\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                \"distributionPercentage\": \"50\",\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"Z\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Add DD with Amount to deposit as Pertial Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 87dd33d3-b0ba-42cc-ada9-6c9a0e0ea283"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED759H96\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"1045_4\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2019-03-14\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                \"distributionAmount\": {\n                  \"amountValue\":\"300\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"W\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Add DD with Amount to deposit as Full Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 87dd33d3-b0ba-42cc-ada9-6c9a0e0ea283"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED759H96\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"1045_4\"\n          }\n        },\n        \"transform\": {\n          \"payDistribution\": {\n            \"effectiveDateTime\": \"2019-02-06\",\n            \"distributionInstructions\": [\n              {\n                \"prenoteBypassIndicator\": true,\n                \"remainingBalanceIndicator\": true,\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"031207607\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"4172678660116\",\n                    \"typeCode\": {\n                      \"codeValue\": \"X\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Add DD with Prenote as No-Prenote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 87dd33d3-b0ba-42cc-ada9-6c9a0e0ea283"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"events\":[\n      {\n         \"data\":{\n            \"eventContext\":{\n               \"worker\":{\n                  \"associateOID\":\"G30K404TED759H96\"\n               },\n               \"payDistribution\":{\n                  \"itemID\":\"1045_4\"\n               }\n            },\n            \"transform\":{\n               \"payDistribution\":{\n                 \"effectiveDateTime\":\"2019-03-14\",\n                 \n                 \"distributionInstructions\": [\n                  {\n                  \"prenoteBypassIndicator\":true,\n                  \"remainingBalanceIndicator\":true,\n                     \"depositAccount\": {\n                         \"financialParty\": {\n                             \"routingTransitID\": {\n                                 \"idValue\": \"031207607\"\n                             }\n                         },\n                         \"financialAccount\": {\n                             \"accountNumber\": \"4172678660116\",\n                             \"typeCode\": {\n                                 \"codeValue\": \"Y\"\n                            }\n                         }\n                     }\n                  }\n           ]\n               }\n            }\n         }\n      }\n   ]\n}"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Add DD with Prenote as Company Default",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 87dd33d3-b0ba-42cc-ada9-6c9a0e0ea283"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"events\":[\n      {\n         \"data\":{\n            \"eventContext\":{\n               \"worker\":{\n                  \"associateOID\":\"G30K404TED759H96\"\n               },\n               \"payDistribution\":{\n                  \"itemID\":\"1045_4\"\n               }\n            },\n            \"transform\":{\n               \"payDistribution\":{\n                 \"effectiveDateTime\":\"2019-03-14\",\n                 \n                 \"distributionInstructions\": [\n                  {\n                  \"prenoteBypassIndicator\":false,\n                  \"remainingBalanceIndicator\":true,\n                     \"depositAccount\": {\n                         \"financialParty\": {\n                             \"routingTransitID\": {\n                                 \"idValue\": \"031207607\"\n                             }\n                         },\n                         \"financialAccount\": {\n                             \"accountNumber\": \"4172678660116\",\n                             \"typeCode\": {\n                                 \"codeValue\": \"Y\"\n                            }\n                         }\n                     }\n                  }\n           ]\n               }\n            }\n         }\n      }\n   ]\n}"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pay-distribution.change-Add DD with Multiple Deposit Codes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 87dd33d3-b0ba-42cc-ada9-6c9a0e0ea283"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED759H96\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"1045_4\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2019-03-14\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                \"distributionAmount\": {\n                  \"amountValue\":\"300\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"X\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              },\n              {\n                \n                \"distributionAmount\": {\n                  \"amountValue\":\"500\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"Y\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "worker.pay-distribution.change_Remove deposit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 86b23186-00ed-479c-a4f9-d4b8cf3f6275"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"G30K404TED75E5GM\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"211_4\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2019-01-18\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                \"distributionPercentage\": \"6\",\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"W\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              },\n              {\n                \n                \"distributionPercentage\": \"6\",\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"Y\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/payroll/v1/worker.pay-distribution.change",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Workers API",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer dcdb0170-2f6f-407c-9568-81604b16ae38"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.adp.com/hr/v2/workers?$top=1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					],
+					"query": [
+						{
+							"key": "$top",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay distribution AOID_Retrieve the Direct Deposits",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 8d0a0492-e1ff-459a-b90c-2d957b6cd480"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.adp.com/payroll/v2/workers/G30K404TED759H96/pay-distributions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"workers",
+						"G30K404TED759H96",
+						"pay-distributions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay distribution AOID_Retrieve the Direct Deposits_Unmasking",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7c4faf23-f310-43dc-891c-1416b3c278a0"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;masked=false"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.adp.com/payroll/v2/workers/G30K404TED759H96/pay-distributions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"workers",
+						"G30K404TED759H96",
+						"pay-distributions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
