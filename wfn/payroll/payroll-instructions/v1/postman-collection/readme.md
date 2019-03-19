@@ -7,6 +7,8 @@ A Postman collection for Onboarding an employee in ADP Workforce Now.
 
 Postman is a GUI REST client. By importing the collections you can explore our APIs and get a better understanding of the requests and responses.
 
+Full API documentation can be found at [General Deduction WFN Guide](https://developers.adp.com/services/elasticsearch/articles/guides/e95cea0a2b2dee1a1872352ccdb5774c943b29a4/doc/DeductionInstructionAPIGuide-ADPWorkforceNow.pdf).
+
 ## Getting Started
 
 To get started with the Postman collections you will need to download the Postman tool from getpostman.com/postman.
