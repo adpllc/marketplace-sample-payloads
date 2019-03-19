@@ -1,0 +1,1525 @@
+{
+	"info": {
+		"_postman_id": "e9eb006a-8c47-4d7b-95a2-95ec18601dc3",
+		"name": "Deductions RUN PROD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "400 GENERAL DEDUCTIONS CHANGE Empty AOID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "GENERAL DEDUCTIONS CHANGE-PercentageAmount",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS START Empty Deduction Code",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "404 GENERAL DEDUCTIONS START Invalid AOID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADV\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"12234234\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS STOP Invalid Empty AOID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+			},
+			"response": []
+		},
+		{
+			"name": "META CALL GENERAL DEDUCTIONS CHANGE",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change/meta"
+			},
+			"response": []
+		},
+		{
+			"name": "META CALL GENERAL DEDUCTIONS STOP",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop/meta"
+			},
+			"response": []
+		},
+		{
+			"name": "GENERAL DEDUCTIONS START-PercentageAmount",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"unitCode\": {\n                                    \"codeValue\": \"Percent\"\n                                }\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS STOP Invalid Deduction Code",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADAV\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS CHANGE Invalid Rate Amount",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"az12\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "worker API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb22f9c2-4a8c-47de-88d9-d5f16047ea32",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let itemID = jsonData.payrollInstructions[1].generalDeductionInstructions[0].itemID",
+							"console.log (itemID)",
+							"pm.globals.set(\"itemID\", itemID);",
+							"",
+							"let deductionCode = jsonData.payrollInstructions[1].generalDeductionInstructions[0].deductionCode.codeValue",
+							"console.log (deductionCode)",
+							"pm.globals.set(\"deductionCode\", deductionCode);",
+							"",
+							"",
+							"let payrollFileNumber = jsonData.payrollInstructions[1].payrollFileNumber",
+							"console.log (payrollFileNumber)",
+							"pm.globals.set(\"payrollFileNumber\", payrollFileNumber);",
+							"",
+							"",
+							"let payrollAgreementID = jsonData.payrollInstructions[1].payrollAgreementID",
+							"console.log (payrollAgreementID)",
+							"pm.globals.set(\"payrollAgreementID\", payrollAgreementID);",
+							"",
+							"let payrollGroupCode = jsonData.payrollInstructions[1].payrollGroupCode.codeValue",
+							"console.log (payrollGroupCode)",
+							"pm.globals.set(\"payrollGroupCode\", payrollGroupCode);",
+							"",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "76e51e4f-accd-45a7-b97b-86de4991a802",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/hr/v2/workers"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS CHANGE Invalid Deduction Code",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADAV\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "404 GENERAL DEDUCTIONS START Deduction Code Not setup at company level",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"UNION\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS STOP Invalid Empty Deduction Code",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS START-Invalid Rate Amount",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"adg1\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "GENERAL DEDUCTIONS STOP-PercentageAmount",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n            },\n            \"actor\": {\n                \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+			},
+			"response": []
+		},
+		{
+			"name": "500 GENERAL DEDUCTIONS STOP Invalid Empty Request Payload",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+			},
+			"response": []
+		},
+		{
+			"name": "500 GENERAL DEDUCTIONS CHANGE Empty Request Payload",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "Workers V2 CALL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken-iat}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://iat-api.adp.com/hr/v2/workers/G38VJ7MCTPJX7N6R"
+			},
+			"response": []
+		},
+		{
+			"name": "404 GENERAL DEDUCTIONS STOP Invalid AOID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"21235234\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS START Invalid CurrencyCode",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"EUR\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS CHANGE Invalid CurrencyCode",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"EUR\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "500 GENERAL DEDUCTIONS START Empty Request Payload",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS START Invalid UnitCode",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISCP\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"unitCode\": {\n                                    \"codeValue\": \"Per\"\n                                }\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "404 GENERAL DEDUCTIONS CHANGE Invalid AOID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"12234234\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "GENERAL DEDUCTIONS STOP-DollarAmount",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+			},
+			"response": []
+		},
+		{
+			"name": "POST ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "2f69077b-969e-4e2e-b075-293877c1b74c",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "8cd891df-e5ee-454d-b8af-7c3345062bfc",
+							"type": "text"
+						}
+					]
+				},
+				"url": "https://api.adp.com/auth/oauth/v2/token"
+			},
+			"response": []
+		},
+		{
+			"name": "META CALL GENERAL DEDUCTIONS START",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start/meta"
+			},
+			"response": []
+		},
+		{
+			"name": "PAYROLL INSTRUCTIONS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb22f9c2-4a8c-47de-88d9-d5f16047ea32",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "76e51e4f-accd-45a7-b97b-86de4991a802",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "https://api.adp.com/payroll/v1/workers/G3V1NEC2XSVMQDB6/payroll-instructions/general-deduction"
+			},
+			"response": []
+		},
+		{
+			"name": "404 GENERAL DEDUCTIONS CHANGE Deduction code not setup as company Level",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"UNION\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS START Empty AOID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "GENERAL DEDUCTIONS CHANGE-DollarAmount",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS START Invalid Deduction Code",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADVA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS CHANGE-Invalid Unit Code",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\",\n                                \"unitCode\": {\n                                    \"codeValue\": \"Per\"\n                                }\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		},
+		{
+			"name": "GENERAL DEDUCTIONS START-DollarAmount",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28842509-6168-4de2-9a7f-8effbcbf31d9",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "test123b",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+			},
+			"response": []
+		},
+		{
+			"name": "404 GENERAL DEDUCTIONS STOP Deduction code not setup at company level",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "233b306b-4250-4355-a8f1-4b7833b38a7e",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3512337c-25b7-4afc-be7b-d5e1b9e64b16",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"UNION\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+			},
+			"response": []
+		},
+		{
+			"name": "400 GENERAL DEDUCTIONS CHANGE Empty Deduction Code",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "669578d8-75e2-4334-af14-95f88748f8a0",
+						"exec": [
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp2\", moment().format(\"YYYY-MM-DD\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+				},
+				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+			},
+			"response": []
+		}
+	]
+}
