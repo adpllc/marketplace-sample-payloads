@@ -32,28 +32,6 @@ Our real-time REST APIs give you flexibility and customization to your needs.
 This call will provide the values that are supported for the request payloads and will assist you in building the payload for the API.
 
 
-### Happy Path - 200 Requests
-
-TEMPLATE -  Applicant Onboard - This request will result in a successful employee in work in progress using the template applicant onboard.
-
-TEMPLATE -  HR Only - This request will result in a successful employee in work in progress using the template HR Only.
-
-TEMPLATE -  HR + Payroll - This request will result in a successful employee in work in progress using the template HR + Payroll.
-
-TEMPLATE -  HR + Time - This request will result in a successful employee in work in progress using the template HR + Time.
-
-
-### Error Requests - 4XX Series Requests
-
-TEMPLATE - QuickHire - http 400 Template Invalid - This Template is not supported by Work Force now and is a limitation.
-
-TEMPLATE - International Employees - http 400 Template Invalid - This Template is not supported by Work Force now and is a limitation.
-
-http 400 Applicant Onboard WFN - First Name as blank - This is a mandatory field and if not passed in the request will result in a client error.
-
-http 400 Applicant Onboard WFN - Last Name as blank - This is a mandatory field and if not passed in the request will result in a client error.
-
-http 400 Applicant Onboard WFN Expected Start Date as Blank - This is a mandatory field and if not passed in the request will result in a client error.
 
 There is more help available for you, you can read [Make Your First API Call Using Postman](https://developers.adp.com/services/elasticsearch/articles/general/a20954ea9cb1ee5210dab5d9b3a3e5fc56f27953/doc/MakeYourFirstAPICallUsingPostman.pdf) and start your api journey.
 
