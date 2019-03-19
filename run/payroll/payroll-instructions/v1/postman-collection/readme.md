@@ -8,6 +8,8 @@ A Postman collection for Onboarding an employee in ADP Workforce Now.
 
 Postman is a GUI REST client. By importing the collections you can explore our APIs and get a better understanding of the requests and responses.
 
+Full API documentation can be found at [General Deduction RUN Guide](https://developers.adp.com/services/elasticsearch/articles/guides/c25aac4903f6323ab867f141f23968c7f0d3bcd8/doc/DeductionInstructionsAPIGuide-RUN.pdf).
+
 ## Getting Started
 
 To get started with the Postman collections you will need to download the Postman tool from getpostman.com/postman.
@@ -32,6 +34,19 @@ Our real-time REST APIs give you flexibility and customization to your needs.
 
 This call will provide the values that are supported for the request payloads and will assist you in building the payload for the API.
 
+### Happy Path - 200 Requests
+
+Get Payroll instruction - This request will fetch all the active deductions for an worker.
+General Deduction start - This request will add a deduction for an worker.
+General Deduction change - This request will update the effective date or amount of an deduction.
+General Deduction stop - This request will stop the deduction for an worker.
+
+### Error Requests - 400 Series Requests
+
+1. Invalid effective date - In the request payload passing a invalid effective date.
+2. Invalid Item Id - In the request payload passing invalid item id.
+3. Invalid Payroll File Number - In the request payload passing invalid payroll file number.
+4. Invalid Payroll Agreement ID - In the request payload passing invalid agreement ID.
 
 There is more help available for you, you can read [Make Your First API Call Using Postman](https://developers.adp.com/services/elasticsearch/articles/general/a20954ea9cb1ee5210dab5d9b3a3e5fc56f27953/doc/MakeYourFirstAPICallUsingPostman.pdf) and start your api journey.
 
