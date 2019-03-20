@@ -1,6 +1,9 @@
 
 # **Applicant Onboard - ADP Workforce Now**
 
+### A complete API Guide is available at the following link given below:
+#### [Applicant Onboard Vantage Guide](https://developers.adp.com/services/elasticsearch/articles/guides/c4f02b680b11c61b151fa5ead43d2e5d7baefc2a/doc/ApplicantOnboardAPIGuide-ADPVantageHCM.pdf)
+
 #### The requests and responses for each api are categorized into two folders:
 
 1. success
