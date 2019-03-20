@@ -1,8 +1,10 @@
 
 # **Applicant Onboard - ADP Workforce Now**
 
+## ADP Workforce Now® (ADP WFN) allows client practitioners to add new employees using the New Hire Template.  The Applicant Onboard Event Application Programming Interface (API) posts an applicant into ADP WFN using a template as an In-Progress Hire.
+
 ### A complete API Guide is available at the following link given below:
-#### [Applicant Onboard Vantage Guide](https://developers.adp.com/services/elasticsearch/articles/guides/c4f02b680b11c61b151fa5ead43d2e5d7baefc2a/doc/ApplicantOnboardAPIGuide-ADPVantageHCM.pdf)
+#### [Applicant Onboard WFN Guide](https://developers.adp.com/)
 
 #### The requests and responses for each api are categorized into two folders:
 
