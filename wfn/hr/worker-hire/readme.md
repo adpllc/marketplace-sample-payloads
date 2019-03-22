@@ -2,7 +2,7 @@
 
 # **Worker Hire - ADP Workforce Now**
 
-## The Worker Hire Event API posts a new hire into ADP Workforce Now® (ADP WFN).  A success post request will result a new employee record. 
+## The Worker Hire Event API posts a new hire into ADP Workforce Now® (ADP WFN).  A successful post request will result a new employee record. 
 
 ### A complete API Guide is available at the following link given below:
 #### [Worker Hire WFN Guide](https://developers.adp.com/services/elasticsearch/articles/guides/03181eb5019d9a1c40a9631a0f04586184a4bcc2/doc/WorkerHireAPIGuide-ADPWorkforceNow.pdf)
