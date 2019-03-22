@@ -4,25 +4,12 @@
 
 ## The Worker Hire Event API posts a new hire into ADP Workforce Now® (ADP WFN).  A success post request will result a new employee record. 
 
-### A complete API Guide is available at the following link given below:
-#### [Worker Hire WFN Guide](https://developers.adp.com/services/elasticsearch/articles/guides/03181eb5019d9a1c40a9631a0f04586184a4bcc2/doc/WorkerHireAPIGuide-ADPWorkforceNow.pdf)
+# **Workers V2 - ADP Workforce Now**
 
-#### The requests and responses for each api are categorized into two folders:
+## The Workers APIs support the management of workers in an organization. A worker is a person who performs duties and responsibilities for an organization. In that capacity, a worker fills one or more positions via a work assignment. For a given work assignment, a worker is related to the organization as an employee or contractor. The Workers APIs can be used to obtain a list of all workers in an organization and to get information about work assignments. 
 
-1. success
-2. errors
+# **Workers V2 Dempgrahics - ADP Workforce Now**
 
-#### The success folder contains requests and responses which result in http status codes as 200 and 201. These mostly include: 
-
-1. Meta Responses
-2. Codelist responses
-3. All possible success calls for the api.
-
-#### *Note: For the GET calls requests have not been included.*
-
-#### The error folder contains requests and responses which result in http status codes as 400 and 404. These mostly include scenarios where: 
-
-1. Mandatory fields are not sent in the request
-2. Incorrect values are sent for mandatory fields in the request.
+## The Worker Demographics APIs return a list of demographics for each worker in an organization, demographics for a specific worker, and API metadata. 
 
 
