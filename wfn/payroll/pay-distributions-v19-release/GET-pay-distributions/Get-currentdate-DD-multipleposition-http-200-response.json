@@ -1,0 +1,80 @@
+{
+    "payDistributions": [
+        {
+            "itemID": "26849471_194831",
+            "payrollGroupCode": {
+                "codeValue": "938",
+                "shortName": "938"
+            },
+            "payrollFileNumber": "9669"
+        },
+        {
+            "itemID": "37077846_1009",
+            "requestedStartDate": "2019-03-26",
+            "distributionStatusCode": {
+                "codeValue": "A",
+                "shortName": "Active"
+            },
+            "distributionInstructions": [
+                {
+                    "itemID": "169731100248_1",
+                    "bonusOnlyIndicator": true,
+                    "prenote": {
+                        "prenoteOptionCode": {
+                            "codeValue": "D"
+                        },
+                        "prenoteDate": null,
+                        "prenoteDescription": "D - Company Default Date"
+                    },
+                    "instructionStatusCode": {
+                        "codeValue": "A",
+                        "shortName": "Active"
+                    },
+                    "depositAccount": {
+                        "financialParty": {
+                            "routingTransitID": {
+                                "idValue": "823456789"
+                            }
+                        },
+                        "financialAccount": {
+                            "accountNumber": "123456778",
+                            "typeCode": {
+                                "codeValue": "W",
+                                "shortName": "W"
+                            }
+                        }
+                    },
+                    "distributionAmount": {
+                        "amountValue": 300
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "operationID": "worker.payDistribution.change",
+                    "canonicalUri": "/payroll/payrollManagement/payrollInstructionManagement/payDistributionManagement/worker.payDistribution.change",
+                    "actionTypeCode": "callback",
+                    "confirmationRequiredIndicator": true,
+                    "defaultIndicator": false,
+                    "attestation": {
+                        "actionBlockIndicator": true,
+                        "messageTxt": "Please read the statement below, and check the box to indicate that you Agree.  I authorize my Employer, through ADP as its payroll service provider, to deposit in my account (by initiating electronic credit entries) all amounts, (“deposits”) owed to me by my Employer at the financial institution specified above (the “Bank”), and I authorize the Bank to accept such deposits to my account. In the event that my Employer and/or ADP deposit funds into my account to which I am not entitled, I authorize my Employer, either directly or through ADP, to return such funds by initiating appropriate debit entries and adjustments accordingly. I understand that my deposit may not be credited to my account until the end of the day on the applicable pay date. It is my responsibility to: 1) ensure my bank account and deposit information is correct and complete; 2) timely verify that all transactions are accurate; and 3) immediately notify my Employer of any errors.  This authorization will remain in effect until I have cancelled it in writing with my Employer and Bank."
+                    },
+                    "links": [
+                        {
+                            "href": "/events/payroll/v1/worker.pay-distribution.change",
+                            "rel": "/adp/invoke",
+                            "title": "Update Pay Distribution",
+                            "method": "POST"
+                        }
+                    ]
+                }
+            ],
+            "payrollGroupCode": {
+                "codeValue": "938",
+                "shortName": "938"
+            },
+            "payrollFileNumber": "4567"
+        }
+    ]
+}
