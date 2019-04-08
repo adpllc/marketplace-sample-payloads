@@ -1,0 +1,69 @@
+{
+    "confirmMessage": {
+        "confirmMessageID": {
+            "idValue": "AD02E4D0-F73B-664F-BD55-AA2CF788CFFF",
+            "schemeName": "confirmMessageID",
+            "schemeAgencyName": "WFN"
+        },
+        "createDateTime": 1553593218187,
+        "requestReceiptDateTime": 1553593218187,
+        "protocolStatusCode": {
+            "codeValue": "400",
+            "shortName": "400"
+        },
+        "requestStatusCode": {
+            "codeValue": "failed"
+        },
+        "requestMethodCode": {
+            "codeValue": "POST"
+        },
+        "requestLink": {
+            "href": "http://mascsr.iat.oneadp.com/payprofile/metaservices/events/payroll/v1/worker.pay-distribution.change",
+            "rel": "related",
+            "method": "POST"
+        },
+        "processMessages": [],
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "events/payroll/v1/worker.pay-distribution.change",
+                    "schemeName": "resourceMessageID",
+                    "schemeAgencyName": "WFN"
+                },
+                "processMessages": [
+                    {
+                        "processMessageID": {
+                            "idValue": "FullDepositLimitV13",
+                            "schemeName": "processMessageID",
+                            "schemeAgencyName": "WFN"
+                        },
+                        "messageTypeCode": {
+                            "codeValue": "error"
+                        },
+                        "userMessage": {
+                            "messageTxt": "An employee can have only one full deposit and one bonus deposit."
+                        }
+                    },
+                    {
+                        "processMessageID": {
+                            "idValue": "BonusDepositLimitV13",
+                            "schemeName": "processMessageID",
+                            "schemeAgencyName": "WFN"
+                        },
+                        "messageTypeCode": {
+                            "codeValue": "error"
+                        },
+                        "userMessage": {
+                            "messageTxt": "An employee can have only one bonus deposit."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "status": "success",
+    "statusFailure": false,
+    "statusSuccess": true,
+    "requestKeys": [],
+    "skipMetadataEnvelope": true
+}
