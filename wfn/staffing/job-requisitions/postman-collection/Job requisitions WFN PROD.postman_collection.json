@@ -1,0 +1,1220 @@
+{
+	"info": {
+		"_postman_id": "99e25e06-b863-4f66-a566-22c7ad55cf14",
+		"name": "Job requisitions WFN PROD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "0f08a767-a064-4b23-809b-5ac4250eb995",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "f8a62489-822d-46c0-8ae5-8f1527272e18",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17",
+						"type": "text"
+					},
+					{
+						"key": "sm_transactionid",
+						"value": "reques12",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions Manual",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 29111ca8-c160-4624-9c58-6bdcd2cc4ba3",
+						"type": "text"
+					},
+					{
+						"key": "sm_transactionid",
+						"value": "reques12",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with Top and Skip OData Parameters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$top=20&$skip=7",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$top",
+							"value": "20"
+						},
+						{
+							"key": "$skip",
+							"value": "7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with Top and Skip and filter=OPEN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$top=1&$skip=1&$filter=requisitionStatusCode/codeValue eq ON",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$top",
+							"value": "1"
+						},
+						{
+							"key": "$skip",
+							"value": "1"
+						},
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq ON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with top and skip and filter=OPEN and effectiveDate lt 2019-05-15",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$top=1&$skip=1&$filter=requisitionStatusCode/codeValue eq ON&$filter=requisitionStatusCode/effectiveDate lt 2019-05-21",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$top",
+							"value": "1"
+						},
+						{
+							"key": "$skip",
+							"value": "1"
+						},
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq ON"
+						},
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/effectiveDate lt 2019-05-21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=OPEN",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq ON",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq ON"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=IN PROGRESS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq IN",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq IN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=ON HOLD",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq OH",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq OH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=PENDING APPROVAL",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq PA",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq PA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=CLOSED",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq CD",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq CD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=REJECTED",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq RD",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq RD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=OPEN and effectiveDate eq 2019-05-20",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate eq 2019-05-20",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate eq 2019-05-20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=OPEN and effectiveDate gt 2019-05-20",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate gt 2019-04-15",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate gt 2019-04-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=OPEN and effectiveDate ge 2019-05-20",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate ge 2019-04-15",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate ge 2019-04-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=OPEN and effectiveDate lt 2019-05-20",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate lt 2019-04-15",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate lt 2019-04-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=OPEN and effectiveDate le 2019-05-20",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate le 2019-04-15",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionStatusCode/codeValue eq ON AND requisitionStatusCode/effectiveDate le 2019-04-15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=Internal Indicator = true",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 9428bf98-3ced-461e-8656-c6f2562b0e17"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=internalIndicator eq true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "internalIndicator eq true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=External Indicator = true",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=externalIndicator eq true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "externalIndicator eq true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=Internal and External Indicator = true",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=internalIndicator eq true AND externalIndicator eq true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "internalIndicator eq true AND externalIndicator eq true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=Job Code BM",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter= job/jobCode/codeValue eq BM",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": " job/jobCode/codeValue eq BM"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=evergreenIndicator = true",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=evergreenIndicator eq true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "evergreenIndicator eq true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter=evergreenIndicator = false",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=evergreenIndicator eq false",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "evergreenIndicator eq false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter= Single requisitionLocations/itemID eq 31898816_21",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=requisitionLocations/itemID eq 2617605292_1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "requisitionLocations/itemID eq 2617605292_1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with filter= Multiple requisitionLocations/itemID eq 31898816_21",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=(requisitionLocations/itemID eq 2617605292_1 or requisitionLocations/itemID eq 1308049523_5)",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "(requisitionLocations/itemID eq 2617605292_1 or requisitionLocations/itemID eq 1308049523_5)"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL Job requisitions with COMBO filters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$filter=job/jobCode/codeValue eq DA AND requisitionLocations/itemID eq 2617605292_1 AND evergreenIndicator eq false",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "job/jobCode/codeValue eq DA AND requisitionLocations/itemID eq 2617605292_1 AND evergreenIndicator eq false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Single Job requisitions with validItemID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions/2639007568_1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions",
+						"2639007568_1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Single Job requisition with an InvalidItemID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions/2638108923_9",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions",
+						"2638108923_9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "While using Top and Skip Filters if there are no more Requisitions  available in the system to be displayed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v1/job-requisitions?$top=5&$skip=30",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v1",
+						"job-requisitions"
+					],
+					"query": [
+						{
+							"key": "$top",
+							"value": "5"
+						},
+						{
+							"key": "$skip",
+							"value": "30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Questionnaire with validItemID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v3/work-fulfillment/recruiting-questionnaires/2639007568_1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v3",
+						"work-fulfillment",
+						"recruiting-questionnaires",
+						"2639007568_1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Questionnaire with an InvalidItemID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 4a67b4fc-f7ed-469a-9b6e-29957c31011b"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/staffing/v3/work-fulfillment/recruiting-questionnaires/2638108923_9",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v3",
+						"work-fulfillment",
+						"recruiting-questionnaires",
+						"2638108923_9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
