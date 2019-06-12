@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "workerInformationManagement"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.ethnicity.change"
+      },
+      "actor": {
+        "associateOID": "{{aoid}}"
+      },
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "{{aoid}}"
+          }
+        },
+        "transform": {
+        	"effectiveDateTime": "2016-01-27T00:00:00Z",
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+          "worker": {
+            "person": {
+              "ethnicityCode": {
+                "codeValue": "0",
+                "shortName": "Hispanic or Latino"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

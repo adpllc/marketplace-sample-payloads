@@ -1,0 +1,34 @@
+{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "workerInformationManagement"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.worker-rehire-date.change"
+      },
+      "actor": {
+        "associateOID": "{{aoid}}"
+      },
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "{{aoid}}"
+          }
+        },
+        "transform": {
+          "eventStatusCode": {
+            "codeValue": "submit"
+          },
+          "effectiveDateTime": "2014-01-01T00:00:00Z",
+          "worker": {
+            "workerDates": {
+              "rehireDate": "2019-05-29",
+			  "adjustedServiceDate": "2019-05-27"
+            }
+          }
+        }
+      }
+    }
+  ]
+}

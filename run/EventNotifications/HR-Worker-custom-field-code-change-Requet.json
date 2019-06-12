@@ -1,0 +1,37 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "F"
+                    },
+                    "worker": {
+                        "customFieldGroup": {
+              "codeField": {
+                "codeValue": "2345678",
+                "nameCode": {
+                  "shortName": "Clock ID"
+                }
+              }
+            }
+                    }
+                }
+            },
+            "actor": {
+                "associateOID": "{{aoid}}"
+            },
+            "serviceCategoryCode": {
+                "codeValue": "workerInformationManagement"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.custom-field.code.change"
+            }
+        }
+    ]
+}

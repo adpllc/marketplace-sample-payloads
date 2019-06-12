@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "workerInformationManagement"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.work-assignment.home-work-location.change"
+      },
+      "actor": {
+        "associateOID": "{{aoid}}"
+      },
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "{{aoid}}"
+          }
+        },
+        "transform": {
+          "eventStatusCode": {
+            "codeValue": "submit"
+          },
+          "effectiveDateTime": "2014-01-01T00:00:00Z",
+          "worker": {
+            "workAssignment": {
+            	"homeWorkLocation": {
+            		 "nameCode":{
+            		 	"codeValue":"NE",
+            		 	"shortName":"No"
+            		 }
+            	}
+            }
+          }
+        }
+      }
+    }
+  ]
+}
