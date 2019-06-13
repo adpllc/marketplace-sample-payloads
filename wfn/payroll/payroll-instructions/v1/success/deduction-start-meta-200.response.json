@@ -77,7 +77,7 @@
                             },
                             {
                                 "codeValue": "G",
-                                "shortName": "G - Garnisment"
+                                "shortName": "G - GARNISMENT"
                             },
                             {
                                 "codeValue": "H",
@@ -86,12 +86,16 @@
                             {
                                 "valueDescription": "LIFE",
                                 "codeValue": "I",
-                                "shortName": "I - Life Insur"
+                                "shortName": "I - LIFE INSUR"
+                            },
+                            {
+                                "codeValue": "K",
+                                "shortName": "K"
                             },
                             {
                                 "valueDescription": "MISC",
                                 "codeValue": "M",
-                                "shortName": "M - Misc"
+                                "shortName": "M - MISC"
                             },
                             {
                                 "codeValue": "R",
@@ -306,6 +310,61 @@
                             ]
                         }
                     }
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalStartDate": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Start Date",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalLimitAmount": {
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalLimitAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Goal Limit Amount",
+                    "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalID": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Goal ID",
+                    "minLength": 1,
+                    "maxLength": 1,
+                    "pattern": "^[1-9]?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalBalanceAmount": {
+                    "readOnly": true,
+                    "optional": true
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalBalanceAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Goal Balance Amount",
+                    "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalAccruedAmount": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalAccruedAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Goal Accrued Amount",
+                    "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
                 }
             }
         ]
