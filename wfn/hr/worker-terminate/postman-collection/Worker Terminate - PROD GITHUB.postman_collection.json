@@ -1,0 +1,499 @@
+{
+	"info": {
+		"_postman_id": "d95add3e-2fd9-47b2-9e6f-5b56867fbcc7",
+		"name": "Worker Terminate - PROD GITHUB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ed0e2f8a-42ec-4597-be19-93adac8d188b",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-wfn-prod\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "28486c76-dd77-4c33-86b1-ad9849c776ec",
+						"exec": [
+							"var moment = require('moment')",
+							"",
+							"let futuretimestamp = moment().add(360, 'days').format(\"YYYY-MM-DD\")",
+							"",
+							"let currenttimestamp = moment().format(\"YYYY-MM-DD\")",
+							"",
+							"pm.globals.set(\"futuretimestamp\", futuretimestamp)",
+							"",
+							"pm.globals.set(\"currenttimestamp\", currenttimestamp)",
+							"",
+							"console.log (futuretimestamp)",
+							"",
+							"console.log (currenttimestamp)",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Single Position- validPositionID and rehireIndicator True",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken-wfn-prod}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020025\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better growth and oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-06-13\",\r\n                            \"lastWorkedDate\": \"2019-06-13\",\r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"N\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Single Position- validPositionID and rehireIndicator false and verify in UI to rehire the same employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020026\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better growth and oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-05-31\",\r\n                            \"lastWorkedDate\": \"2019-05-31\",\r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": false,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Multiple Positions- Terminate one Position with validPositionID and verify in UI",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020027\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-06-13\",\r\n                            \"lastWorkedDate\": \"2019-06-13\",\r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"N\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Single Position - invalidPositionID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"1938909200\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for Better Oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-05-17\",\r\n                            \"lastWorkedDate\": \"2019-10-07\",\r\n                         \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Single Position - withoutPositionID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for Better Oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-05-17\",\r\n                            \"lastWorkedDate\": \"2019-10-07\",\r\n                       \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Single Position - withoutTerminationDate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020028\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for Better Oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"\",\r\n                            \"lastWorkedDate\": \"2019-10-07\",\r\n                           \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Single Position - withInvalidTerminationDate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020028\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for Better Oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"9999-99-99\",\r\n                            \"lastWorkedDate\": \"2019-10-07\",\r\n                      \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Single Position - withoutReasonCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020028\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-05-30\",\r\n                            \"lastWorkedDate\": \"2019-05-30\",\r\n                          \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Single Position - withTerminationDate less than Joining Date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020028\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-04-17\",\r\n                            \"lastWorkedDate\": \"2019-04-17\",\r\n                        \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Worker Terminate - Single Position - alreadyTerminated",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn-prod}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020027\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-06-13\",\r\n                            \"lastWorkedDate\": \"2019-06-13\",\r\n                       \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.terminate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
