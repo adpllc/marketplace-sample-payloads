@@ -1,0 +1,1125 @@
+{
+	"info": {
+		"_postman_id": "96dc67ad-92eb-48ef-b3eb-55a9ede8be99",
+		"name": "Federal Tax W4 - IAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ESSProxy",
+			"item": [
+				{
+					"name": "ESS proxy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Connection",
+								"value": "keep-alive",
+								"disabled": true
+							},
+							{
+								"key": "Host",
+								"value": "essapi.fit.es.oneadp.com",
+								"disabled": true
+							},
+							{
+								"key": "Postman-Token",
+								"value": "177bfb47-b3fb-4f0b-a31e-1a24a027adb8,9917243f-43a3-4309-9058-5214ec04f2fe",
+								"disabled": true
+							},
+							{
+								"key": "SOR",
+								"value": "SOR"
+							},
+							{
+								"key": "User-Agent",
+								"value": "PostmanRuntime/7.13.0",
+								"disabled": true
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "accept-encoding",
+								"value": "gzip, deflate",
+								"disabled": true
+							},
+							{
+								"key": "associateoid",
+								"value": "G54W43CMG9R99S8W"
+							},
+							{
+								"key": "cache-control",
+								"value": "no-cache,no-cache",
+								"disabled": true
+							},
+							{
+								"key": "content-length",
+								"value": "3212",
+								"disabled": true
+							},
+							{
+								"key": "content-type",
+								"value": "application/json"
+							},
+							{
+								"key": "cookie",
+								"value": "BIGipServerp_fitmobile_sor_eZLM=3283948595.15395.0000; BIGipServerp_fitmobile_apache_sor=189206539.5377.0000; BIGipServerp_fitmobile_sor_adpta=3283948595.15395.0000",
+								"disabled": true
+							},
+							{
+								"key": "orgoid",
+								"value": "G3E82PE9GT1QPMA4"
+							},
+							{
+								"key": "roleCode",
+								"value": "practitioner"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 22,\n                                \"additionalTaxPercentage\": null,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": 5\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"M\",\n                                    \"longName\": \"Married\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\",\n                                        \"shortName\": \"1 - Early Distribution - No Known Exception\",\n                                        \"longName\": \"1 - Early Distribution - No Known Exception\"\n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:2670\",\n                                        \"shortName\": \"2 - Early Distribution - Exception Applies\",\n                                        \"longName\": \"2 - Early Distribution - Exception Applies\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "http://essapi.iat.es.oneadp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "http",
+							"host": [
+								"essapi",
+								"iat",
+								"es",
+								"oneadp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Federal Tax GET",
+			"item": [
+				{
+					"name": "Get Tax details - Single position",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3E82PE9GT1QM4MP/us-tax-profiles",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"us-tax-profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tax details - Invalid associate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/asdadf/us-tax-profiles",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"asdadf",
+								"us-tax-profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tax details - Single position asOfDate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3E82PE9GT1QM4MP/us-tax-profiles?asOfDate=2010-01-01",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"us-tax-profiles"
+							],
+							"query": [
+								{
+									"key": "asOfDate",
+									"value": "2010-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tax details - multiple position (primary position)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3588JKQ33NJG6NX/us-tax-profiles",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3588JKQ33NJG6NX",
+								"us-tax-profiles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tax details - multiple position (primary position) asOfDate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3588JKQ33NJG6NX/us-tax-profiles",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3588JKQ33NJG6NX",
+								"us-tax-profiles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Federal Tax POST",
+			"item": [
+				{
+					"name": "US684702 POST - Married and dollar amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": null,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": 10\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"M\",\n                                    \"longName\": \"Married\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - Married and percentage amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 20,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"M\",\n                                    \"longName\": \"Married\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - single and dollar amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": null,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": 20\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"S\",\n                                    \"longName\": \"Single\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - single and percentage amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": null,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": 20\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"S\",\n                                    \"longName\": \"Single\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - MH and dollar amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": null,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": 10\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"MH\",\n                                    \"longName\": \"Married, but withhold at higher Single rate\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2673\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - MH and percentage amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 15,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"MH\",\n                                    \"longName\": \"Married, but withhold at higher Single rate\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - Invalid payroll company code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"sdf\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 15,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"MH\",\n                                    \"longName\": \"Married, but withhold at higher Single rate\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - Invalid associate ID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"asd\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 15,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"MH\",\n                                    \"longName\": \"Married, but withhold at higher Single rate\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - Invalid payroll file number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"sd3\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 15,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"MH\",\n                                    \"longName\": \"Married, but withhold at higher Single rate\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - Invalid effective date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 15,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"MH\",\n                                    \"longName\": \"Married, but withhold at higher Single rate\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - Invalid tax filling status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 15,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"asdad\",\n                                    \"longName\": \"M\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - Invalid socialSecurityTaxInstruction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 15,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"M\",\n                                    \"longName\": \"Married\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"23\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - Invalid medicareTaxInstruction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 15,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"M\",\n                                    \"longName\": \"Married\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"2\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:2669\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				},
+				{
+					"name": "US684702 POST - Invalid form1099Instruction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"contextExpressionID\": \"\",\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfiles\": {\n                        \"itemID\": \"37077879_732\",\n                        \"payrollAgreementID\": \"\",\n                        \"payrollFileNumber\": \"6789\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"938\"\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-05-21\",\n                    \"usTaxProfile\": {\n                        \"usFederalTaxInstruction\": {\n                            \"federalIncomeTaxInstruction\": {\n                                \"taxWithholdingAllowanceQuantity\": 20,\n                                \"additionalTaxPercentage\": 15,\n                                \"additionalTaxAmount\": {\n                                    \"amountValue\": null\n                                },\n                                \"taxFilingStatusCode\": {\n                                    \"codeValue\": \"M\",\n                                    \"longName\": \"Married\"\n                                }\n                            },\n                            \"socialSecurityTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"medicareTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"federalUnemploymentTaxInstruction\": {\n                                \"taxWithholdingStatus\": {\n                                    \"statusCode\": {\n                                        \"codeValue\": \"1\"\n                                    }\n                                }\n                            },\n                            \"form1099Instruction\": {\n                                \"distributionCodes\": [\n                                    {\n                                        \"codeValue\": \"SYS:4:26\"\n                                        \n                                    },\n                                    {\n                                        \"codeValue\": \"SYS:4:10812\"\n                                    }\n                                ],\n                                \"totalDistributionIndicator\": true,\n                                \"indiviualRetirementAccountIndicator\": true,\n                                \"simplifiedEmployeePensionAccountIndicator\": false\n                            },\n                            \"interimW2IssuedIndicator\": true,\n                            \"statutoryWorkerIndicator\": true,\n                            \"qualifiedPensionPlanCoverageIndicator\": true\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"us-tax-profile.federal-income-tax-instruction.change"
+							]
+						},
+						"description": "\"taxFilingStatusCode\": \r\n\"codeValue\": \"M\",\r\n\"longName\": \"Married,\""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "B2C token",
+			"item": [
+				{
+					"name": "Session call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/authorize?response_type=code&client_id=0f7f8b7b-e20e-4983-ab0e-35c3b7b1f1b1&redirect_uri=http://mkplproxy-iat.gslb.es.oneadp.com/consent-manager/&scope=openid%20api%20profile",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "client_id",
+									"value": "0f7f8b7b-e20e-4983-ab0e-35c3b7b1f1b1"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://mkplproxy-iat.gslb.es.oneadp.com/consent-manager/"
+								},
+								{
+									"key": "scope",
+									"value": "openid%20api%20profile"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SM Session call",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sessionID",
+									"value": "802985e9-ec1a-4a00-b1dc-2cbda2f68985",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "Login",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "ABauana@iattam1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "adpadp21",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/authorize/consent",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"authorize",
+								"consent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token call",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "06a51959-3f0f-4d51-bb46-f62b9b41fa63",
+								"exec": [
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let access_token = jsonData.access_token",
+									"console.log (access_token)",
+									"pm.globals.set(\"accessToken\", access_token);",
+									"",
+									"// status code is 200",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "0f7f8b7b-e20e-4983-ab0e-35c3b7b1f1b1",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "b7c5e71d-989b-4876-bd6f-798cabb7e39b",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "e52e5a24-ffe1-4c72-bd9c-9795ebdefda0",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://mkplproxy-iat.gslb.es.oneadp.com/consent-manager/",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "openid%20api%20profile",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "B2B  token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
