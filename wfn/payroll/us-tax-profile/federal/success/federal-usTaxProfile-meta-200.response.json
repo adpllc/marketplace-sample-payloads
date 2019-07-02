@@ -1,0 +1,509 @@
+{
+    "meta": {
+        "queryCriteria": [],
+        "/serviceCategoryCode/codeValue": null,
+        "/eventNameCode/codeValue": null,
+        "/data/eventContext": {
+            "/contextExpressionID": null,
+            "/worker": {
+                "readOnly": true,
+                "optional": false
+            },
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/usTaxProfiles": null,
+            "/usTaxProfiles/payrollRegionCode": null,
+            "/usTaxProfiles/payrollRegionCode/codeValue": null,
+            "/usTaxProfiles/payrollRegionCode/shortName": null,
+            "/usTaxProfiles/payrollRegionCode/longName": null,
+            "/usTaxProfiles/payrollGroupCode": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true,
+                "shortLabelName": "",
+                "longLabelName": ""
+            },
+            "/usTaxProfiles/payrollGroupCode/codeValue": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/usTaxProfiles/payrollGroupCode/shortName": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/usTaxProfiles/payrollGroupCode/longName": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/usTaxProfiles/payrollFileNumber": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/usTaxProfiles/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "itemID": null,
+                "/eventReasonCode": null,
+                "/eventReasonCode/codeValue": null,
+                "/eventReasonCode/shortName": null,
+                "/eventReasonCode/longName": null,
+                "/eventStatusCode": null,
+                "/eventStatusCode/codeValue": null,
+                "/eventStatusCode/shortName": null,
+                "/eventStatusCode/longName": null,
+                "/effectiveDateTime": null,
+                "/notificationIndicator": null,
+                "/usTaxProfile": null,
+                "/usTaxProfile/usFederalTaxInstruction": {
+                    "readOnly": true,
+                    "optional": true
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction": {
+                    "readOnly": true,
+                    "optional": true
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus": {
+                    "readOnly": true,
+                    "optional": true
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "0",
+                                "shortName": "Non-exempt"
+                            },
+                            {
+                                "codeValue": "1",
+                                "shortName": "Exempt"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/codeValue": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": true
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/reasonCode": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/reasonCode/codeValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/reasonCode/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/reasonCode/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/effectiveDate": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "shortLabelName": "Change Effective on",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "S",
+                                "shortName": "Single"
+                            },
+                            {
+                                "codeValue": "M",
+                                "shortName": "Married"
+                            },
+                            {
+                                "codeValue": "MH",
+                                "shortName": "Married, but withhold at higher Single rate"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/codeValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingAllowanceQuantity": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": true,
+                    "shortLabelName": "Full Deposit",
+                    "pattern": "^(100|[0-9][0-9]?)$"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxPercentage": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^((100|100\\.\\d{1,2})|(\\d{0,2})|(\\d{0,2}\\.\\d{1,2}))$"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^\\-?(\\d{0,13}|(\\d{0,13}\\.\\d{1,2}))$"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount/currencyCode": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount/amountValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount/currencyCode": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "0",
+                                "shortName": "Non-exempt"
+                            },
+                            {
+                                "codeValue": "1",
+                                "shortName": "Exempt"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/codeValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/reasonCode": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/reasonCode/codeValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/reasonCode/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/reasonCode/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/effectiveDate": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "0",
+                                "shortName": "Non-exempt"
+                            },
+                            {
+                                "codeValue": "1",
+                                "shortName": "Exempt"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/codeValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/reasonCode": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/reasonCode/codeValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/reasonCode/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/reasonCode/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/effectiveDate": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "0",
+                                "shortName": "Non-exempt"
+                            },
+                            {
+                                "codeValue": "1",
+                                "shortName": "Exempt"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/codeValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/reasonCode": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/reasonCode/codeValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/reasonCode/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/reasonCode/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/effectiveDate": null,
+                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction": null,
+                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/distributionCodes": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "valueDescription": "",
+                                "codeValue": "",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "1 - Early Distribution - No Known Exception",
+                                "codeValue": "SYS:4:2669",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "2 - Early Distribution - Exception Applies",
+                                "codeValue": "SYS:4:2670",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "3 - Disability",
+                                "codeValue": "SYS:4:2671",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "4 - Death",
+                                "codeValue": "SYS:4:2673",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "5 - Prohibited Transactions",
+                                "codeValue": "SYS:4:2672",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "6 - Section 1035 Exchange",
+                                "codeValue": "SYS:4:2668",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "7 - Normal Distribution",
+                                "codeValue": "SYS:4:2675",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "8 - Excess contr+earnings excess def txbl in current year",
+                                "codeValue": "SYS:4:2676",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "9 - PS 58 Costs",
+                                "codeValue": "SYS:4:2677",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "B - Designated Roth account distributions",
+                                "codeValue": "SYS:4:10465",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "D - Obsolete",
+                                "codeValue": "SYS:4:2678",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "E - Excess annual additions under section 415",
+                                "codeValue": "SYS:4:2685",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "F - Charitable gift annuity",
+                                "codeValue": "SYS:4:2680",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "G - Direct rollover to IRA",
+                                "codeValue": "SYS:4:2681",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "H - Direct rollover of designated Roth a/c dist to Roth IRA",
+                                "codeValue": "SYS:4:10973",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "J - Early Distribution from Roth IRA, No Known Exception",
+                                "codeValue": "SYS:4:2683",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "K - Distribution of assets other than cash",
+                                "codeValue": "SYS:10:5504",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "L - Loans treated as distributions",
+                                "codeValue": "SYS:4:9625",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "N - Re-Characterized IRA Contribution Made for Current Year",
+                                "codeValue": "SYS:4:6592",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "P - Excess contr+earnings excess def txbl 1 yr ago",
+                                "codeValue": "SYS:4:2667",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "Q - Qualified Distribution from a Roth IRA",
+                                "codeValue": "SYS:4:8297",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "S - Early distribution from a SIMPLE IRA",
+                                "codeValue": "SYS:4:9626",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "T - Roth IRA Distribution Exception Applies",
+                                "codeValue": "SYS:4:6593",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "U - Dividends distributed from an ESOP under section 404(k)",
+                                "codeValue": "SYS:4:7201",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "W - Charges or payments for purchasing qualified long-term care insurance contracts under combined arrangements",
+                                "codeValue": "SYS:4:7203",
+                                "shortName": "Box 7 Distribution Code 1"
+                            },
+                            {
+                                "valueDescription": "",
+                                "codeValue": "",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "1 - Early Distribution - No Known Exception",
+                                "codeValue": "SYS:4:10811",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "2 - Early Distribution - Exception Applies",
+                                "codeValue": "SYS:4:10812",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "4 - Death",
+                                "codeValue": "SYS:4:9627",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "8 - Excess contr+earnings excess def txbl in current year",
+                                "codeValue": "SYS:4:2693",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "A - Qualifies for 5 or 10 year averaging",
+                                "codeValue": "SYS:4:2690",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "B - Designated Roth account distributions",
+                                "codeValue": "SYS:4:10466",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "D - Nonqualified annuity payments and distributions from life insurance contracts",
+                                "codeValue": "SYS:4:10809",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "G - Direct rollover to IRA",
+                                "codeValue": "SYS:4:2687",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "H - Direct rollover of designated Roth a/c dist to Roth IRA",
+                                "codeValue": "SYS:4:10974",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "J - Early Distribution from Roth IRA, No Known Exception",
+                                "codeValue": "SYS:4:6595",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "K - Distribution of assets other than cash",
+                                "codeValue": "SYS:10:5505",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "L - Loans treated as distributions",
+                                "codeValue": "SYS:4:10810",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "P - Excess contr+earnings excess def txbl 1 yr ago",
+                                "codeValue": "SYS:4:2686",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "R - Obsolete",
+                                "codeValue": "SYS:4:6591",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "U - Dividends distributed from an ESOP under section 404(k)",
+                                "codeValue": "SYS:4:7202",
+                                "shortName": "Box 7 Distribution Code 2"
+                            },
+                            {
+                                "valueDescription": "W - Charges or payments for purchasing qualified long-term care insurance contracts under combined arrangements",
+                                "codeValue": "SYS:4:7204",
+                                "shortName": "Box 7 Distribution Code 2"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "label",
+                    "longLabelName": "label"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/distributionCodes/codeValue": null,
+                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/distributionCodes/shortName": null,
+                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/distributionCodes/longName": null,
+                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/totalDistributionIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/individualRetirementAccountIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/simplifiedEmployeePensionAccountIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/interimW2IssuedIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/statutoryWorkerIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usTaxProfile/usFederalTaxInstruction/qualifiedPensionPlanCoverageIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                }
+            }
+        ]
+    }
+}
