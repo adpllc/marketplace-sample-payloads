@@ -1,0 +1,51 @@
+{
+   "meta": {"resourceSetID": "b4ba04047c8a47c1a6130945b4c3cde4"},
+   "confirmMessage":    {
+      "createDateTime": "2019-07-04T02:50:54-04:00",
+      "protocolStatusCode": {"codeValue": "207"},
+      "protocolCode": {"codeValue": "http"},
+      "requestStatusCode": {"codeValue": "failed"},
+      "requestMethodCode": {"codeValue": "GET"},
+      "processMessages":       [
+                  {
+            "processMessageID": {"idValue": "2"},
+            "messageTypeCode": {"codeValue": "info"},
+            "userMessage":             {
+               "codeValue": "info_IMP_TOTALCOUNT",
+               "title": "Import Statistics - Payload Total",
+               "messageTxt": "2"
+            }
+         },
+                  {
+            "processMessageID": {"idValue": "0"},
+            "messageTypeCode": {"codeValue": "info"},
+            "userMessage":             {
+               "codeValue": "info_IMP_FAILEDCOUNT",
+               "title": "Import Statistics - Failed to Import",
+               "messageTxt": "1"
+            }
+         },
+                  {
+            "processMessageID": {"idValue": "3"},
+            "messageTypeCode": {"codeValue": "error"},
+            "sourceLocationExpression": "events[ ?(@.eventID='@#') ]",
+            "userMessage":             {
+               "codeValue": "err_InvalidEmployeeAccess",
+               "title": "Import Message",
+               "messageTxt": "Employee does not have access to the Supplemental Pay Code.|title=payCodeId=BONUS|procMsgID=3|PFID=29850137_300|eventID=@#|itemID="
+            }
+         }
+      ],
+      "resourceMessages": [      {
+         "resourceMessageID": {"idValue": "b4ba04047c8a47c1a6130945b4c3cde4"},
+         "resourceStatusCode": {"codeValue": "warning"},
+         "resourceLink":          {
+            "rel": "self",
+            "href": "/events/time/v2/time-entries.modify/b4ba04047c8a47c1a6130945b4c3cde4",
+            "method": "GET",
+            "mediaType": "application/json",
+            "encType": "application/json"
+         }
+      }]
+   }
+}

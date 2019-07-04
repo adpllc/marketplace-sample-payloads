@@ -1,0 +1,61 @@
+{
+   "meta": {"resourceSetID": "02fe0e6f0d8647518aec6bd4272eb222"},
+   "confirmMessage":    {
+      "createDateTime": "2019-07-04T02:42:44-04:00",
+      "protocolStatusCode": {"codeValue": "400"},
+      "protocolCode": {"codeValue": "http"},
+      "requestStatusCode": {"codeValue": "failed"},
+      "requestMethodCode": {"codeValue": "GET"},
+      "processMessages":       [
+                  {
+            "processMessageID": {"idValue": "2"},
+            "messageTypeCode": {"codeValue": "info"},
+            "userMessage":             {
+               "codeValue": "info_IMP_TOTALCOUNT",
+               "title": "Import Statistics - Payload Total",
+               "messageTxt": "2"
+            }
+         },
+                  {
+            "processMessageID": {"idValue": "0"},
+            "messageTypeCode": {"codeValue": "info"},
+            "userMessage":             {
+               "codeValue": "info_IMP_FAILEDCOUNT",
+               "title": "Import Statistics - Failed to Import",
+               "messageTxt": "1"
+            }
+         },
+                  {
+            "processMessageID": {"idValue": "3"},
+            "messageTypeCode": {"codeValue": "error"},
+            "sourceLocationExpression": "events[ ?(@.eventID='1') ]",
+            "userMessage":             {
+               "codeValue": "err_InvalidEmployeeData",
+               "title": "Import Message",
+               "messageTxt": "Error processing time entries event|Invalid or missing employee data.|PFID=hgfhgdj|eventID=1|itemID="
+            }
+         },
+                  {
+            "processMessageID": {"idValue": "4"},
+            "messageTypeCode": {"codeValue": "error"},
+            "sourceLocationExpression": "events[ ?(@.eventID='2') ]",
+            "userMessage":             {
+               "codeValue": "err_InvalidEmployeeData",
+               "title": "Import Message",
+               "messageTxt": "Error processing time entries event|Invalid or missing employee data.|PFID=jfjhfj|eventID=2|itemID="
+            }
+         }
+      ],
+      "resourceMessages": [      {
+         "resourceMessageID": {"idValue": "02fe0e6f0d8647518aec6bd4272eb222"},
+         "resourceStatusCode": {"codeValue": "error"},
+         "resourceLink":          {
+            "rel": "self",
+            "href": "/events/time/v2/time-entries.modify/02fe0e6f0d8647518aec6bd4272eb222",
+            "method": "GET",
+            "mediaType": "application/json",
+            "encType": "application/json"
+         }
+      }]
+   }
+}
