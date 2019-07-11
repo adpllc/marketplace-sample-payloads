@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "00f46efe-32d0-4c71-b95f-69005b8217ac",
+		"name": "Beneficiaries PROD - GITHUB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-wfn\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Beneficiaries Details - with masking = false and partial masking see api guide for details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+						"exec": [
+							"",
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+							"console.log (active_Indicator_value);",
+							"",
+							"",
+							"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+							"   pm.expect(active_Indicator_value).to.eql(false);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json;masked=false"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/benefits/v1/associates/G3588JKQ33NJMMEE/beneficiaries",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"benefits",
+						"v1",
+						"associates",
+						"G3588JKQ33NJMMEE",
+						"beneficiaries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Beneficiaries Details - Full Masking, see api guide for details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e066346d-0d86-49ea-b69e-66cbca8f2790",
+						"exec": [
+							"",
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let active_Indicator_value = jsonData.beneficiaries[2].activeIndicator;",
+							"console.log (active_Indicator_value);",
+							"",
+							"",
+							"pm.test(\"Verify the third Beneficiaries element has active_Indicator_value is false\", function () {",
+							"   pm.expect(active_Indicator_value).to.eql(false);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/benefits/v1/associates/G3588JKQ33NJMMEE/beneficiaries",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"benefits",
+						"v1",
+						"associates",
+						"G3588JKQ33NJMMEE",
+						"beneficiaries"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
