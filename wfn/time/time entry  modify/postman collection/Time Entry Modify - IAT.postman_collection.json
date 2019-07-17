@@ -1,0 +1,477 @@
+{
+	"info": {
+		"_postman_id": "cdfb778c-042b-4073-b66f-516f5b3fc7b4",
+		"name": "Time Entry - IAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "B2B  token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "1ce3e9b1-8679-4407-832f-731a68696896",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "4adbebb2-c38c-490f-8b9b-711e51959f8b",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Entry - hoursEntry",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "322d5c91-3ab0-45d5-ac5c-f71e2215b367",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let resourceSetID = jsonData.meta.resourceSetID",
+							"console.log (resourceSetID)",
+							"pm.globals.set(\"ResourceSetID\", resourceSetID);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Prefer",
+						"type": "text",
+						"value": "response-async",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFHRK9\",\n          \"workAssignmentID\": \"29850137_306\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT4H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    },\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MS4S7E\",\n          \"workAssignmentID\": \"29850137_300\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT4H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v2",
+						"time-entries.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Entry - hoursEntry",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5fea95e6-9b34-4c06-bbe9-d295d6360622",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let resourceSetID = jsonData.meta.resourceSetID",
+							"console.log (resourceSetID)",
+							"pm.globals.set(\"ResourceSetID\", resourceSetID);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFHRK9\",\n          \"workAssignmentID\": \"29850137_306\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT3H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    },\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MS4S7E\",\n          \"workAssignmentID\": \"29850137_300\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT3H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v2",
+						"time-entries.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Entry - hoursEntry",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5fea95e6-9b34-4c06-bbe9-d295d6360622",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let resourceSetID = jsonData.meta.resourceSetID",
+							"console.log (resourceSetID)",
+							"pm.globals.set(\"ResourceSetID\", resourceSetID);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MSC3HD\",\n          \"workAssignmentID\": \"29850137_294\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-21T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT0H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    },\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFA7V4\",\n          \"workAssignmentID\": \"29850137_288\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-21T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT0H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v2",
+						"time-entries.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Entry - TimeEntryPair",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "21e8d175-d64f-4405-b00e-f62b7e3f1064",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let resourceSetID = jsonData.meta.resourceSetID",
+							"console.log (resourceSetID)",
+							"pm.globals.set(\"ResourceSetID\", resourceSetID);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{accessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MSC3HD\",\n          \"workAssignmentID\": \"29850137_294\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-21\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-21T12:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFA7V4\",\n          \"workAssignmentID\": \"29850137_288\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-21\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-21T12:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v2",
+						"time-entries.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modify Entry - TimeEntryPair",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "688bf7cc-3a7b-45bd-ac05-c603f085fc03",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let resourceSetID = jsonData.meta.resourceSetID",
+							"console.log (resourceSetID)",
+							"pm.globals.set(\"ResourceSetID\", resourceSetID);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{accessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"events\": [\n    {\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MSC3HD\",\n          \"workAssignmentID\": \"29850137_294\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"21\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-06\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-06T11:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFA7V4\",\n          \"workAssignmentID\": \"29850137_288\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"21\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-07\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-07T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-07T11:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v2",
+						"time-entries.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Entry - Supplemental paycode",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "41f06505-17e7-43dd-b4b2-6d561f366691",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let resourceSetID = jsonData.meta.resourceSetID",
+							"console.log (resourceSetID)",
+							"pm.globals.set(\"ResourceSetID\", resourceSetID);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n   \"events\" : [\n      {\n         \"eventID\" : \"1\",\n         \"serviceCategoryCode\" : {\n            \"codeValue\" : \"time\"\n         },\n         \"eventNameCode\" : {\n            \"codeValue\" : \"timeEntries.modify\"\n         },\n         \"data\" : {\n            \"eventContext\" : {\n               \"associateOID\" : \"G32N87KC6KSFHRK9\",\n               \"workAssignmentID\" : \"29850137_306\"\n            },\n            \"transform\" : {\n               \"timeEntries\" : [\n                  {\n                     \"entryID\" : \"3\",\n                     \"entryTypeCode\" : {\n                        \"codeValue\" : \"amountEntry\"\n                     },\n                     \"entryDate\" : \"2015-12-11T08:00:00-0800\",\n                     \"entryCode\" : {\n                        \"codeValue\" : \"TIPS\"\n                     },\n                     \"amount\" : {\n                        \"amountValue\" : 14.56\n                     },\n                     \"_changeCode\" : \"add\"\n                  }\n               ]\n            }\n         }\n      },\n      {\n         \"eventID\" : \"2\",\n         \"serviceCategoryCode\" : {\n            \"codeValue\" : \"time\"\n         },\n         \"eventNameCode\" : {\n            \"codeValue\" : \"timeEntries.modify\"\n         },\n         \"data\" : {\n            \"eventContext\" : {\n               \"associateOID\" : \"G31NDTRRT1MSC3HD\",\n               \"workAssignmentID\" : \"29850137_294\"\n            },\n            \"transform\" : {\n               \"timeEntries\" : [\n                  {\n                     \"entryID\" : \"3\",\n                     \"entryTypeCode\" : {\n                        \"codeValue\" : \"amountEntry\"\n                     },\n                     \"entryDate\" : \"2015-12-11T08:00:00-0800\",\n                     \"entryCode\" : {\n                        \"codeValue\" : \"TIPS\"\n                     },\n                     \"amount\" : {\n                        \"amountValue\" : 150\n                     },\n                     \"_changeCode\" : \"add\"\n                  }\n               ]\n            }\n         }\n      }\n   ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v2",
+						"time-entries.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Entry resourceSetID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": " Bearer {{accessToken}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify/{{ResourceSetID}}",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v2",
+						"time-entries.modify",
+						"{{ResourceSetID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
