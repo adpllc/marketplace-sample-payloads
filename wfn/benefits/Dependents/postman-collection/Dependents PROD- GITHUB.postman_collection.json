@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "b12b95e3-f21a-4143-9c5c-277a8dd0a141",
+		"name": "Dependents PROD- GITHUB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-wfn\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dependents details - Full Masking",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn}}"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/benefits/v1/associates/G3588JKQ33NJMMEE/dependents",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"benefits",
+						"v1",
+						"associates",
+						"G3588JKQ33NJMMEE",
+						"dependents"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Dependents details - Partial Masking see api guide for details",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-wfn}}"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json;masked=false"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.adp.com/benefits/v1/associates/G3588JKQ33NJMMEE/dependents",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"benefits",
+						"v1",
+						"associates",
+						"G3588JKQ33NJMMEE",
+						"dependents"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
