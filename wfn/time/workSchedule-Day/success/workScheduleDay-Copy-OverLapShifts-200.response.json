@@ -1,0 +1,180 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "associateOID": "G3A0ZFJNX6ZDVC1P"
+                },
+                "output": {
+                    "workSchedule": {
+                        "scheduleDays": [
+                            {
+                                "scheduleDayDate": "2019-05-21",
+                                "scheduleEntries": [
+                                    {
+                                        "earningAllocations": [
+                                            {
+                                                "allocationCode": {
+                                                    "codeValue": "003000"
+                                                },
+                                                "allocationTypeCode": {
+                                                    "codeValue": "Department"
+                                                }
+                                            }
+                                        ],
+                                        "entryComments": [],
+                                        "dateTimePeriod": {
+                                            "startDateTime": "2019-05-21T09:00:00-04:00",
+                                            "endDateTime": "2019-05-21T12:00:00-04:00"
+                                        }
+                                    },
+                                    {
+                                        "categoryTypeCode": {
+                                            "codeValue": "PAYCODE"
+                                        },
+                                        "earningAllocations": [
+                                            {
+                                                "allocationCode": {
+                                                    "codeValue": "003000"
+                                                },
+                                                "allocationTypeCode": {
+                                                    "codeValue": "Department"
+                                                }
+                                            }
+                                        ],
+                                        "entryComments": [],
+                                        "payCode": {
+                                            "codeValue": "AWARD"
+                                        },
+                                        "dateTimePeriod": {
+                                            "startDateTime": "2019-05-21T12:00:00-04:00",
+                                            "endDateTime": "2019-05-21T13:00:00-04:00"
+                                        }
+                                    },
+                                    {
+                                        "earningAllocations": [
+                                            {
+                                                "allocationCode": {
+                                                    "codeValue": "003000"
+                                                },
+                                                "allocationTypeCode": {
+                                                    "codeValue": "Department"
+                                                }
+                                            },
+                                            {
+                                                "allocationCode": {
+                                                    "codeValue": "job1"
+                                                },
+                                                "allocationTypeCode": {
+                                                    "codeValue": "Job"
+                                                }
+                                            },
+                                            {
+                                                "allocationCode": {
+                                                    "codeValue": "OVLPSHIFT1"
+                                                },
+                                                "allocationTypeCode": {
+                                                    "codeValue": "ShiftRule"
+                                                }
+                                            },
+                                            {
+                                                "allocationCode": {
+                                                    "codeValue": "FlexTimeRule01"
+                                                },
+                                                "allocationTypeCode": {
+                                                    "codeValue": "FlexitimeRule"
+                                                }
+                                            },
+                                            {
+                                                "allocationCode": {
+                                                    "codeValue": "30AUTO"
+                                                },
+                                                "allocationTypeCode": {
+                                                    "codeValue": "LunchPlan"
+                                                }
+                                            },
+                                            {
+                                                "allocationCode": {
+                                                    "codeValue": "Head Office NY",
+                                                    "shortName": "CA"
+                                                },
+                                                "allocationTypeCode": {
+                                                    "codeValue": "Location",
+                                                    "shortName": "Location"
+                                                }
+                                            }
+                                        ],
+                                        "entryComments": [],
+                                        "dateTimePeriod": {
+                                            "startDateTime": "2019-05-21T13:00:00-04:00",
+                                            "endDateTime": "2019-05-21T18:00:00-04:00"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "links": []
+        }
+    ],
+    "confirmMessage": {
+        "requestStatusCode": {
+            "codeValue": "failed"
+        },
+        "requestMethodCode": {
+            "codeValue": "POST"
+        },
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "G3A0ZFJNX6ZDVC1P_2019-05-21_09:00:00_12:00:00"
+                },
+                "processMessages": [
+                    {
+                        "messageTypeCode": {
+                            "codeValue": "ERROR"
+                        },
+                        "userMessage": {
+                            "codeValue": "err_ScheduleConflictOverlap",
+                            "messageTxt": "Scheduled shift times overlap with an existing scheduled shift."
+                        }
+                    }
+                ]
+            },
+            {
+                "resourceMessageID": {
+                    "idValue": "G3A0ZFJNX6ZDVC1P_2019-05-21_12:00:00_13:00:00"
+                },
+                "processMessages": [
+                    {
+                        "messageTypeCode": {
+                            "codeValue": "ERROR"
+                        },
+                        "userMessage": {
+                            "codeValue": "err_ScheduleConflictOverlap",
+                            "messageTxt": "Scheduled shift times overlap with an existing scheduled shift."
+                        }
+                    }
+                ]
+            },
+            {
+                "resourceMessageID": {
+                    "idValue": "G3A0ZFJNX6ZDVC1P_2019-05-21_13:00:00_18:00:00"
+                },
+                "processMessages": [
+                    {
+                        "messageTypeCode": {
+                            "codeValue": "ERROR"
+                        },
+                        "userMessage": {
+                            "codeValue": "err_ScheduleConflictOverlap",
+                            "messageTxt": "Scheduled shift times overlap with an existing scheduled shift."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
