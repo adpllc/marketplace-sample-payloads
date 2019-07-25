@@ -1,0 +1,82 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "associateOID": "G39EVW7Y4YZYBVR2",
+                    "schedulePeriod": {
+                        "startDate": "2019-05-13",
+                        "endDate": "2019-05-13"
+                    }
+                },
+                "output": {
+                    "workSchedule": {
+                        "scheduleDays": [
+                            {
+                                "scheduleDayDate": "2019-05-13",
+                                "scheduleEntries": [
+                                    {
+                                        "earningAllocations": [],
+                                        "entryComments": [],
+                                        "dateTimePeriod": {
+                                            "startDateTime": "2019-05-13T08:00:00-04:00",
+                                            "endDateTime": "2019-05-13T09:00:00-04:00"
+                                        }
+                                    },
+                                    {
+                                        "actions": [
+                                            {
+                                                "operationID": "Deviation"
+                                            }
+                                        ],
+                                        "scheduleEntryID": "100116989839",
+                                        "earningAllocations": [],
+                                        "entryComments": [],
+                                        "dateTimePeriod": {
+                                            "startDateTime": "2019-05-13T10:00:00-04:00",
+                                            "endDateTime": "2019-05-13T11:00:00-04:00"
+                                        },
+                                        "totalTime": {
+                                            "timeValue": "1.0",
+                                            "nameCode": {
+                                                "codeValue": "hour",
+                                                "shortName": "Hours"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "links": []
+        }
+    ],
+    "confirmMessage": {
+        "requestStatusCode": {
+            "codeValue": "partiallyFailed"
+        },
+        "requestMethodCode": {
+            "codeValue": "POST"
+        },
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "G39EVW7Y4YZYBVR2_2019-05-13_08:00:00_09:00:00"
+                },
+                "processMessages": [
+                    {
+                        "messageTypeCode": {
+                            "codeValue": "ERROR"
+                        },
+                        "userMessage": {
+                            "codeValue": "err_ScheduleConflictOverlap",
+                            "messageTxt": "Scheduled shift times overlap with an existing scheduled shift."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

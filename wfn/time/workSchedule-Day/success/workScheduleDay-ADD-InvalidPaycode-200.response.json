@@ -1,0 +1,108 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "associateOID": "G3ANQVTXCE1ZBV65",
+                    "schedulePeriod": {
+                        "startDate": "2019-05-14",
+                        "endDate": "2019-05-14"
+                    }
+                },
+                "output": {
+                    "workSchedule": {
+                        "scheduleDays": [
+                            {
+                                "scheduleDayDate": "2019-05-14",
+                                "scheduleEntries": [
+                                    {
+                                        "categoryTypeCode": {
+                                            "codeValue": "PAYCODE"
+                                        },
+                                        "earningAllocations": [],
+                                        "entryComments": [
+                                            {
+                                                "commentTypeCode": {
+                                                    "codeValue": "Schedule Reason Code"
+                                                },
+                                                "textValue": "Leaving earlier on Tuesdays - need to pick up kids"
+                                            }
+                                        ],
+                                        "payCode": {
+                                            "codeValue": "WRONGPAYCODE"
+                                        },
+                                        "dateTimePeriod": {
+                                            "startDateTime": "2019-05-14T08:00:00-04:00",
+                                            "endDateTime": "2019-05-14T09:00:00-04:00"
+                                        }
+                                    },
+                                    {
+                                        "actions": [
+                                            {
+                                                "operationID": "Deviation"
+                                            }
+                                        ],
+                                        "scheduleEntryID": "100116993050",
+                                        "categoryTypeCode": {
+                                            "codeValue": "PAYCODE"
+                                        },
+                                        "earningAllocations": [],
+                                        "entryComments": [
+                                            {
+                                                "commentTypeCode": {
+                                                    "codeValue": "Schedule Reason Code"
+                                                },
+                                                "textValue": "Leaving earlier on Tuesdays - need to pick up kids"
+                                            }
+                                        ],
+                                        "payCode": {
+                                            "codeValue": "ABSENT"
+                                        },
+                                        "dateTimePeriod": {
+                                            "startDateTime": "2019-05-14T09:00:00-04:00",
+                                            "endDateTime": "2019-05-14T10:00:00-04:00"
+                                        },
+                                        "totalTime": {
+                                            "timeValue": "1.0",
+                                            "nameCode": {
+                                                "codeValue": "hour",
+                                                "shortName": "Hours"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "links": []
+        }
+    ],
+    "confirmMessage": {
+        "requestStatusCode": {
+            "codeValue": "partiallyFailed"
+        },
+        "requestMethodCode": {
+            "codeValue": "POST"
+        },
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "G3ANQVTXCE1ZBV65_2019-05-14_08:00:00_09:00:00"
+                },
+                "processMessages": [
+                    {
+                        "messageTypeCode": {
+                            "codeValue": "ERROR"
+                        },
+                        "userMessage": {
+                            "codeValue": "err_DoesNotExists-A1",
+                            "messageTxt": "Paycode does not exist."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
