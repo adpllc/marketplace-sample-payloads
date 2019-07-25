@@ -1,0 +1,72 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "associateOID": "G332EFV3Q6J0048K"
+                },
+                "output": {
+                    "workSchedule": {
+                        "scheduleDays": [
+                            {
+                                "scheduleDayDate": "2019-07-17",
+                                "scheduleEntries": [
+                                    {
+                                        "categoryTypeCode": {
+                                            "codeValue": "PAYCODE"
+                                        },
+                                        "earningAllocations": [
+                                            {
+                                                "allocationCode": {
+                                                    "codeValue": "001000"
+                                                },
+                                                "allocationTypeCode": {
+                                                    "codeValue": "Department"
+                                                }
+                                            }
+                                        ],
+                                        "entryComments": [],
+                                        "payCode": {
+                                            "codeValue": "HOLIDAY"
+                                        },
+                                        "dateTimePeriod": {
+                                            "startDateTime": "2019-07-17T12:00:00-04:00",
+                                            "endDateTime": "2019-07-17T13:00:00-04:00"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "links": []
+        }
+    ],
+    "confirmMessage": {
+        "requestStatusCode": {
+            "codeValue": "failed"
+        },
+        "requestMethodCode": {
+            "codeValue": "POST"
+        },
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "G332EFV3Q6J0048K_2019-07-17_12:00:00_13:00:00"
+                },
+                "processMessages": [
+                    {
+                        "messageTypeCode": {
+                            "codeValue": "ERROR"
+                        },
+                        "userMessage": {
+                            "codeValue": "err_ScheduleConflictOverlap",
+                            "messageTxt": "Scheduled shift times overlap with an existing scheduled shift."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
