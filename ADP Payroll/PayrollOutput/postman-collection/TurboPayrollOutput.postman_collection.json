@@ -1,0 +1,1102 @@
+{
+	"info": {
+		"_postman_id": "4b05e558-da0c-4d89-bdc2-2e1f94800403",
+		"name": "TurboPayrollOutput",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "payroll-output-http-200-associate-payments-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "adp-userid",
+						"value": "any.user@adp.com",
+						"type": "text"
+					},
+					{
+						"key": "sor",
+						"value": "Autopay",
+						"type": "text"
+					},
+					{
+						"key": "realm",
+						"value": "ISI",
+						"type": "text"
+					},
+					{
+						"key": "sm_serversessionid",
+						"value": "123456789",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "associateoid",
+						"value": "G3ZWY283TRJC0BAY",
+						"type": "text"
+					},
+					{
+						"key": "rolecode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"value": "PA03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v2/payroll-output?level=pay&$filter=itemID eq 5SwXZKCFo7lJUDXZV6Unsw== and associatePayments/associateOID eq G3ZWY283TRJC4JKD",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"payroll-output"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "pay"
+						},
+						{
+							"key": "$filter",
+							"value": "itemID eq 5SwXZKCFo7lJUDXZV6Unsw== and associatePayments/associateOID eq G3ZWY283TRJC4JKD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-associate-payments-earnings-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G3ZWY283TRJC4JKD"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "employee"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					},
+					{
+						"key": "Prefer",
+						"type": "text",
+						"value": "level=pay"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v1/payroll-output/5SwXZKCFo7lJUDXZV6Unsw==/associate-payment-summary/earnings",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-output",
+						"5SwXZKCFo7lJUDXZV6Unsw==",
+						"associate-payment-summary",
+						"earnings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-associate-payments-reportable-earnings-and-benefits-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G3ZWY283TRJC4JKD"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "employee"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					},
+					{
+						"key": "Prefer",
+						"type": "text",
+						"value": "level=pay"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v1/payroll-output/5SwXZKCFo7lJUDXZV6Unsw==/associate-payment-summary/reportable-earnings-and-benefits/",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-output",
+						"5SwXZKCFo7lJUDXZV6Unsw==",
+						"associate-payment-summary",
+						"reportable-earnings-and-benefits",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-associate-payments-non-statutory-deductions-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G3ZWY283TRJC4JKD"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "employee"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					},
+					{
+						"key": "Prefer",
+						"type": "text",
+						"value": "level=pay"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v1/payroll-output/5SwXZKCFo7lJUDXZV6Unsw==/associate-payment-summary/non-statutory-deductions",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-output",
+						"5SwXZKCFo7lJUDXZV6Unsw==",
+						"associate-payment-summary",
+						"non-statutory-deductions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-associate-payments-statutory-deductions-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G3ZWY283TRJC4JKD"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "employee"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					},
+					{
+						"key": "Prefer",
+						"value": "level=pay",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v1/payroll-output/5SwXZKCFo7lJUDXZV6Unsw==/associate-payment-summary/statutory-deductions",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-output",
+						"5SwXZKCFo7lJUDXZV6Unsw==",
+						"associate-payment-summary",
+						"statutory-deductions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-associate-payment-allocations-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "adp-userid",
+						"value": "any.user@adp.com",
+						"type": "text"
+					},
+					{
+						"key": "sor",
+						"value": "Autopay",
+						"type": "text"
+					},
+					{
+						"key": "realm",
+						"value": "ISI",
+						"type": "text"
+					},
+					{
+						"key": "sm_serversessionid",
+						"value": "123456789",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3BKXAATQ91MF4QM",
+						"type": "text"
+					},
+					{
+						"key": "associateoid",
+						"value": "G3ZWY283TRJC4JKD",
+						"type": "text"
+					},
+					{
+						"key": "rolecode",
+						"value": "practitioner",
+						"type": "text"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3BKXAATQ91MF4QM",
+						"type": "text"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"value": "PA03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v2/payroll-output?level=details&$filter=itemID eq L9Arldqqn6n5jjq93S8u7w== and associatePayments/associateOID eq G36RZERK23Q53TAG",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"payroll-output"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "details"
+						},
+						{
+							"key": "$filter",
+							"value": "itemID eq L9Arldqqn6n5jjq93S8u7w== and associatePayments/associateOID eq G36RZERK23Q53TAG"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-associate-payment-allocations-earnings-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3BKXAATQ91MF4QM"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G36RZERK23Q53TAG"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "employee"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3BKXAATQ91MF4QM"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					},
+					{
+						"key": "Prefer",
+						"type": "text",
+						"value": "level=details"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v1/payroll-output/L9Arldqqn6n5jjq93S8u7w==/associate-payment-allocations/earnings",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-output",
+						"L9Arldqqn6n5jjq93S8u7w==",
+						"associate-payment-allocations",
+						"earnings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-associate-payment-allocations-reportable-earnings-and-benefits-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3BKXAATQ91MF4QM"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G36RZERK23Q53TAG"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "employee"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3BKXAATQ91MF4QM"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					},
+					{
+						"key": "Prefer",
+						"type": "text",
+						"value": "level=details"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v1/payroll-output/L9Arldqqn6n5jjq93S8u7w==/associate-payment-allocations/reportable-earnings-and-benefits/",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-output",
+						"L9Arldqqn6n5jjq93S8u7w==",
+						"associate-payment-allocations",
+						"reportable-earnings-and-benefits",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-associate-payment-allocations-non-statutory-deductions-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3BKXAATQ91MF4QM"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G36RZERK23Q53TAG"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "employee"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3BKXAATQ91MF4QM"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					},
+					{
+						"key": "Prefer",
+						"type": "text",
+						"value": "level=details"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v1/payroll-output/L9Arldqqn6n5jjq93S8u7w==/associate-payment-allocations/non-statutory-deductions",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-output",
+						"L9Arldqqn6n5jjq93S8u7w==",
+						"associate-payment-allocations",
+						"non-statutory-deductions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-associate-payment-allocations-statutory-deductions-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3BKXAATQ91MF4QM"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G36RZERK23Q53TAG"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "employee"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3BKXAATQ91MF4QM"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					},
+					{
+						"key": "Prefer",
+						"value": "level=details",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v1/payroll-output/L9Arldqqn6n5jjq93S8u7w==/associate-payment-allocations/statutory-deductions",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-output",
+						"L9Arldqqn6n5jjq93S8u7w==",
+						"associate-payment-allocations",
+						"statutory-deductions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-payroll-summary-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G3ZWY283TRJC0BAY"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "practitioner"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v2/payroll-output?level=payroll&$filter=itemID eq 5SwXZKCFo7lJUDXZV6Unsw==",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"payroll-output"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "payroll"
+						},
+						{
+							"key": "$filter",
+							"value": "itemID eq 5SwXZKCFo7lJUDXZV6Unsw=="
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-200-acc-all-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G3ZWY283TRJC0BAY"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "practitioner"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v2/payroll-output?level=acc-all&$filter=itemID eq 5SwXZKCFo7lJUDXZV6Unsw==",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"payroll-output"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "acc-all"
+						},
+						{
+							"key": "$filter",
+							"value": "itemID eq 5SwXZKCFo7lJUDXZV6Unsw=="
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payroll-output-http-400-withInvalidItemID-Response",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "adp-userid",
+						"type": "text",
+						"value": "any.user@adp.com"
+					},
+					{
+						"key": "sor",
+						"type": "text",
+						"value": "Autopay"
+					},
+					{
+						"key": "realm",
+						"type": "text",
+						"value": "ISI"
+					},
+					{
+						"key": "sm_serversessionid",
+						"type": "text",
+						"value": "123456789"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G3ZWY283TRJC0BAY"
+					},
+					{
+						"key": "rolecode",
+						"type": "text",
+						"value": "practitioner"
+					},
+					{
+						"key": "consumerappoid",
+						"value": "G3Z9XH7DCG6Q24P5"
+					},
+					{
+						"key": "ADPX-RegionCode",
+						"type": "text",
+						"value": "PA03"
+					}
+				],
+				"url": {
+					"raw": "http://autopaymod-fit1.nj.adp.com/payroll/v2/payroll-output?level=payroll&$filter=itemID eq 5SwXZKCFo7lJUDXZV6Unswty",
+					"protocol": "http",
+					"host": [
+						"autopaymod-fit1",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"payroll-output"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "payroll"
+						},
+						{
+							"key": "$filter",
+							"value": "itemID eq 5SwXZKCFo7lJUDXZV6Unswty"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
