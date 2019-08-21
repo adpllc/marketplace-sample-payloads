@@ -1,0 +1,109 @@
+{
+  "events": [
+    {
+      "eventID": "823f9747-e864-4f05-96de-2ee587b48c05",
+      "serviceCategoryCode": {
+        "shortName": "Payroll"
+      },
+      "eventNameCode": {
+        "shortName": "payroll-output-status-notification.change"
+      },
+      "eventTitle": "Payroll Status Change",
+      "eventSubTitle": "Lifion Submitted Payroll",
+      "eventStatusCode": {
+        "shortName": "Complete"
+      },
+      "recordDateTime": "2019-08-20T23:12:35.799-0400",
+      "originator": {
+        "applicationID": {
+          "idValue": "Autopay"
+        }
+      },
+      "actor": {
+        "applicationID": {
+          "idValue": "turboPayrollOutput"
+        }
+      },
+      "data": {
+        "output": {
+          "payrollProcessingJob": {
+            "itemID": "a9d5fe13-0eeb-412a-a688-af6ebd2e6610",
+            "payrollRegionCode": {
+              "codeValue": "APL2"
+            },
+            "payrollGroupCode": {
+              "codeValue": "L1I"
+            },
+            "configurationTags": [
+              {
+                "tagCode": "totalEditMessages",
+                "tagType": {
+                  "dataTypeCode": "Number"
+                },
+                "tagValues": [
+                  "0"
+                ]
+              },
+              {
+                "tagCode": "totalEditMessagePages",
+                "tagType": {
+                  "dataTypeCode": "Number"
+                },
+                "tagValues": [
+                  "0"
+                ]
+              },
+              {
+                "tagCode": "NotificationSource",
+                "tagType": {
+                  "dataTypeCode": "String"
+                },
+                "tagValues": [
+                  "turboPayrollOutput"
+                ]
+              },
+              {
+                "tagCode": "payrollOutputItemID",
+                "tagType": {
+                  "dataTypeCode": "String"
+                },
+                "tagValues": [
+                  "T7aizDZmM2ESBM-RonQVPw=="
+                ]
+              }
+            ],
+            "links": [
+              {
+                "href": "http://autopaymod-dit1.nj.adp.com/",
+                "rel": "related",
+                "title": "URL to access Payroll Output",
+                "method": "GET"
+              }
+            ],
+            "payrollProcessingStatusCode": {
+              "codeValue": "PR-EDL",
+              "shortName": "Rejected"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "confirmMessage": {
+    "confirmMessageID": {
+      "idValue": "s+AISVUFfjtjQmPJdRCNZjRtlMdAXdYx3+A0X02EFMM="
+    },
+    "createDateTime": "2019-08-20T23:12:35.799-0400",
+    "processMessages": [
+      {
+        "processMessageID": {
+          "idValue": "PTC01111"
+        },
+        "userMessage": {
+          "codeValue": "PTC01111",
+          "messageTxt": "Payroll is refused due to other activities."
+        }
+      }
+    ]
+  }
+}
