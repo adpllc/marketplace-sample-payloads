@@ -1,0 +1,42 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usTaxProfile": {
+                        "usFederalTaxInstruction": {
+                            "federalIncomeTaxInstruction": {
+                                "taxWithholdingAllowanceQuantity": 50,
+                                "taxFilingStatusCode": {
+                                    "longName": "Married",
+                                    "codeValue": "M",
+                                    "shortName": "Married"
+                                },
+                                "additionalTaxAmount": {
+                                    "amountValue": 20,
+                                    "currencyCode": "USD"
+                                },
+                                "additionalTaxPercentage": 12
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "us-tax-profile.federal-income-tax-instruction.change"
+            }
+        }
+    ]
+}

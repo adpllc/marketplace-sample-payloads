@@ -1,0 +1,40 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usTaxProfile": {
+                        "usFederalTaxInstruction": {
+                            "federalIncomeTaxInstruction": {
+                                "taxFilingStatusCode": {
+                                    "longName": "Single",
+                                    "codeValue": "Sin",
+                                    "shortName": "Single"
+                                },
+                                "additionalTaxAmount": {
+                                    "amountValue": 10,
+                                    "currencyCode": "USD"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "us-tax-profile.federal-income-tax-instruction.change"
+            }
+        }
+    ]
+}

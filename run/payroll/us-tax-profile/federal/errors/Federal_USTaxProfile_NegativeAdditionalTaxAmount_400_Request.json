@@ -1,0 +1,78 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"  
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usTaxProfile": {
+                        "usFederalTaxInstruction": {
+                            "federalIncomeTaxInstruction": {
+                                "taxFilingStatusCode": {
+                                    "longName": "Single",
+                                    "codeValue": "S",
+                                    "shortName": "Single"
+                                },
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from withholding",
+                                        "codeValue": "X",
+                                        "shortName": "Exempt"
+                                    }
+                                },
+                                "taxWithholdingAllowanceQuantity": "1",
+                                "additionalTaxAmount":{
+                                	 "amountValue": -30.12,
+                                    "currencyCode": "USD"
+                                }
+                           },
+                            "socialSecurityTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from Tax",
+                                        "codeValue": "1",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-05T10:56:52.661859Z"
+                                }
+                            },
+                            "medicareTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from Tax",
+                                        "codeValue": "1",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-05T10:56:52.661859Z"
+                                }
+                            },
+                            "federalUnemploymentTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from Tax",
+                                        "codeValue": "0",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-05T10:56:52.661859Z"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+            }
+        }
+    ]
+}
