@@ -1,0 +1,97 @@
+{
+    "events": [
+        {
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+            },
+            "eventStatusCode": {
+                "codeValue": "complete"
+            },
+            "effectiveDateTime": "2019-08-12T12:23:54.9179585Z",
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    },
+                    "taxProfiles": {
+                        "payrollRegionCode": {
+                            "codeValue": "RL/ANP"
+                        },
+                        "payrollGroupCode": {
+                            "codeValue": "B",
+                            "shortName": "Biweekly"
+                        }
+                    }
+                },
+                "output": {
+                    "usTaxProfiles": {
+                        "payrollRegionCode": {
+                            "codeValue": "RL/ANP"
+                        },
+                        "payrollGroupCode": {
+                            "codeValue": "B",
+                            "shortName": "Biweekly"
+                        },
+                        "usFederalTaxInstruction": {
+                            "federalIncomeTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from withholding",
+                                        "codeValue": "X",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-09T08:13:21.08Z"
+                                },
+                                "taxFilingStatusCode": {
+                                    "longName": "Married, but withholding at higher Single rate",
+                                    "codeValue": "X",
+                                    "shortName": "Married, but withholding at higher Single rate"
+                                },
+                                "taxWithholdingAllowanceQuantity": 1,
+                                "additionalTaxAmount": {
+                                    "amountValue": 30.12,
+                                    "currencyCode": "USD"
+                                }
+                            },
+                            "socialSecurityTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from Tax",
+                                        "codeValue": "1",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-09T09:18:16.93Z"
+                                }
+                            },
+                            "medicareTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from Tax",
+                                        "codeValue": "1",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-09T09:18:16.82Z"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "confirmMessage": {
+        "createDateTime": "2019-08-12T08:23:54.9179585-04:00",
+        "requestReceiptDateTime": "2019-08-12T08:23:54.9179585-04:00",
+        "processMessages": [
+            {
+                "userMessage": {
+                    "messageTxt": "Update Successful! But user must be aware that updating TaxWithholdingStatus for any of (FederalIncomeTaxInstruction, FederalUnemploymentTaxInstruction, MedicareTaxInstruction, SocialSecurityTaxInstruction) will affect any pending payrolls, manual checks, voided checks, paycheck calculations, and third party sick payments."
+                }
+            }
+        ],
+        "resourceMessages": []
+    }
+}

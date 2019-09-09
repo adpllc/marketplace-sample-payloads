@@ -1,0 +1,104 @@
+{
+    "events": [
+        {
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+            },
+            "eventStatusCode": {
+                "codeValue": "complete"
+            },
+            "effectiveDateTime": "2019-08-13T05:32:06.04678Z",
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    },
+                    "taxProfiles": {
+                        "payrollRegionCode": {
+                            "codeValue": "RL/ANP"
+                        },
+                        "payrollGroupCode": {
+                            "codeValue": "B",
+                            "shortName": "Biweekly"
+                        }
+                    }
+                },
+                "output": {
+                    "usTaxProfiles": {
+                        "payrollRegionCode": {
+                            "codeValue": "RL/ANP"
+                        },
+                        "payrollGroupCode": {
+                            "codeValue": "B",
+                            "shortName": "Biweekly"
+                        },
+                        "usFederalTaxInstruction": {
+                            "federalIncomeTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from withholding",
+                                        "codeValue": "X",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-09T08:13:21.08Z"
+                                },
+                                "taxFilingStatusCode": {
+                                    "longName": "Married",
+                                    "codeValue": "M",
+                                    "shortName": "Married"
+                                },
+                                "taxWithholdingAllowanceQuantity": 11,
+                                "overrideTaxPercentage": 18
+                            },
+                            "socialSecurityTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from Tax",
+                                        "codeValue": "1",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-13T01:06:12.03Z"
+                                }
+                            },
+                            "medicareTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from Tax",
+                                        "codeValue": "1",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-13T01:24:10.803Z"
+                                }
+                            },
+                            "federalUnemploymentTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from Tax",
+                                        "codeValue": "1",
+                                        "shortName": "Exempt"
+                                    },
+                                    "effectiveDate": "2019-08-13T01:29:40.957Z"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "confirmMessage": {
+        "createDateTime": "2019-08-13T01:32:06.04678-04:00",
+        "requestReceiptDateTime": "2019-08-13T01:32:06.04678-04:00",
+        "processMessages": [
+            {
+                "userMessage": {
+                    "messageTxt": "Update Successful! But user must be aware that updating TaxWithholdingStatus for any of (FederalIncomeTaxInstruction, FederalUnemploymentTaxInstruction, MedicareTaxInstruction, SocialSecurityTaxInstruction) will affect any pending payrolls, manual checks, voided checks, paycheck calculations, and third party sick payments."
+                }
+            }
+        ],
+        "resourceMessages": []
+    }
+}

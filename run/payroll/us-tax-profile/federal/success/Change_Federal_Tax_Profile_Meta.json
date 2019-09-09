@@ -1,0 +1,247 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/worker": {
+                "optional": true,
+                "dataType": "object"
+            },
+            "/worker/associateOID": {
+                "optional": false,
+                "hidden": true,
+                "dataType": "string"
+            },
+            "/taxProfiles": {
+                "optional": true,
+                "dataType": "object"
+            },
+            "/taxProfiles/payrollRegionCode": {
+                "optional": true,
+                "dataType": "object"
+            },
+            "/taxProfiles/payrollRegionCode/codeValue": {
+                "optional": true,
+                "dataType": "string"
+            },
+            "/taxProfiles/payrollRegionCode/shortName": {
+                "optional": true,
+                "dataType": "string"
+            },
+            "/taxProfiles/payrollRegionCode/longName": {
+                "optional": true,
+                "dataType": "string"
+            },
+            "/taxProfiles/payrollGroupCode": {
+                "optional": true,
+                "dataType": "object"
+            },
+            "/taxProfiles/payrollGroupCode/codeValue": {
+                "optional": true,
+                "dataType": "string"
+            },
+            "/taxProfiles/payrollGroupCode/shortName": {
+                "optional": true,
+                "dataType": "string"
+            },
+            "/taxProfiles/payrollGroupCode/longName": {
+                "optional": true,
+                "dataType": "string"
+            }
+        },
+        "/data/transforms": [
+            {
+                "/eventStatusCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/eventStatusCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/eventStatusCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/eventStatusCode/longName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/effectiveDateTime": {
+                    "optional": true,
+                    "dataType": "string[date]"
+                },
+                "/usTaxProfile": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/longName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/effectiveDate": {
+                    "optional": true,
+                    "dataType": "string[date]"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/longName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingAllowanceQuantity": {
+                    "optional": true,
+                    "dataType": "Int64"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxPercentage": {
+                    "optional": true,
+                    "dataType": "number"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount/amountValue": {
+                    "optional": true,
+                    "dataType": "number"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount/currencyCode": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxPercentage": {
+                    "optional": true,
+                    "dataType": "number"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount/amountValue": {
+                    "optional": true,
+                    "dataType": "number"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount/currencyCode": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/longName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/effectiveDate": {
+                    "optional": true,
+                    "dataType": "string[date]"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/longName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/effectiveDate": {
+                    "optional": true,
+                    "dataType": "string[date]"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "optional": true,
+                    "dataType": "object"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/longName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/codeValue": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/shortName": {
+                    "optional": true,
+                    "dataType": "string"
+                },
+                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/effectiveDate": {
+                    "optional": true,
+                    "dataType": "string[date]"
+                }
+            }
+        ]
+    }
+}
