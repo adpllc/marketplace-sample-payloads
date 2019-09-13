@@ -1,0 +1,165 @@
+{
+    "meta": {
+        "dataEventContext": {
+            "workerAssociateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "usTaxProfilePayrollGroupCodeCodeValue": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": false
+            },
+            "usTaxProfilePayrollGroupCodeShortName": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": false
+            },
+            "usTaxProfilePayrollGroupCodeLongName": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": false
+            },
+            "usTaxProfilePayrollFileNumber": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": false
+            },
+            "usTaxProfileItemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "dataTransforms": [
+            {
+                "effectiveDateTime": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Change Effective on",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "usLocalTaxInstructionLocalCodeCodeValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": false
+                },
+                "usLocalTaxInstructionWorkedInJurisdictionIndicator": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "usLocalTaxInstructionLivedInJurisdictionIndicator": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "usLocalTaxInstructionTaxTypeCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "WI",
+                                "shortName": "Worked In",
+                                "longName": "Worked In."
+                            },
+                            {
+                                "codeValue": "LI",
+                                "shortName": "Lived In",
+                                "longName": "Lived In."
+                            },
+                            {
+                                "codeValue": "UN",
+                                "shortName": "Unassigned",
+                                "longName": "Unassigned Local Tax Code"
+                            },
+                            {
+                                "codeValue": "L04",
+                                "shortName": "Local 4",
+                                "longName": "L04 - Local 4"
+                            },
+                            {
+                                "codeValue": "L05",
+                                "shortName": "Local 5",
+                                "longName": "L05 - Local 5"
+                            }
+                        ]
+                    },
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": false
+                },
+                "usLocalTaxInstructionTaxTypeCodeCodeValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true
+                },
+                "usLocalTaxInstructionTaxWithholdingStatusStatusCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "0",
+                                "shortName": "unchecked",
+                                "longName": "unchecked"
+                            },
+                            {
+                                "codeValue": "1",
+                                "shortName": "doNotCalculateLocalTax/ThisYearLocalServiceTax",
+                                "longName": "Local Tax (WI/LI) Do Not Calculate Local Tax, or Local Service Tax (L04/L05) Do not calculate Local 4 Tax for this year"
+                            },
+                            {
+                                "codeValue": "2",
+                                "shortName": "doNotCalculateLocalTaxable/NextYearLocalServiceTax",
+                                "longName": "Local Tax (WI/LI)Do Not Calculate Local Tax & Do Not Calculate Local Taxable, or Local Service Tax (L04/L05) Do not calculate Local 4 Tax for next year"
+                            },
+                            {
+                                "codeValue": "3",
+                                "shortName": "doNotCalculateThisAndNextYearLocalServiceTax",
+                                "longName": "Local Service Tax (L04/L05) Do not calculate Local 4 Tax for this year and next year"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "usLocalTaxInstructionTaxAllowanceQuantity": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "usLocalTaxInstructionAdditionalTaxPercentage": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "usLocalTaxInstructionAdditionalTaxAmountAmountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "usLocalTaxInstructionAdditionalTaxAmountCurrencyCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "valueDescription": "Dollars",
+                                "codeValue": "Dollars"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "usLocalTaxInstructionWorkedInAllocationPercentage": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                }
+            }
+        ]
+    }
+}
