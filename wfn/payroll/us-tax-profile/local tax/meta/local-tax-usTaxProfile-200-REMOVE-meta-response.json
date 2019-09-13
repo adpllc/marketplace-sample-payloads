@@ -1,0 +1,54 @@
+{
+    "meta": {
+        "dataEventContext": {
+            "workerAssociateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "usTaxProfilePayrollGroupCodeCodeValue": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": false
+            },
+            "usTaxProfilePayrollGroupCodeShortName": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": false
+            },
+            "usTaxProfilePayrollGroupCodeLongName": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": false
+            },
+            "usTaxProfilePayrollFileNumber": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": false
+            },
+            "usTaxProfileItemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "usTaxProfileUsLocalTaxInstructionLocalCodeCodeValue": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": false
+            }
+        },
+        "dataTransforms": [
+            {
+                "effectiveDateTime": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "shortLabelName": "Change Effective on",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                }
+            }
+        ]
+    }
+}
