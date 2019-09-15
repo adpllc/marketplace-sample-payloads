@@ -1,0 +1,56 @@
+{
+    "confirmMessage": {
+        "confirmMessageID": {
+            "idValue": "F981664E-EA01-5851-329A-26DC767C3325",
+            "schemeName": "confirmMessageID",
+            "schemeAgencyName": "WFN"
+        },
+        "createDateTime": "2019-09-12T14:24:29.434+0000",
+        "requestReceiptDateTime": "2019-09-12T14:24:29.440+0000",
+        "protocolStatusCode": {
+            "codeValue": "400",
+            "shortName": "400"
+        },
+        "requestStatusCode": {
+            "codeValue": "failed"
+        },
+        "requestMethodCode": {
+            "codeValue": "POST"
+        },
+        "requestLink": {
+            "href": "http://mascsr.iat.oneadp.com/payprofile/metaservices/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+            "rel": "related",
+            "method": "POST"
+        },
+        "processMessages": [],
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+                    "schemeName": "resourceMessageID",
+                    "schemeAgencyName": "WFN"
+                },
+                "processMessages": [
+                    {
+                        "processMessageID": {
+                            "idValue": "LocalTaxCodeAlreadyExistsWithEffectiveDating",
+                            "schemeName": "processMessageID",
+                            "schemeAgencyName": "WFN"
+                        },
+                        "messageTypeCode": {
+                            "codeValue": "error"
+                        },
+                        "userMessage": {
+                            "messageTxt": "You cannot add this local tax code for the employee because it already exists with an effective date of 09/09/2019."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "status": "success",
+    "skipMetadataEnvelope": true,
+    "requestKeys": [],
+    "statusFailure": false,
+    "statusSuccess": true
+}
