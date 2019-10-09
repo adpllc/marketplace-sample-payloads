@@ -1,61 +1,24 @@
 {
-    "confirmMessage": {
-        "confirmMessageID": {
-            "idValue": "E9EBFBD7-96F5-FEA4-E223-725C75F44FBF",
-            "schemeName": "confirmMessageID",
-            "schemeAgencyName": "WFN"
-        },
-        "createDateTime": "2019-06-20T11:20:08Z",
-        "requestReceiptDateTime": "2019-06-20T11:20:08Z",
-        "protocolStatusCode": {
-            "codeValue": "400",
-            "shortName": "400"
-        },
-        "requestStatusCode": {
-            "codeValue": "failed"
-        },
-        "requestMethodCode": {
-            "codeValue": "POST"
-        },
-        "sessionID": {
-            "idValue": "0pWp6GNJdInw+mG4JdG5Argeioc=",
-            "schemeName": "sessionID",
-            "schemeAgencyName": "WFN"
-        },
-        "requestETag": "No eTag in request",
-        "requestLink": {
-            "href": "http://11.1.60.242:9080/wfn/mobility/rest/events/payroll/v1/pay-data-input.modify",
-            "rel": "related",
-            "mediaType": "application/json",
-            "method": "POST",
-            "encType": "application/json"
-        },
-        "resourceMessages": [
-            {
-                "resourceMessageID": {
-                    "idValue": "events/payroll/v1/pay-data-input.modify",
-                    "schemeName": "processMessageID",
-                    "schemeAgencyName": "WFN"
-                },
-                "resourceStatusCode": {
-                    "codeValue": "failed"
-                },
-                "processMessages": [
-                    {
-                        "processMessageID": {
-                            "idValue": "Required",
-                            "schemeName": "processMessageID",
-                            "schemeAgencyName": "WFN"
-                        },
-                        "messageTypeCode": {
-                            "codeValue": "error"
-                        },
-                        "userMessage": {
-                            "messageTxt": "payeePayInputs is required."
-                        }
-                    }
-                ]
-            }
-        ]
-    }
+    "wfnRestfulResponseType": "HTTP_BAD_REQUEST",
+    "confirmMessageID": null,
+    "requestStatusCode": null,
+    "resourceMessageInfoList": [
+        {
+            "resourceMessageID": null,
+            "processMessageInfoList": [
+                {
+                    "processMessageID": null,
+                    "messageTypeCode": "error",
+                    "messageText": "Label not found, missing following key: payAllocation/allocationTypeCode/codeValue can not be empty or null  "
+                }
+            ]
+        }
+    ],
+    "requestReceiptTime": null,
+    "requestProtocol": null,
+    "requestMethod": "POST",
+    "path": null,
+    "requestUri": "http://mascsr.fit.oneadp.com/paydataapi/metaservices/events/payroll/v1/pay-data-input.modify",
+    "requestETag": null,
+    "smServerSessionId": null
 }
