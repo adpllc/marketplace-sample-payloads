@@ -4,18 +4,22 @@
             "data": {
                 "eventContext": {
                     "payrollGroupCode": {
-                        "codeValue": "94N"
+                        "codeValue": "RAK"
                     },
-                    "payrollProcessingJobID": "ALACostnumberTC2"
+                    "payrollProcessingJobID": "Sample"
                 },
                 "output": {
                     "payDataInput": {
+                        "payrollGroupCode": {
+                            "codeValue": "RAK"
+                        },
+                        "payrollProcessingJobID": "Sample",
                         "payeePayInputs": [
                             {
                                 "configurationTags": [],
                                 "payrollProfilePayInputs": [
                                     {
-                                        "payrollFileNumber": "768196",
+                                        "payrollFileNumber": "003250",
                                         "payInputs": [
                                             {
                                                 "payAllocation": {
@@ -33,7 +37,9 @@
                                                         "rate": {
                                                             "rateValue": 40.456
                                                         },
-                                                        "numberOfHours": 36
+                                                        "numberOfHours": 36.0,
+                                                        "earnedPayPeriodWeekNumber": "1",
+                                                        "memoInputs": []
                                                     },
                                                     {
                                                         "earningCode": {
@@ -42,20 +48,45 @@
                                                         "earningsAmount": {
                                                             "amountValue": 500.5,
                                                             "currencyCode": "USD"
-                                                        }
+                                                        },
+                                                        "earnedPayPeriodWeekNumber": "2",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "11"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 100.456
+                                                        },
+                                                        "numberOfHours": 30.0,
+                                                        "earnedPayPeriodWeekNumber": "2",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "11"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 150.456
+                                                        },
+                                                        "numberOfHours": 40.0,
+                                                        "earnedPayPeriodWeekNumber": "1",
+                                                        "memoInputs": []
                                                     },
                                                     {
                                                         "earningCode": {
                                                             "codeValue": "T"
                                                         },
                                                         "rate": {
-                                                            "rateValue": 7000
-                                                        }
+                                                            "rateValue": 7000.0
+                                                        },
+                                                        "memoInputs": []
                                                     }
                                                 ],
                                                 "codedHoursEarningInputs": [
                                                     {
-                                                        "hoursEarningCode": {
+                                                        "code": {
                                                             "codeValue": "V"
                                                         },
                                                         "earningsAmount": {
@@ -64,10 +95,39 @@
                                                         }
                                                     }
                                                 ],
+                                                "memoInputs": [
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "G"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "3"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "B"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    }
+                                                ],
                                                 "deductionInputs": [
                                                     {
                                                         "deductionCode": {
-                                                            "codeValue": "D"
+                                                            "codeValue": "12"
                                                         },
                                                         "deductionRate": {
                                                             "rateValue": 243.56,
@@ -92,7 +152,7 @@
                                                 "reimbursementInputs": [
                                                     {
                                                         "reimbursementCode": {
-                                                            "codeValue": "B"
+                                                            "codeValue": "D"
                                                         },
                                                         "reimbursementAmount": {
                                                             "amountValue": 132.45,
@@ -116,11 +176,7 @@
                                     }
                                 ]
                             }
-                        ],
-                        "payrollGroupCode": {
-                            "codeValue": "94N"
-                        },
-                        "payrollProcessingJobID": "ALACostnumberTC2"
+                        ]
                     }
                 }
             },
