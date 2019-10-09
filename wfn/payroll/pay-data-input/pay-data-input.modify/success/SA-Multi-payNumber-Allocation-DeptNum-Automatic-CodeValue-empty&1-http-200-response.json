@@ -1,163 +1,24 @@
 {
-    "events": [
+    "wfnRestfulResponseType": "HTTP_BAD_REQUEST",
+    "confirmMessageID": null,
+    "requestStatusCode": null,
+    "resourceMessageInfoList": [
         {
-            "data": {
-                "eventContext": {
-                    "payrollGroupCode": {
-                        "codeValue": "94N"
-                    },
-                    "payrollProcessingJobID": "TC3ALADepartment"
-                },
-                "output": {
-                    "payDataInput": {
-                        "payeePayInputs": [
-                            {
-                                "configurationTags": [],
-                                "payrollProfilePayInputs": [
-                                    {
-                                        "payrollFileNumber": "768196",
-                                        "payInputs": [
-                                            {
-                                                "payAllocation": {
-                                                    "allocationID": "1",
-                                                    "allocationTypeCode": {
-                                                        "codeValue": "",
-                                                        "shortName": "Api temp"
-                                                    }
-                                                },
-                                                "earningInputs": [
-                                                    {
-                                                        "earningCode": {
-                                                            "codeValue": "R"
-                                                        },
-                                                        "rate": {
-                                                            "rateValue": 40.456
-                                                        },
-                                                        "numberOfHours": 36
-                                                    },
-                                                    {
-                                                        "earningCode": {
-                                                            "codeValue": "O"
-                                                        },
-                                                        "earningsAmount": {
-                                                            "amountValue": 500.5,
-                                                            "currencyCode": "USD"
-                                                        }
-                                                    },
-                                                    {
-                                                        "earningCode": {
-                                                            "codeValue": "T"
-                                                        },
-                                                        "rate": {
-                                                            "rateValue": 7000
-                                                        }
-                                                    }
-                                                ],
-                                                "codedHoursEarningInputs": [
-                                                    {
-                                                        "hoursEarningCode": {
-                                                            "codeValue": "V"
-                                                        },
-                                                        "earningsAmount": {
-                                                            "amountValue": 1000.5,
-                                                            "currencyCode": "USD"
-                                                        }
-                                                    }
-                                                ],
-                                                "deductionInputs": [
-                                                    {
-                                                        "deductionCode": {
-                                                            "codeValue": "D"
-                                                        },
-                                                        "deductionRate": {
-                                                            "rateValue": 243.56,
-                                                            "currencyCode": "USD",
-                                                            "baseUnitCode": {
-                                                                "codeValue": "Pay Period"
-                                                            }
-                                                        },
-                                                        "configurationTags": [
-                                                            {
-                                                                "tagCode": "Deduction Type",
-                                                                "tagType": {
-                                                                    "dataTypeCode": "String"
-                                                                },
-                                                                "tagValues": [
-                                                                    "T"
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
-                                                ],
-                                                "reimbursementInputs": [
-                                                    {
-                                                        "reimbursementCode": {
-                                                            "codeValue": "B"
-                                                        },
-                                                        "reimbursementAmount": {
-                                                            "amountValue": 132.45,
-                                                            "currencyCode": "USD"
-                                                        },
-                                                        "configurationTags": [
-                                                            {
-                                                                "tagCode": "Deduction Type",
-                                                                "tagType": {
-                                                                    "dataTypeCode": "String"
-                                                                },
-                                                                "tagValues": [
-                                                                    "T"
-                                                                ]
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    }
-                                ]
-                            },
-                            {
-                                "configurationTags": [],
-                                "payrollProfilePayInputs": [
-                                    {
-                                        "payrollFileNumber": "768196",
-                                        "payInputs": [
-                                            {
-                                                "payAllocation": {
-                                                    "allocationID": "1",
-                                                    "allocationTypeCode": {
-                                                        "codeValue": "1",
-                                                        "shortName": "Api temp"
-                                                    }
-                                                },
-                                                "earningInputs": [],
-                                                "codedHoursEarningInputs": [
-                                                    {
-                                                        "hoursEarningCode": {
-                                                            "codeValue": "V"
-                                                        },
-                                                        "rate": {
-                                                            "rateValue": 50.456
-                                                        },
-                                                        "numberOfHours": 10
-                                                    }
-                                                ],
-                                                "deductionInputs": [],
-                                                "reimbursementInputs": []
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        ],
-                        "payrollGroupCode": {
-                            "codeValue": "94N"
-                        },
-                        "payrollProcessingJobID": "TC3ALADepartment"
-                    }
+            "resourceMessageID": null,
+            "processMessageInfoList": [
+                {
+                    "processMessageID": null,
+                    "messageTypeCode": "error",
+                    "messageText": "Label not found, missing following key: payAllocation/allocationTypeCode/codeValue can not be empty or null  "
                 }
-            },
-            "links": []
+            ]
         }
-    ]
+    ],
+    "requestReceiptTime": null,
+    "requestProtocol": null,
+    "requestMethod": "POST",
+    "path": null,
+    "requestUri": "http://mascsr.iat.oneadp.com/paydataapi/metaservices/events/payroll/v1/pay-data-input.modify",
+    "requestETag": null,
+    "smServerSessionId": null
 }
