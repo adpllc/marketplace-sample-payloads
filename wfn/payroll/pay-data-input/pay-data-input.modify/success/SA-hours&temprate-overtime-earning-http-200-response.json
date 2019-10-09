@@ -1,111 +1,159 @@
 {
-  "events": [
-    {
-      "data": {
-        "eventContext": {
-          "payrollGroupCode": {
-            "codeValue": "938"
-          },
-          "payrollProcessingJobID": "singleassociateOvertimeEarningwithhoursandtemprate"
-        },
-        "output": {
-          "payDataInput": {
-            "payeePayInputs": [
-              {
-                "configurationTags": [],
-                "payrollProfilePayInputs": [
-                  {
-                    "payrollFileNumber": "009669",
-                    "payInputs": [
-                      {
-                        "earningInputs": [
-                          {
-                            "earningCode": {
-                              "codeValue": "O"
-                            },
-                            "numberOfHours": 40,
-                            "rate": {
-                              "rateValue": 50
-                            }
-                          },
-                          {
-                            "earningCode": {
-                              "codeValue": "T"
-                            },
-                            "rate": {
-                              "rateValue": 7000
-                            }
-                          }
-                        ],
-                        "codedHoursEarningInputs": [
-                          {
-                            "hoursEarningCode": {
-                              "codeValue": "V"
-                            },
-                            "numberOfHours": 10
-                          }
-                        ],
-                        "deductionInputs": [
-                          {
-                            "deductionCode": {
-                              "codeValue": "12"
-                            },
-                            "deductionRate": {
-                              "rateValue": 300.56,
-                              "currencyCode": "USD",
-                              "baseUnitCode": {
-                                "codeValue": "Pay Period"
-                              }
-                            },
-                            "configurationTags": [
-                              {
-                                "tagCode": "Deduction Type",
-                                "tagType": {
-                                  "dataTypeCode": "String"
-                                },
-                                "tagValues": [
-                                  "T"
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "payrollGroupCode": {
+                        "codeValue": "-IF"
+                    },
+                    "payrollProcessingJobID": "abc"
+                },
+                "output": {
+                    "payDataInput": {
+                        "payrollGroupCode": {
+                            "codeValue": "-IF"
+                        },
+                        "payrollProcessingJobID": "abc",
+                        "payeePayInputs": [
+                            {
+                                "configurationTags": [],
+                                "payrollProfilePayInputs": [
+                                    {
+                                        "payrollFileNumber": "000104",
+                                        "payInputs": [
+                                            {
+                                                "payAllocation": {},
+                                                "earningInputs": [
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "R"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 40.456
+                                                        },
+                                                        "numberOfHours": 36.0,
+                                                        "earnedPayPeriodWeekNumber": "1",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "O"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 5600.456
+                                                        },
+                                                        "numberOfHours": 35.0,
+                                                        "earnedPayPeriodWeekNumber": "2",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "11"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 100.456
+                                                        },
+                                                        "numberOfHours": 30.0,
+                                                        "earnedPayPeriodWeekNumber": "2",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "11"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 150.456
+                                                        },
+                                                        "numberOfHours": 40.0,
+                                                        "earnedPayPeriodWeekNumber": "1",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "T"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 7000.0
+                                                        },
+                                                        "memoInputs": []
+                                                    }
+                                                ],
+                                                "codedHoursEarningInputs": [
+                                                    {
+                                                        "code": {
+                                                            "codeValue": "V"
+                                                        },
+                                                        "earningsAmount": {
+                                                            "amountValue": 1000.5,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    }
+                                                ],
+                                                "memoInputs": [
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "G"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "3"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "B"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    }
+                                                ],
+                                                "deductionInputs": [
+                                                    {
+                                                        "deductionCode": {
+                                                            "codeValue": "12"
+                                                        },
+                                                        "deductionRate": {
+                                                            "rateValue": 243.56,
+                                                            "currencyCode": "USD",
+                                                            "baseUnitCode": {
+                                                                "codeValue": "Pay Period"
+                                                            }
+                                                        },
+                                                        "configurationTags": [
+                                                            {
+                                                                "tagCode": "Deduction Type",
+                                                                "tagType": {
+                                                                    "dataTypeCode": "String"
+                                                                },
+                                                                "tagValues": [
+                                                                    "T"
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "reimbursementInputs": []
+                                            }
+                                        ]
+                                    }
                                 ]
-                              }
-                            ]
-                          }
-                        ],
-                        "reimbursementInputs": [
-                          {
-                            "reimbursementCode": {
-                              "codeValue": "D"
-                            },
-                            "reimbursementAmount": {
-                              "amountValue": 132.45,
-                              "currencyCode": "USD"
-                            },
-                            "configurationTags": [
-                              {
-                                "tagCode": "Deduction Type",
-                                "tagType": {
-                                  "dataTypeCode": "String"
-                                },
-                                "tagValues": [
-                                  "T"
-                                ]
-                              }
-                            ]
-                          }
+                            }
                         ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "payrollGroupCode": {
-              "codeValue": "938"
+                    }
+                }
             },
-            "payrollProcessingJobID": "singleassociateOvertimeEarningwithhoursandtemprate"
-          }
+            "links": []
         }
-      },
-      "links": []
-    }
-  ]
+    ]
 }
