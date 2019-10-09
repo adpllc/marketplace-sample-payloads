@@ -1,61 +1,24 @@
 {
-    "confirmMessage": {
-        "confirmMessageID": {
-            "idValue": "103278B3-66FF-52DB-50AB-6E5EE0709919",
-            "schemeName": "confirmMessageID",
-            "schemeAgencyName": "WFN"
-        },
-        "createDateTime": "2019-06-19T07:35:34Z",
-        "requestReceiptDateTime": "2019-06-19T07:35:34Z",
-        "protocolStatusCode": {
-            "codeValue": "400",
-            "shortName": "400"
-        },
-        "requestStatusCode": {
-            "codeValue": "failed"
-        },
-        "requestMethodCode": {
-            "codeValue": "POST"
-        },
-        "sessionID": {
-            "idValue": "/4UCfq51ZnP+rKE3gxxS2/8X7yw=",
-            "schemeName": "sessionID",
-            "schemeAgencyName": "WFN"
-        },
-        "requestETag": "No eTag in request",
-        "requestLink": {
-            "href": "http://11.1.60.242:9080/wfn/mobility/rest/events/payroll/v1/pay-data-input.modify",
-            "rel": "related",
-            "mediaType": "application/json",
-            "method": "POST",
-            "encType": "application/json"
-        },
-        "resourceMessages": [
-            {
-                "resourceMessageID": {
-                    "idValue": "events/payroll/v1/pay-data-input.modify",
-                    "schemeName": "processMessageID",
-                    "schemeAgencyName": "WFN"
-                },
-                "resourceStatusCode": {
-                    "codeValue": "failed"
-                },
-                "processMessages": [
-                    {
-                        "processMessageID": {
-                            "idValue": "cost number cannot be more than 50",
-                            "schemeName": "processMessageID",
-                            "schemeAgencyName": "WFN"
-                        },
-                        "messageTypeCode": {
-                            "codeValue": "error"
-                        },
-                        "userMessage": {
-                            "messageTxt": "cost number cannot be more than 50"
-                        }
-                    }
-                ]
-            }
-        ]
-    }
+    "wfnRestfulResponseType": "HTTP_BAD_REQUEST",
+    "confirmMessageID": null,
+    "requestStatusCode": null,
+    "resourceMessageInfoList": [
+        {
+            "resourceMessageID": null,
+            "processMessageInfoList": [
+                {
+                    "processMessageID": null,
+                    "messageTypeCode": "error",
+                    "messageText": "Label not found, missing following key: cost number cannot be more than 50  "
+                }
+            ]
+        }
+    ],
+    "requestReceiptTime": null,
+    "requestProtocol": null,
+    "requestMethod": "POST",
+    "path": null,
+    "requestUri": "http://paydataapi.PORTALWFN44/paydataapi/metaservices/events/payroll/v1/pay-data-input.modify",
+    "requestETag": null,
+    "smServerSessionId": null
 }
