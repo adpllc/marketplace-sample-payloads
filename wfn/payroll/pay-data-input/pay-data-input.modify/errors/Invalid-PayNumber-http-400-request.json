@@ -1,131 +1,152 @@
 {
-  "events": [
-    {
-      "data": {
-        "eventContext": {
-          "payrollGroupCode": {
-            "codeValue": "938"
-          },
-          "payrollProcessingJobID": "single associate"
-        },
-        "transform": {
-          "payDataInput": {
-            "payeePayInputs": [
-              {
-                "associateOID": "G372T336YEJ00G3E",
-                "payNumber": "7890",
-                "payrollProfilePayInputs": [
-                  {
-                    "payInputs": [
-                      {
-                        "earningInputs": [
-                          {
-                            "earningCode": {
-                              "codeValue": "R"
-                            },
-                            "numberOfHours": 40,
-                            "rate": {
-                              "rateValue": "40.456"
-                            }
-                          },
-                          {
-                            "earningCode": {
-                              "codeValue": "O"
-                            },
-                            "earningsAmount": {
-                              "amountValue": 500.5,
-                              "currencyCode": "USD"
-                            }
-                          },
-                          {
-                            "earningCode": {
-                              "codeValue": "T"
-                            },
-                            "rate": {
-                              "rateValue": 7000
-                            }
-                          }
-                        ],
-                        "_modificationTypeCode": "Add",
-                        "reimbursementInputs": [
-                          {
-                            "reimbursementCode": {
-                              "codeValue": "D"
-                            },
-                            "reimbursementAmount": {
-                              "amountValue": 132.45,
-                              "currencyCode": "USD"
-                            },
-                            "configurationTags": [
-                              {
-                                "tagCode": "Deduction Type",
-                                "tagType": {
-                                  "dataTypeCode": "String"
-                                },
-                                "tagValues": [
-                                  "T"
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "payrollGroupCode": {
+                        "codeValue": "94N"
+                    },
+                    "payrollProcessingJobID": "InvalidPN"
+                },
+                "transform": {
+                    "payDataInput": {
+                        "payeePayInputs": [
+                            {
+                                "associateOID": "G3E82PE9GT1Q8VEN",
+                                "payNumber": "100",
+                                "payrollProfilePayInputs": [
+                                    {
+                                        "payrollFileNumber": "811879",
+                                        "payInputs": [
+                                            {
+                                                "earningInputs": [
+                                                    
+                                                    {
+                                                        "earnedPayPeriodWeekNumber": 1,
+                                                        "earningCode": {
+                                                            "codeValue": "O"
+                                                        },
+                                                        "earningsAmount": {
+                                                            "amountValue": 500.5,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                   
+                                                    
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "T"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 7000
+                                                        }
+                                                    }
+                                                ],
+                                                "codedHoursEarningInputs": [
+                                                    {
+                                                        "hoursEarningCode": {
+                                                            "codeValue": "V"
+                                                        },
+                                                        "earningsAmount": {
+                                                            "amountValue": 1000.5,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    }
+                                                ],
+                                                "_modificationTypeCode": "Add",
+                                                "deductionInputs": [
+                                                    {
+                                                        "deductionRate": {
+                                                            "rateValue": 243.56,
+                                                            "currencyCode": "USD",
+                                                            "baseUnitCode": {
+                                                                "codeValue": "Pay Period"
+                                                            }
+                                                        },
+                                                        "deductionCode": {
+                                                            "codeValue": "D"
+                                                        },
+                                                        "configurationTags": [
+                                                            {
+                                                                "tagCode": "Deduction Type",
+                                                                "tagType": {
+                                                                    "dataTypeCode": "String"
+                                                                },
+                                                                "tagValues": [
+                                                                    "T"
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "memoInputs": [
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "3"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": "6000",
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "B"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": "6000",
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "G"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": "6000",
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    }
+                                                ],
+                                                "reportableEarningAndBenefitInputs": [
+                                                    {
+                                                        "reportableEarningAndBenefitCode": {
+                                                            "codeValue": "T"
+                                                        },
+                                                        "reportableEarningAndBenefitAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "CAD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "reportableEarningAndBenefitCode": {
+                                                            "codeValue": "T"
+                                                        },
+                                                        "reportableEarningAndBenefitAmount": {
+                                                            "amountValue": 300,
+                                                            "currencyCode": "CAD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "reportableEarningAndBenefitCode": {
+                                                            "codeValue": "T"
+                                                        },
+                                                        "reportableEarningAndBenefitAmount": {
+                                                            "amountValue": 20,
+                                                            "currencyCode": "CAD"
+                                                        }
+                                                    }
+                                                ],
+                                                "payAllocation": null
+                                            }
+                                        ]
+                                    }
                                 ]
-                              }
-                            ]
-                          }
-                        ],
-                        "deductionInputs": [
-                          {
-                            "deductionRate": {
-                              "rateValue": 300.56,
-                              "currencyCode": "USD",
-                              "baseUnitCode": {
-                                "codeValue": "Pay Period"
-                              }
-                            },
-                            "deductionCode": {
-                              "codeValue": "12"
-                            },
-                            "configurationTags": [
-                              {
-                                "tagCode": "Deduction Type",
-                                "tagType": {
-                                  "dataTypeCode": "String"
-                                },
-                                "tagValues": [
-                                  "T"
-                                ]
-                              }
-                            ]
-                          }
-                        ],
-                        "reportableEarningAndBenefitInputs": [
-                          {
-                            "reportableEarningAndBenefitCode": {
-                              "codeValue": "T"
-                            },
-                            "reportableEarningAndBenefitAmount": {
-                              "amountValue": 6000,
-                              "currencyCode": "CAD"
                             }
-                          }
-                        ],
-                        "codedHoursEarningInputs": [
-                          {
-                            "hoursEarningCode": {
-                              "codeValue": "V"
-                            },
-                            "rate": {
-                              "rateValue": "50.456"
-                            },
-                            "numberOfHours": 10
-                          }
                         ]
-                      }
-                    ],
-                    "payrollFileNumber": "009669"
-                  }
-                ]
-              }
-            ]
-          }
+                    }
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }
