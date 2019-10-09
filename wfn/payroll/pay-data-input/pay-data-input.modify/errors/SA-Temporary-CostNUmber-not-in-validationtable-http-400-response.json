@@ -1,61 +1,24 @@
 {
-    "confirmMessage": {
-        "confirmMessageID": {
-            "idValue": "C870C22B-69F9-0434-C523-440400D6E872",
-            "schemeName": "confirmMessageID",
-            "schemeAgencyName": "WFN"
-        },
-        "createDateTime": "2019-06-19T07:11:07Z",
-        "requestReceiptDateTime": "2019-06-19T07:11:07Z",
-        "protocolStatusCode": {
-            "codeValue": "400",
-            "shortName": "400"
-        },
-        "requestStatusCode": {
-            "codeValue": "failed"
-        },
-        "requestMethodCode": {
-            "codeValue": "POST"
-        },
-        "sessionID": {
-            "idValue": "/4UCfq51ZnP+rKE3gxxS2/8X7yw=",
-            "schemeName": "sessionID",
-            "schemeAgencyName": "WFN"
-        },
-        "requestETag": "No eTag in request",
-        "requestLink": {
-            "href": "http://11.1.60.242:9080/wfn/mobility/rest/events/payroll/v1/pay-data-input.modify",
-            "rel": "related",
-            "mediaType": "application/json",
-            "method": "POST",
-            "encType": "application/json"
-        },
-        "resourceMessages": [
-            {
-                "resourceMessageID": {
-                    "idValue": "events/payroll/v1/pay-data-input.modify",
-                    "schemeName": "processMessageID",
-                    "schemeAgencyName": "WFN"
-                },
-                "resourceStatusCode": {
-                    "codeValue": "failed"
-                },
-                "processMessages": [
-                    {
-                        "processMessageID": {
-                            "idValue": "errors.invalid",
-                            "schemeName": "processMessageID",
-                            "schemeAgencyName": "WFN"
-                        },
-                        "messageTypeCode": {
-                            "codeValue": "error"
-                        },
-                        "userMessage": {
-                            "messageTxt": "Cost code . is invalid."
-                        }
-                    }
-                ]
-            }
-        ]
-    }
+    "wfnRestfulResponseType": "HTTP_BAD_REQUEST",
+    "confirmMessageID": null,
+    "requestStatusCode": null,
+    "resourceMessageInfoList": [
+        {
+            "resourceMessageID": null,
+            "processMessageInfoList": [
+                {
+                    "processMessageID": null,
+                    "messageTypeCode": "error",
+                    "messageText": "Label not found, missing following key: Allocation code is invalid  "
+                }
+            ]
+        }
+    ],
+    "requestReceiptTime": null,
+    "requestProtocol": null,
+    "requestMethod": "POST",
+    "path": null,
+    "requestUri": "http://mascsr.fit.oneadp.com/paydataapi/metaservices/events/payroll/v1/pay-data-input.modify",
+    "requestETag": null,
+    "smServerSessionId": null
 }
