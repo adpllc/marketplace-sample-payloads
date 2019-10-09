@@ -1,61 +1,186 @@
 {
-    "confirmMessage": {
-        "confirmMessageID": {
-            "idValue": "D5179D54-B2BD-7241-51B8-5D412C00943B",
-            "schemeName": "confirmMessageID",
-            "schemeAgencyName": "WFN"
-        },
-        "createDateTime": "2019-06-20T11:15:48Z",
-        "requestReceiptDateTime": "2019-06-20T11:15:48Z",
-        "protocolStatusCode": {
-            "codeValue": "400",
-            "shortName": "400"
-        },
-        "requestStatusCode": {
-            "codeValue": "failed"
-        },
-        "requestMethodCode": {
-            "codeValue": "POST"
-        },
-        "sessionID": {
-            "idValue": "0pWp6GNJdInw+mG4JdG5Argeioc=",
-            "schemeName": "sessionID",
-            "schemeAgencyName": "WFN"
-        },
-        "requestETag": "No eTag in request",
-        "requestLink": {
-            "href": "http://11.1.60.242:9080/wfn/mobility/rest/events/payroll/v1/pay-data-input.modify",
-            "rel": "related",
-            "mediaType": "application/json",
-            "method": "POST",
-            "encType": "application/json"
-        },
-        "resourceMessages": [
-            {
-                "resourceMessageID": {
-                    "idValue": "events/payroll/v1/pay-data-input.modify",
-                    "schemeName": "processMessageID",
-                    "schemeAgencyName": "WFN"
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "payrollGroupCode": {
+                        "codeValue": "RAK"
+                    },
+                    "payrollProcessingJobID": "Sample"
                 },
-                "resourceStatusCode": {
-                    "codeValue": "failed"
-                },
-                "processMessages": [
-                    {
-                        "processMessageID": {
-                            "idValue": "  The Allocation Position Number may only be blank (to default to Automatic Allocations by Percentage if applicable), 1 (to cancel Automatic Allocations by Percentage), or one of the allocation position numbers assigned to the employee.",
-                            "schemeName": "processMessageID",
-                            "schemeAgencyName": "WFN"
+                "output": {
+                    "payDataInput": {
+                        "payrollGroupCode": {
+                            "codeValue": "RAK"
                         },
-                        "messageTypeCode": {
-                            "codeValue": "error"
-                        },
-                        "userMessage": {
-                            "messageTxt": "The Allocation Position Number may only be blank (to default to Automatic Allocations by Percentage if applicable), 1 (to cancel Automatic Allocations by Percentage), or one of the allocation position numbers assigned to the employee."
-                        }
+                        "payrollProcessingJobID": "Sample",
+                        "payeePayInputs": [
+                            {
+                                "configurationTags": [],
+                                "payrollProfilePayInputs": [
+                                    {
+                                        "payrollFileNumber": "003250",
+                                        "payInputs": [
+                                            {
+                                                "payAllocation": {
+                                                    "allocationID": "1",
+                                                    "allocationTypeCode": {
+                                                        "codeValue": "3",
+                                                        "shortName": "Api temp"
+                                                    }
+                                                },
+                                                "earningInputs": [
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "R"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 40.456
+                                                        },
+                                                        "numberOfHours": 36.0,
+                                                        "earnedPayPeriodWeekNumber": "1",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "O"
+                                                        },
+                                                        "earningsAmount": {
+                                                            "amountValue": 500.5,
+                                                            "currencyCode": "USD"
+                                                        },
+                                                        "earnedPayPeriodWeekNumber": "2",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "11"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 100.456
+                                                        },
+                                                        "numberOfHours": 30.0,
+                                                        "earnedPayPeriodWeekNumber": "2",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "11"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 150.456
+                                                        },
+                                                        "numberOfHours": 40.0,
+                                                        "earnedPayPeriodWeekNumber": "1",
+                                                        "memoInputs": []
+                                                    },
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "T"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": 7000.0
+                                                        },
+                                                        "memoInputs": []
+                                                    }
+                                                ],
+                                                "codedHoursEarningInputs": [
+                                                    {
+                                                        "code": {
+                                                            "codeValue": "V"
+                                                        },
+                                                        "earningsAmount": {
+                                                            "amountValue": 1000.5,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    }
+                                                ],
+                                                "memoInputs": [
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "G"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "3"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    },
+                                                    {
+                                                        "memoCode": {
+                                                            "codeValue": "B"
+                                                        },
+                                                        "memoAmount": {
+                                                            "amountValue": 6000,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    }
+                                                ],
+                                                "deductionInputs": [
+                                                    {
+                                                        "deductionCode": {
+                                                            "codeValue": "12"
+                                                        },
+                                                        "deductionRate": {
+                                                            "rateValue": 243.56,
+                                                            "currencyCode": "USD",
+                                                            "baseUnitCode": {
+                                                                "codeValue": "Pay Period"
+                                                            }
+                                                        },
+                                                        "configurationTags": [
+                                                            {
+                                                                "tagCode": "Deduction Type",
+                                                                "tagType": {
+                                                                    "dataTypeCode": "String"
+                                                                },
+                                                                "tagValues": [
+                                                                    "T"
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "reimbursementInputs": [
+                                                    {
+                                                        "reimbursementCode": {
+                                                            "codeValue": "D"
+                                                        },
+                                                        "reimbursementAmount": {
+                                                            "amountValue": 132.45,
+                                                            "currencyCode": "USD"
+                                                        },
+                                                        "configurationTags": [
+                                                            {
+                                                                "tagCode": "Deduction Type",
+                                                                "tagType": {
+                                                                    "dataTypeCode": "String"
+                                                                },
+                                                                "tagValues": [
+                                                                    "T"
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
                     }
-                ]
-            }
-        ]
-    }
+                }
+            },
+            "links": []
+        }
+    ]
 }
