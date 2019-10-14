@@ -1,0 +1,2178 @@
+{
+	"info": {
+		"_postman_id": "dd27bccb-3c72-4ce5-9de4-e7a7d6d409e3",
+		"name": "General Deduction - Vantage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve-v2",
+			"item": [
+				{
+					"name": "200 GET Deduction instructions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RS9/payroll-instructions",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RS9",
+								"payroll-instructions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "204 GET Deduction instructions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3DKVW69A4E6D2CM/payroll-instructions",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3DKVW69A4E6D2CM",
+								"payroll-instructions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 GET deduction instructions using past effectivedate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RS9/payroll-instructions?effectiveDate=2019-10-09",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RS9",
+								"payroll-instructions"
+							],
+							"query": [
+								{
+									"key": "effectiveDate",
+									"value": "2019-10-09"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 GET deduction instructions using future effectivedate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RS9/payroll-instructions?effectiveDate=2019-10-18",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RS9",
+								"payroll-instructions"
+							],
+							"query": [
+								{
+									"key": "effectiveDate",
+									"value": "2019-10-18"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 GET codelists-",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/unused-ess-general-deduction-code-values?effectiveDate=2019-11-19&aoid=G3R9MDBS40828RS9&paygroup=VK2",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"unused-ess-general-deduction-code-values"
+							],
+							"query": [
+								{
+									"key": "effectiveDate",
+									"value": "2019-11-19"
+								},
+								{
+									"key": "aoid",
+									"value": "G3R9MDBS40828RS9"
+								},
+								{
+									"key": "paygroup",
+									"value": "VK2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "204 GET codelists-",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/unused-ess-general-deduction-code-values?aoid=G3R9MDBS40828RS9&paygroup=VK2",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"unused-ess-general-deduction-code-values"
+							],
+							"query": [
+								{
+									"key": "aoid",
+									"value": "G3R9MDBS40828RS9"
+								},
+								{
+									"key": "paygroup",
+									"value": "VK2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "504 GET codelists without passing aoid and paygroup parameters-",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/unused-ess-general-deduction-code-values",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"unused-ess-general-deduction-code-values"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "403 GET codelists - Invalid associate ID-",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/unused-ess-general-deduction-code-values?aoid=G3R9MDBS40828RS89&paygroup=VK2",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"unused-ess-general-deduction-code-values"
+							],
+							"query": [
+								{
+									"key": "aoid",
+									"value": "G3R9MDBS40828RS89"
+								},
+								{
+									"key": "paygroup",
+									"value": "VK2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "204 GET codelists - Invalid pay group-",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/unused-ess-general-deduction-code-values?aoid=G3R9MDBS40828RS9&paygroup=V555",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"unused-ess-general-deduction-code-values"
+							],
+							"query": [
+								{
+									"key": "aoid",
+									"value": "G3R9MDBS40828RS9"
+								},
+								{
+									"key": "paygroup",
+									"value": "V555"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "403 GET deduction instructions using invalid aoid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RS89/payroll-instructions",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RS89",
+								"payroll-instructions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 GET deduction instructions using invalid effective date",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RS9/payroll-instructions?effectiveDate=20-09-2019",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RS9",
+								"payroll-instructions"
+							],
+							"query": [
+								{
+									"key": "effectiveDate",
+									"value": "20-09-2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Get deduction instructions META",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RS9/payroll-instructions/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RS9",
+								"payroll-instructions",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Start - v2",
+			"item": [
+				{
+					"name": "200 General Deductions start  current  date-dollar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                \"effectiveDateTime\": \"2019-10-09\",\n                    \n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"84\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"55\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 General Deductions start for current  pay period-dollar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                \"effectiveDateTime\": \"2019-09-19\",\n                    \n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"AGA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"55\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 General Deductions start for next pay period-dollar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-22\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"AGA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"55\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 General Deductions start for future date-dollar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-10-28\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"AWA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"50\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 General Deductions start  current  pay period-percentage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                \"effectiveDateTime\": \"2019-10-09\",\n                    \n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"84\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"10\",\n                                 \"unitCode\" : {\"codeValue\" : \"percent\"}\n                            },\n                            \n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 General Deductions start  next pay period-percentage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                \"effectiveDateTime\": \"2019-10-18\",\n                    \n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"85\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"12\",\n                                 \"unitCode\" : {\"codeValue\" : \"percent\"}\n                            },\n                            \n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 General Deductions start future date-percentage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                \"effectiveDateTime\": \"2020-10-09\",\n                    \n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"81\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"15\",\n                                 \"unitCode\" : {\"codeValue\" : \"percent\"}\n                            },\n                            \n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 General Deductions start without passing effective date field",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"AWA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"50\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 General Deductions start without passing rate value field",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-10-28\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"AWA\"\n                            },\n                            \n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 General Deductions start without passing amount value field",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-10-28\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"API\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"50\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 GENERAL DEDUCTIONS START passing negative deduction amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                \t\"effectiveDateTime\": \"2019-09-28\",\n                    \n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"API\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"-20\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"-100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 GENERAL DEDUCTIONS START passing negative goal amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                \t\"effectiveDateTime\": \"2019-09-28\",\n                    \n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"API\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"-20\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"-100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 GENERAL DEDUCTIONS START Invalid AOID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-22\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADV\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"50\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS8\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 GENERAL DEDUCTIONS START Invalid Deduction Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-12\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"123\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 GENERAL DEDUCTIONS START Invalid Deduction rate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-20\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"AAA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"ABC\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 GENERAL DEDUCTIONS START Deduction already applied",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-20\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"AAA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"50\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500 GENERAL DEDUCTIONS START Invalid Deduction goal amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-20\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"AAA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"55\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"aaa\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500 GENERAL DEDUCTIONS START Invalid effective date format",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"20-09-2019\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"AAA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"50\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"100\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "META CALL GENERAL DEDUCTIONS START",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.start",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "change-v2",
+			"item": [
+				{
+					"name": "200 deduction change for current effective record",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-10-09\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"84\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 deduction change for current pay period-dollar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-26\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"ADV\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Deduction change for next pay period-dollar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-22\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"56\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"AGA\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Deduction change for future date-dollar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-10-28\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\"\n                            }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"AWA\"\n                        }\n                    }\n                }\n            }\n        }\n    \n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 deduction change for current pay period -percenatage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-10-09\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\",\n                                \"unitCode\" : {\"codeValue\" : \"percent\"}\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"84\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Deduction change for next pay period -percentage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-10-18\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"56\",\n                                \"unitCode\" : {\"codeValue\" : \"percent\"}\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"84\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Deduction change for future date-percentage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-10-09\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"56\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"84\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 GENERAL DEDUCTIONS CHANGE passing negative rate value",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-28\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"-56\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"API\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "403 GENERAL DEDUCTIONS CHANGE Invalid aoid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-18\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RSNN\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"ADV\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 GENERAL DEDUCTIONS CHANGE Invalid Deduction Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-16\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"555\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500 GENERAL DEDUCTIONS CHANGE Invalid Effective date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"20-09-2019\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"AGI\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500 GENERAL DEDUCTIONS CHANGE Invalid deduction rate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-16\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"abc\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"ADV\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500 GENERAL DEDUCTIONS CHANGE Invalid deduction goal amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-16\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"ab\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"ADV\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "META CALL GENERAL DEDUCTIONS CHANGE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.change",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "stop-v2",
+			"item": [
+				{
+					"name": "200 Deduction stop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"itemID\": \"API\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-28\"\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Deduction stop for current pay period",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"itemID\": \"AAA\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-13\"\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Deduction stop for next pay period",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"itemID\": \"AAA\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-13\"\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Deduction stop for future date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"itemID\": \"AAA\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-13\"\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Deduction stop with invalid deduction code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"itemID\": \"123\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-13\"\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500 Deduction stop with invalid effective date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"itemID\": \"AAA\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"20-09-2019\"\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "403 Deduction stop with invalid aoid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS89\"\n                    },\n                    \"payrollInstruction\": {\n                        \"itemID\": \"AAA\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-13\"\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.stop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "META CALL GENERAL DEDUCTIONS STOP",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v2",
+								"worker-general-deduction-instruction.stop",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "a272eb8f-5ad3-4715-a4d9-83e7ca52de85",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "05d6087d-ed6a-4727-8603-77245044cde9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
