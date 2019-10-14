@@ -1,71 +1,23 @@
 {
     "usTaxProfile": {
-        "payrollFileNumber": "545454",
+        "payrollFileNumber": "006789",
+        "payrollRegionCode": {
+            "codeValue": "37077879_732"
+        },
         "payrollGroupCode": {
-            "codeValue": "94N",
-            "longName": "94N"
+            "codeValue": "938",
+            "longName": "938"
         },
         "usStateTaxInstructions": [
             {
                 "stateIncomeTaxInstructions": [
                     {
                         "stateCode": {
-                            "codeValue": "MD",
-                            "longName": "MD - Maryland"
+                            "codeValue": "GA",
+                            "longName": "GA - Georgia",
+                            "prenoteDate": "2019-08-09"
                         },
                         "livedInJurisdictionIndicator": false,
-                        "workedInJurisdictionIndicator": true,
-                        "taxWithholdingStatus": {
-                            "statusCode": {
-                                "codeValue": "1",
-                                "shortName": "Checked",
-                                "longName": "DoNotCalculateStateTax"
-                            }
-                        },
-                        "taxFilingStatusCode": {
-                            "codeValue": "M",
-                            "longName": "Married"
-                        },
-                        "taxAllowances": [
-                            {
-                                "allowanceTypeCode": {
-                                    "longName": "Total Number of Exemptions"
-                                },
-                                "taxAllowanceQuantity": 10
-                            }
-                        ],
-                        "additionalTaxPercentage": 2.0
-                    }
-                ],
-                "suiTaxInstruction": {
-                    "stateCode": {
-                        "codeValue": "MD",
-                        "longName": "Maryland"
-                    },
-                    "taxWithholdingStatus": {
-                        "statusCode": {
-                            "codeValue": "3",
-                            "shortName": "Checked",
-                            "longName": "Do Not Calc SUI/SDI Tax &  Do Not Calc SUI/SDI Taxable"
-                        }
-                    },
-                    "familyOwnedBusinessOwnerIndicator": false,
-                    "corporateOfficerIndicator": true,
-                    "seasonalIndicator": true,
-                    "healthCoverageCode": {
-                        "codeValue": "SYS:4:3343"
-                    }
-                },
-                "itemID": "13892564N"
-            },
-            {
-                "stateIncomeTaxInstructions": [
-                    {
-                        "stateCode": {
-                            "codeValue": "GA",
-                            "longName": "GA - Georgia"
-                        },
-                        "livedInJurisdictionIndicator": true,
                         "workedInJurisdictionIndicator": false,
                         "taxWithholdingStatus": {
                             "statusCode": {
@@ -83,7 +35,7 @@
                                 "allowanceTypeCode": {
                                     "longName": "Label not found, missing following key: "
                                 },
-                                "taxAllowanceQuantity": 10
+                                "taxAllowanceQuantity": 32
                             },
                             {
                                 "allowanceTypeCode": {
@@ -101,25 +53,351 @@
                         "additionalTaxAmount": {
                             "amountValue": 10,
                             "currencyCode": "Dollars"
+                        },
+                        "workedInAllocationPercentage": 10.0
+                    }
+                ]
+            },
+            {
+                "stateIncomeTaxInstructions": [
+                    {
+                        "stateCode": {
+                            "codeValue": "MI",
+                            "longName": "MI - Michigan",
+                            "prenoteDate": "2019-08-12"
+                        },
+                        "livedInJurisdictionIndicator": false,
+                        "workedInJurisdictionIndicator": true,
+                        "taxWithholdingStatus": {
+                            "statusCode": {
+                                "codeValue": "1",
+                                "shortName": "Checked",
+                                "longName": "DoNotCalculateStateTax"
+                            }
+                        },
+                        "taxAllowances": [
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Total Number of Allowances"
+                                },
+                                "taxAllowanceQuantity": 30
+                            }
+                        ],
+                        "additionalTaxAmount": {
+                            "amountValue": 10,
+                            "currencyCode": "Dollars"
+                        },
+                        "workedInAllocationPercentage": 10.0
+                    }
+                ],
+                "suiTaxInstruction": {
+                    "stateCode": {
+                        "codeValue": "OH",
+                        "longName": "Ohio"
+                    },
+                    "taxWithholdingStatus": {
+                        "statusCode": {
+                            "codeValue": "2",
+                            "shortName": "Checked",
+                            "longName": " Do Not Calc SUI/SDI Taxable"
+                        }
+                    },
+                    "familyOwnedBusinessOwnerIndicator": true,
+                    "corporateOfficerIndicator": true,
+                    "seasonalIndicator": true,
+                    "healthCoverageCode": {
+                        "codeValue": "4"
+                    }
+                }
+            },
+            {
+                "stateIncomeTaxInstructions": [
+                    {
+                        "stateCode": {
+                            "codeValue": "OH",
+                            "longName": "OH - Ohio",
+                            "prenoteDate": "2019-09-09"
+                        },
+                        "livedInJurisdictionIndicator": false,
+                        "workedInJurisdictionIndicator": false,
+                        "taxWithholdingStatus": {
+                            "statusCode": {
+                                "codeValue": "1",
+                                "shortName": "Checked",
+                                "longName": "DoNotCalculateStateTax"
+                            }
+                        },
+                        "taxFilingStatusCode": {
+                            "codeValue": "S",
+                            "longName": "Single"
+                        },
+                        "taxAllowances": [
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Personal Exemption"
+                                },
+                                "taxAllowanceQuantity": 6
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Personal Exemption for spouse"
+                                },
+                                "taxAllowanceQuantity": 10
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Dependent Exemptions"
+                                },
+                                "taxAllowanceQuantity": 10
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Total Number of Exemptions"
+                                },
+                                "taxAllowanceQuantity": 30
+                            }
+                        ],
+                        "additionalTaxPercentage": 5.0
+                    }
+                ]
+            },
+            {
+                "stateIncomeTaxInstructions": [
+                    {
+                        "stateCode": {
+                            "codeValue": "CA",
+                            "longName": "CA - California",
+                            "prenoteDate": "2019-09-23"
+                        },
+                        "livedInJurisdictionIndicator": true,
+                        "workedInJurisdictionIndicator": false,
+                        "taxWithholdingStatus": {
+                            "statusCode": {
+                                "codeValue": "0",
+                                "shortName": "UnChecked",
+                                "longName": "Neither DoNotCalculateStateTax or DoNotCalculateStateTaxable"
+                            }
+                        },
+                        "taxFilingStatusCode": {
+                            "codeValue": "S",
+                            "longName": "Single"
+                        },
+                        "taxAllowances": [
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Number of allowances for Regular Withholding Allowances, Worksheet A"
+                                },
+                                "taxAllowanceQuantity": 3
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Number of allowances from the Estimated Deductions, Worksheet B"
+                                },
+                                "taxAllowanceQuantity": 2
+                            }
+                        ],
+                        "additionalTaxAmount": {
+                            "amountValue": 45,
+                            "currencyCode": "Dollars"
                         }
                     }
                 ],
                 "suiTaxInstruction": {
                     "taxWithholdingStatus": {
                         "statusCode": {
-                            "codeValue": "3",
+                            "codeValue": "2",
                             "shortName": "Checked",
-                            "longName": "Do Not Calc SUI/SDI Tax &  Do Not Calc SUI/SDI Taxable"
+                            "longName": " Do Not Calc SUI/SDI Taxable"
                         }
                     },
                     "familyOwnedBusinessOwnerIndicator": false,
-                    "corporateOfficerIndicator": false,
+                    "corporateOfficerIndicator": true,
                     "seasonalIndicator": false,
                     "healthCoverageCode": {
-                        "codeValue": "SYS:4:3333"
+                        "codeValue": "4"
                     }
-                },
-                "itemID": "13892564N"
+                }
+            },
+            {
+                "stateIncomeTaxInstructions": [
+                    {
+                        "stateCode": {
+                            "codeValue": "IL",
+                            "longName": "IL - Illinois",
+                            "prenoteDate": "2019-08-09"
+                        },
+                        "livedInJurisdictionIndicator": false,
+                        "workedInJurisdictionIndicator": false,
+                        "taxWithholdingStatus": {
+                            "statusCode": {
+                                "codeValue": "0",
+                                "shortName": "UnChecked",
+                                "longName": "Neither DoNotCalculateStateTax or DoNotCalculateStateTaxable"
+                            }
+                        },
+                        "taxAllowances": [
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Total Number of Basic Allowances"
+                                },
+                                "taxAllowanceQuantity": 30
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Total Number of Additional Allowances"
+                                },
+                                "taxAllowanceQuantity": 10
+                            }
+                        ],
+                        "additionalTaxAmount": {
+                            "amountValue": 10,
+                            "currencyCode": "Dollars"
+                        },
+                        "workedInAllocationPercentage": 10.0
+                    }
+                ]
+            },
+            {
+                "stateIncomeTaxInstructions": [
+                    {
+                        "stateCode": {
+                            "codeValue": "NY",
+                            "longName": "NY - New York",
+                            "prenoteDate": "2019-10-10"
+                        },
+                        "livedInJurisdictionIndicator": false,
+                        "workedInJurisdictionIndicator": false,
+                        "taxWithholdingStatus": {
+                            "statusCode": {
+                                "codeValue": "1",
+                                "shortName": "Checked",
+                                "longName": "DoNotCalculateStateTax"
+                            }
+                        },
+                        "taxFilingStatusCode": {
+                            "codeValue": "S",
+                            "longName": "Single"
+                        },
+                        "additionalTaxPercentage": 4.0
+                    }
+                ]
+            },
+            {
+                "stateIncomeTaxInstructions": [
+                    {
+                        "stateCode": {
+                            "codeValue": "NJ",
+                            "longName": "NJ - New Jersey",
+                            "prenoteDate": "2019-08-09"
+                        },
+                        "livedInJurisdictionIndicator": false,
+                        "workedInJurisdictionIndicator": false,
+                        "taxWithholdingStatus": {
+                            "statusCode": {
+                                "codeValue": "0",
+                                "shortName": "UnChecked",
+                                "longName": "Neither DoNotCalculateStateTax or DoNotCalculateStateTaxable"
+                            }
+                        },
+                        "taxFilingStatusCode": {
+                            "codeValue": "S",
+                            "longName": "Single"
+                        },
+                        "taxAllowances": [
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Personal Exemption"
+                                },
+                                "taxAllowanceQuantity": 10
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Dependent Exemptions"
+                                },
+                                "taxAllowanceQuantity": 10
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Exemptions for blindness"
+                                },
+                                "taxAllowanceQuantity": 12
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Total Exemptions"
+                                },
+                                "taxAllowanceQuantity": 32
+                            }
+                        ],
+                        "additionalTaxAmount": {
+                            "amountValue": 10,
+                            "currencyCode": "Dollars"
+                        },
+                        "workedInAllocationPercentage": 10.0,
+                        "taxWithholdingRateCode": {
+                            "codeValue": "A"
+                        }
+                    }
+                ]
+            },
+            {
+                "stateIncomeTaxInstructions": [
+                    {
+                        "stateCode": {
+                            "codeValue": "VA",
+                            "longName": "VA - Virginia",
+                            "prenoteDate": "2019-08-09"
+                        },
+                        "livedInJurisdictionIndicator": false,
+                        "workedInJurisdictionIndicator": false,
+                        "taxWithholdingStatus": {
+                            "statusCode": {
+                                "codeValue": "0",
+                                "shortName": "UnChecked",
+                                "longName": "Neither DoNotCalculateStateTax or DoNotCalculateStateTaxable"
+                            }
+                        },
+                        "taxAllowances": [
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Number of Exemptions Claimed"
+                                },
+                                "taxAllowanceQuantity": 30
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "longName": "Exemptions for age and blindness"
+                                },
+                                "taxAllowanceQuantity": 10
+                            }
+                        ],
+                        "additionalTaxAmount": {
+                            "amountValue": 10,
+                            "currencyCode": "Dollars"
+                        },
+                        "workedInAllocationPercentage": 10.0
+                    }
+                ]
+            },
+            {
+                "stateIncomeTaxInstructions": [
+                    {
+                        "stateCode": {
+                            "codeValue": "MA",
+                            "longName": "MA - Massachusetts",
+                            "prenoteDate": "2019-08-12"
+                        },
+                        "livedInJurisdictionIndicator": false,
+                        "workedInJurisdictionIndicator": false,
+                        "taxWithholdingStatus": {
+                            "statusCode": {
+                                "codeValue": "0",
+                                "shortName": "UnChecked",
+                                "longName": "Neither DoNotCalculateStateTax or DoNotCalculateStateTaxable"
+                            }
+                        }
+                    }
+                ]
             }
         ],
         "links": []
