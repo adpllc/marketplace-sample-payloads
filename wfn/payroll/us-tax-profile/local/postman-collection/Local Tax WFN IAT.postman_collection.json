@@ -1,0 +1,2126 @@
+{
+	"info": {
+		"_postman_id": "b29a732a-3106-4c56-83eb-dfadf921407f",
+		"name": "Local Tax WFN IAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-iat-wfn\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax GET - with Company Code 94N",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken-iat-wfn}}",
+						"type": "text"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "testqwe",
+						"type": "text"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/payroll/v1/workers/G34YJ69EMRR7N4VJ/us-tax-profiles/94N004567/local",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"workers",
+						"G34YJ69EMRR7N4VJ",
+						"us-tax-profiles",
+						"94N004567",
+						"local"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax GET - with MKPL Proxy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken-iat-wfn}}",
+						"type": "text"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "testqwe",
+						"type": "text"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/payroll/v1/workers/G3E82PE9GT1QM4MP/us-tax-profiles/94N000054/local",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"workers",
+						"G3E82PE9GT1QM4MP",
+						"us-tax-profiles",
+						"94N000054",
+						"local"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax GET - with Company Code 94N As of Date",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "testqwe"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/payroll/v1/workers/G3E82PE9GT1QM4MP/us-tax-profiles/94N000054/local?asOfDate=2019-09-09",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"workers",
+						"G3E82PE9GT1QM4MP",
+						"us-tax-profiles",
+						"94N000054",
+						"local"
+					],
+					"query": [
+						{
+							"key": "asOfDate",
+							"value": "2019-09-09"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax GET - Invalid associate ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "testqwe"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/payroll/v1/workers/G3E82PE9GT1QM4MZ/us-tax-profiles/94N000054/local?asOfDate=2019-09-09",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"workers",
+						"G3E82PE9GT1QM4MZ",
+						"us-tax-profiles",
+						"94N000054",
+						"local"
+					],
+					"query": [
+						{
+							"key": "asOfDate",
+							"value": "2019-09-09"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax GET - Invalid as of Date",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "testqwe"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/payroll/v1/workers/G3E82PE9GT1QM4MP/us-tax-profiles/94N000054/local?asOfDate=2019-",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"workers",
+						"G3E82PE9GT1QM4MP",
+						"us-tax-profiles",
+						"94N000054",
+						"local"
+					],
+					"query": [
+						{
+							"key": "asOfDate",
+							"value": "2019-"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax GET - Invalid Position ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "testqwe"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/payroll/v1/workers/G3E82PE9GT1QM4MZ/us-tax-profiles/94N000054/local?asOfDate=2019-09-09",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"workers",
+						"G3E82PE9GT1QM4MZ",
+						"us-tax-profiles",
+						"94N000054",
+						"local"
+					],
+					"query": [
+						{
+							"key": "asOfDate",
+							"value": "2019-09-09"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 Code for Worked In",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                  \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 20,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": \"sdsdsd\",\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 20\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code for BB22 Lived In",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"value": "qwert56",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"BB22\",\n                            \"shortName\": \"Test BB\",\n                            \"longName\": \"BB22 - Test BB\"\n                        },\n                        \"workedInJurisdictionIndicator\": false,\n                        \"livedInJurisdictionIndicator\": true,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"LI\",\n                            \"shortName\": \"Lived In\",\n                            \"longName\": \"Lived In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": null,\n                        \"taxAllowanceQuantity\": 9,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 150,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 with invalid associate OID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MQ\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                  \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 with invalid file Number",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000050\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                   \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 with invalid payrollGroupCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94NN\",\n                            \"longName\": \"94NN\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                   \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 with invalid itemID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294319\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                  \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 with invalid effective Date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"20190-09-09\",\n                   \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 Code with invalid local Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                 \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA113\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 Code with invalid taxTypeCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                  \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WIP\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 Code with invalid taxWithholdingCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n               \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"5\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 - try the request two times",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                  \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 -invalid currency code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                  \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": 50\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 -invalid amount value",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                  \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": 50\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 -invalid workedInallocationPercentage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                  \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": 50\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax ADD - New Local Tax Code AA11 -invalid tax allowance quantity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "sm_transactionID",
+						"type": "text",
+						"value": "qwert56"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                  \n                    \"usLocalTaxInstruction\": {\n                        \n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 9,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 50,\n                            \"currencyCode\": 50\n                        },\n                        \"workedInAllocationPercentage\": 5\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify Worked In Details for AA11 Local Tax code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - worked In to Lived In",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"004567\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"91000820N\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-10-11\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"CC33\",\n                    \"shortName\": \"Test CC\",\n                    \"longName\": \"CC33 - Test CC\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                                \"shortName\": \"Worked In\",\n                                \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 4.0\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Lived In to Worked In",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"004567\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"91000820N\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-10-11\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"CC33\",\n                    \"shortName\": \"Test CC\",\n                    \"longName\": \"CC33 - Test CC\"\n                        },\n                        \"workedInJurisdictionIndicator\": false,\n                        \"livedInJurisdictionIndicator\": true,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                                \"shortName\": \"Worked In\",\n                                \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 4.0\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify Lived In Details for BB22 Local Tax code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\",\n                    \"notificationIndicator\": true,\n                    \"usLocalTaxInstruction\": {\n                      \n                        \"localCode\": {\n                            \"codeValue\": \"BB22\",\n                            \"shortName\": \"Test BB\",\n                            \"longName\": \"BB22 - Test BB\"\n                        },\n                        \"primaryWorkedInJurisdictionIndicator\": null,\n                        \"workedInJurisdictionIndicator\": false,\n                        \"livedInJurisdictionIndicator\": true,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"LI\",\n                            \"shortName\": \"Lived In\",\n                            \"longName\": \"Lived In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 82,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 35,\n                        \"additionalStatutoryInputs\": []\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn Invalid associate ID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MPQ\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn blank associate ID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn Invalid payrollFileNumber",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"0000541\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn blank payrollFileNumber",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"0000541\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn invalid payrollGroupCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94NN\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn blank payrollGroupCode",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn invalid itemID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_2943134\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn blank itemID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_2943134\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn invalid effective Date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"20190-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn blank effective Date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn invalid local Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"2AA11\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change - Modify LivedIn blank local Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollFileNumber\": \"000054\",\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"itemID\": \"25604504_294313\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-14\",\n                    \"usLocalTaxInstruction\": {\n                        \"localCode\": {\n                            \"codeValue\": \"\",\n                            \"shortName\": \"Test AA\",\n                            \"longName\": \"AA11 - Test AA\"\n                        },\n                        \"workedInJurisdictionIndicator\": true,\n                        \"livedInJurisdictionIndicator\": false,\n                        \"taxTypeCode\": {\n                            \"codeValue\": \"WI\",\n                            \"shortName\": \"Worked In\",\n                            \"longName\": \"Worked In.\"\n                        },\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"0\",\n                                \"shortName\": \"unchecked\",\n                                \"longName\": \"unchecked\"\n                            }\n                        },\n                        \"taxAllowanceQuantity\": 11,\n                        \"taxAllowances\": [],\n                        \"additionalTaxPercentage\": null,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 76,\n                            \"currencyCode\": \"Dollars\"\n                        },\n                        \"workedInAllocationPercentage\": 36\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Remove Worked In Details for AA11 Local Tax code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken-iat-wfn}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_294313\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"AA11\",\n                                \"shortName\": \"Test AA\",\n                                \"longName\": \"AA11 - Test AA\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Remove Lived In Details for BB22 Local Tax code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_294313\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"BB22\",\n                                \"shortName\": \"Test BB\",\n                                \"longName\": \"BB22 - Test BB\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Invalid Associate ID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_294313\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"AA11\",\n                                \"shortName\": \"Test AA\",\n                                \"longName\": \"AA11 - Test AA\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Invalid Payroll Group Code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_294313\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"AA11\",\n                                \"shortName\": \"Test AA\",\n                                \"longName\": \"AA11 - Test AA\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Invalid Payroll File Number",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_294313\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"AA11\",\n                                \"shortName\": \"Test AA\",\n                                \"longName\": \"AA11 - Test AA\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Invalid itemID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_2943134\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"AA11\",\n                                \"shortName\": \"Test AA\",\n                                \"longName\": \"AA11 - Test AA\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Invalid Local Code Value",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_294313\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"AA11\",\n                                \"shortName\": \"Test AA\",\n                                \"longName\": \"AA11 - Test AA\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Invalid effective Date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_294313\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"AA11\",\n                                \"shortName\": \"Test AA\",\n                                \"longName\": \"AA11 - Test AA\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Remove a Local code which has been processed in a payroll",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_294313\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"AA11\",\n                                \"shortName\": \"Test AA\",\n                                \"longName\": \"AA11 - Test AA\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove - Remove a Local code which has been processed in a payroll Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"notificationIndicator\": true,\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3E82PE9GT1QM4MP\"\n                    },\n                    \"usTaxProfile\": {\n                        \"payrollGroupCode\": {\n                            \"codeValue\": \"94N\",\n                            \"shortName\": \"94N\",\n                            \"longName\": \"94N\"\n                        },\n                        \"payrollFileNumber\": \"000054\",\n                        \"itemID\": \"25604504_294313\",\n                        \"usLocalTaxInstruction\": {\n                            \"localCode\": {\n                                \"codeValue\": \"AA11\",\n                                \"shortName\": \"Test AA\",\n                                \"longName\": \"AA11 - Test AA\"\n                            }\n                        }\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-09\"\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Add Meta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "false",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Change Meta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "false",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.add/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.add",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Local Tax Remove Meta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken-iat-wfn}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/us-tax-profile.local-income-tax-instruction.remove/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"us-tax-profile.local-income-tax-instruction.remove",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
