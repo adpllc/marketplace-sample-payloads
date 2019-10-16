@@ -1,0 +1,389 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/stateCode/codeValue": {
+                "codeList": {
+                    "codeListTitle": "",
+                    "listItems": [
+                        {
+                            "shortName": "NY",
+                            "longName": "New York"
+                        },
+                        {
+                            "itemID": "Number of allowances for Regular Withholding Allowances, Worksheet A, Number of allowances from the Estimated Deductions, Worksheet B",
+                            "shortName": "CA",
+                            "longName": "California"
+                        },
+                        {
+                            "itemID": "Personal Exemption , Personal Exemption for spouse, Exemptions for dependents, Total Number of Exemptions",
+                            "shortName": "OH",
+                            "longName": "Ohio"
+                        },
+                        {
+                            "itemID": "Personal Exemption, Exemption for spouse, Qualified dependents, Total Number of Exemptions, Exemptions for blindness",
+                            "shortName": "MA",
+                            "longName": "Massachusetts"
+                        },
+                        {
+                            "itemID": "Total Number of Allowances",
+                            "shortName": "MI",
+                            "longName": "Michigan"
+                        },
+                        {
+                            "itemID": "Allowances, Dependent Allowances, Additional Allowances",
+                            "shortName": "GA",
+                            "longName": "Georgia"
+                        },
+                        {
+                            "itemID": "Number of Exemptions Claimed, Exemptions for Age & Blindness",
+                            "shortName": "VA",
+                            "longName": "Virginia"
+                        },
+                        {
+                            "itemID": "Total Number of Basic  Allowances, Total Number of Additional Allowances",
+                            "shortName": "IL",
+                            "longName": "Illinois"
+                        },
+                        {
+                            "itemID": "Total number of allowances you are claiming",
+                            "shortName": "NJ",
+                            "longName": "New Jersey"
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true
+            },
+            "/usTaxProfile/payrollGroupCode/codeValue": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/usTaxProfile/payrollFileNumber": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/usTaxProfile/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/usTaxProfile/usStateTaxInstruction/SuiTaxInstruction/stateCode": {
+                "codeList": {
+                    "codeListTitle": "",
+                    "listItems": [
+                        {
+                            "shortName": "Massachusetts",
+                            "longName": "MA"
+                        },
+                        {
+                            "shortName": "North Carolina",
+                            "longName": "NC"
+                        },
+                        {
+                            "shortName": "Virginia",
+                            "longName": "VA"
+                        },
+                        {
+                            "shortName": "New York (Taxing)",
+                            "longName": "NY"
+                        },
+                        {
+                            "shortName": "New Jersey (Taxing)",
+                            "longName": "NJ"
+                        },
+                        {
+                            "shortName": "Georgia",
+                            "longName": "GA"
+                        },
+                        {
+                            "shortName": "Ohio",
+                            "longName": "OH"
+                        },
+                        {
+                            "shortName": "Illinois",
+                            "longName": "IL"
+                        },
+                        {
+                            "shortName": "Michigan",
+                            "longName": "MI"
+                        },
+                        {
+                            "shortName": "Foreign",
+                            "longName": "XX"
+                        },
+                        {
+                            "shortName": "California (Taxing)",
+                            "longName": "CA"
+                        },
+                        {
+                            "shortName": "New York (Non Taxing)",
+                            "longName": "NY"
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "shortLabelName": "Change Effective on",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "codeList": {
+                        "codeListTitle": "",
+                        "listItems": [
+                            {
+                                "shortName": "S",
+                                "longName": "Single"
+                            },
+                            {
+                                "shortName": "M",
+                                "longName": "Married"
+                            },
+                            {
+                                "shortName": "MH",
+                                "longName": "Married, but withhold at higher Single rate"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxWithholdingStatus/reasonCode": {
+                    "codeList": {
+                        "codeListTitle": "",
+                        "listItems": [
+                            {
+                                "codeValue": "0",
+                                "shortName": "UnChecked",
+                                "longName": "Neither DoNotCalculateStateTax & DoNotCalculateStateTaxable"
+                            },
+                            {
+                                "codeValue": "1",
+                                "shortName": "Checked",
+                                "longName": "DoNotCalculateStateTax"
+                            },
+                            {
+                                "codeValue": "2",
+                                "shortName": "Checked",
+                                "longName": "DoNotCalculateStateTaxable"
+                            },
+                            {
+                                "codeValue": "3",
+                                "shortName": "Checked",
+                                "longName": "DoNotCalculateStateTax & DoNotCalculateStateTaxable"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/taxAllowanceQuantity": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^(\\d{0,2})$"
+                },
+                "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/additionalTaxPercentage": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^((100|100\\.\\d{1,2})|(\\d{0,2})|(\\d{0,2}\\.\\d{1,2}))$"
+                },
+                "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/additionalTaxAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^\\-?(\\d{0,13}|(\\d{0,13}\\.\\d{1,2}))$"
+                },
+                "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxWithholdingRateCode": {
+                    "codeList": {
+                        "codeListTitle": "",
+                        "listItems": [
+                            {
+                                "codeValue": "SYS:4:10249",
+                                "shortName": "F",
+                                "longName": "CT"
+                            },
+                            {
+                                "codeValue": "SYS:4:3362",
+                                "shortName": "A",
+                                "longName": "CT"
+                            },
+                            {
+                                "codeValue": "SYS:4:3373",
+                                "shortName": "B",
+                                "longName": "CT"
+                            },
+                            {
+                                "codeValue": "SYS:4:3386",
+                                "shortName": "C",
+                                "longName": "CT"
+                            },
+                            {
+                                "codeValue": "SYS:4:3399",
+                                "shortName": "D",
+                                "longName": "CT"
+                            },
+                            {
+                                "codeValue": "SYS:4:3365",
+                                "shortName": "A",
+                                "longName": "NJ"
+                            },
+                            {
+                                "codeValue": "SYS:4:3379",
+                                "shortName": "B",
+                                "longName": "NJ"
+                            },
+                            {
+                                "codeValue": "SYS:4:3392",
+                                "shortName": "C",
+                                "longName": "NJ"
+                            },
+                            {
+                                "codeValue": "SYS:4:3405",
+                                "shortName": "D",
+                                "longName": "NJ"
+                            },
+                            {
+                                "codeValue": "SYS:4:3418",
+                                "shortName": "E",
+                                "longName": "NJ"
+                            },
+                            {
+                                "codeValue": "SYS:4:6617",
+                                "shortName": "S",
+                                "longName": "VT"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/taxWithholdingStatus/statusCode": {
+                    "codeList": {
+                        "codeListTitle": "",
+                        "listItems": [
+                            {
+                                "codeValue": "1000",
+                                "shortName": "Checked",
+                                "longName": "Do not calculate SUI/SDI Tax"
+                            },
+                            {
+                                "codeValue": "0100",
+                                "shortName": "Checked",
+                                "longName": "Do not calculate SUI/SDI Taxable"
+                            },
+                            {
+                                "codeValue": "0010",
+                                "shortName": "Checked",
+                                "longName": "Voluntary Plan Disability Insurance (VPDI)"
+                            },
+                            {
+                                "codeValue": "0001",
+                                "shortName": "Checked",
+                                "longName": "Exempt/Do not calculate FLI"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/familyOwnedBusinessOwnerIndicator": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/corporateOfficerIndicator": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/seasonalIndicator": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/healthCoverageCode": {
+                    "codeList": {
+                        "codeListTitle": "",
+                        "listItems": [
+                            {
+                                "codeValue": "SYS:4:10806",
+                                "shortName": "5",
+                                "longName": "Declined - coverage elsewhere"
+                            },
+                            {
+                                "codeValue": "SYS:4:3322",
+                                "shortName": "2",
+                                "longName": "Declined - no coverage elsewhere"
+                            },
+                            {
+                                "codeValue": "SYS:4:3333",
+                                "shortName": "3",
+                                "longName": "Employee Only"
+                            },
+                            {
+                                "codeValue": "SYS:4:3343",
+                                "shortName": "4",
+                                "longName": "Employee + Dependent"
+                            },
+                            {
+                                "codeValue": "SYS:4:7770",
+                                "shortName": "6",
+                                "longName": "Declined - has Medicaid"
+                            },
+                            {
+                                "codeValue": "SYS:4:7771",
+                                "shortName": "7",
+                                "longName": "Declined - has VHBE"
+                            },
+                            {
+                                "codeValue": "SYS:4:7772",
+                                "shortName": "A",
+                                "longName": "Not Eligible - Part-time and coverage elsewhere"
+                            },
+                            {
+                                "codeValue": "SYS:4:7773",
+                                "shortName": "B",
+                                "longName": "Not Eligible - Seasonal and coverage elsewhere"
+                            },
+                            {
+                                "codeValue": "SYS:4:7774",
+                                "shortName": "C",
+                                "longName": "Not Eligible - coverage elsewhere"
+                            },
+                            {
+                                "codeValue": "SYS:4:7775",
+                                "shortName": "D",
+                                "longName": "Not Eligible - Part/Seasonal and no coverage elsewhere"
+                            },
+                            {
+                                "codeValue": "SYS:4:8296",
+                                "shortName": "1",
+                                "longName": "No Coverage"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                }
+            }
+        ]
+    }
+}

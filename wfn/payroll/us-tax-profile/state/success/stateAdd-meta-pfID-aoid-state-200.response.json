@@ -1,0 +1,90 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/worker": {
+                "readOnly": true,
+                "optional": false
+            },
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/usTaxProfile/payrollGroupCode/codeValue": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/usTaxProfile/payrollFileNumber": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/usTaxProfile/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "shortLabelName": "Change Effective on",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/usStateTaxInstruction": {
+                    "readOnly": false,
+                    "hidden": false
+                },
+                "/usStateTaxInstruction/stateIncomeTaxInstruction/livedInJurisdictionIndicator": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usStateTaxInstruction/stateIncomeTaxInstruction/workedInJurisdictionIndicator": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/usStateTaxInstruction/stateIncomeTaxInstruction/stateCode": {
+                    "codeList": {
+                        "codeListTitle": "",
+                        "listItems": [
+                            {
+                                "shortName": "IL",
+                                "longName": "Illinois"
+                            },
+                            {
+                                "shortName": "CA",
+                                "longName": "California"
+                            },
+                            {
+                                "shortName": "GA",
+                                "longName": "Georgia"
+                            },
+                            {
+                                "shortName": "NC",
+                                "longName": "North Carolina"
+                            },
+                            {
+                                "shortName": "MI",
+                                "longName": "Michigan"
+                            },
+                            {
+                                "shortName": "MD",
+                                "longName": "Maryland"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                }
+            }
+        ]
+    }
+}
