@@ -1,10 +1,6 @@
 {
     "meta": {
-        "queryCriteria": [],
-        "/serviceCategoryCode/codeValue": null,
-        "/eventNameCode/codeValue": null,
         "/data/eventContext": {
-            "/contextExpressionID": null,
             "/worker": {
                 "readOnly": true,
                 "optional": false
@@ -14,11 +10,6 @@
                 "optional": false,
                 "hidden": true
             },
-            "/usTaxProfiles": null,
-            "/usTaxProfiles/payrollRegionCode": null,
-            "/usTaxProfiles/payrollRegionCode/codeValue": null,
-            "/usTaxProfiles/payrollRegionCode/shortName": null,
-            "/usTaxProfiles/payrollRegionCode/longName": null,
             "/usTaxProfiles/payrollGroupCode": {
                 "readOnly": true,
                 "optional": false,
@@ -54,17 +45,15 @@
         },
         "/data/transforms": [
             {
-                "itemID": null,
-                "/eventReasonCode": null,
-                "/eventReasonCode/codeValue": null,
-                "/eventReasonCode/shortName": null,
-                "/eventReasonCode/longName": null,
-                "/eventStatusCode": null,
-                "/eventStatusCode/codeValue": null,
-                "/eventStatusCode/shortName": null,
-                "/eventStatusCode/longName": null,
-                "/effectiveDateTime": null,
-                "/notificationIndicator": null,
+                "/effectiveDateTime": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "shortLabelName": "Change Effective on",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
                 "/usTaxProfile": null,
                 "/usTaxProfile/usFederalTaxInstruction": {
                     "readOnly": true,
@@ -100,21 +89,6 @@
                     "optional": true,
                     "hidden": true
                 },
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/longName": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/reasonCode": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/reasonCode/codeValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/reasonCode/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/reasonCode/longName": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/effectiveDate": {
-                    "readOnly": true,
-                    "optional": false,
-                    "hidden": true,
-                    "shortLabelName": "Change Effective on",
-                    "minLength": 10,
-                    "maxLength": 10,
-                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
-                },
                 "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode": {
                     "codeList": {
                         "listItems": [
@@ -136,9 +110,6 @@
                     "optional": false,
                     "hidden": false
                 },
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/codeValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/longName": null,
                 "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingAllowanceQuantity": {
                     "readOnly": true,
                     "optional": true,
@@ -152,18 +123,12 @@
                     "hidden": false,
                     "pattern": "^((100|100\\.\\d{1,2})|(\\d{0,2})|(\\d{0,2}\\.\\d{1,2}))$"
                 },
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount": null,
                 "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount/amountValue": {
                     "readOnly": false,
                     "optional": false,
                     "hidden": false,
                     "pattern": "^\\-?(\\d{0,13}|(\\d{0,13}\\.\\d{1,2}))$"
                 },
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount/currencyCode": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount/amountValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount/currencyCode": null,
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction": null,
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus": null,
                 "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode": {
                     "codeList": {
                         "listItems": [
@@ -181,16 +146,6 @@
                     "optional": false,
                     "hidden": false
                 },
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/codeValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/longName": null,
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/reasonCode": null,
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/reasonCode/codeValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/reasonCode/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/reasonCode/longName": null,
-                "/usTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/effectiveDate": null,
-                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction": null,
-                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus": null,
                 "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode": {
                     "codeList": {
                         "listItems": [
@@ -209,15 +164,6 @@
                     "hidden": false
                 },
                 "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/codeValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/longName": null,
-                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/reasonCode": null,
-                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/reasonCode/codeValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/reasonCode/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/reasonCode/longName": null,
-                "/usTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/effectiveDate": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus": null,
                 "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode": {
                     "codeList": {
                         "listItems": [
@@ -235,15 +181,6 @@
                     "optional": false,
                     "hidden": false
                 },
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/codeValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/longName": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/reasonCode": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/reasonCode/codeValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/reasonCode/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/reasonCode/longName": null,
-                "/usTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/effectiveDate": null,
-                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction": null,
                 "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/distributionCodes": {
                     "codeList": {
                         "listItems": [
@@ -470,9 +407,6 @@
                     "shortLabelName": "label",
                     "longLabelName": "label"
                 },
-                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/distributionCodes/codeValue": null,
-                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/distributionCodes/shortName": null,
-                "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/distributionCodes/longName": null,
                 "/usTaxProfile/usFederalTaxInstruction/form1099Instruction/totalDistributionIndicator": {
                     "readOnly": false,
                     "optional": true,
