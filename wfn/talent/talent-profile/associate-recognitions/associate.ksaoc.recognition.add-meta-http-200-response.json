@@ -1,0 +1,83 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/associateRecognition": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateRecognition/nameCode": {
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/associateRecognition/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Award Name",
+                    "minLength": 0,
+                    "maxLength": 40,
+                    "pattern": "^[\\x20-\\x27\\x2A-\\x3B\\x3D\\x3F-\\x7D]+$|^~$"
+                },
+                "/associateRecognition/typeCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "valueDescription": "AWARD1 ",
+                                "codeValue": "AWARD1",
+                                "shortName": "AWARD1 "
+                            },
+                            {
+                                "valueDescription": "AWARD2",
+                                "codeValue": "AWARD2",
+                                "shortName": "AWARD2"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Award Type"
+                },
+                "/associateRecognition/typeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Award Type"
+                },
+                "/associateRecognition/issuingParty": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateRecognition/issuingParty/nameCode": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateRecognition/issuingParty/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Awarding Body",
+                    "minLength": 0,
+                    "maxLength": 40
+                },
+                "/associateRecognition/issueDate": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Date Awarded",
+                    "minLength": 0,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                }
+            }
+        ]
+    }
+}
