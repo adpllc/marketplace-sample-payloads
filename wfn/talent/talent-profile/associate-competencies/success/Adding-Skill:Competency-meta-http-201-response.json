@@ -1,0 +1,310 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/associateCompetency": {
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/associateCompetency/competencyNameCode": {
+                    "codeList": {
+                        "codeListTitle": "Skills",
+                        "listItems": [
+                            {
+                                "codeValue": "22",
+                                "shortName": "test"
+                            },
+                            {
+                                "codeValue": "CUS",
+                                "shortName": "Customer Service"
+                            },
+                            {
+                                "codeValue": "DBA",
+                                "longName": "Database Administration"
+                            },
+                            {
+                                "codeValue": "DRV",
+                                "shortName": "Commercial Driving"
+                            },
+                            {
+                                "codeValue": "FIN",
+                                "shortName": "Financial Analysis"
+                            },
+                            {
+                                "codeValue": "INV",
+                                "shortName": "Inventory Management"
+                            },
+                            {
+                                "codeValue": "LAN",
+                                "shortName": "LAN Administration"
+                            },
+                            {
+                                "codeValue": "MPP",
+                                "shortName": "Microsoft Project"
+                            },
+                            {
+                                "codeValue": "MPW",
+                                "longName": "Microsoft Power Point"
+                            },
+                            {
+                                "codeValue": "MSA",
+                                "shortName": "Microsoft Access"
+                            },
+                            {
+                                "codeValue": "MSE",
+                                "shortName": "Microsoft Excel"
+                            },
+                            {
+                                "codeValue": "MSW",
+                                "shortName": "Microsoft Word"
+                            },
+                            {
+                                "codeValue": "PCL",
+                                "shortName": "PC Literacy"
+                            },
+                            {
+                                "codeValue": "PM",
+                                "shortName": "Project Management"
+                            },
+                            {
+                                "codeValue": "PRE",
+                                "longName": "Platform Presentation Skills"
+                            },
+                            {
+                                "codeValue": "SS",
+                                "longName": "Spreadsheet expertise"
+                            },
+                            {
+                                "codeValue": "T1",
+                                "shortName": "test"
+                            },
+                            {
+                                "codeValue": "WP",
+                                "shortName": "Word Processing"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/associateCompetency/competencyNameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Skill"
+                },
+                "/associateCompetency/categoryCode": {
+                    "codeList": {
+                        "codeListTitle": "SkillsCategory",
+                        "listItems": [
+                            {
+                                "codeValue": "ADM",
+                                "shortName": "Administrative"
+                            },
+                            {
+                                "codeValue": "COM",
+                                "shortName": "Communications"
+                            },
+                            {
+                                "codeValue": "CSW",
+                                "shortName": "Computer Software"
+                            },
+                            {
+                                "codeValue": "ENG",
+                                "shortName": "Engineering"
+                            },
+                            {
+                                "codeValue": "MGT",
+                                "shortName": "Management"
+                            },
+                            {
+                                "codeValue": "SAL",
+                                "shortName": "Sales "
+                            },
+                            {
+                                "codeValue": "SVC",
+                                "shortName": "Service"
+                            },
+                            {
+                                "codeValue": "TEC",
+                                "shortName": "Computer - Technical"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateCompetency/categoryCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Category"
+                },
+                "/associateCompetency/acquisitionDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Date Attained",
+                    "minLength": 0,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/associateCompetency/lastUsedDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Last Used",
+                    "minLength": 0,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/associateCompetency/experienceDuration": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Experience",
+                    "minLength": 0,
+                    "maxLength": 4,
+                    "pattern": "^P(\\d{1,2}Y)?(\\d{1,2}M)?$"
+                },
+                "/associateCompetency/selfAssessedProficiencyScore": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateCompetency/selfAssessedProficiencyScore/scoreCode": {
+                    "codeList": {
+                        "codeListTitle": "ProficiencyLevel",
+                        "listItems": [
+                            {
+                                "codeValue": "ADB",
+                                "shortName": "Advanced Beginner"
+                            },
+                            {
+                                "codeValue": "ADI",
+                                "longName": "Advanced Intermediate"
+                            },
+                            {
+                                "codeValue": "ADV",
+                                "shortName": "Advanced"
+                            },
+                            {
+                                "codeValue": "BEG",
+                                "shortName": "Beginner"
+                            },
+                            {
+                                "codeValue": "INT",
+                                "shortName": "Intermediate"
+                            },
+                            {
+                                "codeValue": "L1",
+                                "longName": "Less than 2 years experience"
+                            },
+                            {
+                                "codeValue": "L2",
+                                "shortName": "2-5 years experience"
+                            },
+                            {
+                                "codeValue": "L3",
+                                "longName": "More than 5 years experience"
+                            },
+                            {
+                                "codeValue": "T1",
+                                "shortName": "test"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateCompetency/selfAssessedProficiencyScore/scoreCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Proficiency Level"
+                },
+                "/associateCompetency/customFieldGroup": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateCompetency/customFieldGroup/stringFields": {
+                    "minItems": 0
+                },
+                "/associateCompetency/customFieldGroup/stringFields/stringValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "minLength": 0,
+                    "maxLength": 255,
+                    "pattern":"^[\\x20-\\x27\\x2A-\\x3B\\x3D\\x3F-\\x7D\¡\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]*$"
+                },
+                "/associateCompetency/customFieldGroup/stringFields/nameCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "169739730968_92",
+                                "shortName": "T1"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/associateCompetency/customFieldGroup/stringFields/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": true
+                },
+                "/associateCompetency/customFieldGroup/stringFields/nameCode/shortName": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/associateCompetency/customFieldGroup/stringFields/nameCode/longName": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/associateCompetency/customFieldGroup/stringFields/itemID": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": true
+                },
+                "/associateCompetency/comments": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Comments",
+                    "minLength": 0,
+                    "maxLength": 2000,
+                    "pattern": ""
+                },
+                "/associateCompetency/testRequiredIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Test required"
+                },
+                "/associateCompetency/certificationRequiredIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Certification required"
+                },
+                "/associateCompetency/autoCalculateExperienceIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Auto-calculate Years of Experience"
+                }
+            }
+        ]
+    }
+}
