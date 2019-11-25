@@ -1,0 +1,260 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/associateLanguage": {
+                "readOnly": true,
+                "optional": false
+            },
+            "/associateLanguage/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/associateLanguage": {
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/associateLanguage/languageCode": {
+                    "codeList": {
+                        "codeListTitle": "LANGUAGE_DEVELOPMENT",
+                        "listItems": [
+                            {
+                                "codeValue": "1",
+                                "shortName": "Arabic"
+                            },
+                            {
+                                "codeValue": "10",
+                                "shortName": "Japanese"
+                            },
+                            {
+                                "codeValue": "11",
+                                "shortName": "Javanese"
+                            },
+                            {
+                                "codeValue": "12",
+                                "shortName": "Kannada"
+                            },
+                            {
+                                "codeValue": "13",
+                                "shortName": "Korean"
+                            },
+                            {
+                                "codeValue": "14",
+                                "shortName": "Malayalam"
+                            },
+                            {
+                                "codeValue": "15",
+                                "shortName": "Mandarin Chinese"
+                            },
+                            {
+                                "codeValue": "16",
+                                "shortName": "Marathi"
+                            },
+                            {
+                                "codeValue": "17",
+                                "shortName": "Oriya"
+                            },
+                            {
+                                "codeValue": "18",
+                                "shortName": "Punjabi"
+                            },
+                            {
+                                "codeValue": "19",
+                                "shortName": "Persian"
+                            },
+                            {
+                                "codeValue": "2",
+                                "shortName": "Bengali"
+                            },
+                            {
+                                "codeValue": "20",
+                                "shortName": "Polish"
+                            },
+                            {
+                                "codeValue": "21",
+                                "shortName": "Portuguese"
+                            },
+                            {
+                                "codeValue": "22",
+                                "shortName": "Russian"
+                            },
+                            {
+                                "codeValue": "23",
+                                "shortName": "Spanish"
+                            },
+                            {
+                                "codeValue": "24",
+                                "shortName": "Tamil"
+                            },
+                            {
+                                "codeValue": "25",
+                                "shortName": "Telugu"
+                            },
+                            {
+                                "codeValue": "26",
+                                "shortName": "Thai"
+                            },
+                            {
+                                "codeValue": "27",
+                                "shortName": "Turkish"
+                            },
+                            {
+                                "codeValue": "28",
+                                "shortName": "Ukrainian"
+                            },
+                            {
+                                "codeValue": "29",
+                                "shortName": "Urdu"
+                            },
+                            {
+                                "codeValue": "3",
+                                "shortName": "Burmese"
+                            },
+                            {
+                                "codeValue": "30",
+                                "shortName": "Vietnamese"
+                            },
+                            {
+                                "codeValue": "4",
+                                "shortName": "English"
+                            },
+                            {
+                                "codeValue": "5",
+                                "shortName": "French"
+                            },
+                            {
+                                "codeValue": "6",
+                                "shortName": "German"
+                            },
+                            {
+                                "codeValue": "7",
+                                "shortName": "Gujarati"
+                            },
+                            {
+                                "codeValue": "8",
+                                "shortName": "Hindi"
+                            },
+                            {
+                                "codeValue": "9",
+                                "shortName": "Italian"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/associateLanguage/languageCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Language"
+                },
+                "/associateLanguage/nativeLanguageIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Native Speaker"
+                },
+                "/associateLanguage/acquisitionDate": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Date Acquired",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/associateLanguage/selfAssessedProficiencyScore/scoreCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "dependencies": {
+                        "codeList": {
+                            "allOf": [
+                                {
+                                    "attributes": {
+                                        "/associateLanguage/competencyDimensions/dimensionNameCode/codeValue": {
+                                            "pattern": "Spoken Proficiency"
+                                        }
+                                    },
+                                    "value": {
+                                        "listItems": [
+                                            {
+                                                "codeValue": "1",
+                                                "shortName": "Elementary Fluency"
+                                            },
+                                            {
+                                                "codeValue": "2",
+                                                "longName": "Limited Conversational Fluency"
+                                            },
+                                            {
+                                                "codeValue": "3",
+                                                "longName": "Full Professional Fluency"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "/associateLanguage/competencyDimensions/dimensionNameCode/codeValue": {
+                                            "pattern": "Written Proficiency"
+                                        }
+                                    },
+                                    "value": {
+                                        "listItems": [
+                                            {
+                                                "codeValue": "1",
+                                                "shortName": "Elementary Fluency"
+                                            },
+                                            {
+                                                "codeValue": "2",
+                                                "longName": "Limited Written Fluency"
+                                            },
+                                            {
+                                                "codeValue": "3",
+                                                "longName": "Full Professional Fluency"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/associateLanguage/selfAssessedProficiencyScore/scoreCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/associateLanguage/competencyDimensions/dimensionNameCode": {
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "Spoken Proficiency",
+                                "shortName": "Spoken Proficiency"
+                            },
+                            {
+                                "codeValue": "Written Proficiency",
+                                "shortName": "Written Proficiency"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateLanguage/competencyDimensions/dimensionNameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                }
+            }
+        ]
+    }
+}
