@@ -7,70 +7,96 @@
         },
         "itemID": "37077879_732",
         "usFederalTaxInstruction": {
+            "multipleJobIndicator": false,
             "federalIncomeTaxInstruction": {
                 "taxWithholdingStatus": {
                     "statusCode": {
-                        "codeValue": "1",
+                        "codeValue": "X",
                         "shortName": "exempt"
                     },
                     "reasonCode": null,
-                    "effectiveDate": "05/21/2019"
+                    "effectiveDate": "12/31/2019"
                 },
                 "taxFilingStatusCode": {
-                    "codeValue": "S",
-                    "longName": "Single"
+                    "codeValue": "J",
+                    "longName": "Married filing jointly (or Qualifying widow(er))"
                 },
-                "taxWithholdingAllowanceQuantity": 22,
+                "taxWithholdingAllowanceQuantity": 0,
+                "taxAllowances": [
+                    {
+                        "allowanceTypeCode": {
+                            "codeValue": "Dependents"
+                        },
+                        "taxAllowanceAmount": {
+                            "amountValue": 10
+                        }
+                    },
+                    {
+                        "allowanceTypeCode": {
+                            "codeValue": "Deductions"
+                        },
+                        "taxAllowanceAmount": {
+                            "amountValue": 20
+                        }
+                    }
+                ],
+                "additionalIncomeAmount": {
+                    "amountValue": 15
+                },
                 "additionalTaxPercentage": null,
-                "additionalTaxAmount": null,
+                "additionalTaxAmount": {
+                    "amountValue": 18,
+                    "currencyCode": "Dollars"
+                },
                 "overrideTaxPercentage": null,
                 "overrideTaxAmount": null
             },
             "socialSecurityTaxInstruction": {
                 "taxWithholdingStatus": {
                     "statusCode": {
-                        "codeValue": "1",
-                        "shortName": "exempt"
+                        "codeValue": "0",
+                        "shortName": "nonExempt"
                     },
                     "reasonCode": null,
-                    "effectiveDate": "05/21/2019"
+                    "effectiveDate": "12/31/2019"
                 }
             },
             "medicareTaxInstruction": {
                 "taxWithholdingStatus": {
                     "statusCode": {
-                        "codeValue": "1",
-                        "shortName": "exempt"
+                        "codeValue": "0",
+                        "shortName": "nonExempt"
                     },
                     "reasonCode": null,
-                    "effectiveDate": "05/21/2019"
+                    "effectiveDate": "12/31/2019"
                 }
             },
             "federalUnemploymentTaxInstruction": {
                 "taxWithholdingStatus": {
                     "statusCode": {
-                        "codeValue": "1",
-                        "shortName": "exempt"
+                        "codeValue": "0",
+                        "shortName": "nonExempt"
                     },
                     "reasonCode": null,
-                    "effectiveDate": "05/21/2019"
+                    "effectiveDate": "12/31/2019"
                 }
             },
             "form1099Instruction": {
                 "distributionCodes": [
                     {
-                        "codeValue": "SYS:4:2669",
-                        "shortName": "Early Distribution - No Known Exception",
-                        "longName": "Early Distribution - No Known Exception"
+                        "codeValue": "SYS:10:5504",
+                        "shortName": "Distribution of assets other than cash",
+                        "longName": "Distribution of assets other than cash"
                     },
                     {
-                        "shortName": "",
-                        "longName": ""
+                        "codeValue": "SYS:4:9627",
+                        "shortName": "Death",
+                        "longName": "Death"
                     }
                 ],
                 "totalDistributionIndicator": true,
-                "indiviualRetirementAccountIndicator": null,
-                "simplifiedEmployeePensionAccountIndicator": false
+                "individualRetirementAccountIndicator": null,
+                "simplifiedEmployeePensionAccountIndicator": true
             },
             "interimW2IssuedIndicator": true,
             "statutoryWorkerIndicator": true,
