@@ -551,18 +551,23 @@
             },
             "usStateTaxInstructions": {
                 "stateIncomeTaxInstructions": [
-                    {
-                        "workedInJurisdictionIndicator": false,
-                        "livedInJurisdictionIndicator": false,
+                   {
+                        "workedInJurisdictionIndicator": true,
                         "stateCode": {
-                            "code": "NY"
+                            "code": "CA"
                         },
                         "taxWithholdingStatus": {
                             "statusCode": {
-                                "code": "MH"
+                                "code": "T"
                             }
                         },
                         "taxAllowanceQuantity": 20
+                    },
+                    {
+                        "livedInJurisdictionIndicator": true,
+                        "stateCode": {
+                            "code": "GA"
+                        }
                     }
                 ],
                 "suiTaxInstruction": {
@@ -576,12 +581,17 @@
             },
             "localTaxInstructions": [
                 {
-                    "workedInJurisdictionIndicator": false,
-                    "livedInJurisdictionIndicator": false,
+                    "livedInJurisdictionIndicator": true,
                     "localCode": {
-                        "code": "NY"
+                        "code": "040Y"
                     },
                     "taxAllowanceQuantity": 10
+                },
+                {
+                    "workedInJurisdictionIndicator": true,
+                    "localCode": {
+                        "code": "060Z"
+                    }
                 },
                 {
                     "taxTypeCode": {
