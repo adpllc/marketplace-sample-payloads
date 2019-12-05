@@ -1,10 +1,6 @@
 {
     "events": [
         {
-            "eventStatusCode": {
-                "codeValue": "complete",
-                "shortName": "complete"
-            },
             "links": [],
             "data": {
                 "eventContext": {
@@ -14,33 +10,78 @@
                     },
                     "usTaxProfiles": {
                         "payrollFileNumber": "6789",
-                        "payrollAgreementID": "",
                         "payrollGroupCode": {
                             "codeValue": "938"
                         },
                         "itemID": "37077879_732"
                     }
                 },
-                "transform": null,
-                "output": {
+                "transform": {
+                    "effectiveDateTime": "2019-11-29T05:00:00Z",
                     "usTaxProfiles": {
                         "usFederalTaxInstruction": {
+                            "multipleJobIndicator": true,
+                            "additionalStatutoryInputs": [
+                                {
+                                    "tagCode": null,
+                                    "tagValues": [],
+                                    "dataTypeCode": null,
+                                    "formatCode": "PRE2020"
+                                },
+                                {
+                                    "tagCode": "NON_RESIDENT_ALIEN",
+                                    "tagValues": [
+                                        "false"
+                                    ],
+                                    "dataTypeCode": null,
+                                    "formatCode": null
+                                }
+                            ],
                             "federalIncomeTaxInstruction": {
-                                "taxWithholdingStatus": null,
+                                "taxAllowances": [
+                                    {
+                                        "allowanceTypeCode": {
+                                            "codeValue": "Dependents"
+                                        },
+                                        "taxAllowanceAmount": {
+                                            "amountValue": 10
+                                        }
+                                    },
+                                    {
+                                        "allowanceTypeCode": {
+                                            "codeValue": "Deductions"
+                                        },
+                                        "taxAllowanceAmount": {
+                                            "amountValue": 20
+                                        }
+                                    }
+                                ],
+                                "additionalIncomeAmount": {
+                                    "amountValue": 15
+                                },
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": ""
+                                    },
+                                    "reasonCode": null,
+                                    "effectiveDate": null
+                                },
                                 "taxFilingStatusCode": {
-                                    "codeValue": "M",
-                                    "longName": "Married"
+                                    "codeValue": "S"
                                 },
                                 "taxWithholdingAllowanceQuantity": 20,
                                 "additionalTaxPercentage": null,
-                                "additionalTaxAmount": 20,
+                                "additionalTaxAmount": {
+                                    "amountValue": 40,
+                                    "currencyCode": "D"
+                                },
                                 "overrideTaxPercentage": null,
                                 "overrideTaxAmount": null
                             },
                             "socialSecurityTaxInstruction": {
                                 "taxWithholdingStatus": {
                                     "statusCode": {
-                                        "codeValue": "1"
+                                        "codeValue": "0"
                                     },
                                     "reasonCode": null,
                                     "effectiveDate": null
@@ -49,40 +90,33 @@
                             "medicareTaxInstruction": {
                                 "taxWithholdingStatus": {
                                     "statusCode": {
-                                        "codeValue": "1"
+                                        "codeValue": "0"
                                     },
                                     "reasonCode": null,
                                     "effectiveDate": null
                                 }
                             },
-                            "federalUnemploymentTaxInstruction": {
-                                "taxWithholdingStatus": {
-                                    "statusCode": {
-                                        "codeValue": "1"
-                                    },
-                                    "reasonCode": null,
-                                    "effectiveDate": null
-                                }
-                            },
+                            "federalUnemploymentTaxInstruction": null,
                             "form1099Instruction": {
                                 "distributionCodes": [
                                     {
-                                        "codeValue": "SYS:4:2669"
+                                        "codeValue": "SYS:10:5504"
                                     },
                                     {
-                                        "codeValue": "SYS:4:10812"
+                                        "codeValue": "SYS:4:9627"
                                     }
                                 ],
                                 "totalDistributionIndicator": true,
-                                "indiviualRetirementAccountIndicator": null,
-                                "simplifiedEmployeePensionAccountIndicator": false
+                                "individualRetirementAccountIndicator": null,
+                                "simplifiedEmployeePensionAccountIndicator": true
                             },
-                            "interimW2IssuedIndicator": null,
-                            "statutoryWorkerIndicator": null,
-                            "qualifiedPensionPlanCoverageIndicator": null
+                            "interimW2IssuedIndicator": true,
+                            "statutoryWorkerIndicator": true,
+                            "qualifiedPensionPlanCoverageIndicator": true
                         }
                     }
-                }
+                },
+                "output": null
             }
         }
     ],
