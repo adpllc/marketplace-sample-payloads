@@ -1,0 +1,893 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/associateEducationalDegree": {
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/associateEducationalDegree/nameCode": {
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/talent/v3/worker-ksaoc-management/degree-achievement-level/WFN/1",
+                                "mediaType": "application/json",
+                                "method": "GET"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/associateEducationalDegree/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "longLabelName": "Degree/Achievement Level"
+                },
+                "/associateEducationalDegree/startDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Start Date",
+                    "minLength": 0,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$",
+                    "dataType": "string[date]"
+                },
+                "/associateEducationalDegree/expectedCompletionDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "longLabelName": "Estimated Completion Date",
+                    "minLength": 0,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$",
+                    "dataType": "string[date]"
+                },
+                "/associateEducationalDegree/actualCompletionDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "longLabelName": "Actual Completion Date",
+                    "minLength": 0,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$",
+                    "dataType": "string[date]"
+                },
+                "/associateEducationalDegree/completionDuration": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Duration",
+                    "pattern": "^P(\\d{1,2}Y)?(\\d{1,2}M)?$"
+                },
+                "/associateEducationalDegree/majorProgramNameCodes": {
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/talent/v3/worker-ksaoc-management/major/WFN/1",
+                                "mediaType": "application/json",
+                                "method": "GET"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateEducationalDegree/majorProgramNameCodes/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Major"
+                },
+                "/associateEducationalDegree/minorProgramNameCodes": {
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/talent/v3/worker-ksaoc-management/minor/WFN/1",
+                                "mediaType": "application/json",
+                                "method": "GET"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateEducationalDegree/minorProgramNameCodes/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Minor"
+                },
+                "/associateEducationalDegree/honorsProgramNameCodes/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": true,
+                    "shortLabelName": "Honorary Recognition",
+                    "minLength": 0,
+                    "maxLength": 40
+                },
+                "/associateEducationalDegree/educationalInstitutionAttendances": {
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "uniqueItems": true
+                },
+                "/associateEducationalDegree/educationalInstitutionAttendances/educationalInstitution/nameCode": {
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/talent/v3/worker-ksaoc-management/learning-institution/WFN/1",
+                                "mediaType": "application/json",
+                                "method": "GET"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/associateEducationalDegree/educationalInstitutionAttendances/educationalInstitution/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Learning Institution"
+                },
+                "/associateEducationalDegree/academicCreditsCompleted": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Credits Completed",
+                    "minLength": 0,
+                    "maxLength": 4,
+                    "pattern": "^\\d{0,4}$"
+                },
+                "/associateEducationalDegree/academicScore/unitCode": {
+                    "codeList": {
+                        "codeListTitle": "EducationCreditType",
+                        "listItems": [
+                            {
+                                "codeValue": "CEU",
+                                "longName": "Continuing Education Unit"
+                            },
+                            {
+                                "codeValue": "COR",
+                                "shortName": "Correspondence"
+                            },
+                            {
+                                "codeValue": "CRD",
+                                "shortName": "Credit"
+                            },
+                            {
+                                "codeValue": "GRD",
+                                "shortName": "Grade"
+                            },
+                            {
+                                "codeValue": "HON",
+                                "shortName": "Honors"
+                            },
+                            {
+                                "codeValue": "NI",
+                                "shortName": "Not Indicated"
+                            },
+                            {
+                                "codeValue": "PNT",
+                                "shortName": "Points"
+                            },
+                            {
+                                "codeValue": "PSF",
+                                "shortName": "Pass or Fail"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateEducationalDegree/academicScore/unitCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Credit Type"
+                },
+                "/associateEducationalDegree/academicScore/scoreCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Overall GPA",
+                    "minLength": 0,
+                    "maxLength": 4,
+                    "pattern": "^[0-9 , .]*$"
+                },
+                "/associateEducationalDegree/verificationDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Verification Date",
+                    "minLength": 0,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$",
+                    "dataType": "string[date]"
+                },
+                "/associateEducationalDegree/educationDescription": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "longLabelName": "Degree/Achievement Level",
+                    "minLength": 0,
+                    "maxLength": 40,
+                    "pattern": ""
+                },
+                "/associateEducationalDegree/comments": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Comments",
+                    "minLength": 0,
+                    "maxLength": 2000,
+                    "pattern": ""
+                },
+                "/associateEducationalDegree/employerPaidAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "longLabelName": "Company Paid Amount",
+                    "minAmountValue": 0,
+                    "maxAmountValue": 999999999999
+                },
+                "/associateEducationalDegree/employerPaidAmount/currencyCode": {
+                    "codeList": {
+                        "codeListTitle": "T_SYS_TRANS_ISO_CURRENCY",
+                        "listItems": [
+                            {
+                                "codeValue": "AED",
+                                "longName": "United Arab Emirates Dirham"
+                            },
+                            {
+                                "codeValue": "AFN",
+                                "shortName": "Afghanistan Afghani"
+                            },
+                            {
+                                "codeValue": "ALL",
+                                "shortName": "Albania Lek"
+                            },
+                            {
+                                "codeValue": "AMD",
+                                "shortName": "Armenia Dram"
+                            },
+                            {
+                                "codeValue": "ANG",
+                                "longName": "Netherlands Antilles Guilder"
+                            },
+                            {
+                                "codeValue": "AOA",
+                                "shortName": "Angola Kwanza"
+                            },
+                            {
+                                "codeValue": "ARS",
+                                "shortName": "Argentina Peso"
+                            },
+                            {
+                                "codeValue": "AUD",
+                                "shortName": "Australia Dollar"
+                            },
+                            {
+                                "codeValue": "AWG",
+                                "shortName": "Aruba Guilder"
+                            },
+                            {
+                                "codeValue": "AZN",
+                                "shortName": "Azerbaijan New Manat"
+                            },
+                            {
+                                "codeValue": "BAM",
+                                "longName": "Bosnia and Herzegovina Convertible Marka"
+                            },
+                            {
+                                "codeValue": "BBD",
+                                "shortName": "Barbados Dollar"
+                            },
+                            {
+                                "codeValue": "BDT",
+                                "shortName": "Bangladesh Taka"
+                            },
+                            {
+                                "codeValue": "BGN",
+                                "shortName": "Bulgaria Lev"
+                            },
+                            {
+                                "codeValue": "BHD",
+                                "shortName": "Bahrain Dinar"
+                            },
+                            {
+                                "codeValue": "BIF",
+                                "shortName": "Burundi Franc"
+                            },
+                            {
+                                "codeValue": "BMD",
+                                "shortName": "Bermuda Dollar"
+                            },
+                            {
+                                "codeValue": "BND",
+                                "longName": "Brunei Darussalam Dollar"
+                            },
+                            {
+                                "codeValue": "BOB",
+                                "shortName": "Bolivia Boliviano"
+                            },
+                            {
+                                "codeValue": "BRL",
+                                "shortName": "Brazil Real"
+                            },
+                            {
+                                "codeValue": "BSD",
+                                "shortName": "Bahamas Dollar"
+                            },
+                            {
+                                "codeValue": "BTN",
+                                "shortName": "Bhutan Ngultrum"
+                            },
+                            {
+                                "codeValue": "BWP",
+                                "shortName": "Botswana Pula"
+                            },
+                            {
+                                "codeValue": "BYR",
+                                "shortName": "Belarus Ruble"
+                            },
+                            {
+                                "codeValue": "BZD",
+                                "shortName": "Belize Dollar"
+                            },
+                            {
+                                "codeValue": "CAD",
+                                "shortName": "Canada Dollar"
+                            },
+                            {
+                                "codeValue": "CDF",
+                                "shortName": "Congo/Kinshasa Franc"
+                            },
+                            {
+                                "codeValue": "CHF",
+                                "shortName": "Switzerland Franc"
+                            },
+                            {
+                                "codeValue": "CLP",
+                                "shortName": "Chile Peso"
+                            },
+                            {
+                                "codeValue": "CNY",
+                                "shortName": "China Yuan Renminbi"
+                            },
+                            {
+                                "codeValue": "COP",
+                                "shortName": "Colombia Peso"
+                            },
+                            {
+                                "codeValue": "CRC",
+                                "shortName": "Costa Rica Colon"
+                            },
+                            {
+                                "codeValue": "CVE",
+                                "shortName": "Cape Verde Escudo"
+                            },
+                            {
+                                "codeValue": "CZK",
+                                "longName": "Czech Republic Koruna"
+                            },
+                            {
+                                "codeValue": "DJF",
+                                "shortName": "Djibouti Franc"
+                            },
+                            {
+                                "codeValue": "DKK",
+                                "shortName": "Denmark Krone"
+                            },
+                            {
+                                "codeValue": "DOP",
+                                "longName": "Dominican Republic Peso"
+                            },
+                            {
+                                "codeValue": "DZD",
+                                "shortName": "Algeria Dinar"
+                            },
+                            {
+                                "codeValue": "EGP",
+                                "shortName": "Egypt Pound"
+                            },
+                            {
+                                "codeValue": "ERN",
+                                "shortName": "Eritrea Nakfa"
+                            },
+                            {
+                                "codeValue": "ETB",
+                                "shortName": "Ethiopia Birr"
+                            },
+                            {
+                                "codeValue": "EUR",
+                                "longName": "Euro Member Countries"
+                            },
+                            {
+                                "codeValue": "FJD",
+                                "shortName": "Fiji Dollar"
+                            },
+                            {
+                                "codeValue": "FKP",
+                                "longName": "Falkland Islands (Malvinas) Pound"
+                            },
+                            {
+                                "codeValue": "GBP",
+                                "shortName": "United Kingdom Pound"
+                            },
+                            {
+                                "codeValue": "GEL",
+                                "shortName": "Georgia Lari"
+                            },
+                            {
+                                "codeValue": "GGP",
+                                "shortName": "Guernsey Pound"
+                            },
+                            {
+                                "codeValue": "GHS",
+                                "shortName": "Ghana Cedi"
+                            },
+                            {
+                                "codeValue": "GIP",
+                                "shortName": "Gibraltar Pound"
+                            },
+                            {
+                                "codeValue": "GMD",
+                                "shortName": "Gambia Dalasi"
+                            },
+                            {
+                                "codeValue": "GNF",
+                                "shortName": "Guinea Franc"
+                            },
+                            {
+                                "codeValue": "GTQ",
+                                "shortName": "Guatemala Quetzal"
+                            },
+                            {
+                                "codeValue": "GYD",
+                                "shortName": "Guyana Dollar"
+                            },
+                            {
+                                "codeValue": "HKD",
+                                "shortName": "Hong Kong Dollar"
+                            },
+                            {
+                                "codeValue": "HNL",
+                                "shortName": "Honduras Lempira"
+                            },
+                            {
+                                "codeValue": "HRK",
+                                "shortName": "Croatia Kuna"
+                            },
+                            {
+                                "codeValue": "HTG",
+                                "shortName": "Haiti Gourde"
+                            },
+                            {
+                                "codeValue": "HUF",
+                                "shortName": "Hungary Forint"
+                            },
+                            {
+                                "codeValue": "IDR",
+                                "shortName": "Indonesia Rupiah"
+                            },
+                            {
+                                "codeValue": "ILS",
+                                "shortName": "Israel Shekel"
+                            },
+                            {
+                                "codeValue": "IMP",
+                                "shortName": "Isle of Man Pound"
+                            },
+                            {
+                                "codeValue": "INR",
+                                "shortName": "India Rupee"
+                            },
+                            {
+                                "codeValue": "IQD",
+                                "shortName": "Iraq Dinar"
+                            },
+                            {
+                                "codeValue": "ISK",
+                                "shortName": "Iceland Krona"
+                            },
+                            {
+                                "codeValue": "JEP",
+                                "shortName": "Jersey Pound"
+                            },
+                            {
+                                "codeValue": "JMD",
+                                "shortName": "Jamaica Dollar"
+                            },
+                            {
+                                "codeValue": "JOD",
+                                "shortName": "Jordan Dinar"
+                            },
+                            {
+                                "codeValue": "JPY",
+                                "shortName": "Japan Yen"
+                            },
+                            {
+                                "codeValue": "KES",
+                                "shortName": "Kenya Shilling"
+                            },
+                            {
+                                "codeValue": "KGS",
+                                "shortName": "Kyrgyzstan Som"
+                            },
+                            {
+                                "codeValue": "KHR",
+                                "shortName": "Cambodia Riel"
+                            },
+                            {
+                                "codeValue": "KMF",
+                                "shortName": "Comoros Franc"
+                            },
+                            {
+                                "codeValue": "KRW",
+                                "shortName": "Korea (South) Won"
+                            },
+                            {
+                                "codeValue": "KWD",
+                                "shortName": "Kuwait Dinar"
+                            },
+                            {
+                                "codeValue": "KYD",
+                                "longName": "Cayman Islands Dollar"
+                            },
+                            {
+                                "codeValue": "KZT",
+                                "shortName": "Kazakhstan Tenge"
+                            },
+                            {
+                                "codeValue": "LAK",
+                                "shortName": "Laos Kip"
+                            },
+                            {
+                                "codeValue": "LBP",
+                                "shortName": "Lebanon Pound"
+                            },
+                            {
+                                "codeValue": "LKR",
+                                "shortName": "Sri Lanka Rupee"
+                            },
+                            {
+                                "codeValue": "LRD",
+                                "shortName": "Liberia Dollar"
+                            },
+                            {
+                                "codeValue": "LSL",
+                                "shortName": "Lesotho Loti"
+                            },
+                            {
+                                "codeValue": "LTL",
+                                "shortName": "Lithuania Litas"
+                            },
+                            {
+                                "codeValue": "LVL",
+                                "shortName": "Latvia Lat"
+                            },
+                            {
+                                "codeValue": "LYD",
+                                "shortName": "Libya Dinar"
+                            },
+                            {
+                                "codeValue": "MAD",
+                                "shortName": "Morocco Dirham"
+                            },
+                            {
+                                "codeValue": "MDL",
+                                "shortName": "Moldova Leu"
+                            },
+                            {
+                                "codeValue": "MGA",
+                                "shortName": "Madagascar Ariary"
+                            },
+                            {
+                                "codeValue": "MKD",
+                                "shortName": "Macedonia Denar"
+                            },
+                            {
+                                "codeValue": "MMK",
+                                "shortName": "Myanmar (Burma) Kyat"
+                            },
+                            {
+                                "codeValue": "MNT",
+                                "shortName": "Mongolia Tughrik"
+                            },
+                            {
+                                "codeValue": "MOP",
+                                "shortName": "Macau Pataca"
+                            },
+                            {
+                                "codeValue": "MRO",
+                                "shortName": "Mauritania Ouguiya"
+                            },
+                            {
+                                "codeValue": "MUR",
+                                "shortName": "Mauritius Rupee"
+                            },
+                            {
+                                "codeValue": "MVR",
+                                "longName": "Maldives (Maldive Islands) Rufiyaa"
+                            },
+                            {
+                                "codeValue": "MWK",
+                                "shortName": "Malawi Kwacha"
+                            },
+                            {
+                                "codeValue": "MXN",
+                                "shortName": "Mexico Peso"
+                            },
+                            {
+                                "codeValue": "MYR",
+                                "shortName": "Malaysia Ringgit"
+                            },
+                            {
+                                "codeValue": "MZN",
+                                "shortName": "Mozambique Metical"
+                            },
+                            {
+                                "codeValue": "NAD",
+                                "shortName": "Namibia Dollar"
+                            },
+                            {
+                                "codeValue": "NGN",
+                                "shortName": "Nigeria Naira"
+                            },
+                            {
+                                "codeValue": "NIO",
+                                "shortName": "Nicaragua Cordoba"
+                            },
+                            {
+                                "codeValue": "NOK",
+                                "shortName": "Norway Krone"
+                            },
+                            {
+                                "codeValue": "NPR",
+                                "shortName": "Nepal Rupee"
+                            },
+                            {
+                                "codeValue": "NZD",
+                                "shortName": "New Zealand Dollar"
+                            },
+                            {
+                                "codeValue": "OMR",
+                                "shortName": "Oman Rial"
+                            },
+                            {
+                                "codeValue": "PAB",
+                                "shortName": "Panama Balboa"
+                            },
+                            {
+                                "codeValue": "PEN",
+                                "shortName": "Peru Nuevo Sol"
+                            },
+                            {
+                                "codeValue": "PGK",
+                                "longName": "Papua New Guinea Kina"
+                            },
+                            {
+                                "codeValue": "PHP",
+                                "shortName": "Philippines Peso"
+                            },
+                            {
+                                "codeValue": "PKR",
+                                "shortName": "Pakistan Rupee"
+                            },
+                            {
+                                "codeValue": "PLN",
+                                "shortName": "Poland Zloty"
+                            },
+                            {
+                                "codeValue": "PYG",
+                                "shortName": "Paraguay Guarani"
+                            },
+                            {
+                                "codeValue": "QAR",
+                                "shortName": "Qatar Riyal"
+                            },
+                            {
+                                "codeValue": "RON",
+                                "shortName": "Romania New Leu"
+                            },
+                            {
+                                "codeValue": "RSD",
+                                "shortName": "Serbia Dinar"
+                            },
+                            {
+                                "codeValue": "RUB",
+                                "shortName": "Russia Ruble"
+                            },
+                            {
+                                "codeValue": "RWF",
+                                "shortName": "Rwanda Franc"
+                            },
+                            {
+                                "codeValue": "SAR",
+                                "shortName": "Saudi Arabia Riyal"
+                            },
+                            {
+                                "codeValue": "SBD",
+                                "longName": "Solomon Islands Dollar"
+                            },
+                            {
+                                "codeValue": "SCR",
+                                "shortName": "Seychelles Rupee"
+                            },
+                            {
+                                "codeValue": "SDG",
+                                "shortName": "Sudan Pound"
+                            },
+                            {
+                                "codeValue": "SEK",
+                                "shortName": "Sweden Krona"
+                            },
+                            {
+                                "codeValue": "SGD",
+                                "shortName": "Singapore Dollar"
+                            },
+                            {
+                                "codeValue": "SHP",
+                                "shortName": "Saint Helena Pound"
+                            },
+                            {
+                                "codeValue": "SLL",
+                                "shortName": "Sierra Leone Leone"
+                            },
+                            {
+                                "codeValue": "SOS",
+                                "shortName": "Somalia Shilling"
+                            },
+                            {
+                                "codeValue": "SPL",
+                                "shortName": "Seborga Luigino"
+                            },
+                            {
+                                "codeValue": "SRD",
+                                "shortName": "Suriname Dollar"
+                            },
+                            {
+                                "codeValue": "STD",
+                                "longName": "São Tomé and Príncipe Dobra"
+                            },
+                            {
+                                "codeValue": "SVC",
+                                "shortName": "El Salvador Colon"
+                            },
+                            {
+                                "codeValue": "SZL",
+                                "shortName": "Swaziland Lilangeni"
+                            },
+                            {
+                                "codeValue": "THB",
+                                "shortName": "Thailand Baht"
+                            },
+                            {
+                                "codeValue": "TJS",
+                                "shortName": "Tajikistan Somoni"
+                            },
+                            {
+                                "codeValue": "TMT",
+                                "shortName": "Turkmenistan Manat"
+                            },
+                            {
+                                "codeValue": "TND",
+                                "shortName": "Tunisia Dinar"
+                            },
+                            {
+                                "codeValue": "TRY",
+                                "shortName": "Turkey Lira"
+                            },
+                            {
+                                "codeValue": "TTD",
+                                "longName": "Trinidad and Tobago Dollar"
+                            },
+                            {
+                                "codeValue": "TVD",
+                                "shortName": "Tuvalu Dollar"
+                            },
+                            {
+                                "codeValue": "TWD",
+                                "shortName": "Taiwan New Dollar"
+                            },
+                            {
+                                "codeValue": "TZS",
+                                "shortName": "Tanzania Shilling"
+                            },
+                            {
+                                "codeValue": "UAH",
+                                "shortName": "Ukraine Hryvna"
+                            },
+                            {
+                                "codeValue": "UGX",
+                                "shortName": "Uganda Shilling"
+                            },
+                            {
+                                "codeValue": "USD",
+                                "shortName": "United States Dollar"
+                            },
+                            {
+                                "codeValue": "UYU",
+                                "shortName": "Uruguay Peso"
+                            },
+                            {
+                                "codeValue": "UZS",
+                                "shortName": "Uzbekistan Som"
+                            },
+                            {
+                                "codeValue": "VEF",
+                                "shortName": "Venezuela Bolivar"
+                            },
+                            {
+                                "codeValue": "VND",
+                                "shortName": "Viet Nam Dong"
+                            },
+                            {
+                                "codeValue": "VUV",
+                                "shortName": "Vanuatu Vatu"
+                            },
+                            {
+                                "codeValue": "WST",
+                                "shortName": "Samoa Tala"
+                            },
+                            {
+                                "codeValue": "XAF",
+                                "shortName": "CFA Franc BEAC"
+                            },
+                            {
+                                "codeValue": "XCD",
+                                "longName": "East Caribbean Dollar"
+                            },
+                            {
+                                "codeValue": "XDR",
+                                "longName": "International Monetary Fund (IMF) Special Drawing Rights"
+                            },
+                            {
+                                "codeValue": "XOF",
+                                "longName": "Communauté Financière Africaine (BCEAO) Franc"
+                            },
+                            {
+                                "codeValue": "XPF",
+                                "longName": "Comptoirs Français du Pacifique (CFP) Franc"
+                            },
+                            {
+                                "codeValue": "YER",
+                                "shortName": "Yemen Rial"
+                            },
+                            {
+                                "codeValue": "ZAR",
+                                "shortName": "South Africa Rand"
+                            },
+                            {
+                                "codeValue": "ZMW",
+                                "shortName": "Zambia Kwacha"
+                            },
+                            {
+                                "codeValue": "ZWD",
+                                "shortName": "Zimbabwe Dollar"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/associateEducationalDegree/employerPaidAmount/currencyCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Currency"
+                }
+            }
+        ]
+    }
+}
