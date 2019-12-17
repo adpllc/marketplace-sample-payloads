@@ -1,0 +1,1920 @@
+{
+	"info": {
+		"_postman_id": "019c9c03-822e-484c-970a-44259f264f64",
+		"name": "Talent-profile Licenses",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RETRIEVE",
+			"item": [
+				{
+					"name": "200 GET licenses of an associate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-licenses",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YJ69EMRR7N4VJ",
+								"associate-licenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 GET single license details of an associate using itemID(license-id)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-licenses/169740278794_1",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YJ69EMRR7N4VJ",
+								"associate-licenses",
+								"169740278794_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "403 GET licenses of an associate with invalid aoid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRN4VJ/associate-licenses",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YJ69EMRN4VJ",
+								"associate-licenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 GET licenses of an associate with invalid itemID(license-id)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-licenses/1697402794_1",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YJ69EMRR7N4VJ",
+								"associate-licenses",
+								"1697402794_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-GET licenses details-meta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-licenses/meta",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YJ69EMRR7N4VJ",
+								"associate-licenses",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ADD",
+			"item": [
+				{
+					"name": "201-adding licenses for an associate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-2\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "201-adding licenses for an associate with an already existing license,category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-25\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-adding licenses for an associate with invalid licenseNameCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"t1\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-26\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-adding licenses for an associate with blank licenseNameCode Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-26\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "201-adding licenses for an associate with invalid licenseID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"@@@\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"123\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-15\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-adding licenses for an associate with invalid aoid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-25\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJI\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJI\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-adding licenses for an associate with invalid category code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-25\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "201-adding licenses for an associate with invalid date format",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2-09-2016\",\n                        \"expirationDate\": \"20-09-2018\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "201-adding licenses for an associate with invalid currency code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"&%%#\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-2\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-adding licences-meta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add/meta",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.add",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CHANGE",
+			"item": [
+				{
+					"name": "200-changing license details of an associate By changing license code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"185\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test123\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-23\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740278794_1\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-changing license details of an associate with blank licensecode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-changing license details of an associate with invalid license code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-changing license details of an associate with invalid category code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-changing license details of an associate with invalid itemID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_4\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-changing license details of an associate with invalid aoid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRN4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-changing license details of an associate by changing issuedby",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test-iat\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"@$$\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal done \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-changing license details of an associate with invalid date format",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"185\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test123\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"20-09-2015\",\n                        \"expirationDate\": \"200-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169741491268_113\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-changing license details of an associate with invalid date format Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"185\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test123\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"20-09-2015\",\n                        \"expirationDate\": \"20-09-2018\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169741491268_113\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-changing license meta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G3JQE4RK5DMFV52J\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G3JQE4RK5DMFV52J\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change/meta",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.change",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "REMOVE",
+			"item": [
+				{
+					"name": "200 Removing licenses",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740568292_94\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.remove",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Removing licenses with invalid itemid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_152\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.remove",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Removing licenses with invalid aoid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMR\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_152\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.remove",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Removing licenses meta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMR\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_152\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.remove/meta",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.license.remove",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "event notification",
+			"item": [
+				{
+					"name": "get event notification",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "sm_transactionid",
+								"value": "reques12",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/core/v1/event-notification-messages",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"core",
+								"v1",
+								"event-notification-messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete event",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "sm_transactionid",
+								"value": "reques12",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/core/v1/event-notification-messages/0x_414d51204253494e464f4251362020209aeda15df8157b29",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"core",
+								"v1",
+								"event-notification-messages",
+								"0x_414d51204253494e464f4251362020209aeda15df8157b29"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a08e497d-95a3-42a6-bf50-ce43f34288ba",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-accounts.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-accounts",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
