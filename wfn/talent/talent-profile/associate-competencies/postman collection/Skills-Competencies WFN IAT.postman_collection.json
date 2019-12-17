@@ -1,0 +1,1441 @@
+{
+	"info": {
+		"_postman_id": "d5134158-d9ee-4311-92d9-c273d9b10033",
+		"name": "Skills/Competencies WFN IAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RETRIEVE",
+			"item": [
+				{
+					"name": "200 GET skills /competencies of a single associate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"value": "none",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-competencies",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YJ69EMRR7N4VJ",
+								"associate-competencies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 GET skills /competencies of a single associate using ItemID(competency-id)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"value": "none",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-competencies/169739729293_3066",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YJ69EMRR7N4VJ",
+								"associate-competencies",
+								"169739729293_3066"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "403 GET skills /competencies of a single associate with invalid aoid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YRR7N4VJ/associate-competencies/169739447188_1",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YRR7N4VJ",
+								"associate-competencies",
+								"169739447188_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 GET skills /competencies of a  with invalid itemID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							},
+							{
+								"key": "x-impersonatee-cache",
+								"type": "text",
+								"value": "none",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-competencies/1697394",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YJ69EMRR7N4VJ",
+								"associate-competencies",
+								"1697394"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET  skills meta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-competencies/meta",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"talent",
+								"v2",
+								"associates",
+								"G34YJ69EMRR7N4VJ",
+								"associate-competencies",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ADD",
+			"item": [
+				{
+					"name": "201 Skills/competencies ADD",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"associateCompetency\": {\n            \"competencyNameCode\": {\n              \"codeValue\": \"INV\",\n              \"shortName\": \"Customer Service\",\n              \"longName\": \" \"\n            },\n            \n            \"acquisitionDate\": \"2018-09-21\",\n            \"lastUsedDate\": \"2019-09-25\",\n            \"experienceDuration\": \"P2Y2M\",\n            \"competencyDescription\": \"testing from post add skil Desc\",\n            \n            \"comments\": \"testing certificaion skills from post add\",\n            \"testRequiredIndicator\": true,\n            \"certificationRequiredIndicator\": true,\n            \"autoCalculateExperienceIndicator\": true,\n            \"selfAssessedProficiencyScore\": {\n              \"scoreCode\": {\n                \"codeValue\": \"ADB\"\n              }\n            }\n          }\n        },\n        \"eventContext\": {\n          \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n        }\n      },\n      \n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n     \n      \"serviceCategoryCode\": {\n        \"codeValue\": \"workerTalentManagement\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"associate.ksaoc.competency.add\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "201 Skills/competencies ADD with invalid experienceDuration format",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"associateCompetency\": {\n            \"competencyNameCode\": {\n              \"codeValue\": \"FIN\",\n              \"shortName\": \"Customer Service\",\n              \"longName\": \" \"\n            },\n            \n            \"acquisitionDate\": \"2018-09-21\",\n            \"lastUsedDate\": \"2019-09-25\",\n            \"experienceDuration\": \"2 months 2 years\",\n            \"competencyDescription\": \"testing from post add skil Desc\",\n            \n            \"comments\": \"testing certificaion skills from post add\",\n            \"testRequiredIndicator\": true,\n            \"certificationRequiredIndicator\": true,\n            \"autoCalculateExperienceIndicator\": true,\n            \"selfAssessedProficiencyScore\": {\n              \"scoreCode\": {\n                \"codeValue\": \"ADB\"\n              }\n            }\n          }\n        },\n        \"eventContext\": {\n          \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n        }\n      },\n      \n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n     \n      \"serviceCategoryCode\": {\n        \"codeValue\": \"workerTalentManagement\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"associate.ksaoc.competency.add\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/talent/v1/associate.ksaoc.competency.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Skills/competencies ADD when skill is already added",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"associateCompetency\": {\n            \"competencyNameCode\": {\n              \"codeValue\": \"T1\",\n              \"shortName\": \"Customer Service\",\n              \"longName\": \" \"\n            },\n            \n            \"acquisitionDate\": \"2018-09-21\",\n            \"lastUsedDate\": \"2019-09-25\",\n            \"experienceDuration\": \"P2Y2M\",\n            \"competencyDescription\": \"testing from post add skil Desc\",\n            \n            \"comments\": \"testing certificaion skills from post add\",\n            \"testRequiredIndicator\": true,\n            \"certificationRequiredIndicator\": true,\n            \"autoCalculateExperienceIndicator\": true,\n            \"selfAssessedProficiencyScore\": {\n              \"scoreCode\": {\n                \"codeValue\": \"ADB\"\n              }\n            }\n          }\n        },\n        \"eventContext\": {\n          \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n        }\n      },\n      \n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n     \n      \"serviceCategoryCode\": {\n        \"codeValue\": \"workerTalentManagement\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"associate.ksaoc.competency.add\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Skills/competencies ADD with invalid competencyNameCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"associateCompetency\": {\n            \"competencyNameCode\": {\n              \"codeValue\": \"t2\",\n              \"shortName\": \"Customer Service\",\n              \"longName\": \" \"\n            },\n            \n            \"acquisitionDate\": \"2018-09-21\",\n            \"lastUsedDate\": \"2019-09-25\",\n            \"experienceDuration\": \"P2Y2M\",\n            \"competencyDescription\": \"testing from post add skil Desc\",\n            \n            \"comments\": \"testing certificaion skills from post add\",\n            \"testRequiredIndicator\": true,\n            \"certificationRequiredIndicator\": true,\n            \"autoCalculateExperienceIndicator\": true,\n            \"selfAssessedProficiencyScore\": {\n              \"scoreCode\": {\n                \"codeValue\": \"ADB\"\n              }\n            }\n          }\n        },\n        \"eventContext\": {\n          \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n        }\n      },\n      \n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n     \n      \"serviceCategoryCode\": {\n        \"codeValue\": \"workerTalentManagement\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"associate.ksaoc.competency.add\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Skills/competencies ADD with invalid acquisitionDate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"associateCompetency\": {\n            \"competencyNameCode\": {\n              \"codeValue\": \"DBA\",\n              \"shortName\": \"Customer Service\",\n              \"longName\": \" \"\n            },\n            \n            \"acquisitionDate\": \"20-09-2018\",\n            \"lastUsedDate\": \"2019-09-25\",\n            \"experienceDuration\": \"P2Y2M\",\n            \"competencyDescription\": \"testing from post add skil Desc\",\n            \n            \"comments\": \"testing certificaion skills from post add\",\n            \"testRequiredIndicator\": true,\n            \"certificationRequiredIndicator\": true,\n            \"autoCalculateExperienceIndicator\": true,\n            \"selfAssessedProficiencyScore\": {\n              \"scoreCode\": {\n                \"codeValue\": \"ADB\"\n              }\n            }\n          }\n        },\n        \"eventContext\": {\n          \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n        }\n      },\n      \n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n     \n      \"serviceCategoryCode\": {\n        \"codeValue\": \"workerTalentManagement\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"associate.ksaoc.competency.add\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Skills/competencies ADD with invalid lastUsedDate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"associateCompetency\": {\n            \"competencyNameCode\": {\n              \"codeValue\": \"MPP\",\n              \"shortName\": \"Customer Service\",\n              \"longName\": \" \"\n            },\n            \n            \"acquisitionDate\": \"2018-09-21\",\n            \"lastUsedDate\": \"2-09-2019\",\n            \"experienceDuration\": \"P2Y2M\",\n            \"competencyDescription\": \"testing from post add skil Desc\",\n            \n            \"comments\": \"testing certificaion skills from post add\",\n            \"testRequiredIndicator\": true,\n            \"certificationRequiredIndicator\": true,\n            \"autoCalculateExperienceIndicator\": true,\n            \"selfAssessedProficiencyScore\": {\n              \"scoreCode\": {\n                \"codeValue\": \"ADB\"\n              }\n            }\n          }\n        },\n        \"eventContext\": {\n          \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n        }\n      },\n      \n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n     \n      \"serviceCategoryCode\": {\n        \"codeValue\": \"workerTalentManagement\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"associate.ksaoc.competency.add\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Skills/competencies ADD with invalid aoid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"associateCompetency\": {\n            \"competencyNameCode\": {\n              \"codeValue\": \"FIN\",\n              \"shortName\": \"Customer Service\",\n              \"longName\": \" \"\n            },\n            \n            \"acquisitionDate\": \"2018-09-21\",\n            \"lastUsedDate\": \"2019-09-25\",\n            \"experienceDuration\": \"P2Y2M\",\n            \"competencyDescription\": \"testing from post add skil Desc\",\n            \n            \"comments\": \"testing certificaion skills from post add\",\n            \"testRequiredIndicator\": true,\n            \"certificationRequiredIndicator\": true,\n            \"autoCalculateExperienceIndicator\": true,\n            \"selfAssessedProficiencyScore\": {\n              \"scoreCode\": {\n                \"codeValue\": \"ADB\"\n              }\n            }\n          }\n        },\n        \"eventContext\": {\n          \"associateOID\": \"G34YJ7N4VJ\"\n        }\n      },\n      \n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n     \n      \"serviceCategoryCode\": {\n        \"codeValue\": \"workerTalentManagement\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"associate.ksaoc.competency.add\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.add",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Skills/competencies ADD with invalid experienceDuration",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"transform\": {\n          \"associateCompetency\": {\n            \"competencyNameCode\": {\n              \"codeValue\": \"MPP\",\n              \"shortName\": \"Customer Service\",\n              \"longName\": \" \"\n            },\n            \n            \"acquisitionDate\": \"2018-09-21\",\n            \"lastUsedDate\": \"2019-09-25\",\n            \"experienceDuration\": \"256\",\n            \"competencyDescription\": \"testing from post add skil Desc\",\n            \n            \"comments\": \"testing certificaion skills from post add\",\n            \"testRequiredIndicator\": true,\n            \"certificationRequiredIndicator\": true,\n            \"autoCalculateExperienceIndicator\": true,\n            \"selfAssessedProficiencyScore\": {\n              \"scoreCode\": {\n                \"codeValue\": \"ADB\"\n              }\n            }\n          }\n        },\n        \"eventContext\": {\n          \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n        }\n      },\n      \n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n     \n      \"serviceCategoryCode\": {\n        \"codeValue\": \"workerTalentManagement\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"associate.ksaoc.competency.add\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/talent/v1/associate.ksaoc.competency.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Skills/competencies ADD -meta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.add/meta",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.add",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "CHANGE",
+			"item": [
+				{
+					"name": "200 skills /competencies change",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCompetency\": {\n                        \"competencyNameCode\": {\n                            \"codeValue\": \"T1\",\n                            \"longName\": \"Commercial Driving\"\n                        },\n                        \"acquisitionDate\": \"2017-09-2\",\n                        \"lastUsedDate\": \"2020-09-25\",\n                         \"experienceDuration\": \"2\",\n                        \"competencyDescription\": \"testing from post add skil Desc\",\n                        \"hasCompetencyIndicator\": \"true\",\n                        \"comments\": \"testing \",\n                        \"testRequiredIndicator\": true,\n                        \"certificationRequiredIndicator\": false,\n                        \"autoCalculateExperienceIndicator\": false,\n                        \"selfAssessedProficiencyScore\": {\n                            \"scoreCode\": {\n                                \"codeValue\": \"L1\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739729293_3066\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.competency.change\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 skills /competencies change invalid itemID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCompetency\": {\n                        \"competencyNameCode\": {\n                            \"codeValue\": \"LAN\",\n                            \"longName\": \"Commercial Driving\"\n                        },\n                        \"acquisitionDate\": \"2017-09-2\",\n                        \"lastUsedDate\": \"2019-09-25\",\n                         \"experienceDuration\": \"P1Y4M\",\n                        \"competencyDescription\": \"testing from post add skil Desc\",\n                        \"hasCompetencyIndicator\": \"true\",\n                        \"comments\": \"testing \",\n                        \"testRequiredIndicator\": true,\n                        \"certificationRequiredIndicator\": true,\n                        \"autoCalculateExperienceIndicator\": true,\n                        \"selfAssessedProficiencyScore\": {\n                            \"scoreCode\": {\n                                \"codeValue\": \"L1\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"16973978\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.competency.change\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 skills /competencies change invalid competencyNameCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCompetency\": {\n                        \"competencyNameCode\": {\n                            \"codeValue\": \"123\",\n                            \"longName\": \"Commercial Driving\"\n                        },\n                        \"acquisitionDate\": \"2017-09-2\",\n                        \"lastUsedDate\": \"2019-09-25\",\n                         \"experienceDuration\": \"P1Y4M\",\n                        \"competencyDescription\": \"testing from post add skil Desc\",\n                        \"hasCompetencyIndicator\": \"true\",\n                        \"comments\": \"testing \",\n                        \"testRequiredIndicator\": true,\n                        \"certificationRequiredIndicator\": true,\n                        \"autoCalculateExperienceIndicator\": true,\n                        \"selfAssessedProficiencyScore\": {\n                            \"scoreCode\": {\n                                \"codeValue\": \"L1\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_283\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.competency.change\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 skills /competencies change invalid aoid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCompetency\": {\n                        \"competencyNameCode\": {\n                            \"codeValue\": \"LAN\",\n                            \"longName\": \"Commercial Driving\"\n                        },\n                        \"acquisitionDate\": \"2017-09-2\",\n                        \"lastUsedDate\": \"2019-09-25\",\n                         \"experienceDuration\": \"P1Y4M\",\n                        \"competencyDescription\": \"testing from post add skil Desc\",\n                        \"hasCompetencyIndicator\": \"true\",\n                        \"comments\": \"testing \",\n                        \"testRequiredIndicator\": true,\n                        \"certificationRequiredIndicator\": true,\n                        \"autoCalculateExperienceIndicator\": true,\n                        \"selfAssessedProficiencyScore\": {\n                            \"scoreCode\": {\n                                \"codeValue\": \"L1\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ6\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_283\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.competency.change\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 skills /competencies change invalid lastUsedDate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCompetency\": {\n                        \"competencyNameCode\": {\n                            \"codeValue\": \"T1\",\n                            \"longName\": \"Commercial Driving\"\n                        },\n                        \"acquisitionDate\": \"2017-09-2\",\n                        \"lastUsedDate\": \"20-09-2019\",\n                         \"experienceDuration\": \"P1Y4M\",\n                        \"competencyDescription\": \"testing from post add skil Desc\",\n                        \"hasCompetencyIndicator\": \"true\",\n                        \"comments\": \"testing \",\n                        \"testRequiredIndicator\": true,\n                        \"certificationRequiredIndicator\": true,\n                        \"autoCalculateExperienceIndicator\": true,\n                        \"selfAssessedProficiencyScore\": {\n                            \"scoreCode\": {\n                                \"codeValue\": \"L1\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_283\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.competency.change\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 skills /competencies change invalid acquisitionDate Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCompetency\": {\n                        \"competencyNameCode\": {\n                            \"codeValue\": \"T1\",\n                            \"longName\": \"Commercial Driving\"\n                        },\n                        \"acquisitionDate\": \"20-09-2017\",\n                        \"lastUsedDate\": \"2019-09-25\",\n                         \"experienceDuration\": \"P1Y4M\",\n                        \"competencyDescription\": \"testing from post add skil Desc\",\n                        \"hasCompetencyIndicator\": \"true\",\n                        \"comments\": \"testing \",\n                        \"testRequiredIndicator\": true,\n                        \"certificationRequiredIndicator\": true,\n                        \"autoCalculateExperienceIndicator\": true,\n                        \"selfAssessedProficiencyScore\": {\n                            \"scoreCode\": {\n                                \"codeValue\": \"L1\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_283\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.competency.change\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/talent/v1/associate.ksaoc.competency.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SKILLS change with valid experienceduration format and application indicator true",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCompetency\": {\n                        \"competencyNameCode\": {\n                            \"codeValue\": \"LAN\",\n                            \"longName\": \"Commercial Driving\"\n                        },\n                        \"acquisitionDate\": \"2017-09-2\",\n                        \"lastUsedDate\": \"2019-09-25\",\n                         \"experienceDuration\": \"P2Y2M\",\n                        \"competencyDescription\": \"testing from post add skil Desc\",\n                        \"hasCompetencyIndicator\": \"true\",\n                        \"comments\": \"testing \",\n                        \"testRequiredIndicator\": true,\n                        \"certificationRequiredIndicator\": true,\n                        \"autoCalculateExperienceIndicator\": true,\n                        \"selfAssessedProficiencyScore\": {\n                            \"scoreCode\": {\n                                \"codeValue\": \"L1\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_283\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.competency.change\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/talent/v1/associate.ksaoc.competency.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SKILLS change with invalid experienceduration format and application indicator true Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCompetency\": {\n                        \"competencyNameCode\": {\n                            \"codeValue\": \"CUS\",\n                            \"longName\": \"Commercial Driving\"\n                        },\n                        \"acquisitionDate\": \"2017-09-2\",\n                        \"lastUsedDate\": \"2019-09-25\",\n                         \"experienceDuration\": \"262\",\n                        \"competencyDescription\": \"testing from post add skil Desc\",\n                        \"hasCompetencyIndicator\": \"true\",\n                        \"comments\": \"testing \",\n                        \"testRequiredIndicator\": true,\n                        \"certificationRequiredIndicator\": true,\n                        \"autoCalculateExperienceIndicator\": true,\n                        \"selfAssessedProficiencyScore\": {\n                            \"scoreCode\": {\n                                \"codeValue\": \"L1\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_283\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.competency.change\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.change",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SKILLS change without  experience duration filed and application indicator true",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCompetency\": {\n                        \"competencyNameCode\": {\n                            \"codeValue\": \"LAN\",\n                            \"longName\": \"Commercial Driving\"\n                        },\n                        \"acquisitionDate\": \"2012-09-2\",\n                        \"lastUsedDate\": \"2019-09-25\",\n                         \n                        \"competencyDescription\": \"testing from post add skil Desc\",\n                        \"hasCompetencyIndicator\": \"true\",\n                        \"comments\": \"testing \",\n                        \"testRequiredIndicator\": true,\n                        \"certificationRequiredIndicator\": true,\n                        \"autoCalculateExperienceIndicator\": true,\n                        \"selfAssessedProficiencyScore\": {\n                            \"scoreCode\": {\n                                \"codeValue\": \"L1\"\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_283\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.competency.change\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/talent/v1/associate.ksaoc.competency.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "skills/competencies change meta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.change/meta",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.change",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "REMOVE",
+			"item": [
+				{
+					"name": "Skills/competencies remove",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_283\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.remove",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skills/competencies remove with invalid itemId",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_279\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/talent/v1/associate.ksaoc.competency.remove",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skills/competencies remove with invalid aoid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69E\",\n                    \"associateCompetency\": {\n                        \"itemID\": \"169739519113_279\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.remove",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.remove"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Skills/competencies remove-meta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.competency.remove/meta",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"talent",
+								"v1",
+								"associate.ksaoc.competency.remove",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "event notification Copy",
+			"item": [
+				{
+					"name": "get event notification",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "sm_transactionid",
+								"value": "reques12",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/core/v1/event-notification-messages",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"core",
+								"v1",
+								"event-notification-messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete event",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "sm_transactionid",
+								"value": "reques12",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/core/v1/event-notification-messages/0x_414d51204253494e464f4251362020209aeda15df8157b29",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"core",
+								"v1",
+								"event-notification-messages",
+								"0x_414d51204253494e464f4251362020209aeda15df8157b29"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a08e497d-95a3-42a6-bf50-ce43f34288ba",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-accounts.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-accounts",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Worker API Call",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-accounts.adp.com/hr/v2/workers",
+					"protocol": "https",
+					"host": [
+						"iat-accounts",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
