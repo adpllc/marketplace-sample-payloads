@@ -1,6 +1,6 @@
 {
     "meta": {
-        "dataEventContext": {
+        "/data/eventContext": {
             "associateOID": {
                 "readOnly": true,
                 "optional": false,
@@ -13,9 +13,9 @@
                 "shortLabelName": "pfId"
             }
         },
-        "dataTransforms": [
+        "/data/transforms": [
             {
-                "eventReasonCode": {
+                "/eventReasonCode": {
                     "codeList": {
                         "listItems": [
                             {
@@ -59,7 +59,7 @@
                     "optional": true,
                     "hidden": false
                 },
-                "effectiveDateTime": {
+                "/effectiveDateTime": {
                     "readOnly": true,
                     "optional": false,
                     "hidden": true,
@@ -67,7 +67,7 @@
                     "maxLength": 10,
                     "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
                 },
-                "workAssignmentExpectedStartDate": {
+                "/workAssignment/actualStartDate": {
                     "readOnly": false,
                     "optional": false,
                     "hidden": false,
@@ -76,7 +76,7 @@
                     "maxLength": 10,
                     "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
                 },
-                "workAssignmentOfficerTypeCode": {
+                "/workAssignment/officerTypeCode": {
                     "codeList": {
                         "listItems": [
                             {
@@ -100,12 +100,12 @@
                     "optional": true,
                     "hidden": false
                 },
-                "workAssignmentManagementPositionIndicator": {
+                "/workAssignment/managementPositionIndicator": {
                     "readOnly": false,
                     "optional": false,
                     "hidden": false
                 },
-                "workAssignmentJobFunctionCode": {
+                "/workAssignment/jobFunctionCode": {
                     "codeList": {
                         "listItems": [
                             {
@@ -189,13 +189,13 @@
                     "optional": true,
                     "hidden": false
                 },
-                "workAssignmentJobTitle": {
+                "/workAssignment/jobTitle": {
                     "readOnly": false,
                     "optional": true,
                     "hidden": false,
                     "longLabelName": "Job Title. Available in: NTOP, LPN, CNA, RN, EMT, RESTCTM, CONSTR, NPCTM, OM, LD, LDT, AA, DA, DM, HRG, IT, MA, PE, PA, SM, SE, AS, CS, CM, ITM, FM, HRV, SVP, C, GM, HRDR, BS, PM, CP, PC, BM, HRM, CH,  , "
                 },
-                "workAssignmentOccupationalClassificationsNameCode": {
+                "/workAssignment/occupationalClassifications/nameCode": {
                     "codeList": {
                         "listItems": [
                             {
@@ -203,6 +203,9 @@
                             },
                             {
                                 "codeValue": "Job Class"
+                            },
+                            {
+                                "codeValue": "EEO Establishment"
                             }
                         ]
                     },
@@ -210,7 +213,7 @@
                     "optional": true,
                     "hidden": false
                 },
-                "workAssignmentOccupationalClassificationsClassificationCode": {
+                "/workAssignment/occupationalClassifications/classificationCode": {
                     "codeList": {
                         "listItems": [
                             {
@@ -338,6 +341,11 @@
                                 "codeValue": "TC",
                                 "shortName": "Technical",
                                 "longName": "TC - Technical"
+                            },
+                            {
+                                "valueDescription": "EEO Establishment",
+                                "codeValue": "Corporate",
+                                "longName": "Corporate"
                             }
                         ]
                     },
@@ -345,7 +353,7 @@
                     "optional": true,
                     "hidden": false
                 },
-                "workAssignmentIndustryClassificationsClassificationCode": {
+                "/workAssignment/industryClassifications/classificationCode": {
                     "codeList": {
                         "listItems": [
                             {
@@ -414,7 +422,7 @@
                     "optional": true,
                     "hidden": false
                 },
-                "workAssignmentWageLawCoverageCoverageCode": {
+                "/workAssignment/wageLawCoverage/coverageCode": {
                     "codeList": {
                         "listItems": [
                             {
@@ -431,7 +439,7 @@
                     "optional": true,
                     "hidden": false
                 },
-                "workAssignmentPayGradeCode": {
+                "/workAssignment/payGradeCode": {
                     "codeList": {
                         "listItems": [
                             {
