@@ -1,0 +1,976 @@
+{
+  "meta": {
+    "/data/transforms": [
+      {
+        "/eventStatusCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/eventStatusCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/effectiveDateTime": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/applicant/person": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/applicant/person/birthDate": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/applicant/person/genderCode": {
+          "optional": false,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "shortName": "M",
+                "longName": "M"
+              },
+              {
+                "shortName": "F",
+                "longName": "F"
+              },
+              {
+                "shortName": "XX",
+                "longName": "XX"
+              }
+            ]
+          }
+        },
+        "/applicant/person/genderCode/codeValue": {
+          "optional": false,
+          "dataType": "string"
+        },
+        "/applicant/person/genderCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/preferredName": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicant/person/preferredName/formattedName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/formerNames": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicant/person/formerNames/formattedName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/governmentIDs": {
+          "optional": true,
+          "minItems": 0,
+          "maxItems": 1,
+          "dataType": "array"
+        },
+        "/applicant/person/governmentIDs/itemID": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/governmentIDs/idValue": {
+          "optional": false,
+          "pattern": "^\\d{9}|\\d{3}-\\d{2}-\\d{4}$",
+          "dataType": "string"
+        },
+        "/applicant/person/governmentIDs/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicant/person/governmentIDs/nameCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/governmentIDs/nameCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/governmentIDs/countryCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/legalName": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/applicant/person/legalName/givenName": {
+          "optional": false,
+          "pattern": "^[a-zA-Z''\\-\\s]{1,30}$",
+          "dataType": "string"
+        },
+        "/applicant/person/legalName/middleName": {
+          "optional": true,
+          "pattern": "^[a-zA-Z]{0,1}$",
+          "dataType": "string"
+        },
+        "/applicant/person/legalName/familyName1": {
+          "optional": false,
+          "pattern": "^[a-zA-Z''\\-\\s]{1,30}$",
+          "dataType": "string"
+        },
+        "/applicant/person/legalAddress": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/applicant/person/legalAddress/lineOne": {
+          "optional": true,
+          "pattern": "^[a-zA-Z0-9#\\/\\&\\-\\s]{1,30}$",
+          "dataType": "string"
+        },
+        "/applicant/person/legalAddress/lineTwo": {
+          "optional": true,
+          "pattern": "^[a-zA-Z0-9#\\/\\&\\-\\s]{1,30}$",
+          "dataType": "string"
+        },
+        "/applicant/person/legalAddress/cityName": {
+          "optional": true,
+          "pattern": "^[a-zA-Z\\-\\&''\\s]{1,30}$",
+          "dataType": "string"
+        },
+        "/applicant/person/legalAddress/countryCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/legalAddress/postalCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/legalAddress/countrySubdivisionLevel1": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "shortName": "AL",
+                "longName": "AL"
+              },
+              {
+                "shortName": "AK",
+                "longName": "AK"
+              },
+              {
+                "shortName": "AZ",
+                "longName": "AZ"
+              },
+              {
+                "shortName": "AR",
+                "longName": "AR"
+              },
+              {
+                "shortName": "CA",
+                "longName": "CA"
+              },
+              {
+                "shortName": "CO",
+                "longName": "CO"
+              },
+              {
+                "shortName": "CT",
+                "longName": "CT"
+              },
+              {
+                "shortName": "DE",
+                "longName": "DE"
+              },
+              {
+                "shortName": "DC",
+                "longName": "DC"
+              },
+              {
+                "shortName": "FL",
+                "longName": "FL"
+              },
+              {
+                "shortName": "GA",
+                "longName": "GA"
+              },
+              {
+                "shortName": "HI",
+                "longName": "HI"
+              },
+              {
+                "shortName": "ID",
+                "longName": "ID"
+              },
+              {
+                "shortName": "IL",
+                "longName": "IL"
+              },
+              {
+                "shortName": "IN",
+                "longName": "IN"
+              },
+              {
+                "shortName": "IA",
+                "longName": "IA"
+              },
+              {
+                "shortName": "KS",
+                "longName": "KS"
+              },
+              {
+                "shortName": "KY",
+                "longName": "KY"
+              },
+              {
+                "shortName": "LA",
+                "longName": "LA"
+              },
+              {
+                "shortName": "ME",
+                "longName": "ME"
+              },
+              {
+                "shortName": "MD",
+                "longName": "MD"
+              },
+              {
+                "shortName": "MA",
+                "longName": "MA"
+              },
+              {
+                "shortName": "MI",
+                "longName": "MI"
+              },
+              {
+                "shortName": "MN",
+                "longName": "MN"
+              },
+              {
+                "shortName": "MS",
+                "longName": "MS"
+              },
+              {
+                "shortName": "MO",
+                "longName": "MO"
+              },
+              {
+                "shortName": "MT",
+                "longName": "MT"
+              },
+              {
+                "shortName": "NE",
+                "longName": "NE"
+              },
+              {
+                "shortName": "NV",
+                "longName": "NV"
+              },
+              {
+                "shortName": "NH",
+                "longName": "NH"
+              },
+              {
+                "shortName": "NJ",
+                "longName": "NJ"
+              },
+              {
+                "shortName": "NM",
+                "longName": "NM"
+              },
+              {
+                "shortName": "NY",
+                "longName": "NY"
+              },
+              {
+                "shortName": "NC",
+                "longName": "NC"
+              },
+              {
+                "shortName": "ND",
+                "longName": "ND"
+              },
+              {
+                "shortName": "OH",
+                "longName": "OH"
+              },
+              {
+                "shortName": "OK",
+                "longName": "OK"
+              },
+              {
+                "shortName": "OR",
+                "longName": "OR"
+              },
+              {
+                "shortName": "PA",
+                "longName": "PA"
+              },
+              {
+                "shortName": "RI",
+                "longName": "RI"
+              },
+              {
+                "shortName": "SC",
+                "longName": "SC"
+              },
+              {
+                "shortName": "SD",
+                "longName": "SD"
+              },
+              {
+                "shortName": "TN",
+                "longName": "TN"
+              },
+              {
+                "shortName": "TX",
+                "longName": "TX"
+              },
+              {
+                "shortName": "UT",
+                "longName": "UT"
+              },
+              {
+                "shortName": "VT",
+                "longName": "VT"
+              },
+              {
+                "shortName": "VA",
+                "longName": "VA"
+              },
+              {
+                "shortName": "WA",
+                "longName": "WA"
+              },
+              {
+                "shortName": "WV",
+                "longName": "WV"
+              },
+              {
+                "shortName": "WI",
+                "longName": "WI"
+              },
+              {
+                "shortName": "WY",
+                "longName": "WY"
+              },
+              {
+                "shortName": "XX",
+                "longName": "XX"
+              }
+            ]
+          }
+        },
+        "/applicant/person/legalAddress/countrySubdivisionLevel1/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/legalAddress/countrySubdivisionLevel1/subdivisionType": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/legalAddress/countrySubdivisionLevel1/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicant/person/communication/emails": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicant/person/communication/emails/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicant/person/communication/emails/nameCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/emails/nameCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/emails/nameCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/emails/emailUri": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/landlines": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicant/person/communication/landlines/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicant/person/communication/landlines/nameCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/landlines/nameCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/landlines/nameCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/landlines/formattedNumber": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/landlines/extension": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/mobiles": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicant/person/communication/mobiles/itemID": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/mobiles/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicant/person/communication/mobiles/nameCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/mobiles/nameCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/mobiles/nameCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/mobiles/countryDialing": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/mobiles/areaDialing": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/mobiles/dialNumber": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicant/person/communication/mobiles/formattedNumber": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/expectedStartDate": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/jobOffer/offerTerms/compensation": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/compensation/remunerationBasisCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/compensation/remunerationBasisCode/codeValue": {
+          "optional": true,
+          "dataType": "string",
+          "codeList": {
+            "listItems": [
+              {
+                "shortName": "H",
+                "longName": "H"
+              },
+              {
+                "shortName": "S",
+                "longName": "S"
+              },
+              {
+                "shortName": "XX",
+                "longName": "XX"
+              }
+            ]
+          }
+        },
+        "/jobOffer/offerTerms/compensation/remunerationBasisCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/hourlyRateAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/hourlyRateAmount/amountValue": {
+          "optional": true,
+          "pattern": "[0-9]{1,7}(\\.[0-9]{1,4})?",
+          "dataType": "number"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/hourlyRateAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/hourlyRateAmount/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/hourlyRateAmount/nameCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/hourlyRateAmount/nameCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/hourlyRateAmount/nameCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/payPeriodRateAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/payPeriodRateAmount/amountValue": {
+          "optional": true,
+          "pattern": "[0-9]{1,7}(\\.[0-9]{1,4})?",
+          "dataType": "number"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/payPeriodRateAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/payPeriodRateAmount/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/payPeriodRateAmount/nameCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/payPeriodRateAmount/nameCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/baseRemuneration/payPeriodRateAmount/nameCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/additionalRemunerations": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/jobOffer/offerTerms/compensation/additionalRemunerations/rate": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/compensation/additionalRemunerations/rate/amountValue": {
+          "optional": true,
+          "pattern": "[0-9]{1,7}(\\.[0-9]{1,4})?",
+          "dataType": "number"
+        },
+        "/jobOffer/offerTerms/compensation/additionalRemunerations/rate/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/additionalRemunerations/rate/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerTerms/compensation/additionalRemunerations/rate/nameCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/additionalRemunerations/rate/nameCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/additionalRemunerations/rate/nameCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/payCycleCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/staffing/v1/position-seeker-management/pay-cycles/run",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/jobOffer/offerTerms/compensation/payCycleCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerTerms/compensation/payCycleCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/jobOffer/offerAssignment/workerTypeCode": {
+          "optional": false,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "shortName": "Contractor",
+                "longName": "Contractor"
+              },
+              {
+                "shortName": "Employee",
+                "longName": "Employee"
+              }
+            ]
+          }
+        },
+        "/jobOffer/offerAssignment/workerTypeCode/codeValue": {
+          "optional": false,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/workerTypeCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/workLevelCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "shortName": "FullTime",
+                "longName": "FullTime"
+              },
+              {
+                "shortName": "PartTime",
+                "longName": "PartTime"
+              },
+              {
+                "shortName": "Temporary",
+                "longName": "Temporary"
+              },
+              {
+                "shortName": "XX",
+                "longName": "XX"
+              }
+            ]
+          }
+        },
+        "/jobOffer/offerAssignment/workLevelCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/workLevelCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/standardHours": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerAssignment/standardHours/hoursQuantity": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/jobOffer/offerAssignment/standardHours/unitCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerAssignment/standardHours/unitCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/standardHours/unitCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address/lineOne": {
+          "optional": true,
+          "pattern": "^[a-zA-Z0-9#\\/\\&\\-\\s]{1,30}$",
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address/lineTwo": {
+          "optional": true,
+          "pattern": "^[a-zA-Z0-9#\\/\\&\\-\\s]{1,30}$",
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address/cityName": {
+          "optional": true,
+          "pattern": "^[a-zA-Z\\-\\&''\\s]{1,30}$",
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address/countryCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address/postalCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address/countrySubdivisionLevel1": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "shortName": "AL",
+                "longName": "AL"
+              },
+              {
+                "shortName": "AK",
+                "longName": "AK"
+              },
+              {
+                "shortName": "AZ",
+                "longName": "AZ"
+              },
+              {
+                "shortName": "AR",
+                "longName": "AR"
+              },
+              {
+                "shortName": "CA",
+                "longName": "CA"
+              },
+              {
+                "shortName": "CO",
+                "longName": "CO"
+              },
+              {
+                "shortName": "CT",
+                "longName": "CT"
+              },
+              {
+                "shortName": "DE",
+                "longName": "DE"
+              },
+              {
+                "shortName": "DC",
+                "longName": "DC"
+              },
+              {
+                "shortName": "FL",
+                "longName": "FL"
+              },
+              {
+                "shortName": "GA",
+                "longName": "GA"
+              },
+              {
+                "shortName": "HI",
+                "longName": "HI"
+              },
+              {
+                "shortName": "ID",
+                "longName": "ID"
+              },
+              {
+                "shortName": "IL",
+                "longName": "IL"
+              },
+              {
+                "shortName": "IN",
+                "longName": "IN"
+              },
+              {
+                "shortName": "IA",
+                "longName": "IA"
+              },
+              {
+                "shortName": "KS",
+                "longName": "KS"
+              },
+              {
+                "shortName": "KY",
+                "longName": "KY"
+              },
+              {
+                "shortName": "LA",
+                "longName": "LA"
+              },
+              {
+                "shortName": "ME",
+                "longName": "ME"
+              },
+              {
+                "shortName": "MD",
+                "longName": "MD"
+              },
+              {
+                "shortName": "MA",
+                "longName": "MA"
+              },
+              {
+                "shortName": "MI",
+                "longName": "MI"
+              },
+              {
+                "shortName": "MN",
+                "longName": "MN"
+              },
+              {
+                "shortName": "MS",
+                "longName": "MS"
+              },
+              {
+                "shortName": "MO",
+                "longName": "MO"
+              },
+              {
+                "shortName": "MT",
+                "longName": "MT"
+              },
+              {
+                "shortName": "NE",
+                "longName": "NE"
+              },
+              {
+                "shortName": "NV",
+                "longName": "NV"
+              },
+              {
+                "shortName": "NH",
+                "longName": "NH"
+              },
+              {
+                "shortName": "NJ",
+                "longName": "NJ"
+              },
+              {
+                "shortName": "NM",
+                "longName": "NM"
+              },
+              {
+                "shortName": "NY",
+                "longName": "NY"
+              },
+              {
+                "shortName": "NC",
+                "longName": "NC"
+              },
+              {
+                "shortName": "ND",
+                "longName": "ND"
+              },
+              {
+                "shortName": "OH",
+                "longName": "OH"
+              },
+              {
+                "shortName": "OK",
+                "longName": "OK"
+              },
+              {
+                "shortName": "OR",
+                "longName": "OR"
+              },
+              {
+                "shortName": "PA",
+                "longName": "PA"
+              },
+              {
+                "shortName": "RI",
+                "longName": "RI"
+              },
+              {
+                "shortName": "SC",
+                "longName": "SC"
+              },
+              {
+                "shortName": "SD",
+                "longName": "SD"
+              },
+              {
+                "shortName": "TN",
+                "longName": "TN"
+              },
+              {
+                "shortName": "TX",
+                "longName": "TX"
+              },
+              {
+                "shortName": "UT",
+                "longName": "UT"
+              },
+              {
+                "shortName": "VT",
+                "longName": "VT"
+              },
+              {
+                "shortName": "VA",
+                "longName": "VA"
+              },
+              {
+                "shortName": "WA",
+                "longName": "WA"
+              },
+              {
+                "shortName": "WV",
+                "longName": "WV"
+              },
+              {
+                "shortName": "WI",
+                "longName": "WI"
+              },
+              {
+                "shortName": "WY",
+                "longName": "WY"
+              },
+              {
+                "shortName": "XX",
+                "longName": "XX"
+              }
+            ]
+          }
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address/countrySubdivisionLevel1/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address/countrySubdivisionLevel1/subdivisionType": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/jobOffer/offerAssignment/homeWorkLocation/address/countrySubdivisionLevel1/shortName": {
+          "optional": true,
+          "dataType": "string"
+        }
+      }
+    ]
+  }
+}
