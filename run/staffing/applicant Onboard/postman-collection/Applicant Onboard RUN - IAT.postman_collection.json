@@ -1,0 +1,550 @@
+{
+	"info": {
+		"_postman_id": "8bcc1101-53f2-48f8-8b6d-7def443ef7bd",
+		"name": "Applicant Onboard RUN - IAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "fefa761a-5972-4f19-8c7c-1168219e9599",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "55b19d7a-273b-4dce-a8ab-3ac3dc9d9ae0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-accounts.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-accounts",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-accounts.adp.com/events/staffing/v1/applicant.onboard/meta",
+					"protocol": "https",
+					"host": [
+						"iat-accounts",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"staffing",
+						"v1",
+						"applicant.onboard",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "codelist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"url": {
+					"raw": "https://iat-accounts.adp.com/codelists/hr/v3/worker-management/NY",
+					"protocol": "https",
+					"host": [
+						"iat-accounts",
+						"adp",
+						"com"
+					],
+					"path": [
+						"codelists",
+						"hr",
+						"v3",
+						"worker-management",
+						"NY"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "worker Call",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7067388b-ed70-4b95-a552-0e76e21c70e2",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 786));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"MM/DD/YYYY\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onboard - Emp Full Time",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7067388b-ed70-4b95-a552-0e76e21c70e2",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 786));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"MM/DD/YYYY\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"staffing\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"applicant.onboard\"\n            },\n            \n            \"data\": {\n               \n                \"transform\": {\n                    \"eventReasonCode\": {\n                        \"codeValue\": \"NH\",\n                        \"shortName\": \"New Hire\"\n                    },\n                    \"eventStatusCode\": {\n                        \"codeValue\": \"submit\"\n                    },\n                    \"effectiveDateTime\": \"2019-04-01T00:00:00Z\",\n                    \"applicant\": {\n                        \"person\": {\n                            \"genderCode\": {\n                                \"codeValue\": \"M\"\n                            },\n                            \"governmentIDs\": [\n                                {\n                                    \"idValue\": \"192-12-2121\",\n                                    \"nameCode\": {\n                                        \"codeValue\": \"SSN\",\n                                        \"shortName\": \"Social Security Number\"\n                                    },\n                                    \"countryCode\": \"US\"\n                                }\n                            ],\n                            \"legalName\": {\n                                \"givenName\": \"vik\",\n                                \"middleName\": \"M\",\n                                \"familyName1\": \"bis\"\n                            },\n                            \"preferredName\": {\n                                \"formattedName\": \"VB\"\n                            },\n                            \"formerNames\": [\n                                {\n                                    \"formattedName\": \"VB\"\n                                }\n                            ],\n                            \"legalAddress\": {\n                                \"lineOne\": \"357 Millburn Avenue\",\n                                \"cityName\": \"Millburn\",\n                                \"countrySubdivisionLevel1\": {\n                                    \"codeValue\": \"NY\",\n                                    \"subdivisionType\": \"state\"\n                                },\n                                \"postalCode\": \"10001\"\n                            },\n                            \"communication\": {\n                                \"landlines\": [\n                                    {\n                                        \"formattedNumber\": \"040-67576111\"\n                                    }\n                                ],\n                                \"mobiles\": [\n                                    {\n                                        \"formattedNumber\": \"8686305030\"\n                                    }\n                                ],\n                                \"emails\": [\n                                    {\n                                        \"emailUri\": \"vikram.biswas@gmail.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"personal\"\n                                        }\n                                    },\n                                    {\n                                        \"emailUri\": \"s.chinna@adp.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"work\"\n                                        }\n                                    }\n                                ]\n                            },\n                            \"birthDate\": \"1985-08-28\"\n                        }\n                    },\n                    \"jobOffer\": {\n                        \"offerTerms\": {\n                            \"expectedStartDate\": \"2019-01-01T00:00:00Z\",\n                            \"compensation\": {\n                                \"remunerationBasisCode\": {\n                                    \"codeValue\": \"S\"\n                                },\n                                \"payCycleCode\": {\n                                    \"codeValue\": \"W\"\n                                },\n                                \"baseRemuneration\": {\n                                    \"payPeriodRateAmount\": {\n                                        \"amountValue\": 699.99,\n                                        \"currencyCode\": \"USD\"\n                                    }\n                                }\n                            }\n                        },\n                        \"offerAssignment\": {\n                            \"workerTypeCode\": {\n                                \"codeValue\": \"Employee\"\n                            },\n                            \"workLevelCode\": {\n                                \"codeValue\": \"FullTime\"\n                            },\n                            \"standardHours\": {\n                                \"HoursQuantity\": 40\n                            },\n                            \"homeWorkLocation\": {\t\t\t\t\t\t\t\n                                \"address\": {\n                                    \"lineOne\": \"1 ADP Blvd\",\n                                    \"cityName\": \"Roseland\",\n                                    \"countrySubdivisionLevel1\": {\n                                        \"codeValue\": \"KY\",\n                                        \"subdivisionType\": \"state\"\n                                    },\n                                    \"countryCode\": \"US\",\n                                    \"postalCode\": \"07068\"\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/staffing/v1/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"staffing",
+						"v1",
+						"applicant.onboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onboard - Employee Part Time",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7067388b-ed70-4b95-a552-0e76e21c70e2",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 786));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"MM/DD/YYYY\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"staffing\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"applicant.onboard\"\n            },\n            \n            \"data\": {\n               \n                \"transform\": {\n                    \"eventReasonCode\": {\n                        \"codeValue\": \"NH\",\n                        \"shortName\": \"New Hire\"\n                    },\n                    \"eventStatusCode\": {\n                        \"codeValue\": \"submit\"\n                    },\n                    \"effectiveDateTime\": \"2019-04-01T00:00:00Z\",\n                    \"applicant\": {\n                        \"person\": {\n                            \"genderCode\": {\n                                \"codeValue\": \"M\"\n                            },\n                            \"governmentIDs\": [\n                                {\n                                    \"idValue\": \"192-12-2121\",\n                                    \"nameCode\": {\n                                        \"codeValue\": \"SSN\",\n                                        \"shortName\": \"Social Security Number\"\n                                    },\n                                    \"countryCode\": \"US\"\n                                }\n                            ],\n                            \"legalName\": {\n                                \"givenName\": \"part\",\n                                \"middleName\": \"M\",\n                                \"familyName1\": \"Time\"\n                            },\n                            \"preferredName\": {\n                                \"formattedName\": \"VB\"\n                            },\n                            \"formerNames\": [\n                                {\n                                    \"formattedName\": \"VB\"\n                                }\n                            ],\n                            \"legalAddress\": {\n                                \"lineOne\": \"357 Millburn Avenue\",\n                                \"cityName\": \"Millburn\",\n                                \"countrySubdivisionLevel1\": {\n                                    \"codeValue\": \"NY\",\n                                    \"subdivisionType\": \"state\"\n                                },\n                                \"postalCode\": \"10001\"\n                            },\n                            \"communication\": {\n                                \"landlines\": [\n                                    {\n                                        \"formattedNumber\": \"040-67576111\"\n                                    }\n                                ],\n                                \"mobiles\": [\n                                    {\n                                        \"formattedNumber\": \"8686305030\"\n                                    }\n                                ],\n                                \"emails\": [\n                                    {\n                                        \"emailUri\": \"vikram.biswas@gmail.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"personal\"\n                                        }\n                                    },\n                                    {\n                                        \"emailUri\": \"s.chinna@adp.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"work\"\n                                        }\n                                    }\n                                ]\n                            },\n                            \"birthDate\": \"1985-08-28\"\n                        }\n                    },\n                    \"jobOffer\": {\n                        \"offerTerms\": {\n                            \"expectedStartDate\": \"2019-01-01T00:00:00Z\",\n                            \"compensation\": {\n                                \"remunerationBasisCode\": {\n                                    \"codeValue\": \"S\"\n                                },\n                                \"payCycleCode\": {\n                                    \"codeValue\": \"W\"\n                                },\n                                \"baseRemuneration\": {\n                                    \"payPeriodRateAmount\": {\n                                        \"amountValue\": 699.99,\n                                        \"currencyCode\": \"USD\"\n                                    }\n                                }\n                            }\n                        },\n                        \"offerAssignment\": {\n                            \"workerTypeCode\": {\n                                \"codeValue\": \"Employee\"\n                            },\n                            \"workLevelCode\": {\n                                \"codeValue\": \"PartTime\"\n                            },\n                            \"standardHours\": {\n                                \"HoursQuantity\": 40\n                            },\n                            \"homeWorkLocation\": {\t\t\t\t\t\t\t\n                                \"address\": {\n                                    \"lineOne\": \"1 ADP Blvd\",\n                                    \"cityName\": \"Roseland\",\n                                    \"countrySubdivisionLevel1\": {\n                                        \"codeValue\": \"KY\",\n                                        \"subdivisionType\": \"state\"\n                                    },\n                                    \"countryCode\": \"US\",\n                                    \"postalCode\": \"07068\"\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/staffing/v1/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"staffing",
+						"v1",
+						"applicant.onboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onboard - Employee Temp",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7067388b-ed70-4b95-a552-0e76e21c70e2",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 786));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"MM/DD/YYYY\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"staffing\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"applicant.onboard\"\n            },\n            \n            \"data\": {\n               \n                \"transform\": {\n                    \"eventReasonCode\": {\n                        \"codeValue\": \"NH\",\n                        \"shortName\": \"New Hire\"\n                    },\n                    \"eventStatusCode\": {\n                        \"codeValue\": \"submit\"\n                    },\n                    \"effectiveDateTime\": \"2019-04-01T00:00:00Z\",\n                    \"applicant\": {\n                        \"person\": {\n                            \"genderCode\": {\n                                \"codeValue\": \"M\"\n                            },\n                            \"governmentIDs\": [\n                                {\n                                    \"idValue\": \"192-12-2121\",\n                                    \"nameCode\": {\n                                        \"codeValue\": \"SSN\",\n                                        \"shortName\": \"Social Security Number\"\n                                    },\n                                    \"countryCode\": \"US\"\n                                }\n                            ],\n                            \"legalName\": {\n                                \"givenName\": \"Temporary\",\n                                \"middleName\": \"M\",\n                                \"familyName1\": \"Temp\"\n                            },\n                            \"preferredName\": {\n                                \"formattedName\": \"VB\"\n                            },\n                            \"formerNames\": [\n                                {\n                                    \"formattedName\": \"VB\"\n                                }\n                            ],\n                            \"legalAddress\": {\n                                \"lineOne\": \"357 Millburn Avenue\",\n                                \"cityName\": \"Millburn\",\n                                \"countrySubdivisionLevel1\": {\n                                    \"codeValue\": \"NY\",\n                                    \"subdivisionType\": \"state\"\n                                },\n                                \"postalCode\": \"10001\"\n                            },\n                            \"communication\": {\n                                \"landlines\": [\n                                    {\n                                        \"formattedNumber\": \"040-67576111\"\n                                    }\n                                ],\n                                \"mobiles\": [\n                                    {\n                                        \"formattedNumber\": \"8686305030\"\n                                    }\n                                ],\n                                \"emails\": [\n                                    {\n                                        \"emailUri\": \"vikram.biswas@gmail.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"personal\"\n                                        }\n                                    },\n                                    {\n                                        \"emailUri\": \"s.chinna@adp.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"work\"\n                                        }\n                                    }\n                                ]\n                            },\n                            \"birthDate\": \"1985-08-28\"\n                        }\n                    },\n                    \"jobOffer\": {\n                        \"offerTerms\": {\n                            \"expectedStartDate\": \"2019-01-01T00:00:00Z\",\n                            \"compensation\": {\n                                \"remunerationBasisCode\": {\n                                    \"codeValue\": \"S\"\n                                },\n                                \"payCycleCode\": {\n                                    \"codeValue\": \"W\"\n                                },\n                                \"baseRemuneration\": {\n                                    \"payPeriodRateAmount\": {\n                                        \"amountValue\": 699.99,\n                                        \"currencyCode\": \"USD\"\n                                    }\n                                }\n                            }\n                        },\n                        \"offerAssignment\": {\n                            \"workerTypeCode\": {\n                                \"codeValue\": \"Employee\"\n                            },\n                            \"workLevelCode\": {\n                                \"codeValue\": \"Temporary\"\n                            },\n                            \"standardHours\": {\n                                \"HoursQuantity\": 40\n                            },\n                            \"homeWorkLocation\": {\t\t\t\t\t\t\t\n                                \"address\": {\n                                    \"lineOne\": \"1 ADP Blvd\",\n                                    \"cityName\": \"Roseland\",\n                                    \"countrySubdivisionLevel1\": {\n                                        \"codeValue\": \"KY\",\n                                        \"subdivisionType\": \"state\"\n                                    },\n                                    \"countryCode\": \"US\",\n                                    \"postalCode\": \"07068\"\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/staffing/v1/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"staffing",
+						"v1",
+						"applicant.onboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onboard - Contractor Full Time",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7067388b-ed70-4b95-a552-0e76e21c70e2",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 786));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"MM/DD/YYYY\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"staffing\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"applicant.onboard\"\n            },\n            \n            \"data\": {\n               \n                \"transform\": {\n                    \"eventReasonCode\": {\n                        \"codeValue\": \"NH\",\n                        \"shortName\": \"New Hire\"\n                    },\n                    \"eventStatusCode\": {\n                        \"codeValue\": \"submit\"\n                    },\n                    \"effectiveDateTime\": \"2019-04-01T00:00:00Z\",\n                    \"applicant\": {\n                        \"person\": {\n                            \"genderCode\": {\n                                \"codeValue\": \"M\"\n                            },\n                            \"governmentIDs\": [\n                                {\n                                    \"idValue\": \"192-12-2121\",\n                                    \"nameCode\": {\n                                        \"codeValue\": \"SSN\",\n                                        \"shortName\": \"Social Security Number\"\n                                    },\n                                    \"countryCode\": \"US\"\n                                }\n                            ],\n                            \"legalName\": {\n                                \"givenName\": \"contractor\",\n                                \"middleName\": \"M\",\n                                \"familyName1\": \"Full Time\"\n                            },\n                            \"preferredName\": {\n                                \"formattedName\": \"VB\"\n                            },\n                            \"formerNames\": [\n                                {\n                                    \"formattedName\": \"VB\"\n                                }\n                            ],\n                            \"legalAddress\": {\n                                \"lineOne\": \"357 Millburn Avenue\",\n                                \"cityName\": \"Millburn\",\n                                \"countrySubdivisionLevel1\": {\n                                    \"codeValue\": \"NY\",\n                                    \"subdivisionType\": \"state\"\n                                },\n                                \"postalCode\": \"10001\"\n                            },\n                            \"communication\": {\n                                \"landlines\": [\n                                    {\n                                        \"formattedNumber\": \"040-67576111\"\n                                    }\n                                ],\n                                \"mobiles\": [\n                                    {\n                                        \"formattedNumber\": \"8686305030\"\n                                    }\n                                ],\n                                \"emails\": [\n                                    {\n                                        \"emailUri\": \"vikram.biswas@gmail.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"personal\"\n                                        }\n                                    },\n                                    {\n                                        \"emailUri\": \"s.chinna@adp.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"work\"\n                                        }\n                                    }\n                                ]\n                            },\n                            \"birthDate\": \"1985-08-28\"\n                        }\n                    },\n                    \"jobOffer\": {\n                        \"offerTerms\": {\n                            \"expectedStartDate\": \"2019-01-01T00:00:00Z\",\n                            \"compensation\": {\n                                \"remunerationBasisCode\": {\n                                    \"codeValue\": \"S\"\n                                },\n                                \"payCycleCode\": {\n                                    \"codeValue\": \"W\"\n                                },\n                                \"baseRemuneration\": {\n                                    \"payPeriodRateAmount\": {\n                                        \"amountValue\": 699.99,\n                                        \"currencyCode\": \"USD\"\n                                    }\n                                }\n                            }\n                        },\n                        \"offerAssignment\": {\n                            \"workerTypeCode\": {\n                                \"codeValue\": \"Contractor\"\n                            },\n                            \"workLevelCode\": {\n                                \"codeValue\": \"FullTime\"\n                            },\n                            \"standardHours\": {\n                                \"HoursQuantity\": 40\n                            },\n                            \"homeWorkLocation\": {\t\t\t\t\t\t\t\n                                \"address\": {\n                                    \"lineOne\": \"1 ADP Blvd\",\n                                    \"cityName\": \"Roseland\",\n                                    \"countrySubdivisionLevel1\": {\n                                        \"codeValue\": \"KY\",\n                                        \"subdivisionType\": \"state\"\n                                    },\n                                    \"countryCode\": \"US\",\n                                    \"postalCode\": \"07068\"\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/staffing/v1/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"staffing",
+						"v1",
+						"applicant.onboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onboard - Contractor Part Time",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7067388b-ed70-4b95-a552-0e76e21c70e2",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 786));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"MM/DD/YYYY\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"staffing\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"applicant.onboard\"\n            },\n            \n            \"data\": {\n               \n                \"transform\": {\n                    \"eventReasonCode\": {\n                        \"codeValue\": \"NH\",\n                        \"shortName\": \"New Hire\"\n                    },\n                    \"eventStatusCode\": {\n                        \"codeValue\": \"submit\"\n                    },\n                    \"effectiveDateTime\": \"2019-04-01T00:00:00Z\",\n                    \"applicant\": {\n                        \"person\": {\n                            \"genderCode\": {\n                                \"codeValue\": \"M\"\n                            },\n                            \"governmentIDs\": [\n                                {\n                                    \"idValue\": \"192-12-2121\",\n                                    \"nameCode\": {\n                                        \"codeValue\": \"SSN\",\n                                        \"shortName\": \"Social Security Number\"\n                                    },\n                                    \"countryCode\": \"US\"\n                                }\n                            ],\n                            \"legalName\": {\n                                \"givenName\": \"contractor\",\n                                \"middleName\": \"M\",\n                                \"familyName1\": \"Part Time\"\n                            },\n                            \"preferredName\": {\n                                \"formattedName\": \"VB\"\n                            },\n                            \"formerNames\": [\n                                {\n                                    \"formattedName\": \"VB\"\n                                }\n                            ],\n                            \"legalAddress\": {\n                                \"lineOne\": \"357 Millburn Avenue\",\n                                \"cityName\": \"Millburn\",\n                                \"countrySubdivisionLevel1\": {\n                                    \"codeValue\": \"NY\",\n                                    \"subdivisionType\": \"state\"\n                                },\n                                \"postalCode\": \"10001\"\n                            },\n                            \"communication\": {\n                                \"landlines\": [\n                                    {\n                                        \"formattedNumber\": \"040-67576111\"\n                                    }\n                                ],\n                                \"mobiles\": [\n                                    {\n                                        \"formattedNumber\": \"8686305030\"\n                                    }\n                                ],\n                                \"emails\": [\n                                    {\n                                        \"emailUri\": \"vikram.biswas@gmail.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"personal\"\n                                        }\n                                    },\n                                    {\n                                        \"emailUri\": \"s.chinna@adp.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"work\"\n                                        }\n                                    }\n                                ]\n                            },\n                            \"birthDate\": \"1985-08-28\"\n                        }\n                    },\n                    \"jobOffer\": {\n                        \"offerTerms\": {\n                            \"expectedStartDate\": \"2019-01-01T00:00:00Z\",\n                            \"compensation\": {\n                                \"remunerationBasisCode\": {\n                                    \"codeValue\": \"S\"\n                                },\n                                \"payCycleCode\": {\n                                    \"codeValue\": \"W\"\n                                },\n                                \"baseRemuneration\": {\n                                    \"payPeriodRateAmount\": {\n                                        \"amountValue\": 699.99,\n                                        \"currencyCode\": \"USD\"\n                                    }\n                                }\n                            }\n                        },\n                        \"offerAssignment\": {\n                            \"workerTypeCode\": {\n                                \"codeValue\": \"Contractor\"\n                            },\n                            \"workLevelCode\": {\n                                \"codeValue\": \"PartTime\"\n                            },\n                            \"standardHours\": {\n                                \"HoursQuantity\": 40\n                            },\n                            \"homeWorkLocation\": {\t\t\t\t\t\t\t\n                                \"address\": {\n                                    \"lineOne\": \"1 ADP Blvd\",\n                                    \"cityName\": \"Roseland\",\n                                    \"countrySubdivisionLevel1\": {\n                                        \"codeValue\": \"KY\",\n                                        \"subdivisionType\": \"state\"\n                                    },\n                                    \"countryCode\": \"US\",\n                                    \"postalCode\": \"07068\"\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/staffing/v1/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"staffing",
+						"v1",
+						"applicant.onboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onboard - Contractor Temp",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "7067388b-ed70-4b95-a552-0e76e21c70e2",
+						"exec": [
+							"postman.setGlobalVariable('number', Math.floor(Math.random() * 786));",
+							"",
+							"var moment = require('moment')",
+							"pm.globals.set(\"timestamp\", moment().format(\"MM/DD/YYYY\"))"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"staffing\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"applicant.onboard\"\n            },\n            \n            \"data\": {\n               \n                \"transform\": {\n                    \"eventReasonCode\": {\n                        \"codeValue\": \"NH\",\n                        \"shortName\": \"New Hire\"\n                    },\n                    \"eventStatusCode\": {\n                        \"codeValue\": \"submit\"\n                    },\n                    \"effectiveDateTime\": \"2019-04-01T00:00:00Z\",\n                    \"applicant\": {\n                        \"person\": {\n                            \"genderCode\": {\n                                \"codeValue\": \"M\"\n                            },\n                            \"governmentIDs\": [\n                                {\n                                    \"idValue\": \"192-12-2121\",\n                                    \"nameCode\": {\n                                        \"codeValue\": \"SSN\",\n                                        \"shortName\": \"Social Security Number\"\n                                    },\n                                    \"countryCode\": \"US\"\n                                }\n                            ],\n                            \"legalName\": {\n                                \"givenName\": \"Temparory\",\n                                \"middleName\": \"M\",\n                                \"familyName1\": \"Contractor\"\n                            },\n                            \"preferredName\": {\n                                \"formattedName\": \"VB\"\n                            },\n                            \"formerNames\": [\n                                {\n                                    \"formattedName\": \"VB\"\n                                }\n                            ],\n                            \"legalAddress\": {\n                                \"lineOne\": \"357 Millburn Avenue\",\n                                \"cityName\": \"Millburn\",\n                                \"countrySubdivisionLevel1\": {\n                                    \"codeValue\": \"NY\",\n                                    \"subdivisionType\": \"state\"\n                                },\n                                \"postalCode\": \"10001\"\n                            },\n                            \"communication\": {\n                                \"landlines\": [\n                                    {\n                                        \"formattedNumber\": \"040-67576111\"\n                                    }\n                                ],\n                                \"mobiles\": [\n                                    {\n                                        \"formattedNumber\": \"8686305030\"\n                                    }\n                                ],\n                                \"emails\": [\n                                    {\n                                        \"emailUri\": \"vikram.biswas@gmail.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"personal\"\n                                        }\n                                    },\n                                    {\n                                        \"emailUri\": \"s.chinna@adp.com\",\n                                        \"nameCode\": {\n                                            \"codeValue\": \"work\"\n                                        }\n                                    }\n                                ]\n                            },\n                            \"birthDate\": \"1985-08-28\"\n                        }\n                    },\n                    \"jobOffer\": {\n                        \"offerTerms\": {\n                            \"expectedStartDate\": \"2019-01-01T00:00:00Z\",\n                            \"compensation\": {\n                                \"remunerationBasisCode\": {\n                                    \"codeValue\": \"S\"\n                                },\n                                \"payCycleCode\": {\n                                    \"codeValue\": \"W\"\n                                },\n                                \"baseRemuneration\": {\n                                    \"payPeriodRateAmount\": {\n                                        \"amountValue\": 699.99,\n                                        \"currencyCode\": \"USD\"\n                                    }\n                                }\n                            }\n                        },\n                        \"offerAssignment\": {\n                            \"workerTypeCode\": {\n                                \"codeValue\": \"Contractor\"\n                            },\n                            \"workLevelCode\": {\n                                \"codeValue\": \"Temporary\"\n                            },\n                            \"standardHours\": {\n                                \"HoursQuantity\": 40\n                            },\n                            \"homeWorkLocation\": {\t\t\t\t\t\t\t\n                                \"address\": {\n                                    \"lineOne\": \"1 ADP Blvd\",\n                                    \"cityName\": \"Roseland\",\n                                    \"countrySubdivisionLevel1\": {\n                                        \"codeValue\": \"KY\",\n                                        \"subdivisionType\": \"state\"\n                                    },\n                                    \"countryCode\": \"US\",\n                                    \"postalCode\": \"07068\"\n                                }\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/staffing/v1/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"staffing",
+						"v1",
+						"applicant.onboard"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
