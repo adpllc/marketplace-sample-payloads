@@ -1,0 +1,49 @@
+{
+    "id": {
+        "value": "129834:1234"
+    },
+    "alternateId": {
+        "value": "020019"
+    },
+    "legalPlanName": "Medical FSA 2019",
+    "providerId": {
+        "value": "DBIexternal"
+    },
+    "productCode": "MedicalFSA",
+    "effectivePeriod": {
+        "validFrom": "2018-01-01"
+    },
+    "originalEffectiveDate": "2018-01-01",
+    "planAnniversary": "01/01",
+    "waitingRuleType": [
+        {
+            "rollForwardIndicator": true,
+            "ruleValue": 2,
+            "waitingRuleEventCode": "NewHire",
+            "waitingRuleTypeCode": "FirstOfMonthAfterXMonths"
+        },
+        {
+            "rollForwardIndicator": true,
+            "ruleValue": 0,
+            "waitingRuleEventCode": "WorkEvent",
+            "waitingRuleTypeCode": "HireDate"
+        }
+    ],
+    "accountBasedPlanSetupType": {
+        "employerContributionType": {
+            "contributionAmount": {
+                "currency": "USD",
+                "value": 1100
+            },
+            "contributionType": "Flat"
+        },
+        "maximumContribution": {
+            "currency": "USD",
+            "value": 1500
+        },
+        "minimumContribution": {
+            "currency": "USD",
+            "value": 500
+        }
+    }
+}
