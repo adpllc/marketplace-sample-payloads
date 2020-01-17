@@ -1,0 +1,156 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/payrollGroupCode/codeValue": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/payrollFileNumber": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "dataType": "string[date]"
+                },
+                "/federalIncomeTaxWithholdingElection/taxWithholdingStatus/statusCode": {
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/federaltaxblockvalues?effectiveDate=%7B%23%2FeffectiveDateTime%7D",
+                                "rel": "/adp/codelist",
+                                "mediaType": "application/json",
+                                "method": "GET",
+                                "encType": "application/json"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/federalIncomeTaxWithholdingElection/taxWithholdingStatus/statusCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/federalIncomeTaxWithholdingElection/taxFilingStatusCode": {
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/federalmaritalstatusvalues",
+                                "rel": "/adp/codelist",
+                                "mediaType": "application/json",
+                                "method": "GET",
+                                "encType": "application/json"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dependencies": {
+                        "default": {
+                            "oneOf": {
+                                "value": "S",
+                                "attributes": {
+                                    "/federalIncomeTaxWithholdingElection/nonResidentAlienIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/federalIncomeTaxWithholdingElection/nonResidentAlienIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/federalIncomeTaxWithholdingElection/taxFilingStatusCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dependencies": {
+                        "default": {
+                            "oneOf": {
+                                "value": "S",
+                                "attributes": {
+                                    "/federalIncomeTaxWithholdingElection/nonResidentAlienIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/federalIncomeTaxWithholdingElection/nonResidentAlienIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/federalIncomeTaxWithholdingElection/taxWithholdingAllowanceQuantity": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^\\d{1,2}?$"
+                },
+                "/federalIncomeTaxWithholdingElection/additionalTaxPercentage": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^\\d{1,2}?$"
+                },
+                "/federalIncomeTaxWithholdingElection/additionalTaxAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^\\d{1,4}?$"
+                },
+                "/federalIncomeTaxWithholdingElection/nonResidentAlienIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean"
+                },
+                "/federalIncomeTaxWithholdingElection/legalNameDiffersFromSSCardIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean"
+                }
+            }
+        ]
+    }
+}
