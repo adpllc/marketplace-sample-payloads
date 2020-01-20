@@ -1,0 +1,2053 @@
+{
+	"info": {
+		"_postman_id": "cb8efa3f-8834-4b95-b1c7-68f07750d94f",
+		"name": "Federal Tax vantage - IAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "200 ADD - future date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2021-01-01\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - current date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - Dollar Amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - percentage Amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 0,\n                        \"additionalTaxPercentage\": 12,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"B\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - S marital status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Single\",\n                            \"codeValue\": \"S\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - M marital status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-10\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - X marital status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-10\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Mrd at sgl\",\n                            \"codeValue\": \"X\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - B [TAX & FUTA]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 0,\n                        \"additionalTaxPercentage\": 12,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"B\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - E [TAX & TAXL]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-10\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"E\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - N [TAX & TAXABL]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-10\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"N\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - T [TAXBL & FUTA]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-10\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - X [TAX]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-10\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"X\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - Invalid associate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-10\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS8\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - Invalid effective Date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - Invalid marital status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-10\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"asad\",\n                            \"codeValue\": \"V\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 ADD - Invalid TAX block code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-10\",\n                    \"usFederalTaxWithholdingElection\": {\n                        \"taxWithholdingAllowanceQuantity\": 1,\n                        \"additionalTaxPercentage\": 0,\n                        \"taxFilingStatusCode\": {\n                            \"shortName\": \"Married\",\n                            \"codeValue\": \"M\"\n                        },\n                        \"legalNameDiffersFromSSCardIndicator\": false,\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"V\"\n                            }\n                        },\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 101\n                        },\n                        \"nonResidentAlienIndicator\": false\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - future date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2016-04-28\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - current date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - dollar Amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2016-04-28\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - percentage Amount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 0\n                        },\n                        \"additionalTaxPercentage\": 10,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - S marital status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"S\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - M marital status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2016-04-28\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - X marital status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"X\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - B [Tax & FUTA]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"B\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - E [Tax & TaxL]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"E\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - N [Tax / TaxabL]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"N\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - T [TaxBL & FUTA]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2016-04-28\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 CHANGE - X [Tax]",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"X\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 CHANGE - Invalid associate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS8\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 CHANGE - Invalid effectiveDate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 CHANGE - Invalid marital status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"T\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"V\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 CHANGE - Invalid TAX block code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3R9MDBS40828RS9\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2020-01-17\",\n                    \"federalIncomeTaxWithholdingElection\": {\n                        \"taxWithholdingStatus\": {\n                            \"statusCode\": {\n                                \"codeValue\": \"V\"\n                            }\n                        },\n                        \"taxFilingStatusCode\": {\n                            \"codeValue\": \"M\"\n                        },\n                        \"taxWithholdingAllowanceQuantity\": 2,\n                        \"additionalTaxAmount\": {\n                            \"amountValue\": 40\n                        },\n                        \"additionalTaxPercentage\": 0,\n                        \"nonResidentAlienIndicator\": false,\n                        \"legalNameDiffersFromSSCardIndicator\": false\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Fed GET",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RS9/us-federal-tax-withholding-elections",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RS9",
+								"us-federal-tax-withholding-elections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fed GET effectiveDate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RS9/us-federal-tax-withholding-elections?effectiveDate=2019-01-10",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RS9",
+								"us-federal-tax-withholding-elections"
+							],
+							"query": [
+								{
+									"key": "effectiveDate",
+									"value": "2019-01-10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fed GET Invalid effectiveDate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RS9/us-federal-tax-withholding-elections?effectiveDate=2020-01",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RS9",
+								"us-federal-tax-withholding-elections"
+							],
+							"query": [
+								{
+									"key": "effectiveDate",
+									"value": "2020-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fed GET Invalid associate",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/payroll/v1/workers/G3R9MDBS40828RSte/us-federal-tax-withholding-elections?effectiveDate=2020-01-10",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"payroll",
+								"v1",
+								"workers",
+								"G3R9MDBS40828RSte",
+								"us-federal-tax-withholding-elections"
+							],
+							"query": [
+								{
+									"key": "effectiveDate",
+									"value": "2020-01-10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fed ADD META",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.add/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.add",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fed CHANGE META",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/events/payroll/v1/worker.us-federal.tax-withholding.election.change/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.us-federal.tax-withholding.election.change",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "codelist",
+			"item": [
+				{
+					"name": "ADD - Tax Block Codes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/federaltaxblockvalues",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"federaltaxblockvalues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ADD - Marital status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/federalmaritalstatusvalues",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"federalmaritalstatusvalues"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "worker API Call",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "a272eb8f-5ad3-4715-a4d9-83e7ca52de85",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "05d6087d-ed6a-4727-8603-77245044cde9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
