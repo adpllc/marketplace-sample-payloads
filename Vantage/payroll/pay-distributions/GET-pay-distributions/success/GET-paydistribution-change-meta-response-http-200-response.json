@@ -1,0 +1,78 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 10,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$"
+                },
+                "/payDistribution/distributionInstructions": {
+                    "minItems": 0
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialAccount/typeCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/directdepositdeductioncodevalues?$filter=paygroup eq %27{/hr/v2/workers?$select=workers/workAssignments/payrollGroupCode&$filter=aoid eq %27{#/worker/associateOID}%27}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialAccount/typeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID/idValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 9
+                },
+                "/payDistribution/distributionInstructions/depositAccount/financialAccount/accountNumber": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 17
+                },
+                "/payDistribution/distributionInstructions/remainingBalanceIndicator": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dataType": "boolean"
+                },
+                "/payDistribution/distributionInstructions/distributionAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 11,
+                    "pattern": "^\\d{1,8}(\\.\\d{1,2})?$"
+                },
+                "/payDistribution/distributionInstructions/prenoteBypassIndicator": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
