@@ -1,0 +1,82 @@
+{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "payroll"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+      },
+      "eventStatusCode": {
+        "codeValue": "complete"
+      },
+      "effectiveDateTime": "2019-11-25T12:25:36.60931Z",
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "72456"
+          },
+          "usTaxProfile": {
+            "payrollRegionCode": {
+              "codeValue": "RN/AAJ"
+            },
+            "payrollGroupCode": {
+              "codeValue": "W",
+              "shortName": "Weekly"
+            }
+          }
+        },
+        "output": {
+          "usTaxProfile": {
+            "payrollRegionCode": {
+              "codeValue": "RN/AAJ"
+            },
+            "payrollGroupCode": {
+              "codeValue": "W",
+              "shortName": "Weekly"
+            },
+            "usStateTaxInstruction": {
+              "stateIncomeTaxInstruction": {
+                "stateCode": {
+                  "codeValue": "IL",
+                  "longName": "Illinois"
+                },
+                "livedInJurisdictionIndicator": true,
+                "workedInJurisdictionIndicator": false,
+                "taxFilingStatusCode": {
+                  "longName": "Not Applicable",
+                  "codeValue": "IL1"
+                },
+                "taxAllowanceQuantity": 35,
+                "taxAllowances": [
+                  {
+                    "allowanceTypeCode": {
+                      "longName": "Dependent allowances",
+                      "codeValue": "DEP"
+                    },
+                    "taxAllowanceQuantity": 4
+                  }
+                ],
+                "additionalTaxPercentage": 10.00
+              },
+              "suiTaxInstruction": {
+                "stateCode": {
+                  "codeValue": "MS",
+                  "longName": "MS"
+                },
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "State Unemployment Exempt",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "0001-01-01T00:00:00Z"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

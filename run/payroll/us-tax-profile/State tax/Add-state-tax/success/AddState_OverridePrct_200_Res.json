@@ -1,0 +1,81 @@
+{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "payroll"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+      },
+      "eventStatusCode": {
+        "codeValue": "complete"
+      },
+      "effectiveDateTime": "2019-12-09T12:53:28.5267166Z",
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "72456"
+          },
+          "usTaxProfile": {
+            "payrollRegionCode": {
+              "codeValue": "RN/AAJ"
+            },
+            "payrollGroupCode": {
+              "codeValue": "W",
+              "shortName": "Weekly"
+            }
+          }
+        },
+        "output": {
+          "usTaxProfile": {
+            "payrollRegionCode": {
+              "codeValue": "RN/AAJ"
+            },
+            "payrollGroupCode": {
+              "codeValue": "W",
+              "shortName": "Weekly"
+            },
+            "usStateTaxInstruction": {
+              "stateIncomeTaxInstruction": {
+                "stateCode": {
+                  "codeValue": "CA",
+                  "longName": "California"
+                },
+                "livedInJurisdictionIndicator": true,
+                "workedInJurisdictionIndicator": true,
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "Exempt from Tax",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "2019-12-09T07:53:27.803Z"
+                },
+                "taxFilingStatusCode": {
+                  "longName": "Single or Married (with two or more incomes)",
+                  "codeValue": "CA1"
+                },
+                "taxAllowanceQuantity": 11,
+                "overrideTaxPercentage": 23.00
+              },
+              "suiTaxInstruction": {
+                "stateCode": {
+                  "codeValue": "CA",
+                  "longName": "CA"
+                },
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "State Unemployment Exempt",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "2019-12-09T07:53:27.86Z"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

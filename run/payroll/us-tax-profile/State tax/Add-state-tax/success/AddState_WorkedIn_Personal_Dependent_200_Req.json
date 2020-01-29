@@ -1,0 +1,56 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usStateTaxInstruction": {
+                        "stateIncomeTaxInstruction": {
+                            
+                            "livedInJurisdictionIndicator": false,
+                            "workedInJurisdictionIndicator": true,
+                            "taxFilingStatusCode": {
+                                
+                                "codeValue": "GA1"
+                            },
+                            "taxAllowanceQuantity":35,
+                            "taxAllowances": [
+                                {
+                                    "allowanceTypeCode": {
+                                        "codeValue": "DEP"
+                                    },
+                                    "taxAllowanceQuantity": 4
+                                }
+                            ],
+                            "additionalTaxPercentage": 10
+                        },
+                        "suiTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "GA"
+                            },
+                            "taxWithholdingStatus":{
+                            	"statusCode":{
+                            		"codeValue":"0"
+                            	}
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+            }
+        }
+    ]
+}

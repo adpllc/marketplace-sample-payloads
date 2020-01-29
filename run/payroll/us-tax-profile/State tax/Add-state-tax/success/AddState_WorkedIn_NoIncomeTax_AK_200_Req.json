@@ -1,0 +1,44 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usStateTaxInstruction": {
+                        "stateIncomeTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "AK"
+                            },
+                            "livedInJurisdictionIndicator": false,
+                            "workedInJurisdictionIndicator": true
+                        },
+                        "suiTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "AK"
+                            },
+                            "taxWithholdingStatus":{
+                            	"statusCode":{
+                            		"codeValue":"1"
+                            	}
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+            }
+        }
+    ]
+}
