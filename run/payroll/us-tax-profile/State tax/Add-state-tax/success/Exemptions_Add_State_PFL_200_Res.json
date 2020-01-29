@@ -1,0 +1,84 @@
+{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "payroll"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+      },
+      "eventStatusCode": {
+        "codeValue": "complete"
+      },
+      "effectiveDateTime": "2020-01-02T06:38:56.5926378Z",
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "G3G0SG9RDP02FQH7"
+          },
+          "usTaxProfile": {
+            "payrollRegionCode": {
+              "codeValue": "RD/9DC"
+            },
+            "payrollGroupCode": {
+              "codeValue": "M",
+              "shortName": "Monthly"
+            }
+          }
+        },
+        "output": {
+          "usTaxProfile": {
+            "payrollRegionCode": {
+              "codeValue": "RD/9DC"
+            },
+            "payrollGroupCode": {
+              "codeValue": "M",
+              "shortName": "Monthly"
+            },
+            "usStateTaxInstruction": {
+              "stateIncomeTaxInstruction": {
+                "stateCode": {
+                  "codeValue": "NY",
+                  "longName": "New York"
+                },
+                "livedInJurisdictionIndicator": false,
+                "workedInJurisdictionIndicator": true,
+                "taxFilingStatusCode": {
+                  "longName": "Single/Head of Household",
+                  "codeValue": "NY1"
+                },
+                "additionalTaxAmount": {
+                  "amountValue": 0.0,
+                  "currencyCode": "USD"
+                },
+                "additionalStatutoryInputs": [
+                  {
+                    "tagCode": "PFL",
+                    "tagValues": [
+                      "1"
+                    ]
+                  }
+                ]
+              },
+              "suiTaxInstruction": {
+                "stateCode": {
+                  "codeValue": "NY",
+                  "longName": "NY"
+                },
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "State Unemployment Exempt",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "2020-01-02T01:38:55.32Z"
+                }
+              },
+              "sdiTaxInstruction": {}
+            }
+          }
+        }
+      }
+    }
+  ]
+}
