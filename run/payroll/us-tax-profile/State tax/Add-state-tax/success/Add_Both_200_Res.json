@@ -1,0 +1,84 @@
+{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "payroll"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+      },
+      "eventStatusCode": {
+        "codeValue": "complete"
+      },
+      "effectiveDateTime": "2019-12-05T11:38:47.0799224Z",
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "72456"
+          },
+          "usTaxProfile": {
+            "payrollRegionCode": {
+              "codeValue": "RN/AAJ"
+            },
+            "payrollGroupCode": {
+              "codeValue": "W",
+              "shortName": "Weekly"
+            }
+          }
+        },
+        "output": {
+          "usTaxProfile": {
+            "payrollRegionCode": {
+              "codeValue": "RN/AAJ"
+            },
+            "payrollGroupCode": {
+              "codeValue": "W",
+              "shortName": "Weekly"
+            },
+            "usStateTaxInstruction": {
+              "stateIncomeTaxInstruction": {
+                "stateCode": {
+                  "codeValue": "NY",
+                  "longName": "New York"
+                },
+                "livedInJurisdictionIndicator": true,
+                "workedInJurisdictionIndicator": true,
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "Exempt from Tax",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "2019-12-05T06:38:46.613Z"
+                },
+                "taxFilingStatusCode": {
+                  "longName": "Single/Head of Household",
+                  "codeValue": "NY1"
+                },
+                "taxAllowanceQuantity": 11,
+                "overrideTaxAmount": {
+                  "amountValue": 4.00,
+                  "currencyCode": "USD"
+                }
+              },
+              "suiTaxInstruction": {
+                "stateCode": {
+                  "codeValue": "NY",
+                  "longName": "NY"
+                },
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "State Unemployment Exempt",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "2019-12-05T06:38:46.677Z"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
