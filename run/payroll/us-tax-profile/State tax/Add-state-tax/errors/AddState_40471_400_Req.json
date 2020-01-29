@@ -1,0 +1,44 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usStateTaxInstruction": {
+                        "stateIncomeTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "CA"
+                            },
+                            "livedInJurisdictionIndicator": true,
+                            "workedInJurisdictionIndicator": false,
+                            "taxFilingStatusCode": {
+                                "codeValue": "CA1"
+                            },
+                            "taxWithholdingStatus": {
+                                "statusCode": {
+                                    "codeValue": "X"
+                                },
+                                "effectiveDate": "2019-11-12T07:00:12.287Z"
+                            },
+                            "additionalTaxPercentage": 10
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+            }
+        }
+    ]
+}

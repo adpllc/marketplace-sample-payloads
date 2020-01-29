@@ -1,0 +1,46 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usStateTaxInstruction": {
+                        "stateIncomeTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "NY"
+                            },
+                            "taxFilingStatusCode": {
+                                "codeValue": "NY1"
+                            },
+                            "taxAllowanceQuantity": 10,
+                            "livedInJurisdictionIndicator": true,
+                            "workedInJurisdictionIndicator": true,
+                            "additionalTaxAmount":{
+                            	"amountValue":-12
+                            }
+                        },
+                        "suiTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "NY"
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+            }
+        }
+    ]
+}

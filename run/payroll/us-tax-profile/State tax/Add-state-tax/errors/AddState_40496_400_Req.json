@@ -1,0 +1,60 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usStateTaxInstruction": {
+                        "stateIncomeTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "NY"
+                            },
+                            "taxFilingStatusCode": {
+                                "codeValue": "NY1"
+                            },
+                            "livedInJurisdictionIndicator": false,
+                            "workedInJurisdictionIndicator": true,
+                            "additionalTaxPercentage": 10,
+                            "taxAllowances": [
+                                {
+                                    "allowanceTypeCode": {
+                                        "codeValue": "MAA"
+                                    },
+                                    "taxAllowanceQuantity": 0,
+                                    "taxAllowanceAmount": {
+                                        "amountValue": 0,
+                                        "currencyCode": ""
+                                    }
+                                }
+                            ]
+                        },
+                        "suiTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "NY"
+                            },
+                            "taxWithholdingStatus": {
+                                "statusCode": {
+                                    "codeValue": "1"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+            }
+        }
+    ]
+}

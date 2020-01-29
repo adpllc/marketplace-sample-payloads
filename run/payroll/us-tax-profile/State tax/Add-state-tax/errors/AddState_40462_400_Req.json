@@ -1,0 +1,38 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    },
+                    "stateCode": {
+                        "codeValue": "AK"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                        "usStateTaxInstruction": {
+                            "suiTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "0"
+                                    }
+                                },
+                                "healthCoverageIndicator": true
+                            }
+                        }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+            }
+        }
+    ]
+}

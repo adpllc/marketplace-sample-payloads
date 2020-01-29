@@ -1,0 +1,49 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usStateTaxInstruction": {
+                        "stateIncomeTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "XX"
+                            },
+                            "taxFilingStatusCode": {
+                                "codeValue": "XX1"
+                            },
+                            "livedInJurisdictionIndicator": false,
+                            "workedInJurisdictionIndicator": true,
+                            "additionalTaxPercentage": 10
+                            
+                        },
+                        "suiTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "XX"
+                            },
+                            "taxWithholdingStatus": {
+                                "statusCode": {
+                                    "codeValue": "1"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+            }
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usStateTaxInstruction": {
+                        "stateIncomeTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "MS"
+                            },
+                            "taxFilingStatusCode": {
+                                "codeValue": "MS1"
+                            },
+                            "taxAllowances": [
+                                {
+                                    "allowanceTypeCode": {
+                                        "codeValue": "DEP"
+                                    },
+                                     "taxAllowanceQuantity": 13
+                                }
+                            ],
+                            "livedInJurisdictionIndicator": true,
+                            "workedInJurisdictionIndicator": true,
+                            "additionalTaxPercentage": 10
+                        },
+                        "suiTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "MS"
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+            }
+        }
+    ]
+}

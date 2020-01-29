@@ -1,0 +1,44 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usStateTaxInstruction": {
+                        "stateIncomeTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "CA"
+                            },
+                            
+                            "livedInJurisdictionIndicator": true,
+                            "workedInJurisdictionIndicator": true,
+                            "taxFilingStatusCode": {
+                                "codeValue": "CA1"
+                            },
+                            "additionalTaxPercentage": 10
+                        },
+                        "suiTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "CA"
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+            }
+        }
+    ]
+}

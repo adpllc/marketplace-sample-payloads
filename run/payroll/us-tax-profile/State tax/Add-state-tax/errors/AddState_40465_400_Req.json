@@ -1,0 +1,55 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usStateTaxInstruction": {
+                        "stateIncomeTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "MS"
+                            },
+                            
+                            "livedInJurisdictionIndicator": true,
+                            "workedInJurisdictionIndicator": true,
+                            "taxFilingStatusCode": {
+                                "codeValue": "MS1"
+                            },
+                            "taxAllowances": [
+                                {
+                                    "allowanceTypeCode": {
+                                        "codeValue": "MPE"
+                                    },
+                                    "taxAllowanceAmount": {
+                                        "amountValue": 500,
+                                        "currencyCode": ""
+                                    }
+                                }
+                            ],
+                            "additionalTaxPercentage": 10
+                        },
+                        "suiTaxInstruction": {
+                            "stateCode": {
+                                "codeValue": "NY"
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.add"
+            }
+        }
+    ]
+}
