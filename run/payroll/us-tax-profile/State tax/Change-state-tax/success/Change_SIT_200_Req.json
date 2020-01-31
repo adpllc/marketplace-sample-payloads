@@ -1,0 +1,49 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "72456"
+                    },
+                    "stateCode": {
+                        "codeValue": "CA"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usTaxProfile": {
+                        "usStateTaxInstruction": {
+                            "stateIncomeTaxInstruction": {
+                                "taxFilingStatusCode": {
+                                    "codeValue": "CA1"
+                                },
+                                "taxAllowanceQuantity": 11,
+                                "livedInJurisdictionIndicator": true,
+                                "workedInJurisdictionIndicator": false,
+                                "overrideTaxAmount": {
+                                    "amountValue": 4,
+                                    "currencyCode": ""
+                                },
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.change"
+            }
+        }
+    ]
+}
