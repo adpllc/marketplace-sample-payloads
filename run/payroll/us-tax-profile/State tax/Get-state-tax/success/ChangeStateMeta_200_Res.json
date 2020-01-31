@@ -1,0 +1,263 @@
+{
+  "meta": {
+    "/data/eventContext": {
+      "/stateCode": {
+        "optional": false,
+        "dataType": "object"
+      },
+      "/stateCode/codeValue": {
+        "optional": false,
+        "dataType": "string"
+      },
+      "/stateCode/shortName": {
+        "optional": true,
+        "dataType": "string"
+      },
+      "/stateCode/longName": {
+        "optional": true,
+        "dataType": "string"
+      },
+      "/worker": {
+        "optional": true,
+        "dataType": "object"
+      },
+      "/worker/associateOID": {
+        "optional": false,
+        "hidden": true,
+        "dataType": "string"
+      },
+      "/usTaxProfile": {
+        "optional": true,
+        "dataType": "object"
+      },
+      "/usTaxProfile/payrollRegionCode": {
+        "optional": true,
+        "dataType": "object"
+      },
+      "/usTaxProfile/payrollRegionCode/codeValue": {
+        "optional": true,
+        "dataType": "string"
+      },
+      "/usTaxProfile/payrollRegionCode/shortName": {
+        "optional": true,
+        "dataType": "string"
+      },
+      "/usTaxProfile/payrollRegionCode/longName": {
+        "optional": true,
+        "dataType": "string"
+      },
+      "/usTaxProfile/payrollGroupCode": {
+        "optional": true,
+        "dataType": "object"
+      },
+      "/usTaxProfile/payrollGroupCode/codeValue": {
+        "optional": true,
+        "dataType": "string"
+      },
+      "/usTaxProfile/payrollGroupCode/shortName": {
+        "optional": true,
+        "dataType": "string"
+      },
+      "/usTaxProfile/payrollGroupCode/longName": {
+        "optional": true,
+        "dataType": "string"
+      }
+    },
+    "/data/transforms": [
+      {
+        "/effectiveDateTime": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/usTaxProfile": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/livedInJurisdictionIndicator": {
+          "optional": false,
+          "dataType": "Boolean"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/workedInJurisdictionIndicator": {
+          "optional": false,
+          "dataType": "Boolean"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxWithholdingStatus": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxWithholdingStatus/statusCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxWithholdingStatus/statusCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxWithholdingStatus/statusCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxWithholdingStatus/statusCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxWithholdingStatus/effectiveDate": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxFilingStatusCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxFilingStatusCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxFilingStatusCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxFilingStatusCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowanceQuantity": {
+          "optional": true,
+          "dataType": "Int64"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/itemID": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/allowanceTypeCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/allowanceTypeCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/allowanceTypeCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/allowanceTypeCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/taxAllowanceQuantity": {
+          "optional": true,
+          "dataType": "Int64"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/taxAllowancePercentage": {
+          "optional": true,
+          "dataType": "Double"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/taxAllowanceAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/taxAllowanceAmount/amountValue": {
+          "optional": true,
+          "dataType": "Int64"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/taxAllowances/taxAllowanceAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/additionalTaxPercentage": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/additionalTaxAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/additionalTaxAmount/amountValue": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/additionalTaxAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/overrideTaxPercentage": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/overrideTaxAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/overrideTaxAmount/amountValue": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/usTaxProfile/usStateTaxInstruction/stateIncomeTaxInstruction/overrideTaxAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/taxWithholdingStatus": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/taxWithholdingStatus/statusCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/taxWithholdingStatus/statusCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/taxWithholdingStatus/statusCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/taxWithholdingStatus/statusCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/taxWithholdingStatus/effectiveDate": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/healthCoverageIndicator": {
+          "optional": true,
+          "dataType": "Boolean"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/healthCoverageCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/healthCoverageCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/healthCoverageCode/codeValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/usTaxProfile/usStateTaxInstruction/suiTaxInstruction/healthCoverageCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,948 @@
+{
+  "meta": {
+    "/usTaxProfile": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/payrollRegionCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/payrollRegionCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/payrollRegionCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/payrollRegionCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/payrollGroupCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/payrollGroupCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/payrollGroupCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/payrollGroupCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions": {
+      "optional": true,
+      "dataType": "array"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions": {
+      "optional": true,
+      "dataType": "array"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/stateCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/stateCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/stateCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/stateCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/livedInJurisdictionIndicator": {
+      "optional": false,
+      "dataType": "Boolean"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/workedInJurisdictionIndicator": {
+      "optional": false,
+      "dataType": "Boolean"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus/statusCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus/statusCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus/statusCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus/statusCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus/effectiveDate": {
+      "optional": true,
+      "dataType": "string[date]"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxFilingStatusCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxFilingStatusCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxFilingStatusCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxFilingStatusCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowanceQuantity": {
+      "optional": true,
+      "dataType": "Int64"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances": {
+      "optional": true,
+      "dataType": "array"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/itemID": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/allowanceTypeCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/allowanceTypeCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/allowanceTypeCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/allowanceTypeCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/taxAllowanceQuantity": {
+      "optional": true,
+      "dataType": "Int64"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/taxAllowancePercentage": {
+      "optional": true,
+      "dataType": "Double"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/taxAllowanceAmount": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/taxAllowanceAmount/amountValue": {
+      "optional": true,
+      "dataType": "Int64"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/taxAllowanceAmount/currencyCode": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalTaxPercentage": {
+      "optional": true,
+      "dataType": "number"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalTaxAmount": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalTaxAmount/amountValue": {
+      "optional": true,
+      "dataType": "number"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalTaxAmount/currencyCode": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/overrideTaxPercentage": {
+      "optional": true,
+      "dataType": "number"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/overrideTaxAmount": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/overrideTaxAmount/amountValue": {
+      "optional": true,
+      "dataType": "number"
+    },
+    "/usTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/overrideTaxAmount/currencyCode": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/stateCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/stateCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/stateCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/stateCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus/statusCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus/statusCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus/statusCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus/statusCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus/effectiveDate": {
+      "optional": true,
+      "dataType": "string[date]"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/healthCoverageIndicator": {
+      "optional": true,
+      "dataType": "Boolean"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/healthCoverageCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/healthCoverageCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/healthCoverageCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/suiTaxInstruction/healthCoverageCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus/statusCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus/statusCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus/statusCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus/statusCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus/effectiveDate": {
+      "optional": true,
+      "dataType": "string[date]"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/stateCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/stateCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/stateCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/sdiTaxInstruction/stateCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/usTaxProfile/usStateTaxInstructions/itemID": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/confirmMessageID": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/confirmMessageID/idValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/confirmMessageID/schemeName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/confirmMessageID/schemeAgencyName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/createDateTime": {
+      "optional": true,
+      "dataType": "string[date]"
+    },
+    "/confirmMessage/requestReceiptDateTime": {
+      "optional": true,
+      "dataType": "string[date]"
+    },
+    "/confirmMessage/protocolStatusCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/protocolStatusCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/protocolStatusCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/protocolCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/protocolCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/protocolCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestID": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/requestID/idValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestID/schemeName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestID/schemeAgencyName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestStatusCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/requestStatusCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestStatusCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestMethodCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/requestMethodCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestMethodCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/sessionID": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/sessionID/idValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/sessionID/schemeName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/sessionID/schemeAgencyName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestETag": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestLink": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/requestLink/href": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestLink/rel": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestLink/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestLink/targetSchema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestLink/mediaType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestLink/method": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestLink/encType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/requestLink/schema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processingStatusCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processingStatusCode/longName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processingStatusCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processingStatusCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/processMessageID": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/processMessageID/idValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/processMessageID/schemeName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/processMessageID/schemeAgencyName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/messageTypeCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/messageTypeCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/messageTypeCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/sourceLocationExpression": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/expressionLanguageCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/expressionLanguageCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/expressionLanguageCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/links": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/links/item": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/links/item/href": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/links/item/rel": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/links/item/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/links/item/targetSchema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/links/item/mediaType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/links/item/method": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/links/item/encType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/links/item/schema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/userMessage/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/messageTxt": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links/item": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links/item/href": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links/item/rel": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links/item/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links/item/targetSchema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links/item/mediaType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links/item/method": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links/item/encType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/userMessage/links/item/schema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/messageTxt": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links/item": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links/item/href": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links/item/rel": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links/item/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links/item/targetSchema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links/item/mediaType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links/item/method": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links/item/encType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/processMessages/item/developerMessage/links/item/schema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/resourceMessageID": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/resourceMessageID/idValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceMessageID/schemeName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceMessageID/schemeAgencyName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceStatusCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/resourceStatusCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceStatusCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceLink": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/resourceLink/href": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceLink/rel": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceLink/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceLink/targetSchema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceLink/mediaType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceLink/method": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceLink/encType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/resourceLink/schema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/processMessageID": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/processMessageID/idValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/processMessageID/schemeName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/processMessageID/schemeAgencyName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/messageTypeCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/messageTypeCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/messageTypeCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/sourceLocationExpression": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/expressionLanguageCode": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/expressionLanguageCode/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/expressionLanguageCode/shortName": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links/item": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links/item/href": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links/item/rel": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links/item/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links/item/targetSchema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links/item/mediaType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links/item/method": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links/item/encType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/links/item/schema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/messageTxt": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links/item": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links/item/href": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links/item/rel": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links/item/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links/item/targetSchema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links/item/mediaType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links/item/method": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links/item/encType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/userMessage/links/item/schema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/codeValue": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/messageTxt": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links/item": {
+      "optional": true,
+      "dataType": "object"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links/item/href": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links/item/rel": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links/item/title": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links/item/targetSchema": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links/item/mediaType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links/item/method": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links/item/encType": {
+      "optional": true,
+      "dataType": "string"
+    },
+    "/confirmMessage/resourceMessages/item/processMessages/item/developerMessage/links/item/schema": {
+      "optional": true,
+      "dataType": "string"
+    }
+  }
+}
