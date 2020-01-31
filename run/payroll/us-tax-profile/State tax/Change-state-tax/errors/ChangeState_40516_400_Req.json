@@ -1,0 +1,51 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    },
+                    "stateCode": {
+                                    "codeValue": "MS"
+                                }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usTaxProfile": {
+                        "usStateTaxInstruction": {
+                            "stateIncomeTaxInstruction": {
+                                
+                                "taxFilingStatusCode": {
+                                    "codeValue": "MS1"
+                                },
+                                "taxAllowances": [
+                                    {
+                                        "allowanceTypeCode": {
+                                            "codeValue": "MPE"
+                                        },
+                                        "taxAllowanceAmount": {
+                                            "amountValue": 500.123
+                                        }
+                                    }
+                                ],
+                                "livedInJurisdictionIndicator": true,
+                                "workedInJurisdictionIndicator": false,
+                                "additionalTaxPercentage": 10
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.stateIncomeTaxInstruction.change"
+            }
+        }
+    ]
+}

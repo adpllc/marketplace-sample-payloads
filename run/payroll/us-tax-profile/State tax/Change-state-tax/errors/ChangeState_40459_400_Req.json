@@ -1,0 +1,76 @@
+{
+  "events": [
+    {
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "{{aoid}}"
+          },
+          "stateCode": {
+        	"codeValue": "AK"
+          }
+        },
+        "transform": {
+         "eventStatusCode": {
+            "codeValue": "submit"
+          },
+          "effectiveDateTime": "2014-01-01T00:00:00Z",
+          "usTaxProfile": {
+            "usStateTaxInstruction": {
+              "stateIncomeTaxInstruction": {
+               
+                "livedInJurisdictionIndicator": false,
+                "workedInJurisdictionIndicator": true,
+                "taxFilingStatusCode": {
+                  "codeValue": "AK1"
+                },
+                "taxAllowanceQuantity": 11,
+                "additionalTaxAmount": {
+                  "amountValue": 12,
+                  "currencyCode": "USD"
+                },
+                "additionalTaxPercentage": 0,
+                "overrideTaxPercentage": 0,
+                "overrideTaxAmount": {
+                  "amountValue": 0,
+                  "currencyCode": ""
+                },
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "codeValue": "0"
+                  }
+                },
+                "taxAllowances": [
+                             {
+                               "allowanceTypeCode": {
+                                 "codeValue": ""
+                               },
+                               "taxAllowanceQuantity": 0,
+                               "taxAllowanceAmount": {
+                                                "amountValue": 0,
+                                                "currencyCode": ""
+                                              }
+                             }
+                           ]
+              },
+             "suiTaxInstruction": {
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "codeValue": "0"
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      },
+      "serviceCategoryCode": {
+        "codeValue": "payroll"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+      }
+    }
+  ]
+}

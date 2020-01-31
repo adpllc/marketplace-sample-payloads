@@ -1,0 +1,50 @@
+{
+  "events": [
+    {
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "{{aoid}}"
+          },
+          "stateCode": {
+        	"codeValue": "NY"
+          }
+        },
+        "transform": {
+         "eventStatusCode": {
+            "codeValue": "submit"
+          },
+          "effectiveDateTime": "2014-01-01T00:00:00Z",
+          "usTaxProfile": {
+            "usStateTaxInstruction": {
+              "stateIncomeTaxInstruction": {
+               
+                "livedInJurisdictionIndicator": true,
+                "workedInJurisdictionIndicator": false,
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "codeValue": "0"
+                  }
+                }
+              },
+             "suiTaxInstruction": {
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "codeValue": "0"
+                  }
+                }
+              }
+
+            }
+          }
+        }
+      },
+      "serviceCategoryCode": {
+        "codeValue": "payroll"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+      }
+    }
+  ]
+}
