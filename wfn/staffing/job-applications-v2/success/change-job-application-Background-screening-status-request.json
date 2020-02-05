@@ -1,26 +1,35 @@
 {
-    "events": [
-        {
-            "data": {
-                "eventContext": {
-                    "applicationID": "169737672337_1",
-                    "agencyCode": {
-                        "codeValue": "GoodHire"
-                    }
-                },
-                "transform": {
-                    "externalBackgroundScreening": {
-                        "screeningStatusCode": {
-                            "codeValue": "In Progress"
-                        },
-                        "links": [
-                            {
-                                "codeValue": "http://test.com"
-                            }
-                        ]
-                    }
-                }
-            }
-        }
-    ]
+	"events": [{
+		"data": {
+			"eventContext": {
+				"agencyCode": {
+					"codeValue": "GoodHire"
+				}
+			},
+			"transform": {
+				"jobApplications": [{
+					"applicationID": "169744662286_1",
+					"externalBackgroundScreening": {
+						"screeningStatusCode": {
+							"codeValue": "screened"
+						},
+						"links": [{
+							"href": "http://tests.com"
+						}]
+					}
+				},
+				{
+					"applicationID": "169744665423_1",
+					"externalBackgroundScreening": {
+						"screeningStatusCode": {
+							"codeValue": "NEW"
+						},
+						"links": [{
+							"href": "http://tests.com"
+						}]
+					}
+				}]
+			}
+		}
+	}]
 }
