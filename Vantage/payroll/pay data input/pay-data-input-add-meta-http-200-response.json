@@ -1,0 +1,606 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/payDataInput/payeePayInputs": {
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "/payDataInput/payeePayInputs/associateOID": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true
+                },
+                "/payDataInput/payeePayInputs/payeeID/idValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true
+                },
+                "/payDataInput/payeePayInputs/payNumber": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Pay Number Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "1",
+                                "longName": "1st Check"
+                            },
+                            {
+                                "codeValue": "2",
+                                "longName": "2nd Check"
+                            },
+                            {
+                                "codeValue": "3",
+                                "longName": "3rd Check"
+                            },
+                            {
+                                "codeValue": "4",
+                                "longName": "4th Check"
+                            },
+                            {
+                                "codeValue": "5",
+                                "longName": "5th Check"
+                            },
+                            {
+                                "codeValue": "6",
+                                "longName": "6th Check"
+                            },
+                            {
+                                "codeValue": "7",
+                                "longName": "7th Check"
+                            },
+                            {
+                                "codeValue": "8",
+                                "longName": "8th Check"
+                            },
+                            {
+                                "codeValue": "9",
+                                "longName": "9th Check"
+                            },
+                            {
+                                "codeValue": "N",
+                                "longName": "Bonus Check"
+                            },
+                            {
+                                "codeValue": "X",
+                                "longName": "Net to Gross"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs": {
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payrollFileNumber": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 6
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs": {
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationTypeCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Allocation Type Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "ALNum",
+                                "longName": "ALA Number"
+                            },
+                            {
+                                "codeValue": "CNUM",
+                                "longName": "Cost Number"
+                            },
+                            {
+                                "codeValue": "DEPTID",
+                                "longName": "Department Number"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationTypeCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(ALNum)$",
+                                    "attributes": {
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationID": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/payroll/v3/payroll-instruction-management/ala-number-code-values?$filter=payrollGroupCode eq %27{#/payDataInput/payrollGroupCode/codeValue}%27 and payrollFileNumber eq %27{#/payDataInput/payeePayInputs/payrollProfilePayInputs/payrollFileNumber}%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(CNUM)$",
+                                    "attributes": {
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationID": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/payroll/v3/payroll-instruction-management/cost-num-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(DEPTID)$",
+                                    "attributes": {
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationID": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/payroll/v3/payroll-instruction-management/payroll-department-number-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs": {
+                    "minItems": 2,
+                    "uniqueItems": true
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earningCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "dependencies": {
+                        "optional": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/modifierCode": {
+                                        "equals": [
+                                            "24"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/earning-code-values?$filter=payrollGroupCode eq %27{#/payDataInput/payrollGroupCode/codeValue}%27 and modifierCode eq  %27{#/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/modifierCode}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earningCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/modifierCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Modifier Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "1",
+                                "longName": "Hours 1 (Regular)"
+                            },
+                            {
+                                "codeValue": "2",
+                                "longName": "Hours 2 (Overtime)"
+                            },
+                            {
+                                "codeValue": "3",
+                                "longName": "Hours 3 Code & Quantity"
+                            },
+                            {
+                                "codeValue": "4",
+                                "longName": "Hours 4 Code & Quantity"
+                            },
+                            {
+                                "codeValue": "7",
+                                "longName": "Earnings 3 Code & Amount"
+                            },
+                            {
+                                "codeValue": "8",
+                                "longName": "Earnings 4 Code & Amount"
+                            },
+                            {
+                                "codeValue": "9",
+                                "longName": "Earnings 5 Code & Amount"
+                            },
+                            {
+                                "codeValue": "24",
+                                "longName": "Temporary Hourly Rate"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rateCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/payroll-additional-rate-code-values?$filter=payrollGroupCode eq %27{#/payDataInput/payrollGroupCode/codeValue}%27 and payrollFileNumber eq %27{#/payDataInput/payeePayInputs/payrollProfilePayInputs/payrollFileNumber}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rateCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate/rateValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^-?\\d{1,6}(\\.\\d{1,4})?$"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/numberOfHours": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^\\d{1,2}(\\.\\d{1,2})?$"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earnedPayPeriodStartDate": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": true,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earnedPayPeriodEndDate": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": true,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/configurationTags/tagCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/shift-qualifier-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/configurationTags/tagValues": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/memoInputs": {
+                    "minItems": 0,
+                    "uniqueItems": false
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/memoInputs/memoCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/memo-code-values?$filter=payrollGroupCode eq %27{#/payDataInput/payrollGroupCode/codeValue}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/memoInputs/memoCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/memoInputs/memoAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^-?\\d{1,8}(\\.\\d{1,2})?$"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs": {
+                    "minItems": 0,
+                    "uniqueItems": true
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/configurationTags": {
+                    "minItems": 0,
+                    "uniqueItems": true
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/configurationTags/tagCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Deduction Type Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "Temporary",
+                                "longName": "Temporary"
+                            },
+                            {
+                                "codeValue": "Special",
+                                "longName": "Special"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/configurationTags/tagValues": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/deductionCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/pay-input-deduction-code-values?$filter=payrollGroupCode eq %27{#/payDataInput/payrollGroupCode/codeValue}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/deductionCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/deductionRate/rateValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^-?\\d{1,8}(\\.\\d{1,2})?$"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs": {
+                    "minItems": 0,
+                    "uniqueItems": true
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxTypeCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Tax Type Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "1",
+                                "longName": "Federal Tax"
+                            },
+                            {
+                                "codeValue": "4",
+                                "longName": "State 1 Tax (Worked In)"
+                            },
+                            {
+                                "codeValue": "5",
+                                "longName": "Local 1 Tax (Worked In)"
+                            },
+                            {
+                                "codeValue": "7",
+                                "longName": "State 2 Tax (Lived In)"
+                            },
+                            {
+                                "codeValue": "8",
+                                "longName": "Local 2 Tax (Lived In)"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxTypeCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(1|5|8)$",
+                                    "attributes": {
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxJurisdiction/taxJurisdictionCode": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/payroll/v3/payroll-instruction-management/statetaxcodevalues",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxJurisdiction/taxJurisdictionCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false
+                                        },
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxJurisdiction/livedInIndicator": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false
+                                        },
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxJurisdiction/workedInIndicator": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(4|7)$",
+                                    "attributes": {
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxJurisdiction/taxJurisdictionCode": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/payroll/v3/payroll-instruction-management/statetaxcodevalues",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxJurisdiction/taxJurisdictionCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false
+                                        },
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxJurisdiction/livedInIndicator": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false
+                                        },
+                                        "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxJurisdiction/workedInIndicator": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/taxRate/rateValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^-?\\d{1,8}(\\.\\d{1,2})?$"
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/configurationTags": {
+                    "minItems": 1,
+                    "uniqueItems": true
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/configurationTags/tagCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Tax Type Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "Adjust",
+                                "longName": "Adjust"
+                            },
+                            {
+                                "codeValue": "Repl",
+                                "longName": "Replace"
+                            }
+                        ]
+                    }
+                },
+                "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/taxInputs/configurationTags/tagValues": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/payrollWeekNumber": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false
+            },
+            "/payrollRunNumber": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false
+            },
+            "/payrollProcessingJobID": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false
+            },
+            "/payrollGroupCode": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false,
+                "codeList": {
+                    "links": [
+                        {
+                            "rel": "/adp/codelist",
+                            "href": "/codelists/payroll/v3/payroll-instruction-management/paygroupcodevalues",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "mediaType": "application/json"
+                        }
+                    ]
+                }
+            },
+            "/payrollGroupCode/codeValue": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false
+            }
+        }
+    }
+}
