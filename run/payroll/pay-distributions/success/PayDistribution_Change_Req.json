@@ -1,89 +1,130 @@
 {
-    "Events": [
+    "events": [
         {
-            "Data": {
-                "EventContext": {
-                    "Worker": {
-                        "AssociateOID": "{{aoid}}"
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.payDistribution.change"
+            },
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
                     }
                 },
-                "Transform": {
-                    "EffectiveDateTime": "2016-10-10T10:42:13.2057422-04:00",
-                    "PayDistribution": {
-                        "RequestedStartDate": "2016-10-10T00:00:00-04:00",
-                        "DistributionInstructions": [
+                "transform": {
+                    "effectiveDateTime": "2015-03-05T00:00:00Z",
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "payDistribution": {
+                        "distributionInstructions": [
                             {
-                                "PaymentMethodCode": {
-                                    "CodeValue": "D",
-                                    "ShortName": "Direct Deposit"
+                                "precedenceCode": {
+                                    "codeValue": "1",
+                                    "shortName": "PartialDirect"
                                 },
-                                "DepositAccount": {
-                                    "BBAN": null,
-                                    "FinancialParty": {
-                                        "NameCode": {
-                                            "CodeValue": "somebank plc"
+                                "paymentMethodCode": {
+                                    "codeValue": "D",
+                                    "shortName": "Direct Deposit"
+                                },
+                                "depositAccount": {
+                                    "financialParty": {
+                                        "nameCode": {
+                                            "codeValue": "Spine"
                                         },
-                                        "RoutingTransitID": {
-                                            "IdValue": "111111118"
+                                        "routingTransitID": {
+                                            "idValue": "111111118",
+                                            "schemeCode": {
+                                                "codeValue": "111111118"
+                                            }
                                         }
                                     },
-                                    "FinancialAccount": {
-                                        "AccountNumber": "1234",
-                                        "AccountName": "Mortgage",
-                                        "TypeCode": {
-                                            "CodeValue": "S",
-                                            "ShortName": null
-                                        },
-                                        "DisplayDisbursementName": "Mortgage"
+                                    "financialAccount": {
+                                        "accountNumber": "12345678",
+                                        "accountName": "PartialDirect",
+                                        "typeCode": {
+                                            "codeValue": "S",
+                                            "shortName": "Savings"
+                                        }
                                     }
                                 },
-                                "DistributionAmount": null,
-                                "DistributionPercentage": 75,
-                                "RemainingBalanceIndicator": false,
-                                "PrecedenceCode": {
-                                    "CodeValue": "1",
-                                    "ShortName": null
-                                },
-                                "IsFullNet": false
+                                "distributionPercentage": 40,
+                                "prenoteBypassIndicator": false
                             },
                             {
-                                "PaymentMethodCode": {
-                                    "CodeValue": "D",
-                                    "ShortName": "Direct Deposit"
+                                "precedenceCode": {
+                                    "codeValue": "2",
+                                    "shortName": "Partial2Direct"
                                 },
-                                "DepositAccount": {
-                                    "BBAN": null,
-                                    "FinancialParty": {
-                                        "NameCode": {
-                                            "CodeValue": "saewasc"
+                                "paymentMethodCode": {
+                                    "codeValue": "D",
+                                    "shortName": "Direct Deposit"
+                                },
+                                "depositAccount": {
+                                    "financialParty": {
+                                        "nameCode": {
+                                            "codeValue": "Spine"
                                         },
-                                        "RoutingTransitID": {
-                                            "IdValue": "021000098"
+                                        "routingTransitID": {
+                                            "idValue": "111111118",
+                                            "schemeCode": {
+                                                "codeValue": "111111118"
+                                            }
                                         }
                                     },
-                                    "FinancialAccount": {
-                                        "AccountNumber": "3455",
-                                        "AccountName": "Another",
-                                        "TypeCode": {
-                                            "CodeValue": "S",
-                                            "ShortName": null
-                                        },
-                                        "DisplayDisbursementName": "Another"
+                                    "financialAccount": {
+                                        "accountNumber": "12345677",
+                                        "accountName": "Partial2Direct",
+                                        "typeCode": {
+                                            "codeValue": "S",
+                                            "shortName": "Savings"
+                                        }
                                     }
                                 },
-                                "DistributionAmount": null,
-                                "DistributionPercentage": 14,
-                                "RemainingBalanceIndicator": false,
-                                "PrecedenceCode": {
-                                    "CodeValue": "2",
-                                    "ShortName": null
+                                "distributionAmount": {
+                                    "amountValue": 35,
+                                    "currencyCode": "USD"
                                 },
-                                "IsFullNet": true
+                                "prenoteBypassIndicator": false
+                            },
+                            {
+                                "precedenceCode": {
+                                    "codeValue": "3",
+                                    "shortName": "CheckName"
+                                },
+                                "paymentMethodCode": {
+                                    "codeValue": "D",
+                                    "shortName": "Direct Deposit"
+                                },
+                                "depositAccount": {
+                                    "financialParty": {
+                                        "nameCode": {
+                                            "codeValue": "SpineCheck"
+                                        },
+                                        "routingTransitID": {
+                                            "idValue": "111111118",
+                                            "schemeCode": {
+                                                "codeValue": "111111118"
+                                            }
+                                        }
+                                    },
+                                    "financialAccount": {
+                                        "accountNumber": "12345679",
+                                        "accountName": "CheckName",
+                                        "typeCode": {
+                                            "codeValue": "C",
+                                            "shortName": "Checking"
+                                        }
+                                    }
+                                },
+                                "remainingBalanceIndicator": true,
+                                "prenoteBypassIndicator": false
                             }
                         ]
                     }
-                },
-                "Output": null
+                }
             }
         }
     ]
