@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "/data/eventContext": [
+      {
+        "/worker": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/worker/associateOID": {
+          "optional": true,
+          "dataType": "string"
+        }
+      }
+    ],
+    "/data/transforms": [
+      {
+        "/effectiveDateTime": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/payDistribution": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/payDistribution/itemID": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/requestedStartDate": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/payDistribution/distributionStatusCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionStatusCode/effectiveDate": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionStatusCode/codeValue": {
+          "optional": true,
+          "hidden": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionStatusCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionStatusCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions": {
+          "optional": true,
+          "minItems": 0,
+          "maxItems": 4,
+          "dataType": "array"
+        },
+        "/payDistribution/distributionInstructions/itemID": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/precedenceCode": {
+          "optional": false,
+          "hidden": true,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionInstructions/precedenceCode/codeValue": {
+          "optional": true,
+          "hidden": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/precedenceCode/shortName": {
+          "optional": true,
+          "maxLength": 30,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/precedenceCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/paymentMethodCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionInstructions/paymentMethodCode/codeValue": {
+          "optional": true,
+          "hidden": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/paymentMethodCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/paymentMethodCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/nameCode/codeValue": {
+          "optional": true,
+          "hidden": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/nameCode/shortName": {
+          "optional": true,
+          "maxLength": 35,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/nameCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID": {
+          "optional": false,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID/idValue": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID/schemeCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID/schemeCode/codeValue": {
+          "optional": true,
+          "hidden": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID/schemeCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID/schemeCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialAccount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialAccount/accountNumber": {
+          "optional": false,
+          "minLength": 0,
+          "maxLength": 17,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialAccount/accountName": {
+          "optional": true,
+          "minLength": 0,
+          "maxLength": 30,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialAccount/typeCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "C",
+                "shortName": "Checking",
+                "longName": "Checking"
+              },
+              {
+                "codeValue": "S",
+                "shortName": "Savings",
+                "longName": "Savings"
+              }
+            ]
+          }
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialAccount/typeCode/codeValue": {
+          "optional": true,
+          "hidden": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialAccount/typeCode/shortName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialAccount/typeCode/longName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/depositAccount/financialAccount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/distributionAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/payDistribution/distributionInstructions/distributionAmount/amountValue": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/payDistribution/distributionInstructions/distributionAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/payDistribution/distributionInstructions/distributionPercentage": {
+          "optional": true,
+          "minValue": 0,
+          "maxValue": 100,
+          "dataType": "number"
+        },
+        "/payDistribution/distributionInstructions/remainingBalanceIndicator": {
+          "optional": true,
+          "dataType": "Boolean"
+        },
+        "/payDistribution/distributionInstructions/prenoteBypassIndicator": {
+          "optional": true,
+          "hidden": false,
+          "dataType": "Boolean"
+        }
+      }
+    ]
+  }
+}

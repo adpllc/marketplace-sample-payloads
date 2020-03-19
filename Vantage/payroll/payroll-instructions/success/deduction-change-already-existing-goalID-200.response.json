@@ -1,0 +1,99 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "G3DKVW69A4E6YFJR"
+                    }
+                },
+                "output": {
+                    "payrollInstruction": {
+                        "itemID": "0",
+                        "generalDeductionInstruction": {
+                            "itemID": "ADV",
+                            "deductionCode": {
+                                "codeValue": "ADV",
+                                "longName": "ADVANCE"
+                            },
+                            "deductionRate": {
+                                "rateValue": 500.0,
+                                "currencyCode": "USD"
+                            },
+                            "deductionGoal": {
+                                "goalID": "1",
+                                "goalBalanceAmount": {
+                                    "amountValue": 0.0,
+                                    "currencyCode": "USD"
+                                },
+                                "goalLimitAmount": {
+                                    "amountValue": 1000.0,
+                                    "currencyCode": "USD"
+                                }
+                            }
+                        },
+                        "payrollRegionCode": {
+                            "codeValue": "0222",
+                            "longName": "RATE TEST"
+                        },
+                        "payrollGroupCode": {
+                            "codeValue": "VK2",
+                            "longName": "AP Now Corp. Manufacturing"
+                        },
+                        "payrollFileNumber": "201492"
+                    }
+                }
+            }
+        }
+    ],
+    "confirmMessage": {
+        "confirmMessageID": {
+            "idValue": "HnNwYvCB6NuFkLAceoAVAYyR5sM=",
+            "schemeName": "confirmMessageID",
+            "schemeAgencyName": "Vantage"
+        },
+        "createDateTime": "2020-03-19T13:33:28.441+0000",
+        "requestReceiptDateTime": "2020-03-19T13:33:28.441+0000",
+        "protocolStatusCode": {},
+        "protocolCode": {
+            "codeValue": "http"
+        },
+        "requestStatusCode": {
+            "codeValue": "succeeded"
+        },
+        "requestMethodCode": {
+            "codeValue": "POST"
+        },
+        "sessionID": {
+            "idValue": "HnNwYvCB6NuFkLAceoAVAYyR5sM=",
+            "schemeName": "sessionID",
+            "schemeAgencyName": "Vantage"
+        },
+        "requestETag": "",
+        "requestLink": {
+            "href": "/events/payroll/v2/worker-general-deduction-instruction.change",
+            "rel": "related",
+            "method": "POST"
+        },
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "6000-1018",
+                    "schemeName": "resourceMessageID",
+                    "schemeAgencyName": "Vantage"
+                },
+                "resourceStatusCode": {
+                    "codeValue": "succeeded"
+                },
+                "processMessages": [
+                    {
+                        "userMessage": {
+                            "codeValue": "6000-1018",
+                            "messageTxt": "Goal Number 2 is already in use. Because this Deduction Code is set up for Goal Number auto-assignment, the Goal Number 1 will be applied. (6000,1018)\n"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

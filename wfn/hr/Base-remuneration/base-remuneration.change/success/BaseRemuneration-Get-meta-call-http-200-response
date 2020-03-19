@@ -1,0 +1,134 @@
+{}{
+    "meta": {
+        "/baseRemuneration/hourlyRateAmount/amount": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false
+        },
+        "/baseRemuneration/dailyRateAmount/amount": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false
+        },
+        "/baseRemuneration/payPeriodRateAmount/amount": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false
+        },
+        "/baseRemuneration/effectiveDate": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": true,
+            "minLength": 10,
+            "maxLength": 10,
+            "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+        },
+        "/payCycleCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "codeValue": "2",
+                        "shortName": "Every 2.6 wks",
+                        "longName": "2 - Every 2.6 wks"
+                    },
+                    {
+                        "codeValue": "4",
+                        "shortName": "Every 4 wks",
+                        "longName": "4 - Every 4 wks"
+                    },
+                    {
+                        "codeValue": "5",
+                        "shortName": "Every 5.2 wks",
+                        "longName": "5 - Every 5.2 wks"
+                    },
+                    {
+                        "codeValue": "B",
+                        "shortName": "Biweekly",
+                        "longName": "B - Biweekly"
+                    },
+                    {
+                        "codeValue": "D",
+                        "shortName": "Daily",
+                        "longName": "D - Daily"
+                    },
+                    {
+                        "codeValue": "M",
+                        "shortName": "Monthly",
+                        "longName": "M - Monthly"
+                    },
+                    {
+                        "codeValue": "S",
+                        "shortName": "SemiMonthly",
+                        "longName": "S - SemiMonthly"
+                    },
+                    {
+                        "codeValue": "W",
+                        "shortName": "Weekly",
+                        "longName": "W - Weekly"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false
+        },
+        "/premiumRateFactor/unitCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "codeValue": "1",
+                        "shortName": "1.5 * 2.0",
+                        "longName": "1 - 1.5 * 2.0"
+                    },
+                    {
+                        "codeValue": "4",
+                        "shortName": "1.0 * 1.0",
+                        "longName": "4 - 1.0 * 1.0"
+                    },
+                    {
+                        "codeValue": "3",
+                        "shortName": "1.5 * 1.0",
+                        "longName": "3 - 1.5 * 1.0"
+                    },
+                    {
+                        "codeValue": "2",
+                        "shortName": "0.5 * 1.0",
+                        "longName": "2 - 0.5 * 1.0"
+                    }
+                ]
+            },
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/standardHours/hoursQuantity": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false
+        },
+        "/tippedWorkerIndicator": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false
+        },
+        "/wageLawCoverage/coverageCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "codeValue": "E",
+                        "shortName": "true",
+                        "longName": "Use FLSA Overtime"
+                    },
+                    {
+                        "codeValue": "N",
+                        "shortName": "false",
+                        "longName": "Do not Use FLSA Overtime"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false
+        }
+    }
+}
