@@ -1,6 +1,7 @@
 {
-    "workerGeneralDeductionInstructions": [
+    "payrollInstructions": [
         {
+            "itemID": "0",
             "generalDeductionInstructions": [
                 {
                     "itemID": "AA1",
@@ -13,7 +14,7 @@
                             "defaultIndicator": false,
                             "links": [
                                 {
-                                    "href": "/payroll/v1/workers/G3R9MDBS40828RS9/general-deductions-instructions/AA1",
+                                    "href": "/payroll/v1/workers/G3DKVW69A4E6YFJR/payroll-instructions/AA1",
                                     "rel": "/adp/invoke",
                                     "method": "GET"
                                 }
@@ -25,22 +26,24 @@
                         "longName": "ADOPT PST-TX"
                     },
                     "deductionRate": {
-                        "rateValue": 0.0,
+                        "rateValue": 60.0,
                         "currencyCode": "USD"
                     },
+                    "deductionStartDate": "2020-12-25",
                     "deductionGoal": {
+                        "goalID": "2",
                         "goalBalanceAmount": {
                             "amountValue": 0.0,
                             "currencyCode": "USD"
                         },
                         "goalLimitAmount": {
-                            "amountValue": 0.0,
+                            "amountValue": 92.0,
                             "currencyCode": "USD"
                         }
                     }
                 },
                 {
-                    "itemID": "AAA",
+                    "itemID": "ADV",
                     "actions": [
                         {
                             "operationID": "workerGeneralDeductionInstruction.read",
@@ -50,7 +53,7 @@
                             "defaultIndicator": false,
                             "links": [
                                 {
-                                    "href": "/payroll/v1/workers/G3R9MDBS40828RS9/general-deductions-instructions/AAA",
+                                    "href": "/payroll/v1/workers/G3DKVW69A4E6YFJR/payroll-instructions/ADV",
                                     "rel": "/adp/invoke",
                                     "method": "GET"
                                 }
@@ -58,14 +61,16 @@
                         }
                     ],
                     "deductionCode": {
-                        "codeValue": "AAA",
-                        "longName": "ADOPT PRETX"
+                        "codeValue": "ADV",
+                        "longName": "ADVANCE"
                     },
                     "deductionRate": {
-                        "rateValue": 50.0,
+                        "rateValue": 55.0,
                         "currencyCode": "USD"
                     },
+                    "deductionStartDate": "2020-12-25",
                     "deductionGoal": {
+                        "goalID": "1",
                         "goalBalanceAmount": {
                             "amountValue": 0.0,
                             "currencyCode": "USD"
@@ -77,7 +82,7 @@
                     }
                 },
                 {
-                    "itemID": "AWB",
+                    "itemID": "API",
                     "actions": [
                         {
                             "operationID": "workerGeneralDeductionInstruction.read",
@@ -87,7 +92,7 @@
                             "defaultIndicator": false,
                             "links": [
                                 {
-                                    "href": "/payroll/v1/workers/G3R9MDBS40828RS9/general-deductions-instructions/AWB",
+                                    "href": "/payroll/v1/workers/G3DKVW69A4E6YFJR/payroll-instructions/API",
                                     "rel": "/adp/invoke",
                                     "method": "GET"
                                 }
@@ -95,26 +100,66 @@
                         }
                     ],
                     "deductionCode": {
-                        "codeValue": "AWB",
-                        "longName": "AWARD 2"
+                        "codeValue": "API",
+                        "longName": "PET INSURANCE"
                     },
                     "deductionRate": {
-                        "rateValue": 0.0,
+                        "rateValue": 55.0,
                         "currencyCode": "USD"
                     },
+                    "deductionStartDate": "2020-12-25",
                     "deductionGoal": {
+                        "goalID": "3",
                         "goalBalanceAmount": {
                             "amountValue": 0.0,
                             "currencyCode": "USD"
                         },
                         "goalLimitAmount": {
+                            "amountValue": 100.0,
+                            "currencyCode": "USD"
+                        }
+                    }
+                },
+                {
+                    "itemID": "CDH",
+                    "actions": [
+                        {
+                            "operationID": "workerGeneralDeductionInstruction.read",
+                            "actionTypeCode": "callback",
+                            "confirmationRequiredIndicator": false,
+                            "commentAllowedIndicator": false,
+                            "defaultIndicator": false,
+                            "links": [
+                                {
+                                    "href": "/payroll/v1/workers/G3DKVW69A4E6YFJR/payroll-instructions/CDH",
+                                    "rel": "/adp/invoke",
+                                    "method": "GET"
+                                }
+                            ]
+                        }
+                    ],
+                    "deductionCode": {
+                        "codeValue": "CDH",
+                        "longName": "CLIENT DEFINED"
+                    },
+                    "deductionRate": {
+                        "rateValue": 34.0,
+                        "currencyCode": "USD"
+                    },
+                    "deductionStartDate": "2020-12-25",
+                    "deductionGoal": {
+                        "goalID": "6",
+                        "goalBalanceAmount": {
                             "amountValue": 0.0,
+                            "currencyCode": "USD"
+                        },
+                        "goalLimitAmount": {
+                            "amountValue": 300.0,
                             "currencyCode": "USD"
                         }
                     }
                 }
             ],
-            "itemID": "0",
             "payrollRegionCode": {
                 "codeValue": "0222",
                 "longName": "RATE TEST"
@@ -123,7 +168,7 @@
                 "codeValue": "VK2",
                 "longName": "AP Now Corp. Manufacturing"
             },
-            "payrollFileNumber": "201485"
+            "payrollFileNumber": "201492"
         }
     ]
 }
