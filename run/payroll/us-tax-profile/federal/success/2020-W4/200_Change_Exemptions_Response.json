@@ -1,0 +1,113 @@
+{
+  "events": [
+    {
+      "serviceCategoryCode": {
+        "codeValue": "payroll"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+      },
+      "eventStatusCode": {
+        "codeValue": "complete"
+      },
+      "effectiveDateTime": "2020-02-05T06:46:23.5471233Z",
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "79956"
+          },
+          "usTaxProfiles": {
+            "payrollRegionCode": {
+              "codeValue": "RQ/AAC"
+            },
+            "payrollGroupCode": {
+              "codeValue": "W",
+              "shortName": "Weekly"
+            }
+          }
+        },
+        "output": {
+          "usTaxProfiles": {
+            "payrollRegionCode": {
+              "codeValue": "RQ/AAC"
+            },
+            "payrollGroupCode": {
+              "codeValue": "W",
+              "shortName": "Weekly"
+            },
+            "usFederalTaxInstruction": {
+              "federalIncomeTaxInstruction": {
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "Exempt from Tax",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "2020-02-05"
+                },
+                "taxFilingStatusCode": {
+                  "longName": "MARRIED FILING JOINTLY OR QUALIFYING WIDOWER",
+                  "codeValue": "MW"
+                },
+                "taxAllowances": []
+              },
+              "socialSecurityTaxInstruction": {
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "Exempt from Tax",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "2020-01-31"
+                }
+              },
+              "medicareTaxInstruction": {
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "Exempt from Tax",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "2020-01-31"
+                }
+              },
+              "federalUnemploymentTaxInstruction": {
+                "taxWithholdingStatus": {
+                  "statusCode": {
+                    "longName": "Exempt from Tax",
+                    "codeValue": "1",
+                    "shortName": "Exempt"
+                  },
+                  "effectiveDate": "2020-01-31"
+                }
+              },
+              "multipleJobIndicator": false,
+              "additionalStatutoryInputs": [
+                {
+                  "formatCode": "2020"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ],
+  "confirmMessage": {
+    "createDateTime": "2020-02-05T01:46:23.5461251-05:00",
+    "requestReceiptDateTime": "2020-02-05T01:46:23.5461251-05:00",
+    "processMessages": [
+      {
+        "userMessage": {
+          "messageTxt": "Exercise caution when exempting an employee from income tax withholding. Employees tax exempt status is used for any pending payrolls, manual checks, voided checks, paycheck calculations, and third party sick payments. If you entered tax amounts for a pending item for this employee, you may want to change the exempt status after the pending item is processed."
+        }
+      },
+      {
+        "userMessage": {
+          "messageTxt": "Exercise caution when exempting an employee from taxes. <br />If employee's tax status of any tax type is changed to exempt, no wages will be reported for the tax type on the employee's W-2. The employee's exempt status is used for any pending payrolls, manual checks, voided checks, paycheck calculations, and third party sick payments. If you had entered tax amounts for a pending item for this employee, you may want to change the exempt status after the pending item is processed."
+        }
+      }
+    ],
+    "resourceMessages": []
+  }
+}
