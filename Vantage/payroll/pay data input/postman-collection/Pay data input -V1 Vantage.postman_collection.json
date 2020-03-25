@@ -1,0 +1,2083 @@
+{
+	"info": {
+		"_postman_id": "abeeb131-be70-4122-8b6d-c26b972ba891",
+		"name": "Pay data input -V1 Vantage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "codelists",
+			"item": [
+				{
+					"name": "codelist-allocationID(ALNum)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/ala-number-code-values",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"ala-number-code-values"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "204-codelist-allocationID(ALNum)-VK2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/ala-number-code-values?$filter=payrollGroupCode eq VK2",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"ala-number-code-values"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "payrollGroupCode eq VK2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "404-codelist-allocationID(CNum)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/cost-number-code-values",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"cost-number-code-values"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codelist-allocationID(DEPTID)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/payroll-department-number-code-values?$filter=payrollGroupCode eq VK2",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"payroll-department-number-code-values"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "payrollGroupCode eq VK2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codelist-earning code",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/earning-code-values?$filter=payrollGroupCode eq VK2 and modifierCode eq 4",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"earning-code-values"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "payrollGroupCode eq VK2 and modifierCode eq 4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codelist-shift qualifier code",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/shift-qualifier-code-values",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"shift-qualifier-code-values"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codelist-deduction codes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/pay-input-deduction-code-values?$filter=payrollGroupCode eq VK2",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"pay-input-deduction-code-values"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "payrollGroupCode eq VK2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codelist-additional rate codes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/payroll-additional-rate-code-values?$filter=payrollGroupCode eq VK2 ",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"payroll-additional-rate-code-values"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "payrollGroupCode eq VK2 "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codelist-memo codes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/memo-code-values?$filter=payrollGroupCode eq VK2 ",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"memo-code-values"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "payrollGroupCode eq VK2 "
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codelist-STATE TAX code values(1,5,8)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/statetaxcodevalues",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"statetaxcodevalues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codelist-STATE TAX code values (4,7)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/statetaxcodevalues",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"statetaxcodevalues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "codelist-STATE TAX code values (4,7) Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "bearer {{accessToken-iat}}"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/codelists/payroll/v3/payroll-instruction-management/localtaxcodevalues",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v3",
+								"payroll-instruction-management",
+								"localtaxcodevalues"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Get pay data info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{accessToken-iat}}",
+						"type": "text"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/payroll/v1/payroll-profile/workers/G3DKVW69A4E6FR5R/worker-profiles",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-profile",
+						"workers",
+						"G3DKVW69A4E6FR5R",
+						"worker-profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get pay data info meta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{accessToken-iat}}",
+						"type": "text"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/payroll/v1/payroll-profile/workers/G3DKVW69A4E6FR5R/worker-profiles/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"payroll",
+						"v1",
+						"payroll-profile",
+						"workers",
+						"G3DKVW69A4E6FR5R",
+						"worker-profiles",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \" \",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"new\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"2\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                                \"payAllocation\": {\n                                                    \"allocationID\": \"1\",\n                                                    \"allocationTypeCode\": {\n                                                        \"codeValue\": \"ALNum\"\n                                                    }\n                                                },\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"5\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            },\n                            {\n                                \"associateOID\": \"G3R9MDBS4082S2SB\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"12129\",\n                                        \"payInputs\": [\n                                            {\n                                                \"payAllocation\": {\n                                                    \"allocationID\": \"1\",\n                                                    \"allocationTypeCode\": {\n                                                        \"codeValue\": \"ALNum\"\n                                                    }\n                                                },\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"4\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"4\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"AAA\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                    ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info - sor(ALA)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "associateoid",
+						"value": "G3DKVW69A4E66DSF\t",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3CP4RSATFTA1GEC\t",
+						"type": "text"
+					},
+					{
+						"key": "SOR",
+						"value": "Vantage",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \" \",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"2\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                                \"payAllocation\": {\n                                                    \"allocationID\": \"1\",\n                                                    \"allocationTypeCode\": {\n                                                        \"codeValue\": \"ALNum\"\n                                                    },\n                                                     \"payAllocation\": {\n                                                    \"allocationID\": \"112010\",\n                                                    \"allocationTypeCode\": {\n                                                        \"codeValue\": \"DEPID\"\n                                                    }\n                                                },\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"5\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://essapi.iat.es.oneadp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "http",
+					"host": [
+						"essapi",
+						"iat",
+						"es",
+						"oneadp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info - sor(DEPID)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "associateoid",
+						"value": "G3DKVW69A4E66DSF\t",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3CP4RSATFTA1GEC\t",
+						"type": "text"
+					},
+					{
+						"key": "SOR",
+						"value": "Vantage",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \" \",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"2\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                            \t\"payAllocation\": {\n\t\t\t\t\t\t\t\t\t\"allocationID\": \"112000\",\n\t\t\t\t\t\t\t\t\t\"allocationTypeCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"DEPID\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t},\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"5\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://essapi.iat.es.oneadp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "http",
+					"host": [
+						"essapi",
+						"iat",
+						"es",
+						"oneadp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info - sor(CNum)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "associateoid",
+						"type": "text",
+						"value": "G3DKVW69A4E66DSF\t"
+					},
+					{
+						"key": "orgoid",
+						"type": "text",
+						"value": "G3CP4RSATFTA1GEC\t"
+					},
+					{
+						"key": "SOR",
+						"type": "text",
+						"value": "Vantage"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \" \",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"2\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                            \n                                            \t\"payAllocation\": {\n\t\t\t\t\t\t\t\t\t\"allocationID\":\"10110020140701DC\",\n\t\t\t\t\t\t\t\t\t\"allocationTypeCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"CNum\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t},\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"5\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://essapi.iat.es.oneadp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "http",
+					"host": [
+						"essapi",
+						"iat",
+						"es",
+						"oneadp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info - sor Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "associateoid",
+						"value": "G3DKVW69A4E66DSF\t",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3CP4RSATFTA1GEC\t",
+						"type": "text"
+					},
+					{
+						"key": "SOR",
+						"value": "Vantage",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \" \",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"2\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                            \t\"payAllocation\": {\n\t\t\t\t\t\t\t\t\t\"allocationID\": \"\",\n\t\t\t\t\t\t\t\t\t\"allocationTypeCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"ALNum\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t},\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"5\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://essapi.iat.es.oneadp.com/core/v1/operations/payrollManagement/vantage/355477",
+					"protocol": "http",
+					"host": [
+						"essapi",
+						"iat",
+						"es",
+						"oneadp",
+						"com"
+					],
+					"path": [
+						"core",
+						"v1",
+						"operations",
+						"payrollManagement",
+						"vantage",
+						"355477"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \" \",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"2\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                            \t\"payAllocation\": {\n\t\t\t\t\t\t\t\t\t\"allocationID\": \"\",\n\t\t\t\t\t\t\t\t\t\"allocationTypeCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"ALNum\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t},\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"5\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ],\n                                                \"taxInputs\": [\n                                                    {\n                                                        \"taxTypeCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"taxRate\": {\n                                                            \"rateValue\": 19\n                                                        },\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Tax Type\",\n                                                                \"tagValues\": [\n                                                                    \"Adjust\"\n                                                                ]\n                                                            }\n                                                        ]\n                                                    },\n                                                    {\n                                                        \"taxTypeCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"taxRate\": {\n                                                            \"rateValue\": 190\n                                                        },\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Tax Type\",\n                                                                \"tagValues\": [\n                                                                    \"Replace\"\n                                                                ]\n                                                            }\n                                                        ]\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info deductions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type Codes\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info memo inputs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"2014975676\",\n                                        \"payInputs\": [\n                                            {\n                                               \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        }\n                                                        \n                                                    }\n                                            ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info memo inputs Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                               \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45\n                                                        }\n                                                     \n                                                    }\n                                            ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info earnings- MC(4) hours code and quantity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                                \"earningInputs\": [\n                                                    {\n                                                    \n                                                       \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"E\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"4\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"AAA\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 10.46\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                       \n                                                    }\n                                                ]\n                                            }\n                                    ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info earnings -MC(7) earnings code and amount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                                \"earningInputs\": [\n                                                    {\n                                                    \n                                                       \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"4\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"7\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"AAA\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                       \n                                                    }\n                                                ]\n                                            }\n                                    ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info earnings -MC(24)  temp rate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"Temp\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                                \"earningInputs\": [\n                                                    {\n                                                    \n                                                       \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"4\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                        \n                                                       \n                                                    }\n                                                ]\n                                            }\n                                    ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info earnings -regular earnings",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                                \"earningInputs\": [\n                                                    {\n                                                    \n                                                       \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"A\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"REG\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ]\n                                            }\n                                    ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info earnings -overtime earnings Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                            \t\n                                                \"earningInputs\": [\n                                                    {\n                                                    \n                                                       \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"E\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"2\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"OTP\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                        \n                                                       \n                                                    }\n                                                ]\n                                            }\n                                    ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info earnings -overtime earnings Copy Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                            \t\n                                                \"earningInputs\": [{\n\t\t\t\t\t\t\t\t\t\"configurationTags\": [{\n\t\t\t\t\t\t\t\t\t\t\"tagCode\": \"Shift Code\",\n\t\t\t\t\t\t\t\t\t\t\"tagValues\": [\n\t\t\t\t\t\t\t\t\t\t\t\"1\"\n\t\t\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\t\t\"rateCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"5\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"modifierCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"24\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"rate\": {\n\t\t\t\t\t\t\t\t\t\t\"rateValue\": 580\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"earnedPayPeriodStartDate\": \"2016-12-12\",\n\t\t\t\t\t\t\t\t\t\"earnedPayPeriodEndDate\": \"2016-12-31\"\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"configurationTags\": [{\n\t\t\t\t\t\t\t\t\t\t\"tagCode\": \"Shift Code\",\n\t\t\t\t\t\t\t\t\t\t\"tagValues\": [\n\t\t\t\t\t\t\t\t\t\t\t\"1\"\n\t\t\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\t\t\"rateCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"5\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"modifierCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"numberOfHours\": 60\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"configurationTags\": [{\n\t\t\t\t\t\t\t\t\t\t\"tagCode\": \"Shift Code\",\n\t\t\t\t\t\t\t\t\t\t\"tagValues\": [\n\t\t\t\t\t\t\t\t\t\t\t\"1\"\n\t\t\t\t\t\t\t\t\t\t]\n\t\t\t\t\t\t\t\t\t}],\n\t\t\t\t\t\t\t\t\t\"rateCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"5\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"modifierCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"2\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"numberOfHours\": 60\n\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t{\n\t\t\t\t\t\t\t\t\t\"rateCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"7\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"modifierCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"7\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"earningCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"AAA\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"rate\": {\n\t\t\t\t\t\t\t\t\t\t\"rateValue\": 600\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"earnedPayPeriodStartDate\": \"2016-12-12\",\n\t\t\t\t\t\t\t\t\t\"earnedPayPeriodEndDate\": \"2016-12-31\"\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n                                            }\n                                    ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info earnings Copy Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \"\",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"1\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                                \"earningInputs\": [\n                                                    {\n                                                    \n                                                       \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"4\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"AAA\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11,\n                                                        \"earnedPayPeriodStartDate\": \"2019-12-28\",\n                                                        \"earnedPayPeriodEndDate\": \"2019-12-28\"\n                                                     \n                                                       \n                                                    }\n                                                ]\n                                            }\n                                    ]\n                                    }\n                                ]\n                            }\n                            \n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info taxes",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payrollWeekNumber\": \"\",\n          \"payrollRunNumber\": \"\",\n          \"payrollProcessingJobID\": \"\",\n          \"payrollGroupCode\": {\n            \"codeValue\": \"VK2\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                \"payNumber\": \"1\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payrollFileNumber\": \"201496\",\n                    \"payInputs\": [\n                      {\n                        \"taxInputs\": [\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"1\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 19\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"4\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 49\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"23\"\n                              },\n                              \"livedInIndicator\": true,\n                              \"workedInIndicator\": true\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"5\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 59\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"7\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 79\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"02\"\n                              },\n                              \"livedInIndicator\": true,\n                              \"workedInIndicator\": true\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"8\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 89\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          }\n                        ]\n                      }\n                    ]\n                  }\n                ]\n              },\n              {\n                \"associateOID\": \"G3R9MDBS4082S2SB\",\n                \"payNumber\": \"1\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payrollFileNumber\": \"12129\",\n                    \"payInputs\": [\n                      {\n                        \"taxInputs\": [\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"1\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 10\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"4\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 40\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"23\"\n                              },\n                              \"livedInIndicator\": false,\n                              \"workedInIndicator\": false\n                            },\n                            \n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"5\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 50\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"23\"\n                              },\n                              \"livedInIndicator\": false,\n                              \"workedInIndicator\": false\n                            },\n                            \n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"7\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 70\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"02\"\n                              },\n                              \"livedInIndicator\": false,\n                              \"workedInIndicator\": false\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"8\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 80\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          }\n                        ]\n                      }\n                    ]\n                  }\n                ]\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info taxes Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"payrollWeekNumber\": \"\",\n          \"payrollRunNumber\": \"\",\n          \"payrollProcessingJobID\": \"\",\n          \"payrollGroupCode\": {\n            \"codeValue\": \"VK2\"\n          }\n        },\n        \"transform\": {\n          \"payDataInput\": {\n            \"payeePayInputs\": [\n              {\n                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                \"payNumber\": \"1\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payrollFileNumber\": \"201496\",\n                    \"payInputs\": [\n                      {\n                        \"taxInputs\": [\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"1\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 19\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"4\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 49\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"23\"\n                              },\n                              \"livedInIndicator\": true,\n                              \"workedInIndicator\": true\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"5\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 59\n                            },\n                            \n                          \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"23\"\n                              },\n                              \"livedInIndicator\": true,\n                              \"workedInIndicator\": true\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"7\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 79\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"02\"\n                              },\n                              \"livedInIndicator\": true,\n                              \"workedInIndicator\": true\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"8\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 89\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"23\"\n                              },\n                              \"livedInIndicator\": true,\n                              \"workedInIndicator\": true\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Adjust\"\n                                ]\n                              }\n                            ]\n                          }\n                        ]\n                      }\n                    ]\n                  }\n                ]\n              },\n              {\n                \"associateOID\": \"G3R9MDBS4082S2SB\",\n                \"payNumber\": \"1\",\n                \"payrollProfilePayInputs\": [\n                  {\n                    \"payrollFileNumber\": \"12129\",\n                    \"payInputs\": [\n                      {\n                        \"taxInputs\": [\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"1\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 10\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"4\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 40\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"23\"\n                              },\n                              \"livedInIndicator\": false,\n                              \"workedInIndicator\": false\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"5\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 50\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"23\"\n                              },\n                              \"livedInIndicator\": false,\n                              \"workedInIndicator\": false\n                            },\n                            \n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"7\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 70\n                            },\n                            \"taxJurisdiction\": {\n                              \"taxJurisdictionCode\": {\n                                \"codeValue\": \"02\"\n                              },\n                              \"livedInIndicator\": false,\n                              \"workedInIndicator\": false\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          },\n                          {\n                            \"taxTypeCode\": {\n                              \"codeValue\": \"8\"\n                            },\n                            \"taxRate\": {\n                              \"rateValue\": 80\n                            },\n                            \"configurationTags\": [\n                              {\n                                \"tagCode\": \"Tax Type\",\n                                \"tagValues\": [\n                                  \"Repl\"\n                                ]\n                              }\n                            ]\n                          }\n                        ]\n                      }\n                    ]\n                  }\n                ]\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info-pay allocations(ALA)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \" \",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"ALA\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"2\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                                \"payAllocation\": {\n                                                    \"allocationID\": \"1\",\n                                                    \"allocationTypeCode\": {\n                                                        \"codeValue\": \"ALNum\"\n                                                    }\n                                                },\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"5\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info-pay allocations(DEptID)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \" \",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"Dept\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"2\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                            \t\"payAllocation\": {\n\t\t\t\t\t\t\t\t\t\"allocationID\": \"112000\",\n\t\t\t\t\t\t\t\t\t\"allocationTypeCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"DEPID\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t},\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"5\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info-pay allocations(Cnum)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"payrollWeekNumber\": \" \",\n                    \"payrollRunNumber\": \"\",\n                    \"payrollProcessingJobID\": \"CostNumber\",\n                    \"payrollGroupCode\": {\n                        \"codeValue\": \"VK2\"\n                    }\n                },\n                \"transform\": {\n                    \"payDataInput\": {\n                        \"payeePayInputs\": [\n                            {\n                                \"associateOID\": \"G3DKVW69A4E6FR5R\",\n                                \"payNumber\": \"2\",\n                                \"payrollProfilePayInputs\": [\n                                    {\n                                        \"payrollFileNumber\": \"201496\",\n                                        \"payInputs\": [\n                                            {\n                                            \n                                            \t\"payAllocation\": {\n\t\t\t\t\t\t\t\t\t\"allocationID\":\"10110020140701DC\",\n\t\t\t\t\t\t\t\t\t\"allocationTypeCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"CNum\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t},\n                                                \"earningInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Shift Code\",\n                                                                \"tagValues\": [\n                                                                    \"1\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"rateCode\": {\n                                                            \"codeValue\": \"5\"\n                                                        },\n                                                        \"modifierCode\": {\n                                                            \"codeValue\": \"24\"\n                                                        },\n                                                        \"earningCode\": {\n                                                            \"codeValue\": \"1\"\n                                                        },\n                                                        \"rate\": {\n                                                            \"rateValue\": 100\n                                                        },\n                                                        \"numberOfHours\": 11\n                                                    }\n                                                ],\n                                                \"memoInputs\": [\n                                                    {\n                                                        \"memoCode\": {\n                                                            \"codeValue\": \"CMB\"\n                                                        },\n                                                        \"memoAmount\": {\n                                                            \"amountValue\": 45,\n                                                            \"currencyCode\": \"USD\"\n                                                        },\n                                                        \"memoQuantity\": {\n                                                            \"quantityValue\": 30\n                                                        }\n                                                    }\n                                                ],\n                                                \"deductionInputs\": [\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Temporary\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"API\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 167\n                                                        }\n                                                    },\n                                                    {\n                                                        \"configurationTags\": [\n                                                            {\n                                                                \"tagCode\": \"Deduction Type\",\n                                                                \"tagValues\": [\n                                                                    \"Special\"\n                                                                ]\n                                                            }\n                                                        ],\n                                                        \"deductionCode\": {\n                                                            \"codeValue\": \"ADV\"\n                                                        },\n                                                        \"deductionRate\": {\n                                                            \"rateValue\": 100\n                                                        }\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add pay data info-meta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer {{accessToken-iat}}"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/payroll/v1/pay-data-input.add/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"pay-data-input.add",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://iat-api.adp.com/core/v1/operations/payrollManagement/vantage/353271",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{accessToken-iat}}",
+						"type": "text"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/core/v1/operations/payrollManagement/vantage/356279",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"core",
+						"v1",
+						"operations",
+						"payrollManagement",
+						"vantage",
+						"356279"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://iat-api.adp.com/core/v1/operations/payrollManagement/vantage/353271 Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer {{accessToken-iat}}",
+						"type": "text"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/core/v1/operations/payrollManagement/vantage/355275",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"core",
+						"v1",
+						"operations",
+						"payrollManagement",
+						"vantage",
+						"355275"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-iat\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "a272eb8f-5ad3-4715-a4d9-83e7ca52de85",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "05d6087d-ed6a-4727-8603-77245044cde9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,95 @@
+{
+    "events": [
+        {
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.payDistribution.change"
+            },
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    }
+                },
+                "transform": {
+                    "effectiveDateTime": "2015-03-05T00:00:00Z",
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "payDistribution": {
+                        "distributionInstructions": [
+                            {
+                                "precedenceCode": {
+                                    "codeValue": "4",
+                                    "shortName": "Partial3Direct"
+                                },
+                                "paymentMethodCode": {
+                                    "codeValue": "D",
+                                    "shortName": "Direct Deposit"
+                                },
+                                "depositAccount": {
+                                    "financialParty": {
+                                        "nameCode": {
+                                            "codeValue": "Spine3"
+                                        },
+                                        "routingTransitID": {
+                                            "idValue": "111111118",
+                                            "schemeCode": {
+                                                "codeValue": "111111118"
+                                            }
+                                        }
+                                    },
+                                    "financialAccount": {
+                                        "accountNumber": "12345675",
+                                        "accountName": "Partial3Direct",
+                                        "typeCode": {
+                                            "codeValue": "S",
+                                            "shortName": "Savings"
+                                        }
+                                    }
+                                },
+                                "remainingBalanceIndicator": true,
+                                "prenoteBypassIndicator": false
+                            },
+                            {
+                                "precedenceCode": {
+                                    "codeValue": "3",
+                                    "shortName": "CheckName"
+                                },
+                                "paymentMethodCode": {
+                                    "codeValue": "D",
+                                    "shortName": "Direct Deposit"
+                                },
+                                "depositAccount": {
+                                    "financialParty": {
+                                        "nameCode": {
+                                            "codeValue": "SpineCheck"
+                                        },
+                                        "routingTransitID": {
+                                            "idValue": "111111118",
+                                            "schemeCode": {
+                                                "codeValue": "111111118"
+                                            }
+                                        }
+                                    },
+                                    "financialAccount": {
+                                        "accountNumber": "12345679",
+                                        "accountName": "CheckName",
+                                        "typeCode": {
+                                            "codeValue": "C",
+                                            "shortName": "Checking"
+                                        }
+                                    }
+                                },
+                                "remainingBalanceIndicator": true,
+                                "prenoteBypassIndicator": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
