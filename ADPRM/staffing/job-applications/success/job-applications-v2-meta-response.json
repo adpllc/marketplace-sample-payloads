@@ -1,0 +1,3065 @@
+{
+  "type": "object",
+  "id": "urn:jsonschema:com:adp:ea:staffing:v2:JobApplications",
+  "properties": {
+    "jobApplications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "id": "urn:jsonschema:com:adp:ea:staffing:v2:JobApplication",
+        "properties": {
+          "itemID": {
+            "type": "string"
+          },
+          "_languageCode": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code",
+            "properties": {
+              "codeValue": {
+                "type": "string"
+              },
+              "shortName": {
+                "type": "string"
+              },
+              "longName": {
+                "type": "string"
+              }
+            }
+          },
+          "jobRequisitionReference": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:staffing:v2:JobRequisitionReference",
+            "properties": {
+              "requisitionID": {
+                "type": "string"
+              },
+              "requisitionTitle": {
+                "type": "string"
+              },
+              "clientRequisitionID": {
+                "type": "string"
+              },
+              "requisitionStatusCode": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Status",
+                "properties": {
+                  "effectiveDate": {
+                    "type": "string"
+                  },
+                  "codeValue": {
+                    "type": "string"
+                  },
+                  "shortName": {
+                    "type": "string"
+                  },
+                  "longName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "requisitionDescription": {
+                "type": "string"
+              },
+              "postDate": {
+                "type": "integer",
+                "format": "utc-millisec"
+              },
+              "jobFamilyCode": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+              },
+              "links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link",
+                  "properties": {
+                    "href": {
+                      "type": "string"
+                    },
+                    "rel": {
+                      "type": "string",
+                      "enum": [
+                        "alternate",
+                        "create",
+                        "canonical",
+                        "describedby",
+                        "edit-form",
+                        "enclosure",
+                        "full",
+                        "related",
+                        "root",
+                        "self",
+                        "up",
+                        "search",
+                        "first",
+                        "last",
+                        "next",
+                        "previous",
+                        "/adp/invoke",
+                        "/adp/image",
+                        "/adp/confirm-message",
+                        "/adp/status-monitor",
+                        "/adp/codelist",
+                        "/adp/template",
+                        "/adp/externalLink",
+                        "/adp/validation",
+                        "/adp/deeplink",
+                        "/adp/attachment",
+                        "/adp/workflow"
+                      ]
+                    },
+                    "canonicalUri": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "targetSchema": {
+                      "type": "string"
+                    },
+                    "mediaType": {
+                      "type": "string",
+                      "enum": [
+                        "application/gzip",
+                        "application/json",
+                        "application/msword",
+                        "application/pdf",
+                        "application/postscript",
+                        "application/vnd.ms-excel",
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                        "application/xml",
+                        "application/x-www-form-urlencoded",
+                        "image/gif",
+                        "image/jpeg",
+                        "image/png",
+                        "image/tiff",
+                        "multipart/mixed",
+                        "text/html",
+                        "text/plain",
+                        "application/vnd.visio",
+                        "image/bmp",
+                        "image/x-ms-bmp",
+                        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+                        "application/vnd.ms-powerpoint",
+                        "video/mp4",
+                        "audio/mpeg",
+                        "video/x-msvideo",
+                        "video/x-ms-wmv",
+                        "application/rtf",
+                        "application/vnd.ms-outlook",
+                        "text/csv",
+                        "video/quicktime",
+                        "application/zip",
+                        "application/illustrator",
+                        "text/xml"
+                      ]
+                    },
+                    "method": {
+                      "type": "string",
+                      "enum": [
+                        "GET",
+                        "POST",
+                        "DELETE",
+                        "PUT"
+                      ]
+                    },
+                    "encType": {
+                      "type": "string",
+                      "enum": [
+                        "application/json",
+                        "application/x-www-form-urlencoded"
+                      ]
+                    },
+                    "schema": {
+                      "type": "string"
+                    },
+                    "payLoadArguments": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:PayLoadArgument",
+                        "properties": {
+                          "argumentPath": {
+                            "type": "string"
+                          },
+                          "argumentValue": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "jobOfferReference": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:staffing:v2:JobOfferReference",
+            "properties": {
+              "jobOfferID": {
+                "type": "string"
+              },
+              "comments": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:SubmittedCommentType",
+                  "properties": {
+                    "entryDateTime": {
+                      "type": "integer",
+                      "format": "utc-millisec"
+                    },
+                    "author": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:CommentAuthorType",
+                      "properties": {
+                        "associateOID": {
+                          "type": "string"
+                        },
+                        "roleCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "formattedName": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "textValue": {
+                      "type": "string"
+                    },
+                    "commentCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    }
+                  }
+                }
+              },
+              "offerExtensionDate": {
+                "type": "string"
+              },
+              "offerExpirationDate": {
+                "type": "string"
+              },
+              "offerStatusCode": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Status"
+              },
+              "offerAcceptanceDate": {
+                "type": "string"
+              },
+              "offerTerms": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:JobOfferTermsType",
+                "properties": {
+                  "expectedStartDate": {
+                    "type": "string"
+                  },
+                  "compensation": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:Compensation",
+                    "properties": {
+                      "recordingBasisCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      },
+                      "compensationSummary": {
+                        "type": "string"
+                      },
+                      "remunerationBasisCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      },
+                      "payCycleCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      },
+                      "baseRemuneration": {
+                        "type": "object",
+                        "id": "urn:jsonschema:com:adp:ea:hr:common:v2:complextypes:BaseRemunerationTransformType",
+                        "properties": {
+                          "recordingBasisCode": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                          },
+                          "hourlyRateAmount": {
+                            "type": "object",
+                            "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount",
+                            "properties": {
+                              "nameCode": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                              },
+                              "amountValue": {
+                                "type": "number"
+                              },
+                              "currencyCode": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "dailyRateAmount": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                          },
+                          "weeklyRateAmount": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                          },
+                          "biweeklyRateAmount": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                          },
+                          "semiMonthlyRateAmount": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                          },
+                          "monthlyRateAmount": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                          },
+                          "annualRateAmount": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                          },
+                          "payPeriodRateAmount": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                          },
+                          "commissionRatePercentage": {
+                            "type": "object",
+                            "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RatePercentage",
+                            "properties": {
+                              "nameCode": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                              },
+                              "percentageValue": {
+                                "type": "number"
+                              },
+                              "baseUnitCode": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "additionalRemunerations": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:hr:common:v2:complextypes:AdditionalRemunerationCompensation",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "typeCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "intervalCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "rate": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Rate",
+                              "properties": {
+                                "amountValue": {
+                                  "type": "number"
+                                },
+                                "currencyCode": {
+                                  "type": "string"
+                                },
+                                "unitCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "baseUnitCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "baseMultiplierValue": {
+                                  "type": "number"
+                                }
+                              }
+                            },
+                            "associatedRateQualifiers": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "id": "urn:jsonschema:com:adp:ea:hr:common:v2:complextypes:AdditionalRemunerationAssociatedRateQualifierType",
+                                "properties": {
+                                  "itemID": {
+                                    "type": "string"
+                                  },
+                                  "qualifierObjectTypeCode": {
+                                    "type": "object",
+                                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                  },
+                                  "qualifierObjectCode": {
+                                    "type": "object",
+                                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                  },
+                                  "qualifierObjectID": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "offerAssignment": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:JobOfferAssignmentType",
+                "properties": {
+                  "jobCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "jobTitle": {
+                    "type": "string"
+                  },
+                  "legalEntityID": {
+                    "type": "string"
+                  },
+                  "assignmentCostCenters": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:CostCenterType",
+                      "properties": {
+                        "costCenterID": {
+                          "type": "string"
+                        },
+                        "costCenterName": {
+                          "type": "string"
+                        },
+                        "costCenterPercentage": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  "assignmentTermCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "payrollGroupCode": {
+                    "type": "string"
+                  },
+                  "payrollFileNumber": {
+                    "type": "string"
+                  },
+                  "payrollRegionCode": {
+                    "type": "string"
+                  },
+                  "jobLevelCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "payGradeCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "workerProbationIndicator": {
+                    "type": "boolean"
+                  },
+                  "workerProbationPeriod": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:DatePeriod",
+                    "properties": {
+                      "startDate": {
+                        "type": "string"
+                      },
+                      "endDate": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "workerTypeCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "workLevelCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "workShiftCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "workArrangementCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "standardHours": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:BaseStandardHours",
+                    "properties": {
+                      "dailyHoursQuantity": {
+                        "type": "number"
+                      },
+                      "weeklyHoursQuantity": {
+                        "type": "number"
+                      },
+                      "monthlyHoursQuantity": {
+                        "type": "number"
+                      },
+                      "annualHoursQuantity": {
+                        "type": "number"
+                      },
+                      "payPeriodHoursQuantity": {
+                        "type": "number"
+                      }
+                    }
+                  },
+                  "homeWorkLocation": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:LocationExtendedType",
+                    "properties": {
+                      "aliasNames": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:AliasName",
+                          "properties": {
+                            "typeCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "nameValue": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "nameCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      },
+                      "communication": {
+                        "type": "object",
+                        "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Communication",
+                        "properties": {
+                          "faxes": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Faxis",
+                              "properties": {
+                                "itemID": {
+                                  "type": "string"
+                                },
+                                "notificationIndicator": {
+                                  "type": "boolean"
+                                },
+                                "nameCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "countryDialing": {
+                                  "type": "string"
+                                },
+                                "areaDialing": {
+                                  "type": "string"
+                                },
+                                "dialNumber": {
+                                  "type": "string"
+                                },
+                                "extension": {
+                                  "type": "string"
+                                },
+                                "access": {
+                                  "type": "string"
+                                },
+                                "formattedNumber": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "pagers": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Pager",
+                              "properties": {
+                                "itemID": {
+                                  "type": "string"
+                                },
+                                "notificationIndicator": {
+                                  "type": "boolean"
+                                },
+                                "nameCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "countryDialing": {
+                                  "type": "string"
+                                },
+                                "areaDialing": {
+                                  "type": "string"
+                                },
+                                "dialNumber": {
+                                  "type": "string"
+                                },
+                                "extension": {
+                                  "type": "string"
+                                },
+                                "access": {
+                                  "type": "string"
+                                },
+                                "formattedNumber": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "internetAddresses": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:InternetAddressWithItemID",
+                              "properties": {
+                                "itemID": {
+                                  "type": "string"
+                                },
+                                "nameCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "uri": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "instantMessages": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:InstantMessage",
+                              "properties": {
+                                "itemID": {
+                                  "type": "string"
+                                },
+                                "notificationIndicator": {
+                                  "type": "boolean"
+                                },
+                                "nameCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "uri": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "landlines": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Landline",
+                              "properties": {
+                                "itemID": {
+                                  "type": "string"
+                                },
+                                "notificationIndicator": {
+                                  "type": "boolean"
+                                },
+                                "nameCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "countryDialing": {
+                                  "type": "string"
+                                },
+                                "areaDialing": {
+                                  "type": "string"
+                                },
+                                "dialNumber": {
+                                  "type": "string"
+                                },
+                                "extension": {
+                                  "type": "string"
+                                },
+                                "access": {
+                                  "type": "string"
+                                },
+                                "formattedNumber": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "mobiles": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Mobile",
+                              "properties": {
+                                "itemID": {
+                                  "type": "string"
+                                },
+                                "notificationIndicator": {
+                                  "type": "boolean"
+                                },
+                                "nameCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "countryDialing": {
+                                  "type": "string"
+                                },
+                                "areaDialing": {
+                                  "type": "string"
+                                },
+                                "dialNumber": {
+                                  "type": "string"
+                                },
+                                "extension": {
+                                  "type": "string"
+                                },
+                                "access": {
+                                  "type": "string"
+                                },
+                                "formattedNumber": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "emails": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:EmailContactCommunicationType",
+                              "properties": {
+                                "itemID": {
+                                  "type": "string"
+                                },
+                                "notificationIndicator": {
+                                  "type": "boolean"
+                                },
+                                "nameCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "emailUri": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "socialNetworks": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:SocialNetworkContactCommunicationType",
+                              "properties": {
+                                "itemID": {
+                                  "type": "string"
+                                },
+                                "notificationIndicator": {
+                                  "type": "boolean"
+                                },
+                                "nameCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "uri": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "address": {
+                        "type": "object",
+                        "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:OrganizationAddress",
+                        "properties": {
+                          "nameCode": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                          },
+                          "attentionOfName": {
+                            "type": "string"
+                          },
+                          "careOfName": {
+                            "type": "string"
+                          },
+                          "lineOne": {
+                            "type": "string"
+                          },
+                          "lineTwo": {
+                            "type": "string"
+                          },
+                          "lineThree": {
+                            "type": "string"
+                          },
+                          "cityName": {
+                            "type": "string"
+                          },
+                          "countrySubdivisionLevel1": {
+                            "type": "object",
+                            "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:CountrySubdivision",
+                            "properties": {
+                              "subdivisionType": {
+                                "type": "string"
+                              },
+                              "codeValue": {
+                                "type": "string"
+                              },
+                              "shortName": {
+                                "type": "string"
+                              },
+                              "longName": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "countryCode": {
+                            "type": "string"
+                          },
+                          "postalCode": {
+                            "type": "string"
+                          },
+                          "geoCoordinate": {
+                            "type": "object",
+                            "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Coordinate",
+                            "properties": {
+                              "latitude": {
+                                "type": "number"
+                              },
+                              "longitude": {
+                                "type": "number"
+                              }
+                            }
+                          },
+                          "scriptCode": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                          },
+                          "lineFour": {
+                            "type": "string"
+                          },
+                          "lineFive": {
+                            "type": "string"
+                          },
+                          "buildingNumber": {
+                            "type": "string"
+                          },
+                          "buildingName": {
+                            "type": "string"
+                          },
+                          "blockName": {
+                            "type": "string"
+                          },
+                          "streetName": {
+                            "type": "string"
+                          },
+                          "streetTypeCode": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                          },
+                          "unit": {
+                            "type": "string"
+                          },
+                          "floor": {
+                            "type": "string"
+                          },
+                          "stairCase": {
+                            "type": "string"
+                          },
+                          "door": {
+                            "type": "string"
+                          },
+                          "postOfficeBox": {
+                            "type": "string"
+                          },
+                          "deliveryPoint": {
+                            "type": "string"
+                          },
+                          "plotID": {
+                            "type": "string"
+                          },
+                          "countrySubdivisionLevel2": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:CountrySubdivision"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "assignedWorkLocations": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:AssignedWorkLocation",
+                      "properties": {
+                        "itemID": {
+                          "type": "string"
+                        },
+                        "nameCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "communication": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Communication"
+                        },
+                        "address": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:OrganizationAddress"
+                        },
+                        "aliasNames": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:AliasName"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "homeOrganizationalUnits": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:HomeOrganizationalUnitItem",
+                      "properties": {
+                        "itemID": {
+                          "type": "string"
+                        },
+                        "nameCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "typeCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        }
+                      }
+                    }
+                  },
+                  "assignedOrganizationalUnits": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:AssignedOrganizationalUnitItem",
+                      "properties": {
+                        "itemID": {
+                          "type": "string"
+                        },
+                        "nameCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "typeCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        }
+                      }
+                    }
+                  },
+                  "occupationalClassifications": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:OccupationalClassification",
+                      "properties": {
+                        "itemID": {
+                          "type": "string"
+                        },
+                        "nameCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "classificationCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        }
+                      }
+                    }
+                  },
+                  "industryClassifications": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:OrganizationJobIndustryClassification",
+                      "properties": {
+                        "itemID": {
+                          "type": "string"
+                        },
+                        "nameCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "classificationCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        }
+                      }
+                    }
+                  },
+                  "reportsTo": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:ReportsTo",
+                      "properties": {
+                        "itemID": {
+                          "type": "string"
+                        },
+                        "positionID": {
+                          "type": "string"
+                        },
+                        "positionTitle": {
+                          "type": "string"
+                        },
+                        "associateOID": {
+                          "type": "string"
+                        },
+                        "workerID": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:IDType",
+                          "properties": {
+                            "idValue": {
+                              "type": "string"
+                            },
+                            "schemeCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            }
+                          }
+                        },
+                        "reportsToWorkerName": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:ContactName",
+                          "properties": {
+                            "givenName": {
+                              "type": "string"
+                            },
+                            "middleName": {
+                              "type": "string"
+                            },
+                            "familyName1": {
+                              "type": "string"
+                            },
+                            "familyName2": {
+                              "type": "string"
+                            },
+                            "formattedName": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "reportsToRelationshipCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        }
+                      }
+                    }
+                  },
+                  "wageLawCoverage": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:adp:ea:hr:common:v2:complextypes:WageLawCoverage",
+                    "properties": {
+                      "wageLawNameCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      },
+                      "coverageCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      }
+                    }
+                  },
+                  "positionID": {
+                    "type": "string"
+                  },
+                  "positionTitle": {
+                    "type": "string"
+                  }
+                }
+              },
+              "offerAcceptanceStatusCode": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Status"
+              },
+              "offerCreatedBy": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:OfferCreator",
+                "properties": {
+                  "workerID": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:IDType"
+                  },
+                  "associateOID": {
+                    "type": "string"
+                  },
+                  "roleCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "formattedName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "eSignatureSignedBy": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:SignatureOutput",
+                "properties": {
+                  "formattedSignature": {
+                    "type": "string"
+                  },
+                  "associateOID": {
+                    "type": "string"
+                  },
+                  "roleCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "formattedName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "eSignatureStatusCode": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+              },
+              "eSignatureSignedDate": {
+                "type": "string"
+              }
+            }
+          },
+          "applicationStatusCode": {
+            "type": "object",
+            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Status"
+          },
+          "applicationSource": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:ApplicationSoruceType",
+            "properties": {
+              "postingChannelID": {
+                "type": "string"
+              },
+              "postingChannelNameCode": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+              },
+              "submittedBy": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:SubmittedBy",
+                "properties": {
+                  "personOID": {
+                    "type": "string"
+                  },
+                  "associateOID": {
+                    "type": "string"
+                  },
+                  "personName": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:ContactName"
+                  },
+                  "relationshipTypeCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "communication": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Communication"
+                  }
+                }
+              },
+              "submittedDate": {
+                "type": "string"
+              },
+              "initiatedDateTime": {
+                "type": "integer",
+                "format": "utc-millisec"
+              }
+            }
+          },
+          "vendorCode": {
+            "type": "object",
+            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+          },
+          "applicant": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:staffing:v2:Applicant",
+            "properties": {
+              "personOID": {
+                "type": "string"
+              },
+              "associateOID": {
+                "type": "string"
+              },
+              "internalApplicantIndicator": {
+                "type": "boolean"
+              },
+              "workAuthorizationIndicator": {
+                "type": "boolean"
+              },
+              "relevancyCategoryCode": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+              },
+              "WOTCScreeningStatusCode": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:common:v3:core:compoundtypes:Status",
+                "properties": {
+                  "effectiveDateTime": {
+                    "type": "integer",
+                    "format": "utc-millisec"
+                  },
+                  "codeValue": {
+                    "type": "string"
+                  },
+                  "shortName": {
+                    "type": "string"
+                  },
+                  "longName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "applicantContentLinks": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:ContentLinkBase",
+                  "properties": {
+                    "contentNameCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "linkTypeCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "href": {
+                      "type": "string"
+                    },
+                    "rel": {
+                      "type": "string",
+                      "enum": [
+                        "alternate",
+                        "full",
+                        "related",
+                        "/adp/externalLink",
+                        "/adp/deeplink",
+                        "/adp/attachment"
+                      ]
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "mediaType": {
+                      "type": "string",
+                      "enum": [
+                        "application/gzip",
+                        "application/json",
+                        "application/msword",
+                        "application/pdf",
+                        "application/postscript",
+                        "application/vnd.ms-excel",
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                        "application/xml",
+                        "application/x-www-form-urlencoded",
+                        "image/gif",
+                        "image/jpeg",
+                        "image/png",
+                        "image/tiff",
+                        "multipart/mixed",
+                        "text/html",
+                        "text/plain",
+                        "application/vnd.visio",
+                        "image/bmp",
+                        "image/x-ms-bmp",
+                        "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+                        "application/vnd.ms-powerpoint",
+                        "video/mp4",
+                        "audio/mpeg",
+                        "video/x-msvideo",
+                        "video/x-ms-wmv",
+                        "application/rtf",
+                        "application/vnd.ms-outlook",
+                        "text/csv",
+                        "video/quicktime",
+                        "application/zip",
+                        "application/illustrator",
+                        "text/xml"
+                      ]
+                    },
+                    "method": {
+                      "type": "string",
+                      "enum": [
+                        "GET",
+                        "POST",
+                        "DELETE",
+                        "PUT"
+                      ]
+                    },
+                    "payLoadArguments": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:PayLoadArgument",
+                        "properties": {
+                          "argumentPath": {
+                            "type": "string"
+                          },
+                          "argumentValue": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "person": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:staffing:common:v3:complextypes:ApplicantBasePerson",
+                "properties": {
+                  "personOID": {
+                    "type": "string"
+                  },
+                  "customFieldGroup": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:CustomFieldContainerType",
+                    "properties": {
+                      "amountFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:AmountField",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "categoryCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "amountValue": {
+                              "type": "number"
+                            },
+                            "currencyCode": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "codeFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:CodeField",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "categoryCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "codeValue": {
+                              "type": "string"
+                            },
+                            "shortName": {
+                              "type": "string"
+                            },
+                            "longName": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "dateFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:DateField",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "categoryCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "dateValue": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "dateTimeFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:DateTimeField",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "categoryCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "dateTimeValue": {
+                              "type": "integer",
+                              "format": "utc-millisec"
+                            }
+                          }
+                        }
+                      },
+                      "indicatorFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:IndicatorField",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "categoryCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "indicatorValue": {
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      },
+                      "numberFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:NumberField",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "categoryCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "numberValue": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "percentFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:PercentField",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "categoryCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "percentValue": {
+                              "type": "number"
+                            }
+                          }
+                        }
+                      },
+                      "stringFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:StringField",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "categoryCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "stringValue": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "telephoneFields": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:TelephoneField",
+                          "properties": {
+                            "itemID": {
+                              "type": "string"
+                            },
+                            "nameCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "categoryCode": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                            },
+                            "countryDialing": {
+                              "type": "string"
+                            },
+                            "areaDialing": {
+                              "type": "string"
+                            },
+                            "dialNumber": {
+                              "type": "string"
+                            },
+                            "extension": {
+                              "type": "string"
+                            },
+                            "access": {
+                              "type": "string"
+                            },
+                            "formattedNumber": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      },
+                      "links": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+                        }
+                      }
+                    }
+                  },
+                  "personName": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:ContactName"
+                  },
+                  "relationshipTypeCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "communication": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Communication"
+                  },
+                  "address": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:PersonAddress",
+                    "properties": {
+                      "sameAsAddressIndicator": {
+                        "type": "boolean"
+                      },
+                      "sameAsAddressLink": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+                      },
+                      "nameCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      },
+                      "attentionOfName": {
+                        "type": "string"
+                      },
+                      "careOfName": {
+                        "type": "string"
+                      },
+                      "lineOne": {
+                        "type": "string"
+                      },
+                      "lineTwo": {
+                        "type": "string"
+                      },
+                      "lineThree": {
+                        "type": "string"
+                      },
+                      "cityName": {
+                        "type": "string"
+                      },
+                      "countrySubdivisionLevel1": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:CountrySubdivision"
+                      },
+                      "countryCode": {
+                        "type": "string"
+                      },
+                      "postalCode": {
+                        "type": "string"
+                      },
+                      "geoCoordinate": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Coordinate"
+                      },
+                      "scriptCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      },
+                      "lineFour": {
+                        "type": "string"
+                      },
+                      "lineFive": {
+                        "type": "string"
+                      },
+                      "buildingNumber": {
+                        "type": "string"
+                      },
+                      "buildingName": {
+                        "type": "string"
+                      },
+                      "blockName": {
+                        "type": "string"
+                      },
+                      "streetName": {
+                        "type": "string"
+                      },
+                      "streetTypeCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      },
+                      "unit": {
+                        "type": "string"
+                      },
+                      "floor": {
+                        "type": "string"
+                      },
+                      "stairCase": {
+                        "type": "string"
+                      },
+                      "door": {
+                        "type": "string"
+                      },
+                      "postOfficeBox": {
+                        "type": "string"
+                      },
+                      "deliveryPoint": {
+                        "type": "string"
+                      },
+                      "plotID": {
+                        "type": "string"
+                      },
+                      "countrySubdivisionLevel2": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:CountrySubdivision"
+                      }
+                    }
+                  },
+                  "preferredName": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:ContactName"
+                  },
+                  "formerNames": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:FormerName",
+                      "properties": {
+                        "typeCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "givenName": {
+                          "type": "string"
+                        },
+                        "middleName": {
+                          "type": "string"
+                        },
+                        "familyName1": {
+                          "type": "string"
+                        },
+                        "familyName2": {
+                          "type": "string"
+                        },
+                        "formattedName": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "governmentIDs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:GovernmentIDItemType",
+                      "properties": {
+                        "itemID": {
+                          "type": "string"
+                        },
+                        "idValue": {
+                          "type": "string"
+                        },
+                        "nameCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "countryCode": {
+                          "type": "string"
+                        },
+                        "statusCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Status"
+                        },
+                        "expirationDate": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "birthName": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:ContactName"
+                  },
+                  "birthPlace": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:GeographicalBoundary",
+                    "properties": {
+                      "cityName": {
+                        "type": "string"
+                      },
+                      "countrySubdivisionLevel1": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:CountrySubdivision"
+                      },
+                      "countrySubdivisionLevel2": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:CountrySubdivision"
+                      },
+                      "postalCode": {
+                        "type": "string"
+                      },
+                      "countryCode": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "studentIndicator": {
+                    "type": "boolean"
+                  },
+                  "citizenshipCountryCodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    }
+                  },
+                  "residencyCountryCodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    }
+                  },
+                  "highestEducationLevelCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "militaryStatusCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "militaryDischargeDate": {
+                    "type": "string"
+                  },
+                  "militaryClassificationCodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    }
+                  },
+                  "selfIdentificationDeclinedIndicator": {
+                    "type": "boolean"
+                  },
+                  "birthDate": {
+                    "type": "string"
+                  },
+                  "genderCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "religionCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "ethnicityCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "ethnicityGroupCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "raceCode": {
+                    "type": "object",
+                    "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:RaceCode",
+                    "properties": {
+                      "identificationMethodCode": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      },
+                      "codeValue": {
+                        "type": "string"
+                      },
+                      "shortName": {
+                        "type": "string"
+                      },
+                      "longName": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "maritalStatusCode": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                  },
+                  "disabilityIdentificationDeclinedIndicator": {
+                    "type": "boolean"
+                  },
+                  "disabledIndicator": {
+                    "type": "boolean"
+                  },
+                  "disabilityTypeCodes": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    }
+                  }
+                }
+              },
+              "competencies": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:AssociateCompetencyType",
+                  "properties": {
+                    "competencyNameCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "competencyDescription": {
+                      "type": "string"
+                    },
+                    "categoryCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "acquisitionDate": {
+                      "type": "string"
+                    },
+                    "lastUsedDate": {
+                      "type": "string"
+                    },
+                    "experienceDuration": {
+                      "type": "string"
+                    },
+                    "selfAssessedProficiencyScore": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:talent:common:v2:complextypes:ScoreBase",
+                      "properties": {
+                        "unitCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "scoreValue": {
+                          "type": "string"
+                        },
+                        "scoreCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "educationalDegrees": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:ApplicantEducationalDegreeType",
+                  "properties": {
+                    "nameCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "typeCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "statusCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Status"
+                    },
+                    "startDate": {
+                      "type": "string"
+                    },
+                    "expectedCompletionDate": {
+                      "type": "string"
+                    },
+                    "actualCompletionDate": {
+                      "type": "string"
+                    },
+                    "completionDuration": {
+                      "type": "string"
+                    },
+                    "academicCreditTypeCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "academicCreditsCompleted": {
+                      "type": "string"
+                    },
+                    "educationalInstitution": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:talent:common:v2:complextypes:EducationalInstitution",
+                      "properties": {
+                        "nameCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "address": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:OrganizationAddress"
+                        }
+                      }
+                    },
+                    "degreeIssuedIndicator": {
+                      "type": "boolean"
+                    },
+                    "issueDate": {
+                      "type": "string"
+                    },
+                    "academicScore": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:talent:common:v2:complextypes:ScoreBase"
+                    },
+                    "majorProgramNameCodes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      }
+                    },
+                    "minorProgramNameCodes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      }
+                    },
+                    "honorsProgramNameCodes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                      }
+                    }
+                  }
+                }
+              },
+              "certifications": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:AssociateCertificationType",
+                  "properties": {
+                    "certificationNameCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "certificationDescription": {
+                      "type": "string"
+                    },
+                    "categoryCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "statusCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Status"
+                    },
+                    "issuingPartyNameCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "firstIssueDate": {
+                      "type": "string"
+                    },
+                    "lastIssueDate": {
+                      "type": "string"
+                    },
+                    "expirationDate": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "languages": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:ApplicantLanguageType",
+                  "properties": {
+                    "languageCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "nativeLanguageIndicator": {
+                      "type": "boolean"
+                    },
+                    "acquisitionDate": {
+                      "type": "string"
+                    },
+                    "lastUsedDate": {
+                      "type": "string"
+                    },
+                    "experienceDuration": {
+                      "type": "string"
+                    },
+                    "selfAssessedProficiencyScore": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:talent:common:v2:complextypes:ScoreBase"
+                    }
+                  }
+                }
+              },
+              "licenses": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:ApplicantLicenseType",
+                  "properties": {
+                    "licenseID": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:IDType"
+                    },
+                    "licenseNameCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "licenseDescription": {
+                      "type": "string"
+                    },
+                    "categoryCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "statusCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Status"
+                    },
+                    "issuingPartyNameCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "firstIssueDate": {
+                      "type": "string"
+                    },
+                    "lastIssueDate": {
+                      "type": "string"
+                    },
+                    "expirationDate": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "memberships": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:ApplicantMembershipType",
+                  "properties": {
+                    "membershipOrganizationNameCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "membershipOrganizationChapterID": {
+                      "type": "string"
+                    },
+                    "membershipID": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:IDType"
+                    },
+                    "typeCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "memberTitle": {
+                      "type": "string"
+                    },
+                    "membershipDescription": {
+                      "type": "string"
+                    },
+                    "memberSinceDate": {
+                      "type": "string"
+                    },
+                    "expirationDate": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "recognitions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:AssociateRecognitionType",
+                  "properties": {
+                    "nameCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "typeCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "issuingParty": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:talent:common:v2:complextypes:IssuingParty",
+                      "properties": {
+                        "nameCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "address": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:OrganizationAddress"
+                        }
+                      }
+                    },
+                    "issueDate": {
+                      "type": "string"
+                    },
+                    "customFieldGroup": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:CustomFieldContainerType"
+                    }
+                  }
+                }
+              },
+              "employmentHistory": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:staffing:common:v3:complextypes:EmploymentHistory",
+                  "properties": {
+                    "itemID": {
+                      "type": "string"
+                    },
+                    "links": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+                      }
+                    },
+                    "employmentStartDate": {
+                      "type": "string"
+                    },
+                    "employmentEndDate": {
+                      "type": "string"
+                    },
+                    "employerName": {
+                      "type": "string"
+                    },
+                    "employerAddress": {
+                      "type": "object",
+                      "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:Address",
+                      "properties": {
+                        "scriptCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "lineFour": {
+                          "type": "string"
+                        },
+                        "lineFive": {
+                          "type": "string"
+                        },
+                        "buildingNumber": {
+                          "type": "string"
+                        },
+                        "buildingName": {
+                          "type": "string"
+                        },
+                        "blockName": {
+                          "type": "string"
+                        },
+                        "streetName": {
+                          "type": "string"
+                        },
+                        "streetTypeCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "unit": {
+                          "type": "string"
+                        },
+                        "floor": {
+                          "type": "string"
+                        },
+                        "stairCase": {
+                          "type": "string"
+                        },
+                        "door": {
+                          "type": "string"
+                        },
+                        "postOfficeBox": {
+                          "type": "string"
+                        },
+                        "deliveryPoint": {
+                          "type": "string"
+                        },
+                        "plotID": {
+                          "type": "string"
+                        },
+                        "countrySubdivisionLevel2": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:CountrySubdivision"
+                        },
+                        "nameCode": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                        },
+                        "attentionOfName": {
+                          "type": "string"
+                        },
+                        "careOfName": {
+                          "type": "string"
+                        },
+                        "lineOne": {
+                          "type": "string"
+                        },
+                        "lineTwo": {
+                          "type": "string"
+                        },
+                        "lineThree": {
+                          "type": "string"
+                        },
+                        "cityName": {
+                          "type": "string"
+                        },
+                        "countrySubdivisionLevel1": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:CountrySubdivision"
+                        },
+                        "countryCode": {
+                          "type": "string"
+                        },
+                        "postalCode": {
+                          "type": "string"
+                        },
+                        "geoCoordinate": {
+                          "type": "object",
+                          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Coordinate"
+                        }
+                      }
+                    },
+                    "employerCommunication": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Communication"
+                    },
+                    "allowContactEmployerIndicator": {
+                      "type": "boolean"
+                    },
+                    "currentEmployerIndicator": {
+                      "type": "boolean"
+                    },
+                    "positionHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "id": "urn:jsonschema:com:adp:ea:staffing:common:v3:complextypes:PositionHistory",
+                        "properties": {
+                          "itemID": {
+                            "type": "string"
+                          },
+                          "comment": {
+                            "type": "object",
+                            "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:SubmittedCommentBaseType",
+                            "properties": {
+                              "commentCode": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                              },
+                              "textValue": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "links": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+                            }
+                          },
+                          "positionTitle": {
+                            "type": "string"
+                          },
+                          "positionStartDate": {
+                            "type": "string"
+                          },
+                          "positionEndDate": {
+                            "type": "string"
+                          },
+                          "positionLocation": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:Address"
+                          },
+                          "startingPayRate": {
+                            "type": "object",
+                            "id": "urn:jsonschema:com:adp:ea:hr:common:v2:complextypes:BaseRemunerationLiteType",
+                            "properties": {
+                              "hourlyRateAmount": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                              },
+                              "dailyRateAmount": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                              },
+                              "weeklyRateAmount": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                              },
+                              "monthlyRateAmount": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                              },
+                              "annualRateAmount": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+                              },
+                              "commissionRatePercentage": {
+                                "type": "object",
+                                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RatePercentage"
+                              }
+                            }
+                          },
+                          "endingPayRate": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:hr:common:v2:complextypes:BaseRemunerationLiteType"
+                          },
+                          "reportsToName": {
+                            "type": "object",
+                            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:ContactName"
+                          },
+                          "responsibilities": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "id": "urn:jsonschema:com:adp:ea:hr:common:v2:complextypes:JobResponsibilityType",
+                              "properties": {
+                                "nameCode": {
+                                  "type": "object",
+                                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                                },
+                                "responsibilityDescription": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "reasonForLeaving": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "references": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:common:v3:core:complextypes:ContactBaseType",
+                  "properties": {
+                    "personName": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:ContactName"
+                    },
+                    "relationshipTypeCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                    },
+                    "communication": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Communication"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "appliedLocations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "id": "urn:jsonschema:com:adp:ea:staffing:v2:AppliedLocation",
+              "properties": {
+                "itemID": {
+                  "type": "string"
+                },
+                "primaryIndicator": {
+                  "type": "boolean"
+                },
+                "postingIndicator": {
+                  "type": "boolean"
+                },
+                "nameCode": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                },
+                "communication": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Communication"
+                },
+                "address": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:OrganizationAddress"
+                },
+                "aliasNames": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:AliasName"
+                  }
+                }
+              }
+            }
+          },
+          "attestations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "id": "urn:jsonschema:com:adp:ea:staffing:v2:Attestation",
+              "properties": {
+                "itemID": {
+                  "type": "string"
+                },
+                "nameCode": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                },
+                "acceptedIndicator": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:EffectiveDatedIndicator",
+                  "properties": {
+                    "indicatorValue": {
+                      "type": "boolean"
+                    },
+                    "effectiveDate": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "messageTxt": {
+                  "type": "string"
+                },
+                "links": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+                  }
+                }
+              }
+            }
+          },
+          "questionnaire": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:staffing:v2:QuestionnaireOutput",
+            "properties": {
+              "questionAnswers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:QuestionAnswer",
+                  "properties": {
+                    "questionID": {
+                      "type": "string"
+                    },
+                    "answers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Answer",
+                        "properties": {
+                          "answerID": {
+                            "type": "string"
+                          },
+                          "answerValue": {
+                            "type": "string"
+                          },
+                          "answerIndicator": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "questionnaireID": {
+                "type": "string"
+              },
+              "questionnaireTitle": {
+                "type": "string"
+              }
+            }
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:SubmittedCommentType"
+            }
+          },
+          "applicationContentLinks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:complextypes:ContentLinkBase"
+            }
+          },
+          "links": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+            }
+          },
+          "applicantReferralIndicator": {
+            "type": "boolean"
+          },
+          "applicantReferredBy": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:staffing:common:v2:complextypes:ApplicantReferralPersonType",
+            "properties": {
+              "personOID": {
+                "type": "string"
+              },
+              "associateOID": {
+                "type": "string"
+              },
+              "workerID": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:ID",
+                "properties": {
+                  "idValue": {
+                    "type": "string"
+                  },
+                  "schemeName": {
+                    "type": "string"
+                  },
+                  "schemeAgencyName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "workAssignmentID": {
+                "type": "string"
+              },
+              "personName": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:ContactName"
+              },
+              "relationshipTypeCode": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+              },
+              "communication": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Communication"
+              }
+            }
+          },
+          "referralSourceCode": {
+            "type": "object",
+            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+          },
+          "sourceCategoryCode": {
+            "type": "object",
+            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+          },
+          "staffingVendorCode": {
+            "type": "object",
+            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+          },
+          "requestedPayRate": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:staffing:common:v3:complextypes:RequestedCompensation",
+            "properties": {
+              "remunerationBasisCode": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+              },
+              "hourlyRateAmount": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+              },
+              "dailyRateAmount": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+              },
+              "weeklyRateAmount": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+              },
+              "monthlyRateAmount": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+              },
+              "annualRateAmount": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RateAmount"
+              },
+              "commissionRatePercentage": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:RatePercentage"
+              }
+            }
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "id": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Attachment",
+              "properties": {
+                "nameCode": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:fieldtypes:Code"
+                },
+                "attachmentLink": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+                },
+                "textValue": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "id": "urn:jsonschema:com:adp:ea:staffing:v2:JobApplicationMeta",
+      "properties": {
+        "applicationQuestionnaire_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "employmentHistory_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "competencies_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "educationalDegrees_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "certifications_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "languages_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "licenses_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "memberships_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "recognitions_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "comments_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "attestations_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "attachments_navigationLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "startSequence": {
+          "type": "integer"
+        },
+        "completeIndicator": {
+          "type": "boolean"
+        },
+        "totalNumber": {
+          "type": "integer"
+        },
+        "resourceSetID": {
+          "type": "string"
+        },
+        "links": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+          }
+        }
+      }
+    },
+    "confirmMessage": {
+      "type": "object",
+      "id": "urn:jsonschema:com:adp:ea:common:v1:core:complextypes:ConfirmMessage",
+      "properties": {
+        "confirmMessageID": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:ID"
+        },
+        "createDateTime": {
+          "type": "integer",
+          "format": "utc-millisec"
+        },
+        "requestReceiptDateTime": {
+          "type": "integer",
+          "format": "utc-millisec"
+        },
+        "protocolStatusCode": {
+          "type": "object",
+          "id": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:Code",
+          "properties": {
+            "codeValue": {
+              "type": "string"
+            },
+            "shortName": {
+              "type": "string"
+            },
+            "longName": {
+              "type": "string"
+            }
+          }
+        },
+        "protocolCode": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:Code"
+        },
+        "requestID": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:ID"
+        },
+        "requestStatusCode": {
+          "type": "object",
+          "id": "urn:jsonschema:com:adp:ea:common:v1:core:complextypes:RequestStatusCode",
+          "properties": {
+            "codeValue": {
+              "type": "string",
+              "enum": [
+                "succeeded",
+                "partiallyFailed",
+                "failed"
+              ]
+            },
+            "shortName": {
+              "type": "string"
+            },
+            "longName": {
+              "type": "string"
+            }
+          }
+        },
+        "requestMethodCode": {
+          "type": "object",
+          "id": "urn:jsonschema:com:adp:ea:common:v1:core:complextypes:RequestMethodCode",
+          "properties": {
+            "codeValue": {
+              "type": "string",
+              "enum": [
+                "GET",
+                "PUT",
+                "POST",
+                "PATCH",
+                "DELETE"
+              ]
+            },
+            "shortName": {
+              "type": "string"
+            },
+            "longName": {
+              "type": "string"
+            }
+          }
+        },
+        "sessionID": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:ID"
+        },
+        "requestETag": {
+          "type": "string"
+        },
+        "requestLink": {
+          "type": "object",
+          "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+        },
+        "processingStatusCode": {
+          "type": "object",
+          "id": "urn:jsonschema:com:adp:ea:common:v1:core:complextypes:ProcessingStatusCode",
+          "properties": {
+            "codeValue": {
+              "type": "string",
+              "enum": [
+                "received",
+                "validated",
+                "started",
+                "completed"
+              ]
+            },
+            "shortName": {
+              "type": "string"
+            },
+            "longName": {
+              "type": "string"
+            }
+          }
+        },
+        "processMessages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:ProcessMessage",
+            "properties": {
+              "processMessageID": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:ID"
+              },
+              "messageTypeCode": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:MessageTypeCodeTypeV1",
+                "properties": {
+                  "codeValue": {
+                    "type": "string",
+                    "enum": [
+                      "success",
+                      "warning",
+                      "error",
+                      "info"
+                    ]
+                  },
+                  "shortName": {
+                    "type": "string"
+                  },
+                  "longName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "sourceLocationExpression": {
+                "type": "string"
+              },
+              "expressionLanguageCode": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:ExpressionLanguageCode",
+                "properties": {
+                  "codeValue": {
+                    "type": "string",
+                    "enum": [
+                      "jPath"
+                    ]
+                  },
+                  "shortName": {
+                    "type": "string"
+                  },
+                  "longName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+                }
+              },
+              "userMessage": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:MessageTypeV1",
+                "properties": {
+                  "links": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+                    }
+                  },
+                  "codeValue": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "messageTxt": {
+                    "type": "string"
+                  }
+                }
+              },
+              "developerMessage": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:MessageTypeV1"
+              }
+            }
+          }
+        },
+        "resourceMessages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "id": "urn:jsonschema:com:adp:ea:common:v1:core:complextypes:ResourceMessage",
+            "properties": {
+              "resourceMessageID": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:ID"
+              },
+              "resourceStatusCode": {
+                "type": "object",
+                "id": "urn:jsonschema:com:adp:ea:common:v1:core:complextypes:ResourceMessageResourceStatus",
+                "properties": {
+                  "codeValue": {
+                    "type": "string",
+                    "enum": [
+                      "succeeded",
+                      "failed",
+                      "warning"
+                    ]
+                  },
+                  "shortName": {
+                    "type": "string"
+                  },
+                  "longName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "resourceLink": {
+                "type": "object",
+                "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+              },
+              "processMessages": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "id": "urn:jsonschema:com:adp:ea:common:v1:core:complextypes:ProcessMessageWithResourceStatusCode",
+                  "properties": {
+                    "resourceStatusCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:Code"
+                    },
+                    "processMessageID": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:fieldtypes:ID"
+                    },
+                    "messageTypeCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:MessageTypeCodeTypeV1"
+                    },
+                    "sourceLocationExpression": {
+                      "type": "string"
+                    },
+                    "expressionLanguageCode": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:ExpressionLanguageCode"
+                    },
+                    "links": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "$ref": "urn:jsonschema:com:adp:ea:common:v2:core:compoundtypes:Link"
+                      }
+                    },
+                    "userMessage": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:MessageTypeV1"
+                    },
+                    "developerMessage": {
+                      "type": "object",
+                      "$ref": "urn:jsonschema:com:adp:ea:common:v1:core:compoundtypes:MessageTypeV1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
