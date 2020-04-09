@@ -1,0 +1,79 @@
+{
+    "meta": {
+        "/serviceCategoryCode/codeValue": "time",
+        "/eventNameCode/codeValue": "timeOffBalances.modify",
+        "queryCriteria": [
+            {
+                "pattern": "{\"events\": [{\"recordDateTime\": \"2020-01-23T00:00:00Z\",\"effectiveDateTime\": \"2020-01-22T00:00:00Z\",\"data\": {\"eventContext\": {\"workAssignmentID\": \"98794555N\"},\"transform\": {\"effectiveDateTime\": \"2020-01-22T00:00:00Z\",\"notificationIndicator\": true,\"timeOffBalances\": [{\"timeOffPolicyBalances\": [{\"timeOffPolicyCode\": {\"codeValue\": \"139448453947_1\"},\"accrualBalances\": [{\"accrualQuantity\": {\"quantityValue\": 10}}]}],\"modificationTypeCode\": \"ADJUSTMENT\",\"comments\": [{\"textValue\": \"Comments from Marketplace\"}]}]}}}]}",
+                "resourcePaths": [],
+                "excludedResourcePaths": [],
+                "logicalOperators": []
+            }
+        ],
+        "/data/eventContext": {
+            "/workAssignmentID": {
+                "disallow": [],
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "string",
+                "dependencyLinks": []
+            }
+        },
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "disallow": [],
+                    "equals": [],
+                    "greaterThan": [],
+                    "lessThan": [],
+                    "dataType": "string[date]",
+                    "dependencyLinks": []
+                },
+                "/timeOffBalances/timeOffPolicyBalances": {
+                    "sameValueProperties": [],
+                    "uniqueProperties": [],
+                    "dependencyLinks": []
+                },
+                "/timeOffBalances/timeOffPolicyBalances/timeOffPolicyCode/codeValue": {
+                    "optional": false,
+                    "disallow": [],
+                    "equals": [],
+                    "greaterThan": [],
+                    "lessThan": [],
+                    "dataType": "string",
+                    "dependencyLinks": []
+                },
+                "/timeOffBalances/timeOffPolicyBalances/accrualBalances/accrualQuantity/quantityValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "disallow": [],
+                    "equals": [],
+                    "greaterThan": [],
+                    "lessThan": [],
+                    "dataType": "number",
+                    "dependencyLinks": []
+                },
+                "/timeOffBalances/_modificationTypeCode": {
+                    "optional": false,
+                    "disallow": [],
+                    "equals": [],
+                    "greaterThan": [],
+                    "lessThan": [],
+                    "dataType": "string",
+                    "dependencyLinks": []
+                },
+                "/timeOffBalances/comments/textValue": {
+                    "optional": true,
+                    "disallow": [],
+                    "equals": [],
+                    "greaterThan": [],
+                    "lessThan": [],
+                    "dataType": "string",
+                    "dependencyLinks": []
+                }
+            }
+        ]
+    }
+}
