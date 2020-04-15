@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "0c01cfdd-144a-4f19-a576-00f743bd9edb",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "prod",
+			"item": [
+				{
+					"name": "https://api.adp.com/events/staffing/v1/job-requisition.add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {},\r\n        \"transform\": {\r\n          \"eventReasonCode\": {},\r\n          \"eventStatusCode\": {},\r\n          \"effectiveDateTime\": \"2020-01-01T00:00:00Z\",\r\n          \"notificationIndicator\": true,\r\n          \"jobRequisition\": {\r\n            \"requisitionTitle\": \"Test Requisition updated\",\r\n            \"requisitionReasonCode\": {\r\n              \"codeValue\": \"\",\r\n              \"shortName\": \"\",\r\n              \"longName\": \"\"\r\n            },\r\n            \"requisitionPurposeCode\": {\r\n              \"codeValue\": \"\",\r\n              \"shortName\": \"\",\r\n              \"longName\": \"\"\r\n            },\r\n            \"postDate\": \"2020-01-01T00:00:00Z\",\r\n            \"positionQualifications\": {\r\n              \"qualificationSummary\": \"B.E/B.TECH\"\r\n            },\r\n            \"positionTravelRequirement\": \"\",\r\n            \"screeningRequirements\": [],\r\n            \"organizationalUnits\": [\r\n              {\r\n                \"nameCode\": {\r\n                  \"codeValue\": \"Legal\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"\"\r\n                },\r\n                \"typeCode\": {\r\n                  \"codeValue\": \"\",\r\n                 \"shortName\": \"\",\r\n                  \"longName\": \"Division\"\r\n                },\r\n                \"itemID\": \"\"\r\n              },\r\n              {\r\n                \"nameCode\": {\r\n                  \"codeValue\": \"LEG\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"\"\r\n                },\r\n                \"typeCode\": {\r\n                  \"codeValue\": \"\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"Company\"\r\n                },\r\n                \"itemID\": \"\"\r\n              },\r\n              {\r\n              \"nameCode\": {\r\n                  \"codeValue\": \"1234567\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"\"\r\n                },\r\n                \"typeCode\": {\r\n                  \"codeValue\": \"\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"Department\"\r\n                },\r\n                \"itemID\": \"\"\r\n              },\r\n              {\r\n              \"nameCode\": {\r\n                  \"codeValue\": \"PG1\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"\"\r\n                },\r\n                \"typeCode\": {\r\n                  \"codeValue\": \"\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"Pay Group\"\r\n                },\r\n                \"itemID\": \"\"\r\n              },\r\n              {\r\n              \"nameCode\": {\r\n                  \"codeValue\": \"NFL12345\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"\"\r\n                },\r\n                \"typeCode\": {\r\n                  \"codeValue\": \"\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"Pay Group Department\"\r\n                },\r\n                \"itemID\": \"\"\r\n              }\r\n            ],\r\n            \"standardHours\": {\r\n              \"weeklyHoursQuantity\": 40.0\r\n            },\r\n            \"payScaleCode\": {\r\n              \"codeValue\": \"120\",\r\n              \"shortName\": \"\",\r\n              \"longName\": \"\"\r\n            },\r\n            \"payGradeCode\": {\r\n              \"codeValue\": \"NFL1A\",\r\n              \"shortName\": \"\",\r\n              \"longName\": \"\"\r\n            },\r\n            \"payGradeStepCode\": {\r\n              \"codeValue\": \"\",\r\n              \"shortName\": \"\",\r\n              \"longName\": \"\"\r\n            },\r\n            \"payGradeRange\": {\r\n                \"minimumRate\": {\r\n                    \"amountValue\": 10000.0,\r\n                    \"baseUnitCode\": {\r\n                        \"codeValue\": \"00001000\",\r\n                        \"shortName\": \"year\"\r\n                    }\r\n                },\r\n                \"medianRate\": {\r\n                    \"amountValue\": 505000.0,\r\n                    \"baseUnitCode\": {\r\n                        \"codeValue\": \"00001000\",\r\n                        \"shortName\": \"year\"\r\n                    }\r\n                },\r\n                \"maximumRate\": {\r\n                    \"amountValue\": 1000000.0,\r\n                    \"baseUnitCode\": {\r\n                        \"codeValue\": \"00001000\",\r\n                        \"shortName\": \"year\"\r\n                    }\r\n                }\r\n            },\r\n            \"bonusEligibleIndicator\": true,\r\n            \"remunerationBasisCode\": {\r\n              \"codeValue\": \"00001000\",\r\n              \"shortName\": \"\",\r\n              \"longName\": \"\"\r\n            },\r\n            \"workLevelCode\": {\r\n              \"codeValue\": \"00002000\"\r\n            },\r\n            \"workerTypeCode\": {\r\n              \"codeValue\": \"R\"\r\n            },\r\n            \"paidRelocationCode\": {\r\n              \"codeValue\": \"\",\r\n              \"shortName\": \"\",\r\n              \"longName\": \"\"\r\n            },\r\n            \"openingsQuantity\": 10,\r\n            \"openingsFilledQuantity\": 0,\r\n            \"sponsorVisaIndicator\": true,\r\n            \"sponsoredVisaTypeCodes\": [],\r\n            \"laborUnionIndicator\": true,\r\n            \"customFieldGroup\": {\r\n              \"amountFields\": [],\r\n              \"codeFields\": [],\r\n              \"dateFields\": [],\r\n              \"dateTimeFields\": [],\r\n              \"indicatorFields\": [],\r\n              \"numberFields\": [],\r\n              \"percentFields\": [],\r\n              \"stringFields\": [\r\n                {\r\n                  \"nameCode\": {\r\n                    \"codeValue\": \"hmName\"\r\n                  },\r\n                  \"stringValue\": \"Alex Perry\"\r\n                },\r\n                {\r\n                  \"nameCode\": {\r\n                    \"codeValue\": \"hmEmail\"\r\n                  },\r\n                  \"stringValue\": \"alex.perry@gmail1.com\"\r\n                },\r\n                {\r\n                  \"nameCode\": {\r\n                    \"codeValue\": \"hrbpName\"\r\n                  },\r\n                  \"stringValue\": \"John Patricia\"\r\n                },\r\n                {\r\n                  \"nameCode\": {\r\n                    \"codeValue\": \"hrbpEmail\"\r\n                  },\r\n                  \"stringValue\": \"John.Patricia@gmail1.com\"\r\n                },\r\n                {\r\n                  \"nameCode\": {\r\n                    \"codeValue\": \"raName\"\r\n                  },\r\n                  \"stringValue\": \"James Mary\"\r\n                },\r\n                {\r\n                  \"nameCode\": {\r\n                    \"codeValue\": \"raEmail\"\r\n                  },\r\n                  \"stringValue\": \"James.mary@gmail1.com\"\r\n                }\r\n              ],\r\n              \"telephoneFields\": [],\r\n              \"links\": []\r\n            },\r\n            \"clientRequisitionID\": \"sush8Apr\",\r\n            \"requisitionStatusCode\": {\r\n              \"codeValue\": \"\",\r\n              \"shortName\": \"\",\r\n              \"longName\": \"\"\r\n            },\r\n            \"requisitionDescription\": \"testing req creation\",\r\n            \"job\": {\r\n              \"jobCode\": {\r\n                \"codeValue\": \"\",\r\n                \"shortName\": \"\",\r\n                \"longName\": \"\"\r\n              },\r\n              \"jobTitle\": \"\",\r\n              \"jobFamilies\": [],\r\n              \"jobResponsibilities\": [],\r\n              \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                  \"codeValue\": \"\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"\"\r\n                },\r\n                \"coverageCode\": {\r\n                  \"codeValue\": \"\",\r\n                  \"shortName\": \"\",\r\n                  \"longName\": \"\"\r\n                }\r\n              },\r\n              \"occupationalClassifications\": [],\r\n              \"links\": []\r\n            },\r\n            \"position\": {\r\n              \"positionTitle\": \"Req Position\",\r\n              \"positionCode\": {\r\n                \"codeValue\": \"\"\r\n              }\r\n            },\r\n            \"requisitionLocations\": [\r\n              {\r\n                \"aliasNames\": [],\r\n                \"nameCode\": {\r\n                  \"codeValue\": \"\"\r\n                },\r\n                \"address\": {\r\n                  \"countrySubdivisionLevel1\": {\r\n                    \"codeValue\": \"AL\",\r\n                    \"subdivisionType\": \"\"\r\n                  },\r\n                  \"countryCode\": \"USA\",\r\n                  \"postalCode\": \"10001\"\r\n                },\r\n                \"primaryIndicator\": true,\r\n                \"postingIndicator\": true\r\n              }\r\n            ]\r\n          }\r\n        }\r\n      }\r\n    }\r\n   ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/job-requisition.add",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-requisition.add"
+							]
+						},
+						"description": "job-requisition.add Collection"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
