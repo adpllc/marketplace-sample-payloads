@@ -1,0 +1,135 @@
+{
+    "payDistributions": [
+        {
+            "itemID": "26849471_194831",
+            "requestedStartDate": "2020-04-15",
+            "distributionStatusCode": {
+                "codeValue": "A",
+                "shortName": "Active"
+            },
+            "distributionInstructions": [
+                {
+                    "itemID": "169748826494_1",
+                    "prenoteIndicator": false,
+                    "bonusOnlyIndicator": false,
+                    "instructionStatusCode": {
+                        "codeValue": "A",
+                        "shortName": "Active"
+                    },
+                    "depositAccount": {
+                        "financialParty": {
+                            "routingTransitID": {
+                                "idValue": "823456789"
+                            }
+                        },
+                        "financialAccount": {
+                            "accountNumber": "123456778",
+                            "typeCode": {
+                                "codeValue": "Z",
+                                "shortName": "Z"
+                            }
+                        }
+                    },
+                    "distributionAmount": {
+                        "amountValue": 1000.0
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "operationID": "worker.payDistribution.change",
+                    "canonicalUri": "/payroll/payrollManagement/payrollInstructionManagement/payDistributionManagement/worker.payDistribution.change",
+                    "actionTypeCode": "callback",
+                    "confirmationRequiredIndicator": true,
+                    "defaultIndicator": false,
+                    "attestation": {
+                        "actionBlockIndicator": true,
+                        "messageTxt": "By selecting this check box and clicking Done, you have agreed to the following statement: I authorize ADP, LLC and the specified bank to deposit my net pay or portion thereof, as indicated, into my account each pay date. If funds to which I am not entitled are deposited into my account, I authorize ADP, LLC to direct the bank to return said funds to ADP, LLC. I understand that my deposit may not be credited to my account until 5:00 PM on the pay date indicated on the check voucher. I understand that it is my responsibility to ensure that my wages are being deposited correctly into my account each pay date."
+                    },
+                    "links": [
+                        {
+                            "href": "/events/payroll/v1/worker.pay-distribution.change",
+                            "rel": "/adp/invoke",
+                            "title": "Update Pay Distribution",
+                            "method": "POST"
+                        }
+                    ]
+                }
+            ],
+            "payrollGroupCode": {
+                "codeValue": "938",
+                "shortName": "938"
+            },
+            "payrollFileNumber": "9669"
+        },
+        {
+            "itemID": "37077846_1009",
+            "requestedStartDate": "2020-04-15",
+            "distributionStatusCode": {
+                "codeValue": "A",
+                "shortName": "Active"
+            },
+            "distributionInstructions": [
+                {
+                    "itemID": "169748826500_1",
+                    "prenoteIndicator": false,
+                    "bonusOnlyIndicator": false,
+                    "prenote": {
+                        "prenoteOptionCode": {
+                            "codeValue": "D"
+                        },
+                        "prenoteDate": null,
+                        "prenoteDescription": "D - Company Default Date"
+                    },
+                    "instructionStatusCode": {
+                        "codeValue": "A",
+                        "shortName": "Active"
+                    },
+                    "depositAccount": {
+                        "financialParty": {
+                            "routingTransitID": {
+                                "idValue": "823456789"
+                            }
+                        },
+                        "financialAccount": {
+                            "accountNumber": "123456778",
+                            "typeCode": {
+                                "codeValue": "Y",
+                                "shortName": "Y"
+                            }
+                        }
+                    },
+                    "distributionAmount": {
+                        "amountValue": 200.0
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "operationID": "worker.payDistribution.change",
+                    "canonicalUri": "/payroll/payrollManagement/payrollInstructionManagement/payDistributionManagement/worker.payDistribution.change",
+                    "actionTypeCode": "callback",
+                    "confirmationRequiredIndicator": true,
+                    "defaultIndicator": false,
+                    "attestation": {
+                        "actionBlockIndicator": true,
+                        "messageTxt": "By selecting this check box and clicking Done, you have agreed to the following statement: I authorize ADP, LLC and the specified bank to deposit my net pay or portion thereof, as indicated, into my account each pay date. If funds to which I am not entitled are deposited into my account, I authorize ADP, LLC to direct the bank to return said funds to ADP, LLC. I understand that my deposit may not be credited to my account until 5:00 PM on the pay date indicated on the check voucher. I understand that it is my responsibility to ensure that my wages are being deposited correctly into my account each pay date."
+                    },
+                    "links": [
+                        {
+                            "href": "/events/payroll/v1/worker.pay-distribution.change",
+                            "rel": "/adp/invoke",
+                            "title": "Update Pay Distribution",
+                            "method": "POST"
+                        }
+                    ]
+                }
+            ],
+            "payrollGroupCode": {
+                "codeValue": "938",
+                "shortName": "938"
+            },
+            "payrollFileNumber": "4567"
+        }
+    ]
+}
