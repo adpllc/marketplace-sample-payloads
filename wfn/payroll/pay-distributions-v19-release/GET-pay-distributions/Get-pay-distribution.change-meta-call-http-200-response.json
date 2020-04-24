@@ -24,14 +24,14 @@
             {
                 "/effectiveDateTime": {
                     "readOnly": false,
-                    "optional": true,
+                    "optional": false,
                     "hidden": false,
                     "shortLabelName": "Effective On",
                     "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
                 },
                 "/payDistribution": {
                     "readOnly": false,
-                    "optional": true
+                    "optional": false
                 },
                 "/payDistribution/distributionInstructions": {
                     "minItems": 0,
@@ -52,7 +52,7 @@
                         ]
                     },
                     "readOnly": false,
-                    "optional": true
+                    "optional": false
                 },
                 "/payDistribution/distributionInstructions/precedenceCode/codeValue": {
                     "readOnly": false,
@@ -69,7 +69,7 @@
                     "hidden": false,
                     "shortLabelName": "Bonus"
                 },
-                "/payDistribution/distributionInstructions/prenoteCode": {
+                "/payDistribution/distributionInstructions/prenote/prenoteOptionCode": {
                     "codeList": {
                         "codeListTitle": "Prenote Codes",
                         "listItems": [
@@ -89,15 +89,15 @@
                         ]
                     },
                     "readOnly": false,
-                    "optional": true
+                    "optional": false
                 },
                 "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID": {
                     "readOnly": false,
-                    "optional": true
+                    "optional": false
                 },
                 "/payDistribution/distributionInstructions/depositAccount/financialParty/routingTransitID/idValue": {
                     "readOnly": false,
-                    "optional": true,
+                    "optional": false,
                     "hidden": false,
                     "shortLabelName": "Transit ABA Number",
                     "minLength": 0,
@@ -106,11 +106,11 @@
                 },
                 "/payDistribution/distributionInstructions/depositAccount/financialAccount": {
                     "readOnly": false,
-                    "optional": true
+                    "optional": false
                 },
                 "/payDistribution/distributionInstructions/depositAccount/financialAccount/accountNumber": {
                     "readOnly": false,
-                    "optional": true,
+                    "optional": false,
                     "hidden": false,
                     "longLabelName": "Bank Deposit Account Number",
                     "minLength": 0,
@@ -122,33 +122,52 @@
                         "codeListTitle": "Deposit Type",
                         "listItems": [
                             {
+                                "foreignKey": "938",
                                 "codeValue": "K",
                                 "shortName": "Savings"
                             },
                             {
+                                "foreignKey": "938",
                                 "codeValue": "W",
                                 "shortName": "CHECKING"
                             },
                             {
+                                "foreignKey": "938",
                                 "codeValue": "X",
                                 "shortName": "CHECKING"
                             },
                             {
+                                "foreignKey": "938",
                                 "codeValue": "Y",
                                 "shortName": "SAVINGS"
                             },
                             {
+                                "foreignKey": "938",
                                 "codeValue": "Z",
                                 "shortName": "SAVINGS"
+                            }
+                        ],
+                        "links": [
+                            {
+                                "href": "/payroll/v3/deduction-configurations/?$filter=companyCode eq '{foreignKey}' and category eq 'Direct Deposit'",
+                                "rel": "/adp/codelist",
+                                "title": "Deduction Configuration Code List",
+                                "method": "GET",
+                                "payLoadArguments": [
+                                    {
+                                        "argumentPath": "foreignKey",
+                                        "argumentValue": "companyCode"
+                                    }
+                                ]
                             }
                         ]
                     },
                     "readOnly": false,
-                    "optional": true
+                    "optional": false
                 },
                 "/payDistribution/distributionInstructions/depositAccount/financialAccount/typeCode/codeValue": {
                     "readOnly": false,
-                    "optional": true,
+                    "optional": false,
                     "hidden": false,
                     "shortLabelName": "Deposit Type"
                 },
@@ -171,7 +190,7 @@
                 },
                 "/payDistribution/distributionInstructions/remainingBalanceIndicator": {
                     "readOnly": false,
-                    "optional": true
+                    "optional": false
                 },
                 "/payDistribution/distributionInstructions/itemID": {
                     "readOnly": false,
