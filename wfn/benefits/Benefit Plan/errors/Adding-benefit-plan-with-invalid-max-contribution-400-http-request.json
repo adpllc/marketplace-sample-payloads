@@ -1,0 +1,54 @@
+{
+    "id": {
+        "value": "202041612"
+    },
+    "alternateId": {
+        "value": "2020416"
+    },
+    "legalPlanName": "FSA Plan 3 ",
+    "providerId": {
+        "value": "DBI"
+    },
+    "productCode": "MedicalFSA",
+    "effectivePeriod": {
+        "validFrom": "2020-01-01"
+    },
+    "originalEffectiveDate": "2020-01-01",
+    "planAnniversary": "1/1",
+    "waitingRuleType": [
+        {
+            "rollForwardIndicator": true,
+            "ruleValue": 2,
+            "waitingRuleEventCode": "NewHire",
+            "waitingRuleTypeCode": "FirstOfMonthAfterXMonths"
+        },
+        {
+            "rollForwardIndicator": true,
+            "ruleValue": 0,
+            "waitingRuleEventCode": "WorkEvent",
+            "waitingRuleTypeCode": "HireDate"
+        }
+    ],
+    "accountBasedPlanSetupType": {
+        "accountBasedCoverageLevels": [
+            {
+                "employerContributionType": {
+                    "contributionAmount": {
+                        "currency": "USD",
+                        "value": 2000
+                    },
+                    "contributionType": "Flat"
+                },
+                "maximumContribution": {
+                    "currency": "USD",
+                    "value": 3000
+                },
+                "minimumContribution": {
+                    "currency": "USD",
+                    "value": 0
+                },
+                "coverageLevelType": "Employee"
+            }
+        ]
+    }
+}
