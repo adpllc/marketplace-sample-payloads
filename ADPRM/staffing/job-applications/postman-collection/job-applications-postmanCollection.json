@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "21477fc5-4a3b-4d27-8d3e-e01deb7c1c03",
+		"name": "Applications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Job applications - ALL - GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://recruiting-iat.adp.com/staffing/v2/job-applications?$select=applicant",
+					"protocol": "https",
+					"host": [
+						"recruiting-iat",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v2",
+						"job-applications"
+					],
+					"query": [
+						{
+							"key": "$select",
+							"value": "applicant"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Job applications - FILTER - GET",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://recruiting-iat.adp.com/staffing/v2/job-applications?$filter=((status eq '99900042_00031200'))",
+					"protocol": "https",
+					"host": [
+						"recruiting-iat",
+						"adp",
+						"com"
+					],
+					"path": [
+						"staffing",
+						"v2",
+						"job-applications"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "((status eq '99900042_00031200'))"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Job application - SUBMIT",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "sm_transactionid",
+						"type": "text",
+						"value": "reques12"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"events\":[\n      {\n         \"data\":{\n            \"transform\":{\n               \"jobApplication\":{\n                  \"applicationContentLinks\":[\n                     {\n                        \"contentNameCode\":{\n                           \"codeValue\":\"Recruiter Chatbot conversation\"\n                        },\n                        \"href\":\"https://www.someapp.com/blog-posts/job-applications-are-dead-long-live-conversations\",\n                        \"rel\":\"/adp/externalLink\",\n                        \"title\":\"Recruiter Chatbot conversation\"\n                     }\n                  ],\n                  \"sourceCategoryCode\":{\n                     \"codeValue\":\"3\",\n                     \"shortName\":\"\",\n                     \"longName\":\"\"\n                  },\n                  \"referralSourceCode\":{\n                     \"codeValue\":\"CB\",\n                     \"shortName\":\"\",\n                     \"longName\":\"\"\n                  },\n                  \"applicant\":{\n                     \"person\":{\n                        \"communication\":{\n                           \"emails\":[\n                              {\n                                 \"emailUri\":\"FITTEST_NormalIn@gmail.com\"\n                              }\n                           ]\n                        },\n                        \"personName\":{\n                           \"givenName\":\"FITTEST_NormalIn\",\n                           \"familyName1\":\"SourceFields\"\n                        }\n                     },\n                     \"employmentHistory\":[\n                        {\n                           \"employerAddress\":{\n                              \"lineOne\":\"100 deer trail\",\n                              \"cityName\":\"Atlanta\",\n                              \"countryCode\":\"USA\",\n                              \"countrySubdivisionLevel1\":{\n                                 \"codeValue\":\"GA\"\n                              },\n                              \"postalCode\":\"30330\"\n                           },\n                           \"employmentStartDate\":\"1990-10-13\",\n                           \"employmentEndDate\":\"1999-11-13\",\n                           \"employerName\":\"Employer11\",\n                           \"currentEmployerIndicator\":true,\n                           \"employerCommunication\":{\n                              \"landlines\":[\n                                 {\n                                    \"formattedNumber\":\"395-938-2941\"\n                                 }\n                              ]\n                           },\n                           \"positionHistory\":[\n                              {\n                                 \"reasonForLeaving\":\"SOME REASON\",\n                                 \"responsibilities\":[\n                                    {\n                                       \"responsibilityDescription\":\"responsibilities\"\n                                    }\n                                 ],\n                                 \"positionTitle\":\"positionTitle2\",\n                                 \"reportsToName\":{\n                                    \"formattedName\":\"formattedName\"\n                                 },\n                                 \"startingPayRate\":{\n                                    \"annualRateAmount\":{\n                                       \"amountValue\":13456\n                                    }\n                                 },\n                                 \"endingPayRate\":null\n                              }\n                           ]\n                        },\n                        {\n                           \"employerAddress\":{\n                              \"lineOne\":\"100 deer trail\",\n                              \"cityName\":\"Atlanta\",\n                              \"countryCode\":\"USA\",\n                              \"countrySubdivisionLevel1\":{\n                                 \"codeValue\":\"GA\"\n                              },\n                              \"postalCode\":\"\"\n                           },\n                           \"employmentStartDate\":\"1990-12-13\",\n                           \"employmentEndDate\":\"1999-12-13\",\n                           \"employerName\":\"Employer2\",\n                           \"currentEmployerIndicator\":false,\n                           \"employerCommunication\":{\n                              \"landlines\":[\n                                 {\n                                    \"formattedNumber\":\"395-938-2939\"\n                                 }\n                              ]\n                           },\n                           \"positionHistory\":[\n                              {\n                                 \"reasonForLeaving\":\"\",\n                                 \"responsibilities\":[\n\n                                 ],\n                                 \"positionTitle\":\"positionTitle\",\n                                 \"reportsToName\":{\n                                    \"formattedName\":\"formattedName\"\n                                 },\n                                 \"startingPayRate\":null,\n                                 \"endingPayRate\":null\n                              }\n                           ]\n                        }\n                     ],\n                     \"educationalDegrees\":[\n                        {\n                           \"actualCompletionDate\":\"2011-11-11\",\n                           \"issueDate\":\"2011-12-08\",\n                           \"startDate\":\"2009-12-07\",\n                           \"academicCreditsCompleted\":\" \",\n                           \"degreeIssuedIndicator\":true,\n                           \"typeCode\":{\n                              \"codeValue\":\"I\"\n                           },\n                           \"majorProgramNameCodes\":[\n                              {\n                                 \"longName\":\"Master of Technology\"\n                              }\n                           ],\n                           \"educationalInstitution\":{\n                              \"nameCode\":{\n                                 \"longName\":\"Univ of North Georgia\"\n                              },\n                              \"address\":{\n                                 \"lineOne\":\"100 Deer Trail\",\n                                 \"cityName\":\"Cumming\",\n                                 \"postalCode\":\"30041\",\n                                 \"countryCode\":\"USA\",\n                                 \"countrySubdivisionLevel1\":{\n                                    \"codeValue\":\"GA\"\n                                 }\n                              }\n                           }\n                        },\n                        {\n                           \"actualCompletionDate\":\"2000-12-08\",\n                           \"issueDate\":\"2000-12-08\",\n                           \"startDate\":\"1990-12-07\",\n                           \"academicCreditsCompleted\":\" \",\n                           \"degreeIssuedIndicator\":true,\n                           \"typeCode\":{\n                              \"codeValue\":\"I\"\n                           },\n                           \"majorProgramNameCodes\":[\n                              {\n                                 \"longName\":\"Mechanical Engineering\"\n                              }\n                           ],\n                           \"educationalInstitution\":{\n                              \"nameCode\":{\n                                 \"longName\":\"Georiga Tech\"\n                              },\n                              \"address\":{\n                                 \"lineOne\":\"100 Deer Trail\",\n                                 \"cityName\":\"Atlanta\",\n                                 \"postalCode\":\"30004\",\n                                 \"countryCode\":\"USA\",\n                                 \"countrySubdivisionLevel1\":{\n                                    \"codeValue\":\"GA\"\n                                 }\n                              }\n                           }\n                        }\n                     ]\n                  },\n                  \"appliedLocations\":[\n                     {\n                        \"nameCode\":{\n                           \"codeValue\":\"85\"\n                        }\n                     }\n                  ]\n               }\n            },\n            \"eventContext\":{\n               \"requisitionID\":\"2000004127506\"\n            }\n         }\n      }\n   ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://recruiting-iat.adp.com/events/staffing/v1/job-application.submit",
+					"protocol": "http",
+					"host": [
+						"recruiting-iat",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"staffing",
+						"v1",
+						"job-application.submit"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

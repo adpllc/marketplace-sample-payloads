@@ -1,0 +1,57 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"	
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usTaxProfile": {
+                        "usFederalTaxInstruction": {
+						    "additionalStatutoryInputs":[
+                            	{
+                            		"formatCode": "PRE2020"
+                            	}
+                            	],
+                            "federalIncomeTaxInstruction": {
+                                "taxFilingStatusCode": {
+                                    "longName": "Married",
+                                    "codeValue": "X",
+                                    "shortName": "Married"
+                                },
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "longName": "Exempt from withholding",
+                                        "codeValue": "1",
+                                        "shortName": "Exempt"
+                                    }
+                                },
+                                "taxWithholdingAllowanceQuantity": 8,
+                                "overrideTaxPercentage": 4
+                            },
+                            "socialSecurityTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "X"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+            }
+        }
+    ]
+}

@@ -1,39 +1,39 @@
 {
-    "confirmMessageID": {
-        "idValue": "8f9893c3-a117-47f0-b40c-e970ff997132",
-        "schemeName": "confirmMessageID",
-        "schemeAgencyName": "RUN"
-    },
-    "createDateTime": "2019-08-20T08:55:53.5399086-04:00",
-    "requestReceiptDateTime": "2019-08-20T08:55:53.5399086-04:00",
-    "protocolStatusCode": {
-        "codeValue": "400"
-    },
-    "requestStatusCode": {
+  "confirmMessageID": {
+    "idValue": "338c7a7d-c25d-4b3f-9db1-8e235147a4d3",
+    "schemeName": "confirmMessageID",
+    "schemeAgencyName": "RUN"
+  },
+  "createDateTime": "2020-03-31T04:33:31.0212859-05:00",
+  "requestReceiptDateTime": "2020-03-31T04:33:31.0212859-05:00",
+  "protocolStatusCode": {
+    "codeValue": "400"
+  },
+  "requestStatusCode": {
+    "codeValue": "Failed"
+  },
+  "requestMethodCode": {
+    "codeValue": "POST"
+  },
+  "requestLink": {
+    "href": "http://essapi.iat.es.oneadp.com:8241/runessmobileapi/events/payroll/v1/us-tax-profile.federal-income-tax-instruction.change",
+    "method": "POST"
+  },
+  "processMessages": [
+    {
+      "messageTypeCode": {
+        "codeValue": "Error"
+      },
+      "userMessage": {
+        "messageTxt": "Invalid Post Payload - Either Amount or Percentage value should be set for Additional Tax / Override Tax Amounts but not both. When setting amount or percentage for Additional Tax do not set them for Override Tax and vice - versa"
+      }
+    }
+  ],
+  "resourceMessages": [
+    {
+      "resourceStatusCode": {
         "codeValue": "Failed"
-    },
-    "requestMethodCode": {
-        "codeValue": "POST"
-    },
-    "requestLink": {
-        "href": "{{href}}",
-        "method": "POST"
-    },
-    "processMessages": [
-        {
-            "messageTypeCode": {
-                "codeValue": "Error"
-            },
-            "userMessage": {
-                "messageTxt": "Invalid Post Payload - Cannot have two Amount or two Percentage values"
-            }
-        }
-    ],
-    "resourceMessages": [
-        {
-            "resourceStatusCode": {
-                "codeValue": "Failed"
-            }
-        }
-    ]
+      }
+    }
+  ]
 }

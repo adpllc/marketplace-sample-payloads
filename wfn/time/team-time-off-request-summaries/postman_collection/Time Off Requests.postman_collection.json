@@ -1,0 +1,1744 @@
+{
+	"info": {
+		"_postman_id": "c9425c4e-2f2f-46e9-a36a-76ff8127c27a",
+		"name": "Time Off Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "time of request - details",
+			"item": [
+				{
+					"name": "Get time requests",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v2/workers/G3E82PE9GT1QM4MP/time-off-details/time-off-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v2",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-details",
+								"time-off-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get time requests ItemID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v2/workers/G3E82PE9GT1QM4MP/time-off-details/time-off-requests/169740236408_1",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v2",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-details",
+								"time-off-requests",
+								"169740236408_1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "415 Unsupported media type",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v2/workers/G3E82PE9GT1QM4MP/time-off-requests/169740236408_1",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v2",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-requests",
+								"169740236408_1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "time of request - summaries",
+			"item": [
+				{
+					"name": "200 Requests summaries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G54W43CMG9R99S8W/time-off-request-summaries?$filter=requestStartdate eq 2019-04-06 and requestEndDate eq 2020-04-06",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G54W43CMG9R99S8W",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-04-06 and requestEndDate eq 2020-04-06"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries with requestorName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01 and requestorName\neq Anthony",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01 and requestorName\neq Anthony"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries with Odata skip and top",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01 and requestorName\neq Anthony &$skip=1&$top=20",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01 and requestorName\neq Anthony "
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy requestorName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=requestorName asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "requestorName asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy positionID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=positionId asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "positionId asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy pendingRequestQuantity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=pendingRequestQuantity asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "pendingRequestQuantity asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy approvedRequestQuantity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=approvedRequestQuantity asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "approvedRequestQuantity asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy DeniedRequestQuantity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=DeniedRequestQuantity asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "DeniedRequestQuantity asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Requests summaries without start and end date filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Requests summaries Invalid associate ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/sdfsf/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"sdfsf",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Invalid requestorName filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01 and requestor\neq Anthony",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01 and requestor\neq Anthony"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Invalid orderBy filter value",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=requestorName ertert",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "requestorName ertert"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "team time of request - summaries B2C",
+			"item": [
+				{
+					"name": "200 Requests summaries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2020-04-27 and requestEndDate eq 2020-04-27",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2020-04-27 and requestEndDate eq 2020-04-27"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries with requestorName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2021-01-01 and requestorName\neq TERE J.K",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2021-01-01 and requestorName\neq TERE J.K"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries with Odata skip and top",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken_B2C}}"
+							},
+							{
+								"key": "rolecode",
+								"type": "text",
+								"value": "manager"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy requestorName",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=requestorName asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "requestorName asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy positionID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=positionId asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "positionId asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy pendingRequestQuantity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=pendingRequestQuantity asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "pendingRequestQuantity asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy approvedRequestQuantity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=approvedRequestQuantity asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "approvedRequestQuantity asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 Requests summaries Odata OrderBy DeniedRequestQuantity",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=DeniedRequestQuantity asc",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "DeniedRequestQuantity asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Requests summaries without start and end date filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Requests summaries Invalid associate ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/sdfsf/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"sdfsf",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Invalid requestorName filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01 and requestor\neq Anthony",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01 and requestor\neq Anthony"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400 Invalid orderBy filter value",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken_B2C}}"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v3/workers/G3E82PE9GT1QM4MP/team-time-off-request-summaries?$filter=requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01&$skip=1&$top=20&$orderby=requestorName ertert",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G3E82PE9GT1QM4MP",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate eq 2019-01-01 and requestEndDate eq 2020-01-01"
+								},
+								{
+									"key": "$skip",
+									"value": "1"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "requestorName ertert"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://apimpiat.gslb.es.oneadp.com/time/v3/workers/G31NEXME9GRMYXN2/team-time-off-request-summaries?$filter=requestStartdate%20eq%202010-01-01%20and%20requestEndDate%20eq%202040-01-01%20and%20includeindirectReports%20eq%20false%20&$skip=0&$top=20&$orderby=requestorName%20asc <http://apimpiat.gslb.es.oneadp.com/time/v3/workers/G31NEXME9GRMYXN2/team-time-off-request-summaries?$filter=requestStartdate%20eq%202010-01-01%20and%20requestEndDate%20eq%202040-01-01%20and%20includeindirectReports%20eq%20false%20&$skip=0&$top=20&$orderby=requestorName%20asc> ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "orgoid",
+								"value": "G3E82PE9GT1QPMA4"
+							},
+							{
+								"key": "associateoid",
+								"value": "G31NEXME9GRMYXN2"
+							},
+							{
+								"key": "roleCode",
+								"value": "manager"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "realm",
+								"value": "ISI"
+							},
+							{
+								"key": "sm_user",
+								"value": "test"
+							},
+							{
+								"key": "sm_userdn",
+								"value": "testdata"
+							},
+							{
+								"key": "sm_transactionid",
+								"value": "tesderyjdgyueijhyuejjdgyeuehd"
+							},
+							{
+								"key": "force-reload",
+								"value": "true"
+							},
+							{
+								"key": "Cookie",
+								"value": "BCSI-CS-fc4a7dce92e94619=2; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000"
+							}
+						],
+						"url": {
+							"raw": "http://apimpiat.gslb.es.oneadp.com/time/v3/workers/G31NEXME9GRMYXN2/team-time-off-request-summaries?$filter=requestStartdate%20eq%202010-01-01%20and%20requestEndDate%20eq%202040-01-01%20and%20includeindirectReports%20eq%20false%20&$skip=0&$top=20&$orderby=requestorName%20asc",
+							"protocol": "http",
+							"host": [
+								"apimpiat",
+								"gslb",
+								"es",
+								"oneadp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v3",
+								"workers",
+								"G31NEXME9GRMYXN2",
+								"team-time-off-request-summaries"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requestStartdate%20eq%202010-01-01%20and%20requestEndDate%20eq%202040-01-01%20and%20includeindirectReports%20eq%20false%20"
+								},
+								{
+									"key": "$skip",
+									"value": "0"
+								},
+								{
+									"key": "$top",
+									"value": "20"
+								},
+								{
+									"key": "$orderby",
+									"value": "requestorName%20asc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "event notification",
+			"item": [
+				{
+					"name": "Get Notification",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "87dc4219-c304-41bb-b945-0e9601787aaf",
+								"exec": [
+									"let msgID = postman.getResponseHeader(\"adp-msg-msgid\") ;",
+									"console.log (msgID)",
+									"pm.globals.set(\"adp-msg-msgid\", msgID);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/core/v1/event-notification-messages",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"core",
+								"v1",
+								"event-notification-messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete notification",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-accounts.adp.com/core/v1/event-notification-messages/{{adp-msg-msgid}}",
+							"protocol": "https",
+							"host": [
+								"iat-accounts",
+								"adp",
+								"com"
+							],
+							"path": [
+								"core",
+								"v1",
+								"event-notification-messages",
+								"{{adp-msg-msgid}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "B2B token",
+			"item": [
+				{
+					"name": "POST ACCESS TOKEN CALL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+								"exec": [
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let access_token = jsonData.access_token",
+									"console.log (access_token)",
+									"pm.globals.set(\"accessToken\", access_token);",
+									"",
+									"// status code is 200",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST ACCESS TOKEN CALL PROD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+								"exec": [
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let access_token = jsonData.access_token",
+									"console.log (access_token)",
+									"pm.globals.set(\"accessToken\", access_token);",
+									"",
+									"// status code is 200",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "0f08a767-a064-4b23-809b-5ac4250eb995",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "f8a62489-822d-46c0-8ae5-8f1527272e18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "B2C token",
+			"item": [
+				{
+					"name": "Session call",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/authorize?response_type=code&client_id=0f7f8b7b-e20e-4983-ab0e-35c3b7b1f1b1&redirect_uri=http://mkplproxy-iat.gslb.es.oneadp.com/consent-manager/&scope=openid%20api%20profile",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"authorize"
+							],
+							"query": [
+								{
+									"key": "response_type",
+									"value": "code"
+								},
+								{
+									"key": "client_id",
+									"value": "0f7f8b7b-e20e-4983-ab0e-35c3b7b1f1b1"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://mkplproxy-iat.gslb.es.oneadp.com/consent-manager/"
+								},
+								{
+									"key": "scope",
+									"value": "openid%20api%20profile"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SM Session call",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "sessionID",
+									"value": "694ea4bd-3fa5-4169-b894-5fde403a383a",
+									"type": "text"
+								},
+								{
+									"key": "action",
+									"value": "Login",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "ABauana@iattam1",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "adpadp03",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/authorize/consent",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"authorize",
+								"consent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token call",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ce40c2af-0b8f-4c3a-8aff-3d815090f592",
+								"exec": [
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let access_token = jsonData.access_token",
+									"console.log (access_token)",
+									"pm.globals.set(\"accessToken_B2C\", access_token);",
+									"",
+									"// status code is 200",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "client_id",
+									"value": "0f7f8b7b-e20e-4983-ab0e-35c3b7b1f1b1",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "b7c5e71d-989b-4876-bd6f-798cabb7e39b",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "78160df6-6e2d-4ef6-9e26-95b0d2dad01e",
+									"type": "text"
+								},
+								{
+									"key": "redirect_uri",
+									"value": "http://mkplproxy-iat.gslb.es.oneadp.com/consent-manager/",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "openid%20api%20profile",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "grant_type",
+									"value": "authorization_code",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "worker call",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "078dba1e-a6b0-451d-8dcb-ed81f614d8b2",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

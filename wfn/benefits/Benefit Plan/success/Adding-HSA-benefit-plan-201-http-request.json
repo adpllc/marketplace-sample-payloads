@@ -1,0 +1,73 @@
+{
+    "id": {
+        "value": "20204161"
+    },
+    "alternateId": {
+        "value": "20204161"
+    },
+    "legalPlanName": "HSA Plan ",
+    "providerId": {
+        "value": "DBI"
+    },
+    "productCode": "HSA",
+    "effectivePeriod": {
+        "validFrom": "2020-01-01"
+    },
+    "originalEffectiveDate": "2020-01-01",
+    "planAnniversary": "1/1",
+    "waitingRuleType": [
+        {
+            "rollForwardIndicator": true,
+            "ruleValue": 2,
+            "waitingRuleEventCode": "NewHire",
+            "waitingRuleTypeCode": "FirstOfMonthAfterXMonths"
+        },
+        {
+            "rollForwardIndicator": true,
+            "ruleValue": 0,
+            "waitingRuleEventCode": "WorkEvent",
+            "waitingRuleTypeCode": "HireDate"
+        }
+    ],
+    "accountBasedPlanSetupType": {
+        "accountBasedCoverageLevels": [
+            {
+                "employerContributionType": {
+                    "contributionAmount": {
+                        "currency": "USD",
+                        "value": 20
+                    },
+                    "contributionType": "Flat"
+                },
+                "maximumContribution": {
+                    "currency": "USD",
+                    "value": 25
+                },
+                "minimumContribution": {
+                    "currency": "USD",
+                    "value": 0
+                },
+                "coverageLevelType": "Employee"
+            },
+            {
+            "employerContributionType": {
+                "contributionAmount": {
+                    "currency": "USD",
+                    "value": 4000
+                },
+                "contributionType": "Flat"
+            },
+            "maximumContribution": {
+                "currency": "USD",
+                "value": 7000
+            },
+            "minimumContribution": {
+                "currency": "USD",
+                "value": 0
+            },
+            "coverageLevelType": "EmployeeFamily"
+        }
+            
+        ]
+    }
+}

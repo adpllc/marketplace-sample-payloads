@@ -1,0 +1,91 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"	
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2014-01-01T00:00:00Z",
+                    "usTaxProfile": {
+                        "usFederalTaxInstruction": {
+                            "additionalStatutoryInputs":[
+                            	{
+                            		"formatCode": "2020"
+                            	}
+                            	],
+                            "multipleJobIndicator": true,
+                            "federalIncomeTaxInstruction": {
+                                "taxFilingStatusCode": {
+                                    "codeValue": "MW"
+                                },
+                                "taxAllowances": [
+                                	{
+                                		"allowanceTypeCode": {
+                                			"codeValue":"Dependents2"
+                                		},
+                                		"taxAllowanceAmount": {
+                                			"amountValue": 34
+                                		}
+                                	},
+                                	{
+                                		"allowanceTypeCode": {
+                                			"codeValue":"Deductions"
+                                		},
+                                		"taxAllowanceAmount": {
+                                			"amountValue": 12
+                                		}
+                                	}
+                                	],
+                                "additionalIncomeAmount": {
+                                	"amountValue":24
+                                },
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "X"
+                                    }
+                                },
+                                "additionalTaxAmount": {
+                                	"amountValue":14
+                                }
+                                
+                            },
+                            "socialSecurityTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "1"
+                                    }
+                                }
+                            },
+                            "medicareTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "1"
+                                    }
+                                }
+                            },
+                            "federalUnemploymentTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+            }
+        }
+    ]
+}

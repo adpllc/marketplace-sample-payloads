@@ -1,0 +1,70 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}" 
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2020-03-31T00:00:00Z",
+                    "usTaxProfile": {
+                        "usFederalTaxInstruction": {
+                            "additionalStatutoryInputs":[
+                             {
+                              "formatCode": "PRE2020"
+                             }
+                             ],
+                            "federalIncomeTaxInstruction": {
+                                "taxFilingStatusCode": {
+                                    "codeValue": "M"
+                                },
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "X"
+                                    }
+                                },
+                                "taxWithholdingAllowanceQuantity": 12,
+                                "additionalTaxAmount": {
+                                 "amountValue":14
+                                }
+                                
+                            },
+                            "socialSecurityTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "1"
+                                    }
+                                }
+                            },
+                            "medicareTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "1"
+                                    }
+                                }
+                            },
+                            "federalUnemploymentTaxInstruction": {
+                                "taxWithholdingStatus": {
+                                    "statusCode": {
+                                        "codeValue": "1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usTaxProfile.federalIncomeTaxInstruction.change"
+            }
+        }
+    ]
+}

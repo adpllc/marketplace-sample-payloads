@@ -1,0 +1,776 @@
+{
+    "queryCriteria": [],
+    "/data/eventContext": {
+        "/requisitionID": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "disallow": [],
+            "shortLabelName": "Requisition ID",
+            "longLabelName": "Requisition ID",
+            "pattern": "\\d+",
+            "equals": [],
+            "greaterThan": [],
+            "lessThan": [],
+            "dependencyLinks": []
+        },
+        "/applicationID": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "disallow": [],
+            "shortLabelName": "Application ID",
+            "longLabelName": "Application ID",
+            "pattern": "\\d+",
+            "equals": [],
+            "greaterThan": [],
+            "lessThan": [],
+            "dependencyLinks": []
+        }
+    },
+    "/data/transforms": [
+        {
+            "/jobApplication/referralSourceCode": {
+                "codeList": {
+                    "codeListTitle": "Referral Source Code",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/application-referral-source-codes/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23/jobApplication/sourceCategoryCode%7D'",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Referral Source Code",
+                "longLabelName": "Referral Source Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/sourceCategoryCode": {
+                "codeList": {
+                    "codeListTitle": "Source Category Code",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/application-source-category-codes/adprecruit/1",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Source Category Code",
+                "longLabelName": "Source Category Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/personName/givenName": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "First Name",
+                "longLabelName": "First Name",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/personName/middleName": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Middle Name",
+                "longLabelName": "Middle Name",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/personName/familyName1": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Last Name",
+                "longLabelName": "Last Name",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/communication/landlines/formattedNumber": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Primary Phone/Alternate Phone",
+                "longLabelName": "Primary Phone/Alternate Phone",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/communication/emails/emailUri": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Email Address",
+                "longLabelName": "Email Address",
+                "pattern": "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/address/lineOne": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Address 1",
+                "longLabelName": "Address 1",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/address/lineTwo": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Address 2",
+                "longLabelName": "Address 2",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/address/cityName": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "City",
+                "longLabelName": "City",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/address/countrySubdivisionLevel1/codeValue": {
+                "codeList": {
+                    "codeListTitle": "State",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-subdivision-level1/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "State",
+                "longLabelName": "State",
+                "maxLength": 3,
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/address/countryCode": {
+                "codeList": {
+                    "codeListTitle": "Country",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-codes/adprecruit/1",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Country",
+                "longLabelName": "Country",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/person/address/postalCode": {
+                "codeList": {
+                    "codeListTitle": "Postal Code",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-postal-codes/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Postal Code",
+                "longLabelName": "Postal Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/startDate": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education Date Attended From",
+                "longLabelName": "Education Date Attended From",
+                "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "string[date]",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/actualCompletionDate": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education Date Attended To",
+                "longLabelName": "Education Date Attended To",
+                "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "string[date]",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/academicCreditsCompleted": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education Credits/Hours Completed",
+                "longLabelName": "Education Credits/Hours Completed",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/educationalInstitution/nameCode/longName": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education School/University Name",
+                "longLabelName": "Education School/University Name",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/educationalInstitution/address/lineOne": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education Address",
+                "longLabelName": "Education Address",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/educationalInstitution/address/cityName": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education City",
+                "longLabelName": "Education City",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/educationalInstitution/address/countrySubdivisionLevel1": {
+                "codeList": {
+                    "codeListTitle": "Education State",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-subdivision-level1/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education State",
+                "longLabelName": "Education State",
+                "maxLength": 3,
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/educationalInstitution/address/countryCode": {
+                "codeList": {
+                    "codeListTitle": "Education Country",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-codes/adprecruit/1",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education Country",
+                "longLabelName": "Education Country",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/educationalInstitution/address/postalCode": {
+                "codeList": {
+                    "codeListTitle": "Education Zip Code",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-postal-codes/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education Zip Code",
+                "longLabelName": "Education Zip Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/degreeIssuedIndicator": {
+                "readOnly": false,
+                "optional": true,
+                "disallow": [],
+                "shortLabelName": "Education Graduated",
+                "longLabelName": "Education Graduated",
+                "equals": [],
+                "dataType": "boolean",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/educationalDegrees/issueDate": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Education Diploma or Degree Date",
+                "longLabelName": "Education Diploma or Degree Date",
+                "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "string[date]",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employmentStartDate": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Start Date",
+                "longLabelName": "Employment Start Date",
+                "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "string[date]",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employmentEndDate": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment End Date",
+                "longLabelName": "Employment End Date",
+                "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "string[date]",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employerName": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Employer Name",
+                "longLabelName": "Employment Employer Name",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employerAddress/lineOne": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Address 1",
+                "longLabelName": "Employment Address 1",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employerAddress/lineTwo": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Address 2",
+                "longLabelName": "Employment Address 2",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employerAddress/cityName": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment City",
+                "longLabelName": "Employment City",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employerAddress/countrySubdivisionLevel1": {
+                "codeList": {
+                    "codeListTitle": "Employment State",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-subdivision-level1/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment State",
+                "longLabelName": "Employment State",
+                "maxLength": 3,
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employerAddress/countryCode": {
+                "codeList": {
+                    "codeListTitle": "Employment Country",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-codes/adprecruit/1",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Country",
+                "longLabelName": "Employment Country",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employerAddress/postalCode": {
+                "codeList": {
+                    "codeListTitle": "Employment Zip Code",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-postal-codes/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Zip Code",
+                "longLabelName": "Employment Zip Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/employerCommunication/landlines/formattedNumber": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Supervisor Phone",
+                "longLabelName": "Employment Supervisor Phone",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/allowContactEmployerIndicator": {
+                "readOnly": false,
+                "optional": true,
+                "disallow": [],
+                "shortLabelName": "Employment - May we contact for reference?",
+                "longLabelName": "Employment - May we contact for reference?",
+                "equals": [],
+                "dataType": "boolean",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/currentEmployerIndicator": {
+                "readOnly": false,
+                "optional": true,
+                "disallow": [],
+                "shortLabelName": "Employment Employer Type",
+                "longLabelName": "Employment Employer Type",
+                "equals": [],
+                "dataType": "boolean",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/positionHistory/positionTitle": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment End Position/Title",
+                "longLabelName": "Employment End Position/Title",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/positionHistory/startingPayRate/annualRateAmount/amountValue": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Starting Pay",
+                "longLabelName": "Employment Starting Pay",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "number",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/positionHistory/endingPayRate/annualRateAmount/amountValue": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Ending Pay",
+                "longLabelName": "Employment Ending Pay",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "number",
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/positionHistory/reportsToName/formattedName": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Supervisor Name",
+                "longLabelName": "Employment Supervisor Name",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/positionHistory/responsibilities/responsibilityDescription": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Job Duties",
+                "longLabelName": "Employment Job Duties",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/employmentHistory/positionHistory/reasonForLeaving": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Employment Reason for Leaving",
+                "longLabelName": "Employment Reason for Leaving",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/applicantContentLinks/contentNameCode/codeValue": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Applicant Content Link Name Code",
+                "longLabelName": "Applicant Content Link Name Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/applicantContentLinks/href": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Applicant Content Link Href",
+                "longLabelName": "Applicant Content Link Href",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicant/applicantContentLinks/title": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Applicant Content Link Title",
+                "longLabelName": "Applicant Content Link Title",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/appliedLocations/nameCode/codeValue": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Requisition Location Code",
+                "longLabelName": "Requisition Location Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicationContentLinks/contentNameCode/codeValue": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Application Content Link Name Code",
+                "longLabelName": "Application Content Link Name Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicationContentLinks/href": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Application Content Link Href",
+                "longLabelName": "Application Content Link Href",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobApplication/applicationContentLinks/title": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Application Content Link Title",
+                "longLabelName": "Application Content Link Title",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            }
+        }
+    ]
+}
