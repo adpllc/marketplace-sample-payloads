@@ -1,0 +1,432 @@
+{
+	"info": {
+		"_postman_id": "7dd955bd-08d2-475a-b5b6-e334908ce44e",
+		"name": "Team Time Card Github",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Team Time Cards",
+			"item": [
+				{
+					"name": "Team Time card",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v2/workers/G332EFV3Q6J0048K/team-time-cards?$expand=dayEntries",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v2",
+								"workers",
+								"G332EFV3Q6J0048K",
+								"team-time-cards"
+							],
+							"query": [
+								{
+									"key": "$expand",
+									"value": "dayEntries"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team Time card with Start date",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken_B2C}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v2/workers/G332EFV3Q6J0048K/team-time-cards?$filter=timeCards/timePeriod/startDate eq '2018-11-26'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v2",
+								"workers",
+								"G332EFV3Q6J0048K",
+								"team-time-cards"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "timeCards/timePeriod/startDate eq '2018-11-26'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team Time card for current cycle",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v2/workers/G332EFV3Q6J0048K/team-time-cards?$filter=timeCards/periodCode/codeValue eq 'current'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v2",
+								"workers",
+								"G332EFV3Q6J0048K",
+								"team-time-cards"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "timeCards/periodCode/codeValue eq 'current'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team Time card with associate filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken_B2C}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							},
+							{
+								"key": "rolecode",
+								"value": "manager",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v2/workers/G55T0VY3QSB6DWW7/team-time-cards?$filter=teamTimeCards/timeCards/associateOID eq 'G332EFV3Q6J0048K'&$expand=dayEntries",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v2",
+								"workers",
+								"G55T0VY3QSB6DWW7",
+								"team-time-cards"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "teamTimeCards/timeCards/associateOID eq 'G332EFV3Q6J0048K'"
+								},
+								{
+									"key": "$expand",
+									"value": "dayEntries"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team Time card next cycle",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v2/workers/G55T0VY3QSB6DWW7/team-time-cards?$filter=timeCards/periodCode/codeValue eq 'next'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v2",
+								"workers",
+								"G55T0VY3QSB6DWW7",
+								"team-time-cards"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "timeCards/periodCode/codeValue eq 'next'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Team Time card previous cycle",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v2/workers/G55T0VY3QSB6DWW7/team-time-cards?$filter=timeCards/periodCode/codeValue eq 'previous'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v2",
+								"workers",
+								"G55T0VY3QSB6DWW7",
+								"team-time-cards"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "timeCards/periodCode/codeValue eq 'previous'"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "B2B Token",
+			"item": [
+				{
+					"name": "POST ACCESS TOKEN CALL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+								"exec": [
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let access_token = jsonData.access_token",
+									"console.log (access_token)",
+									"pm.globals.set(\"accessToken\", access_token);",
+									"",
+									"// status code is 200",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "worker call",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "078dba1e-a6b0-451d-8dcb-ed81f614d8b2",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "prefer",
+						"value": "respond-async",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers?asOfDate=06/08/2020",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					],
+					"query": [
+						{
+							"key": "asOfDate",
+							"value": "06/08/2020"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
