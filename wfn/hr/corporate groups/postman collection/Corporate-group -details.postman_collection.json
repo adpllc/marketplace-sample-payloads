@@ -1,0 +1,1228 @@
+{
+	"info": {
+		"_postman_id": "df2cd860-cef4-47e4-91d2-38f4f116e86f",
+		"name": "Corporate group details",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Corporate change",
+			"item": [
+				{
+					"name": "POST - ACCESS TOKEN CALL Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+								"exec": [
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let access_token = jsonData.access_token",
+									"console.log (access_token)",
+									"pm.globals.set(\"accessToken-iat-wfn\", access_token);",
+									"",
+									"// status code is 200",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "sm_transactionid",
+								"value": "benefit04",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"corporateGroups\":{\r\n\"groupStatus\": {\r\n        \"reasonCode\": {\r\n            \"code\": \"123\"\r\n            \r\n        },\r\n        \"effectiveDateTime\": \"2020-04-20\"\r\n    },\r\n    \"homeWorkLocation\": {\r\n        \"nameCode\": {\r\n            \"code\": \"AUS\",\r\n            \"name\": \"AUS-Test\"\r\n        }\r\n    },\r\n    \"homeOrganizationalUnits\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"Home Cost Number\"\r\n            },\r\n            \"typeCode\": {\r\n                \"code\": \"007000\",\r\n                \"name\": \"Costnumber7\"\r\n            }\r\n        },\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"Home Department\"\r\n            },\r\n            \"typeCode\": {\r\n                \"code\": \"001000\",\r\n                \"name\": \"Department1\"\r\n            }\r\n        },\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"Business Unit\"\r\n            },\r\n            \"typeCode\": {\r\n                \"code\": \"B\",\r\n                \"name\": \"test\"\r\n            }\r\n        }\r\n    ],\r\n    \"workerGroups\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"Benefits Eligibility Class\",\r\n                \"name\": \"string\"\r\n            },\r\n            \"groupCode\": {\r\n                \"code\": \"B\",\r\n                \"name\": \"B\"\r\n            }\r\n        }\r\n    ],\r\n    \"laborUnion\": {\r\n        \"laborUnionCode\": {\r\n            \"code\": \"L\",\r\n            \"name\": \"L\"\r\n        }\r\n    },\r\n    \"bargainingUnit\": {\r\n        \"bargainingUnitCode\": {\r\n            \"code\": \"P\",\r\n            \"name\": \"P\"\r\n        }\r\n    }\r\n}\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change - no field change",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change - invalid reason code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -blank reason code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"20-04-2020\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -without effective date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"20-04-2020\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change - invalid effective date format",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"20-04-2020\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid work location Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"20-04-2020\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"US\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid cost number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid department number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid business unit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid work group name code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \"laborUnion\": {\n        \"laborUnionCode\": {\n            \"code\": \"L\",\n            \"name\": \"L\"\n        }\n    },\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"B\",\n                \"name\": \"B\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid work group code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid Union code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \"laborUnion\": {\n        \"laborUnionCode\": {\n            \"code\": \"A\",\n            \"name\": \"A\"\n        }\n    },\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"P\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid bargain unit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \"laborUnion\": {\n        \"laborUnionCode\": {\n            \"code\": \"L\",\n            \"name\": \"L\"\n        }\n    },\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"B\",\n                \"name\": \"B\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid work assignment number",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"AUS\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"007000\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"001000\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"B\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \"laborUnion\": {\n        \"laborUnionCode\": {\n            \"code\": \"L\",\n            \"name\": \"L\"\n        }\n    },\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"B\",\n                \"name\": \"B\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -invalid aoid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"corporateGroups\": {\n        \"groupStatus\": {\n            \"reasonCode\": {\n                \"code\": \"123\"\n            },\n            \"effectiveDateTime\": \"2020-04-20\"\n        },\n        \"homeWorkLocation\": {\n            \"nameCode\": {\n                \"code\": \"\",\n                \"name\": \"AUS-Test\"\n            }\n        },\n        \"homeOrganizationalUnits\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Cost Number\"\n                },\n                \"typeCode\": {\n                    \"code\": \"\",\n                    \"name\": \"Costnumber7\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Home Department\"\n                },\n                \"typeCode\": {\n                    \"code\": \"\",\n                    \"name\": \"Department1\"\n                }\n            },\n            {\n                \"nameCode\": {\n                    \"code\": \"Business Unit\"\n                },\n                \"typeCode\": {\n                    \"code\": \"\",\n                    \"name\": \"test\"\n                }\n            }\n        ],\n        \"workerGroups\": [\n            {\n                \"nameCode\": {\n                    \"code\": \"Benefits Eligibility Class\",\n                    \"name\": \"string\"\n                },\n                \"groupCode\": {\n                    \"code\": \"\",\n                    \"name\": \"B\"\n                }\n            }\n        ],\n        \"laborUnion\": {\n        \"laborUnionCode\": {\n            \"code\": \"\",\n            \"name\": \"L\"\n        }\n    },\n        \n        \"bargainingUnit\": {\n            \"bargainingUnitCode\": {\n                \"code\": \"\",\n                \"name\": \"P\"\n            }\n        }\n    }\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change meta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "sm_transactionid",
+								"value": "benefit04",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change meta -aoid",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "sm_transactionid",
+								"value": "benefit04",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSS9D2N/work-assignments/42299712N/corporate-groups/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSS9D2N",
+								"work-assignments",
+								"42299712N",
+								"corporate-groups",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "corporate change -ahmed",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "sm_transactionid",
+								"value": "benefit04",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "application/json;masked=false",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"corporateGroups\":{\r\n\"groupStatus\": {\r\n        \"reasonCode\": {\r\n            \"code\": \"123\"\r\n            \r\n        },\r\n        \"effectiveDateTime\": \"2020-04-20\"\r\n    },\r\n    \"homeWorkLocation\": {\r\n        \"nameCode\": {\r\n            \"code\": \"AUS\",\r\n            \"name\": \"AUS-Test\"\r\n        }\r\n    },\r\n    \"homeOrganizationalUnits\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"Home Cost Number\"\r\n            },\r\n            \"typeCode\": {\r\n                \"code\": \"007000\",\r\n                \"name\": \"Costnumber7\"\r\n            }\r\n        },\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"Home Department\"\r\n            },\r\n            \"typeCode\": {\r\n                \"code\": \"001000\",\r\n                \"name\": \"Department1\"\r\n            }\r\n        },\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"Business Unit\"\r\n            },\r\n            \"typeCode\": {\r\n                \"code\": \"B\",\r\n                \"name\": \"test\"\r\n            }\r\n        }\r\n    ],\r\n    \"workerGroups\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"Benefits Eligibility Class\",\r\n                \"name\": \"string\"\r\n            },\r\n            \"groupCode\": {\r\n                \"code\": \"B\",\r\n                \"name\": \"B\"\r\n            }\r\n        }\r\n    ],\r\n    \"laborUnion\": {\r\n        \"laborUnionCode\": {\r\n            \"code\": \"L\",\r\n            \"name\": \"L\"\r\n        }\r\n    },\r\n    \"bargainingUnit\": {\r\n        \"bargainingUnitCode\": {\r\n            \"code\": \"P\",\r\n            \"name\": \"P\"\r\n        }\r\n    }\r\n}\r\n}\r\n"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hr/worker-profile/v1/workers/G310YGK80NSSX8JF/work-assignments/04223086N/corporate-groups",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hr",
+								"worker-profile",
+								"v1",
+								"workers",
+								"G310YGK80NSSX8JF",
+								"work-assignments",
+								"04223086N",
+								"corporate-groups"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": []
+}
