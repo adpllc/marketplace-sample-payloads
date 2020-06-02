@@ -1,0 +1,56 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "dataType": "string[date]"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionCode/codeValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate/rateValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^-?\\d{1,8}(\\.\\d{1,2})?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate/currencyCode": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "USD"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalLimitAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^\\d{1,8}(\\.\\d{1,2})?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalLimitAmount/currencyCode": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "USD"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalID": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                }
+            }
+        ]
+    }
+}
