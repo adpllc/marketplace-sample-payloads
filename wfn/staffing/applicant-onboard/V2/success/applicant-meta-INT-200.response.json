@@ -1,0 +1,60 @@
+{
+    "meta": {
+        "/applicantOnboarding/applicantPersonalProfile/birthName/givenName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 10.0,
+            "shortLabelName": "First Name"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/birthName/familyName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 12.0,
+            "shortLabelName": "Last Name"
+        },
+        "/applicantOnboarding/countryCode": {
+            "codeList": {
+                "codeListTitle": "Worked In Country",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v4/worker-management/countries/wfn/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 1.0,
+            "shortLabelName": "Worked In Country"
+        },
+        "/applicantOnboarding/onboardingTemplateCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "itemID": "9360972_1439",
+                        "code": "9360972_1439",
+                        "name": "International (System)"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false
+        },
+        "/applicantOnboarding/applicantWorkerProfile/hireDate": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 1.0,
+            "shortLabelName": "Hire Date",
+            "minLength": 0.0,
+            "maxLength": 10.0,
+            "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+        }
+    }
+}
