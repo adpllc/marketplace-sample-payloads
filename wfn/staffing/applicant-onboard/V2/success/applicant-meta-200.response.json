@@ -1,16 +1,48 @@
 {
     "meta": {
+        "/applicantOnboarding/applicantPayrollProfile/payrollGroupCode": {
+            "codeList": {
+                "codeListTitle": "Company Code",
+                "links": [
+                    {
+                        "href": "/codelists/payroll/v4/payroll-instruction-management/pay-groups/wfn/1?$filter=category eq 'US'",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 5.0,
+            "shortLabelName": "Company Code"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/birthName/givenName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 10.0,
+            "shortLabelName": "First Name"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/birthName/familyName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 12.0,
+            "shortLabelName": "Last Name"
+        },
         "/applicantOnboarding/onboardingTemplateCode": {
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "169740782707_360",
-                        "code": "169740782707_360",
+                        "itemID": "169748818049_1",
+                        "code": "169748818049_1",
                         "name": "Applicant Onboard"
                     },
                     {
-                        "itemID": "169740221347_953",
-                        "code": "169740221347_953",
+                        "itemID": "169748461979_1115",
+                        "code": "169748461979_1115",
                         "name": "Applicant1"
                     },
                     {
@@ -34,9 +66,24 @@
                         "name": "HR Only (System)"
                     },
                     {
+                        "itemID": "169748461979_956",
+                        "code": "169748461979_956",
+                        "name": "HRpayroll_hire"
+                    },
+                    {
                         "itemID": "169740782707_211",
                         "code": "169740782707_211",
                         "name": "Oct-Onboard"
+                    },
+                    {
+                        "itemID": "169747337569_15",
+                        "code": "169747337569_15",
+                        "name": "Test_Demo"
+                    },
+                    {
+                        "itemID": "169745969973_796",
+                        "code": "169745969973_796",
+                        "name": "TotalSource Time"
                     }
                 ]
             },
@@ -53,37 +100,6 @@
             "minLength": 0.0,
             "maxLength": 10.0,
             "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
-        },
-        "/applicantOnboarding/applicantPayrollProfile/payrollGroupCode": {
-            "codeList": {
-                "codeListTitle": "Company Code",
-                "links": [
-                    {
-                        "href": "/codelists/payroll/v4/payroll-instruction-management/pay-groups/wfn/1",
-                        "rel": "/adp/codelist",
-                        "mediaType": "application/json",
-                        "method": "GET"
-                    }
-                ]
-            },
-            "readOnly": false,
-            "optional": false,
-            "hidden": false,
-            "sequence": 5.0
-        },
-        "/applicantOnboarding/applicantPersonalProfile/birthName/givenName": {
-            "readOnly": false,
-            "optional": false,
-            "hidden": false,
-            "sequence": 10.0,
-            "shortLabelName": "First Name"
-        },
-        "/applicantOnboarding/applicantPersonalProfile/birthName/familyName": {
-            "readOnly": false,
-            "optional": false,
-            "hidden": false,
-            "sequence": 12.0,
-            "shortLabelName": "Last Name"
         }
     }
 }
