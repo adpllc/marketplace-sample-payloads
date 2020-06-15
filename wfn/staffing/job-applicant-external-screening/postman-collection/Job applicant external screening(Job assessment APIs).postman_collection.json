@@ -1,0 +1,1280 @@
+{
+	"info": {
+		"_postman_id": "2100c6e3-2faa-4784-a8a4-230a6dae63ef",
+		"name": "Job applicant external screening(Job assessment APIs)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Publish Package API",
+			"item": [
+				{
+					"name": "200-Publish Package API - More than 1 package",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package3\",\n                            \"packageName\": \"PACKAGE THREE\",\n                            \"packageDescription\": \"Assessment3\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"Assessment\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 100,\n                                \"currencyCode\": \"USD\"\n                            }, \n                            \"screeningLinkEffectiveDate\": \"2020-03-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-Publish Package API - More than 1 package Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package3\",\n                            \"packageName\": \"PACKAGE 3\",\n                            \"packageDescription\": \"Assessment3\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"Assessment\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 500,\n                                \"currencyCode\": \"USD\"\n                            }, \n                            \"screeningLinkEffectiveDate\": \"2020-03-29\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-Publish Package multiple",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-03-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        },\n                        {\n                            \"screeningPackageID\": \"Package2\",\n                            \"packageName\": \"PACKAGE TWO\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-03-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - without screeningTypeCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-03-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - with invalid screeningTypeCode Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"assess\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-03-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - without screeningPackageID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-03-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - without packageName",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-03-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - without agencyCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-03-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - without packageStatusCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-03-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-Publish Package API - without packageAmount",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": \"\",\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-06-28\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - without date screening link effectiv e date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": \"100\",\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - with invalid date format",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"20-2020-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - with invalid date format Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"2020-08-01\",\n                            \"screeningLinkExpirationDate\": \"\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Package API - with same screening packageID more than once",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    },\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    }\n                },\n                \"transform\": {\n                    \"externalScreeningPackages\": [\n                        {\n                            \"screeningPackageID\": \"Package1\",\n                            \"packageName\": \"PACKAGE ONE\",\n                            \"packageDescription\": \"Assessment1\",\n                            \"packageStatusCode\": {\n                                \"codeValue\": \"TEST\"\n                            },\n                            \"packageAmount\": {\n                                \"amountValue\": 1006,\n                                \"currencyCode\": \"\"\n                            },\n                            \"screeningLinkEffectiveDate\": \"20-2020-01\",\n                            \"screeningLinkExpirationDate\": \"2021-03-28\"\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.packages.modify",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.packages.modify"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Initiate Assesment API",
+			"item": [
+				{
+					"name": "Initiate Assessment API",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"169744665423_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"2020-07-22\"\n                                    }\n                                ]\n                            }\n                            \n                        },\n                        {\n                            \"applicationID\": \"169744662286_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"2020-07-22\"\n                                    }\n                                ]\n                            }\n                            \n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Assessment API",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"169744662286_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"2020-07-22\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Assessment -without agencyCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"169744662286_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"2020-07-22\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Assessment -without applicationID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"2020-07-22\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Assessment -without screeningTypeCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"169744662286_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"2020-07-22\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Assessment -with invalid screeningTypeCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"asses\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"169744662286_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"2020-07-22\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Assessment -without screeningPackageID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"assessment\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"169744662286_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"2020-07-22\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Assessment -without link",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"169744662286_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"\",\n                                        \"linkExpirationDate\": \"2020-07-22\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Assessment -without linkExpirationDate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"169744662286_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Assessment -without linkExpirationDate Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"agencyCode\": {\n                        \"codeValue\": \"Agency1\"\n                    },\n                    \"screeningTypeCode\": {\n                        \"codeValue\": \"ASSESSMENT\"\n                    }\n                },\n                \"transform\": {\n                    \"jobApplications\": [\n                        {\n                            \"applicationID\": \"169744662286_1\",\n                            \"externalBackgroundScreening\": {\n                                \"screeningPackageID\": \"Package2\",\n                                \"links\": [\n                                    {\n                                        \"href\": \"http://mytests-test1.com\",\n                                        \"linkExpirationDate\": \"20-07-2020\"\n                                    }\n                                ]\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-screening.initiate",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-screening.initiate"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Result Assesment API",
+			"item": [
+				{
+					"name": "Results Assessment API",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"agencyCode\": {\r\n                        \"codeValue\": \"Agency1\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"jobApplications\": [\r\n                        {\r\n                            \"applicationID\": \"169744662286_1\",\r\n                            \"externalAssessment\": {\r\n                                \"assessmentStatusCode\": {\r\n                                    \"codeValue\": \"Complete\"\r\n                                },\r\n                                \"assessmentPackageID\":  \"Package3\",\r\n                                \"links\": [\r\n                                    {\r\n                                        \"href\": \"https://test-complete.com\"\r\n                                    }\r\n                                ]\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-assessment.status.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-assessment.status.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Results Assessment API Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"agencyCode\": {\r\n                        \"codeValue\": \"Agency1\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"jobApplications\": [\r\n                        {\r\n                            \"applicationID\": \"169744662286_1\",\r\n                            \"externalAssessment\": {\r\n                                \"assessmentStatusCode\": {\r\n                                    \"codeValue\": \"In Progress\"\r\n                                },\r\n                                \"assessmentPackageID\":  \"Package3\",\r\n                                \"links\": [\r\n                                    {\r\n                                        \"href\": \"https://test-complete.com\"\r\n                                    }\r\n                                ]\r\n                            }\r\n                        },\r\n                        {\r\n                            \"applicationID\": \"169744665423_1\",\r\n                            \"externalAssessment\": {\r\n                                \"assessmentStatusCode\": {\r\n                                    \"codeValue\": \"In Progress\"\r\n                                },\r\n                                \"assessmentPackageID\":  \"Package2\",\r\n                                \"links\": [\r\n                                    {\r\n                                        \"href\": \"https://test-complete.com\"\r\n                                    }\r\n                                ]\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-assessment.status.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-assessment.status.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Results Assessment API - without agencyCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"agencyCode\": {\r\n                        \"codeValue\": \"\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"jobApplications\": [\r\n                        {\r\n                            \"applicationID\": \"169744662286_1\",\r\n                            \"externalAssessment\": {\r\n                                \"assessmentStatusCode\": {\r\n                                    \"codeValue\": \"Completed\"\r\n                                },\r\n                                \"assessmentPackageID\":  \"Package1\",\r\n                                \"links\": [\r\n                                    {\r\n                                        \"href\": \"https://test-complete.com\"\r\n                                    }\r\n                                ]\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-assessment.status.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-assessment.status.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Results Assessment API - without applicationID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"agencyCode\": {\r\n                        \"codeValue\": \"Agency1\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"jobApplications\": [\r\n                        {\r\n                            \"applicationID\": \"\",\r\n                            \"externalAssessment\": {\r\n                                \"assessmentStatusCode\": {\r\n                                    \"codeValue\": \"Completed\"\r\n                                },\r\n                                \"assessmentPackageID\":  \"Package1\",\r\n                                \"links\": [\r\n                                    {\r\n                                        \"href\": \"https://test-complete.com\"\r\n                                    }\r\n                                ]\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-assessment.status.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-assessment.status.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Results Assessment API - without assessmentStatusCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"agencyCode\": {\r\n                        \"codeValue\": \"Agency1\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"jobApplications\": [\r\n                        {\r\n                            \"applicationID\": \"169744662286_1\",\r\n                            \"externalAssessment\": {\r\n                                \"assessmentStatusCode\": {\r\n                                    \"codeValue\": \"\"\r\n                                },\r\n                                \"assessmentPackageID\":  \"Package1\",\r\n                                \"links\": [\r\n                                    {\r\n                                        \"href\": \"https://test-complete.com\"\r\n                                    }\r\n                                ]\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-assessment.status.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-assessment.status.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Results Assessment API - without PackageID\"",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"agencyCode\": {\r\n                        \"codeValue\": \"Agency1\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"jobApplications\": [\r\n                        {\r\n                            \"applicationID\": \"169744662286_1\",\r\n                            \"externalAssessment\": {\r\n                                \"assessmentStatusCode\": {\r\n                                    \"codeValue\": \"Completed\"\r\n                                },\r\n                                \"assessmentPackageID\":  \"\",\r\n                                \"links\": [\r\n                                    {\r\n                                        \"href\": \"https://test-complete.com\"\r\n                                    }\r\n                                ]\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-assessment.status.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-assessment.status.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Results Assessment API - without link",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"agencyCode\": {\r\n                        \"codeValue\": \"Agency1\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"jobApplications\": [\r\n                        {\r\n                            \"applicationID\": \"169744662286_1\",\r\n                            \"externalAssessment\": {\r\n                                \"assessmentStatusCode\": {\r\n                                    \"codeValue\": \"Completed\"\r\n                                },\r\n                                \"assessmentPackageID\":  \"Package1\",\r\n                                \"links\": [\r\n                                    {\r\n                                        \"href\": \"\"\r\n                                    }\r\n                                ]\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/staffing/v1/job-applicant.external-assessment.status.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-applicant.external-assessment.status.change"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Access token call",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6db1220d-af4e-4959-8e4c-4dc5c43bd841",
+						"exec": [
+							"// parse JSON data\r",
+							"let jsonData = pm.response.json()\r",
+							"console.log ('JSON response: ', jsonData)\r",
+							"\r",
+							"let access_token = jsonData.access_token\r",
+							"console.log (access_token)\r",
+							"pm.globals.set(\"accessToken-iat-wfn\", access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": []
+}
