@@ -1,1 +1,400 @@
-{"queryCriteria":[],"/data/transforms":[{"/jobRequisition/clientRequisitionID":{"readOnly":false,"optional":false,"hidden":false,"disallow":[],"shortLabelName":"Requisition Number","longLabelName":"Requisition Number","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/requisitionDescription":{"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Requisition Description","longLabelName":"Requisition Description","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/job/wageLawCoverage/coverageCode/codeValue":{"codeList":{"codeListTitle":"Wage Law Coverage Code","listItems":[{"links":[],"codeValue":"00001000","shortName":"Exempt","valueDescription":"00001000 - Exempt"},{"links":[],"codeValue":"00002000","shortName":"Non-exempt","valueDescription":"00002000 - Non-exempt"}],"links":[]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Wage Law Coverage Code","longLabelName":"Wage Law Coverage Code","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/position/positionTitle":{"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Position Title","longLabelName":"Position Title","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/position/positionCode/codeValue":{"codeList":{"codeListTitle":"Position Code","listItems":[],"links":[{"href":"/codelists/staffing/v3/position-seeker-management/req-position-codes/adprecruit/1","mediaType":"application/json","method":"GET","encType":"application/json","payLoadArguments":[]}]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Position Code","longLabelName":"Position Code","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/requisitionLocations/nameCode/codeValue":{"codeList":{"codeListTitle":"Position Code","listItems":[],"links":[{"href":"/codelists/staffing/v3/position-seeker-management/req-location-codes/adprecruit/1","mediaType":"application/json","method":"GET","encType":"application/json","payLoadArguments":[]}]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Position Code","longLabelName":"Position Code","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/requisitionLocations/address/countrySubdivisionLevel1/codeValue":{"codeList":{"codeListTitle":"State","listItems":[],"links":[{"href":"/codelists/staffing/v3/position-seeker-management/country-subdivision-level1/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'","mediaType":"application/json","method":"GET","encType":"application/json","payLoadArguments":[]}]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"State","longLabelName":"State","maxLength":3,"equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/requisitionLocations/address/countryCode":{"codeList":{"codeListTitle":"Country","listItems":[],"links":[{"href":"/codelists/staffing/v3/position-seeker-management/country-codes/adprecruit/1","mediaType":"application/json","method":"GET","encType":"application/json","payLoadArguments":[]}]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Country","longLabelName":"Country","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/requisitionLocations/address/postalCode":{"codeList":{"codeListTitle":"Zip Code","listItems":[],"links":[{"href":"/codelists/staffing/v3/position-seeker-management/country-postal-codes/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'","mediaType":"application/json","method":"GET","encType":"application/json","payLoadArguments":[]}]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Zip Code","longLabelName":"Zip Code","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/requisitionTitle":{"readOnly":false,"optional":false,"hidden":false,"disallow":[],"shortLabelName":"Requisition Title","longLabelName":"Requisition Title","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/postDate":{"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Requisition Post Date","longLabelName":"Requisition Post Date","pattern":"^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$","equals":[],"greaterThan":[],"lessThan":[],"dataType":"string[date]","dependencyLinks":[]},"/jobRequisition/screeningRequirements/requirementDescription":{"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Detailed Requirement Description","longLabelName":"Detailed Requirement Description","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/remunerationBasisCode/codeValue":{"codeList":{"codeListTitle":"Remuneration Basis Code","listItems":[{"links":[],"codeValue":"00001000","shortName":"Salaried","valueDescription":"00001000 - Salaried"},{"links":[],"codeValue":"00002000","shortName":"Hourly","valueDescription":"00002000 - Hourly"}],"links":[]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Remuneration Basis Code","longLabelName":"Remuneration Basis Code","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/workLevelCode/codeValue":{"codeList":{"codeListTitle":"Work Level Code","listItems":[{"links":[],"codeValue":"00003000","shortName":"Full-Time Temporary","valueDescription":"00003000 - Full-Time Temporary"},{"links":[],"codeValue":"00001000","shortName":"Full-Time Regular","valueDescription":"00001000 - Full-Time Regular"},{"links":[],"codeValue":"00004000","shortName":"Part-Time Temporary","valueDescription":"00004000 - Part-Time Temporary"},{"links":[],"codeValue":"00002000","shortName":"Part-Time Regular","valueDescription":"00002000 - Part-Time Regular"}],"links":[]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Work Level Code","longLabelName":"Work Level Code","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/workerTypeCode/codeValue":{"codeList":{"codeListTitle":"Worker Type Code","listItems":[{"links":[],"codeValue":"R","shortName":"Regular","valueDescription":"R - Regular"},{"links":[],"codeValue":"T","shortName":"Temporary","valueDescription":"T - Temporary"}],"links":[]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Worker Type Code","longLabelName":"Worker Type Code","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/paidRelocationCode/codeValue":{"codeList":{"codeListTitle":"Paid Relocation Code","listItems":[{"links":[],"codeValue":"00002000","shortName":"No relo","valueDescription":"00002000 - No relo"},{"links":[],"codeValue":"00001000","shortName":"Relo","valueDescription":"00001000 - Relo"}],"links":[]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Paid Relocation Code","longLabelName":"Paid Relocation Code","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]},"/jobRequisition/openingsQuantity":{"readOnly":false,"optional":false,"hidden":false,"disallow":[],"shortLabelName":"Openings Quantity","longLabelName":"Openings Quantity","equals":[],"greaterThan":[],"lessThan":[],"dataType":"integer","dependencyLinks":[]},"/jobRequisition/customFieldGroup/stringFields/nameCode/codeValue":{"codeList":{"codeListTitle":"Custom Field Names","listItems":[{"links":[],"codeValue":"zzreqLegacyReqNum","shortName":"zzreqLegacyReqNum","valueDescription":"zzreqLegacyReqNum - zzreqLegacyReqNum"},{"links":[],"codeValue":"zzreqcertlicregistration","shortName":"zzreqcertlicregistration","valueDescription":"zzreqcertlicregistration - zzreqcertlicregistration"},{"links":[],"codeValue":"zzreqyearsexperience","shortName":"zzreqyearsexperience","valueDescription":"zzreqyearsexperience - zzreqyearsexperience"},{"links":[],"codeValue":"zzreqLegacyRequisitionNotes","shortName":"zzreqLegacyRequisitionNotes","valueDescription":"zzreqLegacyRequisitionNotes - zzreqLegacyRequisitionNotes"},{"links":[],"codeValue":"zzrepFor","shortName":"zzrepFor","valueDescription":"zzrepFor - zzrepFor"}],"links":[]},"readOnly":false,"optional":true,"hidden":false,"disallow":[],"shortLabelName":"Custom Field Names","longLabelName":"Custom Field Names","equals":[],"greaterThan":[],"lessThan":[],"dependencyLinks":[]}}]}
+{
+    "queryCriteria": [],
+    "/data/transforms": [
+        {
+            "/jobRequisition/clientRequisitionID": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Requisition Number",
+                "longLabelName": "Requisition Number",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/requisitionDescription": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Requisition Description",
+                "longLabelName": "Requisition Description",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/job/wageLawCoverage/coverageCode/codeValue": {
+                "codeList": {
+                    "codeListTitle": "Wage Law Coverage Code",
+                    "listItems": [
+                        {
+                            "links": [],
+                            "codeValue": "00001000",
+                            "shortName": "Exempt",
+                            "valueDescription": "00001000 - Exempt"
+                        },
+                        {
+                            "links": [],
+                            "codeValue": "00002000",
+                            "shortName": "Non-exempt",
+                            "valueDescription": "00002000 - Non-exempt"
+                        }
+                    ],
+                    "links": []
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Wage Law Coverage Code",
+                "longLabelName": "Wage Law Coverage Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/position/positionTitle": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Position Title",
+                "longLabelName": "Position Title",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/position/positionCode/codeValue": {
+                "codeList": {
+                    "codeListTitle": "Position Code",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/req-position-codes/adprecruit/1",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Position Code",
+                "longLabelName": "Position Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/requisitionLocations/nameCode/codeValue": {
+                "codeList": {
+                    "codeListTitle": "Position Code",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/req-location-codes/adprecruit/1",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Position Code",
+                "longLabelName": "Position Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/requisitionLocations/address/countrySubdivisionLevel1/codeValue": {
+                "codeList": {
+                    "codeListTitle": "State",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-subdivision-level1/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "State",
+                "longLabelName": "State",
+                "maxLength": 3,
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/requisitionLocations/address/countryCode": {
+                "codeList": {
+                    "codeListTitle": "Country",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-codes/adprecruit/1",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Country",
+                "longLabelName": "Country",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/requisitionLocations/address/postalCode": {
+                "codeList": {
+                    "codeListTitle": "Zip Code",
+                    "listItems": [],
+                    "links": [
+                        {
+                            "href": "/codelists/staffing/v3/position-seeker-management/country-postal-codes/adprecruit/1?$filter=foreignKey%20eq%20'%7B%23jobApplication/applicant/person/address/countryCode%7D'",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json",
+                            "payLoadArguments": []
+                        }
+                    ]
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Zip Code",
+                "longLabelName": "Zip Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/requisitionTitle": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Requisition Title",
+                "longLabelName": "Requisition Title",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/postDate": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Requisition Post Date",
+                "longLabelName": "Requisition Post Date",
+                "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "string[date]",
+                "dependencyLinks": []
+            },
+            "/jobRequisition/screeningRequirements/requirementDescription": {
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Detailed Requirement Description",
+                "longLabelName": "Detailed Requirement Description",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/remunerationBasisCode/codeValue": {
+                "codeList": {
+                    "codeListTitle": "Remuneration Basis Code",
+                    "listItems": [
+                        {
+                            "links": [],
+                            "codeValue": "00001000",
+                            "shortName": "Salaried",
+                            "valueDescription": "00001000 - Salaried"
+                        },
+                        {
+                            "links": [],
+                            "codeValue": "00002000",
+                            "shortName": "Hourly",
+                            "valueDescription": "00002000 - Hourly"
+                        }
+                    ],
+                    "links": []
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Remuneration Basis Code",
+                "longLabelName": "Remuneration Basis Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/workLevelCode/codeValue": {
+                "codeList": {
+                    "codeListTitle": "Work Level Code",
+                    "listItems": [
+                        {
+                            "links": [],
+                            "codeValue": "00003000",
+                            "shortName": "custom",
+                            "valueDescription": "00003000 - custom"
+                        },
+                        {
+                            "links": [],
+                            "codeValue": "00001000",
+                            "shortName": "Full-time",
+                            "valueDescription": "00001000 - Full-time"
+                        },
+                        {
+                            "links": [],
+                            "codeValue": "00002000",
+                            "shortName": "Part-time",
+                            "valueDescription": "00002000 - Part-time"
+                        }
+                    ],
+                    "links": []
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Work Level Code",
+                "longLabelName": "Work Level Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/workerTypeCode/codeValue": {
+                "codeList": {
+                    "codeListTitle": "Worker Type Code",
+                    "listItems": [
+                        {
+                            "links": [],
+                            "codeValue": "R",
+                            "shortName": "Regular",
+                            "valueDescription": "R - Regular"
+                        },
+                        {
+                            "links": [],
+                            "codeValue": "T",
+                            "shortName": "Temporary",
+                            "valueDescription": "T - Temporary"
+                        }
+                    ],
+                    "links": []
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Worker Type Code",
+                "longLabelName": "Worker Type Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/paidRelocationCode/codeValue": {
+                "codeList": {
+                    "codeListTitle": "Paid Relocation Code",
+                    "listItems": [
+                        {
+                            "links": [],
+                            "codeValue": "00002000",
+                            "shortName": "No relo",
+                            "valueDescription": "00002000 - No relo"
+                        },
+                        {
+                            "links": [],
+                            "codeValue": "00001000",
+                            "shortName": "Relo",
+                            "valueDescription": "00001000 - Relo"
+                        }
+                    ],
+                    "links": []
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Paid Relocation Code",
+                "longLabelName": "Paid Relocation Code",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            },
+            "/jobRequisition/openingsQuantity": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Openings Quantity",
+                "longLabelName": "Openings Quantity",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dataType": "integer",
+                "dependencyLinks": []
+            },
+            "/jobRequisition/customFieldGroup/stringFields/nameCode/codeValue": {
+                "codeList": {
+                    "codeListTitle": "Custom Field Names",
+                    "listItems": [
+                        {
+                            "links": [],
+                            "codeValue": "zzrepFor",
+                            "shortName": "zzrepFor",
+                            "valueDescription": "zzrepFor - zzrepFor"
+                        }
+                    ],
+                    "links": []
+                },
+                "readOnly": false,
+                "optional": true,
+                "hidden": false,
+                "disallow": [],
+                "shortLabelName": "Custom Field Names",
+                "longLabelName": "Custom Field Names",
+                "equals": [],
+                "greaterThan": [],
+                "lessThan": [],
+                "dependencyLinks": []
+            }
+        }
+    ]
+}
