@@ -1,0 +1,192 @@
+{
+  "applicantOnboarding": {
+    "applicantWorkerProfile": {
+      "hireDate": "2020-03-16",
+      "workerTypeCode": {
+        "code": "Employee"
+      },
+      "workLevelCode": {
+        "code": "FullTime"
+      },
+      "businessCommunication": {
+        "landlines": [
+          {
+            "dialNumber": "2323423727",
+            "extension": "346"
+          }
+        ],
+        "emails": [
+          {
+            "emailUri": "user@example.com"
+          }
+        ]
+      },
+	  "homeOrganizationalUnits": [
+		{
+			"nameCode":	{
+				"code":	"Dep2"
+			}
+		}
+	  ]
+    },
+    "applicantPayrollProfile": {
+      "remunerationBasisCode": {
+        "code": "H"
+      },
+	  "baseRemuneration": {
+        "hourlyRateAmount": {
+          "amount": 1020
+        }
+      },
+      "payCycleCode": {
+        "code": "M"
+      },
+      "standardPayPeriodHours": {
+        "hoursQuantity": 170
+      },
+      "additionalRemunerations": [
+        {
+		  "remunerationRate": {
+            "rate": 12
+          },
+		  "associatedRateQualifiers": [
+			{
+				"qualifierObjectCode": {
+					"code": "Dep2"
+				},
+				"qualifierObjectTypeCode": {
+					"code": "DEPARTMENT"
+				}
+			}
+		  ]
+        },
+		{
+		  "remunerationRate": {
+            "rate": 10,
+            "currencyCode": "USD"
+          },
+		  "associatedRateQualifiers": [
+			{
+				"qualifierObjectCode": {
+					"code": "Dep3"
+				}
+			}
+		  ]
+        }
+      ],
+	  "customFieldGroup": {
+        "indicatorFields": [
+          {
+            "nameCode": {
+              "code": "Seasonal"
+            },
+            "indicatorValue": false
+          }
+        ]
+      }
+    },
+    "applicantTaxProfile": {
+      "usFederalTaxInstruction": {
+		  "federalIncomeTaxInstruction": {
+			"taxWithholdingStatus": {
+			  "statusCode": {
+				"code": "1"
+			  }
+			},
+			"taxFilingStatusCode": {
+			  "code": "H"
+			},
+			"taxAllowances": [
+			  {
+				"allowanceTypeCode": {
+				  "code": "Dependents"
+				},
+				"taxAllowanceAmount": {
+				  "amount": 12
+				}
+			  },
+			  {
+				"allowanceTypeCode": {
+				  "code": "Deductions"
+				},
+				"taxAllowanceAmount": {
+				  "amount": 14
+				}
+			  }
+			],
+			"additionalIncomeAmount": {
+			  "amount": 20
+			},
+			"additionalTaxAmount": {
+			  "amount": 10
+			}
+		  },
+		  "socialSecurityTaxInstruction": {
+			"taxWithholdingStatus": {
+			  "statusCode": {
+				"code": "1"
+			  }
+			}
+		  },
+		  "medicareTaxInstruction": {
+			"taxWithholdingStatus": {
+			  "statusCode": {
+				"code": "1"
+			  }
+			}
+		  },
+		  "federalUnemploymentTaxInstruction": {
+			"taxWithholdingStatus": {
+			  "statusCode": {
+				"code": "1"
+			  }
+			}
+		  },
+		  "multipleJobIndicator": true,
+		  "statutoryWorkerIndicator": true,
+		  "qualifiedPensionPlanCoverageIndicator": true,
+		  "additionalStatutoryInputs": [
+			{
+			  "tagCode": "version",
+			  "tagValues": [
+				"2020"
+			  ]
+			}
+		  ]
+      },
+      "usStateTaxInstructions": {
+        "stateIncomeTaxInstructions": [
+          {
+            "taxWithholdingStatus": {
+              "statusCode": {
+                "code": "1"
+              }
+            },
+            "taxFilingStatusCode": {
+              "code": "NY1"
+            },
+            "taxAllowanceQuantity": 11,
+            "overrideTaxAmount": {
+              "amount": 4
+            },
+            "stateCode": {
+              "code": "NY"
+            },
+            "livedInJurisdictionIndicator": true,
+            "workedInJurisdictionIndicator": true
+          }
+        ],
+        "suiTaxInstruction": {
+          "stateCode": {
+            "code": "NY"
+          },
+          "taxWithholdingStatus": {
+            "statusCode": {
+              "code": "1"
+            }
+          }
+        }
+      }
+    }
+  }
+}
