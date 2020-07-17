@@ -1,0 +1,2803 @@
+{
+	"info": {
+		"_postman_id": "6103d713-566d-4b84-9144-18ba221a5f89",
+		"name": "Leave API - WFN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "IAT",
+			"item": [
+				{
+					"name": "Leave Change API",
+					"item": [
+						{
+							"name": "Passing correct data in Leave change API",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-05\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-10\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"MIL\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing the wrong date format",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"07-2020-02\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-05\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"yes\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing the correct aoid and file number",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-09\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-09\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"yes\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing the wrong aoid of employee",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAW5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-02\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-05\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"yes\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing the wrong Filenumber of employee",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_10264\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-02\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-05\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"yes\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing wrong effective date",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"eventID\": \"\",\n      \"data\": {\n        \"eventContext\": {\n          \"contextExpressionID\": \"\",\n           \"associateOID\": \"G3MFT49T8KFAWMM5\",\n           \"workerID\": {\n              \"idValue\": \"RAK009150\"\n              }\n        },\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"\",\n            \"shortName\": \"\",\n            \"longName\": \"\"\n          },\n          \"eventStatusCode\": {\n            \"codeValue\": \"\",\n            \"shortName\": \"\",\n            \"longName\": \"\"\n          },\n          \"effectiveDateTime\": \"2020-06-02\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-16\",\n              \"expectedEndDateTime\": \"2020-07-16\",\n              \"leaveStatus\": {\n                \"leaveStatusCode\": {\n                  \"codeValue\": \"\",\n                  \"shortName\": \"\",\n                  \"longName\": \"\"\n                }\n              },\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\",\n                \"shortName\": \"\",\n                \"longName\": \"\"\n              },\n              \"leaveSubTypeCode\": {\n                \"codeValue\": \"\",\n                \"shortName\": \"\",\n                \"longName\": \"\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"NO\",\n                \"shortName\": \"\",\n                \"longName\": \"\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n            }\n          }\n        }\n      }\n\n  ]\n  \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing wrong Reason code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-07\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-08\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU1\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"yes\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing wrong payment status code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-07\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-08\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"DIS\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"ue\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Leave Absent API",
+					"item": [
+						{
+							"name": "Leave Requst: ALOKR",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G310YGK80NSS7GGD\",\n          \"workAssignmentID\": \"21159276N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-07-16\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing correct AOID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-09\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong  AOID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5999\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-09\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong workerassignment ID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_10269400\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-09\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong Date format",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"01-2015-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-09\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing correct workassignment ID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-09\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Giving wrong format for the date",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-78\",\n              \"expectedEndDateTime\": \"2020-08-32\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong Leave Reason code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-09\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU1\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong payment status code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-09\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"noo\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing End date in past then starting date",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-09\",\n              \"expectedEndDateTime\": \"2020-06-07\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AOID and Workassignmnet ID dose not match",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_101754\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-06-01\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"YES\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave already exist validation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-07\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-05\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Leave Return Request",
+					"item": [
+						{
+							"name": "Passing correct data",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\",\n          \"leaveStartDate\": \"2020-05-07\"\n        },\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"LO\"\n          },\n          \"leaveReturn\": {\n            \"returnDateTime\": \"2020-07-09\",\n            \"returnStatus\": {\n              \"returnStatusCode\": {\n                \"codeValue\": \"A\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong Leave return status code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\",\n          \"leaveStartDate\": \"2020-07-05\"\n        },\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"LO\"\n          },\n          \"leaveReturn\": {\n            \"returnDateTime\": \"2020-08-05\",\n            \"returnStatus\": {\n              \"returnStatusCode\": {\n                \"codeValue\": \"A22\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong date format",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\",\n          \"leaveStartDate\": \"2020-13-05\"\n        },\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"IMPORT\"\n          },\n          \"leaveReturn\": {\n            \"returnDateTime\": \"2020-08-01\",\n            \"returnStatus\": {\n              \"returnStatusCode\": {\n                \"codeValue\": \"A\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "passing wrong Leave return reason code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\",\n          \"leaveStartDate\": \"2020-05-07\"\n        },\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"ERs\"\n          },\n          \"leaveReturn\": {\n            \"returnDateTime\": \"2020-07-04\",\n            \"returnStatus\": {\n              \"returnStatusCode\": {\n                \"codeValue\": \"A\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Leave Cancel Request",
+					"item": [
+						{
+							"name": "Leave cancel API:- Passing correct data",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G34YJ69EMRR7142R\",\n          \"workAssignmentID\": \"07793878N\",\n          \"leaveStartDate\": \"2020-07-14\"\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave cancel API:- Passing Wrong Effective date which is not exist in UI",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_102694\",\n          \"leaveStartDate\": \"2020-07-02\"\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong workassignemnt id",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_10269\",\n          \"leaveStartDate\": \"2020-07-02\"\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong  AOID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAW5\",\n          \"workAssignmentID\": \"59658833_102694\",\n          \"leaveStartDate\": \"2020-07-02\"\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "GET & Meta",
+					"item": [
+						{
+							"name": "Get call",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "x-impersonatee-cache",
+										"value": "none",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/hr/v2/workers/G310YGK80NSS7GGD/leaves",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"hr",
+										"v2",
+										"workers",
+										"G310YGK80NSS7GGD",
+										"leaves"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "codelist",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									},
+									{
+										"key": "x-impersonatee-cache",
+										"type": "text",
+										"value": "none"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/codelists/hr/v4/worker-management/status-change-reason/wfn/1?$filter=category eq 'Place on Leave'",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"codelists",
+										"hr",
+										"v4",
+										"worker-management",
+										"status-change-reason",
+										"wfn",
+										"1"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "category eq 'Place on Leave'"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Meta call for Leave API",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request/meta",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request",
+										"meta"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Meta call for Leave change API",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.change/meta",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change",
+										"meta"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Meta call for Leave Cancel API",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel/meta",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel",
+										"meta"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Meta call for Leave Return API",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request/meta",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request",
+										"meta"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "worker call",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/hr/v2/workers",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"hr",
+										"v2",
+										"workers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2f599e71-0042-4482-8e58-ec8fbd531647",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c874f46-b5cb-403d-af97-922a1d9ea436",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "POST - ACCESS TOKEN CALL",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+								"exec": [
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let access_token = jsonData.access_token",
+									"console.log (access_token)",
+									"pm.globals.set(\"accessToken\", access_token);",
+									"",
+									"// status code is 200",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "174658ee-04eb-4284-83ac-35c59fa98046",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PROD",
+			"item": [
+				{
+					"name": "Leave Change API",
+					"item": [
+						{
+							"name": "Passing correct data in Leave change API",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-16\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-07-16\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"MIL\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing the wrong date format",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"07-2020-02\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-05\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"yes\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing the worng aoid",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM51243\",\n          \"workAssignmentID\": \"59658833_102694314\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-09\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-09\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"yes\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing the wrong ItemID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"59658833_10264\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"yes\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing wrong effective date",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2016-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"FAM\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"yes\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing wrong leave type code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU01\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave Change API:-Passing wrong payment status code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-08-05\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"DIS\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"ue\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]  \n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.change",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Leave Absent API",
+					"item": [
+						{
+							"name": "Leave Requst",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-07-16\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong  AOID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5999\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong workerassignment ID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"59658833\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong Date format",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"01-2015-01\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong Leave Reason code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU1\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong payment status code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"noo0\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing End date in past then starting date",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-15\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-15\",\n              \"expectedEndDateTime\": \"2020-06-07\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave already exist validation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3KDDJ76VQSR72XR\",\n          \"workAssignmentID\": \"61967145N\"\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2020-07-16\",\n          \"workerLeave\": {\n            \"leaveAbsence\": {\n              \"startDateTime\": \"2020-07-16\",\n              \"expectedEndDateTime\": \"2020-08-10\",\n              \"leaveTypeCode\": {\n                \"codeValue\": \"EDU\"\n              },\n              \"paymentStatusCode\": {\n                \"codeValue\": \"no\"\n              },\n              \"comment\": {\n                \"textValue\": \"Leave test\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.absence.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Leave Return Request",
+					"item": [
+						{
+							"name": "Passing correct data",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\",\n          \"leaveStartDate\": \"2020-07-15\"\n        },\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"LO\"\n          },\n          \"leaveReturn\": {\n            \"returnDateTime\": \"2020-07-20\",\n            \"returnStatus\": {\n              \"returnStatusCode\": {\n                \"codeValue\": \"A\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.return.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong Leave return status code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\",\n          \"leaveStartDate\": \"2020-07-15\"\n        },\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"LO\"\n          },\n          \"leaveReturn\": {\n            \"returnDateTime\": \"2020-08-05\",\n            \"returnStatus\": {\n              \"returnStatusCode\": {\n                \"codeValue\": \"A22\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.return.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong date format",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\",\n          \"leaveStartDate\": \"20-07-05\"\n        },\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"IMPORT\"\n          },\n          \"leaveReturn\": {\n            \"returnDateTime\": \"2020-08-01\",\n            \"returnStatus\": {\n              \"returnStatusCode\": {\n                \"codeValue\": \"A\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.return.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "passing wrong Leave return reason code",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\",\n          \"leaveStartDate\": \"2020-07-15\"\n        },\n        \"transform\": {\n          \"eventReasonCode\": {\n            \"codeValue\": \"ERs\"\n          },\n          \"leaveReturn\": {\n            \"returnDateTime\": \"2020-07-04\",\n            \"returnStatus\": {\n              \"returnStatusCode\": {\n                \"codeValue\": \"A\"\n              }\n            }\n          }\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.return.request",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Leave Cancel Request",
+					"item": [
+						{
+							"name": "Leave cancel API:- Passing correct data",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\",\n          \"leaveStartDate\": \"2020-07-15\"\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.cancel",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Leave cancel API:- Passing Wrong Effective date which is not exist in UI",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3EVERZ42YSP4E8T\",\n          \"workAssignmentID\": \"85826601N\",\n          \"leaveStartDate\": \"2016-07-02\"\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.cancel",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong workassignemnt id",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAWMM5\",\n          \"workAssignmentID\": \"59658833_10269\",\n          \"leaveStartDate\": \"2020-07-02\"\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Passing wrong  AOID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G3MFT49T8KFAW5\",\n          \"workAssignmentID\": \"59658833_102694\",\n          \"leaveStartDate\": \"2020-07-02\"\n        }\n      }\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "GET & Meta",
+					"item": [
+						{
+							"name": "Get call",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "If-None-Match",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/hr/v2/workers/G3EVERZ42YSP4E8T/leaves",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"hr",
+										"v2",
+										"workers",
+										"G3EVERZ42YSP4E8T",
+										"leaves"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get call Invalid aoid",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									},
+									{
+										"key": "If-None-Match",
+										"type": "text",
+										"value": "true"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/hr/v2/workers/G3EVERZ42YSP4E8f/leaves",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"hr",
+										"v2",
+										"workers",
+										"G3EVERZ42YSP4E8f",
+										"leaves"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "codelist",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									},
+									{
+										"key": "x-impersonatee-cache",
+										"type": "text",
+										"value": "none"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/codelists/hr/v4/worker-management/status-change-reason/wfn/1",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"codelists",
+										"hr",
+										"v4",
+										"worker-management",
+										"status-change-reason",
+										"wfn",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "codelist return from leave",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									},
+									{
+										"key": "x-impersonatee-cache",
+										"type": "text",
+										"value": "none"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/codelists/hr/v4/worker-management/status-change-reason/wfn/1?$filter=category eq 'Return from Leave'",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"codelists",
+										"hr",
+										"v4",
+										"worker-management",
+										"status-change-reason",
+										"wfn",
+										"1"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "category eq 'Return from Leave'"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "codelist Place on Leave",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}"
+									},
+									{
+										"key": "x-impersonatee-cache",
+										"type": "text",
+										"value": "none"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/codelists/hr/v4/worker-management/status-change-reason/wfn/1?$filter=category eq 'Place on Leave'",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"codelists",
+										"hr",
+										"v4",
+										"worker-management",
+										"status-change-reason",
+										"wfn",
+										"1"
+									],
+									"query": [
+										{
+											"key": "$filter",
+											"value": "category eq 'Place on Leave'"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Meta call for Leave API",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.absence.request/meta",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.absence.request",
+										"meta"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Meta call for Leave change API",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.change/meta",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.change",
+										"meta"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Meta call for Leave Cancel API",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.cancel/meta",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.cancel",
+										"meta"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Meta call for Leave Return API",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/events/hr/v1/worker.leave.return.request/meta",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"hr",
+										"v1",
+										"worker.leave.return.request",
+										"meta"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "worker call",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer {{accessToken}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://api.adp.com/hr/v2/workers",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"hr",
+										"v2",
+										"workers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "2f599e71-0042-4482-8e58-ec8fbd531647",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c874f46-b5cb-403d-af97-922a1d9ea436",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "POST - ACCESS TOKEN CALL - PROD",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+								"exec": [
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let access_token = jsonData.access_token",
+									"console.log (access_token)",
+									"pm.globals.set(\"accessToken\", access_token);",
+									"",
+									"// status code is 200",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "client_credentials",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "0f08a767-a064-4b23-809b-5ac4250eb995",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "f8a62489-822d-46c0-8ae5-8f1527272e18",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.adp.com/auth/oauth/v2/token",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"oauth",
+								"v2",
+								"token"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
