@@ -4,18 +4,22 @@
         "/data/eventContext": {
             "/associateOID": {
                 "readOnly": true,
-                "optional": true,
-                "hidden": true
+                "optional": false,
+                "hidden": false
             },
             "/workAssignmentID": {
                 "readOnly": true,
-                "optional": true,
-                "hidden": true
+                "optional": false,
+                "hidden": false
             },
             "/leaveStartDate": {
-                "readOnly": true,
-                "optional": true,
-                "hidden": true
+                "readOnly": false,
+                "optional": false,
+                "hidden": false,
+                "shortLabelName": "Leave Start Date",
+                "minLength": 10,
+                "maxLength": 10,
+                "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
             }
         },
         "/data/transforms": []
