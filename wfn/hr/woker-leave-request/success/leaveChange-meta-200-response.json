@@ -4,41 +4,86 @@
         "/data/eventContext": {
             "/associateOID": {
                 "readOnly": true,
-                "optional": true,
-                "hidden": true
+                "optional": false,
+                "hidden": false
             },
             "/workAssignmentID": {
                 "readOnly": true,
-                "optional": true,
-                "hidden": true
-            },
-            "/leaveStartDate": {
-                "readOnly": true,
-                "optional": true,
-                "hidden": true
+                "optional": false,
+                "hidden": false
             }
         },
         "/data/transforms": [
             {
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
                 "/workerLeave/leaveAbsence/startDateTime": {
-                    "readOnly": true,
-                    "optional": true,
-                    "hidden": true
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Leave Start Date",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
                 },
                 "/workerLeave/leaveAbsence/expectedEndDateTime": {
-                    "readOnly": true,
-                    "optional": true,
-                    "hidden": true
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Leave End Date",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
                 },
                 "/workerLeave/leaveAbsence/leaveTypeCode/codeValue": {
-                    "readOnly": true,
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "DIS"
+                            },
+                            {
+                                "codeValue": "EDU"
+                            },
+                            {
+                                "codeValue": "FAM"
+                            },
+                            {
+                                "codeValue": "MED"
+                            },
+                            {
+                                "codeValue": "MIL"
+                            },
+                            {
+                                "codeValue": "PER"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
                     "optional": true,
-                    "hidden": true
+                    "hidden": false
                 },
                 "/workerLeave/leaveAbsence/paymentStatusCode/codeValue": {
-                    "readOnly": true,
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "valueDescription": "YES: Continue Payment",
+                                "codeValue": "YES"
+                            },
+                            {
+                                "valueDescription": "NO: Discontinue Payment",
+                                "codeValue": "NO"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
                     "optional": true,
-                    "hidden": true
+                    "hidden": false
                 }
             }
         ]
