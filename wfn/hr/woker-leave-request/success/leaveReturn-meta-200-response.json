@@ -4,36 +4,62 @@
         "/data/eventContext": {
             "/associateOID": {
                 "readOnly": true,
-                "optional": true,
-                "hidden": true
+                "optional": false,
+                "hidden": false
             },
             "/workAssignmentID": {
                 "readOnly": true,
-                "optional": true,
-                "hidden": true
+                "optional": false,
+                "hidden": false
             },
             "/leaveStartDate": {
-                "readOnly": true,
-                "optional": true,
-                "hidden": true
+                "readOnly": false,
+                "optional": false,
+                "hidden": false,
+                "shortLabelName": "Leave Start Date",
+                "minLength": 10,
+                "maxLength": 10,
+                "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
             }
         },
         "/data/transforms": [
             {
                 "/eventReasonCode/codeValue": {
-                    "readOnly": true,
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "codeValue": "ER"
+                            },
+                            {
+                                "codeValue": "LO"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
                     "optional": true,
-                    "hidden": true
+                    "hidden": false
                 },
                 "/leaveReturn/returnDateTime": {
-                    "readOnly": true,
-                    "optional": true,
-                    "hidden": true
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Return Date",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
                 },
                 "/leaveReturn/returnStatus/returnStatusCode/codeValue": {
-                    "readOnly": true,
+                    "codeList": {
+                        "listItems": [
+                            {
+                                "valueDescription": "A: Active",
+                                "codeValue": "A"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
                     "optional": true,
-                    "hidden": true
+                    "hidden": false
                 }
             }
         ]
