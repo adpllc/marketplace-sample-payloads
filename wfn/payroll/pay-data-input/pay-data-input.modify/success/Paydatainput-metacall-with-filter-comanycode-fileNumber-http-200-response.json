@@ -1,0 +1,1173 @@
+{
+  "meta": {
+      "queryCriteria": [],
+      "/data/eventContext": {
+          "/payrollGroupCode": {
+              "codeList": {
+                  "codeListTitle": "Company Code",
+                  "listItems": [
+                      {
+                          "codeValue": "938",
+                          "shortName": "Visiting Nurses Serv"
+                      },
+                      {
+                          "codeValue": "94N",
+                          "shortName": "Perk Me Up Llc"
+                      }
+                  ]
+              },
+              "readOnly": false,
+              "optional": false,
+              "hidden": false,
+              "shortLabelName": "Company Code"
+          },
+          "/payrollProcessingJobID": {
+              "readOnly": false,
+              "optional": false,
+              "hidden": false,
+              "shortLabelName": "Batch ID"
+          }
+      },
+      "/data/transforms": [
+          {
+              "/payDataInput/payeePayInputs/associateOID": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Associate ID"
+              },
+              "/payDataInput/payeePayInputs/payNumber": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Pay Number"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payrollFileNumber": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Field #"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationID": {
+                  "codeList": {
+                      "codeListTitle": "Pay Allocation Allocation ID",
+                      "listItems": [
+                          {
+                              "valueDescription": "Allocation Position",
+                              "codeValue": "1",
+                              "longName": "Allocation Position"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost Number",
+                              "codeValue": "2",
+                              "longName": "Temporary Cost Number"
+                          }
+                      ]
+                  },
+                  "readOnly": false,
+                  "optional": true
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/payAllocation/allocationTypeCode": {
+                  "codeList": {
+                      "codeListTitle": "Pay Allocation Type Code",
+                      "listItems": [
+                          {
+                              "valueDescription": "Allocation Position",
+                              "foreignKey": "1",
+                              "codeValue": "1",
+                              "shortName": "Cancel automatic allocations for this transaction",
+                              "longName": "1 - Cancel automatic allocations for this transaction"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "000003",
+                              "shortName": "Costnumber3",
+                              "longName": "000003 - Costnumber3"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "001000",
+                              "shortName": "Costnumber1",
+                              "longName": "001000 - Costnumber1"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "002000",
+                              "shortName": "costnumber2",
+                              "longName": "002000 - costnumber2"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "004000",
+                              "shortName": "costnumber4",
+                              "longName": "004000 - costnumber4"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "005000",
+                              "shortName": "costnumber5",
+                              "longName": "005000 - costnumber5"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "006000",
+                              "shortName": "Costnumber6",
+                              "longName": "006000 - Costnumber6"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "007000",
+                              "shortName": "Costnumber7",
+                              "longName": "007000 - Costnumber7"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "008000",
+                              "shortName": "Costnumber8",
+                              "longName": "008000 - Costnumber8"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "009000",
+                              "shortName": "Costnumber9",
+                              "longName": "009000 - Costnumber9"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "010000",
+                              "shortName": "Costnumber10",
+                              "longName": "010000 - Costnumber10"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "09",
+                              "longName": "09"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "88111",
+                              "longName": "88111"
+                          },
+                          {
+                              "valueDescription": "Temporary Cost",
+                              "foreignKey": "2",
+                              "codeValue": "94N",
+                              "shortName": "**",
+                              "longName": "94N - **"
+                          }
+                      ]
+                  },
+                  "readOnly": false,
+                  "optional": true
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earningCode": {
+                  "codeList": {
+                      "listItems": [
+                          {
+                              "codeValue": "R",
+                              "shortName": "Regular"
+                          },
+                          {
+                              "codeValue": "O",
+                              "shortName": "Overtime"
+                          },
+                          {
+                              "codeValue": "T",
+                              "shortName": "Tips"
+                          },
+                          {
+                              "valueDescription": "1FA - FF-FMLA",
+                              "foreignKey": "94N",
+                              "codeValue": "1FA",
+                              "longName": "FF-FMLA"
+                          },
+                          {
+                              "valueDescription": "1FE - FF-PSL-EE",
+                              "foreignKey": "94N",
+                              "codeValue": "1FE",
+                              "longName": "FF-PSL-EE"
+                          },
+                          {
+                              "valueDescription": "1FF - FF-PSL-FAM",
+                              "foreignKey": "94N",
+                              "codeValue": "1FF",
+                              "longName": "FF-PSL-FAM"
+                          },
+                          {
+                              "valueDescription": "A - AUTO ALLOW",
+                              "foreignKey": "94N",
+                              "codeValue": "A",
+                              "longName": "AUTO ALLOW"
+                          },
+                          {
+                              "valueDescription": "B - BONUS",
+                              "foreignKey": "94N",
+                              "codeValue": "B",
+                              "longName": "BONUS"
+                          },
+                          {
+                              "valueDescription": "C - COMMISSION",
+                              "foreignKey": "94N",
+                              "codeValue": "C",
+                              "longName": "COMMISSION"
+                          },
+                          {
+                              "valueDescription": "DB - Double pay",
+                              "foreignKey": "94N",
+                              "codeValue": "DB",
+                              "longName": "Double pay"
+                          },
+                          {
+                              "valueDescription": "E - SEVERANCE",
+                              "foreignKey": "94N",
+                              "codeValue": "E",
+                              "longName": "SEVERANCE"
+                          },
+                          {
+                              "valueDescription": "H - HOLIDAY",
+                              "foreignKey": "94N",
+                              "codeValue": "H",
+                              "longName": "HOLIDAY"
+                          },
+                          {
+                              "valueDescription": "MER - Medical",
+                              "foreignKey": "94N",
+                              "codeValue": "MER",
+                              "longName": "Medical"
+                          },
+                          {
+                              "valueDescription": "MS - Mgmt Salary",
+                              "foreignKey": "94N",
+                              "codeValue": "MS",
+                              "longName": "Mgmt Salary"
+                          },
+                          {
+                              "valueDescription": "R - RETRO",
+                              "foreignKey": "94N",
+                              "codeValue": "R",
+                              "longName": "RETRO"
+                          },
+                          {
+                              "valueDescription": "S - SICK",
+                              "foreignKey": "94N",
+                              "codeValue": "S",
+                              "longName": "SICK"
+                          },
+                          {
+                              "valueDescription": "T - Tips",
+                              "foreignKey": "94N",
+                              "codeValue": "T",
+                              "longName": "Tips"
+                          },
+                          {
+                              "valueDescription": "V - VACATION",
+                              "foreignKey": "94N",
+                              "codeValue": "V",
+                              "longName": "VACATION"
+                          },
+                          {
+                              "valueDescription": "X - Acting Up",
+                              "foreignKey": "94N",
+                              "codeValue": "X",
+                              "longName": "Acting Up"
+                          },
+                          {
+                              "valueDescription": "Z - Acting Up",
+                              "foreignKey": "94N",
+                              "codeValue": "Z",
+                              "longName": "Acting Up"
+                          }
+                      ]
+                  },
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rateCode": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Rate Code"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate/rateValue": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Earning Amount",
+                  "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/rate/currencyCode": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Currency Code"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/numberOfHours": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Reg Hours"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earningsAmount/amountValue": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Earning Amount",
+                  "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/earningInputs/earningsAmount/currencyCode": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Currency Code"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/codedHoursEarningInputs/hoursEarningCode/codeValue": {
+                  "codeList": {
+                      "codeListTitle": "Hours & Earnings Code",
+                      "listItems": [
+                          {
+                              "valueDescription": "1FA - FF-FMLA",
+                              "foreignKey": "94N",
+                              "codeValue": "1FA",
+                              "longName": "FF-FMLA"
+                          },
+                          {
+                              "valueDescription": "1FE - FF-PSL-EE",
+                              "foreignKey": "94N",
+                              "codeValue": "1FE",
+                              "longName": "FF-PSL-EE"
+                          },
+                          {
+                              "valueDescription": "1FF - FF-PSL-FAM",
+                              "foreignKey": "94N",
+                              "codeValue": "1FF",
+                              "longName": "FF-PSL-FAM"
+                          },
+                          {
+                              "valueDescription": "A - AUTO ALLOW",
+                              "foreignKey": "94N",
+                              "codeValue": "A",
+                              "longName": "AUTO ALLOW"
+                          },
+                          {
+                              "valueDescription": "B - BONUS",
+                              "foreignKey": "94N",
+                              "codeValue": "B",
+                              "longName": "BONUS"
+                          },
+                          {
+                              "valueDescription": "C - COMMISSION",
+                              "foreignKey": "94N",
+                              "codeValue": "C",
+                              "longName": "COMMISSION"
+                          },
+                          {
+                              "valueDescription": "DB - Double pay",
+                              "foreignKey": "94N",
+                              "codeValue": "DB",
+                              "longName": "Double pay"
+                          },
+                          {
+                              "valueDescription": "E - SEVERANCE",
+                              "foreignKey": "94N",
+                              "codeValue": "E",
+                              "longName": "SEVERANCE"
+                          },
+                          {
+                              "valueDescription": "H - HOLIDAY",
+                              "foreignKey": "94N",
+                              "codeValue": "H",
+                              "longName": "HOLIDAY"
+                          },
+                          {
+                              "valueDescription": "MER - Medical",
+                              "foreignKey": "94N",
+                              "codeValue": "MER",
+                              "longName": "Medical"
+                          },
+                          {
+                              "valueDescription": "MS - Mgmt Salary",
+                              "foreignKey": "94N",
+                              "codeValue": "MS",
+                              "longName": "Mgmt Salary"
+                          },
+                          {
+                              "valueDescription": "R - RETRO",
+                              "foreignKey": "94N",
+                              "codeValue": "R",
+                              "longName": "RETRO"
+                          },
+                          {
+                              "valueDescription": "S - SICK",
+                              "foreignKey": "94N",
+                              "codeValue": "S",
+                              "longName": "SICK"
+                          },
+                          {
+                              "valueDescription": "T - Tips",
+                              "foreignKey": "94N",
+                              "codeValue": "T",
+                              "longName": "Tips"
+                          },
+                          {
+                              "valueDescription": "V - VACATION",
+                              "foreignKey": "94N",
+                              "codeValue": "V",
+                              "longName": "VACATION"
+                          },
+                          {
+                              "valueDescription": "X - Acting Up",
+                              "foreignKey": "94N",
+                              "codeValue": "X",
+                              "longName": "Acting Up"
+                          },
+                          {
+                              "valueDescription": "Z - Acting Up",
+                              "foreignKey": "94N",
+                              "codeValue": "Z",
+                              "longName": "Acting Up"
+                          }
+                      ]
+                  },
+                  "readOnly": false,
+                  "optional": true
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/codedHoursEarningInputs/rate/rateValue": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "longLabelName": "Coded Hours Earning Rate",
+                  "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/codedHoursEarningInputs/rate/currencyCode": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Currency Code"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/codedHoursEarningInputs/numberOfHours": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Coded Hours"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/codedHoursEarningInputs/earningsAmount/amountValue": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Coded Earning Amount",
+                  "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/codedHoursEarningInputs/earningsAmount/currencyCode": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Currency Code"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/memoInputs/memoCode": {
+                  "codeList": {
+                      "codeListTitle": "Memo Code",
+                      "listItems": [
+                          {
+                              "valueDescription": "1FM - HLTH-FMLA CR",
+                              "foreignKey": "94N",
+                              "codeValue": "1FM",
+                              "longName": "HLTH-FMLA CR"
+                          },
+                          {
+                              "valueDescription": "1HC - HLTH-PSL CR",
+                              "foreignKey": "94N",
+                              "codeValue": "1HC",
+                              "longName": "HLTH-PSL CR"
+                          },
+                          {
+                              "valueDescription": "1RH - CARES-HEALTH CR",
+                              "foreignKey": "94N",
+                              "codeValue": "1RH",
+                              "longName": "CARES-HEALTH CR"
+                          },
+                          {
+                              "valueDescription": "1RW - CARES-WAGE CR",
+                              "foreignKey": "94N",
+                              "codeValue": "1RW",
+                              "longName": "CARES-WAGE CR"
+                          },
+                          {
+                              "valueDescription": "3 - 11",
+                              "foreignKey": "94N",
+                              "codeValue": "3",
+                              "longName": "11"
+                          },
+                          {
+                              "valueDescription": "5 - code",
+                              "foreignKey": "94N",
+                              "codeValue": "5",
+                              "longName": "code"
+                          },
+                          {
+                              "valueDescription": "B - Hlth Plan Value",
+                              "foreignKey": "94N",
+                              "codeValue": "B",
+                              "longName": "Hlth Plan Value"
+                          },
+                          {
+                              "valueDescription": "G - 11",
+                              "foreignKey": "94N",
+                              "codeValue": "G",
+                              "longName": "11"
+                          },
+                          {
+                              "valueDescription": "1FM - HLTH-FMLA CR",
+                              "foreignKey": "94N",
+                              "codeValue": "1FM",
+                              "longName": "HLTH-FMLA CR"
+                          },
+                          {
+                              "valueDescription": "1HC - HLTH-PSL CR",
+                              "foreignKey": "94N",
+                              "codeValue": "1HC",
+                              "longName": "HLTH-PSL CR"
+                          },
+                          {
+                              "valueDescription": "1RH - CARES-HEALTH CR",
+                              "foreignKey": "94N",
+                              "codeValue": "1RH",
+                              "longName": "CARES-HEALTH CR"
+                          },
+                          {
+                              "valueDescription": "1RW - CARES-WAGE CR",
+                              "foreignKey": "94N",
+                              "codeValue": "1RW",
+                              "longName": "CARES-WAGE CR"
+                          },
+                          {
+                              "valueDescription": "3 - 11",
+                              "foreignKey": "94N",
+                              "codeValue": "3",
+                              "longName": "11"
+                          },
+                          {
+                              "valueDescription": "5 - code",
+                              "foreignKey": "94N",
+                              "codeValue": "5",
+                              "longName": "code"
+                          },
+                          {
+                              "valueDescription": "B - Hlth Plan Value",
+                              "foreignKey": "94N",
+                              "codeValue": "B",
+                              "longName": "Hlth Plan Value"
+                          },
+                          {
+                              "valueDescription": "G - 11",
+                              "foreignKey": "94N",
+                              "codeValue": "G",
+                              "longName": "11"
+                          }
+                      ]
+                  },
+                  "readOnly": false,
+                  "optional": true
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/memoInputs/memoAmount/amountValue": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Memo Amount",
+                  "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/reportableEarningAndBenefitInputs/reportableEarningAndBenefitCode": {
+                  "codeList": {
+                      "listItems": [
+                          {
+                              "codeValue": "T",
+                              "shortName": "Tips"
+                          }
+                      ]
+                  },
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/reportableEarningAndBenefitInputs/reportableEarningAndBenefitAmount/amountValue": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "longLabelName": "Reportable Earning And Benefit Amount",
+                  "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/reportableEarningAndBenefitInputs/reportableEarningAndBenefitAmount/currencyCode": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Currency Code"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/deductionCode/codeValue": {
+                  "codeList": {
+                      "codeListTitle": "Deduction Code",
+                      "listItems": [
+                          {
+                              "valueDescription": "BANK$",
+                              "foreignKey": "94N",
+                              "codeValue": "70",
+                              "shortName": "70 - Bankruptcy"
+                          },
+                          {
+                              "valueDescription": "TAXLY$",
+                              "foreignKey": "94N",
+                              "codeValue": "71",
+                              "shortName": "71 - tax levy"
+                          },
+                          {
+                              "valueDescription": "TAXLY$",
+                              "foreignKey": "94N",
+                              "codeValue": "72",
+                              "shortName": "72 - tax levy"
+                          },
+                          {
+                              "valueDescription": "GRNSH$",
+                              "foreignKey": "94N",
+                              "codeValue": "73",
+                              "shortName": "73 - Garn"
+                          },
+                          {
+                              "valueDescription": "GRNSH$",
+                              "foreignKey": "94N",
+                              "codeValue": "74",
+                              "shortName": "74 - Garn"
+                          },
+                          {
+                              "valueDescription": "SPPRT$",
+                              "foreignKey": "94N",
+                              "codeValue": "75",
+                              "shortName": "75 - child support"
+                          },
+                          {
+                              "valueDescription": "SPPRT$",
+                              "foreignKey": "94N",
+                              "codeValue": "76",
+                              "shortName": "76 - child support"
+                          },
+                          {
+                              "valueDescription": "SPPRT$",
+                              "foreignKey": "94N",
+                              "codeValue": "77",
+                              "shortName": "77 - support order"
+                          },
+                          {
+                              "valueDescription": "SPPRT$",
+                              "foreignKey": "94N",
+                              "codeValue": "78",
+                              "shortName": "78 - child support"
+                          },
+                          {
+                              "valueDescription": "WAGE",
+                              "foreignKey": "94N",
+                              "codeValue": "79",
+                              "shortName": "79 - wage agreement"
+                          },
+                          {
+                              "valueDescription": "BANK%",
+                              "foreignKey": "94N",
+                              "codeValue": "90",
+                              "shortName": "90 - bankruptcy%"
+                          },
+                          {
+                              "valueDescription": "LEVY%",
+                              "foreignKey": "94N",
+                              "codeValue": "91",
+                              "shortName": "91 - tax levy%"
+                          },
+                          {
+                              "valueDescription": "LEVY%",
+                              "foreignKey": "94N",
+                              "codeValue": "92",
+                              "shortName": "92 - tax levy%"
+                          },
+                          {
+                              "valueDescription": "GARN%",
+                              "foreignKey": "94N",
+                              "codeValue": "93",
+                              "shortName": "93 - Garn%"
+                          },
+                          {
+                              "valueDescription": "GARN%",
+                              "foreignKey": "94N",
+                              "codeValue": "94",
+                              "shortName": "94 - Garn%"
+                          },
+                          {
+                              "valueDescription": "CHILD%",
+                              "foreignKey": "94N",
+                              "codeValue": "95",
+                              "shortName": "95 - child support%"
+                          },
+                          {
+                              "valueDescription": "CHILD%",
+                              "foreignKey": "94N",
+                              "codeValue": "96",
+                              "shortName": "96 - child support%"
+                          },
+                          {
+                              "valueDescription": "AUTO",
+                              "foreignKey": "94N",
+                              "codeValue": "A",
+                              "shortName": "A - AUTO EXPENSE"
+                          },
+                          {
+                              "valueDescription": "AwaTax",
+                              "foreignKey": "94N",
+                              "codeValue": "AS1",
+                              "shortName": "AS1 - Service/Safety"
+                          },
+                          {
+                              "valueDescription": "BKNGF",
+                              "foreignKey": "94N",
+                              "codeValue": "B",
+                              "shortName": "B - BAKING FEE"
+                          },
+                          {
+                              "valueDescription": "MEDST",
+                              "foreignKey": "94N",
+                              "codeValue": "C",
+                              "shortName": "C - MEDICARE SURTAX"
+                          },
+                          {
+                              "valueDescription": "DENTAL",
+                              "foreignKey": "94N",
+                              "codeValue": "D",
+                              "shortName": "D - DENTAL"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "E",
+                              "shortName": "E - EMI"
+                          },
+                          {
+                              "valueDescription": "GARN",
+                              "foreignKey": "94N",
+                              "codeValue": "G",
+                              "shortName": "G - GARN"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "GAA",
+                              "shortName": "GAA"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "H",
+                              "shortName": "H"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "I",
+                              "shortName": "I - test"
+                          },
+                          {
+                              "valueDescription": "J-Test",
+                              "foreignKey": "94N",
+                              "codeValue": "J",
+                              "shortName": "J - Other"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "K",
+                              "shortName": "K - Savings"
+                          },
+                          {
+                              "valueDescription": "LOAN",
+                              "foreignKey": "94N",
+                              "codeValue": "L",
+                              "shortName": "L - LOAN"
+                          },
+                          {
+                              "valueDescription": "MED",
+                              "foreignKey": "94N",
+                              "codeValue": "M",
+                              "shortName": "M - MEDICAL"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "M2",
+                              "shortName": "M2 - Medical"
+                          },
+                          {
+                              "valueDescription": "Medica",
+                              "foreignKey": "94N",
+                              "codeValue": "ME1",
+                              "shortName": "ME1 - Medical Care"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "TAX",
+                              "shortName": "TAX - Tax"
+                          },
+                          {
+                              "valueDescription": "CHECK1",
+                              "foreignKey": "94N",
+                              "codeValue": "W",
+                              "shortName": "W - CHECKING"
+                          },
+                          {
+                              "valueDescription": "CHECK2",
+                              "foreignKey": "94N",
+                              "codeValue": "X",
+                              "shortName": "X - CHECKING"
+                          },
+                          {
+                              "valueDescription": "SAVE",
+                              "foreignKey": "94N",
+                              "codeValue": "Y",
+                              "shortName": "Y - SAVINGS"
+                          },
+                          {
+                              "valueDescription": "SAVE2",
+                              "foreignKey": "94N",
+                              "codeValue": "Z",
+                              "shortName": "Z - SAVINGS"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "Z1",
+                              "shortName": "Z1"
+                          }
+                      ],
+                      "links": [
+                          {
+                              "href": "https://api.adp.com/payroll/v3/deduction-configurations",
+                              "title": "Link to the deduction configuration code list API",
+                              "mediaType": "application/json",
+                              "method": "GET"
+                          }
+                      ]
+                  },
+                  "readOnly": false,
+                  "optional": true
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/deductionRate/rateValue": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Deduction Amount",
+                  "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/deductionRate/currencyCode": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Currency Code"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/deductionRate/baseUnitCode/codeValue": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Pay Period"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/configurationTags/tagCode": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Deduction Type"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/configurationTags/tagType": {
+                  "readOnly": false,
+                  "optional": true,
+                  "dataType": "string"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/deductionInputs/configurationTags/tagValues": {
+                  "minItems": 0,
+                  "maxItems": 1,
+                  "uniqueItems": true,
+                  "default": [
+                      "T"
+                  ]
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/reimbursementInputs/reimbursementCode/codeValue": {
+                  "codeList": {
+                      "codeListTitle": "Deduction Code",
+                      "listItems": [
+                          {
+                              "valueDescription": "BANK$",
+                              "foreignKey": "94N",
+                              "codeValue": "70",
+                              "shortName": "70 - Bankruptcy"
+                          },
+                          {
+                              "valueDescription": "TAXLY$",
+                              "foreignKey": "94N",
+                              "codeValue": "71",
+                              "shortName": "71 - tax levy"
+                          },
+                          {
+                              "valueDescription": "TAXLY$",
+                              "foreignKey": "94N",
+                              "codeValue": "72",
+                              "shortName": "72 - tax levy"
+                          },
+                          {
+                              "valueDescription": "GRNSH$",
+                              "foreignKey": "94N",
+                              "codeValue": "73",
+                              "shortName": "73 - Garn"
+                          },
+                          {
+                              "valueDescription": "GRNSH$",
+                              "foreignKey": "94N",
+                              "codeValue": "74",
+                              "shortName": "74 - Garn"
+                          },
+                          {
+                              "valueDescription": "SPPRT$",
+                              "foreignKey": "94N",
+                              "codeValue": "75",
+                              "shortName": "75 - child support"
+                          },
+                          {
+                              "valueDescription": "SPPRT$",
+                              "foreignKey": "94N",
+                              "codeValue": "76",
+                              "shortName": "76 - child support"
+                          },
+                          {
+                              "valueDescription": "SPPRT$",
+                              "foreignKey": "94N",
+                              "codeValue": "77",
+                              "shortName": "77 - support order"
+                          },
+                          {
+                              "valueDescription": "SPPRT$",
+                              "foreignKey": "94N",
+                              "codeValue": "78",
+                              "shortName": "78 - child support"
+                          },
+                          {
+                              "valueDescription": "WAGE",
+                              "foreignKey": "94N",
+                              "codeValue": "79",
+                              "shortName": "79 - wage agreement"
+                          },
+                          {
+                              "valueDescription": "BANK%",
+                              "foreignKey": "94N",
+                              "codeValue": "90",
+                              "shortName": "90 - bankruptcy%"
+                          },
+                          {
+                              "valueDescription": "LEVY%",
+                              "foreignKey": "94N",
+                              "codeValue": "91",
+                              "shortName": "91 - tax levy%"
+                          },
+                          {
+                              "valueDescription": "LEVY%",
+                              "foreignKey": "94N",
+                              "codeValue": "92",
+                              "shortName": "92 - tax levy%"
+                          },
+                          {
+                              "valueDescription": "GARN%",
+                              "foreignKey": "94N",
+                              "codeValue": "93",
+                              "shortName": "93 - Garn%"
+                          },
+                          {
+                              "valueDescription": "GARN%",
+                              "foreignKey": "94N",
+                              "codeValue": "94",
+                              "shortName": "94 - Garn%"
+                          },
+                          {
+                              "valueDescription": "CHILD%",
+                              "foreignKey": "94N",
+                              "codeValue": "95",
+                              "shortName": "95 - child support%"
+                          },
+                          {
+                              "valueDescription": "CHILD%",
+                              "foreignKey": "94N",
+                              "codeValue": "96",
+                              "shortName": "96 - child support%"
+                          },
+                          {
+                              "valueDescription": "AUTO",
+                              "foreignKey": "94N",
+                              "codeValue": "A",
+                              "shortName": "A - AUTO EXPENSE"
+                          },
+                          {
+                              "valueDescription": "AwaTax",
+                              "foreignKey": "94N",
+                              "codeValue": "AS1",
+                              "shortName": "AS1 - Service/Safety"
+                          },
+                          {
+                              "valueDescription": "BKNGF",
+                              "foreignKey": "94N",
+                              "codeValue": "B",
+                              "shortName": "B - BAKING FEE"
+                          },
+                          {
+                              "valueDescription": "MEDST",
+                              "foreignKey": "94N",
+                              "codeValue": "C",
+                              "shortName": "C - MEDICARE SURTAX"
+                          },
+                          {
+                              "valueDescription": "DENTAL",
+                              "foreignKey": "94N",
+                              "codeValue": "D",
+                              "shortName": "D - DENTAL"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "E",
+                              "shortName": "E - EMI"
+                          },
+                          {
+                              "valueDescription": "GARN",
+                              "foreignKey": "94N",
+                              "codeValue": "G",
+                              "shortName": "G - GARN"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "GAA",
+                              "shortName": "GAA"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "H",
+                              "shortName": "H"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "I",
+                              "shortName": "I - test"
+                          },
+                          {
+                              "valueDescription": "J-Test",
+                              "foreignKey": "94N",
+                              "codeValue": "J",
+                              "shortName": "J - Other"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "K",
+                              "shortName": "K - Savings"
+                          },
+                          {
+                              "valueDescription": "LOAN",
+                              "foreignKey": "94N",
+                              "codeValue": "L",
+                              "shortName": "L - LOAN"
+                          },
+                          {
+                              "valueDescription": "MED",
+                              "foreignKey": "94N",
+                              "codeValue": "M",
+                              "shortName": "M - MEDICAL"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "M2",
+                              "shortName": "M2 - Medical"
+                          },
+                          {
+                              "valueDescription": "Medica",
+                              "foreignKey": "94N",
+                              "codeValue": "ME1",
+                              "shortName": "ME1 - Medical Care"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "TAX",
+                              "shortName": "TAX - Tax"
+                          },
+                          {
+                              "valueDescription": "CHECK1",
+                              "foreignKey": "94N",
+                              "codeValue": "W",
+                              "shortName": "W - CHECKING"
+                          },
+                          {
+                              "valueDescription": "CHECK2",
+                              "foreignKey": "94N",
+                              "codeValue": "X",
+                              "shortName": "X - CHECKING"
+                          },
+                          {
+                              "valueDescription": "SAVE",
+                              "foreignKey": "94N",
+                              "codeValue": "Y",
+                              "shortName": "Y - SAVINGS"
+                          },
+                          {
+                              "valueDescription": "SAVE2",
+                              "foreignKey": "94N",
+                              "codeValue": "Z",
+                              "shortName": "Z - SAVINGS"
+                          },
+                          {
+                              "foreignKey": "94N",
+                              "codeValue": "Z1",
+                              "shortName": "Z1"
+                          }
+                      ]
+                  },
+                  "readOnly": false,
+                  "optional": true
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/reimbursementInputs/reimbursementAmount/amountValue": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Deduction Amount",
+                  "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/reimbursementInputs/reimbursementAmount/currencyCode": {
+                  "readOnly": false,
+                  "optional": false,
+                  "hidden": false,
+                  "shortLabelName": "Currency Code"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/reimbursementInputs/configurationTags/tagCode": {
+                  "readOnly": false,
+                  "optional": true,
+                  "hidden": false,
+                  "shortLabelName": "Deduction Type"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/reimbursementInputs/configurationTags/tagType": {
+                  "readOnly": false,
+                  "optional": true,
+                  "dataType": "string"
+              },
+              "/payDataInput/payeePayInputs/payrollProfilePayInputs/payInputs/reimbursementInputs/configurationTags/tagValues": {
+                  "minItems": 0,
+                  "maxItems": 1,
+                  "uniqueItems": true,
+                  "default": [
+                      "T"
+                  ]
+              }
+          }
+      ]
+  }
+}
