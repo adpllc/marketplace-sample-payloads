@@ -1,9 +1,1263 @@
 {
-  "_confirmMessage": {
-    "requestStatus": "success",
-    "messages": [
+  "meta": {
+    "/data/transforms": [
       {
-        "resourceID": "12704eb1-3e85-41f0-ad60-b6e07c94b1dc"
+        "/applicantOnboarding": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalName": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalName/givenName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalName/middleName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalName/familyName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/preferredName": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/preferredName/formattedName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/formerNames": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/formerNames/formattedName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/lineOne": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/lineTwo": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/subdivisionCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/payroll/v3/payroll-instruction-management/states/run",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/subdivisionCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/subdivisionCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/subdivisionCode2": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/subdivisionCode2/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/subdivisionCode2/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/cityName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/postalCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/countryCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/emails": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/emails/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/emails/nameCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/emails/nameCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/emails/emailUri": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/mobiles": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/mobiles/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/mobiles/nameCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/mobiles/nameCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/mobiles/dialNumber": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/landlines": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/landlines/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/landlines/nameCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/landlines/nameCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/landlines/dialNumber": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/landlines/extension": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/governmentIDs": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/governmentIDs/id": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/governmentIDs/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/governmentIDs/nameCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/governmentIDs/nameCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/birthDate": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/genderCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "shortName": "M",
+                "longName": "M"
+              },
+              {
+                "shortName": "F",
+                "longName": "F"
+              },
+              {
+                "shortName": "XX",
+                "longName": "XX"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantPersonalProfile/genderCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/hireDate": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/expectedStartDate": {
+          "optional": true,
+          "dataType": "string[date]"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/workLevelCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "shortName": "FullTime",
+                "longName": "FullTime"
+              },
+              {
+                "shortName": "PartTime",
+                "longName": "PartTime"
+              },
+              {
+                "shortName": "Temporary",
+                "longName": "Temporary"
+              },
+              {
+                "shortName": "XX",
+                "longName": "XX"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantWorkerProfile/workLevelCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits": {
+          "optional": true,
+          "dataType": "array",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/hr/v3/worker-management/Departments",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/NameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/NameCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/NameCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/TypeCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/TypeCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/TypeCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/lineOne": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/lineTwo": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/subdivisionCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/payroll/v3/payroll-instruction-management/states/run",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/subdivisionCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/subdivisionCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/subdivisionCode2": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/subdivisionCode2/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/subdivisionCode2/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/cityName": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/postalCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/countryCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/workerTypeCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "shortName": "Contractor",
+                "longName": "Contractor"
+              },
+              {
+                "shortName": "Employee",
+                "longName": "Employee"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantWorkerProfile/workerTypeCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines/nameCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines/nameCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines/dialNumber": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines/extension": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/emails": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/emails/nameCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/emails/nameCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/emails/nameCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/emails/emailUri": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/remunerationBasisCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/remunerationBasisCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/remunerationBasisCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/baseRemuneration": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/baseRemuneration/hourlyRateAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/baseRemuneration/hourlyRateAmount/amount": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/baseRemuneration/hourlyRateAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/baseRemuneration/payPeriodRateAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/baseRemuneration/payPeriodRateAmount/amount": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/baseRemuneration/payPeriodRateAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/additionalRemunerations": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/additionalRemunerations/remunerationRate": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/additionalRemunerations/remunerationRate/rate": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/additionalRemunerations/associatedRateQualifiers": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/hr/v3/worker-management/Departments",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantPayrollProfile/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/standardPayPeriodHours": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/standardPayPeriodHours/hoursQuantity": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/standardPayPeriodHours/unitCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/standardPayPeriodHours/unitCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/standardPayPeriodHours/unitCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/payCycleCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/payroll/v3/payroll-instruction-management/pay-cycles/run",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantPayrollProfile/payCycleCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/payCycleCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/customFieldGroup": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/customFieldGroup/indicatorFields": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/customFieldGroup/indicatorFields/nameCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "Seasonal",
+                "shortName": "Seasonal",
+                "longName": "Seasonal"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantPayrollProfile/customFieldGroup/indicatorFields/nameCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/customFieldGroup/indicatorFields/nameCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantPayrollProfile/customFieldGroup/indicatorFields/IndicatorValue": {
+          "optional": true,
+          "dataType": "boolean"
+        },
+        "/applicantOnboarding/applicantTaxProfile": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "1",
+                "shortName": "ExemptFromTax",
+                "longName": "ExemptFromTax"
+              },
+              {
+                "codeValue": "X",
+                "shortName": "ExemptFromWithholding",
+                "longName": "ExemptFromWithholding"
+              },
+              {
+                "codeValue": "0",
+                "shortName": "DoNotExempt",
+                "longName": "DoNotExempt"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxWithholdingStatus/statusCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/payroll/v3/payroll-instruction-management/federal-tax-filing-status/run",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxFilingStatusCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxAllowanceQuantity": {
+          "optional": true,
+          "dataType": "Int64"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalIncomeAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalIncomeAmount/amount": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalIncomeAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxAllowances": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxAllowances/taxAllowanceAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxAllowances/taxAllowanceAmount/amount": {
+          "optional": true,
+          "dataType": "Int64"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxAllowances/taxAllowanceAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxAllowances/taxAllowanceQuantity": {
+          "optional": true,
+          "dataType": "Int64"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxAllowances/allowanceTypeCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "Dependents",
+                "shortName": "Dependents",
+                "longName": "Dependents"
+              },
+              {
+                "codeValue": "Deductions",
+                "shortName": "Deductions",
+                "longName": "Deductions"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxAllowances/allowanceTypeCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/taxAllowances/allowanceTypeCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount/amount": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxPercentage": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxPercentage/percentage": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount/amount": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/overrideTaxAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxPercentage": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalIncomeTaxInstruction/additionalTaxPercentage/percentage": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "1",
+                "shortName": "ExemptFromTax",
+                "longName": "ExemptFromTax"
+              },
+              {
+                "codeValue": "0",
+                "shortName": "DoNotExempt",
+                "longName": "DoNotExempt"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/federalUnemploymentTaxInstruction/taxWithholdingStatus/statusCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/medicareTaxInstruction": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "1",
+                "shortName": "ExemptFromTax",
+                "longName": "ExemptFromTax"
+              },
+              {
+                "codeValue": "0",
+                "shortName": "DoNotExempt",
+                "longName": "DoNotExempt"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/medicareTaxInstruction/taxWithholdingStatus/statusCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "1",
+                "shortName": "ExemptFromTax",
+                "longName": "ExemptFromTax"
+              },
+              {
+                "codeValue": "0",
+                "shortName": "DoNotExempt",
+                "longName": "DoNotExempt"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/socialSecurityTaxInstruction/taxWithholdingStatus/statusCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/statutoryWorkerIndicator": {
+          "optional": true,
+          "dataType": "Boolean"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/qualifiedPensionPlanCoverageIndicator": {
+          "optional": true,
+          "dataType": "Boolean"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/multipleJobIndicator": {
+          "optional": true,
+          "dataType": "Boolean"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/additionalStatutoryInputs": {
+          "optional": true,
+          "dataType": "array",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "2020",
+                "shortName": "NewW4Form",
+                "longName": "NewW4Form"
+              },
+              {
+                "codeValue": "PRE2020",
+                "shortName": "OldW4Form",
+                "longName": "OldW4Form"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/additionalStatutoryInputs/tagCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usFederalTaxInstruction/additionalStatutoryInputs/tagValues": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/stateCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/payroll/v3/payroll-instruction-management/payroll-jurisdictions/run",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/stateCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/stateCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/livedInJurisdictionIndicator": {
+          "optional": true,
+          "dataType": "Boolean"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus/statusCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "1",
+                "shortName": "ExemptFromTax",
+                "longName": "ExemptFromTax"
+              },
+              {
+                "codeValue": "X",
+                "shortName": "ExemptFromWithholding",
+                "longName": "ExemptFromWithholding"
+              },
+              {
+                "codeValue": "0",
+                "shortName": "DoNotExempt",
+                "longName": "DoNotExempt"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus/statusCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxWithholdingStatus/statusCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxFilingStatusCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/payroll/v3/payroll-instruction-management/state-tax-filing-status/run",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxFilingStatusCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxFilingStatusCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowanceQuantity": {
+          "optional": true,
+          "dataType": "Int64"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/taxAllowanceAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/taxAllowanceAmount/amount": {
+          "optional": true,
+          "dataType": "Int64"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/taxAllowanceAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/taxAllowanceQuantity": {
+          "optional": true,
+          "dataType": "Int64"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/allowanceTypeCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "DEP",
+                "shortName": "Dependent Allowances Quantity",
+                "longName": "Dependent Allowances Quantity"
+              },
+              {
+                "codeValue": "SPL",
+                "shortName": "Special Allowances Quantity",
+                "longName": "Special Allowances Quantity"
+              },
+              {
+                "codeValue": "MPE",
+                "shortName": "Mississippi PersonalExempt Amount",
+                "longName": "Mississippi PersonalExempt Amount"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/allowanceTypeCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/taxAllowances/allowanceTypeCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalIncomeAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalIncomeAmount/amount": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalIncomeAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/workedInJurisdictionIndicator": {
+          "optional": true,
+          "dataType": "Boolean"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalTaxAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalTaxAmount/amount": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalTaxAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/overrideTaxPercentage": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/overrideTaxPercentage/percentage": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/overrideTaxAmount": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/overrideTaxAmount/amount": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/overrideTaxAmount/currencyCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalTaxPercentage": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalTaxPercentage/percentage": {
+          "optional": true,
+          "dataType": "number"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalStatutoryInputs": {
+          "optional": true,
+          "dataType": "array",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "MBT",
+                "shortName": "Modified Business Tax",
+                "longName": "Modified Business Tax"
+              },
+              {
+                "codeValue": "FLI",
+                "shortName": "Family Leave Tax",
+                "longName": "Family Leave Tax"
+              },
+              {
+                "codeValue": "FL",
+                "shortName": "State Paid Family Leave (1)",
+                "longName": "State Paid Family Leave (1)"
+              },
+              {
+                "codeValue": "ML",
+                "shortName": "State Paid Medical Leave",
+                "longName": "State Paid Medical Leave"
+              },
+              {
+                "codeValue": "PFL",
+                "shortName": "State Paid Family Leave (2)",
+                "longName": "State Paid Family Leave (2)"
+              },
+              {
+                "codeValue": "WC",
+                "shortName": "Worker's Compensation or Worker's benefit fund assessment or Worker's compensation personnel assessment",
+                "longName": "Worker's Compensation or Worker's benefit fund assessment or Worker's compensation personnel assessment"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalStatutoryInputs/tagCode": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/stateIncomeTaxInstructions/additionalStatutoryInputs/tagValues": {
+          "optional": true,
+          "dataType": "array"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/stateCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/payroll/v3/payroll-instruction-management/payroll-jurisdictions/run",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/stateCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/stateCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus/statusCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "1",
+                "shortName": "ExemptFromTax",
+                "longName": "ExemptFromTax"
+              },
+              {
+                "codeValue": "0",
+                "shortName": "DoNotExempt",
+                "longName": "DoNotExempt"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus/statusCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/taxWithholdingStatus/statusCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/healthCoverageIndicator": {
+          "optional": true,
+          "dataType": "Boolean"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/healthCoverageCode": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/healthCoverageCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/suiTaxInstruction/healthCoverageCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/sdiTaxInstruction": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/sdiTaxInstruction/stateCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "links": [
+              {
+                "href": "/codelists/payroll/v3/payroll-instruction-management/payroll-jurisdictions/run",
+                "mediaType": "application/json",
+                "method": "GET"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/sdiTaxInstruction/stateCode/name": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/sdiTaxInstruction/stateCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus": {
+          "optional": true,
+          "dataType": "object"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus/statusCode": {
+          "optional": true,
+          "dataType": "object",
+          "codeList": {
+            "listItems": [
+              {
+                "codeValue": "1",
+                "shortName": "ExemptFromTax",
+                "longName": "ExemptFromTax"
+              },
+              {
+                "codeValue": "0",
+                "shortName": "DoNotExempt",
+                "longName": "DoNotExempt"
+              }
+            ]
+          }
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus/statusCode/code": {
+          "optional": true,
+          "dataType": "string"
+        },
+        "/applicantOnboarding/applicantTaxProfile/usStateTaxInstructions/sdiTaxInstruction/taxWithholdingStatus/statusCode/name": {
+          "optional": true,
+          "dataType": "string"
+        }
       }
     ]
   }
