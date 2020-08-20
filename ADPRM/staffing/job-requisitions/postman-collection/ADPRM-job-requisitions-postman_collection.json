@@ -1,0 +1,717 @@
+{
+	"info": {
+		"_postman_id": "81ceae2f-503d-478e-b624-0fe9c616389e",
+		"name": "ADPRM-requisitions Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET Requisitions",
+			"item": [
+				{
+					"name": "job requisitions-itemID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/staffing/v1/job-requisitions/6000119184412",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"staffing",
+								"v1",
+								"job-requisitions",
+								"6000119184412"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job requisitions-itemID Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/staffing/v1/job-requisitions/6000119240812",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"staffing",
+								"v1",
+								"job-requisitions",
+								"6000119240812"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job requisitions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/staffing/v1/job-requisitions",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"staffing",
+								"v1",
+								"job-requisitions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job requisitions Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/staffing/v1/job-requisitions?$top=50&$skip=9",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"staffing",
+								"v1",
+								"job-requisitions"
+							],
+							"query": [
+								{
+									"key": "$top",
+									"value": "50"
+								},
+								{
+									"key": "$skip",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job requisitions - pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/staffing/v1/job-requisitions?$top=10&$skip=0",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"staffing",
+								"v1",
+								"job-requisitions"
+							],
+							"query": [
+								{
+									"key": "$top",
+									"value": "10"
+								},
+								{
+									"key": "$skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job requisitions status filter Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 9d2a0602-c07a-4603-aebb-037cba3d240e"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/staffing/v1/job-requisitionss?$filter=requisitionStatuscode/codeValue eq 'Active'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"staffing",
+								"v1",
+								"job-requisitionss"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requisitionStatuscode/codeValue eq 'Active'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job requisitions status filter Copy Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 9d2a0602-c07a-4603-aebb-037cba3d240e"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/staffing/v1/job-requisitionss?$filter=requisitionStatuscode/codeValue eq 'Active'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"staffing",
+								"v1",
+								"job-requisitionss"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "requisitionStatuscode/codeValue eq 'Active'"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Add requisitions",
+			"item": [
+				{
+					"name": "job requisitions add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"jobRequisition\": {\n                        \"requisitionTitle\": \"Test Requisition\",\n                        \"clientRequisitionID\": \"\",\n                        \"requisitionDescription\": \"testing req creation\",\n                        \"requisitionLocations\": [\n                            {\n                                \"nameCode\": {\n                                    \"codeValue\": \"10109\"\n                                },\n                                \"address\": {\n                                    \"countrySubdivisionLevel1\": {\n                                        \"codeValue\": \"MD\",\n                                        \"subdivisionType\": \"\"\n                                    },\n                                    \"countryCode\": \"USA\",\n                                    \"postalCode\": \"10001\"\n                                },\n                                \"primaryIndicator\": true,\n                                \"postingIndicator\": true\n                            }\n                        ],\n                        \"requisitionReasonCode\": {\n                            \"codeValue\": \"00001000\",\n                            \"shortName\": \"\",\n                            \"longName\": \"\"\n                        },\n                        \"postDate\": \"2020-08-07T00:00:00Z\",\n                        \"positionQualifications\": {\n                            \"qualificationSummary\": \"B.E/B.TECH\"\n                        },\n                        \"remunerationBasisCode\": {\n                            \"codeValue\": \"00001000\",\n                            \"shortName\": \"\",\n                            \"longName\": \"\"\n                        },\n                        \"payGradeRange\": {\n                            \"minimumRate\": {\n                                \"amountValue\": 75000,\n                                \"baseUnitCode\": {\n                                    \"codeValue\": \"00001000\",\n                                    \"shortName\": \"year\"\n                                }\n                            },\n                            \"medianRate\": {\n                                \"amountValue\": 82000,\n                                \"baseUnitCode\": {\n                                    \"codeValue\": \"00001000\",\n                                    \"shortName\": \"year\"\n                                }\n                            },\n                            \"maximumRate\": {\n                                \"amountValue\": 90000,\n                                \"baseUnitCode\": {\n                                    \"codeValue\": \"00001000\",\n                                    \"shortName\": \"year\"\n                                }\n                            }\n                        },\n                        \"bonusEligibleIndicator\": true,\n                         \"job\": {\n                            \"wageLawCoverage\": {\n                                \"coverageCode\": {\n                                    \"codeValue\": \"00001000\",\n                                    \"shortName\": \"\",\n                                    \"longName\": \"\"\n                                }\n                            }\n                        },\n                        \"position\": {\n                            \"positionTitle\": \"Req Position\",\n                            \"positionCode\": {\n                                \"codeValue\": \"100300\"\n                            }\n                        },\n                        \"workLevelCode\": {\n                            \"codeValue\": \"00002000\"\n                        },\n                        \"workerTypeCode\": {\n                            \"codeValue\": \"R\"\n                        },\n                        \"paidRelocationCode\": {\n                            \"codeValue\": \"00001000\",\n                            \"shortName\": \"\",\n                            \"longName\": \"\"\n                        },\n                        \"openingsQuantity\": 10,\n                        \"sponsorVisaIndicator\": true,\n                        \"laborUnionIndicator\": true\n                       \n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/job-requisition.add",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-requisition.add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "job requisitions add meta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"jobRequisition\": {\n                        \"requisitionTitle\": \"Test Requisition\",\n                        \"postDate\": \"2020-07-30T00:00:00Z\",\n                        \"screeningRequirements\": [],\n                        \"remunerationBasisCode\": {\n                            \"codeValue\": \"00001000\",\n                            \"shortName\": \"\",\n                            \"longName\": \"\"\n                        },\n                        \"workLevelCode\": {\n                            \"codeValue\": \"00002000\"\n                        },\n                        \"workerTypeCode\": {\n                            \"codeValue\": \"R\"\n                        },\n                        \"paidRelocationCode\": {\n                            \"codeValue\": \"00002000\",\n                            \"shortName\": \"\",\n                            \"longName\": \"\"\n                        },\n                        \"openingsQuantity\": 10,\n                        \"customFieldGroup\": {\n                            \"stringFields\": [\n                                {\n                                    \"nameCode\": {\n                                        \"codeValue\": \"hmName\"\n                                    },\n                                    \"stringValue\": \"Alex Perry\"\n                                },\n                                {\n                                    \"nameCode\": {\n                                        \"codeValue\": \"hmEmail\"\n                                    },\n                                    \"stringValue\": \"alex.perry@gmail.com\"\n                                }\n                            ]\n                        },\n                        \"clientRequisitionID\": \"0001\",\n                        \"requisitionDescription\": \"testing req creation\",\n                        \"job\": {\n                            \"wageLawCoverage\": {\n                                \"coverageCode\": {\n                                    \"codeValue\": \"00001000\",\n                                    \"shortName\": \"\",\n                                    \"longName\": \"\"\n                                }\n                            }\n                        },\n                        \"position\": {\n                            \"positionTitle\": \"Req Position\",\n                            \"positionCode\": {\n                                \"codeValue\": \"100600\"\n                            }\n                        },\n                        \"requisitionLocations\": [\n                            {\n                                \"nameCode\": {\n                                    \"codeValue\": \"10102\"\n                                },\n                                \"address\": {\n                                    \"countrySubdivisionLevel1\": {\n                                        \"codeValue\": \"AL\",\n                                        \"subdivisionType\": \"\"\n                                    },\n                                    \"countryCode\": \"USA\",\n                                    \"postalCode\": \"10001\"\n                                }\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/job-requisition.add/meta",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"job-requisition.add",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "codelists",
+			"item": [
+				{
+					"name": "req position codes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/staffing/v3/position-seeker-management/req-position-codes/adprecruit/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"staffing",
+								"v3",
+								"position-seeker-management",
+								"req-position-codes",
+								"adprecruit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "req location  codes Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/staffing/v3/position-seeker-management/req-location-codes/adprecruit/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"staffing",
+								"v3",
+								"position-seeker-management",
+								"req-location-codes",
+								"adprecruit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "country subdivision level- not working with filter",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/staffing/v3/position-seeker-management/country-subdivision-level1/adprecruit/1?$filter=foreignKey eq 'USA'",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"staffing",
+								"v3",
+								"position-seeker-management",
+								"country-subdivision-level1",
+								"adprecruit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "foreignKey eq 'USA'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "country codes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/staffing/v3/position-seeker-management/country-codes/adprecruit/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"staffing",
+								"v3",
+								"position-seeker-management",
+								"country-codes",
+								"adprecruit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "country postal codes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/staffing/v3/position-seeker-management/country-postal-codes/adprecruit/1?$filter=foreignKey eq 'USA'",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"staffing",
+								"v3",
+								"position-seeker-management",
+								"country-postal-codes",
+								"adprecruit",
+								"1"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "foreignKey eq 'USA'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requisition status codes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/staffing/v3/position-seeker-management/requisition-status-codes/adprecruit/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"staffing",
+								"v3",
+								"position-seeker-management",
+								"requisition-status-codes",
+								"adprecruit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "event notification",
+			"item": [
+				{
+					"name": "GET events",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/core/v1/event-notification-messages",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"core",
+								"v1",
+								"event-notification-messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete event notification",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/core/v1/event-notification-messages/0x_414d51204250494e464f425131312020fae01e5f03c5d32e",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"core",
+								"v1",
+								"event-notification-messages",
+								"0x_414d51204250494e464f425131312020fae01e5f03c5d32e"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Access token call_IAT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "474c5f9b-212c-427f-b208-a7dbaaeedbe8",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
