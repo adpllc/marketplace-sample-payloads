@@ -1,0 +1,960 @@
+{
+	"info": {
+		"_postman_id": "092230db-8ecc-47a6-a3be-35b18c700f7e",
+		"name": "benefit spending account plan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "Adding FSA plan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+								"exec": [
+									"",
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+									"console.log (active_Indicator_value);",
+									"",
+									"",
+									"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+									"   pm.expect(active_Indicator_value).to.eql(false);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {\n        \"value\": \"FSA2020\"\n    },\n    \"alternateId\": {\n        \"value\": \"FSA2020\"\n    },\n    \"legalPlanName\": \"FSA Plan 2020\",\n    \"providerId\": {\n        \"value\": \"DBI\"\n    },\n    \"productCode\": \"MedicalFSA\",\n    \"effectivePeriod\": {\n        \"validFrom\": \"2020-01-01\"\n    },\n    \"originalEffectiveDate\": \"2020-01-01\",\n    \"planAnniversary\": \"1/1\",\n    \"waitingRuleType\": [\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 2,\n            \"waitingRuleEventCode\": \"NewHire\",\n            \"waitingRuleTypeCode\": \"FirstOfMonthAfterXMonths\"\n        },\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 0,\n            \"waitingRuleEventCode\": \"WorkEvent\",\n            \"waitingRuleTypeCode\": \"HireDate\"\n        }\n    ],\n    \"accountBasedPlanSetupType\": {\n        \"accountBasedCoverageLevels\": [\n            {\n                \"employerContributionType\": {\n                    \"contributionAmount\": {\n                        \"currency\": \"USD\",\n                        \"value\": 2000\n                    },\n                    \"contributionType\": \"Flat\"\n                },\n                \"maximumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 2500\n                },\n                \"minimumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 0\n                },\n                \"coverageLevelTierType\": \"Employee\"\n            }\n        ]\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/benefits/v1/spending-account-plans",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"benefits",
+								"v1",
+								"spending-account-plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Changing FSA plan-complete state",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+								"exec": [
+									"",
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+									"console.log (active_Indicator_value);",
+									"",
+									"",
+									"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+									"   pm.expect(active_Indicator_value).to.eql(false);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {\n        \"value\": \"FSA2020\"\n    },\n    \"alternateId\": {\n        \"value\": \"FSA2020\"\n    },\n    \"legalPlanName\": \"FSA Plan 2020\",\n    \"providerId\": {\n        \"value\": \"DBI\"\n    },\n    \"productCode\": \"MedicalFSA\",\n    \"effectivePeriod\": {\n        \"validFrom\": \"2020-01-01\"\n    },\n    \"originalEffectiveDate\": \"2020-01-01\",\n    \"planAnniversary\": \"1/1\",\n    \"waitingRuleType\": [\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 2,\n            \"waitingRuleEventCode\": \"NewHire\",\n            \"waitingRuleTypeCode\": \"FirstOfMonthAfterXMonths\"\n        },\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 0,\n            \"waitingRuleEventCode\": \"WorkEvent\",\n            \"waitingRuleTypeCode\": \"HireDate\"\n        }\n    ],\n    \"accountBasedPlanSetupType\": {\n        \"accountBasedCoverageLevels\": [\n            {\n                \"employerContributionType\": {\n                    \"contributionAmount\": {\n                        \"currency\": \"USD\",\n                        \"value\": 3000\n                    },\n                    \"contributionType\": \"Flat\"\n                },\n                \"maximumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 2500\n                },\n                \"minimumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 0\n                },\n                \"coverageLevelTierType\": \"Employee\"\n            }\n        ]\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/benefits/v1/spending-account-plans",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"benefits",
+								"v1",
+								"spending-account-plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding HSA plan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+								"exec": [
+									"",
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+									"console.log (active_Indicator_value);",
+									"",
+									"",
+									"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+									"   pm.expect(active_Indicator_value).to.eql(false);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {\n        \"value\": \"2020629\"\n    },\n    \"alternateId\": {\n        \"value\": \"2020629\"\n    },\n    \"legalPlanName\": \"API HSA Plan 2020\",\n    \"providerId\": {\n        \"value\": \"DBI\"\n    },\n    \"productCode\": \"HSA\",\n    \"effectivePeriod\": {\n        \"validFrom\": \"2020-01-01\"\n    },\n    \"originalEffectiveDate\": \"2020-01-01\",\n    \"planAnniversary\": \"1/1\",\n    \"waitingRuleType\": [\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 2,\n            \"waitingRuleEventCode\": \"NewHire\",\n            \"waitingRuleTypeCode\": \"FirstOfMonthAfterXMonths\"\n        },\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 0,\n            \"waitingRuleEventCode\": \"WorkEvent\",\n            \"waitingRuleTypeCode\": \"HireDate\"\n        }\n    ],\n    \"accountBasedPlanSetupType\": {\n        \"accountBasedCoverageLevels\": [\n            {\n                \"employerContributionType\": {\n                    \"contributionAmount\": {\n                        \"currency\": \"USD\",\n                        \"value\": 2200\n                    },\n                    \"contributionType\": \"Flat\"\n                },\n                \"maximumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 2300\n                },\n                \"minimumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 0\n                },\n                \"coverageLevelTierType\": \"Employee\"\n            },\n            {\n            \"employerContributionType\": {\n                \"contributionAmount\": {\n                    \"currency\": \"USD\",\n                    \"value\": 4000\n                },\n                \"contributionType\": \"Flat\"\n            },\n            \"maximumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 7000\n            },\n            \"minimumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 0\n            },\n            \"coverageLevelTierType\": \"EmployeeFamily\"\n        }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/benefits/v1/spending-account-plans",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"benefits",
+								"v1",
+								"spending-account-plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ChangingHSA plan- in progress state",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+								"exec": [
+									"",
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+									"console.log (active_Indicator_value);",
+									"",
+									"",
+									"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+									"   pm.expect(active_Indicator_value).to.eql(false);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {\n        \"value\": \"2020629\"\n    },\n    \"alternateId\": {\n        \"value\": \"2020629\"\n    },\n    \"legalPlanName\": \"API HSA Plan 2020\",\n    \"providerId\": {\n        \"value\": \"DBI\"\n    },\n    \"productCode\": \"HSA\",\n    \"effectivePeriod\": {\n        \"validFrom\": \"2020-01-01\"\n    },\n    \"originalEffectiveDate\": \"2020-01-01\",\n    \"planAnniversary\": \"1/1\",\n    \"waitingRuleType\": [\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 2,\n            \"waitingRuleEventCode\": \"NewHire\",\n            \"waitingRuleTypeCode\": \"FirstOfMonthAfterXMonths\"\n        },\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 0,\n            \"waitingRuleEventCode\": \"WorkEvent\",\n            \"waitingRuleTypeCode\": \"HireDate\"\n        }\n    ],\n    \"accountBasedPlanSetupType\": {\n        \"accountBasedCoverageLevels\": [\n            {\n                \"employerContributionType\": {\n                    \"contributionAmount\": {\n                        \"currency\": \"USD\",\n                        \"value\": 2200\n                    },\n                    \"contributionType\": \"Flat\"\n                },\n                \"maximumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 2300\n                },\n                \"minimumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 0\n                },\n                \"coverageLevelTierType\": \"Employee\"\n            },\n            {\n            \"employerContributionType\": {\n                \"contributionAmount\": {\n                    \"currency\": \"USD\",\n                    \"value\": 4000\n                },\n                \"contributionType\": \"Flat\"\n            },\n            \"maximumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 7000\n            },\n            \"minimumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 0\n            },\n            \"coverageLevelTierType\": \"EmployeeFamily\"\n        }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/benefits/v1/spending-account-plans",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"benefits",
+								"v1",
+								"spending-account-plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "While adding coverage level type as employeeFamily to MedicalFSA",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+								"exec": [
+									"",
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+									"console.log (active_Indicator_value);",
+									"",
+									"",
+									"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+									"   pm.expect(active_Indicator_value).to.eql(false);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {\n        \"value\": \"2020629\"\n    },\n    \"alternateId\": {\n        \"value\": \"2020629\"\n    },\n    \"legalPlanName\": \"API HSA Plan 2020\",\n    \"providerId\": {\n        \"value\": \"DBI\"\n    },\n    \"productCode\": \"MedicalFSA\",\n    \"effectivePeriod\": {\n        \"validFrom\": \"2020-01-01\"\n    },\n    \"originalEffectiveDate\": \"2020-01-01\",\n    \"planAnniversary\": \"1/1\",\n    \"waitingRuleType\": [\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 2,\n            \"waitingRuleEventCode\": \"NewHire\",\n            \"waitingRuleTypeCode\": \"FirstOfMonthAfterXMonths\"\n        },\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 0,\n            \"waitingRuleEventCode\": \"WorkEvent\",\n            \"waitingRuleTypeCode\": \"HireDate\"\n        }\n    ],\n    \"accountBasedPlanSetupType\": {\n        \"accountBasedCoverageLevels\": [\n            {\n                \"employerContributionType\": {\n                    \"contributionAmount\": {\n                        \"currency\": \"USD\",\n                        \"value\": 2200\n                    },\n                    \"contributionType\": \"Flat\"\n                },\n                \"maximumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 2300\n                },\n                \"minimumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 0\n                },\n                \"coverageLevelTierType\": \"Employee\"\n            },\n            {\n            \"employerContributionType\": {\n                \"contributionAmount\": {\n                    \"currency\": \"USD\",\n                    \"value\": 4000\n                },\n                \"contributionType\": \"Flat\"\n            },\n            \"maximumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 7000\n            },\n            \"minimumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 0\n            },\n            \"coverageLevelTierType\": \"EmployeeFamily\"\n        }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/benefits/v1/spending-account-plans",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"benefits",
+								"v1",
+								"spending-account-plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "While adding invalid currency code",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+								"exec": [
+									"",
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+									"console.log (active_Indicator_value);",
+									"",
+									"",
+									"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+									"   pm.expect(active_Indicator_value).to.eql(false);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {\n        \"value\": \"2020629\"\n    },\n    \"alternateId\": {\n        \"value\": \"2020629\"\n    },\n    \"legalPlanName\": \"API HSA Plan 2020\",\n    \"providerId\": {\n        \"value\": \"DBI\"\n    },\n    \"productCode\": \"HSA\",\n    \"effectivePeriod\": {\n        \"validFrom\": \"2020-01-01\"\n    },\n    \"originalEffectiveDate\": \"2020-01-01\",\n    \"planAnniversary\": \"1/1\",\n    \"waitingRuleType\": [\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 2,\n            \"waitingRuleEventCode\": \"NewHire\",\n            \"waitingRuleTypeCode\": \"FirstOfMonthAfterXMonths\"\n        },\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 0,\n            \"waitingRuleEventCode\": \"WorkEvent\",\n            \"waitingRuleTypeCode\": \"HireDate\"\n        }\n    ],\n    \"accountBasedPlanSetupType\": {\n        \"accountBasedCoverageLevels\": [\n            {\n                \"employerContributionType\": {\n                    \"contributionAmount\": {\n                        \"currency\": \"USD\",\n                        \"value\": 2200\n                    },\n                    \"contributionType\": \"Flat\"\n                },\n                \"maximumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 2300\n                },\n                \"minimumContribution\": {\n                    \"currency\": \"INR\",\n                    \"value\": 0\n                },\n                \"coverageLevelTierType\": \"Employee\"\n            },\n            {\n            \"employerContributionType\": {\n                \"contributionAmount\": {\n                    \"currency\": \"USD\",\n                    \"value\": 4000\n                },\n                \"contributionType\": \"Flat\"\n            },\n            \"maximumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 7000\n            },\n            \"minimumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 0\n            },\n            \"coverageLevelTierType\": \"EmployeeFamily\"\n        }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/benefits/v1/spending-account-plans",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"benefits",
+								"v1",
+								"spending-account-plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating a plan without plan name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+								"exec": [
+									"",
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+									"console.log (active_Indicator_value);",
+									"",
+									"",
+									"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+									"   pm.expect(active_Indicator_value).to.eql(false);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {\n        \"value\": \"2020629\"\n    },\n    \"alternateId\": {\n        \"value\": \"2020629\"\n    },\n    \"legalPlanName\": \"\",\n    \"providerId\": {\n        \"value\": \"DBI\"\n    },\n    \"productCode\": \"HSA\",\n    \"effectivePeriod\": {\n        \"validFrom\": \"2020-01-01\"\n    },\n    \"originalEffectiveDate\": \"2020-01-01\",\n    \"planAnniversary\": \"1/1\",\n    \"waitingRuleType\": [\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 2,\n            \"waitingRuleEventCode\": \"NewHire\",\n            \"waitingRuleTypeCode\": \"FirstOfMonthAfterXMonths\"\n        },\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 0,\n            \"waitingRuleEventCode\": \"WorkEvent\",\n            \"waitingRuleTypeCode\": \"HireDate\"\n        }\n    ],\n    \"accountBasedPlanSetupType\": {\n        \"accountBasedCoverageLevels\": [\n            {\n                \"employerContributionType\": {\n                    \"contributionAmount\": {\n                        \"currency\": \"USD\",\n                        \"value\": 2200\n                    },\n                    \"contributionType\": \"Flat\"\n                },\n                \"maximumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 2300\n                },\n                \"minimumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 0\n                },\n                \"coverageLevelTierType\": \"Employee\"\n            },\n            {\n            \"employerContributionType\": {\n                \"contributionAmount\": {\n                    \"currency\": \"USD\",\n                    \"value\": 4000\n                },\n                \"contributionType\": \"Flat\"\n            },\n            \"maximumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 7000\n            },\n            \"minimumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 0\n            },\n            \"coverageLevelTierType\": \"EmployeeFamily\"\n        }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/benefits/v1/spending-account-plans",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"benefits",
+								"v1",
+								"spending-account-plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "When updating the alternateID of a created plan",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+								"exec": [
+									"",
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+									"console.log (active_Indicator_value);",
+									"",
+									"",
+									"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+									"   pm.expect(active_Indicator_value).to.eql(false);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {\n        \"value\": \"2020629\"\n    },\n    \"alternateId\": {\n        \"value\": \"20206219\"\n    },\n    \"legalPlanName\": \"API HSA Plan 2020\",\n    \"providerId\": {\n        \"value\": \"DBI\"\n    },\n    \"productCode\": \"HSA\",\n    \"effectivePeriod\": {\n        \"validFrom\": \"2020-01-01\"\n    },\n    \"originalEffectiveDate\": \"2020-01-01\",\n    \"planAnniversary\": \"1/1\",\n    \"waitingRuleType\": [\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 2,\n            \"waitingRuleEventCode\": \"NewHire\",\n            \"waitingRuleTypeCode\": \"FirstOfMonthAfterXMonths\"\n        },\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 0,\n            \"waitingRuleEventCode\": \"WorkEvent\",\n            \"waitingRuleTypeCode\": \"HireDate\"\n        }\n    ],\n    \"accountBasedPlanSetupType\": {\n        \"accountBasedCoverageLevels\": [\n            {\n                \"employerContributionType\": {\n                    \"contributionAmount\": {\n                        \"currency\": \"USD\",\n                        \"value\": 2200\n                    },\n                    \"contributionType\": \"Flat\"\n                },\n                \"maximumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 2300\n                },\n                \"minimumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 0\n                },\n                \"coverageLevelTierType\": \"Employee\"\n            },\n            {\n            \"employerContributionType\": {\n                \"contributionAmount\": {\n                    \"currency\": \"USD\",\n                    \"value\": 4000\n                },\n                \"contributionType\": \"Flat\"\n            },\n            \"maximumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 7000\n            },\n            \"minimumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 0\n            },\n            \"coverageLevelTierType\": \"EmployeeFamily\"\n        }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/benefits/v1/spending-account-plans",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"benefits",
+								"v1",
+								"spending-account-plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "While adding invalid alternate ID Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "046a3354-4443-44a1-9428-9d25d9a2cc11",
+								"exec": [
+									"",
+									"",
+									"",
+									"// parse JSON data",
+									"let jsonData = pm.response.json()",
+									"console.log ('JSON response: ', jsonData)",
+									"",
+									"let active_Indicator_value = jsonData.beneficiaries[0].activeIndicator;",
+									"console.log (active_Indicator_value);",
+									"",
+									"",
+									"pm.test(\"Verify the first Beneficiaries element has active_Indicator_value is false\", function () {",
+									"   pm.expect(active_Indicator_value).to.eql(false);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "sm_transactionid",
+								"type": "text",
+								"value": "benefit04",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;masked=false"
+							},
+							{
+								"key": "If-None-Match",
+								"type": "text",
+								"value": "true",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": {\n        \"value\": \"2020629\"\n    },\n    \"alternateId\": {\n        \"value\": \"@@\"\n    },\n    \"legalPlanName\": \"API HSA Plan 2020\",\n    \"providerId\": {\n        \"value\": \"DBI\"\n    },\n    \"productCode\": \"HSA\",\n    \"effectivePeriod\": {\n        \"validFrom\": \"2020-01-01\"\n    },\n    \"originalEffectiveDate\": \"2020-01-01\",\n    \"planAnniversary\": \"1/1\",\n    \"waitingRuleType\": [\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 2,\n            \"waitingRuleEventCode\": \"NewHire\",\n            \"waitingRuleTypeCode\": \"FirstOfMonthAfterXMonths\"\n        },\n        {\n            \"rollForwardIndicator\": true,\n            \"ruleValue\": 0,\n            \"waitingRuleEventCode\": \"WorkEvent\",\n            \"waitingRuleTypeCode\": \"HireDate\"\n        }\n    ],\n    \"accountBasedPlanSetupType\": {\n        \"accountBasedCoverageLevels\": [\n            {\n                \"employerContributionType\": {\n                    \"contributionAmount\": {\n                        \"currency\": \"USD\",\n                        \"value\": 2200\n                    },\n                    \"contributionType\": \"Flat\"\n                },\n                \"maximumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 2300\n                },\n                \"minimumContribution\": {\n                    \"currency\": \"USD\",\n                    \"value\": 0\n                },\n                \"coverageLevelTierType\": \"Employee\"\n            },\n            {\n            \"employerContributionType\": {\n                \"contributionAmount\": {\n                    \"currency\": \"USD\",\n                    \"value\": 4000\n                },\n                \"contributionType\": \"Flat\"\n            },\n            \"maximumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 7000\n            },\n            \"minimumContribution\": {\n                \"currency\": \"USD\",\n                \"value\": 0\n            },\n            \"coverageLevelTierType\": \"EmployeeFamily\"\n        }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/benefits/v1/spending-account-plans",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"benefits",
+								"v1",
+								"spending-account-plans"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-iat-wfn\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dfe9def6-10f1-4a54-b17b-3758e35ebfb7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "39ad831f-9161-4391-9a26-1160cf0439cc",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
