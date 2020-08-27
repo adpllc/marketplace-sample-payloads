@@ -1,0 +1,66 @@
+{
+    "events": [],
+    "confirmMessage": {
+        "confirmMessageID": {
+            "idValue": "906199e8-9fec-4fc5-8f94-77b860db3c92",
+            "schemeName": "confirmMessageID",
+            "schemeAgencyName": "ADPRECRUIT"
+        },
+        "createDateTime": "2020-08-27T09:38:37Z",
+        "requestReceiptDateTime": "2020-08-27T09:38:37Z",
+        "protocolStatusCode": {
+            "codeValue": "200",
+            "shortName": "OK",
+            "longName": "OK"
+        },
+        "protocolCode": {
+            "codeValue": "http"
+        },
+        "requestID": {
+            "idValue": "de26809a-30f7-4727-819d-16b00e32d010",
+            "schemeName": "requestID",
+            "schemeAgencyName": "ADPRECRUIT"
+        },
+        "requestStatusCode": {
+            "codeValue": "failed"
+        },
+        "processingStatusCode": {
+            "codeValue": "completed"
+        },
+        "processMessages": [],
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "5cbb5094-0b32-47da-ad85-364032affb0c",
+                    "schemeName": "processMessageID",
+                    "schemeAgencyName": "ADPRECRUIT"
+                },
+                "resourceStatusCode": {
+                    "codeValue": "failed"
+                },
+                "resourceLink": {
+                    "href": "/events/staffing/v1/work-fulfillment/document.upload/null",
+                    "rel": "canonical",
+                    "method": "POST"
+                },
+                "processMessages": [
+                    {
+                        "processMessageID": {
+                            "idValue": "5cbb5094-0b32-47da-ad85-364032affb0c",
+                            "schemeName": "processMessageID",
+                            "schemeAgencyName": "ADPRECRUIT"
+                        },
+                        "messageTypeCode": {
+                            "codeValue": "error"
+                        },
+                        "sourceLocationExpression": "$.events[?(@.eventID=='null')].data.eventContext.documentTypeCode.codeValue",
+                        "developerMessage": {
+                            "title": "Error",
+                            "messageTxt": "DocumentUploadEvent is invalid or missing required information: found 'applicant.resume1', expected one of applicant.attachment,applicant.coverletter,applicant.resume,application.attachment,application.taxform"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
