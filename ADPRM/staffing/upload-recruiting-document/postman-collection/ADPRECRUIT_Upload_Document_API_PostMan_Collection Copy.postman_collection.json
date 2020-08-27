@@ -1,0 +1,684 @@
+{
+	"info": {
+		"_postman_id": "27ab6a40-cce7-4b00-8a8e-1364d16a556a",
+		"name": "ADPRECRUIT_Upload_Document_API_PostMan_Collection Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Readiness",
+			"item": [
+				{
+					"name": "upload doc -resume using valid application itemID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/mixed"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonParam",
+									"value": "{\n   \"events\":[\n      {\n         \"serviceCategoryCode\":{\n            \"codeValue\":\"staffing\"\n         },\n         \"eventNameCode\":{\n            \"codeValue\":\"document.upload\"\n         },\n         \"data\":{\n            \"eventContext\":{\n               \"sourceApplicationFeatureID\":\"applicant\",\n               \"documentTypeCode\":{\n                  \"codeValue\":\"applicant.resume\"\n               },\n               \"associatedObject\":{\n                  \"objectID\":{\n                     \"idValue\":24211223394,\n                     \"schemeCode\":{\n                        \"codeValue\":\"*-adp-rm-applicationID\"\n                     }\n                  }\n               }\n            },\n            \"transform\":{\n               \"eventStatusCode\":{ \n                  \"codeValue\":\"submit\"\n               },\n               \"document\":{\n                  \"documentTitle\":\"Teresa Cervantes_4\",\n                  \"fileTypeCode\":{\n                     \"codeValue\":\".txt\"\n                  },\n                  \"documentTypeCode\":{\n                     \"codeValue\":\"applicant.resume\"\n                  },\n                  \"fileName\":\"Teresa Cervantes_resume.txt\"\n               }\n            }\n         }\n      }\n   ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": "Teresa Cervantes_resume.txt"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/work-fulfillment/document.upload",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"work-fulfillment",
+								"document.upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload doc -attachment using application itemID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "multipart/mixed",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonParam",
+									"value": "{\n   \"events\":[\n      {\n         \"serviceCategoryCode\":{\n            \"codeValue\":\"staffing\"\n         },\n         \"eventNameCode\":{\n            \"codeValue\":\"document.upload\"\n         },\n         \"data\":{\n            \"eventContext\":{\n               \"sourceApplicationFeatureID\":\"applicant\",\n               \"documentTypeCode\":{\n                  \"codeValue\":\"applicant.resume\"\n               },\n               \"associatedObject\":{\n                  \"objectID\":{\n                     \"idValue\":24211223394,\n                     \"schemeCode\":{\n                        \"codeValue\":\"*-adp-rm-applicationID\"\n                     }\n                  }\n               }\n            },\n            \"transform\":{\n               \"eventStatusCode\":{ \n                  \"codeValue\":\"submit\"\n               },\n               \"document\":{\n                  \"documentTitle\":\"Teresa Cervantes_4\",\n                  \"fileTypeCode\":{\n                     \"codeValue\":\".txt\"\n                  },\n                  \"documentTypeCode\":{\n                     \"codeValue\":\"applicant.resume\"\n                  },\n                  \"fileName\":\"Teresa Cervantes_resume.txt\"\n               }\n            }\n         }\n      }\n   ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": "Teresa Cervantes_resume.txt"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/work-fulfillment/document.upload",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"work-fulfillment",
+								"document.upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload doc-resume with invalid application itemID",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/mixed"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonParam",
+									"value": "{\n   \"events\":[\n      {\n         \"serviceCategoryCode\":{\n            \"codeValue\":\"staffing\"\n         },\n         \"eventNameCode\":{\n            \"codeValue\":\"document.upload\"\n         },\n         \"data\":{\n            \"eventContext\":{\n               \"sourceApplicationFeatureID\":\"applicant\",\n               \"documentTypeCode\":{\n                  \"codeValue\":\"applicant.resume\"\n               },\n               \"associatedObject\":{\n                  \"objectID\":{\n                     \"idValue\":242112294,\n                     \"schemeCode\":{\n                        \"codeValue\":\"*-adp-rm-applicationID\"\n                     }\n                  }\n               }\n            },\n            \"transform\":{\n               \"eventStatusCode\":{ \n                  \"codeValue\":\"submit\"\n               },\n               \"document\":{\n                  \"documentTitle\":\"Teresa Cervantes_4\",\n                  \"fileTypeCode\":{\n                     \"codeValue\":\".doc\"\n                  },\n                  \"documentTypeCode\":{\n                     \"codeValue\":\"applicant.coverletter\"\n                  },\n                  \"fileName\":\"Teresa Cervantes_resume.txt\"\n               }\n            }\n         }\n      }\n   ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": "Test Upload recruiting document.docx"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/work-fulfillment/document.upload",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"work-fulfillment",
+								"document.upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload doc-resume with invalid documentTypeCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/mixed"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonParam",
+									"value": "{\n   \"events\":[\n      {\n         \"serviceCategoryCode\":{\n            \"codeValue\":\"staffing\"\n         },\n         \"eventNameCode\":{\n            \"codeValue\":\"document.upload\"\n         },\n         \"data\":{\n            \"eventContext\":{\n               \"sourceApplicationFeatureID\":\"applicant\",\n               \"documentTypeCode\":{\n                  \"codeValue\":\"applicant.resume\"\n               },\n               \"associatedObject\":{\n                  \"objectID\":{\n                     \"idValue\":24211223394,\n                     \"schemeCode\":{\n                        \"codeValue\":\"*-adp-rm-applicationID\"\n                     }\n                  }\n               }\n            },\n            \"transform\":{\n               \"eventStatusCode\":{ \n                  \"codeValue\":\"submit\"\n               },\n               \"document\":{\n                  \"documentTitle\":\"Teresa Cervantes_4\",\n                  \"fileTypeCode\":{\n                     \"codeValue\":\".@@@\"\n                  },\n                  \"documentTypeCode\":{\n                     \"codeValue\":\"applicant.resume\"\n                  },\n                  \"fileName\":\"Teresa Cervantes_resume.txt\"\n               }\n            }\n         }\n      }\n   ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": "Test Upload recruiting document.docx"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/work-fulfillment/document.upload",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"work-fulfillment",
+								"document.upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-upload doc without serviceCategoryCode and eventNameCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/mixed"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonParam",
+									"value": "{\n   \n         \"data\":{\n            \"eventContext\":{\n               \"sourceApplicationFeatureID\":\"applicant\",\n               \"documentTypeCode\":{\n                  \"codeValue\":\"applicant.resume\"\n               },\n               \"associatedObject\":{\n                  \"objectID\":{\n                     \"idValue\":24211223394,\n                     \"schemeCode\":{\n                        \"codeValue\":\"*-adp-rm-applicationID\"\n                     }\n                  }\n               }\n            },\n            \"transform\":{\n               \"eventStatusCode\":{ \n                  \"codeValue\":\"submit\"\n               },\n               \"document\":{\n                  \"documentTitle\":\"Teresa Cervantes_4\",\n                  \"fileTypeCode\":{\n                     \"codeValue\":\".txt\"\n                  },\n                  \"documentTypeCode\":{\n                     \"codeValue\":\"applicant.resume\"\n                  },\n                  \"fileName\":\"Teresa Cervantes_resume.txt\"\n               }\n            }\n         }\n      }\n   ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": "Teresa Cervantes_resume.txt"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/work-fulfillment/document.upload",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"work-fulfillment",
+								"document.upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-upload doc -without request json",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/mixed"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonParam",
+									"value": "{\n   \"events\":[\n      {\n         \"serviceCategoryCode\":{\n            \"codeValue\":\"staffing\"\n         },\n         \"eventNameCode\":{\n            \"codeValue\":\"document.upload\"\n         },\n         \"data\":{\n            \"eventContext\":{\n               \"sourceApplicationFeatureID\":\"applicant\",\n               \"documentTypeCode\":{\n                  \"codeValue\":\"applicant.coverletter\"\n               },\n               \"associatedObject\":{\n                  \"objectID\":{\n                     \"idValue\":24211223394,\n                     \"schemeCode\":{\n                        \"codeValue\":\"*-adp-rm-applicationID\"\n                     }\n                  }\n               }\n            },\n            \"transform\":{\n               \"eventStatusCode\":{ \n                  \"codeValue\":\"submit\"\n               },\n               \"document\":{\n                  \"documentTitle\":\"Teresa Cervantes_4\",\n                  \"fileTypeCode\":{\n                     \"codeValue\":\".doc\"\n                  },\n                  \"documentTypeCode\":{\n                     \"codeValue\":\"applicant.coverletter\"\n                  },\n                  \"fileName\":\"Teresa Cervantes_resume.txt\"\n               }\n            }\n         }\n      }\n   ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": "Test Upload recruiting document.docx"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/work-fulfillment/document.upload",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"work-fulfillment",
+								"document.upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "500-upload doc -without document attachment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/mixed"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonParam",
+									"value": "{\n   \"events\":[\n      {\n         \"serviceCategoryCode\":{\n            \"codeValue\":\"staffing\"\n         },\n         \"eventNameCode\":{\n            \"codeValue\":\"document.upload\"\n         },\n         \"data\":{\n            \"eventContext\":{\n               \"sourceApplicationFeatureID\":\"applicant\",\n               \"documentTypeCode\":{\n                  \"codeValue\":\"applicant.coverletter\"\n               },\n               \"associatedObject\":{\n                  \"objectID\":{\n                     \"idValue\":24211223394,\n                     \"schemeCode\":{\n                        \"codeValue\":\"*-adp-rm-applicationID\"\n                     }\n                  }\n               }\n            },\n            \"transform\":{\n               \"eventStatusCode\":{ \n                  \"codeValue\":\"submit\"\n               },\n               \"document\":{\n                  \"documentTitle\":\"Teresa Cervantes_4\",\n                  \"fileTypeCode\":{\n                     \"codeValue\":\".doc\"\n                  },\n                  \"documentTypeCode\":{\n                     \"codeValue\":\"applicant.coverletter\"\n                  },\n                  \"fileName\":\"Teresa Cervantes_resume.txt\"\n               }\n            }\n         }\n      }\n   ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": []
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/work-fulfillment/document.upload",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"work-fulfillment",
+								"document.upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-upload doc -missing json param",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/mixed"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "{\n   \"events\":[\n      {\n         \"serviceCategoryCode\":{\n            \"codeValue\":\"staffing\"\n         },\n         \"eventNameCode\":{\n            \"codeValue\":\"document.upload\"\n         },\n         \"data\":{\n            \"eventContext\":{\n               \"sourceApplicationFeatureID\":\"applicant\",\n               \"documentTypeCode\":{\n                  \"codeValue\":\"applicant.coverletter\"\n               },\n               \"associatedObject\":{\n                  \"objectID\":{\n                     \"idValue\":24211223394,\n                     \"schemeCode\":{\n                        \"codeValue\":\"*-adp-rm-applicationID\"\n                     }\n                  }\n               }\n            },\n            \"transform\":{\n               \"eventStatusCode\":{ \n                  \"codeValue\":\"submit\"\n               },\n               \"document\":{\n                  \"documentTitle\":\"Teresa Cervantes_4\",\n                  \"fileTypeCode\":{\n                     \"codeValue\":\".doc\"\n                  },\n                  \"documentTypeCode\":{\n                     \"codeValue\":\"applicant.coverletter\"\n                  },\n                  \"fileName\":\"Teresa Cervantes_resume.txt\"\n               }\n            }\n         }\n      }\n   ]\n}",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": "Test Upload recruiting document.docx"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/work-fulfillment/document.upload",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"work-fulfillment",
+								"document.upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-upload doc -missing malformed json",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "multipart/mixed"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonParam",
+									"value": "{\n   \"events\":[\n      {\n         \"serviceCategoryCode\":{\n            \"codeValue\":\"staffing\"\n         },\n         \"eventNameCo\n ",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": "Test Upload recruiting document.docx"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://api.adp.com/events/staffing/v1/work-fulfillment/document.upload",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"staffing",
+								"v1",
+								"work-fulfillment",
+								"document.upload"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "authtoken API",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bad421e0-87ba-45a2-8c2b-48076f7a2534",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "46ebba3e-da17-4fc9-85db-ff08ca3e7b18",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"host": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "/"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate",
+						"disabled": true
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"disabled": true
+					},
+					{
+						"key": "Content-Length",
+						"value": "127",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"disabled": true
+					},
+					{
+						"key": "Host",
+						"value": "apifit.nj.adp.com",
+						"disabled": true
+					},
+					{
+						"key": "Postman-Token",
+						"value": "bc3e9e9b-357d-4d85-863c-8478eac7c861,d78724b9-79f4-4101-bee2-5b9e77ce4fa2",
+						"disabled": true
+					},
+					{
+						"key": "User-Agent",
+						"value": "PostmanRuntime/7.19.0",
+						"disabled": true
+					},
+					{
+						"key": "cache-control",
+						"value": "no-cache,no-cache",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "98d9bb92-670c-4874-8fb4-0bffca2f80e4",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "d560e952-cb49-4eee-a1c7-ff74d3a60395",
+							"type": "text"
+						}
+					],
+					"options": {}
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
