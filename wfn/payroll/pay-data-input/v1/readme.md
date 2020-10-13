@@ -1,1 +1,1 @@
-Sample request and response payload JSON files for the Paydata Input API guide located at https://developers.adp.com/services/elasticsearch/articles/guides/2290c84affffb44938074db32d803471db31fd6b/doc/PayrollDataInputAPIGuide-ADPWorkforceNow.pdf
+Sample request and response payload JSON files for the Paydata Input API guide
