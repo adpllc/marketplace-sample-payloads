@@ -1,0 +1,1272 @@
+{
+	"info": {
+		"_postman_id": "d7921f4e-e4fa-4b55-b265-8bf3fbb42e9d",
+		"name": "PersonService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Change",
+			"item": [
+				{
+					"name": "200-legal-address-change",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "3bb88d26-cb67-4a6e-a1d5-bede16f8a6d7",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"4449 Beach\",\r\n                                \"lineTwo\": \"Dr E #20\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Port Orchard\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Washington\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"King County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"98366\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-legal-address-change-canadian-address",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "06c9ba8a-e274-4080-8e5d-2ea78c858446",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 53ec7409-d079-433a-9ae4-de64d5c9dbb3"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n               \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"2042 Dundas St. E,\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Mississauga\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"L4X 2X8\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-legal-address-change-foreign-address",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "15b89f85-3ad6-4a50-8cef-31ca17b415a9",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 53ec7409-d079-433a-9ae4-de64d5c9dbb3"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3P2VVR45T97B43G\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"12 Martens Place\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"Floor 1\",\r\n                                \"lineFour\": \"Suite 5\",\r\n                                \"lineFive\": \"Room 501\",\r\n                                \"cityName\": \"Ormiston\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"4160\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-legal-address-change-address1-left-blank",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "2e7d70c5-988a-4124-8455-ed72e7aa2cfb",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"92938\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-legal-address-change-cityName-left-blank",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "59f8bb73-fda9-42d7-a190-3d17cca3da0c",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"92938\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-legal-address-change-countrySubdivisionLevel1-left-blank",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "59f8bb73-fda9-42d7-a190-3d17cca3da0c",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"\",\r\n                                    \"longName\": \"\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"92938\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-legal-address-change-postalCode-left-blank",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "59f8bb73-fda9-42d7-a190-3d17cca3da0c",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-legal-address-change-with-line3-4-5",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "93930c1f-0b5b-4069-9af8-65f751795e94",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/x-www-form-urlencoded",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 53ec7409-d079-433a-9ae4-de64d5c9dbb3"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"2040 Dundas St. E,\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"1\",\r\n                                \"lineFour\": \"2\",\r\n                                \"lineFive\": \"3\",\r\n                                \"cityName\": \"Mississauga\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Alberta\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"L4X 2X8\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-personal-address-change",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "93930c1f-0b5b-4069-9af8-65f751795e94",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3EYJHSDACQQ49W6\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 9\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.personal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-personal-address-change-canadian-address",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "93930c1f-0b5b-4069-9af8-65f751795e94",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G37G5WKJA08QG8JG\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"1443 Eglinton Avenue\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Toronto\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"M4P 1A6\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.personal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-personal-address-change-foreign-address",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "93930c1f-0b5b-4069-9af8-65f751795e94",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3P2VVR45T97B43G\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"69 Ashton Road\",\r\n                                \"lineTwo\": \"Street Road\",\r\n                                \"lineThree\": \"Tower 1\",\r\n                                \"lineFour\": \"Floor 2\",\r\n                                \"lineFive\": \"room 202 \",\r\n                                \"cityName\": \"Cordering\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"6393\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.personal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-personal-address-change-address1-left-blank",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "93930c1f-0b5b-4069-9af8-65f751795e94",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.personal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-personal-address-change-cityName-left-blank",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "93930c1f-0b5b-4069-9af8-65f751795e94",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.personal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-personal-address-change-countrySubdivisionLevel1-left-blank",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "93930c1f-0b5b-4069-9af8-65f751795e94",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"\",\r\n                                    \"longName\": \"\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.personal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-legal-address-change-postalCode-left-blank",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "93930c1f-0b5b-4069-9af8-65f751795e94",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"617 Rose Ave\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "400-personal-address-change-with-address-line3-4-5",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "93930c1f-0b5b-4069-9af8-65f751795e94",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"1443 Eglinton Avenue\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"Floor 3\",\r\n                                \"lineFour\": \"Suite 2\",\r\n                                \"lineFive\": \"Room K\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.personal-address.change"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Retrieve",
+			"item": [
+				{
+					"name": "200-legal-address-change-meta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "5e59157f-ab94-4a9d-959d-c162b92bf165",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"1443 Eglinton Avenue\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"Floor 3\",\r\n                                \"lineFour\": \"Suite 2\",\r\n                                \"lineFive\": \"Room K\",\r\n                                \"cityName\": \"Toronto\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"M4P 1A6\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.legal-address.change",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-personal-address-change-meta",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessToken",
+									"value": "2d9d3382-4b91-47f6-abb3-9128dac70bbb",
+									"type": "string"
+								},
+								{
+									"key": "tokenType",
+									"value": "Bearer",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.personal-address.change",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
