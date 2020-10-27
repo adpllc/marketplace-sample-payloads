@@ -1,0 +1,1067 @@
+{
+	"info": {
+		"_postman_id": "21a19628-5dd5-45eb-a14a-8f22d35ffb2e",
+		"name": "Base Renumeration Change API Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "update-compensation-with-Hours-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\"customFieldGroup\": {\r\n\t\t\t\t\t\t\"stringFields\": [{\r\n\t\t\t\t\t\t\t\"nameCode\": {\r\n\t\t\t\t\t\t\t\t\"codeValue\": \"ClientDefinedField28\"\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"stringValue\": \"ABC\"\r\n\t\t\t\t\t\t}],\r\n\t\t\t\t\t\t\"numberFields\": [{\r\n\t\t\t\t\t\t\t\"nameCode\": {\r\n\t\t\t\t\t\t\t\t\"codeValue\": \"ClientDefinedField04\"\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"numberValue\": \"189\"\r\n\t\t\t\t\t\t}],\r\n\t\t\t\t\t\t\"dateFields\": [{\r\n\t\t\t\t\t\t\t\"nameCode\": {\r\n\t\t\t\t\t\t\t\t\"codeValue\": \"ClientDefinedField15\"\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"dateValue\": \"2020-01-01\"\r\n\t\t\t\t\t\t}]\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"H\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"hourlyRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"2\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-with-dailyRateAmount-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\"customFieldGroup\": {\r\n\t\t\t\t\t\t\"stringFields\": [{\r\n\t\t\t\t\t\t\t\"nameCode\": {\r\n\t\t\t\t\t\t\t\t\"codeValue\": \"ClientDefinedField28\"\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"stringValue\": \"ABC\"\r\n\t\t\t\t\t\t}],\r\n\t\t\t\t\t\t\"numberFields\": [{\r\n\t\t\t\t\t\t\t\"nameCode\": {\r\n\t\t\t\t\t\t\t\t\"codeValue\": \"ClientDefinedField04\"\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"numberValue\": \"189\"\r\n\t\t\t\t\t\t}],\r\n\t\t\t\t\t\t\"dateFields\": [{\r\n\t\t\t\t\t\t\t\"nameCode\": {\r\n\t\t\t\t\t\t\t\t\"codeValue\": \"ClientDefinedField15\"\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"dateValue\": \"2020-01-01\"\r\n\t\t\t\t\t\t}]\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"D\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"dailyRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"2\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-with-monthlyRateAmount-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\"customFieldGroup\": {\r\n\t\t\t\t\t\t\"stringFields\": [{\r\n\t\t\t\t\t\t\t\"nameCode\": {\r\n\t\t\t\t\t\t\t\t\"codeValue\": \"ClientDefinedField28\"\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"stringValue\": \"ABC\"\r\n\t\t\t\t\t\t}],\r\n\t\t\t\t\t\t\"numberFields\": [{\r\n\t\t\t\t\t\t\t\"nameCode\": {\r\n\t\t\t\t\t\t\t\t\"codeValue\": \"ClientDefinedField04\"\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"numberValue\": \"189\"\r\n\t\t\t\t\t\t}],\r\n\t\t\t\t\t\t\"dateFields\": [{\r\n\t\t\t\t\t\t\t\"nameCode\": {\r\n\t\t\t\t\t\t\t\t\"codeValue\": \"ClientDefinedField15\"\r\n\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\"dateValue\": \"2020-01-01\"\r\n\t\t\t\t\t\t}]\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"M\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"monthlyRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"2\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BaseRemuneration-Get-meta-call-http-200-response",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2a1eda29-ce02-41b9-b20a-16c6698bab74"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-with-biWeeklyRateAmount-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"B\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"biweeklyRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"2\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-with-annualRateAmount-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"2\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-with-payScaleCode-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-with-payGradeCode-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-with-payGradeStepCode-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"events\": [{\n\t\t\"data\": {\n\t\t\t\"eventContext\": {\n\t\t\t\t\"worker\": {\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\n\t\t\t\t\t\"workAssignment\": {\n\t\t\t\t\t\t\"itemID\": \"0\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t},\n\t\t\t\"transform\": {\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\n\t\t\t\t\"eventReasonCode\": {\n\t\t\t\t\t\"codeValue\": \"ADJ\"\n\t\t\t\t},\n\t\t\t\t\"workAssignment\": {\n\t\t\t\t\t\n\t\t\t\t\t\"annualBenefitBaseRate\": {\n\t\t\t\t\t\t\"amountValue\": \"1000\"\n\t\t\t\t\t},\n\t\t\t\t\t\"baseRemuneration\": {\n\t\t\t\t\t\t\"recordingBasisCode\": {\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\n\t\t\t\t\t\t\"annualRateAmount\": {\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\n\t\t\t\t\t\t},\n\t\t\t\t\t\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\n\t\t\t\t\t\t}\n\t\t\t\t\t},\n\t\t\t\t\t\"payScaleCode\": {\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\n\t\t\t\t\t},\n\t\t\t\t\t\"payGradeCode\": {\n\t\t\t\t\t\t\"codeValue\": \"S01\"\n\t\t\t\t\t},\n\t\t\t\t\t\"payGradeStepCode\": {\n\t\t\t\t\t\t\"codeValue\": \"1\"\n\t\t\t\t\t},\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-with-nextPayGradeStepDate-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"2\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-with-annualBenefitsBaseRate-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"2000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-empty-payScaleCode-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-reasonCode-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"WAD\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-recordingBasisCode-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"2000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"P\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-currencyCode-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0cf8d8c3-960a-4a03-904d-2e00874884a2"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"2000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"SAP\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-payScaleCode-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer d71a6aba-72c2-4b6c-846a-1cc38c87f121"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"2000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"ACC\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-payGradeCode-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 57f19ab7-b5da-4d97-a76c-fe3dbdce4fb8"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"2000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S09\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-payGradeStepCode-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 57f19ab7-b5da-4d97-a76c-fe3dbdce4fb8"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"2000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"5\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-Employee-http-403-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2a1eda29-ce02-41b9-b20a-16c6698bab74"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"WER6789\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"2000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccesToken_Vantage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "client_id",
+						"value": "e29cc7fc-3549-403d-baa1-1ab6b82ff0ad",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "client_secret",
+						"value": "fbda0999-a9e5-44bd-be9b-59f73ed25ae1",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "ClientID here",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Client Secret here",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Worker API get call",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9d0be866-3dfa-40ef-a0e1-e1df8b31ec76"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"WER6789\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"2000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"A\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"annualRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"10000\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-20\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers/G3W3DGP8PG3KATDY",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						"G3W3DGP8PG3KATDY"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-hourlyRateAmount-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer d71a6aba-72c2-4b6c-846a-1cc38c87f121"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"H\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"hourlyRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"88.976895\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"2\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-dailyRateAmount-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer d71a6aba-72c2-4b6c-846a-1cc38c87f121"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"D\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"dailyRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"-88.976895\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"2\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-compensation-invalid-annualBenefitsBaseRate-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer d71a6aba-72c2-4b6c-846a-1cc38c87f121"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"events\": [{\r\n\t\t\"data\": {\r\n\t\t\t\"eventContext\": {\r\n\t\t\t\t\"worker\": {\r\n\t\t\t\t\t\"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n\t\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\t\"itemID\": \"0\"\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t},\r\n\t\t\t\"transform\": {\r\n\t\t\t\t\"effectiveDateTime\": \"2020-10-02\",\r\n\t\t\t\t\"eventReasonCode\": {\r\n\t\t\t\t\t\"codeValue\": \"ADJ\"\r\n\t\t\t\t},\r\n\t\t\t\t\"workAssignment\": {\r\n\t\t\t\t\t\r\n\t\t\t\t\t\"annualBenefitBaseRate\": {\r\n\t\t\t\t\t\t\"amountValue\": \"1000.577997\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"baseRemuneration\": {\r\n\t\t\t\t\t\t\"recordingBasisCode\": {\r\n\t\t\t\t\t\t\t\"codeValue\": \"H\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\r\n\t\t\t\t\t\t\"hourlyRateAmount\": {\r\n\t\t\t\t\t\t\t\"amountValue\": \"100\"\r\n\t\t\t\t\t\t},\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\"payPeriodRateAmount\": {\r\n\t\t\t\t\t\t\t\"currencyCode\": \"USD\"\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payScaleCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"EXE\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"S01\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"payGradeStepCode\": {\r\n\t\t\t\t\t\t\"codeValue\": \"2\"\r\n\t\t\t\t\t},\r\n\t\t\t\t\t\"nextPayGradeStepDate\": \"2020-10-10\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t}]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.base-remuneration.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.base-remuneration.change"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
