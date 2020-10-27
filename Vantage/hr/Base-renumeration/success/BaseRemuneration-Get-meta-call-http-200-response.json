@@ -1,0 +1,486 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$"
+                },
+                "/eventReasonCode": {
+                    "helperMessage": {
+                        "messageTxt": ""
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/reason-code-values?action=PAY",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                },
+                "/eventReasonCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                },
+                "/workAssignment/payScaleCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary plan. This differentiates between groups of employees (for example, exempt vs. non-exempt employees, employees in different locations, and so on). It is the framework for placement of jobs within a formal compensation structure."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/salary-plan-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/payScaleCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary plan. This differentiates between groups of employees (for example, exempt vs. non-exempt employees, employees in different locations, and so on). It is the framework for placement of jobs within a formal compensation structure."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/payGradeCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary grade. This designates a rank and range of pay within a salary plan. The salary range within the grade contains a minimum, midpoint, and maximum amount. A salary plan may contain several salary grades."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/salary-plan-grade-code-values?$filter=payScaleCode eq %27{#/workAssignment/payScaleCode/codeValue}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/payGradeCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary grade. This designates a rank and range of pay within a salary plan. The salary range within the grade contains a minimum, midpoint, and maximum amount. A salary plan may contain several salary grades."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencyLinks": [
+                        {
+                            "href": "/hr/v1/salary-plans",
+                            "rel": "/adp/validation",
+                            "title": "Data Validation",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json"
+                        }
+                    ],
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/payGradeStepCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary step, if applicable, for the selected salary plan. A salary step is a specific rate of pay rather than a range of pay. Step progression is often used in educational and union environments."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/salaryplanstepvalues?$filter=salaryPlan eq %27{#/workAssignment/payScaleCode/codeValue}%27 and salaryPlanGrade eq %27{#/workAssignment/payGradeCode/codeValue}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/payGradeStepCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary step, if applicable, for the selected salary plan. A salary step is a specific rate of pay rather than a range of pay. Step progression is often used in educational and union environments."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/nextPayGradeStepDate": {
+                    "helperMessage": {
+                        "messageTxt": "Enter the date the employee is eligible to move to the next step rate. If you are using automated step progression, this date is already displayed."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/baseRemuneration": {
+                    "helperMessage": {
+                        "messageTxt": ""
+                    }
+                },
+                "/workAssignment/baseRemuneration/recordingBasisCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select how often the employee gets paid. Common pay frequencies include: Monthly, Semi-monthly (twice each month), Bi-weekly (every other week), Weekly, and Daily. "
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/compensation-frequency-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/baseRemuneration/recordingBasisCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select how often the employee gets paid. Common pay frequencies include: Monthly, Semi-monthly (twice each month), Bi-weekly (every other week), Weekly, and Daily. "
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dependencyLinks": [
+                        {
+                            "href": "/events/hr/v1/worker.work-assignment.base-remuneration-equivalent.calculate",
+                            "rel": "/adp/validation",
+                            "title": "Data Validation",
+                            "mediaType": "application/json",
+                            "method": "POST",
+                            "encType": "application/json"
+                        }
+                    ],
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^A$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/annualRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,2})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^H$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/hourlyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,6}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^D$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/dailyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,6}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^W$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/weeklyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^B$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/biweeklyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^S$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/semiMonthlyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^M$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/monthlyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/baseRemuneration/payPeriodRateAmount/currencyCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/currency-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/annualBenefitBaseRate/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^\\d{1,8}(\\.\\d{1,2})?$",
+                    "shortLabelName": "Annual Benefits Base Rate",
+                    "longLabelName": "Annual Benefits Base Rate"
+                },
+                "/workAssignment/customFieldGroup/stringFields": {
+                    "minItems": 0,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                },
+                "/workAssignment/customFieldGroup/stringFields/nameCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Custom Strings",
+                        "listItems": [
+                            {
+                                "codeValue": "ClientDefinedField28",
+                                "longName": "CDF28"
+                            },
+                            {
+                                "codeValue": "ClientDefinedField36",
+                                "longName": "ClientDefinedField36"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/customFieldGroup/stringFields/nameCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField28$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/stringFields/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "CDF28",
+                                            "longLabelName": "CDF28",
+                                            "default": "abdh56",
+                                            "maxLength": 50
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField36$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/stringFields/stringValue": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "shortLabelName": "ClientDefinedField36",
+                                            "longLabelName": "ClientDefinedField36",
+                                            "maxLength": 50
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/customFieldGroup/dateFields": {
+                    "minItems": 0,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                },
+                "/workAssignment/customFieldGroup/dateFields/nameCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Custom Dates",
+                        "listItems": [
+                            {
+                                "codeValue": "ClientDefinedField15",
+                                "longName": "CDF15"
+                            },
+                            {
+                                "codeValue": "ClientDefinedField20",
+                                "longName": "ClientDefinedField20"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/customFieldGroup/dateFields/nameCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField15$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/dateFields/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "CDF15",
+                                            "longLabelName": "CDF15",
+                                            "default": "2020-10-01",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField20$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/dateFields/dateValue": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "shortLabelName": "ClientDefinedField20",
+                                            "longLabelName": "ClientDefinedField20",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/customFieldGroup/numberFields": {
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "uniqueItems": true
+                },
+                "/workAssignment/customFieldGroup/numberFields/nameCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Custom Numbers",
+                        "listItems": [
+                            {
+                                "codeValue": "ClientDefinedField04",
+                                "longName": "TestPassed"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/customFieldGroup/numberFields/nameCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField04$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/numberFields/numberValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "TestPassed",
+                                            "longLabelName": "TestPassed",
+                                            "default": 123456789,
+                                            "maxLength": 14,
+                                            "pattern": "^-?\\d*\\.{0,1}\\d+$"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/contextExpressionID": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/worker/workAssignment/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
