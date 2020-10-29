@@ -1,0 +1,1128 @@
+{
+    "meta": {
+        "/workAssignment/PayrollProfile/payrollProcessingStatusCode": {
+            "codeList": {
+                "codeListTitle": "Will this position be paid through ADP Workforce Now?",
+                "listItems": [
+                    {
+                        "code": "p",
+                        "name": "Paid"
+                    },
+                    {
+                        "code": "np",
+                        "name": "Nonpaid"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 1
+        },
+        "/workAssignment/legislativeComplianceClassifications/occupationalClassifications/classificationCode": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 16,
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/occupationalClassifications/schemeCode": {
+                                    "pattern": "EEOEstablishment|EEOClassification"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/occupationalClassifications/schemeCode": {
+                                    "pattern": "EEOEstablishment|EEOClassification"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/occupationalClassifications/schemeCode": {
+                                    "pattern": "EEOEstablishment"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "EEO Establishment",
+                                "links": [
+                                    {
+                                        "href": "/codelists/hr/v4/worker-management/eeo-establishments/wfn/1",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/occupationalClassifications/schemeCode": {
+                                    "pattern": "EEOClassification"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "EEOC Job Classification",
+                                "listItems": [
+                                    {
+                                        "itemID": "SYS:4:10122",
+                                        "code": "A",
+                                        "name": "A",
+                                        "description": "Executive/Senior Level Officials and Managers",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3296",
+                                        "code": "1",
+                                        "name": "1",
+                                        "description": "First/Mid-Level Officials and Managers",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3310",
+                                        "code": "2",
+                                        "name": "2",
+                                        "description": "Professionals",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3325",
+                                        "code": "3",
+                                        "name": "3",
+                                        "description": "Technicians",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3335",
+                                        "code": "4",
+                                        "name": "4",
+                                        "description": "Sales Workers",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3345",
+                                        "code": "5",
+                                        "name": "5",
+                                        "description": "Administrative Support Workers",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3352",
+                                        "code": "6",
+                                        "name": "6",
+                                        "description": "Craft Workers",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3355",
+                                        "code": "7",
+                                        "name": "7",
+                                        "description": "Operatives",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3356",
+                                        "code": "8",
+                                        "name": "8",
+                                        "description": "Laborers and Helpers",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3357",
+                                        "code": "9",
+                                        "name": "9",
+                                        "description": "Service Workers",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    },
+                                    {
+                                        "itemID": "SYS:4:3469",
+                                        "code": "N",
+                                        "name": "N",
+                                        "description": "Not reported",
+                                        "category": "T_SYS_TRANS_EEOCOCCCD"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "/workAssignment/payrollProfile/standardPayPeriodHours/quantity": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 14,
+            "shortLabelName": "Standard Hours",
+            "minValue": 0.01,
+            "maxValue": 655.35,
+            "pattern": "(\\d+(\\.\\d+)?)?"
+        },
+        "/workAssignment/directFinancialCompensation/compensationBasisCode": {
+            "codeList": {
+                "codeListTitle": "Pay Type",
+                "listItems": [
+                    {
+                        "itemID": "SYS:4:2990",
+                        "code": "D",
+                        "name": "D",
+                        "description": "Daily",
+                        "category": "T_SYS_TRANS_RATETYPE"
+                    },
+                    {
+                        "itemID": "SYS:4:2991",
+                        "code": "H",
+                        "name": "H",
+                        "description": "Hourly",
+                        "category": "T_SYS_TRANS_RATETYPE"
+                    },
+                    {
+                        "itemID": "SYS:4:2993",
+                        "code": "S",
+                        "name": "S",
+                        "description": "Salary",
+                        "category": "T_SYS_TRANS_RATETYPE"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 30
+        },
+        "/workAssignment/organizationalUnits/unitTypeCode": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 16,
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/organizationalUnits/unitCode": {
+                                    "pattern": "HomeDepartment|BusinessUnit|HomeCostNumber"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/organizationalUnits/unitCode": {
+                                    "pattern": "HomeDepartment|BusinessUnit|HomeCostNumber"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/organizationalUnits/unitCode": {
+                                    "pattern": "HomeDepartment"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "Home Department",
+                                "links": [
+                                    {
+                                        "href": "/codelists/hr/v3/worker-management/departments/WFN/1?$filter=foreignKey eq '{foreignKey}'",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET",
+                                        "payloadArguments": [
+                                            {
+                                                "argumentPath": "foreignKey",
+                                                "argumentValue": "/workAssignment/payrollProfile/payrollGroupCode"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "attributes": {
+                                "/workAssignment/organizationalUnits/unitCode": {
+                                    "pattern": "BusinessUnit"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "Business Unit",
+                                "links": [
+                                    {
+                                        "href": "/codelists/hr/v3/worker-management/business-units/WFN/1",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "attributes": {
+                                "/workAssignment/organizationalUnits/unitCode": {
+                                    "pattern": "HomeCostNumber"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "Home Cost Number",
+                                "links": [
+                                    {
+                                        "href": "/codelists/hr/v3/worker-management/cost-numbers/WFN/1?$filter=foreignKey eq '{foreignKey}'",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET",
+                                        "payloadArguments": [
+                                            {
+                                                "argumentPath": "foreignKey",
+                                                "argumentValue": "/workAssignment/payrollProfile/payrollGroupCode"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "/workAssignment/payrollProfile/configurationTags/tagCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "code": "WageEntity",
+                        "name": "Wage Entity"
+                    },
+                    {
+                        "code": "FlsaOvertime",
+                        "name": "FLSA Overtime"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 25
+        },
+        "/workAssignment/positionStandardHours/quantity": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 27,
+            "shortLabelName": "Scheduled Hours",
+            "minValue": 0.01,
+            "maxValue": 655.35,
+            "pattern": "(\\d+(\\.\\d+)?)?"
+        },
+        "/workAssignment/hireDate": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 2,
+            "shortLabelName": "Position Start Date",
+            "minLength": 0,
+            "maxLength": 10,
+            "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+        },
+        "/workAssignment/hireReasonCode": {
+            "codeList": {
+                "codeListTitle": "Job Change Reason",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v4/worker-management/status-change-reason/wfn/1?$filter=category eq 'Hire'",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 3
+        },
+        "/workAssignment/positionID": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 6,
+            "shortLabelName": "Position",
+            "longLabelName": "Position",
+            "maxLength": 9
+        },
+        "/workAssignment/fullTimeEquivalenceRatio": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 28,
+            "shortLabelName": "FTE:",
+            "minValue": 0.0,
+            "maxValue": 1.0,
+            "pattern": "(\\d+(\\.\\d+)?)?"
+        },
+        "/workAssignment/legislativeComplianceClassifications/wageLawClassifications/schemeCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "code": "FLSAClassification",
+                        "name": "FLSA"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 13
+        },
+        "/workAssignment/payrollProfile/defaultTaxJurisdictionTags/tagValues": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 7,
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/payrollProfile/defaultTaxJurisdictionTags/tagCode": {
+                                    "pattern": "WorkedInState|SuiSdiCode"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/payrollProfile/defaultTaxJurisdictionTags/tagCode": {
+                                    "pattern": "WorkedInState|SuiSdiCode"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/payrollProfile/defaultTaxJurisdictionTags/tagCode": {
+                                    "pattern": "WorkedInState"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "Worked-in State",
+                                "links": [
+                                    {
+                                        "href": "/codelists/payroll/v4/payroll-instruction-management/state-tax-jurisdictions/wfn/1?$filter=category eq '{category}'",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET",
+                                        "payloadArguments": [
+                                            {
+                                                "argumentPath": "category",
+                                                "argumentValue": "/workAssignment/payrollProfile/payrollGroupCode"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "attributes": {
+                                "/workAssignment/payrollProfile/defaultTaxJurisdictionTags/tagCode": {
+                                    "pattern": "SuiSdiCode"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "SUI / SDI Code",
+                                "links": [
+                                    {
+                                        "href": "/codelists/payroll/v4/payroll-instruction-management/sui-sdi-tax-jurisdictions/wfn/1",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "/workAssignment/directFinancialCompensation/compensationRates/rate": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 15,
+            "dependencies": {
+                "minValue": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/directFinancialCompensation/compensationRates/rateCode": {
+                                    "pattern": "RateAmount|Rate2Amount|Rate3Amount|Rate4Amount|Rate5Amount|Rate6Amount|Rate7Amount|Rate8Amount|Rate9Amount"
+                                }
+                            },
+                            "value": -9999999.99
+                        }
+                    ]
+                },
+                "maxValue": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/directFinancialCompensation/compensationRates/rateCode": {
+                                    "pattern": "RateAmount|Rate2Amount|Rate3Amount|Rate4Amount|Rate5Amount|Rate6Amount|Rate7Amount|Rate8Amount|Rate9Amount"
+                                }
+                            },
+                            "value": 9999999.99
+                        }
+                    ]
+                },
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/directFinancialCompensation/compensationRates/rateCode": {
+                                    "pattern": "RateAmount|Rate2Amount|Rate3Amount|Rate4Amount|Rate5Amount|Rate6Amount|Rate7Amount|Rate8Amount|Rate9Amount"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/directFinancialCompensation/compensationRates/rateCode": {
+                                    "pattern": "RateAmount|Rate2Amount|Rate3Amount|Rate4Amount|Rate5Amount|Rate6Amount|Rate7Amount|Rate8Amount|Rate9Amount"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                }
+            }
+        },
+        "/workAssignment/reportsTo/positionID": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 9,
+            "shortLabelName": "Reports To",
+            "minLength": 0,
+            "maxLength": 16,
+            "pattern": "^[a-zA-Z0-9]*$"
+        },
+        "/workAssignment/payrollProfile/payrollFileNumber": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 5,
+            "shortLabelName": "New File Number",
+            "longLabelName": "New File Number",
+            "minLength": 2,
+            "maxLength": 6,
+            "pattern": "^[0-9]{2,6}$"
+        },
+        "/workAssignment/job/jobCode": {
+            "codeList": {
+                "codeListTitle": "Job Title",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v3/worker-management/job-titles/WFN/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 7
+        },
+        "/workAssignment/legislativeComplianceClassifications/occupationalClassifications/schemeCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "code": "EEOEstablishment",
+                        "name": "EEO Establishment"
+                    },
+                    {
+                        "code": "EEOClassification",
+                        "name": "EEOC Job Classification"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 16
+        },
+        "/workAssignment/workerTypeCode": {
+            "codeList": {
+                "codeListTitle": "Worker Category",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v4/worker-management/worker-category/wfn/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 8
+        },
+        "/workAssignment/directFinancialCompensation/compensationRates/rateCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "code": "RateAmount",
+                        "name": "Rate Amount"
+                    },
+                    {
+                        "code": "Rate2Amount",
+                        "name": "Rate 2"
+                    },
+                    {
+                        "code": "Rate3Amount",
+                        "name": "Rate 3"
+                    },
+                    {
+                        "code": "Rate4Amount",
+                        "name": "Rate 4"
+                    },
+                    {
+                        "code": "Rate5Amount",
+                        "name": "Rate 5"
+                    },
+                    {
+                        "code": "Rate6Amount",
+                        "name": "Rate 6"
+                    },
+                    {
+                        "code": "Rate7Amount",
+                        "name": "Rate 7"
+                    },
+                    {
+                        "code": "Rate8Amount",
+                        "name": "Rate 8"
+                    },
+                    {
+                        "code": "Rate9Amount",
+                        "name": "Rate 9"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 15
+        },
+        "/workAssignment/payrollProfile/configurationTags/tagValues": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 25,
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/payrollProfile/configurationTags/tagCode": {
+                                    "pattern": "WageEntity|FlsaOvertime"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/payrollProfile/configurationTags/tagCode": {
+                                    "pattern": "WageEntity|FlsaOvertime"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/payrollProfile/configurationTags/tagCode": {
+                                    "pattern": "WageEntity"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "Wage Entity",
+                                "links": [
+                                    {
+                                        "href": "/codelists/payroll/v4/payroll-instruction-management/wage-entities/wfn/1",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "attributes": {
+                                "/workAssignment/payrollProfile/configurationTags/tagCode": {
+                                    "pattern": "FlsaOvertime"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "FLSA Overtime",
+                                "listItems": [
+                                    {
+                                        "code": "N",
+                                        "name": "No",
+                                        "description": "No"
+                                    },
+                                    {
+                                        "code": "Y",
+                                        "name": "Yes",
+                                        "description": "Yes"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "/workAssignment/legislativeComplianceClassifications/industryClassifications/schemeCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "code": "NAICS Worker's Comp",
+                        "name": "NAICS Workers' Comp"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 18
+        },
+        "/workAssignment/positionStandardHours/unitCode": {
+            "codeList": {
+                "codeListTitle": "Hours Period",
+                "listItems": [
+                    {
+                        "itemID": "SYS:6:427",
+                        "code": "1",
+                        "name": "1",
+                        "description": "Weekly",
+                        "category": "HOURS_PERIOD"
+                    },
+                    {
+                        "itemID": "SYS:6:428",
+                        "code": "2",
+                        "name": "2",
+                        "description": "Biweekly",
+                        "category": "HOURS_PERIOD"
+                    },
+                    {
+                        "itemID": "SYS:6:429",
+                        "code": "3",
+                        "name": "3",
+                        "description": "Semimonthly",
+                        "category": "HOURS_PERIOD"
+                    },
+                    {
+                        "itemID": "SYS:6:430",
+                        "code": "4",
+                        "name": "4",
+                        "description": "Monthly",
+                        "category": "HOURS_PERIOD"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 26
+        },
+        "/workAssignment/job/jobFamilies/jobFamilyCode": {
+            "codeList": {
+                "codeListTitle": "Job Classification",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v4/worker-management/job-class/wfn/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 12
+        },
+        "/workAssignment/legislativeComplianceClassifications/industryClassifications/classificationCode": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 18,
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/industryClassifications/schemeCode": {
+                                    "pattern": "NAICS Worker's Comp"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/industryClassifications/schemeCode": {
+                                    "pattern": "NAICS Worker's Comp"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/industryClassifications/schemeCode": {
+                                    "pattern": "NAICS Worker's Comp"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "NAICS Workers' Comp",
+                                "links": [
+                                    {
+                                        "href": "/codelists/hr/v4/worker-management/naics-worker-compensation/wfn/1?$filter=category eq '{category}'",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET",
+                                        "payloadArguments": [
+                                            {
+                                                "argumentPath": "category",
+                                                "argumentValue": "/workAssignment/payrollProfile/payrollGroupCode"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "/workAssignment/benefitsProfile/benefitsEligibilityClassCode": {
+            "codeList": {
+                "codeListTitle": "Benefit Eligibility Class",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v3/worker-management/eligibility-classes/WFN/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 14
+        },
+        "/workAssignment/payrollProfile/payrollGroupCode": {
+            "codeList": {
+                "codeListTitle": "What will be as company code?",
+                "links": [
+                    {
+                        "href": "/codelists/payroll/v4/payroll-instruction-management/pay-groups/wfn/1?$filter=category eq 'US'",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 4
+        },
+        "/workAssignment/job/payGradeCode": {
+            "codeList": {
+                "codeListTitle": "Pay Grade",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v3/worker-management/pay-grades/WFN/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 14
+        },
+        "/workAssignment/payrollProfile/payCycleCode": {
+            "codeList": {
+                "codeListTitle": "Pay Frequency",
+                "listItems": [
+                    {
+                        "itemID": "SYS:4:3315",
+                        "code": "2",
+                        "name": "2",
+                        "description": "Every 2.6 wks",
+                        "category": "T_SYS_TRANS_PAYFREQ"
+                    },
+                    {
+                        "itemID": "SYS:4:3338",
+                        "code": "4",
+                        "name": "4",
+                        "description": "Every 4 wks",
+                        "category": "T_SYS_TRANS_PAYFREQ"
+                    },
+                    {
+                        "itemID": "SYS:4:3347",
+                        "code": "5",
+                        "name": "5",
+                        "description": "Every 5.2 wks",
+                        "category": "T_SYS_TRANS_PAYFREQ"
+                    },
+                    {
+                        "itemID": "SYS:4:3380",
+                        "code": "B",
+                        "name": "B",
+                        "description": "Biweekly",
+                        "category": "T_SYS_TRANS_PAYFREQ"
+                    },
+                    {
+                        "itemID": "SYS:4:3406",
+                        "code": "D",
+                        "name": "D",
+                        "description": "Daily",
+                        "category": "T_SYS_TRANS_PAYFREQ"
+                    },
+                    {
+                        "itemID": "SYS:4:3462",
+                        "code": "M",
+                        "name": "M",
+                        "description": "Monthly",
+                        "category": "T_SYS_TRANS_PAYFREQ"
+                    },
+                    {
+                        "itemID": "SYS:4:3512",
+                        "code": "S",
+                        "name": "S",
+                        "description": "SemiMonthly",
+                        "category": "T_SYS_TRANS_PAYFREQ"
+                    },
+                    {
+                        "itemID": "SYS:4:3534",
+                        "code": "W",
+                        "name": "W",
+                        "description": "Weekly",
+                        "category": "T_SYS_TRANS_PAYFREQ"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 13
+        },
+        "/workAssignment/job/jobFunctionCode": {
+            "codeList": {
+                "codeListTitle": "Job Function",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v4/worker-management/job-function/wfn/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 11
+        },
+        "/workAssignment/organizationalUnits/unitCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "code": "HomeDepartment",
+                        "name": "Home Department"
+                    },
+                    {
+                        "code": "BusinessUnit",
+                        "name": "Business Unit"
+                    },
+                    {
+                        "code": "HomeCostNumber",
+                        "name": "Home Cost Number"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 16
+        },
+        "/workAssignment/payrollProfile/defaultTaxJurisdictionTags/tagCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "code": "WorkedInState",
+                        "name": "Worked-in State"
+                    },
+                    {
+                        "code": "SuiSdiCode",
+                        "name": "SUI / SDI Code"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 7
+        },
+        "/workAssignment/primaryIndicator": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 1,
+            "shortLabelName": "Primary Position",
+            "default": false,
+            "dataType": "boolean"
+        },
+        "/workAssignment/workLocations/locationCode": {
+            "codeList": {
+                "codeListTitle": "Location",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v3/worker-management/locations/WFN/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 14
+        },
+        "/workAssignment/job/managementIndicator": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 10,
+            "shortLabelName": "Management Position",
+            "longLabelName": "This is a Management position",
+            "default": false,
+            "dataType": "boolean"
+        },
+        "/workAssignment/legislativeComplianceClassifications/wageLawClassifications/classificationCode": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 13,
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/wageLawClassifications/schemeCode": {
+                                    "pattern": "FLSAClassification"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/wageLawClassifications/schemeCode": {
+                                    "pattern": "FLSAClassification"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/wageLawClassifications/schemeCode": {
+                                    "pattern": "FLSAClassification"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "FLSA",
+                                "listItems": [
+                                    {
+                                        "itemID": "E",
+                                        "code": "E",
+                                        "name": "Exempt",
+                                        "description": "Exempt"
+                                    },
+                                    {
+                                        "itemID": "N",
+                                        "code": "N",
+                                        "name": "Non-exempt",
+                                        "description": "Non-exempt"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
