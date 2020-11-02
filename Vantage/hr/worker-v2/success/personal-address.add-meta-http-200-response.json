@@ -1,0 +1,368 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/person/personalAddress/lineOne": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "optional": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "maxLength": {
+                            "oneOf": {
+                                "value": 30,
+                                "attributes": {
+                                    "/worker/person/personalAddress/countryCode": {
+                                        "pattern": "(US|CA)"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Address",
+                    "longLabelName": "Address"
+                },
+                "/worker/person/personalAddress/lineTwo": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "maxLength": {
+                            "oneOf": {
+                                "value": 30,
+                                "attributes": {
+                                    "/worker/person/personalAddress/countryCode": {
+                                        "pattern": "(US|CA)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/worker/person/personalAddress/cityName": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "optional": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "City",
+                    "longLabelName": "City"
+                },
+                "/worker/person/personalAddress/postalCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "dependencies": {
+                        "optional": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/worker/person/personalAddress/countryCode": {
+                                        "pattern": "(US|CA)"
+                                    },
+                                    "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "false"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "hidden": false,
+                    "maxLength": 10,
+                    "shortLabelName": "Postal Code",
+                    "longLabelName": "Postal Code"
+                },
+                "/worker/person/personalAddress/sameAsAddressIndicator": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dataType": "boolean"
+                },
+                "/worker/person/personalAddress/countryCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/countryvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "optional": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(US|CA)$",
+                                    "attributes": {
+                                        "/worker/person/personalAddress/countrySubdivisionLevel1": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "dependencies": {
+                                                "readOnly": false,
+                                                "codeList": {
+                                                    "links": [
+                                                        {
+                                                            "rel": "/adp/codelist",
+                                                            "href": "/codelists/hr/v3/worker-management/statenamevalues?country={#/worker/person/personalAddress/countryCode}",
+                                                            "method": "GET",
+                                                            "encType": "application/json",
+                                                            "mediaType": "application/json"
+                                                        }
+                                                    ]
+                                                },
+                                                "optional": false,
+                                                "hidden": false,
+                                                "shortLabelName": "State",
+                                                "longLabelName": "State"
+                                            },
+                                            "/worker/person/personalAddress/countrySubdivisionLevel1/codeValue": {
+                                                "readOnly": false,
+                                                "optional": false,
+                                                "hidden": false,
+                                                "dependencies": {
+                                                    "readOnly": false,
+                                                    "optional": false,
+                                                    "hidden": false,
+                                                    "shortLabelName": "State",
+                                                    "longLabelName": "State"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^((?!(US|CA)).)*$",
+                                    "attributes": {
+                                        "/worker/person/personalAddress/lineThree": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "dependencies": {
+                                                "readOnly": {
+                                                    "oneOf": {
+                                                        "value": true,
+                                                        "attributes": {
+                                                            "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                                                "equals": [
+                                                                    "true"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "maxLength": 40
+                                        },
+                                        "/worker/person/personalAddress/lineFour": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "dependencies": {
+                                                "readOnly": {
+                                                    "oneOf": {
+                                                        "value": true,
+                                                        "attributes": {
+                                                            "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                                                "equals": [
+                                                                    "true"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "maxLength": 40
+                                        },
+                                        "/worker/person/personalAddress/lineFive": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "dependencies": {
+                                                "readOnly": {
+                                                    "oneOf": {
+                                                        "value": true,
+                                                        "attributes": {
+                                                            "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                                                "equals": [
+                                                                    "true"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "maxLength": 40
+                                        },
+                                        "/worker/person/personalAddress/countrySubdivisionLevel1": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "dependencies": {
+                                                "readOnly": {
+                                                    "oneOf": {
+                                                        "value": true,
+                                                        "attributes": {
+                                                            "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                                                "equals": [
+                                                                    "true"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "codeList": {
+                                                    "links": [
+                                                        {
+                                                            "rel": "/adp/codelist",
+                                                            "href": "/codelists/hr/v3/worker-management/statenamevalues?country={#/worker/person/personalAddress/countryCode}",
+                                                            "method": "GET",
+                                                            "encType": "application/json",
+                                                            "mediaType": "application/json"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            "/worker/person/personalAddress/countrySubdivisionLevel1/codeValue": {
+                                                "readOnly": false,
+                                                "optional": true,
+                                                "hidden": false,
+                                                "dependencies": {
+                                                    "readOnly": {
+                                                        "oneOf": {
+                                                            "value": true,
+                                                            "attributes": {
+                                                                "/worker/person/personalAddress/sameAsAddressIndicator": {
+                                                                    "equals": [
+                                                                        "true"
+                                                                    ]
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "shortLabelName": "Country",
+                    "longLabelName": "Country"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
