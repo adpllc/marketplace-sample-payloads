@@ -1,0 +1,122 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/person/customFieldGroup/stringField/nameCode/codeValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField21$",
+                                    "attributes": {
+                                        "/worker/person/customFieldGroup/stringField/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "ClientDefinedField21",
+                                            "longLabelName": "ClientDefinedField21",
+                                            "maxLength": 50
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField22$",
+                                    "attributes": {
+                                        "/worker/person/customFieldGroup/stringField/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "ClientDefinedField22",
+                                            "longLabelName": "ClientDefinedField22",
+                                            "default": "ClientDefinedField22",
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/client-defined-field-values?fieldID=ClientDefinedField22",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField23$",
+                                    "attributes": {
+                                        "/worker/person/customFieldGroup/stringField/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "ClientDefinedField23",
+                                            "longLabelName": "ClientDefinedField23",
+                                            "default": "ClientDefinedField23-1",
+                                            "valueSet": {
+                                                "listValueItems": [
+                                                    {
+                                                        "idValue": "ClientDefinedField23-1",
+                                                        "itemDescription": "ClientDefinedField23",
+                                                        "defaultIndicator": "true"
+                                                    },
+                                                    {
+                                                        "idValue": "ClientDefinedField23-2",
+                                                        "itemDescription": "ClientDefinedField23-2",
+                                                        "defaultIndicator": "false"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField27$",
+                                    "attributes": {
+                                        "/worker/person/customFieldGroup/stringField/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "testcdf",
+                                            "longLabelName": "testcdf",
+                                            "maxLength": 50
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^41$",
+                                    "attributes": {
+                                        "/worker/person/customFieldGroup/stringField/stringValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "shortLabelName": "TimeECDF",
+                                            "longLabelName": "TimeECDF",
+                                            "default": "TimeECDF",
+                                            "maxLength": 50
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/worker/person/customFieldGroup/stringField/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}

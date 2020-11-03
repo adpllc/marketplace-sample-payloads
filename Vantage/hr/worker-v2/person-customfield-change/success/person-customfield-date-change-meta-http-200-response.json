@@ -1,0 +1,78 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/person/customFieldGroup/dateField/nameCode/codeValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField11$",
+                                    "attributes": {
+                                        "/worker/person/customFieldGroup/dateField/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Client Defined field date",
+                                            "longLabelName": "Client Defined field date",
+                                            "default": "2016-02-10",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField12$",
+                                    "attributes": {
+                                        "/worker/person/customFieldGroup/dateField/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "ClientDefinedField12",
+                                            "longLabelName": "ClientDefinedField12",
+                                            "default": "2015-01-08",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField18$",
+                                    "attributes": {
+                                        "/worker/person/customFieldGroup/dateField/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Defaultdate",
+                                            "longLabelName": "Defaultdate",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/worker/person/customFieldGroup/dateField/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
