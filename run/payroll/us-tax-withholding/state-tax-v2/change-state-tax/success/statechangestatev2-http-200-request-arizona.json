@@ -1,0 +1,81 @@
+{
+  "events": [
+    {
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "G3ZW1ENG0B8C31ER"
+          },
+          "stateCode": {
+            "codeValue": "AZ",
+            "longName": "Arizona"
+          }
+        },
+        "transform": {
+          "effectiveDateTime": "2018-09-12",
+          "stateIncomeTaxWithholdingElection": {
+            "taxWithholdingRate": 1.3,
+            "additionalTaxAmount": {
+              "amountValue": 0,
+              "currencyCode": "USD"
+            },
+            "attestationIndicator": {
+              "indicatorValue": true,
+              "effectiveDate": "2018-09-13T17:16:20+00:00"
+            },
+            "additionalStatutoryInputs": [
+              {
+                "tagCode": "VERSION",
+                "tagValues": [
+                  "A-4-V1"
+                ],
+                "dataTypeCode": "string"
+              },
+              {
+                "tagCode": "EXEMPT",
+                "tagValues": [
+                  "true"
+                ],
+                "dataTypeCode": "boolean"
+              }
+            ],
+            "taxWithholdingStatus": {
+              "statusCode": {
+                "codeValue": "EXEMPT",
+                "longName": "Exempt"
+              }
+            },
+            "attachments": [
+              {
+                "nameCode": {
+                  "codeValue": "TAX_WITHHOLDING",
+                  "shortName": "A-4",
+                  "longName": "Form A-4 Employee Withholding"
+                },
+                "attachmentLink": {
+                  "mediaType": "application/pdf",
+                  "payLoadArguments": [
+                    {
+                      "argumentPath": "gssID",
+                      "argumentValue": "31cb9db9-4ffd-4f7d-9743-dd23b64c9e3c"
+                    }
+                  ]
+                },
+                "textValue": "{{PDF DATA HERE}}"
+              }
+            ]
+          }
+        }
+      },
+      "actor": {
+        "associateOID": "G3ZW1ENG0B8C31ER"
+      },
+      "serviceCategoryCode": {
+        "codeValue": "payrollManagement"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usState.taxWithholding.election.change"
+      }
+    }
+  ]
+}
