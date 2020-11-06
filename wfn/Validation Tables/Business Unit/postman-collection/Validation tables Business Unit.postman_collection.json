@@ -1,0 +1,1028 @@
+{
+	"info": {
+		"_postman_id": "5018640e-c763-45c5-8f81-552884c2bc68",
+		"name": "Validation tables Business Unit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Business Unit",
+			"item": [
+				{
+					"name": "Business Unit",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Meta call Business unit API with Method POST",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=Business Units&method=POST",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "Business Units"
+								},
+								{
+									"key": "method",
+									"value": "POST"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Meta call Business unit API with Method POST Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=Business Units&method=POST",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "Business Units"
+								},
+								{
+									"key": "method",
+									"value": "POST"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Meta call Business unit API with Method Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=Business Units&method=get",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "Business Units"
+								},
+								{
+									"key": "method",
+									"value": "get"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Meta call Business unit API with Method GET(Subdivision code for CA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=departments&method=get&$filter=subdivisionCode eq 'US'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "departments"
+								},
+								{
+									"key": "method",
+									"value": "get"
+								},
+								{
+									"key": "$filter",
+									"value": "subdivisionCode eq 'US'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Meta call Business unit API with Method POST(Subdivision code for CA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=Business Units&method=POST&$filter=subdivisionCode eq 'CA'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "Business Units"
+								},
+								{
+									"key": "method",
+									"value": "POST"
+								},
+								{
+									"key": "$filter",
+									"value": "subdivisionCode eq 'CA'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Business Unit- already existing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"A2b3c4\",\r\n                    \"countryCode\": \"CA\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"A2b3c4\",\r\n                    \"countryCode\": \"CA\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit with countryDialing and access",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU1\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"A2b3c4\",\r\n                    \"countryCode\": \"CA\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"49\",\r\n                            \"countryDialing\": \"49\",\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                             \"access\": \"44\",\r\n                            \"countryDialing\": \"44\",\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit with invalid tagCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU3\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary 1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"A2b3c4\",\r\n                    \"countryCode\": \"CA\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit without nameCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU2\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary 1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"A2b3c4\",\r\n                    \"countryCode\": \"CA\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit without any of the auxillary field",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU3\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n               \r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"A2b3c4\",\r\n                    \"countryCode\": \"CA\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit with invalid country Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU1\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"A2b3c4\",\r\n                    \"countryCode\": \"C1A\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit without email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU4\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"A2b3c4\",\r\n                    \"countryCode\": \"CA\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit with invalid email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU2\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"A2b3c4\",\r\n                    \"countryCode\": \"CA\"\r\n                },\r\n                \"communication\": {\r\n                   \r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit with invalid postal code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU1\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"687\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit without postal code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU1\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Roshini\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"687\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit without person name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU1\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"30676\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit without line one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU1\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \r\n                \"address\": {\r\n                    \"lineOne\": \"\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"30676\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add business unit without landline/name code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"BU5\",\r\n                \"name\": \"testing\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street Address 1\",\r\n                    \"lineTwo\": \"\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"30676\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test12@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"\"\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/business-units",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"business-units"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-iat-wfn\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
