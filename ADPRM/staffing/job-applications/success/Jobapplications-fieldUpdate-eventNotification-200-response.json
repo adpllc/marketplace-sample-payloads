@@ -3,25 +3,45 @@
         {
             "data": {
                 "eventContext": {
-                    "applicationID": "12449653907"
+                    "applicationID": "24210021494"
                 },
                 "output": {
                     "jobApplication": {
-                        "jobRequisitionReference": {
-                            "requisitionID": "6000090764912",
-                            "requisitionTitle": "Test",
-                            "clientRequisitionID": "2",
-                            "links": []
+                        "applicationStatusCode": {
+                            "effectiveDate": "2020-09-09",
+                            "codeValue": "99900068",
+                            "shortName": "HM - Eligible to Schedule"
                         },
-                        "applicationSource": {
-                            "submittedBy": {
-                                "personName": {
-                                    "givenName": "Jane",
-                                    "middleName": "S",
-                                    "familyName1": "Collins"
+                        "applicant": {
+                            "internalApplicantIndicator": false,
+                            "person": {
+                                "personOID": "",
+                                "customFieldGroup": {
+                                    "amountFields": [],
+                                    "codeFields": [],
+                                    "dateFields": [],
+                                    "dateTimeFields": [],
+                                    "indicatorFields": [],
+                                    "numberFields": [
+                                        {
+                                            "nameCode": {
+                                                "codeValue": "candidateID"
+                                            },
+                                            "categoryCode": {
+                                                "codeValue": "candidateID"
+                                            },
+                                            "numberValue": 6001418920612
+                                        }
+                                    ],
+                                    "percentFields": [],
+                                    "stringFields": [],
+                                    "telephoneFields": [],
+                                    "links": []
                                 },
-                                "relationshipTypeCode": {
-                                    "longName": "self"
+                                "personName": {
+                                    "givenName": "Vikram",
+                                    "middleName": "",
+                                    "familyName1": "Biswas"
                                 },
                                 "communication": {
                                     "faxes": [],
@@ -31,76 +51,112 @@
                                     "landlines": [
                                         {
                                             "nameCode": {
-                                                "shortName": "",
-                                                "longName": "Phone"
+                                                "shortName": "Home",
+                                                "longName": "Phone2"
                                             },
-                                            "formattedNumber": "999-098-7654"
+                                            "formattedNumber": "1203456798"
                                         }
                                     ],
-                                    "mobiles": [],
+                                    "mobiles": [
+                                        {
+                                            "nameCode": {
+                                                "shortName": "Cell",
+                                                "longName": "Phone"
+                                            },
+                                            "formattedNumber": "1203456789"
+                                        }
+                                    ],
                                     "emails": [
                                         {
-                                            "emailUri": "kaoapitesting@outlook.com"
+                                            "emailUri": "vikram.biswas@adp.com"
                                         }
                                     ],
                                     "socialNetworks": []
-                                }
-                            }
+                                },
+                                "address": {
+                                    "lineOne": "",
+                                    "lineTwo": "",
+                                    "cityName": "",
+                                    "countrySubdivisionLevel1": {
+                                        "codeValue": "AL"
+                                    },
+                                    "countryCode": "USA",
+                                    "postalCode": "07932"
+                                },
+                                "formerNames": [],
+                                "citizenshipCountryCodes": [],
+                                "residencyCountryCodes": [],
+                                "militaryClassificationCodes": [],
+                                "disabilityTypeCodes": []
+                            },
+                            "competencies": [],
+                            "educationalDegrees": [],
+                            "certifications": [],
+                            "languages": [],
+                            "licenses": [],
+                            "memberships": [],
+                            "recognitions": [],
+                            "employmentHistory": [],
+                            "references": []
                         },
-                        "applicationStatusCode": {
-                            "effectiveDate": "2018-08-02",
-                            "codeValue": "99900068",
-                            "shortName": "HM - Eligible to Schedule"
-                        },
+                        "attestations": [],
                         "comments": [],
                         "links": [
                             {
-                                "href": "/staffing/v2/job-applications/12449653907",
+                                "href": "/staffing/v2/job-applicants/24210021494/documents",
                                 "rel": "related",
                                 "mediaType": "application/json",
                                 "method": "GET",
                                 "payLoadArguments": []
                             },
                             {
-                                "href": "/staffing/v1/job-requisitions/6000090764912",
+                                "href": "/staffing/v2/job-applications/24210021494",
+                                "rel": "self",
+                                "mediaType": "application/json",
+                                "method": "GET",
+                                "payLoadArguments": []
+                            },
+                            {
+                                "href": "/staffing/v1/job-requisitions/6000119240812",
                                 "rel": "related",
                                 "mediaType": "application/json",
                                 "method": "GET",
                                 "payLoadArguments": []
                             },
                             {
-                                "href": "/staffing/v2/job-applicants/12449653907/personal-contacts",
+                                "href": "/staffing/v2/job-applicants/24210021494/personal-contacts",
                                 "rel": "related",
                                 "mediaType": "application/json",
                                 "method": "GET",
                                 "payLoadArguments": []
                             },
                             {
-                                "href": "/staffing/v2/job-applicants/12449653907/pay-distributions",
+                                "href": "/staffing/v2/job-applicants/24210021494/pay-distributions",
                                 "rel": "related",
                                 "mediaType": "application/json",
                                 "method": "GET",
                                 "payLoadArguments": []
                             },
                             {
-                                "href": "/staffing/v2/job-applicants/12449653907/us-tax-profiles",
+                                "href": "/staffing/v2/job-applicants/24210021494/us-tax-profiles",
                                 "rel": "related",
                                 "mediaType": "application/json",
                                 "method": "GET",
                                 "payLoadArguments": []
                             }
-                        ]
+                        ],
+                        "attachments": []
                     }
                 }
             },
-            "eventID": "4b400d76-f9b6-4337-bd55-778ea1474697",
+            "eventID": "b2b605f0-1e14-46c2-a636-85d38f008ef0",
             "serviceCategoryCode": {
                 "codeValue": "staffing"
             },
             "eventNameCode": {
-                "codeValue": "jobApplication.status.change"
+                "codeValue": "jobapplication.change"
             },
-            "eventTitle": "Change Job Application Status",
+            "eventTitle": "JobApplication Change",
             "eventReasonCode": {
                 "codeValue": "C",
                 "shortName": "Change"
@@ -108,9 +164,9 @@
             "eventStatusCode": {
                 "codeValue": "complete"
             },
-            "recordDateTime": "2018-08-02T12:59:55Z",
-            "creationDateTime": "2018-08-02T12:59:55Z",
-            "effectiveDateTime": "2018-08-02T12:59:55Z",
+            "recordDateTime": "2020-11-06T04:52:21Z",
+            "creationDateTime": "2020-11-06T04:52:21Z",
+            "effectiveDateTime": "2020-11-06T04:52:21Z",
             "links": []
         }
     ]
