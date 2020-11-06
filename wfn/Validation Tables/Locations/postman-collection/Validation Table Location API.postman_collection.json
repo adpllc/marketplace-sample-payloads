@@ -1,0 +1,1091 @@
+{
+	"info": {
+		"_postman_id": "3311282e-03f7-4c7d-a6ae-912870a2fda4",
+		"name": "Validation Table Location API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Location get call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location Meta Post call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=Associate Work Locations&method=POST",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "Associate Work Locations"
+								},
+								{
+									"key": "method",
+									"value": "POST"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location Meta GET Call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?method=GET&validationTableType=Associate Work Locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "GET"
+								},
+								{
+									"key": "method",
+									"value": "POST",
+									"disabled": true
+								},
+								{
+									"key": "validationTableType",
+									"value": "Associate Work Locations"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location Meta Post call (Subdivision code US)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=Associate Work Locations&method=POST&$filter=subdivisionCode eq 'US'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "Associate Work Locations"
+								},
+								{
+									"key": "method",
+									"value": "POST"
+								},
+								{
+									"key": "method",
+									"value": "POST",
+									"disabled": true
+								},
+								{
+									"key": "$filter",
+									"value": "subdivisionCode eq 'US'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location Meta GET Call (Subdivision code CA)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?method=GET&validationTableType=Associate Work Locations&$filter=subdivisionCode eq 'US'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "GET"
+								},
+								{
+									"key": "validationTableType",
+									"value": "Associate Work Locations"
+								},
+								{
+									"key": "method",
+									"value": "POST",
+									"disabled": true
+								},
+								{
+									"key": "$filter",
+									"value": "subdivisionCode eq 'US'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location Code:- Passing correct data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location Code:- already existing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location Code:-with country dialing and access",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \r\n                             \"access\": \"44\",\r\n                            \"countryDialing\": \"44\",\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Location Code:-with invalid tagCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Aux 2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location without nameCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \" \",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location without any of the auxillary field",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                \r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Addlocation with invalid country Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"USAN\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location with invalid subdivision code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Addlocation without email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location with invalid email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location without postal code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location with invalid postal code Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07@AB\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location without person name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location without line one",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location with blank landline/name code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add location without landline/name code field",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"KIJ\",\r\n                \"name\": \"18June\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"Auxiliary 1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"Auxiliary 2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"Auxiliary 3\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary4\",\r\n                    \"tagValue\": \"Auxiliary 4\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary5\",\r\n                    \"tagValue\": \"Auxiliary 5\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Contact Name\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"55 Fruit Street\",\r\n                    \"lineTwo\": \"55 Fruit Street Address 2\",\r\n                    \"lineThree\": \"55 Fruit Street Address 3\",\r\n                    \"lineFour\": \"55 Fruit Street Address 4\",\r\n                    \"cityName\": \"Dover\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NJ\"\r\n                    },\r\n                    \"postalCode\": \"07456\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"testABC@gmail.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"areaDialing\": \"565\",\r\n                            \"dialNumber\": \"5656566\"\r\n                            \r\n                        },\r\n                        {\r\n                            \"areaDialing\": \"564\",\r\n                            \"dialNumber\": \"5464565\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/associate-work-locations",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"associate-work-locations"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-iat-wfn\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
