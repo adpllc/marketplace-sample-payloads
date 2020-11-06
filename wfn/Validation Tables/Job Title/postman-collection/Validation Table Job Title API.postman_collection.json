@@ -1,0 +1,832 @@
+{
+	"info": {
+		"_postman_id": "7f290e95-15a3-462d-b640-23ceb759c002",
+		"name": "Validation Table Job Title API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Job Title",
+			"item": [
+				{
+					"name": "Job Title GET Call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Tile Meta Get Call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs/meta?method=GET",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "GET"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Title Meta Post Call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs/meta?method=POST",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "POST"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Title Get call (based on payScaleCode get paygrade code)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "x-imp",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs/payScale?payScaleCode=AS1",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs",
+								"payScale"
+							],
+							"query": [
+								{
+									"key": "payScaleCode",
+									"value": "AS1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a job title into validation table",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ME2\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF02\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"AS1\",\r\n                \"name\": \"ADL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLSA\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"N\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"2352\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"MG\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"6\",\r\n                \"name\": \"\"\r\n            }\r\n            \r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a job title into validation table with invalid indicator",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ABh\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF02\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"AS1\",\r\n                \"name\": \"ADL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLSA\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"N\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"2352\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"MG\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"6\",\r\n                \"name\": \"\"\r\n            },\r\n                        \"inactiveIndicator\": true\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a Job Title passing only code in request payload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ME12\",\r\n            \"name\": \"TEST\"\r\n            \r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a Job Title with blank code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF02\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"AS1\",\r\n                \"name\": \"ADL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLSA\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"N\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"2352\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"MG\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"6\",\r\n                \"name\": \"\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a Job Title with invalid job function code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ME1\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF021\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"AS1\",\r\n                \"name\": \"ADL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLSA\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"N\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"2352\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"MG\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"6\",\r\n                \"name\": \"\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a Job Title with invalid pay scale code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ME1\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF02\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"ASL\",\r\n                \"name\": \"ASL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLSA\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"N\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"2352\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"MG\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"6\",\r\n                \"name\": \"\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a Job Title with invalid pay grade code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"listItems\": [\n        {\n            \"code\": \"ME1\",\n            \"name\": \"TEST\",\n            \"managementPositionIndicator\": true,\n            \"alternateNames\": [\n                {\n                    \"languageCode\": \"ES-US\",\n                    \"nameText\": \"AAA\"\n                }\n            ],\n            \"jobFunctionCode\": {\n                \"code\": \"JF02\",\n                \"name\": \"Cold\"\n            },\n            \"payScaleCode\": {\n                \"code\": \"AS1\",\n                \"name\": \"ASL\"\n            },\n            \"payGradeCode\": {\n                \"code\": \"AB\",\n                \"name\": \"ADD\"\n            },\n            \"wageLawCoverage\": {\n                \"wageLawNameCode\": {\n                    \"code\": \"FLSA\",\n                    \"name\": \"FLSA\"\n                },\n                \"coverageCode\": {\n                    \"code\": \"N\",\n                    \"name\": \"\"\n                }\n            },\n            \"industryClassifications\": {\n                \"code\": \"2352\",\n                \"name\": \"\"\n            },\n            \"jobFamilyCode\": {\n                \"code\": \"MG\",\n                \"name\": \"\"\n            },\n            \"occupationalClassifications\": {\n                \"code\": \"6\",\n                \"name\": \"\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-Adding a Job Title with invalid wage law code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ME7\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF02\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"AS1\",\r\n                \"name\": \"ASL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLS1\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"N\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"2352\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"MG\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"6\",\r\n                \"name\": \"\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a Job Title with invalid wageLawCoverage code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ME2\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF02\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"ASL\",\r\n                \"name\": \"ASL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLSA\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"F\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"2352\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"MG\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"6\",\r\n                \"name\": \"\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a Job Title with invalid industry classifications'",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ME2\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF02\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"AS1\",\r\n                \"name\": \"ASL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLSA\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"N\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"252\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"MG\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"6\",\r\n                \"name\": \"\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a Job Title with invalid job family code'",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ME2\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF02\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"AS1\",\r\n                \"name\": \"ASL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLSA\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"N\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"2352\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"M\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"6\",\r\n                \"name\": \"\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding a Job Title with invalid occupational classifications",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"code\": \"ME2\",\r\n            \"name\": \"TEST\",\r\n            \"managementPositionIndicator\": true,\r\n            \"alternateNames\": [\r\n                {\r\n                    \"languageCode\": \"ES-US\",\r\n                    \"nameText\": \"AAA\"\r\n                }\r\n            ],\r\n            \"jobFunctionCode\": {\r\n                \"code\": \"JF02\",\r\n                \"name\": \"Cold\"\r\n            },\r\n            \"payScaleCode\": {\r\n                \"code\": \"AS1\",\r\n                \"name\": \"ASL\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"A\",\r\n                \"name\": \"ADD\"\r\n            },\r\n            \"wageLawCoverage\": {\r\n                \"wageLawNameCode\": {\r\n                    \"code\": \"FLSA\",\r\n                    \"name\": \"FLSA\"\r\n                },\r\n                \"coverageCode\": {\r\n                    \"code\": \"N\",\r\n                    \"name\": \"\"\r\n                }\r\n            },\r\n            \"industryClassifications\": {\r\n                \"code\": \"2352\",\r\n                \"name\": \"\"\r\n            },\r\n            \"jobFamilyCode\": {\r\n                \"code\": \"MG\",\r\n                \"name\": \"\"\r\n            },\r\n            \"occupationalClassifications\": {\r\n                \"code\": \"67\",\r\n                \"name\": \"\"\r\n            }\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/jobs",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-iat-wfn\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
