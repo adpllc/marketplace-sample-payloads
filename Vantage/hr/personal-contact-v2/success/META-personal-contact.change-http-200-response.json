@@ -1,0 +1,353 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/personalContact/precedenceCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Primary Contact Indicator",
+                        "listItems": [
+                            {
+                                "codeValue": "PRIM",
+                                "longName": "Primary"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Primary",
+                    "longLabelName": "Primary"
+                },
+                "/personalContact/precedenceCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Primary",
+                    "longLabelName": "Primary"
+                },
+                "/personalContact/relationshipTypeCode": {
+                    "helperMessage": "In some countries, it is a best practice for the employee to notify the person whose personal information is being included that the employee has selected him or her as an emergency contact.",
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/relationshipvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Relationship",
+                    "longLabelName": "Relationship"
+                },
+                "/personalContact/relationshipTypeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Relationship",
+                    "longLabelName": "Relationship"
+                },
+                "/personalContact/address/sameAsAddressIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean",
+                    "shortLabelName": "Same As Home Address",
+                    "longLabelName": "Same As Home Address"
+                },
+                "/personalContact/address/lineOne": {
+                    "readOnly": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/personalContact/address/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "shortLabelName": "Address",
+                    "longLabelName": "Address"
+                },
+                "/personalContact/address/lineTwo": {
+                    "readOnly": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/personalContact/address/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 40
+                },
+                "/personalContact/address/cityName": {
+                    "readOnly": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/personalContact/address/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "City",
+                    "longLabelName": "City"
+                },
+                "/personalContact/address/postalCode": {
+                    "readOnly": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/personalContact/address/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 10,
+                    "shortLabelName": "Postal Code",
+                    "longLabelName": "Postal Code"
+                },
+                "/personalContact/communication/landlines": {
+                    "minItems": 0,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                },
+                "/personalContact/communication/landlines/nameCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "uniqueIndicator": true,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/personalcontactstelephonetypes",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/personalContact/communication/landlines/nameCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "uniqueIndicator": true
+                },
+                "/personalContact/communication/landlines/countryDialing": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 4
+                },
+                "/personalContact/communication/landlines/formattedNumber": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 15
+                },
+                "/personalContact/address/countrySubdivisionLevel1": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/personalContact/address/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/statenamevalues?country={#/personalContact/address/countryCode}",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/personalContact/address/countrySubdivisionLevel1/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/personalContact/address/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/personalContact/address/countryCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/countryvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/personalContact/address/sameAsAddressIndicator": {
+                                        "equals": [
+                                            "true"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^((?!(US|CA)).)*$",
+                                    "attributes": {
+                                        "/personalContact/address/lineThree": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "dependencies": {
+                                                "readOnly": {
+                                                    "oneOf": {
+                                                        "value": true,
+                                                        "attributes": {
+                                                            "/personalContact/address/sameAsAddressIndicator": {
+                                                                "equals": [
+                                                                    "true"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "maxLength": 40
+                                        },
+                                        "/personalContact/address/lineFour": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "dependencies": {
+                                                "readOnly": {
+                                                    "oneOf": {
+                                                        "value": true,
+                                                        "attributes": {
+                                                            "/personalContact/address/sameAsAddressIndicator": {
+                                                                "equals": [
+                                                                    "true"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "maxLength": 40
+                                        },
+                                        "/personalContact/address/lineFive": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "dependencies": {
+                                                "readOnly": {
+                                                    "oneOf": {
+                                                        "value": true,
+                                                        "attributes": {
+                                                            "/personalContact/address/sameAsAddressIndicator": {
+                                                                "equals": [
+                                                                    "true"
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "maxLength": 40
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "shortLabelName": "Country",
+                    "longLabelName": "Country"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/personalContact/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
