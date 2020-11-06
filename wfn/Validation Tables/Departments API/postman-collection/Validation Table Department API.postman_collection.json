@@ -1,0 +1,803 @@
+{
+	"info": {
+		"_postman_id": "d6437bbf-6c57-4f94-9814-63e110011a43",
+		"name": "Validation Table Department API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Department Get call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Department Meta Get call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=departments&method=get",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "departments"
+								},
+								{
+									"key": "method",
+									"value": "get"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Department Meta Post Call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?method=post&validationTableType=departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "method",
+									"value": "POST",
+									"disabled": true
+								},
+								{
+									"key": "method",
+									"value": "post"
+								},
+								{
+									"key": "validationTableType",
+									"value": "departments"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Department Meta Get call (US Subdivision code)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=departments&method=get&$filter=subdivisionCode eq 'US'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "departments"
+								},
+								{
+									"key": "method",
+									"value": "get"
+								},
+								{
+									"key": "$filter",
+									"value": "subdivisionCode eq 'US'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Department MetaPOST call (US Subdivision code) Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=departments&method=post&$filter=subdivisionCode eq 'CA'",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "departments"
+								},
+								{
+									"key": "method",
+									"value": "post"
+								},
+								{
+									"key": "$filter",
+									"value": "subdivisionCode eq 'CA'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Department :- Passing all correct data(code should be 3 digits)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"938\",\r\n            \"nameCode\": {\r\n                \"code\": \"dep\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"trach1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"trach2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"trach3\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Tina\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"main 1\",\r\n                    \"lineTwo\": \"main 2\",\r\n                    \"lineThree\": \"main 3\",\r\n                    \"cityName\": \"Morris\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NY\"\r\n                    },\r\n                    \"postalCode\": \"11777\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test@inet.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"543\",\r\n                            \"dialNumber\": \"5656567\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"413\",\r\n                            \"dialNumber\": \"8686777\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Department :- only code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"938\",\r\n            \"nameCode\": {\r\n                \"code\": \"678\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding department code with code more than 3 digits(diff from company setup)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"938\",\r\n            \"nameCode\": {\r\n                \"code\": \"dep123\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"trach1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"trach2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"trach3\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Tina\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"main 1\",\r\n                    \"lineTwo\": \"main 2\",\r\n                    \"lineThree\": \"main 3\",\r\n                    \"cityName\": \"Morris\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NY\"\r\n                    },\r\n                    \"postalCode\": \"11777\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test@inet.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"543\",\r\n                            \"dialNumber\": \"5656567\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"413\",\r\n                            \"dialNumber\": \"8686777\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding department code with invalid payroll group code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"93\",\r\n            \"nameCode\": {\r\n                \"code\": \"456\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"trach1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"trach2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"trach3\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Tina\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"main 1\",\r\n                    \"lineTwo\": \"main 2\",\r\n                    \"lineThree\": \"main 3\",\r\n                    \"cityName\": \"Morris\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NY\"\r\n                    },\r\n                    \"postalCode\": \"11777\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test@inet.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"543\",\r\n                            \"dialNumber\": \"5656567\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"413\",\r\n                            \"dialNumber\": \"8686777\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200-Adding department with invalid auxillary tag name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"938\",\r\n            \"nameCode\": {\r\n                \"code\": \"DEP\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary 1\",\r\n                    \"tagValue\": \"trach1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"trach2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"trach3\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Tina\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"main 1\",\r\n                    \"lineTwo\": \"main 2\",\r\n                    \"lineThree\": \"main 3\",\r\n                    \"cityName\": \"Morris\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NY\"\r\n                    },\r\n                    \"postalCode\": \"11777\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test@inet.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"543\",\r\n                            \"dialNumber\": \"5656567\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"413\",\r\n                            \"dialNumber\": \"8686777\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding department with invalid subdivision code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"938\",\r\n            \"nameCode\": {\r\n                \"code\": \"dep123\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"trach1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"trach2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"trach3\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Tina\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"main 1\",\r\n                    \"lineTwo\": \"main 2\",\r\n                    \"lineThree\": \"main 3\",\r\n                    \"cityName\": \"Morris\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"11777\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test@inet.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"543\",\r\n                            \"dialNumber\": \"5656567\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"413\",\r\n                            \"dialNumber\": \"8686777\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding department with invalid postal code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"938\",\r\n            \"nameCode\": {\r\n                \"code\": \"dep123\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"trach1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"trach2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"trach3\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Tina\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"main 1\",\r\n                    \"lineTwo\": \"main 2\",\r\n                    \"lineThree\": \"main 3\",\r\n                    \"cityName\": \"Morris\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"BC\"\r\n                    },\r\n                    \"postalCode\": \"117\",\r\n                    \"countryCode\": \"CA\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test@inet.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"543\",\r\n                            \"dialNumber\": \"5656567\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"413\",\r\n                            \"dialNumber\": \"8686777\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding department with invalid country code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"938\",\r\n            \"nameCode\": {\r\n                \"code\": \"101\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"trach1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"trach2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"trach3\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Tina\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"main 1\",\r\n                    \"lineTwo\": \"main 2\",\r\n                    \"lineThree\": \"main 3\",\r\n                    \"cityName\": \"Morris\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NY\"\r\n                    },\r\n                    \"postalCode\": \"11777\",\r\n                    \"countryCode\": \"USA\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test@inet.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"543\",\r\n                            \"dialNumber\": \"5656567\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"413\",\r\n                            \"dialNumber\": \"8686777\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding department with invalid landline name Code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"938\",\r\n            \"nameCode\": {\r\n                \"code\": \"dep\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"trach1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"trach2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"trach3\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Tina\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"main 1\",\r\n                    \"lineTwo\": \"main 2\",\r\n                    \"lineThree\": \"main 3\",\r\n                    \"cityName\": \"Morris\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NY\"\r\n                    },\r\n                    \"postalCode\": \"11777\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test@inet.com\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"44\",\r\n                            \"countryDialing\": \"44\",\r\n                            \"areaDialing\": \"543\",\r\n                            \"dialNumber\": \"5656567\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                            \"access\": \"1\",\r\n                            \"countryDialing\": \"1\",\r\n                            \"areaDialing\": \"413\",\r\n                            \"dialNumber\": \"8686777\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adding department with invalid email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"payrollGroupCode\": \"938\",\r\n            \"nameCode\": {\r\n                \"code\": \"dip\",\r\n                \"name\": \"day618\"\r\n            },\r\n            \"customTags\": [\r\n                {\r\n                    \"tagCode\": \"Auxiliary1\",\r\n                    \"tagValue\": \"trach1\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary2\",\r\n                    \"tagValue\": \"trach2\"\r\n                },\r\n                {\r\n                    \"tagCode\": \"Auxiliary3\",\r\n                    \"tagValue\": \"trach3\"\r\n                }\r\n            ],\r\n            \"contacts\": {\r\n                \"personName\": {\r\n                    \"formattedName\": \"Tina\"\r\n                },\r\n                \"address\": {\r\n                    \"lineOne\": \"main 1\",\r\n                    \"lineTwo\": \"main 2\",\r\n                    \"lineThree\": \"main 3\",\r\n                    \"cityName\": \"Morris\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"NY\"\r\n                    },\r\n                    \"postalCode\": \"11777\",\r\n                    \"countryCode\": \"US\"\r\n                },\r\n                \"communication\": {\r\n                    \"emails\": {\r\n                        \"emailUri\": \"test@inet\"\r\n                    },\r\n                    \"landlines\": [\r\n                        {\r\n                            \"access\": \"44\",\r\n                            \"countryDialing\": \"44\",\r\n                            \"areaDialing\": \"543\",\r\n                            \"dialNumber\": \"5656567\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"Fax\",\r\n                                \"name\": null\r\n                            }\r\n                        },\r\n                        {\r\n                           \r\n                            \"areaDialing\": \"413\",\r\n                            \"dialNumber\": \"8686777\",\r\n                            \"nameCode\": {\r\n                                \"code\": \"LandLine\",\r\n                                \"name\": null\r\n                            }\r\n                        }\r\n                    ]\r\n                }\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/departments",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-iat-wfn\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
