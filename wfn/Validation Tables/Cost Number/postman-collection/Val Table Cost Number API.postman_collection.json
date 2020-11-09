@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "28dd9174-17eb-4483-aecc-a4151ffdf787",
+		"name": "Val Table Cost Number API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cost Number",
+			"item": [
+				{
+					"name": "Cost Number (get all codes)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/cost-centers",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"cost-centers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cost Number Meta GET call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=Cost Centers&method=GET",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "Cost Centers"
+								},
+								{
+									"key": "method",
+									"value": "GET"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Costnumber Meta Post call",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/meta?validationTableType=Cost Centers&method=POST",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"meta"
+							],
+							"query": [
+								{
+									"key": "validationTableType",
+									"value": "Cost Centers"
+								},
+								{
+									"key": "method",
+									"value": "POST"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Costnumber Post call",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken-iat-wfn}}",
+								"type": "text"
+							},
+							{
+								"key": "content-type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"COS101\",\r\n                \"name\": \"Des\"\r\n            },\r\n            \"payrollGroupCode\": \"938\",\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/cost-centers",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"cost-centers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Costnumber Post -already existing",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"COS101\",\r\n                \"name\": \"Des\"\r\n            },\r\n            \"payrollGroupCode\": \"938\",\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/cost-centers",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"cost-centers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Costnumber Post with blank code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"\",\r\n                \"name\": \"Des\"\r\n            },\r\n            \"payrollGroupCode\": \"938\",\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/cost-centers",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"cost-centers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Costnumber Post with invalid  payrollGroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"COS100\",\r\n                \"name\": \"Des\"\r\n            },\r\n            \"payrollGroupCode\": \"7\",\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/cost-centers",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"cost-centers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Costnumber Post without payrollGroupCode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{accessToken-iat-wfn}}"
+							},
+							{
+								"key": "content-type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"listItems\": [\r\n        {\r\n            \"nameCode\": {\r\n                \"code\": \"COS10\",\r\n                \"name\": \"Des\"\r\n            },\r\n            \"inactiveIndicator\": false\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/hcm/v1/validation-tables/cost-centers",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"hcm",
+								"v1",
+								"validation-tables",
+								"cost-centers"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ac07d82-e515-4db5-91e5-5d763d480438",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken-iat-wfn\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
