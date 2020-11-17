@@ -1,0 +1,78 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/person/legalName/givenName": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "First",
+                    "longLabelName": "First"
+                },
+                "/worker/person/legalName/middleName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "Middle",
+                    "longLabelName": "Middle"
+                },
+                "/worker/person/legalName/familyName1": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "shortLabelName": "Last",
+                    "longLabelName": "Last"
+                },
+                "/worker/person/legalName/formattedName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 32,
+                    "pattern": "^([A-Za-z0-9.-[\\s]]+\\,)([A-Za-z0-9.-]\\,?([A-Za-z0-9.-[\\s]]+)?)$"
+                },
+                "/worker/person/legalName/preferredSalutations": {
+                    "minItems": 0,
+                    "maxItems": 1
+                },
+                "/worker/person/legalName/preferredSalutations/salutationCode/longName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 10,
+                    "shortLabelName": "Prefix",
+                    "longLabelName": "Prefix"
+                },
+                "/worker/person/legalName/generationAffixCode/longName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 6,
+                    "shortLabelName": "Suffix",
+                    "longLabelName": "Suffix"
+                },
+                "/worker/person/legalName/titleAffixCodes": {
+                    "minItems": 0,
+                    "maxItems": 1
+                },
+                "/worker/person/legalName/titleAffixCodes/affixCode/longName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "Formal Title",
+                    "longLabelName": "Formal Title"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}

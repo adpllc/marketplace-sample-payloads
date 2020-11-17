@@ -1,0 +1,46 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/person/preferredName/givenName": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "First",
+                    "longLabelName": "First"
+                },
+                "/worker/person/preferredName/middleName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 30,
+                    "shortLabelName": "Middle",
+                    "longLabelName": "Middle"
+                },
+                "/worker/person/preferredName/familyName1": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 40,
+                    "shortLabelName": "Last",
+                    "longLabelName": "Last"
+                },
+                "/worker/person/preferredName/formattedName": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 32,
+                    "pattern": "^([A-Za-z0-9.-[\\s]]+\\,)([A-Za-z0-9.-]\\,?([A-Za-z0-9.-[\\s]]+)?)$"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
