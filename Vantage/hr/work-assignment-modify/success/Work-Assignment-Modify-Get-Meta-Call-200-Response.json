@@ -1,0 +1,1883 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/workAssignment/jobTitle": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Business Title",
+                    "longLabelName": "Business Title"
+                },
+                "/workAssignment/reportsTo": {
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                },
+                "/workAssignment/reportsTo/reportsToRelationshipCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Reports To Relationship Code",
+                        "listItems": [
+                            {
+                                "codeValue": "MANAGER",
+                                "longName": "Reports To Manager"
+                            },
+                            {
+                                "codeValue": "SUPERVISOR",
+                                "longName": "Secondary Manager"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/reportsTo/reportsToRelationshipCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(MANAGER)$",
+                                    "attributes": {
+                                        "/workAssignment/reportsTo/workerID/idValue": {
+                                            "helperMessage": {
+                                                "messageTxt": "Select the person this employee reports to. Employees cannot report to themselves. A valid exception is for the one employee at the top of the reporting hierarchy, typically the company CEO. Only in this case, a value of 'one' is available and can be selected. Click the search (magnifying glass) icon to access the advanced search and filter your results."
+                                            },
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/reports-to-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Reports to",
+                                            "longLabelName": "Reports to"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(SUPERVISOR)$",
+                                    "attributes": {
+                                        "/workAssignment/reportsTo/workerID/idValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/supervisors-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Secondary Manager",
+                                            "longLabelName": "Secondary Manager"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/stockOwnerIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "datatype": "boolean",
+                    "shortLabelName": "Owns 5% or more of the company",
+                    "longLabelName": "Owns 5% or more of the company"
+                },
+                "/workAssignment/customFieldGroup/stringFields": {
+                    "minItems": 0,
+                    "maxItems": 6,
+                    "uniqueItems": true
+                },
+                "/workAssignment/customFieldGroup/stringFields/nameCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Custom Strings",
+                        "listItems": [
+                            {
+                                "codeValue": "ClientDefinedField28",
+                                "longName": "CDF28"
+                            },
+                            {
+                                "codeValue": "ClientDefinedField36",
+                                "longName": "nag36"
+                            },
+                            {
+                                "codeValue": "CUSTOM_AREA1",
+                                "longName": "Area 1"
+                            },
+                            {
+                                "codeValue": "CUSTOM_AREA2",
+                                "longName": "Area 2"
+                            },
+                            {
+                                "codeValue": "CUSTOM_AREA3",
+                                "longName": "Area 3"
+                            },
+                            {
+                                "codeValue": "CUSTOM_AREA4",
+                                "longName": "Area 4"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/customFieldGroup/stringFields/nameCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField28$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/stringFields/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "CDF28",
+                                            "longLabelName": "CDF28",
+                                            "default": "abdh565",
+                                            "maxLength": 50
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField36$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/stringFields/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "nag36",
+                                            "longLabelName": "nag36",
+                                            "maxLength": 50
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^CUSTOM_AREA1$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/stringFields/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Area 1",
+                                            "longLabelName": "Area 1",
+                                            "maxLength": 10
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^CUSTOM_AREA2$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/stringFields/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Area 2",
+                                            "longLabelName": "Area 2",
+                                            "maxLength": 10
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^CUSTOM_AREA3$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/stringFields/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Area 3",
+                                            "longLabelName": "Area 3",
+                                            "maxLength": 10
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^CUSTOM_AREA4$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/stringFields/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Area 4",
+                                            "longLabelName": "Area 4",
+                                            "maxLength": 10
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/customFieldGroup/dateFields": {
+                    "minItems": 0,
+                    "maxItems": 6,
+                    "uniqueItems": true
+                },
+                "/workAssignment/customFieldGroup/dateFields/nameCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Custom Dates",
+                        "listItems": [
+                            {
+                                "codeValue": "ClientDefinedField15",
+                                "longName": "CDF15"
+                            },
+                            {
+                                "codeValue": "ClientDefinedField20",
+                                "longName": "ClientDefinedField20"
+                            },
+                            {
+                                "codeValue": "DATE_A",
+                                "longName": "Date A"
+                            },
+                            {
+                                "codeValue": "DATE_B",
+                                "longName": "Date B"
+                            },
+                            {
+                                "codeValue": "DATE_C",
+                                "longName": "Date C"
+                            },
+                            {
+                                "codeValue": "DATE_D",
+                                "longName": "Date D"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/customFieldGroup/dateFields/nameCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField15$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/dateFields/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "CDF15",
+                                            "longLabelName": "CDF15",
+                                            "default": "2020-10-01",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField20$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/dateFields/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "ClientDefinedField20",
+                                            "longLabelName": "ClientDefinedField20",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^DATE_A$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/dateFields/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Date A",
+                                            "longLabelName": "Date A",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^DATE_B$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/dateFields/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Date B",
+                                            "longLabelName": "Date B",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^DATE_C$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/dateFields/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Date C",
+                                            "longLabelName": "Date C",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^DATE_D$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/dateFields/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Date D",
+                                            "longLabelName": "Date D",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/customFieldGroup/numberFields": {
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "uniqueItems": true
+                },
+                "/workAssignment/customFieldGroup/numberFields/nameCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Custom Numbers",
+                        "listItems": [
+                            {
+                                "codeValue": "ClientDefinedField04",
+                                "longName": "TestPassed"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/customFieldGroup/numberFields/nameCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField04$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/numberFields/numberValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "TestPassed",
+                                            "longLabelName": "TestPassed",
+                                            "default": 123456789,
+                                            "maxLength": 14,
+                                            "pattern": "^-?\\d*\\.{0,1}\\d+$"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/customFieldGroup/codeFields": {
+                    "minItems": 0,
+                    "maxItems": 7,
+                    "uniqueItems": true
+                },
+                "/workAssignment/customFieldGroup/codeFields/nameCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Status Flags",
+                        "listItems": [
+                            {
+                                "codeValue": "FLAG_1",
+                                "longName": "FLAG_1"
+                            },
+                            {
+                                "codeValue": "FLAG_2",
+                                "longName": "FLAG_2"
+                            },
+                            {
+                                "codeValue": "FLAG_3",
+                                "longName": "FLAG_3"
+                            },
+                            {
+                                "codeValue": "FLAG_4",
+                                "longName": "FLAG_4"
+                            },
+                            {
+                                "codeValue": "FLAG_5",
+                                "longName": "FLAG_5"
+                            },
+                            {
+                                "codeValue": "FLAG_6",
+                                "longName": "FLAG_6"
+                            },
+                            {
+                                "codeValue": "FLAG_7",
+                                "longName": "FLAG_7"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/customFieldGroup/codeFields/nameCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(FLAG_1)$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/codeFields/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 1,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/employment-flag-code-values?$filter=fieldName eq %27FLAG_1%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Flag 1",
+                                            "longLabelName": "Flag 1"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(FLAG_2)$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/codeFields/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 1,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/employment-flag-code-values?$filter=fieldName eq %27FLAG_2%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Flag 2",
+                                            "longLabelName": "Flag 2"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(FLAG_3)$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/codeFields/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 1,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/employment-flag-code-values?$filter=fieldName eq %27FLAG_3%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Flag 3",
+                                            "longLabelName": "Flag 3"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(FLAG_4)$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/codeFields/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 1,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/employment-flag-code-values?$filter=fieldName eq %27FLAG_4%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Flag 4",
+                                            "longLabelName": "Flag 4"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(FLAG_5)$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/codeFields/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 1,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/employment-flag-code-values?$filter=fieldName eq %27FLAG_5%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Flag 5",
+                                            "longLabelName": "Flag 5"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(FLAG_6)$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/codeFields/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 1,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/employment-flag-code-values?$filter=fieldName eq %27FLAG_6%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Flag 6",
+                                            "longLabelName": "Flag 6"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(FLAG_7)$",
+                                    "attributes": {
+                                        "/workAssignment/customFieldGroup/codeFields/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "maxLength": 1,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/employment-flag-code-values?$filter=fieldName eq %27FLAG_7%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Flag 7",
+                                            "longLabelName": "Flag 7"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$"
+                },
+                "/actionTypeCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/work-assignment-modify-action-type-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/actionTypeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Action",
+                    "longLabelName": "Action"
+                },
+                "/eventReasonCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/reason-code-values?$filter=action eq %27{#/actionTypeCode/codeValue}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                },
+                "/eventReasonCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                },
+                "/workAssignment/legalEntityID": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/company-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Company",
+                    "longLabelName": "Company"
+                },
+                "/workAssignment/payrollGroupCode": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/paygroupcodevalues?$filter=company eq %27{#/workAssignment/legalEntityID}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Pay Group",
+                    "longLabelName": "Pay Group"
+                },
+                "/workAssignment/assignedOrganizationalUnits": {
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                },
+                "/workAssignment/assignedOrganizationalUnits/typeCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Assigned Organizational Units",
+                        "listItems": [
+                            {
+                                "codeValue": "DEPTID",
+                                "longName": "Department Number"
+                            },
+                            {
+                                "codeValue": "PAYDEPTID",
+                                "longName": "Payroll Department Number"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/assignedOrganizationalUnits/typeCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(DEPTID)$",
+                                    "attributes": {
+                                        "/workAssignment/assignedOrganizationalUnits/nameCode": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/departmentcodevalues?$filter=company eq %27{#/workAssignment/legalEntityID}%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Department",
+                                            "longLabelName": "Department"
+                                        },
+                                        "/workAssignment/assignedOrganizationalUnits/nameCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "shortLabelName": "Department",
+                                            "longLabelName": "Department"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(PAYDEPTID)$",
+                                    "attributes": {
+                                        "/workAssignment/assignedOrganizationalUnits/nameCode": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/payroll/v3/payroll-instruction-management/payroll-department-number-code-values?$filter=payrollGroupCode eq %27{#/workAssignment/payrollGroupCode}%27",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Payroll Department Number",
+                                            "longLabelName": "Payroll Department Number"
+                                        },
+                                        "/workAssignment/assignedOrganizationalUnits/nameCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Payroll Department Number",
+                                            "longLabelName": "Payroll Department Number"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/jobCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/job-title-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Job Title",
+                    "longLabelName": "Job Title"
+                },
+                "/workAssignment/jobCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dependencyLinks": [
+                        {
+                            "href": "/hr/v1/organization-jobs/{organizationJobId}",
+                            "rel": "/adp/validation",
+                            "title": "Data Validation",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json"
+                        }
+                    ],
+                    "shortLabelName": "Job Title",
+                    "longLabelName": "Job Title"
+                },
+                "/workAssignment/standardHours/hoursQuantity": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^\\d{1,2}(\\.\\d{1,2})?$",
+                    "minValue": 5.0,
+                    "maxValue": 40.0,
+                    "default": 40.0,
+                    "shortLabelName": "Standard Hours",
+                    "longLabelName": "Standard Hours"
+                },
+                "/workAssignment/occupationalClassifications": {
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                },
+                "/workAssignment/occupationalClassifications/nameCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "codeListTitle": "Occupational Classification Codes",
+                        "listItems": [
+                            {
+                                "codeValue": "EEOC",
+                                "longName": "EEOC"
+                            },
+                            {
+                                "codeValue": "WRKCOMP",
+                                "longName": "Workers Compensation Code"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/occupationalClassifications/nameCode/codeValue": {
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^(EEOC)$",
+                                    "attributes": {
+                                        "/workAssignment/occupationalClassifications/classificationCode": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/eeo-exclusion-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Exclude from EEO Report",
+                                            "longLabelName": "Exclude from EEO Report"
+                                        },
+                                        "/workAssignment/occupationalClassifications/classificationCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "shortLabelName": "Exclude from EEO Report",
+                                            "longLabelName": "Exclude from EEO Report"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^(WRKCOMP)$",
+                                    "attributes": {
+                                        "/workAssignment/occupationalClassifications/classificationCode": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/workers-comp-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            },
+                                            "shortLabelName": "Worker's Comp Code",
+                                            "longLabelName": "Worker's Comp Code"
+                                        },
+                                        "/workAssignment/occupationalClassifications/classificationCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Worker's Comp Code",
+                                            "longLabelName": "Worker's Comp Code"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/assignmentTermCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/regular-temp-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Regular/Temp",
+                    "longLabelName": "Regular/Temp"
+                },
+                "/workAssignment/assignmentTermCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Regular/Temp",
+                    "longLabelName": "Regular/Temp"
+                },
+                "/workAssignment/workerTypeCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/employee-classification-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Employee Classification",
+                    "longLabelName": "Employee Classification"
+                },
+                "/workAssignment/workerTypeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Employee Classification",
+                    "longLabelName": "Employee Classification"
+                },
+                "/workAssignment/officerTypeCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "N",
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/officer-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Officer Code",
+                    "longLabelName": "Officer Code"
+                },
+                "/workAssignment/officerTypeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "N",
+                    "shortLabelName": "Officer Code",
+                    "longLabelName": "Officer Code"
+                },
+                "/workAssignment/managementPositionIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean",
+                    "shortLabelName": "Manager Role",
+                    "longLabelName": "Manager Role"
+                },
+                "/workAssignment/remunerationBasisCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/employee-type-code-values?$filter=company eq %27{#/workAssignment/legalEntityID}%27 and payrollGroupCode eq %27{#/workAssignment/payrollGroupCode}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/remunerationBasisCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dependencyLinks": [
+                        {
+                            "href": "/events/hr/v1/worker.work-assignment.base-remuneration-equivalent.calculate",
+                            "rel": "/adp/validation",
+                            "title": "Data Validation",
+                            "mediaType": "application/json",
+                            "method": "POST",
+                            "encType": "application/json"
+                        }
+                    ]
+                },
+                "/workAssignment/assignedWorkLocations": {
+                    "minItems": 1,
+                    "maxItems": 1
+                },
+                "/workAssignment/assignedWorkLocations/nameCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select where the employee actually works."
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/location-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Work Location",
+                    "longLabelName": "Work Location"
+                },
+                "/workAssignment/assignedWorkLocations/nameCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select where the employee actually works."
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Work Location",
+                    "longLabelName": "Work Location"
+                },
+                "/workAssignment/homeWorkLocation/nameCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select where the employee reports in to. "
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/location-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Reporting Location",
+                    "longLabelName": "Reporting Location"
+                },
+                "/workAssignment/homeWorkLocation/nameCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select where the employee reports in to. "
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Reporting Location",
+                    "longLabelName": "Reporting Location"
+                },
+                "/workAssignment/geographicPayDifferentialCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select a geographic differential. This adjusts the salary ranges for employees in designated locations, based on differences in the cost of living and cost of labor. "
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/geographic-differential-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Geographic Differential",
+                    "longLabelName": "Geographic Differential"
+                },
+                "/workAssignment/geographicPayDifferentialCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select a geographic differential. This adjusts the salary ranges for employees in designated locations, based on differences in the cost of living and cost of labor. "
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Geographic Differential",
+                    "longLabelName": "Geographic Differential"
+                },
+                "/workAssignment/workLevelCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/full-part-time-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Full-Time/Part-Time",
+                    "longLabelName": "Full-Time/Part-Time"
+                },
+                "/workAssignment/workLevelCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Full-Time/Part-Time",
+                    "longLabelName": "Full-Time/Part-Time"
+                },
+                "/workAssignment/payScaleCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary plan. This differentiates between groups of employees (for example, exempt vs. non-exempt employees, employees in different locations, and so on). It is the framework for placement of jobs within a formal compensation structure."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/salary-plan-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/payScaleCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary plan. This differentiates between groups of employees (for example, exempt vs. non-exempt employees, employees in different locations, and so on). It is the framework for placement of jobs within a formal compensation structure."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/wageLawCoverage/coverageCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Displays if the employee is exempt, non-exempt, or has no FLSA status. The FLSA status code is determined from the FLSA Test Applied value (shown in parentheses) selected as part of the job code setup. The FLSA Test Applied value is the test used to determine if the job code should be classified as exempt or not exempt, if any, according to the Fair Labor Standards Act (FLSA)."
+                    },
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "FLSA Status",
+                    "longLabelName": "FLSA Status"
+                },
+                "/workAssignment/payGradeCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary grade. This designates a rank and range of pay within a salary plan. The salary range within the grade contains a minimum, midpoint, and maximum amount. A salary plan may contain several salary grades."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/salary-plan-grade-code-values?$filter=payScaleCode eq %27{#/workAssignment/payScaleCode/codeValue}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/payGradeCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary grade. This designates a rank and range of pay within a salary plan. The salary range within the grade contains a minimum, midpoint, and maximum amount. A salary plan may contain several salary grades."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencyLinks": [
+                        {
+                            "href": "/hr/v1/salary-plans",
+                            "rel": "/adp/validation",
+                            "title": "Data Validation",
+                            "mediaType": "application/json",
+                            "method": "GET",
+                            "encType": "application/json"
+                        }
+                    ],
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/payGradeStepCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary step, if applicable, for the selected salary plan. A salary step is a specific rate of pay rather than a range of pay. Step progression is often used in educational and union environments."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/salaryplanstepvalues?$filter=salaryPlan eq %27{#/workAssignment/payScaleCode/codeValue}%27 and salaryPlanGrade eq %27{#/workAssignment/payGradeCode/codeValue}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/payGradeStepCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select a salary step, if applicable, for the selected salary plan. A salary step is a specific rate of pay rather than a range of pay. Step progression is often used in educational and union environments."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/nextPayGradeStepDate": {
+                    "helperMessage": {
+                        "messageTxt": "Enter the date the employee is eligible to move to the next step rate. If you are using automated step progression, this date is already displayed."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "shortLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date",
+                    "longLabelName": "Salary Plan/Grade/Step/Range/Compa Ratio, Next Step Date"
+                },
+                "/workAssignment/baseRemuneration/recordingBasisCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select how often the employee gets paid. Common pay frequencies include: Monthly, Semi-monthly (twice each month), Bi-weekly (every other week), Weekly, and Daily. "
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/compensation-frequency-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/baseRemuneration/recordingBasisCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select how often the employee gets paid. Common pay frequencies include: Monthly, Semi-monthly (twice each month), Bi-weekly (every other week), Weekly, and Daily. "
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dependencyLinks": [
+                        {
+                            "href": "/events/hr/v1/worker.work-assignment.base-remuneration-equivalent.calculate",
+                            "rel": "/adp/validation",
+                            "title": "Data Validation",
+                            "mediaType": "application/json",
+                            "method": "POST",
+                            "encType": "application/json"
+                        }
+                    ],
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^A$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/annualRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,2})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^H$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/hourlyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,6}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^D$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/dailyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,6}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^W$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/weeklyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^B$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/biweeklyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^S$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/semiMonthlyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^M$",
+                                    "attributes": {
+                                        "/workAssignment/baseRemuneration/monthlyRateAmount/amountValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "pattern": "^\\d{1,8}(\\.\\d{1,4})?$"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/baseRemuneration/payPeriodRateAmount/currencyCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select the currency code. You can select a non-USD currency code if the employee is in a non-US pay group (both HR-only and paid pay groups). For US pay groups, the currency code defaults to USD. The employee's pay group is displayed on the Job Information Payroll tab."
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/currency-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/annualBenefitBaseRate/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^\\d{1,8}(\\.\\d{1,2})?$"
+                },
+                "/workAssignment/workShiftCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select a shift qualifier to identify a shift schedule. Shift qualifier codes are used to calculate shift differentials during payroll processing. "
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/shift-qualifier-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Shift Qualifier",
+                    "longLabelName": "Shift Qualifier"
+                },
+                "/workAssignment/workShiftCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select a shift qualifier to identify a shift schedule. Shift qualifier codes are used to calculate shift differentials during payroll processing. "
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Shift Qualifier",
+                    "longLabelName": "Shift Qualifier"
+                },
+                "/workAssignment/payrollFileNumber": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 6,
+                    "shortLabelName": "File Number",
+                    "longLabelName": "File Number"
+                },
+                "/workAssignment/homeOrganizationalUnits": {
+                    "minItems": 0,
+                    "maxItems": 1
+                },
+                "/workAssignment/homeOrganizationalUnits/typeCode/codeValue": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": true,
+                    "default": "CNUM"
+                },
+                "/workAssignment/homeOrganizationalUnits/nameCode": {
+                    "helperMessage": {
+                        "messageTxt": "If Cost Number Validation is turned on for this pay group, you must select a value from this list. Otherwise, you can enter and save a new cost number."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/cost-number-code-values?$filter=payrollGroupCode eq %27{#/workAssignment/payrollGroupCode}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Cost Number",
+                    "longLabelName": "Cost Number"
+                },
+                "/workAssignment/homeOrganizationalUnits/nameCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "If Cost Number Validation is turned on for this pay group, you must select a value from this list. Otherwise, you can enter and save a new cost number."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Cost Number",
+                    "longLabelName": "Cost Number"
+                },
+                "/workAssignment/additionalRemunerations": {
+                    "minItems": 0,
+                    "maxItems": 9,
+                    "optional": true,
+                    "uniqueProperties": [
+                        "/workAssignment/additionalRemunerations/typeCode"
+                    ]
+                },
+                "/workAssignment/additionalRemunerations/typeCode": {
+                    "helperMessage": {
+                        "messageTxt": "Add pay rates in addition to the Primary Pay Rate for this job, as needed. You may want to add a different rate for overtime hours on a weekend, a different rate for holiday work hours, or a different rate for a certain shift. Rate 2 is already displayed in some cases, depending on pay group setup."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/additional-rate-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    }
+                },
+                "/workAssignment/additionalRemunerations/typeCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Add pay rates in addition to the Primary Pay Rate for this job, as needed. You may want to add a different rate for overtime hours on a weekend, a different rate for holiday work hours, or a different rate for a certain shift. Rate 2 is already displayed in some cases, depending on pay group setup."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/workAssignment/additionalRemunerations/rate/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^\\d{1,6}(\\.\\d{1,4})?$"
+                },
+                "/workAssignment/additionalRemunerations/associatedRateQualifiers": {
+                    "minItems": 0,
+                    "maxItems": 4
+                },
+                "/workAssignment/additionalRemunerations/associatedRateQualifiers/itemID": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "2",
+                                    "attributes": {
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/location-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectTypeCode/codeValue": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "default": "Location"
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectTypeCode/longName": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "default": "Location"
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/itemID": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "default": "2"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "3",
+                                    "attributes": {
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/departmentcodevalues",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectTypeCode/codeValue": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "default": "Department"
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectTypeCode/longName": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "default": "Department"
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/itemID": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "default": "3"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "4",
+                                    "attributes": {
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/reports-to-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectTypeCode/codeValue": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "default": "Manager"
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectTypeCode/longName": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "default": "Manager"
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/itemID": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "default": "4"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "7",
+                                    "attributes": {
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false,
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/job-title-code-values",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectCode/codeValue": {
+                                            "readOnly": false,
+                                            "optional": false,
+                                            "hidden": false
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectTypeCode/codeValue": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "default": "Job"
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/qualifierObjectTypeCode/longName": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "default": "Job"
+                                        },
+                                        "/workAssignment/additionalRemunerations/associatedRateQualifiers/itemID": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "default": "7"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "/workAssignment/laborUnion/laborUnionCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select a specific union."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/union-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Union Code",
+                    "longLabelName": "Union Code"
+                },
+                "/workAssignment/laborUnion/laborUnionCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select a specific union."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Union Code",
+                    "longLabelName": "Union Code"
+                },
+                "/workAssignment/laborUnion/seniorityDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "shortLabelName": "Union Seniority Date",
+                    "longLabelName": "Union Seniority Date"
+                },
+                "/workAssignment/bargainingUnit/bargainingUnitCode": {
+                    "helperMessage": {
+                        "messageTxt": "Select the bargaining unit within the union."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "allOf": [
+                            {
+                                "value": {
+                                    "links": [
+                                        {
+                                            "rel": "/adp/codelist",
+                                            "href": "/codelists/hr/v3/worker-management/bargaining-unit-code-values",
+                                            "method": "GET",
+                                            "encType": "application/json",
+                                            "mediaType": "application/json"
+                                        }
+                                    ]
+                                },
+                                "attributes": {
+                                    "/workAssignment/laborUnion/laborUnionCode/codeValue": {
+                                        "pattern": "^(\\S+)$"
+                                    }
+                                }
+                            },
+                            {
+                                "value": {
+                                    "links": [
+                                        {
+                                            "rel": "/adp/codelist",
+                                            "href": "/codelists/hr/v3/worker-management/labor-union-bargaining-unit-code-values?$filter=laborUnionCode eq %27{#/workAssignment/laborUnion/laborUnionCode/codeValue}%27",
+                                            "method": "GET",
+                                            "encType": "application/json",
+                                            "mediaType": "application/json"
+                                        }
+                                    ]
+                                },
+                                "attributes": {
+                                    "/workAssignment/laborUnion/laborUnionCode/codeValue": {
+                                        "pattern": "^?!(\\S+)$"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Bargaining Unit",
+                    "longLabelName": "Bargaining Unit"
+                },
+                "/workAssignment/bargainingUnit/bargainingUnitCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select the bargaining unit within the union."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Bargaining Unit",
+                    "longLabelName": "Bargaining Unit"
+                },
+                "/workAssignment/bargainingUnit/seniorityDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "shortLabelName": "Bargaining Unit Seniority Date",
+                    "longLabelName": "Bargaining Unit Seniority Date"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
