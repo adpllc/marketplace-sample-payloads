@@ -1,0 +1,700 @@
+{
+	"info": {
+		"_postman_id": "19f1796f-2b2e-4f12-806f-b45d73040840",
+		"name": "PersonService.NameChange",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Access-Token-iapril@iatbvt03",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "e68e7d1e-dc07-454d-b352-522dd911a780",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "e76bda5d-915c-4182-8283-eaca2e17962e",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-legal-name-change-meta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eaaa7e84-3bc7-47b0-9adb-035cfa328759"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Ryan\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.legal-name.change",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-former-name-change-meta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [{\n        \"data\": {\n            \"eventContext\": {\n                \"worker\": {\n                    \"associateOID\": \"G3GSNCJ167241JBT\"\n                }\n            },\n            \"transform\": {\n                \"worker\": {\n                    \"person\": {\n                        \"formerName\": {\n                            \"familyName1\": \"Anderson\"\n                        }\n                    }\n                }\n            }\n        }\n    }]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.former-name.change/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.former-name.change",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-preferred-name-change-meta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William1\",\n                                \"middleName\": \"Algonquin\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.preferred-name.change",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-legal-name-change",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9901223c-1adb-47ed-a5e6-7a3b8d563b50"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3H9JT485EFM17SQ\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Jack1\",\n                                \"middleName\": \"\",\n                                \"familyName1\": \"MAtthew\",\n                                \"formattedName\": \"MAtthew Honour,Ryan\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.legal-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-legal-name-change-givenName-left-blank",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \" \",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"June Mr,Z Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.legal-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-legal-name-change-familyName1-left-blank",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Ryana\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"\",\n                                \"formattedName\": \"June Mr,Z Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.legal-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-legal-name-change-invalid-formattedName",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Ryana\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"June, Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.legal-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-403-legal-name-change-invalid-AOID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5002a8e8-2865-42aa-a342-2611c53fd932"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JB0\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Mc'Nuñez12\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"June,Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.legal-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-former-name-change",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9901223c-1adb-47ed-a5e6-7a3b8d563b50"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [{\n        \"data\": {\n            \"eventContext\": {\n                \"worker\": {\n                    \"associateOID\": \"G3H9JT485EFM17SQ\"\n                }\n            },\n            \"transform\": {\n                \"worker\": {\n                    \"person\": {\n                        \"formerName\": {\n                            \"familyName1\": \"Jack\"\n                        }\n                    }\n                }\n            }\n        }\n    }]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.former-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.former-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-preferred-name-change",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 9901223c-1adb-47ed-a5e6-7a3b8d563b50"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3H9JT485EFM17SQ\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William\",\n                                \"middleName\": \"J\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.preferred-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-preferred-name-change-givenName-left-blank",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer e6c0d299-741f-48f2-b4bd-975d84c203db"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"\",\n                                \"middleName\": \"Algonquin\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.preferred-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-preferred-name-change-familyName1-left-blank",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer e6c0d299-741f-48f2-b4bd-975d84c203db"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William\",\n                                \"middleName\": \"\",\n                                \"familyName1\": \"\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.preferred-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-preferred-name-change-formattedName-invalid-format",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer e6c0d299-741f-48f2-b4bd-975d84c203db"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William\",\n                                \"middleName\": \"\",\n                                \"familyName1\": \"Jack\",\n                                \"formattedName\": \"Jack, William\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.preferred-name.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-403-preferred-name-invalid-AOID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 5002a8e8-2865-42aa-a342-2611c53fd932"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JB0\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William1\",\n                                \"middleName\": \"Algonquin\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.preferred-name.change"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
