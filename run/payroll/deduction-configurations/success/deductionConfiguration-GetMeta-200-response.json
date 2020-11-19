@@ -1,0 +1,184 @@
+{
+    "meta": {
+        "/deductionConfigurations": {
+            "optional": true,
+            "dataType": "array"
+        },
+        "/deductionConfigurations/deductionCode": {
+            "optional": true,
+            "dataType": "object",
+            "codeList": {
+                "links": [
+                    {
+                        "href": "/codelists/payroll/v3/deduction-configuration-management/deduction-codes/run",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            }
+        },
+        "/deductionConfigurations/deductionCode/code": {
+            "optional": true,
+            "dataType": "string"
+        },
+        "/deductionConfigurations/deductionCode/name": {
+            "optional": true,
+            "dataType": "string"
+        },
+        "/deductionConfigurations/deductionCategoryCode": {
+            "optional": true,
+            "dataType": "object",
+            "codeList": {
+                "links": [
+                    {
+                        "href": "/codelists/payroll/v3/deduction-configuration-management/deduction-categories/run",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            }
+        },
+        "/deductionConfigurations/deductionCategoryCode/code": {
+            "optional": true,
+            "dataType": "string"
+        },
+        "/deductionConfigurations/deductionCategoryCode/name": {
+            "optional": true,
+            "dataType": "string"
+        },
+        "/deductionConfigurations/deductionInArrearsIndicator": {
+            "optional": true,
+            "dataType": "Boolean"
+        },
+        "/deductionConfigurations/configurationTags": {
+            "optional": true,
+            "dataType": "array"
+        },
+        "/deductionConfigurations/configurationTags/tagCode": {
+            "optional": true,
+            "dataType": "string",
+            "codeList": {
+                "listItems": [
+                    {
+                        "codeValue": "W2Literal",
+                        "shortName": "W2Literal",
+                        "longName": "W2Literal"
+                    },
+                    {
+                        "codeValue": "PayStubInd",
+                        "shortName": "PayStubInd",
+                        "longName": "PayStubInd"
+                    },
+                    {
+                        "codeValue": "ChangedDesc",
+                        "shortName": "ChangedDesc",
+                        "longName": "ChangedDesc"
+                    },
+                    {
+                        "codeValue": "OriginalDesc",
+                        "shortName": "OriginalDesc",
+                        "longName": "OriginalDesc"
+                    },
+                    {
+                        "codeValue": "WorksheetName",
+                        "shortName": "WorksheetName",
+                        "longName": "WorksheetName"
+                    }
+                ]
+            }
+        },
+        "/deductionConfigurations/configurationTags/tagValues": {
+            "optional": true,
+            "dataType": "array"
+        },
+        "/deductionConfigurations/deductionvalue": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/deductionConfigurations/deductionvalue/percentDeductionIndicator": {
+            "optional": true,
+            "dataType": "boolean"
+        },
+        "/deductionConfigurations/deductionvalue/calculationFactor": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/deductionConfigurations/deductionvalue/calculationFactor/percentage": {
+            "optional": true,
+            "dataType": "number"
+        },
+        "/deductionConfigurations/deductionvalue/calculatedAmountValue": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/deductionConfigurations/deductionvalue/calculatedAmountValue/amount": {
+            "optional": true,
+            "dataType": "number"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/employerMatchIndicator": {
+            "optional": true,
+            "dataType": "Boolean"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/catchupContributionMatchIndicator": {
+            "optional": true,
+            "dataType": "Boolean"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/contributionTiers": {
+            "optional": true,
+            "dataType": "array"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/contributionTiers/annualContributionPercentage": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/contributionTiers/annualContributionPercentage/percentage": {
+            "optional": true,
+            "dataType": "number"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/contributionTiers/contributionTierRange": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/contributionTiers/contributionTierRange/maximumPercentage": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/contributionTiers/contributionTierRange/maximumPercentage/percentage": {
+            "optional": true,
+            "dataType": "number"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/annualMatchLimitAmount": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/annualMatchLimitAmount/amount": {
+            "optional": true,
+            "dataType": "number"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/additionalConfigurationTags": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/additionalConfigurationTags/tagCode": {
+            "optional": true,
+            "dataType": "string",
+            "codeList": {
+                "listItems": [
+                    {
+                        "codeValue": "OfferCatchupInd",
+                        "shortName": "OfferCatchupInd",
+                        "longName": "OfferCatchupInd"
+                    }
+                ]
+            }
+        },
+        "/deductionConfigurations/retirementDeductionConfiguration/additionalConfigurationTags/tagValues": {
+            "optional": true,
+            "dataType": "array"
+        }
+    }
+}
