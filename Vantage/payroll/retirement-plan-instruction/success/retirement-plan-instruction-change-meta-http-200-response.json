@@ -1,0 +1,76 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/payrollInstruction/retirementPlanInstruction/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/payrollInstruction/retirementPlanInstruction/contributionRate/rateValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^-?\\d{1,8}(\\.\\d{1,2})?$",
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": {
+                                "value": "^\\d{1,3}(\\.\\d{1,4})?$",
+                                "attributes": {
+                                    "/payrollInstruction/retirementPlanInstruction/contributionRate/unitCode": {
+                                        "pattern": "(percent)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionRate/currencyCode": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "USD"
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionRate/unitCode": {
+                    "codeList": {
+                        "codeListTitle": "Deduction Rate Unit Code",
+                        "listItems": [
+                            {
+                                "codeValue": "percent",
+                                "longName": "percent"
+                            }
+                        ]
+                    },
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionRate/unitCode/codeValue": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "percent"
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionGoal/goalLimitAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^\\d{1,8}(\\.\\d{1,2})?$"
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionGoal/goalLimitAmount/currencyCode": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "USD"
+                }
+            }
+        ]
+    }
+}

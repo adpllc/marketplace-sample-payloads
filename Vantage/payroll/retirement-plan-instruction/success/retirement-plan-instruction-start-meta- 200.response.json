@@ -1,0 +1,92 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/payrollInstruction/retirementPlanInstruction/deductionCode": {
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/payroll/v3/payroll-instruction-management/unused-ess-retirement-deduction-code-values?aoid=%7B%23/data/eventContext/worker/associateOID%7D&paygroup%3D%7B/hr/v2/workers?$select=workers/workAssignments/payrollGroupCode&$filter=aoid+eq+%27%23%7Bworker%2FassociateOID%7D%27%7D",
+                                "rel": "/adp/codelist",
+                                "mediaType": "application/json",
+                                "method": "GET",
+                                "encType": "application/json"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/payrollInstruction/retirementPlanInstruction/deductionCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionRate/rateValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^-?\\d{1,8}(\\.\\d{1,2})?$",
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": {
+                                "value": "^\\d{1,3}(\\.\\d{1,4})?$",
+                                "attributes": {
+                                    "/payrollInstruction/retirementPlanInstruction/contributionRate/unitCode": {
+                                        "pattern": "(percent)"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionRate/currencyCode": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "USD"
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionRate/unitCode": {
+                    "codeList": {
+                        "codeListTitle": "Deduction Rate Unit Code",
+                        "listItems": [
+                            {
+                                "codeValue": "percent",
+                                "longName": "percent"
+                            }
+                        ]
+                    },
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionRate/unitCode/codeValue": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "percent"
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionGoal/goalLimitAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "pattern": "^\\d{1,8}(\\.\\d{1,2})?$"
+                },
+                "/payrollInstruction/retirementPlanInstruction/contributionGoal/goalLimitAmount/currencyCode": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "default": "USD"
+                }
+            }
+        ]
+    }
+}
