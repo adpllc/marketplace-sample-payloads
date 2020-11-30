@@ -1,0 +1,42 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/person/militaryClassificationCodes": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxItems": 1,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/militaryclassificationvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Military Status",
+                    "longLabelName": "Military Status"
+                },
+                "/worker/person/militaryClassificationCodes/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxItems": 1,
+                    "shortLabelName": "Military Status",
+                    "longLabelName": "Military Status"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}

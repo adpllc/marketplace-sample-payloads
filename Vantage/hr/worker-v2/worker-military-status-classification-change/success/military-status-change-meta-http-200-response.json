@@ -1,0 +1,50 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/person/militaryStatusCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/militarystatusvalues",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Protected Veteran Status",
+                    "longLabelName": "Protected Veteran Status"
+                },
+                "/worker/person/militaryStatusCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Protected Veteran Status",
+                    "longLabelName": "Protected Veteran Status"
+                },
+                "/worker/person/militaryDischargeDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 10,
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "dataType": "string[date]",
+                    "shortLabelName": "Military Discharge Date",
+                    "longLabelName": "Military Discharge Date"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
