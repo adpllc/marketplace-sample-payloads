@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "2bdc0c87-940e-4198-a68c-8a36f1eb7461",
+		"name": "Military Status and Classification Change",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "military-status-change-meta-http-200-response.json",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c1ae8534-33cc-440d-b4fe-0e43a99ffd2c"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-status.change",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "military-classification-change-meta-http-200-response.json",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c1ae8534-33cc-440d-b4fe-0e43a99ffd2c"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-classification.change",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-status-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c1ae8534-33cc-440d-b4fe-0e43a99ffd2c"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-status.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-status-discharge-date-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c1ae8534-33cc-440d-b4fe-0e43a99ffd2c"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"2014-12-12\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-status.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-classification-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"7\",\r\n                  \"longName\": \"Retired\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-classification.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-classification-with-incorrect-longname-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"11\",\r\n                  \"longName\": \"abv\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-classification.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-status-with-incorrect-longname-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"bavfbns\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-status.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-status-with-incorrect-codevalue-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"45\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-status.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-status-with-incorrect-discharge-date-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"2020-13-12\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-status.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-classification-with-incorrect-codevalue-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"66\",\r\n                  \"longName\": \"Unspecified Veteran\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-classification.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-classification-with-incorrect-employeeOID-http-403-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"GvbbhhhV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"4\",\r\n                  \"longName\": \"Unspecified Veteran\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-classification.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-military-status-with-incorrect-employeeOID-http-403-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1081db15-46a7-4ede-9286-51d0d8d4a8bc"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"GTYGG&HHVGIIIMNHH\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.military-status.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccesToken_Vantage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "ClientID here",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Client Secret here",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
