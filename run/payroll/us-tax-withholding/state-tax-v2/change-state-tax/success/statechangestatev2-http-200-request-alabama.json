@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "G36BBTZVY3VQ1GCE"
+          },
+          "stateCode": {
+            "codeValue": "AL",
+            "longName": "Alabama"
+          }
+        },
+        "transform": {
+          "effectiveDateTime": "2019-10-29",
+          "stateIncomeTaxWithholdingElection": {
+            "attestationIndicator": {
+              "indicatorValue": true,
+              "effectiveDate": "2019-10-29T10:44:11-04:00"
+            },
+            "additionalStatutoryInputs": [
+              {
+                "tagCode": "WITHHOLD_HIGHEST_RATE",
+                "tagValues": [
+                  "true"
+                ],
+                "dataTypeCode": "boolean"
+              },
+              {
+                "tagCode": "FILING_STATUS",
+                "tagValues": [
+                  "MARRIED_FILING_SEPARATE"
+                ],
+                "dataTypeCode": "string"
+              },
+              {
+                "tagCode": "VERSION",
+                "tagValues": [
+                  "A4-V1"
+                ],
+                "dataTypeCode": "string"
+              }
+            ],
+            "taxFilingStatusCode": {
+              "codeValue" : "MARRIED_FILING_SEPARATE",
+              "longName": "Married Filing Separate"
+            },             
+            "taxWithholdingAllowanceQuantity": 1,
+            "additionalTaxAmount": {
+              "amountValue": 22,
+              "currencyCode": "USD"
+            },
+            "actionMessages": [
+              {
+                "messageID": "CLAIMING_MANY_EXEMPTIONS",
+                "messageText": "Contact the Alabama Department of Revenue. They claimed 8 or more dependents."
+              }
+            ],
+            "attachments": [
+              {
+                "nameCode": {
+                  "codeValue": "TAX_WITHHOLDING",
+                  "shortName": "A4",
+                  "longName": "Alabama Employee’s Withholding Tax Exemption Certificate"
+                },
+                "attachmentLink": {
+                  "mediaType": "application/pdf",
+                  "payLoadArguments": [
+                    {
+                      "argumentPath": "gssID",
+                      "argumentValue": "31cb9db9-4ffd-4f7d-9743-dd23b64c9e3c"
+                    }
+                  ]
+                },
+                "textValue": "{{PDF DATA HERE}}"
+              }
+            ]
+          }
+        }
+      },
+      "actor": {
+        "associateOID": "G36BBTZVY3VQ1GCE"
+      },
+      "serviceCategoryCode": {
+        "codeValue": "payrollManagement"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usState.taxWithholding.election.change"
+      }
+    }
+  ]
+}
