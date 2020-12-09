@@ -1,0 +1,106 @@
+{
+  "events": [
+    {
+      "effectiveDateTime": "2019-05-01",
+      "data": {
+        "eventContext": {
+          "worker": {
+            "associateOID": "G3BWB59RFWWRJQ3F"
+          },
+          "stateCode": {
+            "codeValue": "CT",
+            "longName": "Connecticut"
+          }
+        },
+        "transform": {
+          "effectiveDateTime": "2019-05-01",
+          "stateIncomeTaxWithholdingElection": {
+            // additionalTaxAmount and reducedTaxAmount are mutually exclusive
+            "additionalTaxAmount": {
+              "amountValue": 15,
+              "currencyCode": "USD"
+            },
+            "reducedTaxAmount": {
+              "amountValue": 15,
+              "currencyCode": "USD"
+            },
+            "additionalStatutoryInputs": [
+              {
+                "tagCode": "VERSION",
+                "tagValues": [
+                  "CT-V1"
+                ],
+                "dataTypeCode": "string"
+              },
+              {
+                "tagCode": "WITHHOLDING_CODE",
+                "tagValues": [
+                  "E"
+                ],
+                "dataTypeCode": "string"
+              },
+              {
+                "tagCode": "EXEMPT",
+                "tagValues": [
+                  "true"
+                ],
+                "dataTypeCode": "boolean"
+              },
+              {
+                "tagCode": "FILING_STATUS",
+                "tagValues": [
+                  "QUALIFYING_WIDOWER_WITH_DEPENDENT_CHILD"
+                ],
+                "dataTypeCode": "string"
+              }
+            ],
+            "taxWithholdingStatus": {
+              "statusCode": {
+                "codeValue": "EXEMPT",
+                "longName": "Exempt"
+              }
+            },
+            "attachments": [
+              {
+                "nameCode": {
+                  "codeValue": "TAX_WITHHOLDING",
+                  "shortName": "CT-W4",
+                  "longName": "Employee's Withholding Certificate"
+                },
+                "attachmentLink": {
+                  "mediaType": "application/pdf",
+                  "payLoadArguments": [
+                    {
+                      "argumentPath": "gssID",
+                      "argumentValue": "31cb9db9-4ffd-4f7d-9743-dd23b64c9e3c"
+                    }
+                  ]
+                },
+                "textValue": "{{PDF DATA HERE}}"
+              }
+            ],
+            "actionMessages": [
+              {
+                "messageID": "CLAIMING_MSRRA_EXEMPT",
+                "messageText": "Verify the employee provided a copy of their spousal Leave and Earnings Statement (LES) and military identification card. They claimed \"Exempt\" status for meeting the Military Spouses Residency Relief Act."
+              },
+              {
+                "messageID": "CLAIMING_EXEMPT",
+                "messageText": "Print the employee's CT-W4, provide employer information, and mail the form to the Connecticut Department of Revenue Services. They claimed exempt from withholding income tax using withholding code \"E\"."
+              }
+            ]
+          }
+        }
+      },
+      "actor": {
+        "associateOID": "G3BWB59RFWWRJQ3F"
+      },
+      "serviceCategoryCode": {
+        "codeValue": "payrollManagement"
+      },
+      "eventNameCode": {
+        "codeValue": "worker.usState.taxWithholding.election.change"
+      }
+    }
+  ]
+}
