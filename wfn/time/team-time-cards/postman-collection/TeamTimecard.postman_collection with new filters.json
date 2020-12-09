@@ -1,0 +1,821 @@
+{
+	"info": {
+		"_postman_id": "7e65c7b7-88df-4c77-9c3f-1aa7fefc1f67",
+		"name": "TeamTimecard",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TokenGeneration",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip,deflate",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "127",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api.adp.com",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "Keep-Alive",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"type": "text"
+					},
+					{
+						"key": "Postman-Token",
+						"value": "08af23b7-78b5-401c-8216-829c6558cd97",
+						"type": "text"
+					},
+					{
+						"key": "prefer",
+						"value": "respond-async",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "client_id={{ClientId}}&client_secret={{ClientSecret}}&grant_type=client_credentials"
+				},
+				"url": {
+					"raw": "{{URL}}/auth/oauth/v2/token",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teamTimeCard-NextCycle-200.response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 33f31378-d986-4108-8785-bcf3b4c2dd3e",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api.adp.com",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "Keep-Alive",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "prefer",
+						"value": "respond-async",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"value": "TabletKisok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{AOID}}/team-time-cards?$expand=dayEntries&$filter=timeCards/periodCode/codeValue+eq+'next'",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{AOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						},
+						{
+							"key": "$filter",
+							"value": "timeCards/periodCode/codeValue+eq+'next'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teamTimeCard-Invalid-AOID-400.response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 33f31378-d986-4108-8785-bcf3b4c2dd3e",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api.adp.com",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "Keep-Alive",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "prefer",
+						"value": "respond-async",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"value": "TabletKisok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{invalidAOID}}/team-time-cards?$expand=dayEntries&$filter=timeCards/reviewStatusCode/codeValue+eq+'ManagerApproved'+and+timeCards/periodCode/codeValue+eq+'current'",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{invalidAOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						},
+						{
+							"key": "$filter",
+							"value": "timeCards/reviewStatusCode/codeValue+eq+'ManagerApproved'+and+timeCards/periodCode/codeValue+eq+'current'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "team-time-cards-expant-dayentries-http-200-response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 33f31378-d986-4108-8785-bcf3b4c2dd3e",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api.adp.com",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "Keep-Alive",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "prefer",
+						"value": "respond-async",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"value": "TabletKisok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{AOID}}/team-time-cards?$expand=dayEntries",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{AOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teamTimeCard-currentCycle-200.response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 33f31378-d986-4108-8785-bcf3b4c2dd3e",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api.adp.com",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "Keep-Alive",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "prefer",
+						"value": "respond-async",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"value": "TabletKisok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{AOID}}/team-time-cards?$expand=dayEntries&$filter=timeCards/periodCode/codeValue+eq+'current'",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{AOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						},
+						{
+							"key": "$filter",
+							"value": "timeCards/periodCode/codeValue+eq+'current'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teamTimeCard-previousCycle-200.response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 33f31378-d986-4108-8785-bcf3b4c2dd3e",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api.adp.com",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "Keep-Alive",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "prefer",
+						"value": "respond-async",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"value": "TabletKisok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{AOID}}/team-time-cards?$expand=dayEntries&$filter=timeCards/periodCode/codeValue+eq+'previous'",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{AOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						},
+						{
+							"key": "$filter",
+							"value": "timeCards/periodCode/codeValue+eq+'previous'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teamTimeCard-employee-approved-200.response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 00950352-ef5d-4eb3-a0fa-8b30ebde52c5"
+					},
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "api.adp.com"
+					},
+					{
+						"key": "Connection",
+						"type": "text",
+						"value": "Keep-Alive"
+					},
+					{
+						"key": "User-Agent",
+						"type": "text",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "prefer",
+						"type": "text",
+						"value": "respond-async",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"type": "text",
+						"value": "TabletKisok",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{AOID}}/team-time-cards?$expand=dayEntries&$filter=timeCards/reviewStatusCode/codeValue+eq+'EmployeeApproved'+and+timeCards/periodCode/codeValue+eq+'previous'",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{AOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						},
+						{
+							"key": "$filter",
+							"value": "timeCards/reviewStatusCode/codeValue+eq+'EmployeeApproved'+and+timeCards/periodCode/codeValue+eq+'previous'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teamTimeCard-manager-approved-200.response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 00950352-ef5d-4eb3-a0fa-8b30ebde52c5"
+					},
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "api.adp.com"
+					},
+					{
+						"key": "Connection",
+						"type": "text",
+						"value": "Keep-Alive"
+					},
+					{
+						"key": "User-Agent",
+						"type": "text",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "prefer",
+						"type": "text",
+						"value": "respond-async",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"type": "text",
+						"value": "TabletKisok",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{AOID}}/team-time-cards?$expand=dayEntries&$filter=timeCards/reviewStatusCode/codeValue+eq+'ManagerApproved'+and+timeCards/periodCode/codeValue+eq+'previous'",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{AOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						},
+						{
+							"key": "$filter",
+							"value": "timeCards/reviewStatusCode/codeValue+eq+'ManagerApproved'+and+timeCards/periodCode/codeValue+eq+'previous'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teamTimeCard-exceptions-indicator-true-200.response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer a4adecf8-8f17-44ea-b32e-36b76310cc83"
+					},
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "api.adp.com"
+					},
+					{
+						"key": "Connection",
+						"type": "text",
+						"value": "Keep-Alive"
+					},
+					{
+						"key": "User-Agent",
+						"type": "text",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "prefer",
+						"type": "text",
+						"value": "respond-async",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"type": "text",
+						"value": "TabletKisok",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{AOID}}/team-time-cards?$expand=dayEntries&$filter=timeCards/exceptionsIndicator+eq+'true'+and+timeCards/periodCode/codeValue+eq+'current'",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{AOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						},
+						{
+							"key": "$filter",
+							"value": "timeCards/exceptionsIndicator+eq+'true'+and+timeCards/periodCode/codeValue+eq+'current'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "teamTimeCard-exceptions-indicator-false-200.response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer a4adecf8-8f17-44ea-b32e-36b76310cc83"
+					},
+					{
+						"key": "Host",
+						"type": "text",
+						"value": "api.adp.com"
+					},
+					{
+						"key": "Connection",
+						"type": "text",
+						"value": "Keep-Alive"
+					},
+					{
+						"key": "User-Agent",
+						"type": "text",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "prefer",
+						"type": "text",
+						"value": "respond-async",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"type": "text",
+						"value": "TabletKisok",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{AOID}}/team-time-cards?$expand=dayEntries&$filter=timeCards/exceptionsIndicator+eq+'false'+and+timeCards/periodCode/codeValue+eq+'current'",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{AOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						},
+						{
+							"key": "$filter",
+							"value": "timeCards/exceptionsIndicator+eq+'false'+and+timeCards/periodCode/codeValue+eq+'current'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "team-time-cards-expant-200-empty.response",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 33f31378-d986-4108-8785-bcf3b4c2dd3e",
+						"type": "text"
+					},
+					{
+						"key": "Host",
+						"value": "api.adp.com",
+						"type": "text"
+					},
+					{
+						"key": "Connection",
+						"value": "Keep-Alive",
+						"type": "text"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Apache-HttpClient/4.5.2 (Java/1.8.0_112)",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "prefer",
+						"value": "respond-async",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "consumerappoid",
+						"value": "TabletKisok",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{URL}}/time/v2/workers/{{AOID}}/team-time-cards?$expand=dayEntries&$filter=timeCards/reviewStatusCode/codeValue+eq+'ManagerApproved'+and+timeCards/periodCode/codeValue+eq+'current'",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"{{AOID}}",
+						"team-time-cards"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "dayEntries"
+						},
+						{
+							"key": "$filter",
+							"value": "timeCards/reviewStatusCode/codeValue+eq+'ManagerApproved'+and+timeCards/periodCode/codeValue+eq+'current'"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
