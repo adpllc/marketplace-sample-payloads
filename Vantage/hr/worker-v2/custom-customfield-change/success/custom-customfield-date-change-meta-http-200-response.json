@@ -1,0 +1,63 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/customFieldGroup/dateField/nameCode/codeValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField11$",
+                                    "attributes": {
+                                        "/worker/customFieldGroup/dateField/dateValue": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "shortLabelName": "CDF11LIF",
+                                            "longLabelName": "CDF11LIF",
+                                            "default": "2020-11-30",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField38$",
+                                    "attributes": {
+                                        "/worker/customFieldGroup/dateField/dateValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "Field38 PRACT",
+                                            "longLabelName": "Field38 PRACT",
+                                            "default": "2016-04-14",
+                                            "maxLength": 10,
+                                            "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                                            "dataType": "string[date]"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/worker/customFieldGroup/dateField/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}

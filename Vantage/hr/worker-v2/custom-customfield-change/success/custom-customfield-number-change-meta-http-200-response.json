@@ -1,0 +1,61 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/customFieldGroup/numberField/nameCode/codeValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField07$",
+                                    "attributes": {
+                                        "/worker/customFieldGroup/numberField/numberValue": {
+                                            "readOnly": true,
+                                            "optional": true,
+                                            "hidden": true,
+                                            "shortLabelName": "Field005 ALL ABC11 new",
+                                            "longLabelName": "Field005 ALL ABC11 new",
+                                            "default": 12341234,
+                                            "maxLength": 14,
+                                            "pattern": "^-?\\d*\\.{0,1}\\d+$"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField36$",
+                                    "attributes": {
+                                        "/worker/customFieldGroup/numberField/numberValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "CDF 36",
+                                            "longLabelName": "CDF 36",
+                                            "default": 1234,
+                                            "maxLength": 14,
+                                            "pattern": "^-?\\d*\\.{0,1}\\d+$"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/worker/customFieldGroup/numberField/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}

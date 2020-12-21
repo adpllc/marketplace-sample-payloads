@@ -1,0 +1,69 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/worker/customFieldGroup/stringField/nameCode/codeValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": true,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "^ClientDefinedField34$",
+                                    "attributes": {
+                                        "/worker/customFieldGroup/stringField/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "NewDefinition34WithValuess",
+                                            "longLabelName": "NewDefinition34WithValuess",
+                                            "default": "String 1",
+                                            "codeList": {
+                                                "links": [
+                                                    {
+                                                        "rel": "/adp/codelist",
+                                                        "href": "/codelists/hr/v3/worker-management/client-defined-field-values?fieldID=ClientDefinedField34",
+                                                        "method": "GET",
+                                                        "encType": "application/json",
+                                                        "mediaType": "application/json"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "^ClientDefinedField39$",
+                                    "attributes": {
+                                        "/worker/customFieldGroup/stringField/stringValue": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "shortLabelName": "DONTCHANGE Guardians copyScript CDF 39",
+                                            "longLabelName": "DONTCHANGE Guardians copyScript CDF 39",
+                                            "default": "123411",
+                                            "maxLength": 50
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/worker/customFieldGroup/stringField/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
