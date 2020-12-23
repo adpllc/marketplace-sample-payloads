@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "/serviceCategoryCode/codeValue": "hr",
+    "/eventNameCode/codeValue": "worker.rehire",
+    "/data/transforms": [
+      {
+        "/effectiveDateTime": {
+          "readOnly": false,
+          "optional": true,
+          "shortLabelName": "Effective date"
+        },
+        "/worker": {
+          "readOnly": false,
+          "optional": false
+        },
+        "/worker/associateOID": {
+          "readOnly": true,
+          "optional": false,
+          "hidden": true
+        },
+        "/worker/workerDates": {
+          "readOnly": false,
+          "optional": true
+        },
+        "/worker/workerDates/rehireDate": {
+          "readOnly": false,
+          "optional": true,
+          "shortLabelName": "Rehire Date"
+        },
+        "/worker/workerStatus": {
+          "readOnly": false,
+          "optional": true
+        },
+        "/worker/workerStatus/reasonCode": {
+          "codeList": {
+            "codeListTitle": "Rehire Reason",
+            "listItems": [
+              {
+                "codeValue": "CURR",
+                "shortName": "Existing Position"
+              },
+              {
+                "codeValue": "IMPORT",
+                "shortName": "Import"
+              },
+              {
+                "codeValue": "NEW",
+                "shortName": "New Position"
+              }
+            ]
+          },
+          "readOnly": false,
+          "optional": true,
+          "hidden": false,
+          "shortLabelName": "Rehire Reason"
+        },
+        "/worker/workerStatus/reasonCode/codeValue": {
+          "readOnly": false,
+          "optional": true,
+          "hidden": false,
+          "shortLabelName": "Rehire Reason"
+        },
+        "/worker/workAssignment": {
+          "readOnly": true,
+          "optional": true
+        },
+        "/worker/workAssignment/positionID": {
+          "readOnly": true,
+          "optional": true
+        }
+      }
+    ]
+  }
+}
