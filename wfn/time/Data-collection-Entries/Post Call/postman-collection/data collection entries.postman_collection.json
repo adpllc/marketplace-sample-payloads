@@ -1,0 +1,1011 @@
+{
+	"info": {
+		"_postman_id": "63acc935-07f7-4016-94fc-a9cf72dc2468",
+		"name": "Data collection entries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TLM - data collection entries",
+			"item": [
+				{
+					"name": "Using BadgeID",
+					"item": [
+						{
+							"name": "Scan punch",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 426cca73-c42e-4cd7-b8e1-1f5fef631dea"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"events\": [{\n\t\t\t\"serviceCategoryCode\": {\n\t\t\t\t\"codeValue\": \"core\"\n\t\t\t},\n\t\t\t\"data\": {\n\t\t\t\t\"transform\": {\n\t\t\t\t\t\"dataCollectionEntries\": [{\n\t\t\t\t\t\t\t\"itemID\": \"0\",\n\t\t\t\t\t\t\t\"terminalName\": \"CLOCK1\",\n\t\t\t\t\t\t\t\"workerDataCollectionEntries\": [{\n\t\t\t\t\t\t\t\t\t\"entryID\": \"0\",\n\t\t\t\t\t\t\t\t\t\"entryCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\n\t\t\t\t\t\t\t\t\t\t\"\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"badgeID\":\"999876\",\n\t\t\t\t\t\t\t\t\t\"deviceDateTime\":\"2020-10-21T12:00:08-05:00\",\n\t\t\t\t\t\t\t\t\t\"entryDateTime\":\"2020-10-21T20:00:08-05:00\",\n\t\t\t\t\t\t\t\t\t\"actionCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\n\t\t\t\t\t\t\t\t\t\t\"punch\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "lunch out",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer e35012d9-4010-4878-b7fe-86823e17f393"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"events\": [{\n\t\t\t\"serviceCategoryCode\": {\n\t\t\t\t\"codeValue\": \"core\"\n\t\t\t},\n\t\t\t\"data\": {\n\t\t\t\t\"transform\": {\n\t\t\t\t\t\"dataCollectionEntries\": [{\n\t\t\t\t\t\t\t\"itemID\": \"0\",\n\t\t\t\t\t\t\t\"terminalName\": \"CLOCK1\",\n\t\t\t\t\t\t\t\"workerDataCollectionEntries\": [{\n\t\t\t\t\t\t\t\t\t\"entryID\": \"0\",\n\t\t\t\t\t\t\t\t\t\"entryCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\n\t\t\t\t\t\t\t\t\t\t\"\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t\"badgeID\":\n\t\t\t\t\t\t\t\t\t\"846245\",\n\t\t\t\t\t\t\t\t\t\"deviceDateTime\":\"2020-10-14T12:00:08-05:00\",\n\t\t\t\t\t\t\t\t\t\"entryDateTime\":\"2020-10-14T21:00:08-05:00\",\n\t\t\t\t\t\t\t\t\t\"actionCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\n\t\t\t\t\t\t\t\t\t\t\"lunchout\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clock In",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"events\": [{\r\n\t\t\t\"serviceCategoryCode\": {\r\n\t\t\t\t\"codeValue\": \"core\"\r\n\t\t\t},\r\n\t\t\t\"data\": {\r\n\t\t\t\t\"transform\": {\r\n\t\t\t\t\t\"dataCollectionEntries\": [{\r\n\t\t\t\t\t\t\t\"itemID\": \"0\",\r\n\t\t\t\t\t\t\t\"terminalName\": \"CLOCK1\",\r\n\t\t\t\t\t\t\t\"workerDataCollectionEntries\": [{\r\n\t\t\t\t\t\t\t\t\t\"entryID\": \"0\",\r\n\t\t\t\t\t\t\t\t\t\"entryCode\": {\r\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\r\n\t\t\t\t\t\t\t\t\t\t\"\"\r\n\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\"badgeID\":\r\n\t\t\t\t\t\t\t\t\t\"123456\",\r\n\t\t\t\t\t\t\t\t\t\"deviceDateTime\":\"2020-09-25T18:00:08-05:00\",\r\n\t\t\t\t\t\t\t\t\t\"entryDateTime\":\"2020-09-25T18:00:08-05:00\",\r\n\t\t\t\t\t\t\t\t\t\"actionCode\": {\r\n\t\t\t\t\t\t\t\t\t\t\"codeValue\": \"clockin\"\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clock Out",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"events\": [{\r\n\t\t\t\"serviceCategoryCode\": {\r\n\t\t\t\t\"codeValue\": \"core\"\r\n\t\t\t},\r\n\t\t\t\"data\": {\r\n\t\t\t\t\"transform\": {\r\n\t\t\t\t\t\"dataCollectionEntries\": [{\r\n\t\t\t\t\t\t\t\"itemID\": \"0\",\r\n\t\t\t\t\t\t\t\"terminalName\": \"CLOCK1\",\r\n\t\t\t\t\t\t\t\"workerDataCollectionEntries\": [{\r\n\t\t\t\t\t\t\t\t\t\"entryID\": \"0\",\r\n\t\t\t\t\t\t\t\t\t\"entryCode\": {\r\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\r\n\t\t\t\t\t\t\t\t\t\t\"\"\r\n\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\"badgeID\":\"123456\",\r\n\t\t\t\t\t\t\t\t\t\"deviceDateTime\":\"2020-09-25T21:00:08-05:00\",\r\n\t\t\t\t\t\t\t\t\t\"entryDateTime\":\"2020-09-25T21:00:08-05:00\",\r\n\t\t\t\t\t\t\t\t\t\"actionCode\": {\r\n                                        \"codeValue\": \"clockout\"\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}",
+									"options": {
+										"raw": {}
+									}
+								},
+								"url": {
+									"raw": "https://apifit.nj.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"apifit",
+										"nj",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update entry",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 426cca73-c42e-4cd7-b8e1-1f5fef631dea"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"events\": [{\r\n\t\t\t\"serviceCategoryCode\": {\r\n\t\t\t\t\"codeValue\": \"core\"\r\n\t\t\t},\r\n\t\t\t\"data\": {\r\n\t\t\t\t\"transform\": {\r\n\t\t\t\t\t\"dataCollectionEntries\": [{\r\n\t\t\t\t\t\t\t\"itemID\": \"0\",\r\n\t\t\t\t\t\t\t\"terminalName\": \"CLOCK2\",\r\n\t\t\t\t\t\t\t\"workerDataCollectionEntries\": [{\r\n\t\t\t\t\t\t\t\t\t\"entryID\": \"0\",\r\n\t\t\t\t\t\t\t\t\t\"entryCode\": {\r\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\r\n\t\t\t\t\t\t\t\t\t\t\"\"\r\n\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\"badgeID\": \"999876\",\r\n\t\t\t\t\t\t\t\t\t\"actorBadgeID\": \"000012345\",\r\n\t\t\t\t\t\t\t\t\t\"deviceDateTime\":\"2020-10-22T01:00:08-05:00\",\r\n\t\t\t\t\t\t\t\t\t\"entryDateTime\": \"2020-10-22T01:00:08-05:00\",\r\n\t\t\t\t\t\t\t\t\t\"actionCode\": {\r\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\r\n\t\t\t\t\t\t\t\t\t\t\"punch\"\r\n\t\t\t\t\t\t\t\t\t},\r\n\t\t\t\t\t\t\t\t\t\"laborAllocations\": [],\r\n\t\t\t\t\t\t\t\t\t\"reasonCode\": {\r\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\r\n\t\t\t\t\t\t\t\t\t\t\"EDIT\"\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t]\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t]\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Using positionID",
+					"item": [
+						{
+							"name": "Scan punch",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 21779b49-6520-45b3-b9a9-f28b8edbf087"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"1\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"000030\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"POSITIONID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-11-23T12:00:08-05:00\",\n                                    \"entryDateTime\": \"2020-11-23T18:00:08-05:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"punch\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "lunch out",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"000003\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"POSITIONID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-09-25T16:00:08-05:00\",\n                                    \"entryDateTime\": \"2020-09-25T16:00:08-05:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"lunchout\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clock In",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"000003\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"POSITIONID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-09-25T05:11:07-04:00\",\n                                    \"entryDateTime\": \"2020-09-25T05:11:07-04:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"clockin\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clock Out",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"000003\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"POSITIONID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-09-25T21:00:08-05:00\",\n                                    \"entryDateTime\": \"2020-09-25T21:00:08-05:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"clockout\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apifit.nj.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"apifit",
+										"nj",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update entry",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 426cca73-c42e-4cd7-b8e1-1f5fef631dea"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK2\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"000030\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"POSITIONID\"\n                                            }\n                                        }\n                                    ],\n                                    \"actorBadgeID\": \"000012345\",\n                                    \"deviceDateTime\": \"2020-10-22T01:00:08-05:00\",\n                                    \"entryDateTime\": \"2020-10-25T01:00:08-05:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"punch\"\n                                    },\n                                    \"laborAllocations\": [],\n                                    \"reasonCode\": {\n                                        \"codeValue\": \"EDIT\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Using associateID",
+					"item": [
+						{
+							"name": "Scan punch",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 21779b49-6520-45b3-b9a9-f28b8edbf087"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"AOIDHM9QFD249PA5\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"ASSOCIATEOID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-11-23T12:00:08-05:00\",\n                                    \"entryDateTime\": \"2020-11-23T14:00:08-05:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"punch\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "lunch out",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"G3G0SG9RDP02MQSS\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"ASSOCIATEOID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-09-25T16:00:08-05:00\",\n                                    \"entryDateTime\": \"2020-09-25T16:00:08-05:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"lunchout\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clock In",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"G3G0SG9RDP02MQSS\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"ASSOCIATEOID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-09-25T18:00:08-05:00\",\n                                    \"entryDateTime\": \"2020-09-25T18:00:08-05:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"clockin\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clock Out",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"G3G0SG9RDP02MQSS\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"ASSOCIATEOID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-09-25T03:00:07-04:00\",\n                                    \"entryDateTime\": \"2020-09-25T03:00:07-04:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"clockout\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apifit.nj.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"apifit",
+										"nj",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update entry",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK2\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"G3G0SG9RDP02MQSS\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"ASSOCIATEOID\"\n                                            }\n                                        }\n                                    ],\n                                    \"actorBadgeID\": \"12345\",\n                                    \"deviceDateTime\": \"2020-09-22T01:00:08-05:00\",\n                                    \"entryDateTime\": \"2020-09-25T01:00:08-05:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"punch\"\n                                    },\n                                    \"laborAllocations\": [],\n                                    \"reasonCode\": {\n                                        \"codeValue\": \"EDIT\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apifit.nj.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"apifit",
+										"nj",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Using workAssignmentID",
+					"item": [
+						{
+							"name": "Scan punch",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 21779b49-6520-45b3-b9a9-f28b8edbf087"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"events\": [{\n\t\t\t\"serviceCategoryCode\": {\n\t\t\t\t\"codeValue\": \"core\"\n\t\t\t},\n\t\t\t\"data\": {\n\t\t\t\t\"transform\": {\n\t\t\t\t\t\"dataCollectionEntries\": [{\n\t\t\t\t\t\t\t\"itemID\": \"0\",\n\t\t\t\t\t\t\t\"terminalName\": \"CLOCK1\",\n\t\t\t\t\t\t\t\"workerDataCollectionEntries\": [{\n\t\t\t\t\t\t\t\t\t\"entryID\": \"0\",\n\t\t\t\t\t\t\t\t\t\"entryCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\n\t\t\t\t\t\t\t\t\t\t\"\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"41407418N\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"WORKASSIGNMENTID\"\n                                            }\n                                        }\n                                    ],\n\t\t\t\t\t\t\t\t\t\"deviceDateTime\":\"2020-11-24T12:00:08-05:00\",\n\t\t\t\t\t\t\t\t\t\"entryDateTime\":\"2020-11-24T12:00:08-05:00\",\n\t\t\t\t\t\t\t\t\t\"actionCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\n\t\t\t\t\t\t\t\t\t\t\"punch\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "lunch out",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"events\": [{\n\t\t\t\"serviceCategoryCode\": {\n\t\t\t\t\"codeValue\": \"core\"\n\t\t\t},\n\t\t\t\"data\": {\n\t\t\t\t\"transform\": {\n\t\t\t\t\t\"dataCollectionEntries\": [{\n\t\t\t\t\t\t\t\"itemID\": \"0\",\n\t\t\t\t\t\t\t\"terminalName\": \"CLOCK1\",\n\t\t\t\t\t\t\t\"workerDataCollectionEntries\": [{\n\t\t\t\t\t\t\t\t\t\"entryID\": \"0\",\n\t\t\t\t\t\t\t\t\t\"entryCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\n\t\t\t\t\t\t\t\t\t\t\"\"\n\t\t\t\t\t\t\t\t\t},\n\t\t\t\t\t\t\t\t\t \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"33818868N\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"WORKASSIGNMENTID\"\n                                            }\n                                        }\n                                    ],\n\t\t\t\t\t\t\t\t\t\"deviceDateTime\": \"2020-09-25T16:00:08-05:00\",\n\t\t\t\t\t\t\t\t\t\"entryDateTime\": \"2020-09-25T16:00:08-05:00\",\n\t\t\t\t\t\t\t\t\t\"actionCode\": {\n\t\t\t\t\t\t\t\t\t\t\"codeValue\":\n\t\t\t\t\t\t\t\t\t\t\"lunchout\"\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t]\n\t\t\t\t\t\t}\n\t\t\t\t\t]\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clock In",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"33818868N\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"WORKASSIGNMENTID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-09-25T08:00:07-04:00\",\n                                    \"entryDateTime\": \"2020-09-25T08:00:07-04:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"clockin\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Clock Out",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK1\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"33818868N\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"WORKASSIGNMENTID\"\n                                            }\n                                        }\n                                    ],\n                                    \"deviceDateTime\": \"2020-09-25T03:00:07-04:00\",\n                                    \"entryDateTime\": \"2020-09-25T03:00:07-04:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"clockout\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apifit.nj.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"apifit",
+										"nj",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update entry",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer "
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"events\": [\n        {\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"core\"\n            },\n            \"data\": {\n                \"transform\": {\n                    \"dataCollectionEntries\": [\n                        {\n                            \"itemID\": \"0\",\n                            \"terminalName\": \"CLOCK2\",\n                            \"workerDataCollectionEntries\": [\n                                {\n                                    \"entryID\": \"0\",\n                                    \"entryCode\": {\n                                        \"codeValue\": \"\"\n                                    },\n                                    \"alternateWorkerIDs\": [\n                                        {\n                                            \"idValue\": \"33818868N\",\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"WORKASSIGNMENTID\"\n                                            }\n                                        }\n                                    ],\n                                    \"actorBadgeID\": \"12345\",\n                                    \"deviceDateTime\": \"2020-09-22T01:00:08-05:00\",\n                                    \"entryDateTime\": \"2020-09-25T01:00:08-05:00\",\n                                    \"actionCode\": {\n                                        \"codeValue\": \"punch\"\n                                    },\n                                    \"laborAllocations\": [],\n                                    \"reasonCode\": {\n                                        \"codeValue\": \"EDIT\"\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://apifit.nj.adp.com/events/time/v1/data-collection-entries.process",
+									"protocol": "https",
+									"host": [
+										"apifit",
+										"nj",
+										"adp",
+										"com"
+									],
+									"path": [
+										"events",
+										"time",
+										"v1",
+										"data-collection-entries.process"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "GET request",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 21779b49-6520-45b3-b9a9-f28b8edbf087"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/events/time/v1/data-collection-entries.process/6c7f278c2745409b9a2509e2b80232fc",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"time",
+								"v1",
+								"data-collection-entries.process",
+								"6c7f278c2745409b9a2509e2b80232fc"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Access token call_ WFN cloud",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "51931fa9-cae2-4928-92bf-0850917aced3",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
