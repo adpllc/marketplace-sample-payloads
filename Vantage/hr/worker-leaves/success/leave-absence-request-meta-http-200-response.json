@@ -1,0 +1,418 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/workerLeave/leaveAbsence/startDateTime": {
+                    "helperMessage": {
+                        "messageTxt": ""
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dataType": "string[date-time]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]([T][0-2][0-9]:[0-5][0-9]:[0-5][0-9](.[0-9]{3})?(\\+[0-9]{4})?)?$",
+                    "shortLabelName": "Begin Date",
+                    "longLabelName": "Begin Date"
+                },
+                "/workerLeave/leaveAbsence/leaveTypeCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/loa-action-type-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Leave Action",
+                    "longLabelName": "Leave Action"
+                },
+                "/workerLeave/leaveAbsence/leaveTypeCode/codeValue": {
+                    "helperMessage": {
+                        "messageTxt": "Selecting LOA (unpaid leave) or PLA (paid leave) updates the employee's job information. Selecting THO is for hours tracking purposes only and does not update the employee's job information."
+                    },
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Leave Action",
+                    "longLabelName": "Leave Action"
+                },
+                "/workerLeave/leaveAbsence/leaveSubTypeCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/reason-code-values?$filter=action eq %27{#/workerLeave/leaveAbsence/leaveTypeCode/codeValue}%27",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/workerLeave/leaveAbsence/leaveTypeCode/codeValue": {
+                                        "pattern": "^(.|\\s)*\\S(.|\\s)*$"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Leave Reason",
+                    "longLabelName": "Leave Reason"
+                },
+                "/workerLeave/leaveAbsence/leaveSubTypeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/workerLeave/leaveAbsence/leaveTypeCode/codeValue": {
+                                        "pattern": "^(.|\\s)*\\S(.|\\s)*$"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Leave Reason",
+                    "longLabelName": "Leave Reason"
+                },
+                "/workerLeave/leaveAbsence/expectedEndDateTime": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date-time]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]([T][0-2][0-9]:[0-5][0-9]:[0-5][0-9](.[0-9]{3})?(\\+[0-9]{4})?)?$",
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/workerLeave/leaveAbsence/startDateTime": {
+                                        "pattern": "^(.|\\s)*\\S(.|\\s)*$"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Expected Return",
+                    "longLabelName": "Expected Return"
+                },
+                "/workerLeave/leaveAbsence/statutoryTypeCode": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/fmla-type-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "FMLA Type",
+                    "longLabelName": "FMLA Type"
+                },
+                "/workerLeave/leaveAbsence/statutoryTypeCode/codeValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "maxLength": 1,
+                    "shortLabelName": "FMLA Type",
+                    "longLabelName": "FMLA Type"
+                },
+                "/workerLeave/leaveAbsence/leaveDuration/quantityValue": {
+                    "helperMessage": {
+                        "messageTxt": "Enter hours if you want to track hours taken for leave of absence reporting purposes."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "maxLength": 8,
+                    "shortLabelName": "Duration Hours",
+                    "longLabelName": "Duration Hours"
+                },
+                "/workerLeave/leaveAbsence/comment/textValue": {
+                    "helperMessage": {
+                        "messageTxt": "Enter a brief note to further describe the reason for the leave of absence. A longer comment field is provided in Step 3."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string",
+                    "shortLabelName": "Additional Note",
+                    "longLabelName": "Additional Note"
+                },
+                "/workerLeave/leaveAbsence/statutoryFilingRequestDateTime": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date-time]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]([T][0-2][0-9]:[0-5][0-9]:[0-5][0-9](.[0-9]{3})?(\\+[0-9]{4})?)?$",
+                    "shortLabelName": "FMLA Request Date",
+                    "longLabelName": "FMLA Request Date"
+                },
+                "/workerLeave/leaveAbsence/criticalEmployeeIndicator": {
+                    "helperMessage": {
+                        "messageTxt": "Select this check box if the employee is a key employee. Key employees are not guaranteed protection under FMLA to be returned to the same or similar job."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean",
+                    "shortLabelName": "Key Employee",
+                    "longLabelName": "Key Employee"
+                },
+                "/workerLeave/leaveAbsence/criticalEmployeeNotificationDateTime": {
+                    "helperMessage": {
+                        "messageTxt": "Enter the date the employee was notified that they are classified as a key employee for FMLA purposes. This field is enabled only if Key Employee is selected."
+                    },
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date-time]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]([T][0-2][0-9]:[0-5][0-9]:[0-5][0-9](.[0-9]{3})?(\\+[0-9]{4})?)?$",
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/workerLeave/leaveAbsence/criticalEmployeeIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Date Notified",
+                    "longLabelName": "Date Notified"
+                },
+                "/workerLeave/leaveAbsence/spouse/workerID": {
+                    "helperMessage": {
+                        "messageTxt": "Select the employee ID of the spouse, if you want to combine (limit) the FMLA allowance between two spouses who are both employees."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/loa-spouse-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Spouse ID",
+                    "longLabelName": "Spouse ID"
+                },
+                "/workerLeave/leaveAbsence/spouse/workerID/idValue": {
+                    "helperMessage": {
+                        "messageTxt": "Select the employee ID of the spouse, if you want to combine (limit) the FMLA allowance between two spouses who are both employees."
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Spouse ID",
+                    "longLabelName": "Spouse ID"
+                },
+                "/workerLeave/leaveAbsence/leaveStatus/deniedIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean",
+                    "shortLabelName": "Leave Denied",
+                    "longLabelName": "Leave Denied"
+                },
+                "/workerLeave/leaveAbsence/leaveStatus/deniedReasonCode": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/loa-denial-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/workerLeave/leaveAbsence/leaveStatus/deniedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Reason for Denial",
+                    "longLabelName": "Reason for Denial"
+                },
+                "/workerLeave/leaveAbsence/leaveStatus/deniedReasonCode/codeValue": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/workerLeave/leaveAbsence/leaveStatus/deniedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Reason for Denial",
+                    "longLabelName": "Reason for Denial"
+                },
+                "/workerLeave/leaveAbsence/certifications": {
+                    "helperMessage": {
+                        "messageTxt": ""
+                    },
+                    "minItems": 0,
+                    "maxItems": 1,
+                    "uniqueItems": true
+                },
+                "/workerLeave/leaveAbsence/certifications/receivedIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean",
+                    "shortLabelName": "Certification Received",
+                    "longLabelName": "Certification Received"
+                },
+                "/workerLeave/leaveAbsence/certifications/requestDateTime": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date-time]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]([T][0-2][0-9]:[0-5][0-9]:[0-5][0-9](.[0-9]{3})?(\\+[0-9]{4})?)?$",
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/workerLeave/leaveAbsence/certifications/receivedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Request Date",
+                    "longLabelName": "Request Date"
+                },
+                "/workerLeave/leaveAbsence/certifications/replyDateTime": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date-time]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]([T][0-2][0-9]:[0-5][0-9]:[0-5][0-9](.[0-9]{3})?(\\+[0-9]{4})?)?$",
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/workerLeave/leaveAbsence/certifications/receivedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Receive Date",
+                    "longLabelName": "Receive Date"
+                },
+                "/workerLeave/leaveAbsence/certifications/comment/textValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string",
+                    "shortLabelName": "Comments",
+                    "longLabelName": "Comments"
+                },
+                "/workerLeave/leaveAbsence/medicalOpinionRequestNumbers": {
+                    "minItems": 0,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                },
+                "/workerLeave/leaveAbsence/medicalOpinionRequestNumbers/sequence": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": true,
+                    "dependencies": {
+                        "pattern": {
+                            "oneOf": [
+                                {
+                                    "value": "2",
+                                    "attributes": {
+                                        "/workerLeave/leaveAbsence/medicalOpinionRequestNumbers/opinionIndicator": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "dataType": "boolean",
+                                            "shortLabelName": "Second Opinion",
+                                            "longLabelName": "Second Opinion"
+                                        }
+                                    }
+                                },
+                                {
+                                    "value": "3",
+                                    "attributes": {
+                                        "/workerLeave/leaveAbsence/medicalOpinionRequestNumbers/opinionIndicator": {
+                                            "readOnly": false,
+                                            "optional": true,
+                                            "hidden": false,
+                                            "dataType": "boolean",
+                                            "shortLabelName": "Third Opinion",
+                                            "longLabelName": "Third Opinion"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/contextExpressionID": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
