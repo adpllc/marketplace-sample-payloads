@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "68be15d7-0815-4dad-a849-f60166a4ab58",
+		"name": "Worker-Suspend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Success",
+			"item": [
+				{
+					"name": "Update-Success-200-Worker-Suspend",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e0f04dab-7e57-4796-82b8-f0cf533f1e16"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "BIGipServerp_dc2_iatmobile_sor_vantage=1566376715.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4221698827.5377.0000; BIGipServerp_mkplproxy-iat-dc2=3456041739.20480.0000; BIGipServerp_mkplsvcgate-dc1=958660875.20480.0000",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"events\": [{\"data\": {\n   \"eventContext\": {\"associateOID\": \"G3QHZTHA3Q0FCE5Z\"},\n   \"transform\":    {\n      \"effectiveDateTime\": \"2010-12-12\",\n      \"actionTypeCode\": {\"codeValue\": \"SUS\"},\n      \"eventReasonCode\": {\"codeValue\": \"DAC\"},\n      \"paymentInstruction\" :\n      {\n          \"cancelAutomaticPayIndicator\" : false\n      }\n   }\n}}]}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.suspend",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.suspend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Success-200-Worker-Suspend-Meta",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e0f04dab-7e57-4796-82b8-f0cf533f1e16"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "BIGipServerp_dc2_iatmobile_sor_vantage=1566376715.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4221698827.5377.0000; BIGipServerp_mkplproxy-iat-dc2=3456041739.20480.0000; BIGipServerp_mkplsvcgate-dc1=958660875.20480.0000",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.suspend/meta",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.suspend",
+								"meta"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Error",
+			"item": [
+				{
+					"name": "Neg-Worker-Suspend-400-Invalid-Effective-Date",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e0f04dab-7e57-4796-82b8-f0cf533f1e16"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "BIGipServerp_dc2_iatmobile_sor_vantage=1566376715.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4221698827.5377.0000; BIGipServerp_mkplproxy-iat-dc2=3456041739.20480.0000; BIGipServerp_mkplsvcgate-dc1=958660875.20480.0000",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"events\": [{\"data\": {\n   \"eventContext\": {\"associateOID\": \"G3QHZTHA3Q0FCE5Z\"},\n   \"transform\":    {\n      \"effectiveDateTime\": \"2020\",\n      \"actionTypeCode\": {\"codeValue\": \"SUS\"},\n      \"eventReasonCode\": {\"codeValue\": \"DAC\"},\n      \"paymentInstruction\" :\n      {\n          \"cancelAutomaticPayIndicator\" : false\n      }\n   }\n}}]}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.suspend",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.suspend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Worker-Suspend-400-Invalid-Action-Type",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e0f04dab-7e57-4796-82b8-f0cf533f1e16"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "BIGipServerp_dc2_iatmobile_sor_vantage=1566376715.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4221698827.5377.0000; BIGipServerp_mkplproxy-iat-dc2=3456041739.20480.0000; BIGipServerp_mkplsvcgate-dc1=958660875.20480.0000",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"events\": [{\"data\": {\n   \"eventContext\": {\"associateOID\": \"G3QHZTHA3Q0FCE5Z\"},\n   \"transform\":    {\n      \"effectiveDateTime\": \"2010-12-12\",\n      \"actionTypeCode\": {\"codeValue\": \"GHT\"},\n      \"eventReasonCode\": {\"codeValue\": \"DAC\"},\n      \"paymentInstruction\" :\n      {\n          \"cancelAutomaticPayIndicator\" : false\n      }\n   }\n}}]}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.suspend",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.suspend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Worker-Suspend-400-Invalid-Event-Reason",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e0f04dab-7e57-4796-82b8-f0cf533f1e16"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "BIGipServerp_dc2_iatmobile_sor_vantage=1566376715.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4221698827.5377.0000; BIGipServerp_mkplproxy-iat-dc2=3456041739.20480.0000; BIGipServerp_mkplsvcgate-dc1=958660875.20480.0000",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"events\": [{\"data\": {\n   \"eventContext\": {\"associateOID\": \"G3QHZTHA3Q0FCE5Z\"},\n   \"transform\":    {\n      \"effectiveDateTime\": \"2010-12-12\",\n      \"actionTypeCode\": {\"codeValue\": \"SUS\"},\n      \"eventReasonCode\": {\"codeValue\": \"JKK\"},\n      \"paymentInstruction\" :\n      {\n          \"cancelAutomaticPayIndicator\" : false\n      }\n   }\n}}]}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.suspend",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.suspend"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Neg-Worker-Suspend-400-Invalid-Cancel-Automatic-Pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer e0f04dab-7e57-4796-82b8-f0cf533f1e16"
+							},
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "BIGipServerp_dc2_iatmobile_sor_vantage=1566376715.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4221698827.5377.0000; BIGipServerp_mkplproxy-iat-dc2=3456041739.20480.0000; BIGipServerp_mkplsvcgate-dc1=958660875.20480.0000",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"events\": [{\"data\": {\n   \"eventContext\": {\"associateOID\": \"G3QHZTHA3Q0FCE5Z\"},\n   \"transform\":    {\n      \"effectiveDateTime\": \"2010-12-12\",\n      \"actionTypeCode\": {\"codeValue\": \"SUS\"},\n      \"eventReasonCode\": {\"codeValue\": \"DAC\"},\n      \"paymentInstruction\" :\n      {\n          \"cancelAutomaticPayIndicator\" : \"Test\"\n      }\n   }\n}}]}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/events/hr/v1/worker.suspend",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"events",
+								"hr",
+								"v1",
+								"worker.suspend"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
