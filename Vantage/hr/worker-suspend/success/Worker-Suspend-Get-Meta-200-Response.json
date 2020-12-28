@@ -1,0 +1,84 @@
+{
+    "meta": {
+        "/data/eventContext": {
+            "/contextExpressionID": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        },
+        "/data/transforms": [
+            {
+                "/eventReasonCode": {
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/hr/v3/worker-management/reason-code-values?action=%7B%23%2FactionTypeCode%2FcodeValue%7D",
+                                "rel": "/adp/codelist",
+                                "mediaType": "application/json",
+                                "method": "GET",
+                                "encType": "application/json"
+                            }
+                        ]
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                },
+                "/eventReasonCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                },
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "dataType": "string[date]"
+                },
+                "/actionTypeCode": {
+                    "codeList": {
+                        "links": [
+                            {
+                                "href": "/codelists/hr/v3/worker-management/worker-suspend-action-type-code-values",
+                                "rel": "/adp/codelist",
+                                "mediaType": "application/json",
+                                "method": "GET",
+                                "encType": "application/json"
+                            }
+                        ]
+                    },
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Action",
+                    "longLabelName": "Action"
+                },
+                "/actionTypeCode/codeValue": {
+                    "readOnly": true,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Action",
+                    "longLabelName": "Action",
+                    "default": "SUS"
+                },
+                "/paymentInstruction/cancelAutomaticPayIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": true,
+                    "dataType": "boolean"
+                }
+            }
+        ]
+    }
+}
