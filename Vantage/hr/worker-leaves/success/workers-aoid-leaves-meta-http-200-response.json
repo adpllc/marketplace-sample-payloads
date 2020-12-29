@@ -1,0 +1,305 @@
+{
+    "meta": {
+        "/workerLeaves/associateOID": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": true
+        },
+        "/workerLeaves/workerID/idValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workerLeaves/leaves/leaveAbsence/statutoryFilingRequestDateTime": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "FMLA Request Date",
+            "longLabelName": "FMLA Request Date"
+        },
+        "/workerLeaves/leaves/leaveAbsence/statutoryTypeCode/codeValue": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "FMLA Type",
+            "longLabelName": "FMLA Type"
+        },
+        "/workerLeaves/leaves/leaveAbsence/statutoryTypeCode/longName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "FMLA Type",
+            "longLabelName": "FMLA Type"
+        },
+        "/workerLeaves/leaves/leaveAbsence/criticalEmployeeIndicator": {
+            "helperMessage": "Select this check box if the employee is a key employee. Key employees are not guaranteed protection under FMLA to be returned to the same or similar job.",
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Key Employee",
+            "longLabelName": "Key Employee"
+        },
+        "/workerLeaves/leaves/leaveAbsence/criticalEmployeeNotificationDateTime": {
+            "helperMessage": "Enter the date the employee was notified that they are classified as a key employee for FMLA purposes. This field is enabled only if Key Employee is selected.",
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Date Notified",
+            "longLabelName": "Date Notified"
+        },
+        "/workerLeaves/leaves/leaveAbsence/spouse/associateOID": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Spouse ID",
+            "longLabelName": "Spouse ID"
+        },
+        "/workerLeaves/leaves/leaveAbsence/spouse/workerID/idValue": {
+            "helperMessage": "Select the employee ID of the spouse, if you want to combine (limit) the FMLA allowance between two spouses who are both employees.",
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Spouse ID",
+            "longLabelName": "Spouse ID"
+        },
+        "/workerLeaves/leaves/leaveAbsence/spouse/spouseName/formattedName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Spouse ID",
+            "longLabelName": "Spouse ID"
+        },
+        "/workerLeaves/leaves/leaveAbsence/certifications/receivedIndicator": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Certification Received",
+            "longLabelName": "Certification Received"
+        },
+        "/workerLeaves/leaves/leaveAbsence/certifications/requestDateTime": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Request Date",
+            "longLabelName": "Request Date"
+        },
+        "/workerLeaves/leaves/leaveAbsence/certifications/replyDateTime": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "maxLength": 10,
+            "shortLabelName": "Receive Date",
+            "longLabelName": "Receive Date"
+        },
+        "/workerLeaves/leaves/leaveAbsence/certifications/comment/textValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Comments",
+            "longLabelName": "Comments"
+        },
+        "/workerLeaves/leaves/leaveAbsence/medicalOpinionRequestNumbers": {
+            "minItems": 0,
+            "maxItems": 2,
+            "uniqueItems": true
+        },
+        "/workerLeaves/leaves/leaveAbsence/medicalOpinionRequestNumbers/sequence": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": true,
+            "dependencies": {
+                "pattern": {
+                    "oneOf": [
+                        {
+                            "value": "2",
+                            "attributes": {
+                                "/workerLeaves/leaves/leaveAbsence/medicalOpinionRequestNumbers/opinionIndicator": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false,
+                                    "dataType": "boolean",
+                                    "shortLabelName": "Second Opinion",
+                                    "longLabelName": "Second Opinion"
+                                }
+                            }
+                        },
+                        {
+                            "value": "3",
+                            "attributes": {
+                                "/workerLeaves/leaves/leaveAbsence/medicalOpinionRequestNumbers/opinionIndicator": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false,
+                                    "dataType": "boolean",
+                                    "shortLabelName": "Third Opinion",
+                                    "longLabelName": "Third Opinion"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "/workerLeaves/leaves/leaveAbsence/startDateTime": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Begin Date",
+            "longLabelName": "Begin Date"
+        },
+        "/workerLeaves/leaves/leaveAbsence/expectedEndDateTime": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Expected Return",
+            "longLabelName": "Expected Return"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveDuration/quantityValue": {
+            "helperMessage": "Enter hours if you want to track hours taken for leave of absence reporting purposes.",
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Duration Hours",
+            "longLabelName": "Duration Hours"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveDuration/unitCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Duration Hours",
+            "longLabelName": "Duration Hours"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveDuration/unitCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Duration Hours",
+            "longLabelName": "Duration Hours"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveStatus/leaveStatusCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveStatus/leaveStatusCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveStatus/deniedIndicator": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "dataType": "boolean",
+            "shortLabelName": "Leave Denied",
+            "longLabelName": "Leave Denied"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveStatus/deniedReasonCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Reason for Denial",
+            "longLabelName": "Reason for Denial"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveStatus/deniedReasonCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Reason for Denial",
+            "longLabelName": "Reason for Denial"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveTypeCode/codeValue": {
+            "helperMessage": "Selecting LOA (unpaid leave) or PLA (paid leave) updates the employee's job information. Selecting THO is for hours tracking purposes only and does not update the employee's job information.",
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Leave Action",
+            "longLabelName": "Leave Action"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveTypeCode/longName": {
+            "helperMessage": "Selecting LOA (unpaid leave) or PLA (paid leave) updates the employee's job information. Selecting THO is for hours tracking purposes only and does not update the employee's job information.",
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Leave Action",
+            "longLabelName": "Leave Action"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveSubTypeCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Leave Reason",
+            "longLabelName": "Leave Reason"
+        },
+        "/workerLeaves/leaves/leaveAbsence/leaveSubTypeCode/longName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Leave Reason",
+            "longLabelName": "Leave Reason"
+        },
+        "/workerLeaves/leaves/leaveAbsence/comment/textValue": {
+            "helperMessage": "Enter a brief note to further describe the reason for the leave of absence. A longer comment field is provided in Step 3.",
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Additional Note",
+            "longLabelName": "Additional Note"
+        },
+        "/workerLeaves/leaves/leaveReturn/returnDateTime": {
+            "helperMessage": "Enter the employee's return date for LOA and PLA leave actions. For a THO leave action, this date is optional, and does not update the employee's job record.",
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Return Date",
+            "longLabelName": "Return Date"
+        },
+        "/workerLeaves/leaves/leaveReturn/notificationReceivedDateTime": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Comments",
+            "longLabelName": "Comments"
+        },
+        "/workerLeaves/leaves/leaveReturn/returnToWorkIndicator": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "dataType": "boolean",
+            "shortLabelName": "Return to Work Certification",
+            "longLabelName": "Return to Work Certification"
+        },
+        "/workerLeaves/leaves/leaveReturn/returnStatus/returnStatusCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workerLeaves/leaves/leaveReturn/returnStatus/returnStatusCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workerLeaves/leaves/leaveReturn/returnStatus/deniedIndicator": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "dataType": "boolean",
+            "shortLabelName": "Restoration Denied",
+            "longLabelName": "Restoration Denied"
+        },
+        "/workerLeaves/leaves/leaveReturn/returnStatus/deniedReasonCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Reason for Denial",
+            "longLabelName": "Reason for Denial"
+        },
+        "/workerLeaves/leaves/leaveReturn/returnStatus/deniedReasonCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Reason for Denial",
+            "longLabelName": "Reason for Denial"
+        }
+    }
+}
