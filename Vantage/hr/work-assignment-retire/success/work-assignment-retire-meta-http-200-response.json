@@ -1,0 +1,98 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$"
+                },
+                "/worker/workAssignment": {
+                    "helperMessage": {
+                        "messageTxt": ""
+                    }
+                },
+                "/worker/workAssignment/lastWorkedDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "shortLabelName": "Date Last Worked",
+                    "longLabelName": "Date Last Worked"
+                },
+                "/worker/workAssignment/terminationNoticeDate": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]$",
+                    "shortLabelName": "Resignation Notice Date",
+                    "longLabelName": "Resignation Notice Date"
+                },
+                "/worker/workAssignment/rehireEligibleIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean",
+                    "default": "true",
+                    "shortLabelName": "Eligible for Rehire",
+                    "longLabelName": "Eligible for Rehire"
+                },
+                "/worker/workAssignment/terminatePaymentInstruction/cancelAutomaticPayIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": true,
+                    "dataType": "boolean"
+                },
+                "/eventReasonCode": {
+                    "helperMessage": {
+                        "messageTxt": ""
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/reason-code-values?action=RET",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                },
+                "/eventReasonCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "shortLabelName": "Reason",
+                    "longLabelName": "Reason"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/contextExpressionID": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/worker/workAssignment/itemID": {
+                "readOnly": false,
+                "optional": false,
+                "hidden": false
+            }
+        }
+    }
+}
