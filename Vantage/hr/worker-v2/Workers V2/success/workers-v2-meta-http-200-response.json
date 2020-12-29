@@ -1,0 +1,877 @@
+{
+    "meta": {
+        "/workers/associateOID": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": true
+        },
+        "/workers/workerID/idValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false
+        },
+        "/workers/person/governmentIDs/idValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "masking": {
+                "authorizationRequiredIndicator": true,
+                "authorizationResourceID": "core/dataProtectionManagement/sensitiveDataManagement/governmentIDDataPrivacy/governmentID.reveal",
+                "links": [
+                    {
+                        "href": "/hr/v2/workers?$select=workers/person/governmentIDs/idValue",
+                        "rel": "self",
+                        "payLoadArguments": []
+                    }
+                ]
+            },
+            "shortLabelName": "Social Security Number",
+            "longLabelName": "Social Security Number"
+        },
+        "/workers/person/governmentIDs/nameCode/codeValue": {
+            "helperMessage": "In some countries, Social Security Number can only be used for certain purposes, such as for payroll processing or tax reporting. We recommend that you consult with local counsel to determine when collection of this information is permissible.",
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Social Security Number",
+            "longLabelName": "Social Security Number"
+        },
+        "/workers/person/governmentIDs/nameCode/shortName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Social Security Number",
+            "longLabelName": "Social Security Number"
+        },
+        "/workers/person/governmentIDs/nameCode/longName": {
+            "helperMessage": "In some countries, Social Security Number can only be used for certain purposes, such as for payroll processing or tax reporting. We recommend that you consult with local counsel to determine when collection of this information is permissible.",
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Social Security Number",
+            "longLabelName": "Social Security Number"
+        },
+        "/workers/person/governmentIDs/itemID": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Social Security Number",
+            "longLabelName": "Social Security Number"
+        },
+        "/workers/person/legalName/givenName": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "First",
+            "longLabelName": "First"
+        },
+        "/workers/person/legalName/middleName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Middle",
+            "longLabelName": "Middle"
+        },
+        "/workers/person/legalName/familyName1": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Last",
+            "longLabelName": "Last"
+        },
+        "/workers/person/legalName/formattedName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Legal Name",
+            "longLabelName": "Legal Name"
+        },
+        "/workers/person/legalName/preferredSalutations/salutationCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Prefix",
+            "longLabelName": "Prefix"
+        },
+        "/workers/person/legalName/preferredSalutations/salutationCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Prefix",
+            "longLabelName": "Prefix"
+        },
+        "/workers/person/legalName/generationAffixCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Suffix",
+            "longLabelName": "Suffix"
+        },
+        "/workers/person/legalName/generationAffixCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Suffix",
+            "longLabelName": "Suffix"
+        },
+        "/workers/person/legalName/titleAffixCodes/affixCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Formal Title",
+            "longLabelName": "Formal Title"
+        },
+        "/workers/person/legalName/titleAffixCodes/affixCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Formal Title",
+            "longLabelName": "Formal Title"
+        },
+        "/workers/person/genderCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Gender",
+            "longLabelName": "Gender"
+        },
+        "/workers/person/genderCode/longName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Gender",
+            "longLabelName": "Gender"
+        },
+        "/workers/person/maritalStatusCode/codeValue": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Marital Status",
+            "longLabelName": "Marital Status"
+        },
+        "/workers/person/maritalStatusCode/longName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Marital Status",
+            "longLabelName": "Marital Status"
+        },
+        "/workers/person/legalAddress/lineOne": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Address",
+            "longLabelName": "Address"
+        },
+        "/workers/person/legalAddress/lineTwo": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workers/person/legalAddress/cityName": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "City",
+            "longLabelName": "City"
+        },
+        "/workers/person/legalAddress/countrySubdivisionLevel2/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "County",
+            "longLabelName": "County"
+        },
+        "/workers/person/legalAddress/postalCode": {
+            "readOnly": false,
+            "optional": false,
+            "dependencies": {
+                "optional": {
+                    "oneOf": {
+                        "value": false,
+                        "attributes": {
+                            "/workers/person/legalAddress/countryCode": {
+                                "pattern": "(US|CA)"
+                            }
+                        }
+                    }
+                }
+            },
+            "hidden": false,
+            "shortLabelName": "Postal Code",
+            "longLabelName": "Postal Code"
+        },
+        "/workers/person/legalAddress/countryCode": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "dependencies": {
+                "pattern": {
+                    "oneOf": [
+                        {
+                            "value": "^(US|CA)$",
+                            "attributes": {
+                                "/workers/person/legalAddress/countrySubdivisionLevel1/codeValue": {
+                                    "readOnly": true,
+                                    "optional": false,
+                                    "hidden": false,
+                                    "shortLabelName": "State",
+                                    "longLabelName": "State"
+                                },
+                                "/workers/person/legalAddress/countrySubdivisionLevel1/longName": {
+                                    "readOnly": false,
+                                    "optional": false,
+                                    "hidden": false,
+                                    "shortLabelName": "State",
+                                    "longLabelName": "State"
+                                },
+                                "/workers/person/legalAddress/countrySubdivisionLevel1/subdivisionType": {
+                                    "readOnly": false,
+                                    "optional": false,
+                                    "hidden": false,
+                                    "shortLabelName": "State",
+                                    "longLabelName": "State"
+                                }
+                            }
+                        },
+                        {
+                            "value": "^((?!(US|CA)).)*$",
+                            "attributes": {
+                                "/workers/person/legalAddress/lineThree": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false
+                                },
+                                "/workers/person/legalAddress/lineFour": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false
+                                },
+                                "/workers/person/legalAddress/lineFive": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false
+                                },
+                                "/workers/person/legalAddress/countrySubdivisionLevel1/codeValue": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false
+                                },
+                                "/workers/person/legalAddress/countrySubdivisionLevel1/longName": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false
+                                },
+                                "/workers/person/legalAddress/countrySubdivisionLevel1/subdivisionType": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            "shortLabelName": "Country",
+            "longLabelName": "Country"
+        },
+        "/workers/person/preferredName/givenName": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "First",
+            "longLabelName": "First"
+        },
+        "/workers/person/preferredName/familyName1": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Last",
+            "longLabelName": "Last"
+        },
+        "/workers/person/birthDate": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "masking": {
+                "authorizationRequiredIndicator": true,
+                "authorizationResourceID": "core/dataProtectionManagement/sensitiveDataManagement/birthDateDataPrivacy/birthDate.year.reveal",
+                "links": [
+                    {
+                        "href": "/hr/v2/workers?$select=workers/person/birthDate",
+                        "rel": "self",
+                        "payLoadArguments": []
+                    }
+                ]
+            },
+            "shortLabelName": "Birth Date",
+            "longLabelName": "Birth Date"
+        },
+        "/workers/workerDates/originalHireDate": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workers/workerDates/rehireDate": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Rehire Date",
+            "longLabelName": "Rehire Date"
+        },
+        "/workers/workerDates/adjustedServiceDate": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workers/workerDates/terminationDate": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Termination Date",
+            "longLabelName": "Termination Date"
+        },
+        "/workers/workerStatus/statusCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false
+        },
+        "/workers/workerStatus/statusCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workers/workAssignments/assignmentStatus/reasonCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Reason",
+            "longLabelName": "Reason"
+        },
+        "/workers/workAssignments/assignmentStatus/reasonCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Reason",
+            "longLabelName": "Reason"
+        },
+        "/workers/workAssignments/assignmentStatus/effectiveDate": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false
+        },
+        "/workers/businessCommunication/landlines/countryDialing": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Country Dialing Code Office",
+            "longLabelName": "Country Dialing Code Office"
+        },
+        "/workers/businessCommunication/landlines/extension": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Ext",
+            "longLabelName": "Ext"
+        },
+        "/workers/businessCommunication/landlines/formattedNumber": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Office",
+            "longLabelName": "Office"
+        },
+        "/workers/businessCommunication/landlines/itemID": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": true,
+            "shortLabelName": "Office",
+            "longLabelName": "Office"
+        },
+        "/workers/businessCommunication/mobiles/countryDialing": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Country Dialing Code Cell",
+            "longLabelName": "Country Dialing Code Cell"
+        },
+        "/workers/businessCommunication/mobiles/extension": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Cell",
+            "longLabelName": "Cell"
+        },
+        "/workers/businessCommunication/mobiles/formattedNumber": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Cell",
+            "longLabelName": "Cell"
+        },
+        "/workers/businessCommunication/mobiles/itemID": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": true,
+            "shortLabelName": "Cell",
+            "longLabelName": "Cell"
+        },
+        "/workers/businessCommunication/faxes/countryDialing": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Country Dialing Code Work Fax",
+            "longLabelName": "Country Dialing Code Work Fax"
+        },
+        "/workers/businessCommunication/faxes/extension": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Work Fax",
+            "longLabelName": "Work Fax"
+        },
+        "/workers/businessCommunication/faxes/formattedNumber": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Work Fax",
+            "longLabelName": "Work Fax"
+        },
+        "/workers/businessCommunication/faxes/itemID": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": true,
+            "shortLabelName": "Work Fax",
+            "longLabelName": "Work Fax"
+        },
+        "/workers/businessCommunication/emails/nameCode/shortName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Work",
+            "longLabelName": "Work"
+        },
+        "/workers/businessCommunication/emails/emailUri": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Work",
+            "longLabelName": "Work"
+        },
+        "/workers/businessCommunication/emails/itemID": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": true,
+            "shortLabelName": "Work",
+            "longLabelName": "Work"
+        },
+        "/workers/workAssignments/workerTypeCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Employee Classification",
+            "longLabelName": "Employee Classification"
+        },
+        "/workers/workAssignments/workerTypeCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Employee Classification",
+            "longLabelName": "Employee Classification"
+        },
+        "/workers/workAssignments/assignmentTermCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false
+        },
+        "/workers/workAssignments/assignmentTermCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workers/workAssignments/workLevelCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Full-Time/Part-Time",
+            "longLabelName": "Full-Time/Part-Time"
+        },
+        "/workers/workAssignments/workLevelCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Full-Time/Part-Time",
+            "longLabelName": "Full-Time/Part-Time"
+        },
+        "/workers/workAssignments/managementPositionIndicator": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "datatype": "boolean",
+            "shortLabelName": "Manager Role",
+            "longLabelName": "Manager Role"
+        },
+        "/workers/workAssignments/legalEntityID": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": true
+        },
+        "/workers/workAssignments/jobCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Job Title",
+            "longLabelName": "Job Title"
+        },
+        "/workers/workAssignments/jobCode/shortName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Job Title",
+            "longLabelName": "Job Title"
+        },
+        "/workers/workAssignments/jobCode/longName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Job Title",
+            "longLabelName": "Job Title"
+        },
+        "/workers/workAssignments/jobTitle": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Business Title",
+            "longLabelName": "Business Title"
+        },
+        "/workers/workAssignments/wageLawCoverage/coverageCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "FLSA Status",
+            "longLabelName": "FLSA Status"
+        },
+        "/workers/workAssignments/wageLawCoverage/coverageCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "FLSA Status",
+            "longLabelName": "FLSA Status"
+        },
+        "/workers/workAssignments/laborUnion/laborUnionCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Union Code",
+            "longLabelName": "Union Code"
+        },
+        "/workers/workAssignments/laborUnion/laborUnionCode/shortName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Union Code",
+            "longLabelName": "Union Code"
+        },
+        "/workers/workAssignments/laborUnion/laborUnionCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Union Code",
+            "longLabelName": "Union Code"
+        },
+        "/workers/workAssignments/bargainingUnit/bargainingUnitCode/codeValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Bargaining Unit",
+            "longLabelName": "Bargaining Unit"
+        },
+        "/workers/workAssignments/bargainingUnit/bargainingUnitCode/shortName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Bargaining Unit",
+            "longLabelName": "Bargaining Unit"
+        },
+        "/workers/workAssignments/bargainingUnit/bargainingUnitCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Bargaining Unit",
+            "longLabelName": "Bargaining Unit"
+        },
+        "/workers/workAssignments/homeOrganizationalUnits": {
+            "minItems": 1,
+            "maxItems": 2,
+            "uniqueItems": true
+        },
+        "/workers/workAssignments/homeOrganizationalUnits/typeCode/codeValue": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": true,
+            "dependencies": {
+                "pattern": {
+                    "oneOf": [
+                        {
+                            "value": "^(CMPY)$",
+                            "attributes": {
+                                "/workers/workAssignments/homeOrganizationalUnits/nameCode/codeValue": {
+                                    "readOnly": false,
+                                    "optional": false,
+                                    "hidden": false,
+                                    "shortLabelName": "Company",
+                                    "longLabelName": "Company"
+                                },
+                                "/workers/workAssignments/homeOrganizationalUnits/nameCode/shortName": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false,
+                                    "shortLabelName": "Company",
+                                    "longLabelName": "Company"
+                                },
+                                "/workers/workAssignments/homeOrganizationalUnits/nameCode/longName": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false,
+                                    "shortLabelName": "Company",
+                                    "longLabelName": "Company"
+                                }
+                            }
+                        },
+                        {
+                            "value": "^(CNUM)$",
+                            "attributes": {
+                                "/workers/workAssignments/homeOrganizationalUnits/nameCode/codeValue": {
+                                    "readOnly": false,
+                                    "optional": true,
+                                    "hidden": false,
+                                    "shortLabelName": "Cost Number",
+                                    "longLabelName": "Cost Number"
+                                },
+                                "/workers/workAssignments/homeOrganizationalUnits/nameCode/longName": {
+                                    "readOnly": false,
+                                    "optional": true,
+                                    "hidden": false,
+                                    "shortLabelName": "Cost Number",
+                                    "longLabelName": "Cost Number"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "/workers/workAssignments/homeOrganizationalUnits/typeCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": true
+        },
+        "/workers/workAssignments/assignedOrganizationalUnits": {
+            "minItems": 1,
+            "maxItems": 2
+        },
+        "/workers/workAssignments/assignedOrganizationalUnits/typeCode/codeValue": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "dependencies": {
+                "pattern": {
+                    "oneOf": [
+                        {
+                            "value": "^(DEPTID)$",
+                            "attributes": {
+                                "/workers/workAssignments/assignedOrganizationalUnits/nameCode/codeValue": {
+                                    "readOnly": false,
+                                    "optional": false,
+                                    "hidden": false,
+                                    "shortLabelName": "Department",
+                                    "longLabelName": "Department"
+                                },
+                                "/workers/workAssignments/assignedOrganizationalUnits/nameCode/shortName": {
+                                    "readOnly": false,
+                                    "optional": false,
+                                    "hidden": false,
+                                    "shortLabelName": "Department",
+                                    "longLabelName": "Department"
+                                },
+                                "/workers/workAssignments/assignedOrganizationalUnits/nameCode/longName": {
+                                    "readOnly": false,
+                                    "optional": false,
+                                    "hidden": false,
+                                    "shortLabelName": "Department",
+                                    "longLabelName": "Department"
+                                }
+                            }
+                        },
+                        {
+                            "value": "^(PAYDEPTID)$",
+                            "attributes": {
+                                "/workers/workAssignments/assignedOrganizationalUnits/nameCode/codeValue": {
+                                    "readOnly": false,
+                                    "optional": true,
+                                    "hidden": false,
+                                    "shortLabelName": "Payroll Department Number",
+                                    "longLabelName": "Payroll Department Number"
+                                },
+                                "/workers/workAssignments/assignedOrganizationalUnits/nameCode/longName": {
+                                    "readOnly": true,
+                                    "optional": true,
+                                    "hidden": false,
+                                    "shortLabelName": "Payroll Department Number",
+                                    "longLabelName": "Payroll Department Number"
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "/workers/workAssignments/homeWorkLocation/nameCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Reporting Location",
+            "longLabelName": "Reporting Location"
+        },
+        "/workers/workAssignments/homeWorkLocation/nameCode/shortName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Reporting Location",
+            "longLabelName": "Reporting Location"
+        },
+        "/workers/workAssignments/homeWorkLocation/nameCode/longName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Reporting Location",
+            "longLabelName": "Reporting Location"
+        },
+        "/workers/workAssignments/assignedWorkLocations/nameCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Work Location",
+            "longLabelName": "Work Location"
+        },
+        "/workers/workAssignments/assignedWorkLocations/nameCode/shortName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Work Location",
+            "longLabelName": "Work Location"
+        },
+        "/workers/workAssignments/assignedWorkLocations/nameCode/longName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Work Location",
+            "longLabelName": "Work Location"
+        },
+        "/workers/workAssignments/assignedWorkLocations/address/countryCode": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workers/workAssignments/remunerationBasisCode/codeValue": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false
+        },
+        "/workers/workAssignments/remunerationBasisCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workers/workAssignments/payCycleCode/codeValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Payroll Frequency",
+            "longLabelName": "Payroll Frequency"
+        },
+        "/workers/workAssignments/payCycleCode/longName": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Payroll Frequency",
+            "longLabelName": "Payroll Frequency"
+        },
+        "/workers/workAssignments/baseRemuneration/payPeriodRateAmount/amountValue": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workers/workAssignments/baseRemuneration/payPeriodRateAmount/currencyCode": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": false
+        },
+        "/workers/workAssignments/reportsTo/associateOID": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": true,
+            "shortLabelName": "Reports to",
+            "longLabelName": "Reports to"
+        },
+        "/workers/workAssignments/reportsTo/workerID/idValue": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Reports to",
+            "longLabelName": "Reports to"
+        },
+        "/workers/workAssignments/reportsTo/reportsToWorkerName/formattedName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Reports to",
+            "longLabelName": "Reports to"
+        },
+        "/workers/workAssignments/reportsTo/reportsToWorkerName/givenName": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Reports to",
+            "longLabelName": "Reports to"
+        },
+        "/workers/workAssignments/reportsTo/reportsToWorkerName/middleName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Reports to",
+            "longLabelName": "Reports to"
+        },
+        "/workers/workAssignments/reportsTo/reportsToWorkerName/familyName1": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Reports to",
+            "longLabelName": "Reports to"
+        },
+        "/workers/workAssignments/payrollGroupCode": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "Pay Group",
+            "longLabelName": "Pay Group"
+        },
+        "/workers/workAssignments/payrollFileNumber": {
+            "readOnly": true,
+            "optional": false,
+            "hidden": false,
+            "shortLabelName": "File Number",
+            "longLabelName": "File Number"
+        },
+        "/workers/links/href": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": true
+        },
+        "/workers/links/rel": {
+            "readOnly": true,
+            "optional": true,
+            "hidden": true
+        }
+    }
+}
