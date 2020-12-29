@@ -1,0 +1,671 @@
+{
+	"info": {
+		"_postman_id": "56e0c0e2-2abc-4f31-bf73-3ad9b05961bf",
+		"name": "Work Assignment Retire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "work-assignment-retire-employee-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0a4dbb9d-6ab3-47fc-8e0d-d6b8c54cf6f1"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-03-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminationNoticeDate\": \"2020-01-15\",\r\n\"lastWorkedDate\": \"2020-03-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "work-assignment-retire-meta-http-200-response.json",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 1e3cd12b-ff06-447c-803d-093288b46ff3"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-empty-last-working-date-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2949e0ed-37e7-40d6-8075-7a97121ec424"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-07-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": false  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"\",\r\n\"rehireEligibleIndicator\": false\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-empty-termination-notice-date-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2949e0ed-37e7-40d6-8075-7a97121ec424"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-07-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": false  },\r\n\"terminationNoticeDate\": \"\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": false\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-empty-reason-code-http-200-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2949e0ed-37e7-40d6-8075-7a97121ec424"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-07-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": false  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-effectiveDate-earlier-than-lastWorkedDate-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer fadca389-b5f7-4f96-a86b-f63460eb7f72"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-05-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-invalid-effectiveDate-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer fadca389-b5f7-4f96-a86b-f63460eb7f72"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"06-15-2020\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-invalid-cancelAutomaticPayIndicator-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer fadca389-b5f7-4f96-a86b-f63460eb7f72"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": \"abc\"  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-invalid-terminationNoticeDate-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"05-15-2020\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-invalid-lastWorkedDate-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"06-15-2020\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-invalid-rehireEligibleIndicator-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": \"tes\"\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-invalid-reasonCode-codeValue-http-400-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RTA\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Worker API get call",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 0a4dbb9d-6ab3-47fc-8e0d-d6b8c54cf6f1"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers/G3B3973X4XBQJYT6",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						"G3B3973X4XBQJYT6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AccesToken_Vantage",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "ClientID here",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Client Secret here",
+							"type": "text"
+						}
+					],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-work-assignment-retire-with-invalid-employee-http-403-response.json",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"ugygtcvhbj\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RTA\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.work-assignment.retire"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
