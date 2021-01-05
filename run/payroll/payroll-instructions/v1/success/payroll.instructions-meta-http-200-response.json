@@ -1,163 +1,132 @@
 {
-    "payrollInstructions": [
-        {
-            "itemID": "001",
-            "generalDeductionInstructions": [
-                {
-                    "deductionCode": {
-                        "codeValue": "KL1",
-                        "shortName": "ADP RS 401(k) loan 1 repayment"
-                    },
-                    "deductionRate": {
-                        "rateValue": 15.1,
-                        "currencyCode": "USD"
-                    },
-                    "deductionGoal": {
-                        "goalLimitAmount": {
-                            "amountValue": 500,
-                            "currencyCode": "USD"
-                        }
+    "meta": {
+        "/payrollInstructions": {
+            "optional": true,
+            "dataType": "array"
+        },
+        "/payrollInstructions/itemID": {
+            "optional": true,
+            "dataType": "string"
+        },
+        "/payrollInstructions/generalDeductionInstructions": {
+            "optional": true,
+            "dataType": "array"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionCode": {
+            "optional": true,
+            "dataType": "object",
+            "codeList": {
+                "links": [
+                    {
+                        "href": "/codelists/payroll/v1/payrollInstructionManagement/deductions/run",
+                        "mediaType": "application/json",
+                        "method": "GET"
                     }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "K4F",
-                        "shortName": "ADP RS employee before-tax"
-                    },
-                    "deductionRate": {
-                        "rateValue": 20,
-                        "currencyCode": "USD"
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "K4D",
-                        "shortName": "ADP RS employee before-tax"
-                    },
-                    "deductionRate": {
-                        "rateValue": 0,
-                        "unitCode": {
-                            "codeValue": "Percentage"
-                        }
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "KRF",
-                        "shortName": "ADP RS employee Roth 401(k)"
-                    },
-                    "deductionRate": {
-                        "rateValue": 0,
-                        "currencyCode": "USD"
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "KR4",
-                        "shortName": "ADP RS employee Roth 401(k)"
-                    },
-                    "deductionRate": {
-                        "rateValue": 0,
-                        "unitCode": {
-                            "codeValue": "Percentage"
-                        }
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "KP4",
-                        "shortName": "ADP RS post-86 after-tax"
-                    },
-                    "deductionRate": {
-                        "rateValue": 0,
-                        "unitCode": {
-                            "codeValue": "Percentage"
-                        }
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "KSA",
-                        "shortName": "ADP RS SIMPLE IRA"
-                    },
-                    "deductionRate": {
-                        "rateValue": 0,
-                        "currencyCode": "USD"
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "KSP",
-                        "shortName": "ADP RS SIMPLE IRA"
-                    },
-                    "deductionRate": {
-                        "rateValue": 50,
-                        "unitCode": {
-                            "codeValue": "Percentage"
-                        }
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "EEMSP",
-                        "shortName": "EE-Medical Savings Account"
-                    },
-                    "deductionRate": {
-                        "rateValue": 12,
-                        "unitCode": {
-                            "codeValue": "Percentage"
-                        }
-                    },
-                    "deductionGoal": {
-                        "goalLimitAmount": {
-                            "amountValue": 20,
-                            "currencyCode": "USD"
-                        }
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "LOAN",
-                        "shortName": "Loan"
-                    },
-                    "deductionRate": {
-                        "rateValue": 250,
-                        "currencyCode": "USD"
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "MISCP",
-                        "shortName": "Miscellaneous %"
-                    },
-                    "deductionRate": {
-                        "rateValue": 0,
-                        "unitCode": {
-                            "codeValue": "Percentage"
-                        }
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "ADV",
-                        "shortName": "Test-Advance"
-                    },
-                    "deductionRate": {
-                        "rateValue": 0,
-                        "currencyCode": "USD"
-                    }
-                },
-                {
-                    "deductionCode": {
-                        "codeValue": "MISC",
-                        "shortName": "Test-miscellaneous"
-                    },
-                    "deductionRate": {
-                        "rateValue": 0,
-                        "currencyCode": "USD"
-                    }
-                }
-            ]
+                ]
+            }
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionCode/codeValue": {
+            "optional": false,
+            "dataType": "string"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionCode/shortName": {
+            "optional": true,
+            "dataType": "string"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionRate": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionRate/rateValue": {
+            "optional": false,
+            "dataType": "number"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionRate/currencyCode": {
+            "optional": true,
+            "pattern": "USD",
+            "dataType": "string"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionRate/unitCode": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionRate/unitCode/codeValue": {
+            "optional": true,
+            "pattern": "Percent",
+            "dataType": "string"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionRate/unitCode/shortName": {
+            "optional": true,
+            "dataType": "string"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionGoal": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionGoal/goalLimitAmount": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionGoal/goalLimitAmount/amountValue": {
+            "optional": true,
+            "dataType": "number"
+        },
+        "/payrollInstructions/generalDeductionInstructions/deductionGoal/goalLimitAmount/currencyCode": {
+            "optional": true,
+            "dataType": "string"
+        },
+        "/payrollInstructions/garnishmentInstructions": {
+            "optional": true,
+            "dataType": "array"
+        },
+        "/payrollInstructions/garnishmentInstructions/deductionCode": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/payrollInstructions/garnishmentInstructions/deductionCode/codeValue": {
+            "optional": false,
+            "dataType": "string"
+        },
+        "/payrollInstructions/garnishmentInstructions/deductionCode/shortName": {
+            "optional": true,
+            "dataType": "string"
+        },
+        "/payrollInstructions/garnishmentInstructions/garnishmentAmount": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/payrollInstructions/garnishmentInstructions/garnishmentAmount/amountValue": {
+            "optional": false,
+            "dataType": "number"
+        },
+        "/payrollInstructions/garnishmentInstructions/garnishmentAmount/currencyCode": {
+            "optional": true,
+            "pattern": "USD",
+            "dataType": "string"
+        },
+        "/payrollInstructions/garnishmentInstructions/garnishmentPercentage": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/payrollInstructions/garnishmentInstructions/garnishmentPercentage/percentageValue": {
+            "optional": false,
+            "dataType": "number"
+        },
+        "/payrollInstructions/garnishmentInstructions/garnishmentGoal": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/payrollInstructions/garnishmentInstructions/garnishmentGoal/goalLimitAmount": {
+            "optional": true,
+            "dataType": "object"
+        },
+        "/payrollInstructions/garnishmentInstructions/garnishmentGoal/goalLimitAmount/amountValue": {
+            "optional": true,
+            "dataType": "number"
+        },
+        "/payrollInstructions/garnishmentInstructions/garnishmentGoal/goalLimitAmount/currencyCode": {
+            "optional": true,
+            "dataType": "string"
         }
-    ]
+    }
 }
