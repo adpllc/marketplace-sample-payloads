@@ -1,0 +1,202 @@
+{
+    "meta": {
+        "/data/transforms": [
+            {
+                "/leaveReturn/returnDateTime": {
+                    "helperMessage": {
+                        "messageTxt": ""
+                    },
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date-time]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]([T][0-2][0-9]:[0-5][0-9]:[0-5][0-9](.[0-9]{3})?(\\+[0-9]{4})?)?$",
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/leaveReturn/returnStatus/deniedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Return Date",
+                    "longLabelName": "Return Date"
+                },
+                "/leaveReturn/returnStatus/returnStatusCode": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/reason-code-values?action=RFL",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/leaveReturn/returnStatus/deniedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/leaveReturn/returnStatus/returnStatusCode/codeValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/leaveReturn/returnStatus/deniedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "/leaveReturn/returnToWorkIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean",
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/leaveReturn/returnStatus/deniedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Return to Work Certification",
+                    "longLabelName": "Return to Work Certification"
+                },
+                "/leaveReturn/notificationReceivedDateTime": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "string[date-time]",
+                    "pattern": "^[0-9]{4}-[0-1][0-9]-[0-3][0-9]([T][0-2][0-9]:[0-5][0-9]:[0-5][0-9](.[0-9]{3})?(\\+[0-9]{4})?)?$",
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": true,
+                                "attributes": {
+                                    "/leaveReturn/returnStatus/deniedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Receive Date",
+                    "longLabelName": "Receive Date"
+                },
+                "/leaveReturn/returnStatus/deniedIndicator": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "dataType": "boolean",
+                    "shortLabelName": "Restoration Denied",
+                    "longLabelName": "Restoration Denied"
+                },
+                "/leaveReturn/returnStatus/deniedReasonCode": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "codeList": {
+                        "links": [
+                            {
+                                "rel": "/adp/codelist",
+                                "href": "/codelists/hr/v3/worker-management/loa-restoration-denial-code-values",
+                                "method": "GET",
+                                "encType": "application/json",
+                                "mediaType": "application/json"
+                            }
+                        ]
+                    },
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/leaveReturn/returnStatus/deniedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Reason for Denial",
+                    "longLabelName": "Reason for Denial"
+                },
+                "/leaveReturn/returnStatus/deniedReasonCode/codeValue": {
+                    "readOnly": true,
+                    "optional": true,
+                    "hidden": false,
+                    "dependencies": {
+                        "readOnly": {
+                            "oneOf": {
+                                "value": false,
+                                "attributes": {
+                                    "/leaveReturn/returnStatus/deniedIndicator": {
+                                        "value": true
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "shortLabelName": "Reason for Denial",
+                    "longLabelName": "Reason for Denial"
+                }
+            }
+        ],
+        "/data/eventContext": {
+            "/contextExpressionID": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/leaveStartDate": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": false
+            },
+            "/leaveTypeCode/codeValue": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/leaveSubTypeCode/codeValue": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            }
+        }
+    }
+}
