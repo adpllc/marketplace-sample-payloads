@@ -1,0 +1,1289 @@
+{
+	"info": {
+		"_postman_id": "574fb257-1a4d-4905-93e0-fde79098c3e7",
+		"name": "Leave Request ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http-200-leave-absence-request-meta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer d2deb95e-2584-4b63-ad01-3164ac442d05"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-201-leave-absence-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600671",
+						"key": "Authorization",
+						"value": "Bearer 99bbbd54-fc40-4973-8788-bc58340be676"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"2020-11-10\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"LOA\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"JUR\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-20\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"N\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"Testing JUR\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"441903212\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"false\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"1\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-11\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-201-leave-absence-request-international-employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600671",
+						"key": "Authorization",
+						"value": "Bearer e91233cc-50a9-4a1d-9445-20683679669e"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3FSPKPASVP6FQEV\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"2020-11-10\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"PLA\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"JUR\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-20\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"N\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"Testing JUR\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"441903212\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"false\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"1\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-13\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-403-leave-absence-request-invalid-aoid",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600671",
+						"key": "Authorization",
+						"value": "Bearer d2deb95e-2584-4b63-ad01-3164ac442d05"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX999\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"2020-11-10\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"LOA\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"JUR\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-20\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"N\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"Testing JUR\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"441903212\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"false\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"1\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-11\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-absence-request-invalid-date-format",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600671",
+						"key": "Authorization",
+						"value": "Bearer d2deb95e-2584-4b63-ad01-3164ac442d05"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"11-10-2020\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"LOA\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"JUR\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-20\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"N\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"Testing JUR\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"441903212\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"false\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"1\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-11\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-absence-request-invalid-leave-type-code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600671",
+						"key": "Authorization",
+						"value": "Bearer d2deb95e-2584-4b63-ad01-3164ac442d05"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"2020-11-10\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"LB\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"JUR\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-20\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"N\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"Testing JUR\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"441903212\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"false\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"1\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-11\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-absence-request-invalid-leave-subtype-code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600671",
+						"key": "Authorization",
+						"value": "Bearer d2deb95e-2584-4b63-ad01-3164ac442d05"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"2020-11-10\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"LOA\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"ABC\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-20\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"N\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"Testing JUR\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"441903212\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"false\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"1\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-11\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-absence-request-existing-leave-record",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600671",
+						"key": "Authorization",
+						"value": "Bearer d5d81d5c-d94b-4bb2-b5b0-046ec52ff5cc"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"2020-11-10\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"LOA\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"JUR\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-20\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"N\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"Testing JUR\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"441903212\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"false\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"1\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-11\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-absence-request-return-date-earlier-than-start-date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600645",
+						"key": "Authorization",
+						"value": "Bearer d5d81d5c-d94b-4bb2-b5b0-046ec52ff5cc"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3WWB9YWNW5MCEHT\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"2020-11-10\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"LOA\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"JUR\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-02\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"N\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"441903212\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"false\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"1\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-11\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-absence-request-invalid-statutory-type-code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600645",
+						"key": "Authorization",
+						"value": "Bearer 214de826-49b3-4540-9209-e5baf2eeb145"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3WWB9YWNW5MCEHT\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"2020-11-10\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"LOA\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"JUR\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-02\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"K\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"441903212\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"false\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"1\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-11\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-absence-request-invalid-denied-reason-code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "emplid=600645",
+						"key": "Authorization",
+						"value": "Bearer 214de826-49b3-4540-9209-e5baf2eeb145"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3WWB9YWNW5MCEHT\"\r\n                },\r\n                \"transform\": {\r\n                    \"workerLeave\": {\r\n                        \"leaveAbsence\": {\r\n                            \"startDateTime\": \"2020-11-10\",\r\n                            \"leaveTypeCode\": {\r\n                                \"codeValue\": \"LOA\"\r\n                            },\r\n                            \"leaveSubTypeCode\": {\r\n                                \"codeValue\": \"JUR\"\r\n                            },\r\n                            \"expectedEndDateTime\": \"2020-11-12\",\r\n                            \"statutoryTypeCode\": {\r\n                                \"codeValue\": \"N\"\r\n                            },\r\n                            \"leaveDuration\": {\r\n                                \"quantityValue\": \"50\"\r\n                            },\r\n                            \"comment\": {\r\n                                \"textValue\": \"\"\r\n                            },\r\n                            \"statutoryFilingRequestDateTime\": \"2020-11-11\",\r\n                            \"criticalEmployeeIndicator\": true,\r\n                            \"criticalEmployeeNotificationDateTime\": \"2020-11-12\",\r\n                            \"spouse\": {\r\n                                \"workerID\": {\r\n                                    \"idValue\": \"123456\"\r\n                                }\r\n                            },\r\n                            \"leaveStatus\": {\r\n                                \"deniedIndicator\": \"true\",\r\n                                \"deniedReasonCode\": {\r\n                                    \"codeValue\": \"5\"\r\n                                }\r\n                            },\r\n                            \"certifications\": [\r\n                                {\r\n                                    \"receivedIndicator\": \"true\",\r\n                                    \"requestDateTime\": \"2020-11-10\",\r\n                                    \"replyDateTime\": \"2020-11-11\",\r\n                                    \"comment\": {\r\n                                        \"textValue\": \"Comment JUR\"\r\n                                    }\r\n                                }\r\n                            ],\r\n                            \"medicalOpinionRequestNumbers\": [\r\n                                {\r\n                                    \"sequence\": \"2\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                },\r\n                                {\r\n                                    \"sequence\": \"3\",\r\n                                    \"opinionIndicator\": \"true\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.absence.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.absence.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-worker-aoid-leaves",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer edd909b4-dff1-40ba-9e24-9bbe45da9311"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers/G3H9JT485EFM12GX/leaves",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						"G3H9JT485EFM12GX",
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-worker-aoid-leaves-meta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer edd909b4-dff1-40ba-9e24-9bbe45da9311"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers/G3H9JT485EFM12GX/leaves/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						"G3H9JT485EFM12GX",
+						"leaves",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-403-worker-aoid-leaves-invalid-aoid",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 19b90a97-7b8c-4959-85e9-ca39531002cb"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers/G3H9JT485EFM12GI/leaves",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						"G3H9JT485EFM12GI",
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-403-worker-aoid-leaves-aoid-with-no-leave-request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 19b90a97-7b8c-4959-85e9-ca39531002cb"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers/G38YQWHMCTC9PGZR/leaves",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						"G38YQWHMCTC9PGZR",
+						"leaves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-leave-return-request-meta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 4fa0ecda-8bff-4811-b9b2-1dfa71ab1d50"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.return.request",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-leave-return-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2eee205f-1d9c-4454-ab8e-48ba273180bd"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"transform\": {\r\n                    \"leaveReturn\": {\r\n                        \"returnDateTime\": \"2020-11-23\",\r\n                        \"returnStatus\": {\r\n                            \"deniedReasonCode\": {\r\n                                \"codeValue\": \"1\"\r\n                            },\r\n                            \"returnStatusCode\": {\r\n                                \"codeValue\": \"RFL\"\r\n                            },\r\n                            \"deniedIndicator\": \"false\"\r\n                        },\r\n                        \"notificationReceivedDateTime\": \"2020-11-22\",\r\n                        \"returnToWorkIndicator\": true\r\n                    }\r\n                },\r\n                \"eventContext\": {\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"BIR\"\r\n                    },\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\",\r\n                    \"leaveStartDate\": \"2020-11-21\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"LOA\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.return.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-leave-return-request-international-employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer b8a26881-b6c9-48d8-b6a9-7643ccebd645"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"transform\": {\r\n                    \"leaveReturn\": {\r\n                        \"returnDateTime\": \"2020-11-23\",\r\n                        \"returnStatus\": {\r\n                            \"deniedReasonCode\": {\r\n                                \"codeValue\": \"1\"\r\n                            },\r\n                            \"returnStatusCode\": {\r\n                                \"codeValue\": \"RFL\"\r\n                            },\r\n                            \"deniedIndicator\": \"false\"\r\n                        },\r\n                        \"notificationReceivedDateTime\": \"2020-11-22\",\r\n                        \"returnToWorkIndicator\": true\r\n                    }\r\n                },\r\n                \"eventContext\": {\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"JUR\"\r\n                    },\r\n                    \"associateOID\": \"G3FSPKPASVP6FQEV\",\r\n                    \"leaveStartDate\": \"2020-11-10\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"PLA\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.return.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-return-request-invalid-leave-start-date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 4514209c-8384-4650-87df-d68442da6f51"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"transform\": {\r\n                    \"leaveReturn\": {\r\n                        \"returnDateTime\": \"2020-11-23\",\r\n                        \"returnStatus\": {\r\n                            \"deniedReasonCode\": {\r\n                                \"codeValue\": \"1\"\r\n                            },\r\n                            \"returnStatusCode\": {\r\n                                \"codeValue\": \"RFL\"\r\n                            },\r\n                            \"deniedIndicator\": \"false\"\r\n                        },\r\n                        \"notificationReceivedDateTime\": \"2020-11-22\",\r\n                        \"returnToWorkIndicator\": true\r\n                    }\r\n                },\r\n                \"eventContext\": {\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"JUR\"\r\n                    },\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\",\r\n                    \"leaveStartDate\": \"2021-11-10\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"LOA\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.return.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-return-request-invalid-leave-type-code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 4514209c-8384-4650-87df-d68442da6f51"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"transform\": {\r\n                    \"leaveReturn\": {\r\n                        \"returnDateTime\": \"2021-01-23\",\r\n                        \"returnStatus\": {\r\n                            \"deniedReasonCode\": {\r\n                                \"codeValue\": \"1\"\r\n                            },\r\n                            \"returnStatusCode\": {\r\n                                \"codeValue\": \"RFL\"\r\n                            },\r\n                            \"deniedIndicator\": \"false\"\r\n                        },\r\n                        \"notificationReceivedDateTime\": \"2021-01-22\",\r\n                        \"returnToWorkIndicator\": true\r\n                    }\r\n                },\r\n                \"eventContext\": {\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"ABC\"\r\n                    },\r\n                    \"associateOID\": \"G3AQ5RT302DN89Q7\",\r\n                    \"leaveStartDate\": \"2021-01-01\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"ABC\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.return.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-return-request-invalid-return-status-code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 4514209c-8384-4650-87df-d68442da6f51"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"transform\": {\r\n                    \"leaveReturn\": {\r\n                        \"returnDateTime\": \"2021-01-23\",\r\n                        \"returnStatus\": {\r\n                            \"deniedReasonCode\": {\r\n                                \"codeValue\": \"1\"\r\n                            },\r\n                            \"returnStatusCode\": {\r\n                                \"codeValue\": \"ABC\"\r\n                            },\r\n                            \"deniedIndicator\": \"false\"\r\n                        },\r\n                        \"notificationReceivedDateTime\": \"2021-01-22\",\r\n                        \"returnToWorkIndicator\": true\r\n                    }\r\n                },\r\n                \"eventContext\": {\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"MAT\"\r\n                    },\r\n                    \"associateOID\": \"G3AQ5RT302DN89Q7\",\r\n                    \"leaveStartDate\": \"2021-01-01\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"LOA\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.return.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-400-leave-return-request-invalid-denied-reason-code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 4514209c-8384-4650-87df-d68442da6f51"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"transform\": {\r\n                    \"leaveReturn\": {\r\n                        \"returnDateTime\": \"2021-01-23\",\r\n                        \"returnStatus\": {\r\n                            \"deniedReasonCode\": {\r\n                                \"codeValue\": \"ABC\"\r\n                            },\r\n                            \"returnStatusCode\": {\r\n                                \"codeValue\": \"RFL\"\r\n                            },\r\n                            \"deniedIndicator\": \"true\"\r\n                        },\r\n                        \"notificationReceivedDateTime\": \"2021-01-22\",\r\n                        \"returnToWorkIndicator\": true\r\n                    }\r\n                },\r\n                \"eventContext\": {\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"MAT\"\r\n                    },\r\n                    \"associateOID\": \"G3AQ5RT302DN89Q7\",\r\n                    \"leaveStartDate\": \"2021-01-01\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"LOA\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.return.request",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.return.request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-leave-cancel-meta",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 3d351b79-b501-4536-9a8d-c37f11695de3"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.cancel",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-leave-cancel",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7af18224-6e9d-4ef2-83b1-87e4fa3c28ee"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3FSPKPASVP6FQEV\",\r\n                    \"leaveStartDate\": \"2020-11-10\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"PLA\"\r\n                    },\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"JUR\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-leave-cancel-invalid-AOID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 3d351b79-b501-4536-9a8d-c37f11695de3"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX999\",\r\n                    \"leaveStartDate\": \"2020-11-10\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"LOA\"\r\n                    },\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"JUR\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-leave-cancel-blank-leave-type-code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 809f6c4a-1236-44c4-9e8c-0b6a23b68385"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\",\r\n                    \"leaveStartDate\": \"2020-11-10\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"\"\r\n                    },\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"JUR\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-leave-cancel-invalid-leave-subtype-code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 809f6c4a-1236-44c4-9e8c-0b6a23b68385"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\",\r\n                    \"leaveStartDate\": \"2020-11-10\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"LOA\"\r\n                    },\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"ABC\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.cancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http-200-leave-cancel-without-leave-start-date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 809f6c4a-1236-44c4-9e8c-0b6a23b68385"
+					},
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Cookie",
+						"value": "BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc2=3674145547.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1176240395.20480.0000; BIGipServerp_dc1_iatmobile_sor_vantage=2405499147.13606.0000; BIGipServerp_dc1_iatmobile_apache_sor=3139321867.5377.0000; BIGipServerp_dc2_iatmobile_sor_vantage=1583153931.13606.0000; BIGipServerp_dc2_iatmobile_apache_sor=4204921611.5377.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"associateOID\": \"G3H9JT485EFM12GX\",\r\n                    \"leaveStartDate\": \"\",\r\n                    \"leaveTypeCode\": {\r\n                        \"codeValue\": \"LOA\"\r\n                    },\r\n                    \"leaveSubTypeCode\": {\r\n                        \"codeValue\": \"JUR\"\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/hr/v1/worker.leave.cancel",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"hr",
+						"v1",
+						"worker.leave.cancel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
