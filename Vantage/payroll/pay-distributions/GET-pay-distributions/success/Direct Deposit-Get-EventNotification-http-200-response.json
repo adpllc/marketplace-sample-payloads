@@ -1,0 +1,82 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "G3R9MDBS40828RS9"
+                    }
+                },
+                "output": {
+                    "worker": {
+                        "associateOID": "G3R9MDBS40828RS9"
+                    },
+                    "payDistribution": {
+                        "itemID": "0",
+                        "distributionInstructions": [
+                            {
+                                "itemID": "SVA",
+                                "paymentMethodCode": {
+                                    "codeValue": "DD",
+                                    "longName": "Direct Deposit"
+                                },
+                                "depositAccount": {
+                                    "financialParty": {
+                                        "routingTransitID": {
+                                            "idValue": "021200025"
+                                        },
+                                        "nameCode": {
+                                            "shortName": "WellsFargo",
+                                            "longName": "Wells Fargo"
+                                        }
+                                    },
+                                    "financialAccount": {
+                                        "accountNumber": "123456789",
+                                        "typeCode": {
+                                            "codeValue": "SVA",
+                                            "longName": "SAVINGS"
+                                        },
+                                        "currencyCode": "USD"
+                                    }
+                                },
+                                "distributionAmount": {
+                                    "amountValue": 300,
+                                    "currencyCode": "USD"
+                                },
+                                "distributionPercentage": 0,
+                                "remainingBalanceIndicator": false
+                            }
+                        ]
+                    }
+                }
+            },
+            "eventID": "04D7EE37-93A8-CC83-24D1-A6FB3F3787F6",
+            "serviceCategoryCode": {
+                "codeValue": "payroll"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.payDistribution.change"
+            },
+            "eventTitle": "Direct Deposit Change",
+            "eventSubTitle": "Direct Deposit - SAVINGS $3000%",
+            "eventStatusCode": {
+                "codeValue": "complete",
+                "shortName": "Complete"
+            },
+            "recordDateTime": "2021-01-19T12:48:52.385+0000",
+            "creationDateTime": "2021-01-19T12:48:52.385+0000",
+            "originator": {
+                "associateOID": "G3DKVW69A4E66DSF"
+            },
+            "actor": {
+                "associateOID": "G3DKVW69A4E66DSF"
+            },
+            "links": [
+                {
+                    "href": "/events/payroll/v1/worker.pay-distribution.change/04D7EE37-93A8-CC83-24D1-A6FB3F3787F6",
+                    "rel": "self"
+                }
+            ]
+        }
+    ]
+}
