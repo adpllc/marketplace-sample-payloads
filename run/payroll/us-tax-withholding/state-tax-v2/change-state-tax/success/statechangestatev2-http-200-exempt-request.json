@@ -4,36 +4,45 @@
       "data": {
         "eventContext": {
           "worker": {
-            "associateOID": "G36BBTZVY3VQV1MH"
+            "associateOID": "G36BBTZVY3VQ1GCE"
           },
           "stateCode": {
-            "codeValue": "AZ",
-            "longName": "Arizona"
+            "codeValue": "AL",
+            "longName": "Alabama"
           }
         },
         "transform": {
-          "effectiveDateTime": "2018-09-12",
+          "effectiveDateTime": "2019-10-29",
           "stateIncomeTaxWithholdingElection": {
-            "taxWithholdingRate": 1.2,
-            "additionalTaxAmount": {
-              "amountValue": 0,
-              "currencyCode": "USD"
-            },
             "attestationIndicator": {
               "indicatorValue": true,
-              "effectiveDate": "2018-09-13T17:16:20+00:00"
+              "effectiveDate": "2019-10-29T10:44:11-04:00"
             },
-            "taxWithholdingStatus": {
+            "additionalStatutoryInputs": [
+              {
+                "tagCode": "WITHHOLD_HIGHEST_RATE",
+                "tagValues": [
+                  "true"
+                ],
+                "dataTypeCode": "boolean"
+              }
+            ],
+           "taxWithholdingStatus": {
               "statusCode": {
                 "codeValue": "EXEMPT",
                 "longName": "Exempt"
               }
+            },        
+            "taxWithholdingAllowanceQuantity": 1,
+            "additionalTaxAmount": {
+              "amountValue": 22,
+              "currencyCode": "USD"
             }
           }
         }
       },
       "actor": {
-        "associateOID": "G36BBTZVY3VQV1MH"
+        "associateOID": "G36BBTZVY3VQ1GCE"
       },
       "serviceCategoryCode": {
         "codeValue": "payrollManagement"
