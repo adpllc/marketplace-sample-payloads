@@ -176,55 +176,22 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-api.adp.com/staffing/v1/job-requisitionss?$filter=requisitionStatuscode/codeValue eq 'Active'",
+							"raw": "https://api.adp.com/staffing/v1/job-requisitions?requisitionStatusCode.codeValue=Active",
 							"protocol": "https",
 							"host": [
-								"iat-api",
+								"api",
 								"adp",
 								"com"
 							],
 							"path": [
 								"staffing",
 								"v1",
-								"job-requisitionss"
+								"job-requisitions"
 							],
 							"query": [
 								{
-									"key": "$filter",
-									"value": "requisitionStatuscode/codeValue eq 'Active'"
-								}
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "job requisitions status filter Copy Copy",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer 9d2a0602-c07a-4603-aebb-037cba3d240e"
-							}
-						],
-						"url": {
-							"raw": "https://iat-api.adp.com/staffing/v1/job-requisitionss?$filter=requisitionStatuscode/codeValue eq 'Active'",
-							"protocol": "https",
-							"host": [
-								"iat-api",
-								"adp",
-								"com"
-							],
-							"path": [
-								"staffing",
-								"v1",
-								"job-requisitionss"
-							],
-							"query": [
-								{
-									"key": "$filter",
-									"value": "requisitionStatuscode/codeValue eq 'Active'"
+									"key": "requisitionStatusCode.codeValue",
+									"value": "Active"
 								}
 							]
 						}
