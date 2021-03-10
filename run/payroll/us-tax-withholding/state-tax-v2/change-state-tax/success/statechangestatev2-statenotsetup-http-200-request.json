@@ -1,0 +1,102 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    },
+                    "stateCode": {
+                        "codeValue": "DE",
+                        "longName": "Delaware"
+                    }
+                },
+                "transform": {
+                    "effectiveDateTime": "2019-12-02",
+                    "stateIncomeTaxWithholdingElection": {
+                        "attestationIndicator": {
+                            "indicatorValue": true,
+                            "effectiveDate": "2019-12-02T14:18:52-05:00"
+                        },
+                        "additionalStatutoryInputs": [
+                            {
+                                "tagCode": "VERSION",
+                                "tagValues": [
+                                    "DE-V1"
+                                ],
+                                "dataTypeCode": "string"
+                            },
+                            {
+                                "tagCode": "FILING_STATUS",
+                                "tagValues": [
+                                    "SINGLE"
+                                ],
+                                "dataTypeCode": "string"
+                            },
+                            {
+                                "tagCode": "EXEMPT",
+                                "tagValues": [
+                                    "true"
+                                ],
+                                "dataTypeCode": "boolean"
+                            }
+                        ],
+                        "taxFilingStatusCode": {
+                            "codeValue": "SINGLE",
+                            "longName": "Single"
+                        },
+                        "taxWithholdingStatus": {
+                            "statusCode": {
+                                "codeValue": "EXEMPT",
+                                "longName": "Exempt"
+                            }
+                        },
+                        "taxWithholdingAllowanceQuantity": 0,
+                        "additionalTaxAmount": {
+                            "amountValue": 100,
+                            "currencyCode": "USD"
+                        },
+                        "attachments": [
+                            {
+                                "nameCode": {
+                                    "codeValue": "TAX_WITHHOLDING",
+                                    "shortName": "DE W-4",
+                                    "longName": "Delaware Employee's Withholding Allowance Certificate"
+                                },
+                                "attachmentLink": {
+                                    "mediaType": "application/pdf",
+                                    "payLoadArguments": [
+                                        {
+                                            "argumentPath": "gssID",
+                                            "argumentValue": "31cb9db9-4ffd-4f7d-9743-dd23b64c9e3c"
+                                        }
+                                    ]
+                                },
+                                "textValue": "{{PDF DATA HERE}}"
+                            }
+                        ],
+                        "actionMessages": [
+                            {
+                                "messageID": "CLAIMING_EXEMPT",
+                                "messageText": "If employee is expected to earn more than $168.50 a week, print the employee's DE W-4, provide employer information, and mail the form to the Delaware Division of Revenue. They claimed an \"Exempt\" status."
+                            },
+                            {
+                                "messageID": "CLAIMING_MANY_ALLOWANCES",
+                                "messageText": "Print the employee's DE W-4, provide employer information, and mail the form to the Delaware Division of Revenue. They claimed 14 or more allowances."
+                            }
+                        ]
+                    }
+                }
+            },
+            "actor": {
+                "associateOID": "{{aoid}}"
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payrollManagement"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usState.taxWithholding.election.change"
+            }
+        }
+    ]
+}
