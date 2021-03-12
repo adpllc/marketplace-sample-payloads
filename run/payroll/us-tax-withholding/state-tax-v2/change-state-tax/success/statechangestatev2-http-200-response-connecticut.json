@@ -8,25 +8,39 @@
                         "codeValue": "CT"
                     },
                     "livedInJurisdictionIndicator": true,
-                    "workedInJurisdictionIndicator": true,
+                    "workedInJurisdictionIndicator": false,
                     "taxWithholdingStatus": {
                         "statusCode": {
                             "longName": "",
                             "codeValue": "X"
                         },
-                        "effectiveDate": "2020-01-01"
+                        "effectiveDate": "2021-01-01"
                     },
                     "taxFilingStatusCode": {
                         "longName": "Filing Status E",
                         "codeValue": "E"
                     },
                     "additionalTaxAmount": {
-                        "amountValue": 15.00,
+                        "amountValue": 15,
                         "currencyCode": "USD"
                     },
+                    "additionalStatutoryInputs": [
+                        {
+                            "tagCode": "WITHHOLDING_CODE",
+                            "tagValues": [
+                                "E"
+                            ],
+                            "dataTypeCode": "string"
+                        }
+                    ],
+                    "actions": [
+                        {
+                            "operationID": "worker.usState.taxWithholding.election.read"
+                        }
+                    ],
                     "attestationIndicator": {
                         "indicatorValue": true,
-                        "effectiveDate": "2020-11-19"
+                        "effectiveDate": "2021-03-12"
                     }
                 },
                 {
@@ -34,20 +48,30 @@
                         "longName": "Alabama",
                         "codeValue": "AL"
                     },
+                    "livedInJurisdictionIndicator": false,
+                    "workedInJurisdictionIndicator": true,
                     "taxWithholdingStatus": {
-                        "effectiveDate": ""
-                    }
-                },
-                {
-                    "stateCode": {
-                        "longName": "Arizona",
-                        "codeValue": "AZ"
+                        "statusCode": {
+                            "longName": "",
+                            "codeValue": "X"
+                        },
+                        "effectiveDate": "2021-01-01"
                     },
-                    "taxWithholdingStatus": {
-                        "effectiveDate": ""
+                    "taxWithholdingAllowanceQuantity": 10,
+                    "additionalTaxAmount": {
+                        "amountValue": 22,
+                        "currencyCode": "USD"
+                    },
+                    "actions": [
+                        {
+                            "operationID": "worker.usState.taxWithholding.election.read"
+                        }
+                    ],
+                    "attestationIndicator": {
+                        "indicatorValue": true,
+                        "effectiveDate": "2021-03-12"
                     }
                 }
-               
             ]
         }
     ]
