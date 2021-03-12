@@ -1,0 +1,90 @@
+{
+    "events": [
+        {
+            "effectiveDateTime": "2018-08-01",
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{aoid}}"
+                    },
+                    "stateCode": {
+                        "codeValue": "LA",
+                        "longName": "Louisiana"
+                    }
+                },
+                "transform": {
+                    "effectiveDateTime": "2018-08-01",
+                    "stateIncomeTaxWithholdingElection": {
+                        "additionalTaxAmount": {
+                            "amountValue": 10,
+                            "currencyCode": "USD"
+                        },
+                        "taxAllowances": [
+                            {
+                                "allowanceTypeCode": {
+                                    "codeValue": "PERSONAL"
+                                },
+                                "taxAllowanceQuantity": 3
+                            },
+                            {
+                                "allowanceTypeCode": {
+                                    "codeValue": "DEPENDENTS"
+                                },
+                                "taxAllowanceQuantity": 3
+                            }
+                        ],
+                        "additionalStatutoryInputs": [
+                            {
+                                "tagCode": "VERSION",
+                                "tagValues": [
+                                    "LA-V1"
+                                ],
+                                "dataTypeCode": "string"
+                            },
+                            {
+                                "tagCode": "FILING_STATUS",
+                                "tagValues": [
+                                    "NO_EXEMPTIONS_OR_DEPENDENTS_CLAIMED"
+                                ],
+                                "dataTypeCode": "string"
+                            }
+                        ],
+                        "taxFilingStatusCode": {
+                            "codeValue": "NO_EXEMPTIONS_OR_DEPENDENTS_CLAIMED",
+                            "longName": "No exemptions Or Dependents Claimed"
+                        },
+                        "attachments": [
+                            {
+                                "nameCode": {
+                                    "codeValue": "TAX_WITHHOLDING",
+                                    "shortName": "L-4",
+                                    "longName": "Employee Withholding Exemption Certificate"
+                                },
+                                "attachmentLink": {
+                                    "mediaType": "application/pdf",
+                                    "payLoadArguments": [
+                                        {
+                                            "argumentPath": "gssID",
+                                            "argumentValue": "31cb9db9-4ffd-4f7d-9743-dd23b64c9e3c"
+                                        }
+                                    ]
+                                },
+                                "textValue": "{{PDF DATA HERE}}"
+                            }
+                        ],
+                        "actionMessages": []
+                    }
+                }
+            },
+            "actor": {
+                "associateOID": "{{aoid}}"
+            },
+            "serviceCategoryCode": {
+                "codeValue": "payrollManagement"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.usState.taxWithholding.election.change"
+            }
+        }
+    ]
+}
