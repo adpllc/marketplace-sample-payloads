@@ -1,0 +1,840 @@
+{
+    "meta": {
+        "/serviceCategoryCode/codeValue": "PAYROLL",
+        "/eventNameCode/codeValue": "WORKER_GENERAL_DEDUCTION_INSTRUCTION_CHANGE",
+        "/data/eventContext": {
+            "/worker": {
+                "readOnly": true,
+                "optional": false
+            },
+            "/worker/associateOID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/payrollInstruction": {
+                "readOnly": true,
+                "optional": false
+            },
+            "/payrollInstruction/itemID": {
+                "readOnly": true,
+                "optional": false,
+                "hidden": true
+            },
+            "/payrollInstruction/payrollGroupCode": {
+                "codeList": {
+                    "listItems": [
+                        {
+                            "valueDescription": "Waterview Employees",
+                            "codeValue": "0990"
+                        },
+                        {
+                            "valueDescription": "2021 Employees",
+                            "codeValue": "1211"
+                        },
+                        {
+                            "valueDescription": "Nadirah's Employees",
+                            "codeValue": "7777"
+                        },
+                        {
+                            "valueDescription": "Dunkin Employees",
+                            "codeValue": "3456"
+                        },
+                        {
+                            "valueDescription": "NJ Employees",
+                            "codeValue": "2222"
+                        },
+                        {
+                            "valueDescription": "Starbucks Employees",
+                            "codeValue": "4545"
+                        }
+                    ]
+                },
+                "readOnly": true,
+                "optional": true
+            },
+            "/payrollInstruction/payrollGroupCode/codeValue": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/payrollInstruction/payrollFileNumber": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true
+            },
+            "/payrollInstruction/generalDeductionInstruction/deductionCode": {
+                "codeList": {
+                    "codeListTitle": "Label not found, missing following key: label_deductions_field_deduction_code",
+                    "listItems": [
+                        {
+                            "codeValue": "401Cascadi.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401Cascadi.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401Cascadi.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401Cascadi.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401Cascadi.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401KAll.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401KAll.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401KAll.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401KAll.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401KAll.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401KBaseNP.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401KBaseNP.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401KBaseNP.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401KBaseNP.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401KBaseNP.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401KNECNP.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401KNECNP.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401KNECNP.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401KNECNP.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401KNECNP.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401kCombMk.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kCombMk.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kCombMk.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kCombMk.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kCombMk.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401kCombin.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kCombin.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kCombin.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kCombin.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kCombin.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401kLoan.ASSOCIATE_LOAN_COLLECTION"
+                        },
+                        {
+                            "codeValue": "401kLoanNE.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kLoanNE.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kLoanNE.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kLoanNE.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kLoanNE.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401kLoanNP.ASSOCIATE_LOAN_COLLECTION"
+                        },
+                        {
+                            "codeValue": "401kMatchL.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kMatchL.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kMatchL.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kMatchL.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kMatchL.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401kMatchN.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kMatchN.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kMatchN.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kMatchN.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kMatchN.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401kNECLMX.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kNECLMX.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kNECLMX.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kNECLMX.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kNECLMX.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "401kNECand.BASE_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kNECand.BASE_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kNECand.CATCHUP_ASSOCIATE_CONTRIBUTION_ROTH"
+                        },
+                        {
+                            "codeValue": "401kNECand.CATCHUP_ASSOCIATE_CONTRIBUTION_TRADITIONAL"
+                        },
+                        {
+                            "codeValue": "401kNECand.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "403bRoth.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "403bRoth.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "403bRothBo.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "403bRothBo.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "403bSupplemental.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "403bTraditional.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "403bTraditional.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "457bRoth.457B_BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "457bRoth.457B_CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "457bTraditionalPerc.457B_BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "457bTraditionalPerc.457B_CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "AAFSA.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "AAFSA.ASSOCIATE_CONTRIBUTION_CAFE125_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "AAFSA.ASSOCIATE_CONTRIBUTION_CAFE125_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "AAFSA22.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "AAFSA22.ASSOCIATE_CONTRIBUTION_CAFE125_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "AAFSA22.ASSOCIATE_CONTRIBUTION_CAFE125_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "ADDPRE.REGULATED_LIFE_INSURANCE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "BusinessTr.NON_REGULATED_ACCIDENT_CRITICAL_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "COTDVD.EXPENSE_RECOVERY_AMOUNT"
+                        },
+                        {
+                            "codeValue": "CancerCare.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "CancerCare.ASSOCIATE_CONTRIBUTION_CAFE125_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "CancerCare.ASSOCIATE_CONTRIBUTION_CAFE125_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "Charitable.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "CompanyLoan.ASSOCIATE_INTEREST_AMOUNT"
+                        },
+                        {
+                            "codeValue": "CompanyLoan.ASSOCIATE_PRINCIPAL_AMOUNT"
+                        },
+                        {
+                            "codeValue": "CriticalIllness.NON_REGULATED_ACCIDENT_CRITICAL_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "CriticalPr.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "CriticalPr.ASSOCIATE_CONTRIBUTION_CAFE125_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "CriticalPr.ASSOCIATE_CONTRIBUTION_CAFE125_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "Dental.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "Dental.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "Dental.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "DentalBoth.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "DentalBoth.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "DentalBoth.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "DentalPostTax.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "DentalPostTax.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Dentalpretax.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "Dentalpretax.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "DependentC.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "DependentC.ASSOCIATE_CONTRIBUTION_CAFE125_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "DependentC.ASSOCIATE_CONTRIBUTION_CAFE125_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "EmployeeDependents.ASSOCIATE_CONTRIBUTION_DEPENDENT_COVERAGE"
+                        },
+                        {
+                            "codeValue": "GTL.ASSOCIATE_CONTRIBUTION_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "GTL.ASSOCIATE_CONTRIBUTION_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "GTLEmp.ASSOCIATE_CONTRIBUTION_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "GTLEmp.ASSOCIATE_CONTRIBUTION_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "GTLNEW1.ASSOCIATE_CONTRIBUTION_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "GTLNEW1.ASSOCIATE_CONTRIBUTION_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "HSACombine.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "HSACombine.ASSOCIATE_CONTRIBUTION_CAFE125_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "HSACombine.ASSOCIATE_CONTRIBUTION_CAFE125_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "HSAPrePost.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "HSAPrePost.ASSOCIATE_CONTRIBUTION_CAFE125_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "HSAPrePost.ASSOCIATE_CONTRIBUTION_CAFE125_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "HealthCare.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "HealthCare.ASSOCIATE_CONTRIBUTION_CAFE125_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "HealthCare.ASSOCIATE_CONTRIBUTION_CAFE125_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "LTDCombine.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "LTDCombine.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "LTDPrePost.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "LTDPrePost.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "LimitedPur.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "LimitedPur.ASSOCIATE_CONTRIBUTION_CAFE125_NON_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "LimitedPur.ASSOCIATE_CONTRIBUTION_CAFE125_QUALIFIED"
+                        },
+                        {
+                            "codeValue": "MEDIAT.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "MEDIAT.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "MEDIAT.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "Med.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "Med.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "Med.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "MedBoth.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "MedBoth.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "MedBoth.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "MedPostTax.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "MedPostTax.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "MedPreTax.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "MedPreTax.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "MedicalBenPolicy.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "MedicalBenPolicy.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "MedicalBenPolicy.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "MedicalPrePost.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "MedicalPrePost.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "MedicalPrePost.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "Parkingpre.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "PersonalAc.NON_REGULATED_ACCIDENT_CRITICAL_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "PostTax.DISABILITY_INSURANCE_ASSOCIATE_CONTRIBUTION_NO_TAX_ADVANTAGE"
+                        },
+                        {
+                            "codeValue": "Presc.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "Presc.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "Presc.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "PrescriptionBoth.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "PrescriptionBoth.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "PrescriptionBoth.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "PrescriptionPosttax.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "PrescriptionPosttax.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "PrescriptionPretax.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "PrescriptionPretax.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RecoveryAm.RECOVERY_AMOUNT"
+                        },
+                        {
+                            "codeValue": "RothBothMatching.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothBothMatching.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothBothNon.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothBothNon.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothDollarMatching.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothDollarMatching.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothDollarNon.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothDollarNon.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothPercMatching.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothPercMatching.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothPercNon.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "RothPercNon.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SIMPLE401k.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SIMPLE401k.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "STDPrePost.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "STDPrePost.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "SUPPPOST.NON_REGULATED_LIFE_INSURANCE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KMatchingBoth.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KMatchingBoth.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KMatchingDollar.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KMatchingDollar.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KMatchingPerc.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KMatchingPerc.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KNonBoth.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KNonBoth.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KNonDollar.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KNonDollar.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KNonPerc.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Simple401KNonPerc.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRAMatchingBoth.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRAMatchingBoth.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRAMatchingDollar.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRAMatchingDollar.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRAMatchingPerc.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRAMatchingPerc.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRANonBoth.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRANonBoth.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRANonDollar.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRANonDollar.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRANonPerc.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SimpleIRANonPerc.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "Supplemental.NON_REGULATED_LIFE_INSURANCE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "SupplementalNew.QUALIFIED_AFTER_TAX_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalBothMatching.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalBothMatching.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalBothNon.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalBothNon.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalDollarMatching.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalDollarMatching.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalDollarNon.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalDollarNon.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalPercMatching.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalPercMatching.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalPercNon.BASE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "TraditionalPercNon.CATCHUP_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "UniformPost1.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "UniformPost1.EXPENSE_RECOVERY_AMOUNT"
+                        },
+                        {
+                            "codeValue": "UniformPreTax1.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "UniformPreTax1.EXPENSE_RECOVERY_AMOUNT"
+                        },
+                        {
+                            "codeValue": "VISION.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "VISION.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "VISION.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "VisionBoth.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "VisionBoth.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "VisionBoth.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "VisionPostTax.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "VisionPostTax.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "VisionPretax.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "VisionPretax.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "VoluntaryB.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "VoluntaryB.ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "WP.REGULATED_LIFE_INSURANCE_ASSOCIATE_CONTRIBUTION"
+                        },
+                        {
+                            "codeValue": "test121.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "test121.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "test121.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "test190.ADMIN_FEE"
+                        },
+                        {
+                            "codeValue": "test190.ASSOCIATE_CONTRIBUTION_CAFE125"
+                        },
+                        {
+                            "codeValue": "test190.ASSOCIATE_CONTRIBUTION_NON_CAFE125"
+                        },
+                        {
+                            "codeValue": "wholepost.NON_REGULATED_LIFE_INSURANCE_ASSOCIATE_CONTRIBUTION"
+                        }
+                    ]
+                },
+                "readOnly": true,
+                "optional": true
+            },
+            "/payrollInstruction/generalDeductionInstruction/deductionCode/codeValue": {
+                "readOnly": true,
+                "optional": true,
+                "hidden": true,
+                "longLabelName": "Label not found, missing following key: label_deductions_field_deduction_code"
+            }
+        },
+        "/data/transforms": [
+            {
+                "/effectiveDateTime": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "longLabelName": "Label not found, missing following key: label_changeEffectiveOn",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction": {
+                    "readOnly": true,
+                    "optional": true
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate": {
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionRate/rateValue": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "shortLabelName": "Deduction Amount",
+                    "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal": {
+                    "readOnly": false,
+                    "optional": true
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalStartDate": {
+                    "readOnly": false,
+                    "optional": false,
+                    "hidden": false,
+                    "longLabelName": "Label not found, missing following key: label_goal_start_date",
+                    "minLength": 10,
+                    "maxLength": 10,
+                    "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalLimitAmount": {
+                    "readOnly": false,
+                    "optional": false
+                },
+                "/payrollInstruction/generalDeductionInstruction/deductionGoal/goalLimitAmount/amountValue": {
+                    "readOnly": false,
+                    "optional": true,
+                    "hidden": false,
+                    "longLabelName": "Label not found, missing following key: label_goal_limit_amount",
+                    "pattern": "^[-]?[0-9]+(.[0-9]{1,2})?$"
+                }
+            }
+        ]
+    }
+}
