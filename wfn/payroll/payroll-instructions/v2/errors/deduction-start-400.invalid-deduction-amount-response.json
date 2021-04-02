@@ -1,0 +1,56 @@
+{
+    "confirmMessage": {
+        "confirmMessageID": {
+            "idValue": "13BC1B51-4043-54EB-DEAB-62FA17960F29",
+            "schemeName": "confirmMessageID",
+            "schemeAgencyName": "WFN"
+        },
+        "createDateTime": "2021-04-01T21:39:07.300+0000",
+        "requestReceiptDateTime": "2021-04-01T21:39:07.300+0000",
+        "protocolStatusCode": {
+            "codeValue": "400",
+            "shortName": "400"
+        },
+        "requestStatusCode": {
+            "codeValue": "failed"
+        },
+        "requestMethodCode": {
+            "codeValue": "POST"
+        },
+        "requestLink": {
+            "href": "http://pi.payprofile.wfncloud01/pi/payprofile/metaservices/events/payroll/v2/worker-general-deduction-instruction.start",
+            "rel": "related",
+            "method": "POST"
+        },
+        "processMessages": [],
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "events/payroll/v2/worker-general-deduction-instruction.start",
+                    "schemeName": "resourceMessageID",
+                    "schemeAgencyName": "WFN"
+                },
+                "processMessages": [
+                    {
+                        "processMessageID": {
+                            "idValue": "API_INVALID_DEDUCTION_AMOUNT",
+                            "schemeName": "processMessageID",
+                            "schemeAgencyName": "WFN"
+                        },
+                        "messageTypeCode": {
+                            "codeValue": "error"
+                        },
+                        "userMessage": {
+                            "messageTxt": "Deduction Amount field must contain a non-zero value between -99,999,999.99 and 99,999,999.99 with a decimal precision of 2 places."
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "status": "success",
+    "statusFailure": false,
+    "statusSuccess": true,
+    "requestKeys": [],
+    "skipMetadataEnvelope": true
+}
