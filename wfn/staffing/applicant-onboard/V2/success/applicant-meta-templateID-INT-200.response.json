@@ -23,7 +23,7 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 22.0,
+            "sequence": 28.0,
             "shortLabelName": "Use For Notification",
             "default": false,
             "dataType": "boolean"
@@ -104,7 +104,29 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 8.0
+            "sequence": 8.0,
+            "dependencies": {
+                "hidden": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantPersonalProfile/governmentIDs/nameCode": {
+                                    "pattern": "EIN|SSN|ITIN"
+                                }
+                            },
+                            "value": true
+                        },
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantPersonalProfile/governmentIDs/nameCode": {
+                                    "pattern": "NID"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                }
+            }
         },
         "/applicantOnboarding/onboardingStatus/statusCode": {
             "codeList": {
@@ -119,8 +141,8 @@
                     {
                         "itemID": "inprogress",
                         "code": "inprogress",
-                        "name": "In progress",
-                        "description": "In progress"
+                        "name": "In Progress",
+                        "description": "In Progress"
                     }
                 ]
             },
@@ -142,7 +164,7 @@
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "2040",
+                        "itemID": "121",
                         "code": "CommunicationPagers",
                         "name": "Personal Pager"
                     }
@@ -211,6 +233,11 @@
             "maxLength": 3.0,
             "pattern": "^[0-9]*$"
         },
+        "/applicantOnboarding/applicantWorkerProfile/job/occupationalClassifications": {
+            "minItems": 0.0,
+            "maxItems": 2.0,
+            "uniqueItems": true
+        },
         "/applicantOnboarding/applicantPersonalProfile/communication/mobiles/countryDialing": {
             "readOnly": false,
             "optional": true,
@@ -219,14 +246,6 @@
             "minLength": 0.0,
             "maxLength": 3.0,
             "pattern": "^[0-9]*$"
-        },
-        "/applicantOnboarding/preHireIndicator": {
-            "readOnly": false,
-            "optional": true,
-            "hidden": true,
-            "shortLabelName": "Prehire Indicator",
-            "default": false,
-            "dataType": "boolean"
         },
         "/applicantOnboarding/applicantPersonalProfile/raceCode/identificationMethodCode": {
             "codeList": {
@@ -297,36 +316,6 @@
             "minLength": 0.0,
             "maxLength": 64.0
         },
-        "/applicantOnboarding/onboardingExperienceCode": {
-            "codeList": {
-                "codeListTitle": "Onboarding Experience Code",
-                "links": [
-                    {
-                        "href": "/codelists/hr/v4/worker-management/onboard-experience/wfn/1",
-                        "rel": "/adp/codelist",
-                        "mediaType": "application/json",
-                        "method": "GET"
-                    }
-                ]
-            },
-            "readOnly": false,
-            "optional": false,
-            "hidden": false,
-            "dependencies": {
-                "optional": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/preHireIndicator": {
-                                    "pattern": "true"
-                                }
-                            },
-                            "value": false
-                        }
-                    ]
-                }
-            }
-        },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/pagers/countryDialing": {
             "readOnly": false,
             "optional": true,
@@ -387,17 +376,12 @@
                 }
             }
         },
-        "/applicantOnboarding/applicantPersonalProfile/communication/faxes": {
-            "minItems": 0.0,
-            "maxItems": 1.0,
-            "uniqueItems": true
-        },
         "/applicantOnboarding/applicantPersonalProfile/maritalStatusCode": {
             "codeList": {
                 "codeListTitle": "Marital Status",
                 "links": [
                     {
-                        "href": "/codelists/hr/v4/worker-management/marital-status/wfn/1?$filter=category eq 'AF'",
+                        "href": "/codelists/hr/v4/worker-management/marital-status/wfn/1?$filter=category eq 'US'",
                         "rel": "/adp/codelist",
                         "mediaType": "application/json",
                         "method": "GET"
@@ -409,13 +393,18 @@
             "hidden": false,
             "sequence": 53.0
         },
+        "/applicantOnboarding/applicantPersonalProfile/communication/faxes": {
+            "minItems": 0.0,
+            "maxItems": 1.0,
+            "uniqueItems": true
+        },
         "/applicantOnboarding/applicantPersonalProfile/communication/faxes/nameCode": {
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "2038",
+                        "itemID": "117",
                         "code": "CommunicationFaxes",
-                        "name": "Home Fax"
+                        "name": "Personal Fax"
                     }
                 ]
             },
@@ -501,20 +490,11 @@
                 }
             }
         },
-        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines/countryDialing": {
-            "readOnly": false,
-            "optional": true,
-            "hidden": false,
-            "shortLabelName": "Country Code",
-            "minLength": 0.0,
-            "maxLength": 3.0,
-            "pattern": "^[0-9]*$"
-        },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/pagers/nameCode": {
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "2121",
+                        "itemID": "41",
                         "code": "WorkPager",
                         "name": "Work Pager"
                     }
@@ -523,7 +503,7 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 19.0,
+            "sequence": 25.0,
             "dependencies": {
                 "optional": {
                     "allOf": [
@@ -551,6 +531,15 @@
                 }
             }
         },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines/countryDialing": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Country Code",
+            "minLength": 0.0,
+            "maxLength": 3.0,
+            "pattern": "^[0-9]*$"
+        },
         "/applicantOnboarding/applicantPayrollProfile/tippedWorkerIndicator": {
             "readOnly": false,
             "optional": true,
@@ -569,21 +558,7 @@
             "shortLabelName": "First Name",
             "minLength": 0.0,
             "maxLength": 64.0,
-            "pattern":"^[a-zA-Z][a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$",
-            "dependencies": {
-                "optional": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/preHireIndicator": {
-                                    "pattern": "true"
-                                }
-                            },
-                            "value": false
-                        }
-                    ]
-                }
-            }
+            "pattern":"^$|^[a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$"
         },
         "/applicantOnboarding/applicantPayrollProfile/baseRemuneration/dailyRateAmount": {
             "readOnly": false,
@@ -621,13 +596,13 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 25.0
+            "sequence": 16.0
         },
         "/applicantOnboarding/applicantWorkerProfile/managementPositionIndicator": {
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 8.0,
+            "sequence": 9.0,
             "shortLabelName": "Manager Position",
             "longLabelName": "Indicates whether an employee is an HR Manager.",
             "default": false,
@@ -683,6 +658,27 @@
                     ]
                 }
             }
+        },
+        "/applicantOnboarding/applicantPersonalProfile/languageCode": {
+            "codeList": {
+                "codeListTitle": "Correspondence Language",
+                "listItems": [
+                    {
+                        "itemID": "SYS:7:153",
+                        "code": "en_US",
+                        "name": "en_US"
+                    },
+                    {
+                        "itemID": "SYS:8:114",
+                        "code": "es_US",
+                        "name": "es_US"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 5.0
         },
         "/applicantOnboarding/applicantPersonalProfile/communication/landlines/access": {
             "readOnly": false,
@@ -827,11 +823,6 @@
             "maxLength": 3.0,
             "pattern": "^[0-9]*$"
         },
-        "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits": {
-            "minItems": 0.0,
-            "maxItems": 2.0,
-            "uniqueItems": true
-        },
         "/applicantOnboarding/applicantPersonalProfile/genderCode": {
             "codeList": {
                 "codeListTitle": "Gender",
@@ -865,11 +856,26 @@
             "hidden": false,
             "sequence": 17.0
         },
+        "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits": {
+            "minItems": 0.0,
+            "maxItems": 2.0,
+            "uniqueItems": true
+        },
+        "/applicantOnboarding/applicantPersonalProfile/otherPersonalAddresses/cityName": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 33.0,
+            "shortLabelName": "City",
+            "minLength": 0.0,
+            "maxLength": 30.0,
+            "pattern":"^$|^[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([a-zA-Z0-9 #,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]*[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])?$"
+        },
         "/applicantOnboarding/applicantPersonalProfile/communication/landlines/nameCode": {
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "2037",
+                        "itemID": "116",
                         "code": "CommunicationHomePhone",
                         "name": "Home Phone"
                     }
@@ -905,16 +911,6 @@
                     ]
                 }
             }
-        },
-        "/applicantOnboarding/applicantPersonalProfile/otherPersonalAddresses/cityName": {
-            "readOnly": false,
-            "optional": true,
-            "hidden": false,
-            "sequence": 33.0,
-            "shortLabelName": "City",
-            "minLength": 0.0,
-            "maxLength": 30.0,
-            "pattern":"^$|^[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([a-zA-Z0-9 #,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]*[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])?$"
         },
         "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/lineTwo": {
             "readOnly": false,
@@ -988,6 +984,16 @@
                 }
             }
         },
+        "/applicantOnboarding/applicantPersonalProfile/communication/emails/emailUri": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 51.0,
+            "shortLabelName": "Personal Email",
+            "minLength": 1.0,
+            "maxLength": 254.0,
+            "pattern": "^[A-Za-z0-9_%+-^']+(\\.[A-Za-z0-9_%+-^']+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{1,6}"
+        },
         "/applicantOnboarding/applicantPersonalProfile/governmentIDs/nameCode": {
             "codeList": {
                 "codeListTitle": "Tax ID Type",
@@ -1015,12 +1021,6 @@
                         "code": "NID",
                         "name": "National Identifier",
                         "description": "National Identifier"
-                    },
-                    {
-                        "itemID": "SIN",
-                        "code": "SIN",
-                        "name": "Social Insurance Number",
-                        "description": "Social Insurance Number"
                     }
                 ]
             },
@@ -1028,30 +1028,6 @@
             "optional": true,
             "hidden": false,
             "sequence": 6.0
-        },
-        "/applicantOnboarding/applicantPersonalProfile/communication/emails/emailUri": {
-            "readOnly": false,
-            "optional": true,
-            "hidden": false,
-            "sequence": 51.0,
-            "shortLabelName": "Personal Email",
-            "minLength": 1.0,
-            "maxLength": 254.0,
-            "pattern": "^[A-Za-z0-9_%+-^']+(\\.[A-Za-z0-9_%+-^']+)*@([A-Za-z0-9-]+\\.)+[A-Za-z]{1,6}",
-            "dependencies": {
-                "optional": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/preHireIndicator": {
-                                    "pattern": "true"
-                                }
-                            },
-                            "value": false
-                        }
-                    ]
-                }
-            }
         },
         "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/nameCode": {
             "codeList": {
@@ -1068,7 +1044,7 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 10.0
+            "sequence": 11.0
         },
         "/applicantOnboarding/applicantWorkerProfile/hireReasonCode": {
             "codeList": {
@@ -1085,7 +1061,7 @@
             "readOnly": false,
             "optional": false,
             "hidden": false,
-            "sequence": 4.0
+            "sequence": 3.0
         },
         "/applicantOnboarding/applicantWorkerProfile/workerTypeCode": {
             "codeList": {
@@ -1102,17 +1078,7 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 6.0
-        },
-        "/applicantOnboarding/applicantPersonalProfile/tobaccoUserIndicator": {
-            "readOnly": false,
-            "optional": true,
-            "hidden": false,
-            "sequence": 55.0,
-            "shortLabelName": "Tobacco User",
-            "longLabelName": "Whether or not the employee uses tobacco products. Depending on your company''s benefits regulations, this might include cigarette and/or other tobacco products.",
-            "default": false,
-            "dataType": "boolean"
+            "sequence": 7.0
         },
         "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/homeshoreIndicator": {
             "readOnly": false,
@@ -1134,29 +1100,26 @@
             "maxLength": 10.0,
             "pattern": "([0-9][0-9][0-9][0-9][0-9])|([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])|([0-9][0-9][0-9][0-9][0-9][-][0-9][0-9][0-9][0-9])"
         },
+        "/applicantOnboarding/applicantPersonalProfile/legalName/familyName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 13.0,
+            "shortLabelName": "Payroll Name",
+            "longLabelName": "The employee name as it appears on pay statements.",
+            "minLength": 0.0,
+            "maxLength": 64.0,
+            "pattern":"^$|^[a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$"
+        },
         "/applicantOnboarding/workerID/id": {
             "readOnly": false,
             "optional": false,
             "hidden": false,
-            "sequence": 5.0,
+            "sequence": 4.0,
             "shortLabelName": "Associate ID",
             "longLabelName": "The unique value assigned to the employee within the client for internal purposes.",
             "minLength": 0.0,
-            "maxLength": 25.0,
-            "dependencies": {
-                "optional": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/preHireIndicator": {
-                                    "pattern": "true"
-                                }
-                            },
-                            "value": false
-                        }
-                    ]
-                }
-            }
+            "maxLength": 25.0
         },
         "/applicantOnboarding/applicantPersonalProfile/maritalStatusCode/effectiveDateTime": {
             "readOnly": false,
@@ -1173,9 +1136,9 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 20.0,
+            "sequence": 26.0,
             "shortLabelName": "Work Mail Stop",
-            "longLabelName": "The specific place to which an employee''s mail should be delivered (for example: \"\"5th Floor\"\" or \"\"Building C\"\").",
+            "longLabelName": "The specific place to which an employee''s mail should be delivered (for example: \"5th Floor\" or \"Building C\").",
             "minLength": 0.0,
             "maxLength": 64.0
         },
@@ -1187,21 +1150,7 @@
             "shortLabelName": "Last Name",
             "minLength": 0.0,
             "maxLength": 64.0,
-            "pattern":"^[a-zA-Z][a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$",
-            "dependencies": {
-                "optional": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/preHireIndicator": {
-                                    "pattern": "true"
-                                }
-                            },
-                            "value": false
-                        }
-                    ]
-                }
-            }
+            "pattern":"^$|^[a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$"
         },
         "/applicantOnboarding/applicantPayrollProfile/baseRemuneration/hourlyRateAmount/amount": {
             "readOnly": false,
@@ -1214,6 +1163,15 @@
             "maxValue": 999.9999,
             "pattern": "^\\-?(\\d{0,5}|(\\d{0,5}\\.\\d{1,4}))$",
             "dataType": "number"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/pagers/countryDialing": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Country Code",
+            "minLength": 0.0,
+            "maxLength": 3.0,
+            "pattern": "^[0-9]*$"
         },
         "/applicantOnboarding/applicantWorkerProfile/laborUnion/laborUnionCode": {
             "codeList": {
@@ -1230,16 +1188,7 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 12.0
-        },
-        "/applicantOnboarding/applicantPersonalProfile/communication/pagers/countryDialing": {
-            "readOnly": false,
-            "optional": true,
-            "hidden": false,
-            "shortLabelName": "Country Code",
-            "minLength": 0.0,
-            "maxLength": 3.0,
-            "pattern": "^[0-9]*$"
+            "sequence": 14.0
         },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/mobiles": {
             "minItems": 0.0,
@@ -1432,7 +1381,7 @@
                 "codeListTitle": "Company Code",
                 "links": [
                     {
-                        "href": "/codelists/payroll/v4/payroll-instruction-management/pay-groups/wfn/1",
+                        "href": "/codelists/payroll/v4/payroll-instruction-management/pay-groups/wfn/1?$filter=category eq 'US'",
                         "rel": "/adp/codelist",
                         "mediaType": "application/json",
                         "method": "GET"
@@ -1563,41 +1512,6 @@
                         "name": "Y",
                         "description": "14 Months",
                         "category": "T_SYS_TRANS_PAYFREQ"
-                    },
-                    {
-                        "itemID": "SYS:4:3985",
-                        "code": "21",
-                        "name": "21",
-                        "description": "13.2104 Months",
-                        "category": "T_SYS_TRANS_PAYFREQ"
-                    },
-                    {
-                        "itemID": "SYS:4:3986",
-                        "code": "135",
-                        "name": "135",
-                        "description": "13.5 Months",
-                        "category": "T_SYS_TRANS_PAYFREQ"
-                    },
-                    {
-                        "itemID": "SYS:4:3987",
-                        "code": "15",
-                        "name": "15",
-                        "description": "15 Months",
-                        "category": "T_SYS_TRANS_PAYFREQ"
-                    },
-                    {
-                        "itemID": "SYS:4:3988",
-                        "code": "92",
-                        "name": "92",
-                        "description": "13.92 Months",
-                        "category": "T_SYS_TRANS_PAYFREQ"
-                    },
-                    {
-                        "itemID": "SYS:4:3989",
-                        "code": "96",
-                        "name": "96",
-                        "description": "12.96 Months",
-                        "category": "T_SYS_TRANS_PAYFREQ"
                     }
                 ]
             },
@@ -1605,6 +1519,59 @@
             "optional": true,
             "hidden": false,
             "sequence": 2.0
+        },
+        "/applicantOnboarding/applicantPersonalProfile/raceCode": {
+            "codeList": {
+                "codeListTitle": "Race",
+                "listItems": [
+                    {
+                        "itemID": "SYS:4:10120",
+                        "code": "6",
+                        "name": "6",
+                        "description": "Native Hawaiian or Other Pacific Islander",
+                        "category": "T_SYS_TRANS_ETHNICCODE"
+                    },
+                    {
+                        "itemID": "SYS:4:10121",
+                        "code": "9",
+                        "name": "9",
+                        "description": "Two or more races (Not Hispanic or Latino)",
+                        "category": "T_SYS_TRANS_ETHNICCODE"
+                    },
+                    {
+                        "itemID": "SYS:4:3300",
+                        "code": "1",
+                        "name": "1",
+                        "description": "White",
+                        "category": "T_SYS_TRANS_ETHNICCODE"
+                    },
+                    {
+                        "itemID": "SYS:4:3313",
+                        "code": "2",
+                        "name": "2",
+                        "description": "Black or African American",
+                        "category": "T_SYS_TRANS_ETHNICCODE"
+                    },
+                    {
+                        "itemID": "SYS:4:3336",
+                        "code": "4",
+                        "name": "4",
+                        "description": "Asian",
+                        "category": "T_SYS_TRANS_ETHNICCODE"
+                    },
+                    {
+                        "itemID": "SYS:4:3346",
+                        "code": "5",
+                        "name": "5",
+                        "description": "American Indian or Alaska Native",
+                        "category": "T_SYS_TRANS_ETHNICCODE"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 59.0
         },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/faxes/dialNumber": {
             "readOnly": false,
@@ -1657,64 +1624,11 @@
                 }
             }
         },
-        "/applicantOnboarding/applicantPersonalProfile/raceCode": {
-            "codeList": {
-                "codeListTitle": "Race",
-                "listItems": [
-                    {
-                        "itemID": "SYS:4:10120",
-                        "code": "6",
-                        "name": "6",
-                        "description": "Native Hawaiian or Other Pacific Islander",
-                        "category": "T_SYS_TRANS_ETHNICCODE"
-                    },
-                    {
-                        "itemID": "SYS:4:10121",
-                        "code": "9",
-                        "name": "9",
-                        "description": "Two or more races",
-                        "category": "T_SYS_TRANS_ETHNICCODE"
-                    },
-                    {
-                        "itemID": "SYS:4:3300",
-                        "code": "1",
-                        "name": "1",
-                        "description": "White",
-                        "category": "T_SYS_TRANS_ETHNICCODE"
-                    },
-                    {
-                        "itemID": "SYS:4:3313",
-                        "code": "2",
-                        "name": "2",
-                        "description": "Black or African American",
-                        "category": "T_SYS_TRANS_ETHNICCODE"
-                    },
-                    {
-                        "itemID": "SYS:4:3336",
-                        "code": "4",
-                        "name": "4",
-                        "description": "Asian",
-                        "category": "T_SYS_TRANS_ETHNICCODE"
-                    },
-                    {
-                        "itemID": "SYS:4:3346",
-                        "code": "5",
-                        "name": "5",
-                        "description": "American Indian or Alaska Native",
-                        "category": "T_SYS_TRANS_ETHNICCODE"
-                    }
-                ]
-            },
-            "readOnly": false,
-            "optional": true,
-            "hidden": false,
-            "sequence": 59.0
-        },
         "/applicantOnboarding/applicantPayrollProfile/additionalRemunerations/remunerationTypeCode": {
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "2210",
+                        "itemID": "66",
                         "code": "Rate2Amount",
                         "name": "Rate 2 Amount"
                     }
@@ -1811,6 +1725,15 @@
             "maxValue": 655.35,
             "dataType": "number"
         },
+        "/applicantOnboarding/applicantPersonalProfile/otherPersonalAddresses/subdivisionCode2/code": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 36.0,
+            "shortLabelName": "County",
+            "minLength": 0.0,
+            "maxLength": 64.0
+        },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines/dialNumber": {
             "readOnly": false,
             "optional": true,
@@ -1862,14 +1785,152 @@
                 }
             }
         },
-        "/applicantOnboarding/applicantPersonalProfile/otherPersonalAddresses/subdivisionCode2/code": {
+        "/applicantOnboarding/applicantWorkerProfile/job/occupationalClassifications/classificationCode/code": {
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 36.0,
-            "shortLabelName": "County",
-            "minLength": 0.0,
-            "maxLength": 64.0
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantWorkerProfile/job/occupationalClassifications/classificationCode": {
+                                    "pattern": "EEOC|EEO"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantWorkerProfile/job/occupationalClassifications/classificationCode": {
+                                    "pattern": "EEOC|EEO"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantWorkerProfile/job/occupationalClassifications/classificationCode": {
+                                    "pattern": "EEOC"
+                                }
+                            },
+                            "value": {
+                                "codeList": {
+                                    "codeListTitle": "EEOC Job Classification",
+                                    "listItems": [
+                                        {
+                                            "itemID": "SYS:4:10122",
+                                            "code": "A",
+                                            "name": "A",
+                                            "description": "Executive/Senior Level Officials and Managers",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3296",
+                                            "code": "1",
+                                            "name": "1",
+                                            "description": "First/Mid-Level Officials and Managers",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3310",
+                                            "code": "2",
+                                            "name": "2",
+                                            "description": "Professionals",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3325",
+                                            "code": "3",
+                                            "name": "3",
+                                            "description": "Technicians",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3335",
+                                            "code": "4",
+                                            "name": "4",
+                                            "description": "Sales Workers",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3345",
+                                            "code": "5",
+                                            "name": "5",
+                                            "description": "Administrative Support Workers",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3352",
+                                            "code": "6",
+                                            "name": "6",
+                                            "description": "Craft Workers",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3355",
+                                            "code": "7",
+                                            "name": "7",
+                                            "description": "Operatives",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3356",
+                                            "code": "8",
+                                            "name": "8",
+                                            "description": "Laborers and Helpers",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3357",
+                                            "code": "9",
+                                            "name": "9",
+                                            "description": "Service Workers",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        },
+                                        {
+                                            "itemID": "SYS:4:3469",
+                                            "code": "N",
+                                            "name": "N",
+                                            "description": "Not reported",
+                                            "category": "T_SYS_TRANS_EEOCOCCCD"
+                                        }
+                                    ]
+                                },
+                                "readOnly": false,
+                                "optional": true,
+                                "hidden": false,
+                                "sequence": 4.0
+                            }
+                        },
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantWorkerProfile/job/occupationalClassifications/classificationCode": {
+                                    "pattern": "EEO"
+                                }
+                            },
+                            "value": {
+                                "links": [
+                                    {
+                                        "href": "/codelists/hr/v4/worker-management/eeo-establishments/wfn/1",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
         },
         "/applicantOnboarding/applicantPersonalProfile/legalAddress/subdivisionCode": {
             "codeList": {
@@ -1919,22 +1980,22 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 4.0
+            "sequence": 5.0
         },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/mobiles/nameCode": {
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "2120",
+                        "itemID": "40",
                         "code": "WorkCell",
-                        "name": "Work Cell"
+                        "name": "Work Mobile"
                     }
                 ]
             },
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 18.0,
+            "sequence": 24.0,
             "dependencies": {
                 "optional": {
                     "allOf": [
@@ -2017,7 +2078,7 @@
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "2119",
+                        "itemID": "39",
                         "code": "WorkFax",
                         "name": "Work Fax"
                     }
@@ -2026,7 +2087,7 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 17.0,
+            "sequence": 23.0,
             "dependencies": {
                 "optional": {
                     "allOf": [
@@ -2086,38 +2147,6 @@
             "hidden": false,
             "sequence": 44.0
         },
-        "/applicantOnboarding/countryCode": {
-            "codeList": {
-                "codeListTitle": "Worked In Country",
-                "links": [
-                    {
-                        "href": "/codelists/hr/v4/worker-management/countries/wfn/1",
-                        "rel": "/adp/codelist",
-                        "mediaType": "application/json",
-                        "method": "GET"
-                    }
-                ]
-            },
-            "readOnly": false,
-            "optional": false,
-            "hidden": false,
-            "sequence": 1.0,
-            "shortLabelName": "Worked In Country",
-            "dependencies": {
-                "optional": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/preHireIndicator": {
-                                    "pattern": "true"
-                                }
-                            },
-                            "value": false
-                        }
-                    ]
-                }
-            }
-        },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/faxes": {
             "minItems": 0.0,
             "maxItems": 1.0,
@@ -2127,25 +2156,11 @@
             "readOnly": false,
             "optional": false,
             "hidden": false,
-            "sequence": 2.0,
+            "sequence": 1.0,
             "shortLabelName": "Hire Date",
             "minLength": 0.0,
             "maxLength": 10.0,
-            "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$",
-            "dependencies": {
-                "optional": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/preHireIndicator": {
-                                    "pattern": "true"
-                                }
-                            },
-                            "value": false
-                        }
-                    ]
-                }
-            }
+            "pattern": "^(((19|20|21)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12]\\d|3[01]))?$"
         },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/pagers": {
             "minItems": 0.0,
@@ -2158,6 +2173,17 @@
             "hidden": false,
             "sequence": 4.0
         },
+        "/applicantOnboarding/applicantTimeProfile/timeServiceCredentials/clockEntryCredential/badgeNumber": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 2.0,
+            "shortLabelName": "Badge Number",
+            "longLabelName": "Label not found, missing following key: helpdesc_inh_tlmtime_BadgeNumber",
+            "minLength": 1.0,
+            "maxLength": 9.0,
+            "pattern": "([^\\\\<>]*)"
+        },
         "/applicantOnboarding/applicantPersonalProfile/preferredName/nickName": {
             "readOnly": false,
             "optional": true,
@@ -2166,7 +2192,7 @@
             "shortLabelName": "Preferred Name",
             "minLength": 0.0,
             "maxLength": 64.0,
-            "pattern":"^[a-zA-Z][a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$"
+            "pattern":"^$|^[a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$"
         },
         "/applicantOnboarding/applicantPersonalProfile/communication/faxes/dialNumber": {
             "readOnly": false,
@@ -2312,7 +2338,7 @@
             "hidden": false,
             "sequence": 8.0,
             "shortLabelName": "Tax ID",
-            "longLabelName": "The number used by the worked-in country''s  federal government to track employee contributions to federal taxes and other government-related programs.",
+            "longLabelName": "The number used by the United States federal government to track employee contributions to federal taxes and other government related programs.",
             "pattern": "\\d{9}",
             "dependencies": {
                 "pattern": {
@@ -2320,7 +2346,7 @@
                         {
                             "attributes": {
                                 "/applicantOnboarding/applicantPersonalProfile/governmentIDs/nameCode": {
-                                    "pattern": "SIN|EIN|SSN|NID"
+                                    "pattern": "EIN|SSN|NID"
                                 }
                             },
                             "value": "\\d{9}"
@@ -2411,6 +2437,16 @@
             "maxLength": 3.0,
             "pattern": "^[0-9]*$"
         },
+        "/applicantOnboarding/applicantPersonalProfile/legalAddress/cityName": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 24.0,
+            "shortLabelName": "City",
+            "minLength": 0.0,
+            "maxLength": 30.0,
+            "pattern":"^$|^[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([a-zA-Z0-9 #,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]*[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])?$"
+        },
         "/applicantOnboarding/applicantPersonalProfile/legalAddress/countryCode": {
             "codeList": {
                 "codeListTitle": "Country",
@@ -2428,21 +2464,6 @@
             "hidden": false,
             "sequence": 20.0,
             "shortLabelName": "Country"
-        },
-        "/applicantOnboarding/applicantPersonalProfile/legalAddress/cityName": {
-            "readOnly": false,
-            "optional": true,
-            "hidden": false,
-            "sequence": 24.0,
-            "shortLabelName": "City",
-            "minLength": 0.0,
-            "maxLength": 30.0,
-            "pattern":"^$|^[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([a-zA-Z0-9 #,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]*[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])?$"
-        },
-        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines": {
-            "minItems": 0.0,
-            "maxItems": 1.0,
-            "uniqueItems": true
         },
         "/applicantOnboarding/applicantPersonalProfile/communication/landlines/dialNumber": {
             "readOnly": false,
@@ -2495,6 +2516,11 @@
                 }
             }
         },
+        "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines": {
+            "minItems": 0.0,
+            "maxItems": 1.0,
+            "uniqueItems": true
+        },
         "/applicantOnboarding/applicantWorkerProfile/homeWorkLocation/address/lineThree": {
             "readOnly": false,
             "optional": true,
@@ -2507,26 +2533,79 @@
             "pattern":"^$|^[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([a-zA-Z0-9 #,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]*[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])?$"
         },
         "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/nameCode": {
-            "codeList": {
-                "listItems": [
-                    {
-                        "itemID": "2111",
-                        "code": "HomeDepartment",
-                        "name": "Home Department",
-                        "description": "The primary department or division in which an employee works."
-                    },
-                    {
-                        "itemID": "2109",
-                        "code": "BusinessUnit",
-                        "name": "Business Unit",
-                        "description": "The operational unit to which the employee is assigned (for example, a division, department, or a group of employees)."
-                    }
-                ]
-            },
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 9.0
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/unitTypeCode": {
+                                    "pattern": "HomeDepartment|BusinessUnit"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/unitTypeCode": {
+                                    "pattern": "HomeDepartment|BusinessUnit"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/unitTypeCode": {
+                                    "pattern": "HomeDepartment"
+                                }
+                            },
+                            "value": {
+                                "links": [
+                                    {
+                                        "href": "/codelists/hr/v3/worker-management/departments/WFN/1?$filter=foreignKey eq '{foreignKey}'",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET",
+                                        "payloadArguments": [
+                                            {
+                                                "argumentPath": "foreignKey",
+                                                "argumentValue": "/applicantOnboarding/applicantPayrollProfile/payrollGroupCode"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "attributes": {
+                                "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/unitTypeCode": {
+                                    "pattern": "BusinessUnit"
+                                }
+                            },
+                            "value": {
+                                "links": [
+                                    {
+                                        "href": "/codelists/hr/v3/worker-management/business-units/WFN/1",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
         },
         "/applicantOnboarding/applicantWorkerProfile/positionID": {
             "readOnly": false,
@@ -2581,6 +2660,26 @@
             "sequence": 29.0,
             "shortLabelName": "Country"
         },
+        "/applicantOnboarding/applicantPersonalProfile/legalName/givenName": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 13.0,
+            "shortLabelName": "Payroll Name",
+            "longLabelName": "The employee name as it appears on pay statements.",
+            "minLength": 0.0,
+            "maxLength": 64.0,
+            "pattern":"^$|^[a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$"
+        },
+        "/applicantOnboarding/applicantPersonalProfile/communication/pagers/extension": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "shortLabelName": "Extension",
+            "minLength": 0.0,
+            "maxLength": 3.0,
+            "pattern": "^[0-9]*$"
+        },
         "/applicantOnboarding/applicantPersonalProfile/legalAddress/lineTwo": {
             "readOnly": false,
             "optional": true,
@@ -2591,14 +2690,26 @@
             "maxLength": 30.0,
             "pattern":"^$|^[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([a-zA-Z0-9 #,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]*[a-zA-Z0-9#,'./\\-\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])?$"
         },
-        "/applicantOnboarding/applicantPersonalProfile/communication/pagers/extension": {
+        "/applicantOnboarding/applicantWorkerProfile/job/occupationalClassifications/classificationCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "itemID": "25162",
+                        "code": "EEOC",
+                        "name": "EEOC Job Classification",
+                        "description": "Indicate whether the employee's Equal Employment Opportunity (EEO) job classification is excluded, required, or optional information. Jobs in this field are listed in groups. The occupational groupings provide additional job-related information to help ensure correct occupational matches when collecting and assembling compensation data."
+                    },
+                    {
+                        "itemID": "2223",
+                        "code": "EEO",
+                        "name": "EEO Establishment"
+                    }
+                ]
+            },
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "shortLabelName": "Extension",
-            "minLength": 0.0,
-            "maxLength": 3.0,
-            "pattern": "^[0-9]*$"
+            "sequence": 4.0
         },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/landlines/access": {
             "readOnly": false,
@@ -2619,7 +2730,7 @@
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "2118",
+                        "itemID": "38",
                         "code": "WorkPhone",
                         "name": "Work Phone"
                     }
@@ -2628,7 +2739,7 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 16.0,
+            "sequence": 22.0,
             "dependencies": {
                 "optional": {
                     "allOf": [
@@ -2664,7 +2775,7 @@
             "shortLabelName": "Middle Name",
             "minLength": 0.0,
             "maxLength": 64.0,
-            "pattern":"^[a-zA-Z][a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$"
+            "pattern":"^$|^[a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]([-' .a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ])*[-'.a-zA-Z0-9\¡\°\¿\À-\Â\Ä\Æ-\Ï\Ñ\Ó\Ô\Ù-\Ü\à-\â\ä\æ-\ï\ñ\ó\ô\ù-\ü\ÿ\Œ\œ\Ÿ]?$"
         },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/mobiles/access": {
             "readOnly": false,
@@ -2801,85 +2912,32 @@
             "longLabelName": "A qualification indicator (for example, C.P.A. or MD)."
         },
         "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/unitTypeCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "itemID": "29",
+                        "code": "HomeDepartment",
+                        "name": "Home Department",
+                        "description": "The primary department or division in which an employee works."
+                    },
+                    {
+                        "itemID": "25",
+                        "code": "BusinessUnit",
+                        "name": "Business Unit",
+                        "description": "The operational unit to which the employee is assigned (for example, a division, department, or a group of employees)."
+                    }
+                ]
+            },
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "dependencies": {
-                "optional": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/nameCode": {
-                                    "pattern": "HomeDepartment|BusinessUnit"
-                                }
-                            },
-                            "value": true
-                        }
-                    ]
-                },
-                "readOnly": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/nameCode": {
-                                    "pattern": "HomeDepartment|BusinessUnit"
-                                }
-                            },
-                            "value": false
-                        }
-                    ]
-                },
-                "codeList": {
-                    "allOf": [
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/nameCode": {
-                                    "pattern": "HomeDepartment"
-                                }
-                            },
-                            "value": {
-                                "links": [
-                                    {
-                                        "href": "/codelists/hr/v3/worker-management/departments/WFN/1?$filter=foreignKey eq '{foreignKey}'",
-                                        "rel": "/adp/codelist",
-                                        "mediaType": "application/json",
-                                        "method": "GET",
-                                        "payloadArguments": [
-                                            {
-                                                "argumentPath": "foreignKey",
-                                                "argumentValue": "/applicantOnboarding/applicantPayrollProfile/payrollGroupCode"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "attributes": {
-                                "/applicantOnboarding/applicantWorkerProfile/homeOrganizationalUnits/nameCode": {
-                                    "pattern": "BusinessUnit"
-                                }
-                            },
-                            "value": {
-                                "links": [
-                                    {
-                                        "href": "/codelists/hr/v3/worker-management/business-units/WFN/1",
-                                        "rel": "/adp/codelist",
-                                        "mediaType": "application/json",
-                                        "method": "GET"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            }
+            "sequence": 10.0
         },
         "/applicantOnboarding/applicantWorkerProfile/reportsTo/positionID": {
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 7.0,
+            "sequence": 8.0,
             "shortLabelName": "Reports To",
             "longLabelName": "Indicate whether the name of the supervisor to whom an employee reports is excluded, required, or optional information.",
             "minLength": 0.0,
@@ -2890,7 +2948,7 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 21.0,
+            "sequence": 27.0,
             "shortLabelName": "Work E-mail",
             "longLabelName": "The email address used by the employee at work.",
             "minLength": 1.0,
@@ -2912,7 +2970,7 @@
             "readOnly": false,
             "optional": true,
             "hidden": false,
-            "sequence": 11.0
+            "sequence": 12.0
         },
         "/applicantOnboarding/applicantWorkerProfile/businessCommunication/mobiles/areaDialing": {
             "readOnly": false,
@@ -3088,13 +3146,36 @@
                 }
             }
         },
+        "/applicantOnboarding/applicantWorkerProfile/acaBenefitEligibilityCode": {
+            "codeList": {
+                "codeListTitle": "ACA Benefit Status",
+                "listItems": [
+                    {
+                        "itemID": "C",
+                        "code": "C",
+                        "name": "Calculate Using Measurement Periods",
+                        "description": "Calculate Using Measurement Periods"
+                    },
+                    {
+                        "itemID": "D",
+                        "code": "D",
+                        "name": "Designate Full Time",
+                        "description": "Designate Full Time"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 18.0
+        },
         "/applicantOnboarding/applicantPersonalProfile/communication/mobiles/nameCode": {
             "codeList": {
                 "listItems": [
                     {
-                        "itemID": "2039",
+                        "itemID": "118",
                         "code": "CommunicationPersonalCell",
-                        "name": "Personal Cell"
+                        "name": "Personal Mobile"
                     }
                 ]
             },
