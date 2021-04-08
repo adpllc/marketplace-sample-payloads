@@ -1,0 +1,17 @@
+curl --location --request POST 'https://iat-api.adp.com/events/hr/v1/worker.photo.upload' \
+--header 'Authorization: Bearer f75e7df7-c5d0-4150-aa41-09778ef4352c' \
+--header 'Cookie: BIGipServerp_mkplproxy-iat-dc2=3472818955.20480.0000; BIGipServerp_mkplsvcgate-dc1=2501378315.20480.0000; BIGipServerp_mkplproxy-iat-dc1=1142685963.20480.0000; BIGipServerp_mkplsvcgate-dc2=3640591115.20480.0000; BIGipServerp_stagruntoolapi.nj.adp.com=1608909579.12832.0000' \
+--form 'json="{
+    \"events\": [
+        {
+            \"data\": {
+                \"eventContext\": {
+                    \"worker\": {
+                        \"associateOID\": \"G310YGK80NSS9D2N\"
+                    }
+                }
+            }
+        }
+    ]
+}"' \
+--form 'datafile=@"/C:/Users/XXXXXXX/OneDrive - Automatic Data Processing Inc/Desktop/images_Employee photo/mypic.jpg"'
