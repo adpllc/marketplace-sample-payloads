@@ -1,0 +1,900 @@
+{
+	"info": {
+		"_postman_id": "0e41532b-ca69-46f6-9945-bcf3a301e42a",
+		"name": "Applicant Onboard - WFN Next Gen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CodeList",
+			"item": [
+				{
+					"name": "Onboard Experiences",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v4/worker-management/onboard-experience/wfn/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v4",
+								"worker-management",
+								"onboard-experience",
+								"wfn",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Marital Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v4/worker-management/marital-status/wfn/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v4",
+								"worker-management",
+								"marital-status",
+								"wfn",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Locations",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v3/worker-management/locations/WFN/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v3",
+								"worker-management",
+								"locations",
+								"WFN",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Status Change Reason",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v4/worker-management/status-change-reason/wfn/1?$filter=category eq 'HIRE'",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v4",
+								"worker-management",
+								"status-change-reason",
+								"wfn",
+								"1"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "category eq 'HIRE'"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Worker Category",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v4/worker-management/worker-category/wfn/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v4",
+								"worker-management",
+								"worker-category",
+								"wfn",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Union Codes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v3/worker-management/union-codes/WFN/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v3",
+								"worker-management",
+								"union-codes",
+								"WFN",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pay Groups",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/payroll/v4/payroll-instruction-management/pay-groups/wfn/1?",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v4",
+								"payroll-instruction-management",
+								"pay-groups",
+								"wfn",
+								"1"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "category eq 'US'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Job Titles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v3/worker-management/job-titles/WFN/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v3",
+								"worker-management",
+								"job-titles",
+								"WFN",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eligibility Classes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v3/worker-management/eligibility-classes/WFN/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v3",
+								"worker-management",
+								"eligibility-classes",
+								"WFN",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "NAICS Worker Compensation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v4/worker-management/naics-worker-compensation/wfn/1?",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v4",
+								"worker-management",
+								"naics-worker-compensation",
+								"wfn",
+								"1"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "category",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "State / Province / Territory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v4/worker-management/state-province-territory/wfn/1?$filter=category eq 'US'",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v4",
+								"worker-management",
+								"state-province-territory",
+								"wfn",
+								"1"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "category eq 'US'"
+								},
+								{
+									"key": "$filter",
+									"value": "category eq 'CA'",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pay Grades",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v3/worker-management/pay-grades/WFN/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v3",
+								"worker-management",
+								"pay-grades",
+								"WFN",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "E Verify Work Locaiton",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v4/worker-management/e-verify-work-locations/wfn/1?",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v4",
+								"worker-management",
+								"e-verify-work-locations",
+								"wfn",
+								"1"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "category",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Countries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v4/worker-management/countries/wfn/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v4",
+								"worker-management",
+								"countries",
+								"wfn",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cost Numbers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v3/worker-management/cost-numbers/WFN/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v3",
+								"worker-management",
+								"cost-numbers",
+								"WFN",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Departments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v3/worker-management/departments/WFN/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v3",
+								"worker-management",
+								"departments",
+								"WFN",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Business Units",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/hr/v3/worker-management/business-units/WFN/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"hr",
+								"v3",
+								"worker-management",
+								"business-units",
+								"WFN",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Labor Profiles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/payroll/v4/payroll-instruction-management/labor-profile/wfn/1",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v4",
+								"payroll-instruction-management",
+								"labor-profile",
+								"wfn",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Legal Entities",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.adp.com/codelists/payroll/v4/payroll-instruction-management/legal-entity/wfn/1?$filter=category eq 'US'",
+							"protocol": "https",
+							"host": [
+								"api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"codelists",
+								"payroll",
+								"v4",
+								"payroll-instruction-management",
+								"legal-entity",
+								"wfn",
+								"1"
+							],
+							"query": [
+								{
+									"key": "$filter",
+									"value": "category eq 'US'"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d2068415-db9c-4a39-a2d1-91942e6e0c93",
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client-id}}",
+							"description": "a606b799-87b6-4350-9dc0-281a1d9caf5b",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client-secret}}",
+							"description": "3b2183e7-1e8c-432d-bcf8-944094d0bb82",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onboard Meta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard/meta?",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard",
+						"meta"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "meta/applicantOnboarding/onboardingTemplateCode/code eq 'T5' and meta/applicantOnboarding/applicantPayrollProfile/payrollGroupCode/code eq 'PG01'",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onboard V2 [Minimum - In progress]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"applicantOnboarding\": {\r\n        \"onboardingTemplateCode\": {\r\n            \"code\": \"T5\"\r\n        },\r\n        \"onboardingStatus\": {\r\n            \"statusCode\": {\r\n                \"code\": \"inprogress\"\r\n            }\r\n        },\r\n        \"applicantPersonalProfile\": {\r\n            \"birthName\": {\r\n                \"givenName\": \"Marketplace\",\r\n                \"familyName\": \"Demo-minimum\"\r\n            }\r\n        },\r\n        \"applicantWorkerProfile\": {\r\n            \"hireDate\": \"2021-04-27\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onbaord V2 [Full - In progress]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " \r\n{\r\n    \"applicantOnboarding\": {\r\n        \"onboardingTemplateCode\": {\r\n            \"code\": \"T5\"\r\n        },\r\n        \"onboardingStatus\": {\r\n            \"statusCode\": {\r\n                \"code\": \"inprogress\"\r\n            }\r\n        },\r\n        \"preHireIndicator\": false,\r\n        \"onboardingExperienceCode\": {\r\n            \"code\": \"default_w2\"\r\n        },\r\n        \"applicantPersonalProfile\": {\r\n            \"birthName\": {\r\n                \"givenName\": \"Hopper\",\r\n                \"familyName\": \"Test\",\r\n                \"middleName\": \"\"\r\n            },\r\n            \"legalAddress\": {\r\n                \"lineOne\": \"5750 Windward Pkwy\",\r\n                \"lineTwo\": \"\",\r\n                \"lineThree\": \"\",\r\n                \"cityName\": \"Alpharetta\",\r\n                \"subdivisionCode\": {\r\n                    \"code\": \"GA\",\r\n                    \"name\": \"?\",\r\n                    \"subdivisionType\": \"State\"\r\n                },\r\n                \"countryCode\": \"US\",\r\n                \"postalCode\": \"30005\",\r\n                \"deliveryPoint\": \"#120/60\"\r\n            },\r\n            \"legalName\": {\r\n                \"salutations\": [\r\n                    {\r\n                        \"code\": \"Hon.\",\r\n                        \"name\": \"Hon. - Hon.\"\r\n                    }\r\n                ],\r\n                \"generationAffix\": {\r\n                    \"code\": \"I\",\r\n                    \"name\": \"I - the first\"\r\n                },\r\n                \"qualificationAffix\": {\r\n                    \"code\": \"RN\",\r\n                    \"name\": \"RN - Registered Nurse\"\r\n                }\r\n            },\r\n            \"otherPersonalAddresses\": [\r\n                {\r\n                    \"lineOne\": \"115 North Eagleville Road\",\r\n                    \"lineTwo\": \"\",\r\n                    \"lineThree\": \"\",\r\n                    \"cityName\": \"Mansfield\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"CT\",\r\n                        \"name\": \"CT - Connecticut\",\r\n                        \"subdivisionType\": \"State\"\r\n                    },\r\n                    \"countryCode\": \"US\",\r\n                    \"postalCode\": \"06268\"\r\n                }\r\n            ],\r\n            \"communication\": {\r\n                \"landlines\": [\r\n                    {\r\n                        \"countryDialing\": \"1\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947873\"\r\n                    }\r\n                ],\r\n                \"mobiles\": [\r\n                    {\r\n                        \"countryDialing\": \"1\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947873\"\r\n                    }\r\n                ],\r\n                \"faxes\": [\r\n                    {\r\n                        \"countryDialing\": \"1\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947873\"\r\n                    }\r\n                ],\r\n                \"pagers\": [\r\n                    {\r\n                        \"countryDialing\": \"1\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947873\",\r\n                        \"extension\": \"\"\r\n                    }\r\n                ],\r\n                \"emails\": [\r\n                    {\r\n                        \"emailUri\": \"D.V@adp.com\",\r\n                        \"notificationIndicator\": true\r\n                    }\r\n                ]\r\n            },\r\n            \"languageCode\": {\r\n                \"code\": \"en_US\",\r\n                \"name\": \"en_US - English (US)\"\r\n            },\r\n            \"maritalStatusCode\": {\r\n                \"code\": \"M\",\r\n                \"name\": \"M - Married\",\r\n                \"effectiveDateTime\": \"2000-06-02\"\r\n            },\r\n            \"raceCode\": {\r\n                \"code\": \"1\",\r\n                \"name\": \"1 - White\",\r\n                \"identificationMethodCode\": {\r\n                    \"code\": \"VID\",\r\n                    \"name\": \"VID - Visual ID\"\r\n                }\r\n            },\r\n            \"ethnicityCode\": {\r\n                \"code\": \"4\",\r\n                \"name\": \"4 - Not Hispanic or Latino\"\r\n            },\r\n            \"preferredName\": {\r\n                \"nickName\": \"Sree\"\r\n            },\r\n            \"birthDate\": \"1965-01-01\",\r\n            \"governmentIDs\": [\r\n                {\r\n                    \"id\": \"\",\r\n                    \"nameCode\": {\r\n                        \"code\": \"SSN\",\r\n                        \"name\": \"SSN - Social Security Number\"\r\n                    },\r\n                    \"statusCode\": {\r\n                        \"code\": \"AppliedFor\",\r\n                        \"name\": \"\",\r\n                        \"effectiveDateTime\": \"\"\r\n                    },\r\n                    \"expirationDate\": \"\"\r\n                }\r\n            ],\r\n            \"genderCode\": {\r\n                \"code\": \"M\",\r\n                \"name\": \"M - Male\"\r\n            }\r\n        },\r\n        \"applicantWorkerProfile\": {\r\n            \"hireDate\": \"2021-04-30\",\r\n            \"officerTypeCode\": {\r\n                \"code\": \"1\"\r\n            },\r\n            \"homeWorkLocation\": {\r\n                \"nameCode\": {\r\n                    \"code\": \"GA\"\r\n                },\r\n                \"homeshoreIndicator\": false\r\n            },\r\n            \"homeOrganizationalUnits\": [\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"LegalEntity\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"527865434\",\r\n                        \"name\": \"NEW HIRE LEGAL ENTITY\"\r\n                    }\r\n                },\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"LaborProfile\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"LP1\",\r\n                        \"name\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"BusinessUnit\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"DV\",\r\n                        \"name\": \"BU - NEW HIRE\"\r\n                    }\r\n                },\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"HomeDepartment\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"100000\",\r\n                        \"name\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"HomeCostNumber\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"C0001\",\r\n                        \"name\": \"\"\r\n                    }\r\n                }\r\n            ],\r\n            \"managementPositionIndicator\": \"true\",\r\n            \"reportsTo\": {\r\n                \"positionID\": \"000005\"\r\n            },\r\n            \"workerClassificationCode\": {\r\n                \"code\": \"\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"PR\",\r\n                \"name\": \"PR - President\"\r\n            },\r\n            \"job\": {\r\n                \"jobCode\": {\r\n                    \"code\": \"1008\",\r\n                    \"name\": \"\"\r\n                },\r\n                \"wageLawCoverages\": [\r\n                    {\r\n                        \"wageLawNameCode\": {\r\n                            \"code\": \"E\",\r\n                            \"name\": \"E - Exempt\"\r\n                        }\r\n                    }\r\n                ],\r\n                \"occupationalClassifications\": [\r\n                    {\r\n                        \"classificationCode\": {\r\n                            \"code\": \"2\"\r\n                        },\r\n                        \"classificationID\": {\r\n                            \"code\": \"EEOC\"\r\n                        }\r\n                    }\r\n                ],\r\n                \"industryClassifications\": [\r\n                    {\r\n                        \"classificationCode\": {\r\n                            \"code\": \"541000\",\r\n                            \"name\": \"\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"hireReasonCode\": {\r\n                \"code\": \"NEW\",\r\n                \"name\": \"NEW - New Position\"\r\n            },\r\n            \"businessCommunication\": {\r\n                \"landlines\": [\r\n                    {\r\n                        \"countryDialing\": \"91\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947874\"\r\n                    }\r\n                ],\r\n                \"mobiles\": [\r\n                    {\r\n                        \"countryDialing\": \"91\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947874\"\r\n                    }\r\n                ],\r\n                \"pagers\": [\r\n                    {\r\n                        \"countryDialing\": \"91\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947874\"\r\n                    }\r\n                ],\r\n                \"faxes\": [\r\n                    {\r\n                        \"countryDialing\": \"91\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947874\"\r\n                    }\r\n                ],\r\n                \"emails\": [\r\n                    {\r\n                        \"emailUri\": \"P.A@adp.com\",\r\n                        \"notificationIndicator\": false\r\n                    }\r\n                ]\r\n            },\r\n            \"benefitsEligibilityClassCode\": {\r\n                \"code\": \"NBE\",\r\n                \"name\": \"\"\r\n            },\r\n            \"workerTypeCode\": {\r\n                \"code\": \"F\",\r\n                \"name\": \"Full Time\"\r\n            },\r\n            \"laborUnion\": {\r\n                \"laborUnionCode\": {\r\n                    \"code\": \"UN1\"\r\n                }\r\n            },\r\n            \"acaBenefitEligibilityCode\": {\r\n                \"code\": \"D\"\r\n            }\r\n        },\r\n        \"applicantPayrollProfile\": {\r\n            \"payrollGroupCode\": \"PG01\",\r\n            \"baseRemuneration\": {\r\n                \"recordingBasisCode\": {\r\n                    \"code\": \"1\"\r\n                },\r\n                \"payPeriodRateAmount\": {\r\n                    \"amount\": \"1500.00\"\r\n                }\r\n            }\r\n        },\r\n        \"overrideStandardHoursEmployee\" : {\r\n        \t\"hours\" : \"\",\r\n        \t\"days\": \"\"\r\n        },\r\n        \"employmentEligibilityOptionCode\": {\r\n            \"code\": \"0\"\r\n        },\r\n        \"employmentEligibilityProfile\": {\r\n            \"employerOrganization\": {\r\n                \"locationNameCode\": {\r\n                    \"code\": \"38235925_1\"\r\n                }\r\n            }\r\n        },\r\n        \"applicantTimeProfile\": {\r\n            \"timeServiceCredentials\": {\r\n                \"clockEntryCredential\": {\r\n                    \"badgeNumber\": \"\"\r\n                }\r\n            },\r\n            \"timeServiceUserLocaleProfile\": {\r\n                \"localeTimeZoneCode\": \"EST\"\r\n            }\r\n        }\r\n    }\r\n}\r\n \r\n \r\n \r\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Applicant Onboard V2 [Full - Complete]",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " \r\n{\r\n    \"applicantOnboarding\": {\r\n        \"onboardingTemplateCode\": {\r\n            \"code\": \"T5\"\r\n        },\r\n        \"onboardingStatus\": {\r\n            \"statusCode\": {\r\n                \"code\": \"complete\"\r\n            }\r\n        },\r\n        \"preHireIndicator\": false,\r\n        \"onboardingExperienceCode\": {\r\n            \"code\": \"default_w2\"\r\n        },\r\n        \"applicantPersonalProfile\": {\r\n            \"birthName\": {\r\n                \"givenName\": \"Prehire\",\r\n                \"familyName\": \"Test\",\r\n                \"middleName\": \"\"\r\n            },\r\n            \"legalAddress\": {\r\n                \"lineOne\": \"5750 Windward Pkwy\",\r\n                \"lineTwo\": \"\",\r\n                \"lineThree\": \"\",\r\n                \"cityName\": \"Alpharetta\",\r\n                \"subdivisionCode\": {\r\n                    \"code\": \"GA\",\r\n                    \"name\": \"?\",\r\n                    \"subdivisionType\": \"State\"\r\n                },\r\n                \"countryCode\": \"US\",\r\n                \"postalCode\": \"30005\",\r\n                \"deliveryPoint\": \"#120/60\"\r\n            },\r\n            \"legalName\": {\r\n                \"salutations\": [\r\n                    {\r\n                        \"code\": \"Hon.\",\r\n                        \"name\": \"Hon. - Hon.\"\r\n                    }\r\n                ],\r\n                \"generationAffix\": {\r\n                    \"code\": \"I\",\r\n                    \"name\": \"I - the first\"\r\n                },\r\n                \"qualificationAffix\": {\r\n                    \"code\": \"RN\",\r\n                    \"name\": \"RN - Registered Nurse\"\r\n                }\r\n            },\r\n            \"otherPersonalAddresses\": [\r\n                {\r\n                    \"lineOne\": \"115 North Eagleville Road\",\r\n                    \"lineTwo\": \"\",\r\n                    \"lineThree\": \"\",\r\n                    \"cityName\": \"Mansfield\",\r\n                    \"subdivisionCode\": {\r\n                        \"code\": \"CT\",\r\n                        \"name\": \"CT - Connecticut\",\r\n                        \"subdivisionType\": \"State\"\r\n                    },\r\n                    \"countryCode\": \"US\",\r\n                    \"postalCode\": \"06268\"\r\n                }\r\n            ],\r\n            \"communication\": {\r\n                \"landlines\": [\r\n                    {\r\n                        \"countryDialing\": \"1\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947873\"\r\n                    }\r\n                ],\r\n                \"mobiles\": [\r\n                    {\r\n                        \"countryDialing\": \"1\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947873\"\r\n                    }\r\n                ],\r\n                \"faxes\": [\r\n                    {\r\n                        \"countryDialing\": \"1\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947873\"\r\n                    }\r\n                ],\r\n                \"pagers\": [\r\n                    {\r\n                        \"countryDialing\": \"1\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947873\",\r\n                        \"extension\": \"\"\r\n                    }\r\n                ],\r\n                \"emails\": [\r\n                    {\r\n                        \"emailUri\": \"donny.vargo@adp.com\",\r\n                        \"notificationIndicator\": true\r\n                    }\r\n                ]\r\n            },\r\n            \"languageCode\": {\r\n                \"code\": \"en_US\",\r\n                \"name\": \"en_US - English (US)\"\r\n            },\r\n            \"maritalStatusCode\": {\r\n                \"code\": \"M\",\r\n                \"name\": \"M - Married\",\r\n                \"effectiveDateTime\": \"2000-06-02\"\r\n            },\r\n            \"raceCode\": {\r\n                \"code\": \"1\",\r\n                \"name\": \"1 - White\",\r\n                \"identificationMethodCode\": {\r\n                    \"code\": \"VID\",\r\n                    \"name\": \"VID - Visual ID\"\r\n                }\r\n            },\r\n            \"ethnicityCode\": {\r\n                \"code\": \"4\",\r\n                \"name\": \"4 - Not Hispanic or Latino\"\r\n            },\r\n            \"preferredName\": {\r\n                \"nickName\": \"Sree\"\r\n            },\r\n            \"birthDate\": \"1965-01-01\",\r\n            \"governmentIDs\": [\r\n                {\r\n                    \"id\": \"\",\r\n                    \"nameCode\": {\r\n                        \"code\": \"SSN\",\r\n                        \"name\": \"SSN - Social Security Number\"\r\n                    },\r\n                    \"statusCode\": {\r\n                        \"code\": \"AppliedFor\",\r\n                        \"name\": \"\",\r\n                        \"effectiveDateTime\": \"\"\r\n                    },\r\n                    \"expirationDate\": \"\"\r\n                }\r\n            ],\r\n            \"genderCode\": {\r\n                \"code\": \"M\",\r\n                \"name\": \"M - Male\"\r\n            }\r\n        },\r\n        \"applicantWorkerProfile\": {\r\n            \"hireDate\": \"2021-04-30\",\r\n            \"officerTypeCode\": {\r\n                \"code\": \"1\"\r\n            },\r\n            \"homeWorkLocation\": {\r\n                \"nameCode\": {\r\n                    \"code\": \"GA\"\r\n                },\r\n                \"homeshoreIndicator\": false\r\n            },\r\n            \"homeOrganizationalUnits\": [\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"LegalEntity\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"527865434\",\r\n                        \"name\": \"NEW HIRE LEGAL ENTITY\"\r\n                    }\r\n                },\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"LaborProfile\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"LP1\",\r\n                        \"name\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"BusinessUnit\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"DV\",\r\n                        \"name\": \"BU - NEW HIRE\"\r\n                    }\r\n                },\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"HomeDepartment\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"100000\",\r\n                        \"name\": \"\"\r\n                    }\r\n                },\r\n                {\r\n                    \"unitTypeCode\": {\r\n                        \"code\": \"HomeCostNumber\",\r\n                        \"name\": \"\"\r\n                    },\r\n                    \"nameCode\": {\r\n                        \"code\": \"C0001\",\r\n                        \"name\": \"\"\r\n                    }\r\n                }\r\n            ],\r\n            \"managementPositionIndicator\": \"true\",\r\n            \"reportsTo\": {\r\n                \"positionID\": \"000005\"\r\n            },\r\n            \"workerClassificationCode\": {\r\n                \"code\": \"\"\r\n            },\r\n            \"payGradeCode\": {\r\n                \"code\": \"2\",\r\n                \"name\": \"2 - Professionals\"\r\n            },\r\n            \"job\": {\r\n                \"jobCode\": {\r\n                    \"code\": \"1008\",\r\n                    \"name\": \"\"\r\n                },\r\n                \"wageLawCoverages\": [\r\n                    {\r\n                        \"wageLawNameCode\": {\r\n                            \"code\": \"E\",\r\n                            \"name\": \"E - Exempt\"\r\n                        }\r\n                    }\r\n                ],\r\n                \"occupationalClassifications\": [\r\n                    {\r\n                        \"classificationCode\": {\r\n                            \"code\": \"2\"\r\n                        },\r\n                        \"classificationID\": {\r\n                            \"code\": \"EEOC\"\r\n                        }\r\n                    }\r\n                ],\r\n                \"industryClassifications\": [\r\n                    {\r\n                        \"classificationCode\": {\r\n                            \"code\": \"541000\",\r\n                            \"name\": \"\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"hireReasonCode\": {\r\n                \"code\": \"NEW\",\r\n                \"name\": \"NEW - New Position\"\r\n            },\r\n            \"businessCommunication\": {\r\n                \"landlines\": [\r\n                    {\r\n                        \"countryDialing\": \"91\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947874\"\r\n                    }\r\n                ],\r\n                \"mobiles\": [\r\n                    {\r\n                        \"countryDialing\": \"91\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947874\"\r\n                    }\r\n                ],\r\n                \"pagers\": [\r\n                    {\r\n                        \"countryDialing\": \"91\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947874\"\r\n                    }\r\n                ],\r\n                \"faxes\": [\r\n                    {\r\n                        \"countryDialing\": \"91\",\r\n                        \"areaDialing\": \"970\",\r\n                        \"dialNumber\": \"3947874\"\r\n                    }\r\n                ],\r\n                \"emails\": [\r\n                    {\r\n                        \"emailUri\": \"P.A@adp.com\",\r\n                        \"notificationIndicator\": false\r\n                    }\r\n                ]\r\n            },\r\n            \"benefitsEligibilityClassCode\": {\r\n                \"code\": \"NBE\",\r\n                \"name\": \"\"\r\n            },\r\n            \"workerTypeCode\": {\r\n                \"code\": \"F\",\r\n                \"name\": \"Full Time\"\r\n            },\r\n            \"laborUnion\": {\r\n                \"laborUnionCode\": {\r\n                    \"code\": \"UN1\"\r\n                }\r\n            },\r\n            \"acaBenefitEligibilityCode\": {\r\n                \"code\": \"D\"\r\n            }\r\n        },\r\n        \"applicantPayrollProfile\": {\r\n            \"payrollGroupCode\": \"PG01\",\r\n            \"baseRemuneration\": {\r\n                \"recordingBasisCode\": {\r\n                    \"code\": \"1\"\r\n                },\r\n                \"payPeriodRateAmount\": {\r\n                    \"amount\": \"1500.00\"\r\n                }\r\n            }\r\n        },\r\n        \"overrideStandardHoursEmployee\" : {\r\n        \t\"hours\" : \"45\",\r\n        \t\"days\": \"5\"\r\n        },\r\n        \"employmentEligibilityOptionCode\": {\r\n            \"code\": \"0\"\r\n        },\r\n        \"employmentEligibilityProfile\": {\r\n            \"employerOrganization\": {\r\n                \"locationNameCode\": {\r\n                    \"code\": \"38235925_1\"\r\n                }\r\n            }\r\n        },\r\n        \"applicantTimeProfile\": {\r\n            \"timeServiceCredentials\": {\r\n                \"clockEntryCredential\": {\r\n                    \"badgeNumber\": \"347888\"\r\n                }\r\n            },\r\n            \"timeServiceUserLocaleProfile\": {\r\n                \"localeTimeZoneCode\": \"EST\"\r\n            }\r\n        }\r\n    }\r\n}\r\n \r\n \r\n \r\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.adp.com/hcm/v2/applicant.onboard",
+					"protocol": "https",
+					"host": [
+						"api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"applicant.onboard"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
