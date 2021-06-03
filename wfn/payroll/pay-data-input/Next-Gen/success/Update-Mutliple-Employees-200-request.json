@@ -1,0 +1,68 @@
+{
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "payrollGroupCode": {
+                        "codeValue": "AX3S"
+                    },
+                    "payDate": "2021-05-19",
+                    "payrollProcessingJobID": "MultipleEmployees"
+                },
+                "transform": {
+                    "payDataInput": {
+                        "payeePayInputs": [
+                            {
+                                "associateOID": "AOID0WS09KXQJ69Q",
+                                "payNumber": "1",
+                                "payrollProfilePayInputs": [
+                                    {
+                                        "payrollFileNumber": "000029",
+                                        "payInputs": [
+                                            {
+                                                "earningInputs": [
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "GuarBonus.BONUS_PAY"
+                                                        },
+                                                        "earningsAmount": {
+                                                            "amountValue": 200,
+                                                            "currencyCode": "USD"
+                                                        }
+                                                    }
+                                                ],
+                                                "_modificationTypeCode": "Add"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "associateOID": "AOIDTETKSH9WN9P8",
+                                "payNumber": "1",
+                                "payrollProfilePayInputs": [
+                                    {
+                                        "payrollFileNumber": "000007",
+                                        "payInputs": [
+                                            {
+                                                "earningInputs": [
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "MPShftDffP.PREMIUM_HOURS"
+                                                        },
+                                                        "numberOfHours": 1
+                                                    }
+                                                ],
+                                                "_modificationTypeCode": "append"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
