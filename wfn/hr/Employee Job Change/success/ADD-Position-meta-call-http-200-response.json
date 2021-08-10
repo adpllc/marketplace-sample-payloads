@@ -779,4 +779,293 @@
         "/workAssignment/job/jobFamilies/jobFamilyCode": {
             "codeList": {
                 "codeListTitle": "Job Classification",
-                "links
+                "links": [
+                    {
+                        "href": "/codelists/hr/v4/worker-management/job-class/wfn/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 12
+        },
+        "/workAssignment/legislativeComplianceClassifications/industryClassifications/classificationCode": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 18,
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/industryClassifications/schemeCode": {
+                                    "pattern": "NAICS Worker's Comp"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/industryClassifications/schemeCode": {
+                                    "pattern": "NAICS Worker's Comp"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/industryClassifications/schemeCode": {
+                                    "pattern": "NAICS Worker's Comp"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "NAICS Workers' Comp",
+                                "links": [
+                                    {
+                                        "href": "/codelists/hr/v4/worker-management/naics-worker-compensation/wfn/1?$filter=category eq '{category}'",
+                                        "rel": "/adp/codelist",
+                                        "mediaType": "application/json",
+                                        "method": "GET",
+                                        "payloadArguments": [
+                                            {
+                                                "argumentPath": "category",
+                                                "argumentValue": "/workAssignment/payrollProfile/payrollGroupCode"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        },
+        "/workAssignment/benefitsProfile/benefitsEligibilityClassCode": {
+            "codeList": {
+                "codeListTitle": "Benefit Eligibility Class",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v3/worker-management/eligibility-classes/WFN/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 14
+        },
+        "/workAssignment/payrollProfile/payrollGroupCode": {
+            "codeList": {
+                "codeListTitle": "What will be as company code?",
+                "links": [
+                    {
+                        "href": "/codelists/payroll/v4/payroll-instruction-management/pay-groups/wfn/1?$filter=category eq 'US'",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 4
+        },
+        "/workAssignment/job/payGradeCode": {
+            "codeList": {
+                "codeListTitle": "Pay Grade",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v3/worker-management/pay-grades/WFN/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 14
+        },
+        "/workAssignment/payrollProfile/payCycleCode": {
+            "codeList": {
+                "codeListTitle": "Pay Frequency",
+                "listItems": []
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 13
+        },
+        "/workAssignment/job/jobFunctionCode": {
+            "codeList": {
+                "codeListTitle": "Job Function",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v4/worker-management/job-function/wfn/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 11
+        },
+        "/workAssignment/organizationalUnits/unitCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "code": "HomeDepartment",
+                        "name": "Home Department"
+                    },
+                    {
+                        "code": "BusinessUnit",
+                        "name": "Business Unit"
+                    },
+                    {
+                        "code": "HomeCostNumber",
+                        "name": "Home Cost Number"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 16
+        },
+        "/workAssignment/payrollProfile/defaultTaxJurisdictionTags/tagCode": {
+            "codeList": {
+                "listItems": [
+                    {
+                        "code": "WorkedInState",
+                        "name": "Worked-in State"
+                    },
+                    {
+                        "code": "SuiSdiCode",
+                        "name": "SUI / SDI Code"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 7
+        },
+        "/workAssignment/primaryIndicator": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 1,
+            "shortLabelName": "Primary Position",
+            "default": false,
+            "dataType": "boolean"
+        },
+        "/workAssignment/workLocations/locationCode": {
+            "codeList": {
+                "codeListTitle": "Location",
+                "links": [
+                    {
+                        "href": "/codelists/hr/v3/worker-management/locations/WFN/1",
+                        "rel": "/adp/codelist",
+                        "mediaType": "application/json",
+                        "method": "GET"
+                    }
+                ]
+            },
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 14
+        },
+        "/workAssignment/job/managementIndicator": {
+            "readOnly": false,
+            "optional": false,
+            "hidden": false,
+            "sequence": 10,
+            "shortLabelName": "Management Position",
+            "longLabelName": "This is a Management position",
+            "default": false,
+            "dataType": "boolean"
+        },
+        "/workAssignment/legislativeComplianceClassifications/wageLawClassifications/classificationCode": {
+            "readOnly": false,
+            "optional": true,
+            "hidden": false,
+            "sequence": 13,
+            "dependencies": {
+                "optional": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/wageLawClassifications/schemeCode": {
+                                    "pattern": "FLSAClassification"
+                                }
+                            },
+                            "value": true
+                        }
+                    ]
+                },
+                "readOnly": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/wageLawClassifications/schemeCode": {
+                                    "pattern": "FLSAClassification"
+                                }
+                            },
+                            "value": false
+                        }
+                    ]
+                },
+                "codeList": {
+                    "allOf": [
+                        {
+                            "attributes": {
+                                "/workAssignment/legislativeComplianceClassifications/wageLawClassifications/schemeCode": {
+                                    "pattern": "FLSAClassification"
+                                }
+                            },
+                            "value": {
+                                "codeListTitle": "FLSA",
+                                "listItems": [
+                                    {
+                                        "itemID": "E",
+                                        "code": "E",
+                                        "name": "Exempt",
+                                        "description": "Exempt"
+                                    },
+                                    {
+                                        "itemID": "N",
+                                        "code": "N",
+                                        "name": "Non-exempt",
+                                        "description": "Non-exempt"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
