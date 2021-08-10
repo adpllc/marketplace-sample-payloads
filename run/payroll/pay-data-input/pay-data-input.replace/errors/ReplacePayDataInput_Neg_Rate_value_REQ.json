@@ -1,66 +1,58 @@
-POST //events/payroll/v1/pay-data-input.replace HTTP/1.1
-Host: stagrunessmobileapi.nj.adp.com
-OrgOid: G3P3QYJJXG795A10
-associateoid: G3P3QYJJXG79HMDF
-Content-Type: application/json
-Cache-Control: no-cache
-Postman-Token: b38335bd-8b3c-4355-9311-3c62a548410f
-
 {
-  "events": [
-    {
-      "data": {
-        "eventContext": {
-          "payDataInput": {
-            "ItemID": "8a26b75f-c023-42d1-a9eb-562608ccdd84"
-          }
-        },
-        "transform": {
-          "payDataInput": {
-            "payeePayInputs": [
-              {
-                "associateOID": "G3P3QYJJXG79RRNW",
-                "payPeriodStartDate":"2019-02-20",
-                "payPeriodEndDate": "2019-02-26",
-                "payrollProfilePayInputs": [
-                  {
-                    "payInputs": [
-                      {
-                        "earningInputs": [
-                          {
-                            "earningCode": {
-                              "codeValue": "BON"
-                            },
-                            "rateCode": {
-                              "codeValue": "BASE"
-                            },
-                            "rate": {
-                              "rateValue": "-44445",
-                              "baseUnitCode": {
-                              	"codeValue": "W"
-                              }
+    "events": [
+        {
+            "data": {
+                "eventContext": {
+                    "payDataInput": {
+                        "ItemID": "8a26b75f-c023-42d1-a9eb-562608ccdd84"
+                    }
+                },
+                "transform": {
+                    "payDataInput": {
+                        "payeePayInputs": [
+                            {
+                                "associateOID": "G3P3QYJJXG79RRNW",
+                                "payPeriodStartDate": "2019-02-20",
+                                "payPeriodEndDate": "2019-02-26",
+                                "payrollProfilePayInputs": [
+                                    {
+                                        "payInputs": [
+                                            {
+                                                "earningInputs": [
+                                                    {
+                                                        "earningCode": {
+                                                            "codeValue": "BON"
+                                                        },
+                                                        "rateCode": {
+                                                            "codeValue": "BASE"
+                                                        },
+                                                        "rate": {
+                                                            "rateValue": "-44445",
+                                                            "baseUnitCode": {
+                                                                "codeValue": "W"
+                                                            }
+                                                        }
+                                                    }
+                                                ],
+                                                "payAllocation": {
+                                                    "allocationTypeCode": {
+                                                        "codeValue": ""
+                                                    },
+                                                    "allocationID": ""
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "payNumber": "0"
                             }
-                          }
-                        ],
-                        "payAllocation": {
-                          "allocationTypeCode": {
-                            "codeValue": ""
-                          },
-                          "allocationID": ""
-                        }
-                      }
-                    ]
-                  }
-                ],
-                "payNumber": "0"
-              }
-            ]
-          },
-          "eventStatusCode": {
-            "codeValue": "Submitted"
-          }
+                        ]
+                    },
+                    "eventStatusCode": {
+                        "codeValue": "Submitted"
+                    }
+                }
+            }
         }
-      }
-    }
-  ]
+    ]
 }
