@@ -1,0 +1,1670 @@
+{
+	"info": {
+		"_postman_id": "eb361d5e-3bc9-49a1-b6ee-e18ef0687a0f",
+		"name": "TLM Import Work Schedule-WFN-IAT GITHUB B2B",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Work Schedule import-Add",
+			"item": [
+				{
+					"name": "Negative Cases",
+					"item": [
+						{
+							"name": "Add schedule entry with existing externalReferenceID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 18eac55f-4251-449a-a661-e5f861dea72f",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"43\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"44\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"45\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with existing externalReferenceID is empty",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 18eac55f-4251-449a-a661-e5f861dea72f"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with invalid AOID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 946ca15d-0390-49e6-9de7-c5694cd421ee"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048B\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"01\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"02\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"03\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with invalid StartDateTime/EndDateTime",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 6c3d8181-ab81-4d1a-96b3-4f98861a5666"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {},\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"311\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"322\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"333\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with EndDate is less than StartDate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 946ca15d-0390-49e6-9de7-c5694cd421ee"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-26T08:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"311\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"322\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"333\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with EndDateTime is less than StartDateTime",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 946ca15d-0390-49e6-9de7-c5694cd421ee"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T08:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"311\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"322\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"333\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with more than 24 hours",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 070088ec-b947-4030-8da2-4ed7d6e66e9d"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T01:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-30T02:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"411\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"412\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"413\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry which is overlapping with existing shift",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 946ca15d-0390-49e6-9de7-c5694cd421ee"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"312\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"313\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"314\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with invalid paycode",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 946ca15d-0390-49e6-9de7-c5694cd421ee"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSE\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"314\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"315\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"316\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with invalid Department",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 946ca15d-0390-49e6-9de7-c5694cd421ee"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"301\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"0030000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"302\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"007000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"303\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"7400\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with invalid _modificationTypeCode",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 946ca15d-0390-49e6-9de7-c5694cd421ee"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"addedddd\",\n      \"externalReferenceID\": {\n        \"id\": \"201\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"0030000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"202\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"007000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"203\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"7400\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add schedule entry with comment text more than 512 chars",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 946ca15d-0390-49e6-9de7-c5694cd421ee"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"101\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"NotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvk\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"0030000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"102\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"103\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Work Schedule import status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 6c3d8181-ab81-4d1a-96b3-4f98861a5666",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests/0069236b0e0f4f57bb91f6cc3609e1f0/confirm-message",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests",
+										"0069236b0e0f4f57bb91f6cc3609e1f0",
+										"confirm-message"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Add schedule entry for single Associate with multiple shifts in a day",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 2b90ed53-ff82-4992-b645-c30840f5f4c8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-30T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-30T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"501\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-30T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-30T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"502\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-30T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-30T12:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"503\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add schedule entry for multiple Associates with a shift in a day",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer d36e0fdf-997b-404a-a92b-5205ce2e117a",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"71\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"CommentText\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"72\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T11:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T12:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"73\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add schedule entry for multiple Associates with a shift for multiple days",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer d36e0fdf-997b-404a-a92b-5205ce2e117a",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"91\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Comment Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"92\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"93\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add schedule entry for a single Associate with same shift for multiple days",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer d36e0fdf-997b-404a-a92b-5205ce2e117a",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"60\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"003000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"61\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"62\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-30T08:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-30T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"added\",\n      \"externalReferenceID\": {\n        \"id\": \"63\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Work Schedule import status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 2b90ed53-ff82-4992-b645-c30840f5f4c8",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests/d06ee3e93fe44722806a70142f4e4185/confirm-message",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests",
+								"d06ee3e93fe44722806a70142f4e4185",
+								"confirm-message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Work Schedule import-Change",
+			"item": [
+				{
+					"name": "Negative Cases",
+					"item": [
+						{
+							"name": "Update schedule entry with existing externalReferenceID is empty",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer e61c1524-cf91-44ab-ac8b-aa73cd2b741a"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"JURY\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Comment Note123\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"004000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"92\"\n      },\n      \"payCode\": {\n        \"code\": \"HOLIDAY\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"355\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"93\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30FULL\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update schedule entry with invalid AOID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer e61c1524-cf91-44ab-ac8b-aa73cd2b741a"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"JURY\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048J\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"91\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Comment Note123\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"004000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"92\"\n      },\n      \"payCode\": {\n        \"code\": \"HOLIDAY\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"355\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"93\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30FULL\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update schedule entry with EndDate is less than StartDate",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer e11befb4-c54a-441b-a086-6d1e4d5e912a"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"JURY\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-26T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"91\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Comment Note123\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"004000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T09:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"92\"\n      },\n      \"payCode\": {\n        \"code\": \"HOLIDAY\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"355\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"93\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30FULL\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update schedule entry with invalid paycode & Department",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer e11befb4-c54a-441b-a086-6d1e4d5e912a"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"JURY123\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"91\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Comment Note123\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"0040000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"92\"\n      },\n      \"payCode\": {\n        \"code\": \"HOLIDAY\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"355\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"93\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30FULL\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update schedule entry with invalid _modificationTypeCode",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer e11befb4-c54a-441b-a086-6d1e4d5e912a"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"JURY\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"aaaachangeddddd\",\n      \"externalReferenceID\": {\n        \"id\": \"91\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Comment Note123\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"004000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"92\"\n      },\n      \"payCode\": {\n        \"code\": \"HOLIDAY\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"355\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"93\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30FULL\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update schedule entry with comment text more than 512 chars",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer e11befb4-c54a-441b-a086-6d1e4d5e912a"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"JURY\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"91\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Comment Note123NotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvkfjgvkjfkNotehfjefhjjfkjfkdjfksdjfksdjfkjsdkfjkdjgkdkfjsdjfksdjvkfdjkvgjfkjgvkfjkjkfjkfjkgvjfkjgvk\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"004000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"92\"\n      },\n      \"payCode\": {\n        \"code\": \"HOLIDAY\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"355\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"93\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30FULL\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Work Schedule import status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer e11befb4-c54a-441b-a086-6d1e4d5e912a",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests/b253c0e5b38042d0b3e5b0f1288349d9/confirm-message",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests",
+										"b253c0e5b38042d0b3e5b0f1288349d9",
+										"confirm-message"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Update schedule entry for single Associate with multiple shifts in a day",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer d36e0fdf-997b-404a-a92b-5205ce2e117a"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"401\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note123\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"004000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T06:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T07:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"402\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T02:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T03:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"403\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update schedule entry for multiple Associates with a shift in a day",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer d36e0fdf-997b-404a-a92b-5205ce2e117a",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T07:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T08:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"71\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"CommentText123\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"004000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30ACTL\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T11:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T12:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"72\"\n      },\n      \"payCode\": {\n        \"code\": \"SICK\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note123\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"700\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T01:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T02:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"73\"\n      },\n      \"payCode\": {\n        \"code\": \"JURY\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Testing\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"400\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30FULL\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update schedule entry for multiple Associates with a shift for multiple days",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 9d17f32d-3c96-422d-a3ad-c8d42351d143",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"JURY\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"91\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Comment Note123\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"004000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"92\"\n      },\n      \"payCode\": {\n        \"code\": \"HOLIDAY\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"355\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30AUTO\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"93\"\n      },\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"740\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30FULL\"\n          }\n        }\n      ]\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update schedule entry for a single Associate with same shift for multiple days",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer d36e0fdf-997b-404a-a92b-5205ce2e117a",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"payCode\": {\n        \"code\": \"ABSENT\"\n      },\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-27T09:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-27T10:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"60\"\n      },\n      \"comments\": [\n        {\n          \"commentText\": \"Note1234\"\n        }\n      ],\n      \"earningAllocations\": [\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Department\"\n          },\n          \"allocationCode\": {\n            \"code\": \"005000\"\n          }\n        },\n        {\n          \"allocationTypeCode\": {\n            \"code\": \"Meal Plan\"\n          },\n          \"allocationCode\": {\n            \"code\": \"30ACTL\"\n          }\n        }\n      ]\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-28T10:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-28T11:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"61\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-29T11:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-29T12:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"62\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"dateTimePeriod\": {\n        \"startDateTime\": \"2019-08-30T01:00:00.000-04:00\",\n        \"endDateTime\": \"2019-08-30T02:00:00.000-04:00\"\n      },\n      \"_modificationTypeCode\": \"changed\",\n      \"externalReferenceID\": {\n        \"id\": \"63\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Work Schedule import status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 9d17f32d-3c96-422d-a3ad-c8d42351d143",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests/d7b0c1ead110484697f683dfc88c37ce/confirm-message",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests",
+								"d7b0c1ead110484697f683dfc88c37ce",
+								"confirm-message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Work Schedule import-Remove",
+			"item": [
+				{
+					"name": "Negative Cases",
+					"item": [
+						{
+							"name": "Remove schedule entry with existing externalReferenceID is invalid",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 3d8450b2-5b49-47c6-84d5-61078765f8ea"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"01\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"02\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"03\"\n      }\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove schedule entry with existing externalReferenceID is empty",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 3d8450b2-5b49-47c6-84d5-61078765f8ea"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"\"\n      }\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove schedule entry with invalid AOID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 3d8450b2-5b49-47c6-84d5-61078765f8ea"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"associateOID\": \"G332EFV3Q6J0048J\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"401\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"402\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"403\"\n      }\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove schedule entry with invalid _modificationTypeCode",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer 3d8450b2-5b49-47c6-84d5-61078765f8ea"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removeddd\",\n      \"externalReferenceID\": {\n        \"id\": \"401\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removedddd\",\n      \"externalReferenceID\": {\n        \"id\": \"402\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removeddd\",\n      \"externalReferenceID\": {\n        \"id\": \"403\"\n      }\n    }\n  ]\n}"
+								},
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Work Schedule import status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer 3d8450b2-5b49-47c6-84d5-61078765f8ea",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests/faf2c1d444a84ab2879509acd7e87c5a/confirm-message",
+									"protocol": "https",
+									"host": [
+										"iat-api",
+										"adp",
+										"com"
+									],
+									"path": [
+										"time",
+										"v1",
+										"work-schedule-entry",
+										"upload-requests",
+										"faf2c1d444a84ab2879509acd7e87c5a",
+										"confirm-message"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Remove schedule entry for single Associate with multiple shifts in a day",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 2b90ed53-ff82-4992-b645-c30840f5f4c8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"501\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"502\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"503\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove schedule entry for multiple Associates with a shift in a day",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer 2b90ed53-ff82-4992-b645-c30840f5f4c8"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"71\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"72\"\n      }\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"73\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove schedule entry for multiple Associates with a shift for multiple days",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3d8450b2-5b49-47c6-84d5-61078765f8ea",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"91\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0PV9Z\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"92\"\n      }\n    },\n    {\n      \"associateOID\": \"G3HDMB41NWAYVZDB\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"93\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove schedule entry for a single Associate with same shift for multiple days",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 3d8450b2-5b49-47c6-84d5-61078765f8ea",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"workScheduleEntries\": [\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"60\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"61\"\n      }\n    },\n    {\n      \"associateOID\": \"G332EFV3Q6J0048K\",\n      \"_modificationTypeCode\": \"removed\",\n      \"externalReferenceID\": {\n        \"id\": \"62\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Work Schedule import status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer 2b90ed53-ff82-4992-b645-c30840f5f4c8",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iat-api.adp.com/time/v1/work-schedule-entry/upload-requests/fc5c4f10efe7492b87d770b246437011/confirm-message",
+							"protocol": "https",
+							"host": [
+								"iat-api",
+								"adp",
+								"com"
+							],
+							"path": [
+								"time",
+								"v1",
+								"work-schedule-entry",
+								"upload-requests",
+								"fc5c4f10efe7492b87d770b246437011",
+								"confirm-message"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Access Token Call",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Workers call",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer e8fa2c3e-129a-4f0d-95e7-f1162c73afed",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers?queryName=<Using Time & Attendance>",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					],
+					"query": [
+						{
+							"key": "queryName",
+							"value": "<Using Time "
+						},
+						{
+							"key": " Attendance>",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
