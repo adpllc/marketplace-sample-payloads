@@ -10,6 +10,7 @@
             "applicant": {
                 "personOID": "",
                 "internalApplicantIndicator": false,
+                "workAuthorizationIndicator": true,
                 "applicantContentLinks": [],
                 "person": {
                     "personOID": "",
@@ -18,7 +19,22 @@
                         "codeFields": [],
                         "dateFields": [],
                         "dateTimeFields": [],
-                        "indicatorFields": [],
+                        "indicatorFields": [
+                            {
+                                "nameCode": {
+                                    "codeValue": "true",
+                                    "shortName": "canRelocate"
+                                },
+                                "indicatorValue": true
+                            },
+                            {
+                                "nameCode": {
+                                    "codeValue": "true",
+                                    "shortName": "is18yearsOfAge"
+                                },
+                                "indicatorValue": true
+                            }
+                        ],
                         "numberFields": [
                             {
                                 "nameCode": {
@@ -180,6 +196,7 @@
                             "socialNetworks": []
                         },
                         "currentEmployerIndicator": true,
+                        "allowContactEmployerIndicator": true,
                         "positionHistory": [
                             {
                                 "links": [],
