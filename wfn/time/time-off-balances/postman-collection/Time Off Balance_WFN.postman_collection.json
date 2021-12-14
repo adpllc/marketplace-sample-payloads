@@ -1,0 +1,619 @@
+{
+	"info": {
+		"_postman_id": "98f4bed0-f975-4b14-ad6b-45f05b883e82",
+		"name": "Time Off Balance_WFN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "worker call",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "078dba1e-a6b0-451d-8dcb-ed81f614d8b2",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 3234d1c2-7fa7-4d14-a161-745a7af99f02"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/hr/v2/workers",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "200 Get time balance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/time/v2/workers/G310YGK80NSS9D2N/time-off-details/time-off-balances",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"G310YGK80NSS9D2N",
+						"time-off-details",
+						"time-off-balances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "403 Invalid associate ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/time/v2/workers/32rdsfsd/time-off-details/time-off-balances",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"32rdsfsd",
+						"time-off-details",
+						"time-off-balances"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "200 update time of balance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 2da7b5eb-3cad-41f8-b2af-3f767660a2ff"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"recordDateTime\": \"2021-08-06T00:00:00Z\",\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"contextExpressionID\": \"\",\r\n          \"associateOID\": \"\",\r\n          \"workAssignmentID\": \"37077846_292\"\r\n        },\r\n        \"transform\": {\r\n          \"eventReasonCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"eventStatusCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"effectiveDateTime\": \"2021-08-06T00:00:00Z\",\r\n          \"notificationIndicator\": true,\r\n          \"timeOffBalances\": [\r\n            {\r\n              \"timeOffPolicyBalances\": [\r\n                {\r\n                  \"timeOffPolicyCode\": {\r\n                    \"codeValue\": \"169758573863_1\"\r\n                  },\r\n                  \"accrualBalances\": [\r\n                    {\r\n                      \r\n                      \"accrualQuantity\": {\r\n                        \"quantityValue\": -5,\r\n                        \"unitTimeCode\": {\r\n                          \"codeValue\": \"H\",\r\n                          \"shortName\": \"Hour\",\r\n                          \"longName\": \"Hour\"\r\n                        }\r\n                      }\r\n                    }\r\n                  ]\r\n                }\r\n              ],\r\n              \"modificationTypeCode\": \"ADJUSTMENT\",\r\n              \"comments\": [\r\n                {\r\n                  \"textValue\": \"Comments from Marketplace\",\r\n                  \"commentCode\": {\r\n                    \"codeValue\": \"\",\r\n                    \"shortName\": \"\",\r\n                    \"longName\": \"\"\r\n                  },\r\n                  \"entryDateTime\": \"2020-04-08T00:00:00Z\",\r\n                  \"author\": {\r\n                    \"associateOID\": \"\",\r\n                    \"roleCode\": {\r\n                      \"codeValue\": \"\",\r\n                      \"shortName\": \"\",\r\n                      \"longName\": \"\"\r\n                    },\r\n                    \"formattedName\": \"\"\r\n                  },\r\n                  \"appliesToCode\": \"\"\r\n                }\r\n              ]\r\n            }\r\n          ]\r\n        }        \r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v3",
+						"time-off-balances.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "400 empty record date time",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"recordDateTime\": \"\",\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"contextExpressionID\": \"\",\r\n          \"associateOID\": \"\",\r\n          \"workAssignmentID\": \"37077846_292\"\r\n        },\r\n        \"transform\": {\r\n          \"eventReasonCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"eventStatusCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"effectiveDateTime\": \"2020-04-08T00:00:00Z\",\r\n          \"notificationIndicator\": true,\r\n          \"timeOffBalances\": [\r\n            {\r\n              \"timeOffPolicyBalances\": [\r\n                {\r\n                  \"timeOffPolicyCode\": {\r\n                    \"codeValue\": \"26865780_1674\"\r\n                  },\r\n                  \"accrualBalances\": [\r\n                    {\r\n                      \r\n                      \"accrualQuantity\": {\r\n                        \"quantityValue\": 15,\r\n                        \"unitTimeCode\": {\r\n                          \"codeValue\": \"H\",\r\n                          \"shortName\": \"Hour\",\r\n                          \"longName\": \"Hour\"\r\n                        }\r\n                      }\r\n                    }\r\n                  ]\r\n                }\r\n              ],\r\n              \"modificationTypeCode\": \"ADJUSTMENT\",\r\n              \"comments\": [\r\n                {\r\n                  \"textValue\": \"Comments from Marketplace\",\r\n                  \"commentCode\": {\r\n                    \"codeValue\": \"\",\r\n                    \"shortName\": \"\",\r\n                    \"longName\": \"\"\r\n                  },\r\n                  \"entryDateTime\": \"2020-04-08T00:00:00Z\",\r\n                  \"author\": {\r\n                    \"associateOID\": \"\",\r\n                    \"roleCode\": {\r\n                      \"codeValue\": \"\",\r\n                      \"shortName\": \"\",\r\n                      \"longName\": \"\"\r\n                    },\r\n                    \"formattedName\": \"\"\r\n                  },\r\n                  \"appliesToCode\": \"\"\r\n                }\r\n              ]\r\n            }\r\n          ]\r\n        }        \r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v3",
+						"time-off-balances.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "400 empty work assignment ID",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"recordDateTime\": \"2020-04-09T00:00:00Z\",\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"contextExpressionID\": \"\",\r\n          \"associateOID\": \"\",\r\n          \"workAssignmentID\": \"\"\r\n        },\r\n        \"transform\": {\r\n          \"eventReasonCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"eventStatusCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"effectiveDateTime\": \"2020-04-09T00:00:00Z\",\r\n          \"notificationIndicator\": true,\r\n          \"timeOffBalances\": [\r\n            {\r\n              \"timeOffPolicyBalances\": [\r\n                {\r\n                  \"timeOffPolicyCode\": {\r\n                    \"codeValue\": \"26865780_1674\"\r\n                  },\r\n                  \"accrualBalances\": [\r\n                    {\r\n                      \r\n                      \"accrualQuantity\": {\r\n                        \"quantityValue\": 15,\r\n                        \"unitTimeCode\": {\r\n                          \"codeValue\": \"H\",\r\n                          \"shortName\": \"Hour\",\r\n                          \"longName\": \"Hour\"\r\n                        }\r\n                      }\r\n                    }\r\n                  ]\r\n                }\r\n              ],\r\n              \"modificationTypeCode\": \"ADJUSTMENT\",\r\n              \"comments\": [\r\n                {\r\n                  \"textValue\": \"Comments from Marketplace\",\r\n                  \"commentCode\": {\r\n                    \"codeValue\": \"\",\r\n                    \"shortName\": \"\",\r\n                    \"longName\": \"\"\r\n                  },\r\n                  \"entryDateTime\": \"2020-04-08T00:00:00Z\",\r\n                  \"author\": {\r\n                    \"associateOID\": \"\",\r\n                    \"roleCode\": {\r\n                      \"codeValue\": \"\",\r\n                      \"shortName\": \"\",\r\n                      \"longName\": \"\"\r\n                    },\r\n                    \"formattedName\": \"\"\r\n                  },\r\n                  \"appliesToCode\": \"\"\r\n                }\r\n              ]\r\n            }\r\n          ]\r\n        }        \r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v3",
+						"time-off-balances.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "400 Invalid effective date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"recordDateTime\": \"2020-04-08T00:00:00Z\",\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"contextExpressionID\": \"\",\r\n          \"associateOID\": \"\",\r\n          \"workAssignmentID\": \"37077846_292\"\r\n        },\r\n        \"transform\": {\r\n          \"eventReasonCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"eventStatusCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"effectiveDateTime\": \"\",\r\n          \"notificationIndicator\": true,\r\n          \"timeOffBalances\": [\r\n            {\r\n              \"timeOffPolicyBalances\": [\r\n                {\r\n                  \"timeOffPolicyCode\": {\r\n                    \"codeValue\": \"26865780_1674\"\r\n                  },\r\n                  \"accrualBalances\": [\r\n                    {\r\n                      \r\n                      \"accrualQuantity\": {\r\n                        \"quantityValue\": 15,\r\n                        \"unitTimeCode\": {\r\n                          \"codeValue\": \"H\",\r\n                          \"shortName\": \"Hour\",\r\n                          \"longName\": \"Hour\"\r\n                        }\r\n                      }\r\n                    }\r\n                  ]\r\n                }\r\n              ],\r\n              \"modificationTypeCode\": \"ADJUSTMENT\",\r\n              \"comments\": [\r\n                {\r\n                  \"textValue\": \"Comments from Marketplace\",\r\n                  \"commentCode\": {\r\n                    \"codeValue\": \"\",\r\n                    \"shortName\": \"\",\r\n                    \"longName\": \"\"\r\n                  },\r\n                  \"entryDateTime\": \"2020-04-08T00:00:00Z\",\r\n                  \"author\": {\r\n                    \"associateOID\": \"\",\r\n                    \"roleCode\": {\r\n                      \"codeValue\": \"\",\r\n                      \"shortName\": \"\",\r\n                      \"longName\": \"\"\r\n                    },\r\n                    \"formattedName\": \"\"\r\n                  },\r\n                  \"appliesToCode\": \"\"\r\n                }\r\n              ]\r\n            }\r\n          ]\r\n        }        \r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v3",
+						"time-off-balances.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "400 Invalid policy code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"recordDateTime\": \"2020-04-08T00:00:00Z\",\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"contextExpressionID\": \"\",\r\n          \"associateOID\": \"\",\r\n          \"workAssignmentID\": \"37077846_292\"\r\n        },\r\n        \"transform\": {\r\n          \"eventReasonCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"eventStatusCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"effectiveDateTime\": \"2020-04-08T00:00:00Z\",\r\n          \"notificationIndicator\": true,\r\n          \"timeOffBalances\": [\r\n            {\r\n              \"timeOffPolicyBalances\": [\r\n                {\r\n                  \"timeOffPolicyCode\": {\r\n                    \"codeValue\": \"\"\r\n                  },\r\n                  \"accrualBalances\": [\r\n                    {\r\n                      \r\n                      \"accrualQuantity\": {\r\n                        \"quantityValue\": 15,\r\n                        \"unitTimeCode\": {\r\n                          \"codeValue\": \"H\",\r\n                          \"shortName\": \"Hour\",\r\n                          \"longName\": \"Hour\"\r\n                        }\r\n                      }\r\n                    }\r\n                  ]\r\n                }\r\n              ],\r\n              \"modificationTypeCode\": \"ADJUSTMENT\",\r\n              \"comments\": [\r\n                {\r\n                  \"textValue\": \"Comments from Marketplace\",\r\n                  \"commentCode\": {\r\n                    \"codeValue\": \"\",\r\n                    \"shortName\": \"\",\r\n                    \"longName\": \"\"\r\n                  },\r\n                  \"entryDateTime\": \"2020-04-08T00:00:00Z\",\r\n                  \"author\": {\r\n                    \"associateOID\": \"\",\r\n                    \"roleCode\": {\r\n                      \"codeValue\": \"\",\r\n                      \"shortName\": \"\",\r\n                      \"longName\": \"\"\r\n                    },\r\n                    \"formattedName\": \"\"\r\n                  },\r\n                  \"appliesToCode\": \"\"\r\n                }\r\n              ]\r\n            }\r\n          ]\r\n        }        \r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v3",
+						"time-off-balances.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "400 empty quatity amount",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"recordDateTime\": \"2020-04-08T00:00:00Z\",\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"contextExpressionID\": \"\",\r\n          \"associateOID\": \"\",\r\n          \"workAssignmentID\": \"37077846_292\"\r\n        },\r\n        \"transform\": {\r\n          \"eventReasonCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"eventStatusCode\": {\r\n            \"codeValue\": \"\",\r\n            \"shortName\": \"\",\r\n            \"longName\": \"\"\r\n          },\r\n          \"effectiveDateTime\": \"2020-04-08T00:00:00Z\",\r\n          \"notificationIndicator\": true,\r\n          \"timeOffBalances\": [\r\n            {\r\n              \"timeOffPolicyBalances\": [\r\n                {\r\n                  \"timeOffPolicyCode\": {\r\n                    \"codeValue\": \"26865780_1674\"\r\n                  },\r\n                  \"accrualBalances\": [\r\n                    {\r\n                      \r\n                      \"accrualQuantity\": {\r\n               \r\n                        \"unitTimeCode\": {\r\n                          \"codeValue\": \"H\",\r\n                          \"shortName\": \"Hour\",\r\n                          \"longName\": \"Hour\"\r\n                        }\r\n                      }\r\n                    }\r\n                  ]\r\n                }\r\n              ],\r\n              \"modificationTypeCode\": \"ADJUSTMENT\",\r\n              \"comments\": [\r\n                {\r\n                  \"textValue\": \"Comments from Marketplace\",\r\n                  \"commentCode\": {\r\n                    \"codeValue\": \"\",\r\n                    \"shortName\": \"\",\r\n                    \"longName\": \"\"\r\n                  },\r\n                  \"entryDateTime\": \"2020-04-08T00:00:00Z\",\r\n                  \"author\": {\r\n                    \"associateOID\": \"\",\r\n                    \"roleCode\": {\r\n                      \"codeValue\": \"\",\r\n                      \"shortName\": \"\",\r\n                      \"longName\": \"\"\r\n                    },\r\n                    \"formattedName\": \"\"\r\n                  },\r\n                  \"appliesToCode\": \"\"\r\n                }\r\n              ]\r\n            }\r\n          ]\r\n        }        \r\n      }\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v3",
+						"time-off-balances.modify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update time of balance META",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer 2da7b5eb-3cad-41f8-b2af-3f767660a2ff"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify/meta",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"events",
+						"time",
+						"v3",
+						"time-off-balances.modify",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST ACCESS TOKEN CALL Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a4b8c496-24a4-4458-bb13-c804dcca0eb4",
+						"exec": [
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Time Off Configuration",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2da7b5eb-3cad-41f8-b2af-3f767660a2ff",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/time/v2/workers/G3Q7JN6K3CNJJRQH/time-off-details/time-off-configurations",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"G3Q7JN6K3CNJJRQH",
+						"time-off-details",
+						"time-off-configurations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Time Off Configuration Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 2da7b5eb-3cad-41f8-b2af-3f767660a2ff",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iat-api.adp.com/time/v2/workers/G3Q7JN6K3CNJJRQH/time-off-details/time-off-configurations",
+					"protocol": "https",
+					"host": [
+						"iat-api",
+						"adp",
+						"com"
+					],
+					"path": [
+						"time",
+						"v2",
+						"workers",
+						"G3Q7JN6K3CNJJRQH",
+						"time-off-details",
+						"time-off-configurations"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
