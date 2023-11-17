@@ -1,0 +1,40 @@
+{
+    "events": [
+        {
+            "serviceCategoryCode": {
+                "codeValue": "hr"
+            },
+            "eventNameCode": {
+                "codeValue": "worker.terminate"
+            },
+            "originator": {
+                "associateOID": "{{employeeAOID}}"
+            },
+            "actor": {
+                "associateOID": "{{employeeAOID}}"
+            },
+            "data": {
+                "eventContext": {
+                    "worker": {
+                        "associateOID": "{{employeeAOID}}"
+                    }
+                },
+                "transform": {
+                    "eventStatusCode": {
+                        "codeValue": "submit"
+                    },
+                    "effectiveDateTime": "2023-07-04",
+                    "worker": {
+                        "workerStatus": {
+                            "codeValue": "T",
+                            "shortName": "Terminated"
+                        },
+                        "workerDates": {
+                            "terminationDate": "2023-07-02"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
