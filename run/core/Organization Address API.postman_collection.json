@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "91254f4f-6689-49f6-8528-bc5ccb83d4bb",
+		"name": "Organization Address API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11458753"
+	},
+	"item": [
+		{
+			"name": "Get Company Address",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "associateoid",
+						"value": "{{associateoid}}",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "{{orgoid}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host_url}}/runessmobileapi/core/v1/organization-identities",
+					"host": [
+						"{{host_url}}"
+					],
+					"path": [
+						"runessmobileapi",
+						"core",
+						"v1",
+						"organization-identities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Company Address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>Event ID</th>\r",
+							"        <th>Service Category Code</th>\r",
+							"        <th>Event Name Code</th>\r",
+							"        <th>Event Status Code</th>\r",
+							"        <th>Record Date Time</th>\r",
+							"        <th>Creation Date Time</th>\r",
+							"        <th>Organization OID</th>\r",
+							"        <th>Organization Address Name</th>\r",
+							"        <th>Line One</th>\r",
+							"        <th>Line Two</th>\r",
+							"        <th>City Name</th>\r",
+							"        <th>Subdivision Level 1</th>\r",
+							"        <th>Subdivision Level 2</th>\r",
+							"        <th>Postal Code</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    {{#each response.events}}\r",
+							"        <tr>\r",
+							"            <td>{{eventID}}</td>\r",
+							"            <td>{{serviceCategoryCode.codeValue}}</td>\r",
+							"            <td>{{eventNameCode.codeValue}}</td>\r",
+							"            <td>{{eventStatusCode.codeValue}}</td>\r",
+							"            <td>{{recordDateTime}}</td>\r",
+							"            <td>{{creationDateTime}}</td>\r",
+							"            <td>{{data.eventContext.organizationOID}}</td>\r",
+							"            <td>{{data.output.organizationIdentity.organizationAddress.nameCode.codeValue}}</td>\r",
+							"            <td>{{data.output.organizationIdentity.organizationAddress.lineOne}}</td>\r",
+							"            <td>{{data.output.organizationIdentity.organizationAddress.lineTwo}}</td>\r",
+							"            <td>{{data.output.organizationIdentity.organizationAddress.cityName}}</td>\r",
+							"            <td>{{data.output.organizationIdentity.organizationAddress.countrySubdivisionLevel1.codeValue}}</td>\r",
+							"            <td>{{data.output.organizationIdentity.organizationAddress.countrySubdivisionLevel2.codeValue}}</td>\r",
+							"            <td>{{data.output.organizationIdentity.organizationAddress.postalCode}}</td>\r",
+							"        </tr>\r",
+							"    {{/each}}\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return { response: pm.response.json() }\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "associateoid",
+						"value": "{{associateoid}}",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "{{orgoid}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"organizationOID\": \"{{orgoid}}\"\r\n                },\r\n                \"transform\": {\r\n                    \"organizationIdentity\": {\r\n                        \"organizationAddress\": {\r\n                            \"nameCode\": {\r\n                                \"codeValue\": \"Business\",\r\n                                \"shortName\": \"Business Address\",\r\n                                \"longName\": \"Business Address\"\r\n                            },\r\n                            \"lineOne\": \"47W 13th St\",\r\n                            \"cityName\": \"New York\",\r\n                            \"postalCode\": \"10002\",\r\n                            \"countrySubdivisionLevel1\": {\r\n                                \"subdivisionType\": \"STATE\",\r\n                                \"codeValue\": \"NY\"\r\n                            },\r\n                            \"countrySubdivisionLevel2\": {\r\n                                \"subdivisionType\": \"COUNTY\",\r\n                                \"codeValue\":\"NEW YORK - NEW YORK\"\r\n                            },\r\n                            \"lineTwo\": \"Manhattan\"\r\n                        }\r\n                    }\r\n                }\r\n            },\r\n            \"serviceCategoryCode\": {\r\n                \"codeValue\": \"core\"\r\n            },\r\n            \"eventNameCode\": {\r\n                \"codeValue\": \"organizationIdentity.address.change\"\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host_url}}/runessmobileapi/events/core/v1/organization-identities.address.change",
+					"host": [
+						"{{host_url}}"
+					],
+					"path": [
+						"runessmobileapi",
+						"events",
+						"core",
+						"v1",
+						"organization-identities.address.change"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Company Address Meta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "associateoid",
+						"value": "{{associateoid}}",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "{{orgoid}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host_url}}/runessmobileapi/events/core/v1/organization-identities.address.change/meta",
+					"host": [
+						"{{host_url}}"
+					],
+					"path": [
+						"runessmobileapi",
+						"events",
+						"core",
+						"v1",
+						"organization-identities.address.change",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "States codelist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "associateoid",
+						"value": "{{associateoid}}",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "{{orgoid}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{host_events}}/codelists/hr/v3/worker-management/States",
+					"host": [
+						"{{host_events}}"
+					],
+					"path": [
+						"codelists",
+						"hr",
+						"v3",
+						"worker-management",
+						"States"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
