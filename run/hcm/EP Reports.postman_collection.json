@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "c6133e15-725b-4296-906e-39ba56b72a5d",
+		"name": "EP Reports",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Subjects",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "12abb92c-d1af-49a0-97dc-f93a1f7a8689",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "associateoid",
+						"value": "G3AZBW1MENYQRAR1",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3AZBW1MENYQK1NA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{host_events}}/hcm/v2/enterprise-reports",
+					"host": [
+						"{{host_events}}"
+					],
+					"path": [
+						"hcm",
+						"v2",
+						"enterprise-reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Report Package",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "associateoid",
+						"value": "G3Q9VSKP2J109PGZ",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3HATVSXJYHZDFHF",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"enterpriseReportPackages\": [\r\n        {\r\n            \"reportPackageName\": \"Doc Test Five\",\r\n            \"reportTemplates\": [\r\n                {\r\n                    \"reportName\": \"Payroll report\",\r\n                    \"reportDescription\": \"Payroll report Description\",\r\n                     \"reportTypeCode\": {\r\n                        \"code\": \"Employee Summary\",\r\n                        \"name\": \"sample\"\r\n                    },\r\n                    \"reportClassCode\": {\r\n                        \"code\": \"Employee\",\r\n                        \"name\": \"temp\"\r\n                    },\r\n                    \"templateOwner\": {\r\n                        \"associateOID\": \"G3Q9VSKP2J109PGZ\"\r\n                    }\r\n                    \r\n                }\r\n            ],\r\n            \"runtimeSettings\": {\r\n                \"runtimeEffectivity\": {\r\n                    \"effectiveAtExecutionDateIndicator\": true,\r\n                    \"effectivePeriod\": {\r\n                        \"startDate\": \"2024-07-15 07:06:38.550\",\r\n                        \"endDate\": \"2024-07-15 07:06:38.551\"\r\n                    }\r\n                },\r\n                \"userInputRequiredIndicator\": true\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://runtoolapiportal-qafit.nj.adp.com/runessmobileapi/hcm/v2/enterprise-report-packages",
+					"protocol": "http",
+					"host": [
+						"runtoolapiportal-qafit",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"runessmobileapi",
+						"hcm",
+						"v2",
+						"enterprise-report-packages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Report Package",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "associateoid",
+						"value": "G3Q9VSKP2J109PGZ",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3HATVSXJYHZDFHF",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"enterpriseReportPackages\": [\r\n        {\r\n            \"reportPackageName\": \"Doc TestT\",\r\n            \"reportTemplates\": [\r\n                {\r\n                    \"reportName\": \"Payroll report\",\r\n                    \"reportDescription\": \"Payroll report Description\",\r\n                    \"reportTypeCode\": {\r\n                        \"code\": \"Employee Summary\",\r\n                        \"name\": \"sample\"\r\n                    },\r\n                    \"reportClassCode\": {\r\n                        \"code\": \"Employee\",\r\n                        \"name\": \"temp\"\r\n                    },\r\n                    \"templateOwner\": {\r\n                        \"associateOID\": \"G3Q9VSKP2J109PGZ\"\r\n                    }\r\n                }\r\n            ],\r\n            \"runtimeSettings\": {\r\n                \"runtimeEffectivity\": {\r\n                    \"effectiveAtExecutionDateIndicator\": true,\r\n                    \"effectivePeriod\": {\r\n                        \"startDate\": \"2024-06-12 07:41:29.003\",\r\n                        \"endDate\": \"2024-06-12 07:41:29.004\"\r\n                    }\r\n                },\r\n                \"userInputRequiredIndicator\": true\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://runtoolapiportal-qafit.nj.adp.com/runessmobileapi/hcm/v2/enterprise-report-packages/8df110ef-beee-4a2e-9bba-0d3e834174a6",
+					"protocol": "http",
+					"host": [
+						"runtoolapiportal-qafit",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"runessmobileapi",
+						"hcm",
+						"v2",
+						"enterprise-report-packages",
+						"8df110ef-beee-4a2e-9bba-0d3e834174a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report Package Download",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "associateoid",
+						"value": "G3Q9VSKP2J109PGZ",
+						"type": "text"
+					},
+					{
+						"key": "orgoid",
+						"value": "G3HATVSXJYHZDFHF",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://runtoolapiportal-qafit.nj.adp.com/runessmobileapi/hcm/v2/enterprise-report-packages/dd04294e-f12b-4e6f-9b6c-b796d087c419/executions/12/exports/12/content",
+					"protocol": "http",
+					"host": [
+						"runtoolapiportal-qafit",
+						"nj",
+						"adp",
+						"com"
+					],
+					"path": [
+						"runessmobileapi",
+						"hcm",
+						"v2",
+						"enterprise-report-packages",
+						"dd04294e-f12b-4e6f-9b6c-b796d087c419",
+						"executions",
+						"12",
+						"exports",
+						"12",
+						"content"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
