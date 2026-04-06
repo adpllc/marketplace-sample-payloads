@@ -25,16 +25,14 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer 3234d1c2-7fa7-4d14-a161-745a7af99f02"
+						"value": "Bearer {{accessToken}}"
 					}
 				],
 				"url": {
-					"raw": "https://iat-api.adp.com/hr/v2/workers",
+					"raw": "{{service-root}}/hr/v2/workers",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"hr",
@@ -57,18 +55,16 @@
 					}
 				],
 				"url": {
-					"raw": "https://iat-api.adp.com/time/v2/workers/G310YGK80NSS9D2N/time-off-details/time-off-balances",
+					"raw": "{{service-root}}/time/v2/workers/{{employeeAOID}}/time-off-details/time-off-balances",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"time",
 						"v2",
 						"workers",
-						"G310YGK80NSS9D2N",
+						"{{employeeAOID}}",
 						"time-off-details",
 						"time-off-balances"
 					]
@@ -88,12 +84,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://iat-api.adp.com/time/v2/workers/32rdsfsd/time-off-details/time-off-balances",
+					"raw": "{{service-root}}/time/v2/workers/32rdsfsd/time-off-details/time-off-balances",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"time",
@@ -115,7 +109,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer 2da7b5eb-3cad-41f8-b2af-3f767660a2ff"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -134,12 +128,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"raw": "{{service-root}}/events/time/v3/time-off-balances.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -178,12 +170,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"raw": "{{service-root}}/events/time/v3/time-off-balances.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -222,12 +212,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"raw": "{{service-root}}/events/time/v3/time-off-balances.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -266,12 +254,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"raw": "{{service-root}}/events/time/v3/time-off-balances.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -310,12 +296,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"raw": "{{service-root}}/events/time/v3/time-off-balances.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -354,12 +338,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify",
+					"raw": "{{service-root}}/events/time/v3/time-off-balances.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -379,7 +361,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer 2da7b5eb-3cad-41f8-b2af-3f767660a2ff"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -390,12 +372,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v3/time-off-balances.modify/meta",
+					"raw": "{{service-root}}/events/time/v3/time-off-balances.modify/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -463,12 +443,10 @@
 					]
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",
@@ -535,12 +513,10 @@
 					]
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",
@@ -559,23 +535,21 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2da7b5eb-3cad-41f8-b2af-3f767660a2ff",
+						"value": "Bearer {{accessToken}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://iat-api.adp.com/time/v2/workers/G3Q7JN6K3CNJJRQH/time-off-details/time-off-configurations",
+					"raw": "{{service-root}}/time/v2/workers/{{employeeAOID}}/time-off-details/time-off-configurations",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"time",
 						"v2",
 						"workers",
-						"G3Q7JN6K3CNJJRQH",
+						"{{employeeAOID}}",
 						"time-off-details",
 						"time-off-configurations"
 					]
@@ -590,23 +564,21 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2da7b5eb-3cad-41f8-b2af-3f767660a2ff",
+						"value": "Bearer {{accessToken}}",
 						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "https://iat-api.adp.com/time/v2/workers/G3Q7JN6K3CNJJRQH/time-off-details/time-off-configurations",
+					"raw": "{{service-root}}/time/v2/workers/{{employeeAOID}}/time-off-details/time-off-configurations",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"time",
 						"v2",
 						"workers",
-						"G3Q7JN6K3CNJJRQH",
+						"{{employeeAOID}}",
 						"time-off-details",
 						"time-off-configurations"
 					]

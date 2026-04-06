@@ -17,7 +17,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "roleCode",
@@ -37,7 +37,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -53,7 +53,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -69,7 +69,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -91,7 +91,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -107,7 +107,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -123,7 +123,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -139,7 +139,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -155,7 +155,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -164,7 +164,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"G37FPGW57N71G26K\",\r\n          \"workAssignment\" : {\r\n              \"itemID\" : \"71674_1129\",\r\n              \"additionalRemuneration\": {\r\n                  \"itemID\" : \"Rate 2\"\r\n              }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
+							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"{{employeeAOID}}\",\r\n          \"workAssignment\" : {\r\n              \"itemID\" : \"71674_1129\",\r\n              \"additionalRemuneration\": {\r\n                  \"itemID\" : \"Rate 2\"\r\n              }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
 						},
 						"url": "{{service-root}}/events/hr/v1/worker.work-assignment.additional-remuneration.remove",
 						"description": "Remove an additional pay rate for a worker."
@@ -178,7 +178,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -194,7 +194,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -210,7 +210,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -219,7 +219,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"G37FPGW57N71G26K\"\r\n        }\r\n      },\r\n      \"transform\" : {\r\n        \"worker\" : {\r\n          \"person\" : {\r\n            \"communication\" : {\r\n              \"email\" : {\r\n                \"emailUri\" : \"myemail21@gmail.com\"\r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
+							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"{{employeeAOID}}\"\r\n        }\r\n      },\r\n      \"transform\" : {\r\n        \"worker\" : {\r\n          \"person\" : {\r\n            \"communication\" : {\r\n              \"email\" : {\r\n                \"emailUri\" : \"myemail21@gmail.com\"\r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
 						},
 						"url": "{{service-root}}/events/hr/v1/worker.personal-communication.email.add",
 						"description": "Add an email address.\n"
@@ -233,7 +233,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -249,7 +249,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -258,7 +258,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"G37FPGW57N71G26K\"\r\n        }\r\n      },\r\n      \"transform\" : {\r\n        \"worker\" : {\r\n          \"person\" : {\r\n            \"communication\" : {\r\n              \"email\" : {\r\n                \"emailUri\" : \"myemail21@gmail.com\"\r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
+							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"{{employeeAOID}}\"\r\n        }\r\n      },\r\n      \"transform\" : {\r\n        \"worker\" : {\r\n          \"person\" : {\r\n            \"communication\" : {\r\n              \"email\" : {\r\n                \"emailUri\" : \"myemail21@gmail.com\"\r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
 						},
 						"url": "{{service-root}}/events/hr/v1/worker.personal-communication.email.change",
 						"description": "Change an email address.\n"
@@ -272,7 +272,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -288,7 +288,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -297,7 +297,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"G37FPGW57N71G26K\"\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
+							"raw": "{\r\n  \"events\" : [ \r\n    {\r\n    \"data\" : {\r\n      \"eventContext\" : {\r\n        \"worker\" : {\r\n          \"associateOID\" : \"{{employeeAOID}}\"\r\n        }\r\n      }\r\n    }\r\n  } ]\r\n}"
 						},
 						"url": "{{service-root}}/events/hr/v1/worker.personal-communication.email.remove",
 						"description": "Remove an email address.\n"
@@ -311,7 +311,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -327,7 +327,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -350,7 +350,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -366,7 +366,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -382,7 +382,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -398,7 +398,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -414,14 +414,14 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\":{\n                \"transform\":\n                    {\n                        \"effectiveDateTime\": \"2016-04-15\",\n                        \"worker\":\n                        {\n                            \"associateOID\": \"G37FPGW57N715WC5\",\n                            \"workerDates\":\n                            {\n                                \"rehireDate\": \"2016-04-15\"\n                            },\n                            \"workerStatus\":\n                            {\n                                \"reasonCode\": {\n                                    \"codeValue\": \"IMPORT\"\n                                }\n                            }\n                        }\n                    }\n                \n            }\n        }\n    ]\n}"
+							"raw": "{\n    \"events\": [\n        {\n            \"data\":{\n                \"transform\":\n                    {\n                        \"effectiveDateTime\": \"2016-04-15\",\n                        \"worker\":\n                        {\n                            \"associateOID\": \"{{employeeAOID}}\",\n                            \"workerDates\":\n                            {\n                                \"rehireDate\": \"2016-04-15\"\n                            },\n                            \"workerStatus\":\n                            {\n                                \"reasonCode\": {\n                                    \"codeValue\": \"IMPORT\"\n                                }\n                            }\n                        }\n                    }\n                \n            }\n        }\n    ]\n}"
 						},
-						"url": "https://api.adp.com/events/hr/v1/worker.rehire/meta",
+						"url": "{{service-root}}/events/hr/v1/worker.rehire/meta",
 						"description": ""
 					},
 					"response": []
@@ -433,7 +433,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -442,9 +442,9 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\":{\n                \"transform\":\n                    {\n                        \"effectiveDateTime\": \"2016-04-15\",\n                        \"worker\":\n                        {\n                            \"associateOID\": \"G37FPGW57N715WC5\",\n                            \"workerDates\":\n                            {\n                                \"rehireDate\": \"2016-04-15\"\n                            },\n                            \"workerStatus\":\n                            {\n                                \"reasonCode\": {\n                                    \"codeValue\": \"IMPORT\"\n                                }\n                            }\n                        }\n                    }\n                \n            }\n        }\n    ]\n}"
+							"raw": "{\n    \"events\": [\n        {\n            \"data\":{\n                \"transform\":\n                    {\n                        \"effectiveDateTime\": \"2016-04-15\",\n                        \"worker\":\n                        {\n                            \"associateOID\": \"{{employeeAOID}}\",\n                            \"workerDates\":\n                            {\n                                \"rehireDate\": \"2016-04-15\"\n                            },\n                            \"workerStatus\":\n                            {\n                                \"reasonCode\": {\n                                    \"codeValue\": \"IMPORT\"\n                                }\n                            }\n                        }\n                    }\n                \n            }\n        }\n    ]\n}"
 						},
-						"url": "https://api.adp.com/events/hr/v1/worker.rehire",
+						"url": "{{service-root}}/events/hr/v1/worker.rehire",
 						"description": ""
 					},
 					"response": []
@@ -456,7 +456,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Accept",
@@ -476,7 +476,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Accept",
@@ -516,7 +516,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Accept",
@@ -553,7 +553,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Accept",
@@ -589,7 +589,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Accept",
@@ -625,7 +625,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Accept",
@@ -661,7 +661,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Prefer",
@@ -681,7 +681,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -716,7 +716,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -732,7 +732,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -768,7 +768,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -801,7 +801,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -833,7 +833,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -865,7 +865,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -903,7 +903,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -919,7 +919,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -928,7 +928,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": {\r\n                \"payrollGroupCode\": {\r\n                    \"codeValue\": \"AA4\"\r\n                },\r\n                \"payrollProcessingJobID\": \"SWD_2017_03_09\"\r\n            },\r\n            \"transform\": {\r\n                \"payDataInput\": {\r\n                    \"payeePayInputs\": [{\r\n                            \"associateOID\": \"G37FPGW57N71G26K\",\r\n                            \"payNumber\": \"1\",\r\n                            \"payrollProfilePayInputs\": [{\r\n                                \"payrollFileNumber\": \"001110\",\r\n                                \"payInputs\": [{\r\n                                    \"earningInputs\": [{\r\n                                        \"earningCode\": {\r\n                                            \"codeValue\": \"R\"\r\n                                        },\r\n                                        \"rate\": {\r\n                                            \"rateValue\": \"44.50\"\r\n                                        },\r\n                                        \"numberOfHours\": 40\r\n                                    }, {\r\n                                        \"earningCode\": {\r\n                                            \"codeValue\": \"O\"\r\n                                        },\r\n                                        \"numberOfHours\": 4\r\n                                    }],\r\n                                    \"deductionInputs\": [{\r\n                                        \"deductionCode\": {\r\n                                            \"codeValue\": \"A\"\r\n                                        },\r\n                                        \"deductionRate\": {\r\n                                            \"rateValue\": 10.50,\r\n                                            \"currencyCode\": \"USD\"\r\n                                        }\r\n                                    }],\r\n                                    \"reimbursementInputs\": [{\r\n                                    \t\"reimbursementCode\": {\r\n                                    \t\t\"codeValue\": \"B\"\r\n                                    \t},\r\n                                    \t\"reimbursementAmount\":{\r\n                                    \t\t\"amountValue\": 25.00,\r\n                                    \t\t\"currencyCode\": \"USD\"\r\n                                    \t}\r\n                                    }]\r\n                                }]\r\n                            }]\r\n                        }, {\r\n                            \"associateOID\": \"G3JV6MKPVRHR86CW\",\r\n                            \"payNumber\": \"1\",\r\n                            \"payrollProfilePayInputs\": [{\r\n                                \"payrollFileNumber\": \"001150\",\r\n                                \"payInputs\": [{\r\n                                    \"earningInputs\": [{\r\n                                            \"earningCode\": {\r\n                                                \"codeValue\": \"R\"\r\n                                            },\r\n\r\n                                            \"rate\": {\r\n                                                \"rateValue\": \"15.00\"\r\n                                            },\r\n                                            \"numberOfHours\": 40\r\n                                        }, {\r\n                                            \"earningCode\": {\r\n                                                \"codeValue\": \"O\"\r\n                                            },\r\n                                            \"numberOfHours\": 16\r\n                                        }\r\n\r\n                                    ]\r\n                                }]\r\n                            }]\r\n                        }\r\n\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}"
+							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": {\r\n                \"payrollGroupCode\": {\r\n                    \"codeValue\": \"AA4\"\r\n                },\r\n                \"payrollProcessingJobID\": \"SWD_2017_03_09\"\r\n            },\r\n            \"transform\": {\r\n                \"payDataInput\": {\r\n                    \"payeePayInputs\": [{\r\n                            \"associateOID\": \"{{employeeAOID}}\",\r\n                            \"payNumber\": \"1\",\r\n                            \"payrollProfilePayInputs\": [{\r\n                                \"payrollFileNumber\": \"001110\",\r\n                                \"payInputs\": [{\r\n                                    \"earningInputs\": [{\r\n                                        \"earningCode\": {\r\n                                            \"codeValue\": \"R\"\r\n                                        },\r\n                                        \"rate\": {\r\n                                            \"rateValue\": \"44.50\"\r\n                                        },\r\n                                        \"numberOfHours\": 40\r\n                                    }, {\r\n                                        \"earningCode\": {\r\n                                            \"codeValue\": \"O\"\r\n                                        },\r\n                                        \"numberOfHours\": 4\r\n                                    }],\r\n                                    \"deductionInputs\": [{\r\n                                        \"deductionCode\": {\r\n                                            \"codeValue\": \"A\"\r\n                                        },\r\n                                        \"deductionRate\": {\r\n                                            \"rateValue\": 10.50,\r\n                                            \"currencyCode\": \"USD\"\r\n                                        }\r\n                                    }],\r\n                                    \"reimbursementInputs\": [{\r\n                                    \t\"reimbursementCode\": {\r\n                                    \t\t\"codeValue\": \"B\"\r\n                                    \t},\r\n                                    \t\"reimbursementAmount\":{\r\n                                    \t\t\"amountValue\": 25.00,\r\n                                    \t\t\"currencyCode\": \"USD\"\r\n                                    \t}\r\n                                    }]\r\n                                }]\r\n                            }]\r\n                        }, {\r\n                            \"associateOID\": \"{{employeeAOID}}\",\r\n                            \"payNumber\": \"1\",\r\n                            \"payrollProfilePayInputs\": [{\r\n                                \"payrollFileNumber\": \"001150\",\r\n                                \"payInputs\": [{\r\n                                    \"earningInputs\": [{\r\n                                            \"earningCode\": {\r\n                                                \"codeValue\": \"R\"\r\n                                            },\r\n\r\n                                            \"rate\": {\r\n                                                \"rateValue\": \"15.00\"\r\n                                            },\r\n                                            \"numberOfHours\": 40\r\n                                        }, {\r\n                                            \"earningCode\": {\r\n                                                \"codeValue\": \"O\"\r\n                                            },\r\n                                            \"numberOfHours\": 16\r\n                                        }\r\n\r\n                                    ]\r\n                                }]\r\n                            }]\r\n                        }\r\n\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}"
 						},
 						"url": "{{service-root}}/events/payroll/v1/pay-data-input.modify",
 						"description": "Create a new paydata batch.\n"
@@ -942,7 +942,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -958,7 +958,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -974,7 +974,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -990,7 +990,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1006,7 +1006,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -1015,7 +1015,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": {\r\n                \"worker\": {\r\n                    \"associateOID\": \"G3Y43A1SCMYJZD4B\"\r\n                },\r\n                \"payrollInstruction\": {\r\n                    \"payrollGroupCode\": {\r\n                        \"codeValue\": \"AA4\"\r\n                    },\r\n                    \"payrollFileNumber\": \"5685\",\r\n                    \"payrollAgreementID\": \"CC1_1479572135\",\r\n                    \"itemID\": \"1481671640_7471\",\r\n                    \"generalDeductionInstruction\": {\r\n                        \"deductionCode\": {\r\n                            \"codeValue\": \"A\"\r\n                        }\r\n                    }\r\n                }\r\n            },\r\n            \"transform\": {\r\n                \"effectiveDateTime\": \"2016-08-01\",\r\n                \"payrollInstruction\": {\r\n                    \"generalDeductionInstruction\": {\r\n                        \"deductionRate\": {\r\n                            \"rateValue\": 99,\r\n                            \"currencyCode\": \"USD\"\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}\r\n"
+							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": {\r\n                \"worker\": {\r\n                    \"associateOID\": \"{{employeeAOID}}\"\r\n                },\r\n                \"payrollInstruction\": {\r\n                    \"payrollGroupCode\": {\r\n                        \"codeValue\": \"AA4\"\r\n                    },\r\n                    \"payrollFileNumber\": \"5685\",\r\n                    \"payrollAgreementID\": \"CC1_1479572135\",\r\n                    \"itemID\": \"1481671640_7471\",\r\n                    \"generalDeductionInstruction\": {\r\n                        \"deductionCode\": {\r\n                            \"codeValue\": \"A\"\r\n                        }\r\n                    }\r\n                }\r\n            },\r\n            \"transform\": {\r\n                \"effectiveDateTime\": \"2016-08-01\",\r\n                \"payrollInstruction\": {\r\n                    \"generalDeductionInstruction\": {\r\n                        \"deductionRate\": {\r\n                            \"rateValue\": 99,\r\n                            \"currencyCode\": \"USD\"\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}\r\n"
 						},
 						"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change",
 						"description": "Change a scheduled deduction."
@@ -1029,7 +1029,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1045,7 +1045,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -1054,7 +1054,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": \r\n            {\r\n                \"worker\": \r\n                {\r\n                    \"associateOID\": \"G37FPGW57N71G26K\"\r\n                },\r\n                \"payrollInstruction\": \r\n                {\r\n                    \"payrollGroupCode\": \r\n                    {\r\n                        \"codeValue\": \"AA4\"\r\n                    },\r\n                    \"payrollFileNumber\": \"1110\",\r\n                    \"payrollAgreementID\": \"71674:1129\"\r\n                }\r\n            },\r\n            \"transform\": {\r\n                \"effectiveDateTime\": \"2017-05-01\",\r\n                \"payrollInstruction\": \r\n                {\r\n                    \"generalDeductionInstruction\": \r\n                    {\r\n                        \"deductionCode\": \r\n                        {\r\n                            \"codeValue\": \"1\"\r\n                        },\r\n                        \"deductionRate\": \r\n                        {\r\n                            \"rateValue\": 55,\r\n                            \"currencyCode\": \"USD\"\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}\r\n"
+							"raw": "{\r\n    \"events\": [{\r\n        \"data\": {\r\n            \"eventContext\": \r\n            {\r\n                \"worker\": \r\n                {\r\n                    \"associateOID\": \"{{employeeAOID}}\"\r\n                },\r\n                \"payrollInstruction\": \r\n                {\r\n                    \"payrollGroupCode\": \r\n                    {\r\n                        \"codeValue\": \"AA4\"\r\n                    },\r\n                    \"payrollFileNumber\": \"1110\",\r\n                    \"payrollAgreementID\": \"71674:1129\"\r\n                }\r\n            },\r\n            \"transform\": {\r\n                \"effectiveDateTime\": \"2017-05-01\",\r\n                \"payrollInstruction\": \r\n                {\r\n                    \"generalDeductionInstruction\": \r\n                    {\r\n                        \"deductionCode\": \r\n                        {\r\n                            \"codeValue\": \"1\"\r\n                        },\r\n                        \"deductionRate\": \r\n                        {\r\n                            \"rateValue\": 55,\r\n                            \"currencyCode\": \"USD\"\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }]\r\n}\r\n"
 						},
 						"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start",
 						"description": "Add a new deduction or restart an existing deduction that has been previously stopped.  You need the Payroll Agreement ID for the worker, which you can get by sending a GET to the Payroll Instructions V1 API for the desired worker."
@@ -1068,7 +1068,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1084,7 +1084,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1127,7 +1127,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1186,7 +1186,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1202,7 +1202,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1218,7 +1218,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1234,7 +1234,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -1257,7 +1257,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1273,7 +1273,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -1296,7 +1296,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1312,7 +1312,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1334,7 +1334,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1353,7 +1353,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1372,7 +1372,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1391,7 +1391,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1407,7 +1407,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1426,7 +1426,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1445,7 +1445,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1464,7 +1464,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1480,7 +1480,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1499,7 +1499,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1518,7 +1518,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1537,7 +1537,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1553,7 +1553,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1569,7 +1569,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1588,7 +1588,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1607,7 +1607,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1626,7 +1626,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1642,7 +1642,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1658,7 +1658,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1677,7 +1677,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1696,7 +1696,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1715,7 +1715,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1731,7 +1731,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1750,7 +1750,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1769,7 +1769,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {
@@ -1788,7 +1788,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1810,7 +1810,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},
@@ -1826,7 +1826,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer TOKEN"
+								"value": "Bearer {{accessToken}}"
 							}
 						],
 						"body": {},

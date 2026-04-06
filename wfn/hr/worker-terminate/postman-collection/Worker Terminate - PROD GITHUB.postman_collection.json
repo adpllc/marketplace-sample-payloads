@@ -21,7 +21,7 @@
 							"",
 							"let access_token = jsonData.access_token",
 							"console.log (access_token)",
-							"pm.globals.set(\"accessToken-wfn-prod\", access_token);",
+							"pm.globals.set(\"accessToken\", access_token);",
 							"",
 							"// status code is 200",
 							"",
@@ -88,12 +88,10 @@
 					]
 				},
 				"url": {
-					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",
@@ -112,7 +110,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {{accessToken-wfn-prod}}",
+						"value": "Bearer {{accessToken}}",
 						"type": "text"
 					},
 					{
@@ -127,12 +125,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020025\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better growth and oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-06-13\",\r\n                            \"lastWorkedDate\": \"2019-06-13\",\r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"N\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -152,7 +148,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn-prod}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -166,12 +162,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020026\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better growth and oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-05-31\",\r\n                            \"lastWorkedDate\": \"2019-05-31\",\r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": false,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -191,7 +185,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn-prod}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -205,12 +199,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020027\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-06-13\",\r\n                            \"lastWorkedDate\": \"2019-06-13\",\r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"N\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -230,7 +222,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn-prod}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -244,12 +236,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"1938909200\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for Better Oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-05-17\",\r\n                            \"lastWorkedDate\": \"2019-10-07\",\r\n                         \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -269,7 +259,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn-prod}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -283,12 +273,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for Better Oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-05-17\",\r\n                            \"lastWorkedDate\": \"2019-10-07\",\r\n                       \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -308,7 +296,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn-prod}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -322,12 +310,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020028\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for Better Oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"\",\r\n                            \"lastWorkedDate\": \"2019-10-07\",\r\n                           \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -347,7 +333,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn-prod}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -361,12 +347,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020028\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for Better Oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"9999-99-99\",\r\n                            \"lastWorkedDate\": \"2019-10-07\",\r\n                      \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"A00\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -386,7 +370,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn-prod}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -400,12 +384,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020028\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-05-30\",\r\n                            \"lastWorkedDate\": \"2019-05-30\",\r\n                          \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -425,7 +407,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn-prod}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -439,12 +421,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020028\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-04-17\",\r\n                            \"lastWorkedDate\": \"2019-04-17\",\r\n                        \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -464,7 +444,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn-prod}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -478,12 +458,10 @@
 					"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"contextExpressionID\": \"\",\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"itemID\": \"BOQ020027\"\r\n                        }\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"comment\": {\r\n                        \"commentCode\": {\r\n                            \"codeValue\": \"Looking for better oppurtunities\"\r\n                        }\r\n                    },\r\n                    \"worker\": {\r\n                        \"workAssignment\": {\r\n                            \"terminationDate\": \"2019-06-13\",\r\n                            \"lastWorkedDate\": \"2019-06-13\",\r\n                       \r\n                            \"assignmentStatus\": {\r\n                                \"reasonCode\": {\r\n                                    \"codeValue\": \"\"\r\n                                }\r\n                            },\r\n                            \"rehireEligibleIndicator\": true,\r\n                            \"severanceEligibleIndicator\": true\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}\r\n\r\n"
 				},
 				"url": {
-					"raw": "https://api.adp.com/events/hr/v1/worker.work-assignment.terminate",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.terminate",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",

@@ -15,7 +15,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2ee47ffc-f7a3-471c-8b24-adabb9a7f7e6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -34,12 +34,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.date.change/meta",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.date.change/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -62,7 +60,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2ee47ffc-f7a3-471c-8b24-adabb9a7f7e6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -81,12 +79,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.number.change/meta",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.number.change/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -109,7 +105,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2ee47ffc-f7a3-471c-8b24-adabb9a7f7e6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -128,12 +124,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.string.change/meta",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.string.change/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -153,7 +147,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2ee47ffc-f7a3-471c-8b24-adabb9a7f7e6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -169,15 +163,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"stringField\": {\"itemID\": \"ClientDefinedField27\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"stringField\":    {\r\n      \"stringValue\": \"2015Testing\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField27\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"stringField\": {\"itemID\": \"ClientDefinedField27\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"stringField\":    {\r\n      \"stringValue\": \"2015Testing\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField27\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.string.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.string.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -196,7 +188,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2ee47ffc-f7a3-471c-8b24-adabb9a7f7e6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -212,15 +204,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"ClientDefinedField10\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"2015\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField10\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"ClientDefinedField10\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"2015\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField10\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.number.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.number.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -239,7 +229,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 72563469-9fd9-4367-875e-16ef1283c898"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -255,18 +245,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"dateField\": {\"itemID\": \"ClientDefinedField18\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"dateField\":    {\r\n      \"dateValue\": \"2018-11-15\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField18\"}\r\n   }}}}}\r\n}}]}",
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"dateField\": {\"itemID\": \"ClientDefinedField18\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"dateField\":    {\r\n      \"dateValue\": \"2018-11-15\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField18\"}\r\n   }}}}}\r\n}}]}",
 					"options": {
 						"raw": {}
 					}
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.date.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.date.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -285,7 +273,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 3c3c3122-10f9-4043-bd83-fed8808bf07d"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -301,15 +289,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"ClientDefinedField10\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"abhd^&78\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField27\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"ClientDefinedField10\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"abhd^&78\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField27\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.number.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.number.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -328,7 +314,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 72563469-9fd9-4367-875e-16ef1283c898"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -344,15 +330,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"dateField\": {\"itemID\": \"ClientDefinedField18\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"dateField\":    {\r\n      \"dateValue\": \"2016-15-11\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField18\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"dateField\": {\"itemID\": \"ClientDefinedField18\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"dateField\":    {\r\n      \"dateValue\": \"2016-15-11\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField18\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.date.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.date.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -371,7 +355,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 7a6710f3-51dd-46c1-b488-a689d6e6e36f"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -387,15 +371,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"stringField\": {\"itemID\": \"ClientDefinedField31\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"stringField\":    {\r\n      \"stringValue\": \"2015Testing\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField31\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"stringField\": {\"itemID\": \"ClientDefinedField31\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"stringField\":    {\r\n      \"stringValue\": \"2015Testing\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField31\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.string.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.string.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -414,7 +396,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 7a6710f3-51dd-46c1-b488-a689d6e6e36f"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -430,15 +412,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"ClientDefinedField32\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"678\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField32\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"ClientDefinedField32\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"678\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField32\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.number.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.number.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -457,7 +437,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 7a6710f3-51dd-46c1-b488-a689d6e6e36f"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -473,15 +453,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"dateField\": {\"itemID\": \"ClientDefinedField61\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"dateField\":    {\r\n      \"dateValue\": \"2015-11-12\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField61\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"dateField\": {\"itemID\": \"ClientDefinedField61\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"dateField\":    {\r\n      \"dateValue\": \"2015-11-12\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField61\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.date.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.date.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -509,7 +487,7 @@
 					"urlencoded": [
 						{
 							"key": "client_id",
-							"value": "ClientID here",
+							"value": "{{client-id}}",
 							"type": "text"
 						},
 						{
@@ -519,18 +497,16 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "Client Secret here",
+							"value": "{{client-secret}}",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",
@@ -549,7 +525,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer b5eba9ac-1254-4719-8453-62c0d0a60443"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -565,15 +541,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8688688868TDY\",\r\n      \"person\": {\"customFieldGroup\": {\"stringField\": {\"itemID\": \"ClientDefinedField27\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"stringField\":    {\r\n      \"stringValue\": \"2015Testing\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField27\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}8TDY\",\r\n      \"person\": {\"customFieldGroup\": {\"stringField\": {\"itemID\": \"ClientDefinedField27\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"stringField\":    {\r\n      \"stringValue\": \"2015Testing\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField27\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.string.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.string.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -592,7 +566,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer b5eba9ac-1254-4719-8453-62c0d0a60443"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -608,15 +582,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8688688868TDY\",\r\n      \"person\": {\"customFieldGroup\": {\"dateField\": {\"itemID\": \"ClientDefinedField18\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"dateField\":    {\r\n      \"dateValue\": \"2016-11-12\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField18\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}8TDY\",\r\n      \"person\": {\"customFieldGroup\": {\"dateField\": {\"itemID\": \"ClientDefinedField18\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"dateField\":    {\r\n      \"dateValue\": \"2016-11-12\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField18\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.date.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.date.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -635,7 +607,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer f13c5fb9-0a69-4c36-999b-6482d895f118"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -651,15 +623,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8688688868TDY\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"ClientDefinedField10\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"110\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField10\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}8TDY\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"ClientDefinedField10\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"110\",\r\n      \"nameCode\": {\"codeValue\": \"ClientDefinedField10\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.number.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.number.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -678,7 +648,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 75258216-4137-4aa9-a499-7ee465c3bff7"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -695,15 +665,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"stringField\": {\"itemID\": \"43\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"stringField\":    {\r\n      \"stringValue\": \"testing\",\r\n      \"nameCode\": {\"codeValue\": \"43\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"stringField\": {\"itemID\": \"43\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"stringField\":    {\r\n      \"stringValue\": \"testing\",\r\n      \"nameCode\": {\"codeValue\": \"43\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.string.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.string.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -722,7 +690,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 75258216-4137-4aa9-a499-7ee465c3bff7"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -738,15 +706,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"G3W3DGP8PG3KATDY\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"44\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"138\",\r\n      \"nameCode\": {\"codeValue\": \"44\"}\r\n   }}}}}\r\n}}]}"
+					"raw": "{\"events\": [{\"data\": {\r\n   \"eventContext\": {\"worker\":    {\r\n      \"associateOID\": \"{{employeeAOID}}\",\r\n      \"person\": {\"customFieldGroup\": {\"numberField\": {\"itemID\": \"44\"}}}\r\n   }},\r\n   \"transform\": {\"worker\": {\"person\": {\"customFieldGroup\": {\"numberField\":    {\r\n      \"numberValue\": \"138\",\r\n      \"nameCode\": {\"codeValue\": \"44\"}\r\n   }}}}}\r\n}}]}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.person.custom-field.number.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.person.custom-field.number.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
