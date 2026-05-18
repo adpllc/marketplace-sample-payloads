@@ -307,7 +307,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{service-root}}/codelists/payroll/v3/payroll-instruction-management/unused-ess-general-deduction-code-values?aoid={{employeeAOID}}9&paygroup=VK2",
+							"raw": "{{service-root}}/codelists/payroll/v3/payroll-instruction-management/unused-ess-general-deduction-code-values?aoid={{employeeAOID}}&paygroup=VK2",
 							"protocol": "https",
 							"host": [
 								"{{service-root}}"
@@ -322,7 +322,7 @@
 							"query": [
 								{
 									"key": "aoid",
-									"value": "{{employeeAOID}}9"
+									"value": "{{employeeAOID}}"
 								},
 								{
 									"key": "paygroup",
@@ -398,7 +398,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{service-root}}/payroll/v1/workers/{{employeeAOID}}9/payroll-instructions",
+							"raw": "{{service-root}}/payroll/v1/workers/{{employeeAOID}}/payroll-instructions",
 							"protocol": "https",
 							"host": [
 								"{{service-root}}"
@@ -407,7 +407,7 @@
 								"payroll",
 								"v1",
 								"workers",
-								"{{employeeAOID}}9",
+								"{{employeeAOID}}",
 								"payroll-instructions"
 							]
 						}
@@ -1502,7 +1502,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-18\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}N\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"ADV\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-18\",\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"500\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"1000\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"itemID\": \"ADV\"\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change",
@@ -1938,7 +1938,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}9\"\n                    },\n                    \"payrollInstruction\": {\n                        \"itemID\": \"AAA\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-13\"\n                }\n            }\n        }\n    ]\n}"
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"itemID\": \"AAA\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2019-09-13\"\n                }\n            }\n        }\n    ]\n}"
 						},
 						"url": {
 							"raw": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop",
