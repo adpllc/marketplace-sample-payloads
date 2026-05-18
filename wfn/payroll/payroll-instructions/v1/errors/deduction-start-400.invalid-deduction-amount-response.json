@@ -1,56 +1,56 @@
 {
-  "confirmMessage": {
-    "confirmMessageID": {
-      "idValue": "41212086-5D19-227B-1333-935987F6D288",
-      "schemeName": "confirmMessageID",
-      "schemeAgencyName": "WFN"
-    },
-    "createDateTime": "2019-06-13T10:51:42.798+0000",
-    "requestReceiptDateTime": "2019-06-13T10:51:42.798+0000",
-    "protocolStatusCode": {
-      "codeValue": "400",
-      "shortName": "400"
-    },
-    "requestStatusCode": {
-      "codeValue": "failed"
-    },
-    "requestMethodCode": {
-      "codeValue": "POST"
-    },
-    "requestLink": {
-      "href": "{{service-root}}/payprofile/metaservices/events/payroll/v2/worker-general-deduction-instruction.start",
-      "rel": "related",
-      "method": "POST"
-    },
-    "processMessages": [],
-    "resourceMessages": [
-      {
-        "resourceMessageID": {
-          "idValue": "events/payroll/v2/worker-general-deduction-instruction.start",
-          "schemeName": "resourceMessageID",
-          "schemeAgencyName": "WFN"
+    "confirmMessage": {
+        "confirmMessageID": {
+            "idValue": "41212086-5D19-227B-1333-935987F6D288",
+            "schemeName": "confirmMessageID",
+            "schemeAgencyName": "WFN"
         },
-        "processMessages": [
-          {
-            "processMessageID": {
-              "idValue": "API_INVALID_DEDUCTION_AMOUNT",
-              "schemeName": "processMessageID",
-              "schemeAgencyName": "WFN"
-            },
-            "messageTypeCode": {
-              "codeValue": "error"
-            },
-            "userMessage": {
-              "messageTxt": "Deduction Amount field must contain a non-zero value between -40500.00 and 99999.99 with a decimal precision of 2 places."
+        "createDateTime": "2019-06-13T10:51:42.798+0000",
+        "requestReceiptDateTime": "2019-06-13T10:51:42.798+0000",
+        "protocolStatusCode": {
+            "codeValue": "400",
+            "shortName": "400"
+        },
+        "requestStatusCode": {
+            "codeValue": "failed"
+        },
+        "requestMethodCode": {
+            "codeValue": "POST"
+        },
+        "requestLink": {
+            "href": "http://mascsr.iat.oneadp.com/payprofile/metaservices/events/payroll/v2/worker-general-deduction-instruction.start",
+            "rel": "related",
+            "method": "POST"
+        },
+        "processMessages": [],
+        "resourceMessages": [
+            {
+                "resourceMessageID": {
+                    "idValue": "events/payroll/v2/worker-general-deduction-instruction.start",
+                    "schemeName": "resourceMessageID",
+                    "schemeAgencyName": "WFN"
+                },
+                "processMessages": [
+                    {
+                        "processMessageID": {
+                            "idValue": "API_INVALID_DEDUCTION_AMOUNT",
+                            "schemeName": "processMessageID",
+                            "schemeAgencyName": "WFN"
+                        },
+                        "messageTypeCode": {
+                            "codeValue": "error"
+                        },
+                        "userMessage": {
+                            "messageTxt": "Deduction Amount field must contain a non-zero value between -40500.00 and 99999.99 with a decimal precision of 2 places."
+                        }
+                    }
+                ]
             }
-          }
         ]
-      }
-    ]
-  },
-  "status": "success",
-  "statusFailure": false,
-  "statusSuccess": true,
-  "requestKeys": [],
-  "skipMetadataEnvelope": true
+    },
+    "status": "success",
+    "statusFailure": false,
+    "statusSuccess": true,
+    "requestKeys": [],
+    "skipMetadataEnvelope": true
 }
