@@ -21,7 +21,7 @@
 							"",
 							"let access_token = jsonData.access_token",
 							"console.log (access_token)",
-							"pm.globals.set(\"accessToken-wfn\", access_token);",
+							"pm.globals.set(\"accessToken\", access_token);",
 							"",
 							"// status code is 200",
 							"",
@@ -64,12 +64,10 @@
 					]
 				},
 				"url": {
-					"raw": "https://api.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",
@@ -116,7 +114,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -136,18 +134,16 @@
 					}
 				],
 				"url": {
-					"raw": "https://api.adp.com/benefits/v1/associates/G3588JKQ33NJMMEE/beneficiaries",
+					"raw": "{{service-root}}/benefits/v1/associates/{{employeeAOID}}/beneficiaries",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"benefits",
 						"v1",
 						"associates",
-						"G3588JKQ33NJMMEE",
+						"{{employeeAOID}}",
 						"beneficiaries"
 					]
 				}
@@ -188,7 +184,7 @@
 					{
 						"key": "Authorization",
 						"type": "text",
-						"value": "Bearer {{accessToken-wfn}}"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Content-Type",
@@ -208,18 +204,16 @@
 					}
 				],
 				"url": {
-					"raw": "https://api.adp.com/benefits/v1/associates/G3588JKQ33NJMMEE/beneficiaries",
+					"raw": "{{service-root}}/benefits/v1/associates/{{employeeAOID}}/beneficiaries",
 					"protocol": "https",
 					"host": [
-						"api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"benefits",
 						"v1",
 						"associates",
-						"G3588JKQ33NJMMEE",
+						"{{employeeAOID}}",
 						"beneficiaries"
 					]
 				}

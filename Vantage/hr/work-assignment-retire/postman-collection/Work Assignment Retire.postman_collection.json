@@ -12,7 +12,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 0a4dbb9d-6ab3-47fc-8e0d-d6b8c54cf6f1"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -28,15 +28,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-03-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminationNoticeDate\": \"2020-01-15\",\r\n\"lastWorkedDate\": \"2020-03-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-03-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminationNoticeDate\": \"2020-01-15\",\r\n\"lastWorkedDate\": \"2020-03-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -58,7 +56,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 1e3cd12b-ff06-447c-803d-093288b46ff3"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -77,12 +75,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire/meta",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -102,7 +98,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2949e0ed-37e7-40d6-8075-7a97121ec424"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -118,15 +114,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-07-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": false  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"\",\r\n\"rehireEligibleIndicator\": false\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-07-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": false  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"\",\r\n\"rehireEligibleIndicator\": false\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -145,7 +139,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2949e0ed-37e7-40d6-8075-7a97121ec424"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -161,15 +155,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-07-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": false  },\r\n\"terminationNoticeDate\": \"\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": false\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-07-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": false  },\r\n\"terminationNoticeDate\": \"\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": false\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -188,7 +180,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 2949e0ed-37e7-40d6-8075-7a97121ec424"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -204,15 +196,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-07-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": false  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-07-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": false  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -231,7 +221,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer fadca389-b5f7-4f96-a86b-f63460eb7f72"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -247,15 +237,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-05-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-05-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -274,7 +262,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer fadca389-b5f7-4f96-a86b-f63460eb7f72"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -290,15 +278,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"06-15-2020\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"06-15-2020\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -317,7 +303,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer fadca389-b5f7-4f96-a86b-f63460eb7f72"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -333,15 +319,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": \"abc\"  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": \"abc\"  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -360,7 +344,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -376,15 +360,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"05-15-2020\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"05-15-2020\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -403,7 +385,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -419,15 +401,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"06-15-2020\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"06-15-2020\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -446,7 +426,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -462,15 +442,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": \"tes\"\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": \"tes\"\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RET\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -489,7 +467,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -505,15 +483,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"G3B3973X4XBQJYT6\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RTA\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
+					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"{{employeeAOID}}\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RTA\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -535,7 +511,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 0a4dbb9d-6ab3-47fc-8e0d-d6b8c54cf6f1"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -554,18 +530,16 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/hr/v2/workers/G3B3973X4XBQJYT6",
+					"raw": "{{service-root}}/hr/v2/workers/{{employeeAOID}}",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"hr",
 						"v2",
 						"workers",
-						"G3B3973X4XBQJYT6"
+						"{{employeeAOID}}"
 					]
 				}
 			},
@@ -587,7 +561,7 @@
 					"urlencoded": [
 						{
 							"key": "client_id",
-							"value": "ClientID here",
+							"value": "{{client-id}}",
 							"type": "text"
 						},
 						{
@@ -597,7 +571,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "Client Secret here",
+							"value": "{{client-secret}}",
 							"type": "text"
 						}
 					],
@@ -606,12 +580,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",
@@ -630,7 +602,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer af89eae0-fbb2-4992-acb6-d40c99f4d7aa"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -649,12 +621,10 @@
 					"raw": "{\r\n\"events\": [\r\n{\r\n\"data\": {\r\n\"eventContext\": {\r\n\"worker\": {\r\n\"associateOID\": \"ugygtcvhbj\",\r\n\"workAssignment\": {\r\n\"itemID\": \"0\"\r\n}\r\n}\r\n},\r\n\"transform\": { \r\n\"effectiveDateTime\":\"2020-06-15\",\r\n\"worker\": {\r\n\"workAssignment\": { \r\n\"terminatePaymentInstruction\": {\r\n\"cancelAutomaticPayIndicator\": true  },\r\n\"terminationNoticeDate\": \"2020-05-15\",\r\n\"lastWorkedDate\": \"2020-06-15\",\r\n\"rehireEligibleIndicator\": true\r\n}\r\n},\r\n\"eventReasonCode\": {\r\n\"codeValue\": \"RTA\"\r\n}\r\n}\r\n}\r\n}\r\n]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.work-assignment.retire",
+					"raw": "{{service-root}}/events/hr/v1/worker.work-assignment.retire",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",

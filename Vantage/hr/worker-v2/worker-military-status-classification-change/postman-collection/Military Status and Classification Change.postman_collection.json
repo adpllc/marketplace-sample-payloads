@@ -15,7 +15,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer c1ae8534-33cc-440d-b4fe-0e43a99ffd2c"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -34,12 +34,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change/meta",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-status.change/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -62,7 +60,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer c1ae8534-33cc-440d-b4fe-0e43a99ffd2c"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -81,12 +79,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change/meta",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-classification.change/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -106,7 +102,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer c1ae8534-33cc-440d-b4fe-0e43a99ffd2c"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -122,15 +118,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"{{employeeAOID}}\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-status.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -149,7 +143,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer c1ae8534-33cc-440d-b4fe-0e43a99ffd2c"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -165,15 +159,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"2014-12-12\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"{{employeeAOID}}\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"2014-12-12\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-status.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -192,7 +184,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -208,15 +200,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"7\",\r\n                  \"longName\": \"Retired\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"{{employeeAOID}}\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"7\",\r\n                  \"longName\": \"Retired\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-classification.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -235,7 +225,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -251,15 +241,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"11\",\r\n                  \"longName\": \"abv\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"{{employeeAOID}}\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"11\",\r\n                  \"longName\": \"abv\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-classification.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -278,7 +266,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -294,15 +282,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"bavfbns\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"{{employeeAOID}}\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"bavfbns\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-status.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -321,7 +307,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -337,15 +323,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"45\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"{{employeeAOID}}\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"45\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-status.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -364,7 +348,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -380,15 +364,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"2020-13-12\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"{{employeeAOID}}\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"2020-13-12\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-status.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -407,7 +389,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -423,15 +405,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"G36K2NGQTV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"66\",\r\n                  \"longName\": \"Unspecified Veteran\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
+					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"{{employeeAOID}}\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"66\",\r\n                  \"longName\": \"Unspecified Veteran\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-classification.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -450,7 +430,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 484b5729-c1fb-449b-8254-e86b37da3396"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -469,12 +449,10 @@
 					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"GvbbhhhV4874E8\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryClassificationCodes\": [\r\n                {\r\n                  \"codeValue\": \"4\",\r\n                  \"longName\": \"Unspecified Veteran\"\r\n                }\r\n              ]\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-classification.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-classification.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -493,7 +471,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 1081db15-46a7-4ede-9286-51d0d8d4a8bc"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "Accept",
@@ -512,12 +490,10 @@
 					"raw": "{\r\n  \"events\": [\r\n    {\r\n      \"data\": {\r\n        \"eventContext\": {\r\n          \"worker\": {\r\n            \"associateOID\": \"GTYGG&HHVGIIIMNHH\"\r\n          }\r\n        },\r\n        \"transform\": {\r\n          \"worker\": {\r\n            \"person\": {\r\n              \"militaryStatusCode\": {\r\n                \"codeValue\": \"14\",\r\n                \"longName\": \"Protected Veteran\"\r\n              },\r\n              \"militaryDischargeDate\": \"\"\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  ]\r\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.military-status.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.military-status.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -545,7 +521,7 @@
 					"urlencoded": [
 						{
 							"key": "client_id",
-							"value": "ClientID here",
+							"value": "{{client-id}}",
 							"type": "text"
 						},
 						{
@@ -555,7 +531,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "Client Secret here",
+							"value": "{{client-secret}}",
 							"type": "text"
 						}
 					],
@@ -564,12 +540,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",

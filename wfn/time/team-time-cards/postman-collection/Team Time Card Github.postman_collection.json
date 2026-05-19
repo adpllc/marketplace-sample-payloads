@@ -15,7 +15,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{accessToken_B2C}}",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -30,18 +30,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-api.adp.com/time/v2/workers/G332EFV3Q6J0048K/team-time-cards?$expand=dayEntries",
+							"raw": "{{service-root}}/time/v2/workers/{{employeeAOID}}/team-time-cards?$expand=dayEntries",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"time",
 								"v2",
 								"workers",
-								"G332EFV3Q6J0048K",
+								"{{employeeAOID}}",
 								"team-time-cards"
 							],
 							"query": [
@@ -62,7 +60,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer {{accessToken_B2C}}"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "Accept",
@@ -76,18 +74,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-api.adp.com/time/v2/workers/G332EFV3Q6J0048K/team-time-cards?$filter=timeCards/timePeriod/startDate eq '2018-11-26'",
+							"raw": "{{service-root}}/time/v2/workers/{{employeeAOID}}/team-time-cards?$filter=timeCards/timePeriod/startDate eq '2018-11-26'",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"time",
 								"v2",
 								"workers",
-								"G332EFV3Q6J0048K",
+								"{{employeeAOID}}",
 								"team-time-cards"
 							],
 							"query": [
@@ -107,7 +103,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{accessToken_B2C}}",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -122,18 +118,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-api.adp.com/time/v2/workers/G332EFV3Q6J0048K/team-time-cards?$filter=timeCards/periodCode/codeValue eq 'current'",
+							"raw": "{{service-root}}/time/v2/workers/{{employeeAOID}}/team-time-cards?$filter=timeCards/periodCode/codeValue eq 'current'",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"time",
 								"v2",
 								"workers",
-								"G332EFV3Q6J0048K",
+								"{{employeeAOID}}",
 								"team-time-cards"
 							],
 							"query": [
@@ -153,7 +147,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer {{accessToken_B2C}}",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -174,24 +168,22 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-api.adp.com/time/v2/workers/G55T0VY3QSB6DWW7/team-time-cards?$filter=teamTimeCards/timeCards/associateOID eq 'G332EFV3Q6J0048K'&$expand=dayEntries",
+							"raw": "{{service-root}}/time/v2/workers/{{employeeAOID}}/team-time-cards?$filter=teamTimeCards/timeCards/associateOID eq '{{employeeAOID}}'&$expand=dayEntries",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"time",
 								"v2",
 								"workers",
-								"G55T0VY3QSB6DWW7",
+								"{{employeeAOID}}",
 								"team-time-cards"
 							],
 							"query": [
 								{
 									"key": "$filter",
-									"value": "teamTimeCards/timeCards/associateOID eq 'G332EFV3Q6J0048K'"
+									"value": "teamTimeCards/timeCards/associateOID eq '{{employeeAOID}}'"
 								},
 								{
 									"key": "$expand",
@@ -224,18 +216,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-api.adp.com/time/v2/workers/G55T0VY3QSB6DWW7/team-time-cards?$filter=timeCards/periodCode/codeValue eq 'next'",
+							"raw": "{{service-root}}/time/v2/workers/{{employeeAOID}}/team-time-cards?$filter=timeCards/periodCode/codeValue eq 'next'",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"time",
 								"v2",
 								"workers",
-								"G55T0VY3QSB6DWW7",
+								"{{employeeAOID}}",
 								"team-time-cards"
 							],
 							"query": [
@@ -270,18 +260,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-api.adp.com/time/v2/workers/G55T0VY3QSB6DWW7/team-time-cards?$filter=timeCards/periodCode/codeValue eq 'previous'",
+							"raw": "{{service-root}}/time/v2/workers/{{employeeAOID}}/team-time-cards?$filter=timeCards/periodCode/codeValue eq 'previous'",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"time",
 								"v2",
 								"workers",
-								"G55T0VY3QSB6DWW7",
+								"{{employeeAOID}}",
 								"team-time-cards"
 							],
 							"query": [
@@ -344,23 +332,21 @@
 								},
 								{
 									"key": "client_id",
-									"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+									"value": "{{client-id}}",
 									"type": "text"
 								},
 								{
 									"key": "client_secret",
-									"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+									"value": "{{client-secret}}",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+							"raw": "{{service-root}}/auth/oauth/v2/token",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"auth",
@@ -405,12 +391,10 @@
 					}
 				],
 				"url": {
-					"raw": "https://iat-api.adp.com/hr/v2/workers?asOfDate=06/08/2020",
+					"raw": "{{service-root}}/hr/v2/workers?asOfDate=06/08/2020",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"hr",

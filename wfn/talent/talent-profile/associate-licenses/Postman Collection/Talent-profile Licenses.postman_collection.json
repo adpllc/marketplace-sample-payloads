@@ -36,18 +36,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-licenses",
+							"raw": "{{service-root}}/talent/v2/associates/{{employeeAOID}}/associate-licenses",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
 								"v2",
 								"associates",
-								"G34YJ69EMRR7N4VJ",
+								"{{employeeAOID}}",
 								"associate-licenses"
 							]
 						}
@@ -82,18 +80,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-licenses/169740278794_1",
+							"raw": "{{service-root}}/talent/v2/associates/{{employeeAOID}}/associate-licenses/169740278794_1",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
 								"v2",
 								"associates",
-								"G34YJ69EMRR7N4VJ",
+								"{{employeeAOID}}",
 								"associate-licenses",
 								"169740278794_1"
 							]
@@ -130,12 +126,10 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRN4VJ/associate-licenses",
+							"raw": "{{service-root}}/talent/v2/associates/G34YJ69EMRN4VJ/associate-licenses",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
@@ -177,18 +171,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-licenses/1697402794_1",
+							"raw": "{{service-root}}/talent/v2/associates/{{employeeAOID}}/associate-licenses/1697402794_1",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
 								"v2",
 								"associates",
-								"G34YJ69EMRR7N4VJ",
+								"{{employeeAOID}}",
 								"associate-licenses",
 								"1697402794_1"
 							]
@@ -226,18 +218,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-licenses/meta",
+							"raw": "{{service-root}}/talent/v2/associates/{{employeeAOID}}/associate-licenses/meta",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
 								"v2",
 								"associates",
-								"G34YJ69EMRR7N4VJ",
+								"{{employeeAOID}}",
 								"associate-licenses",
 								"meta"
 							]
@@ -288,7 +278,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-2\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-2\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -296,12 +286,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -350,7 +338,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-25\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-25\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -358,12 +346,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -412,7 +398,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"t1\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-26\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"t1\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-26\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -420,12 +406,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -474,7 +458,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-26\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-26\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -482,12 +466,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -536,7 +518,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"@@@\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"123\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-15\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"@@@\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"123\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-15\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -544,12 +526,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -598,7 +578,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-25\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJI\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJI\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-25\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -606,12 +586,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -660,7 +638,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-25\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-25\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -668,12 +646,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -722,7 +698,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2-09-2016\",\n                        \"expirationDate\": \"20-09-2018\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2-09-2016\",\n                        \"expirationDate\": \"20-09-2018\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -730,12 +706,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -784,7 +758,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"&%%#\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-2\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"1856\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"&%%#\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"2019-09-2\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -792,12 +766,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -844,12 +816,10 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.add/meta",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.add/meta",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -905,7 +875,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"185\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test123\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-23\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740278794_1\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"185\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test123\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-23\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740278794_1\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -913,12 +883,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -967,7 +935,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -975,12 +943,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1029,7 +995,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1037,12 +1003,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1091,7 +1055,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1099,12 +1063,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1153,7 +1115,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_4\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_4\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1161,12 +1123,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1215,7 +1175,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRN4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRN4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1223,12 +1183,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1277,7 +1235,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test-iat\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"@$$\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal done \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"PER\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"111\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test-iat\"\n                            }\n                        },\n                        \"comments\":\"test\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"@$$\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal done \",\n                        \n                        \"firstIssueDate\": \"2019-09-27\",\n                        \"expirationDate\": \"2020-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_468\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1285,12 +1243,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1339,7 +1295,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"185\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test123\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"20-09-2015\",\n                        \"expirationDate\": \"200-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169741491268_113\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"185\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test123\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"20-09-2015\",\n                        \"expirationDate\": \"200-09-18\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169741491268_113\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1347,12 +1303,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1401,7 +1355,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"185\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test123\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"20-09-2015\",\n                        \"expirationDate\": \"20-09-2018\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169741491268_113\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateLicense\": {\n                        \"licenseNameCode\": {\n                            \"codeValue\": \"CPA\",\n                            \"longName\": \"Professional Engineer\"\n                        },\n                        \"licenseID\": {\n                            \"idValue\": \"185\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"License\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test123\"\n                            }\n                        },\n                        \"comments\":\"abc\",\n                        \"employerPaidAmount\": {\n                            \"amountValue\": 23456,\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \n                            \"renewalComments\": \"renewal post9\",\n                        \n                        \"firstIssueDate\": \"20-09-2015\",\n                        \"expirationDate\": \"20-09-2018\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169741491268_113\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1409,12 +1363,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1466,7 +1418,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G3JQE4RK5DMFV52J\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G3JQE4RK5DMFV52J\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1474,12 +1426,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.change/meta",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.change/meta",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1535,7 +1485,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740568292_94\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740568292_94\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1543,12 +1493,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.remove",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.remove",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1597,7 +1545,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_152\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateLicense\": {\n                        \"itemID\": \"169740212245_152\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1605,12 +1553,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.remove",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.remove",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1667,12 +1613,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.remove",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.remove",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1732,12 +1676,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.license.remove/meta",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.license.remove/meta",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1783,12 +1725,10 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/core/v1/event-notification-messages",
+							"raw": "{{service-root}}/core/v1/event-notification-messages",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"core",
@@ -1821,12 +1761,10 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/core/v1/event-notification-messages/0x_414d51204253494e464f4251362020209aeda15df8157b29",
+							"raw": "{{service-root}}/core/v1/event-notification-messages/0x_414d51204253494e464f4251362020209aeda15df8157b29",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"core",
@@ -1887,23 +1825,21 @@
 						},
 						{
 							"key": "client_id",
-							"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+							"value": "{{client-id}}",
 							"type": "text"
 						},
 						{
 							"key": "client_secret",
-							"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+							"value": "{{client-secret}}",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "https://iat-accounts.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"iat-accounts",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",

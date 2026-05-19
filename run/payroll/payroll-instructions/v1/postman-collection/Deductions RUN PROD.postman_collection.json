@@ -36,7 +36,7 @@
 					"mode": "raw",
 					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -69,9 +69,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -109,9 +109,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -151,7 +151,7 @@
 					"mode": "raw",
 					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADV\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"12234234\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -196,7 +196,7 @@
 					"mode": "raw",
 					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop"
 			},
 			"response": []
 		},
@@ -241,7 +241,7 @@
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change/meta"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change/meta"
 			},
 			"response": []
 		},
@@ -286,7 +286,7 @@
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop/meta"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop/meta"
 			},
 			"response": []
 		},
@@ -324,9 +324,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"unitCode\": {\n                                    \"codeValue\": \"Percent\"\n                                }\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"unitCode\": {\n                                    \"codeValue\": \"Percent\"\n                                }\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -369,9 +369,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADAV\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADAV\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop"
 			},
 			"response": []
 		},
@@ -404,9 +404,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"az12\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"az12\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -477,7 +477,7 @@
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "https://api.adp.com/hr/v2/workers"
+				"url": "{{service-root}}/hr/v2/workers"
 			},
 			"response": []
 		},
@@ -510,9 +510,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADAV\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADAV\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -550,9 +550,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"UNION\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"UNION\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -595,9 +595,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop"
 			},
 			"response": []
 		},
@@ -635,9 +635,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"adg1\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"adg1\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -680,9 +680,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n            },\n            \"actor\": {\n                \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop"
 			},
 			"response": []
 		},
@@ -727,7 +727,7 @@
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop"
 			},
 			"response": []
 		},
@@ -762,7 +762,7 @@
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -773,14 +773,14 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer {{accessToken-iat}}"
+						"value": "Bearer {{accessToken}}"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "https://iat-api.adp.com/hr/v2/workers/G38VJ7MCTPJX7N6R"
+				"url": "{{service-root}}/hr/v2/workers/{{employeeAOID}}"
 			},
 			"response": []
 		},
@@ -825,7 +825,7 @@
 					"mode": "raw",
 					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"21235234\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop"
 			},
 			"response": []
 		},
@@ -863,9 +863,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"EUR\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"EUR\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -898,9 +898,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"EUR\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"EUR\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -940,7 +940,7 @@
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -978,9 +978,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISCP\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"unitCode\": {\n                                    \"codeValue\": \"Per\"\n                                }\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISCP\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"unitCode\": {\n                                    \"codeValue\": \"Per\"\n                                }\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -1015,7 +1015,7 @@
 					"mode": "raw",
 					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"12234234\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -1058,9 +1058,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop"
 			},
 			"response": []
 		},
@@ -1108,17 +1108,17 @@
 						},
 						{
 							"key": "client_id",
-							"value": "2f69077b-969e-4e2e-b075-293877c1b74c",
+							"value": "{{client-id}}",
 							"type": "text"
 						},
 						{
 							"key": "client_secret",
-							"value": "8cd891df-e5ee-454d-b8af-7c3345062bfc",
+							"value": "{{client-secret}}",
 							"type": "text"
 						}
 					]
 				},
-				"url": "https://api.adp.com/auth/oauth/v2/token"
+				"url": "{{service-root}}/auth/oauth/v2/token"
 			},
 			"response": []
 		},
@@ -1163,7 +1163,7 @@
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start/meta"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start/meta"
 			},
 			"response": []
 		},
@@ -1212,7 +1212,7 @@
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "https://api.adp.com/payroll/v1/workers/G3V1NEC2XSVMQDB6/payroll-instructions/general-deduction"
+				"url": "{{service-root}}/payroll/v1/workers/{{employeeAOID}}/payroll-instructions/general-deduction"
 			},
 			"response": []
 		},
@@ -1245,9 +1245,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"UNION\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"UNION\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -1287,7 +1287,7 @@
 					"mode": "raw",
 					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -1320,9 +1320,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -1360,9 +1360,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADVA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"ADVA\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -1395,9 +1395,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\",\n                                \"unitCode\": {\n                                    \"codeValue\": \"Per\"\n                                }\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\",\n                                \"unitCode\": {\n                                    \"codeValue\": \"Per\"\n                                }\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		},
@@ -1435,9 +1435,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"MISC\"\n                            },\n                            \"deductionRate\": {\n                                \"rateValue\": \"111\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"555\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.start"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.start"
 			},
 			"response": []
 		},
@@ -1480,9 +1480,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"UNION\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {},\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"UNION\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.stop"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.stop"
 			},
 			"response": []
 		},
@@ -1515,9 +1515,9 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3V1NEC2XSVMQDB6\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionRate\": {\n                                \"rateValue\": \"222\",\n                                \"currencyCode\": \"USD\"\n                            },\n                            \"deductionGoal\": {\n                                \"goalLimitAmount\": {\n                                    \"amountValue\": \"666\",\n                                    \"currencyCode\": \"USD\"\n                                }\n                            }\n                        }\n                    }\n                },\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payrollInstruction\": {\n                        \"generalDeductionInstruction\": {\n                            \"deductionCode\": {\n                                \"codeValue\": \"\"\n                            }\n                        }\n                    }\n                }\n            },\n            \"originator\": {\n                \"associateOID\": \"\"\n            },\n            \"actor\": {\n                \"associateOID\": \"\"\n            }\n        }\n    ]\n}"
 				},
-				"url": "https://api.adp.com/events/payroll/v2/worker-general-deduction-instruction.change"
+				"url": "{{service-root}}/events/payroll/v2/worker-general-deduction-instruction.change"
 			},
 			"response": []
 		}

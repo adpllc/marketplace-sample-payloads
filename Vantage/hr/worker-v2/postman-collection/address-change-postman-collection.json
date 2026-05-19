@@ -21,7 +21,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 46d513bb-11af-4041-bc4d-0658e2f5b454",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -32,7 +32,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"54 Beach\",\r\n                                \"lineTwo\": \"Dr E #20\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Port Orchard\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Washington\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"King County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"98366\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"54 Beach\",\r\n                                \"lineTwo\": \"Dr E #20\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Port Orchard\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Washington\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"King County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"98366\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -40,12 +40,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -91,7 +89,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer 53ec7409-d079-433a-9ae4-de64d5c9dbb3"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -101,7 +99,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n               \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"2042 Dundas St. E,\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Mississauga\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"L4X 2X8\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n               \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"2042 Dundas St. E,\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Mississauga\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"L4X 2X8\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -109,12 +107,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -160,7 +156,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer 53ec7409-d079-433a-9ae4-de64d5c9dbb3"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -170,7 +166,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3P2VVR45T97B43G\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"12 Martens Place\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"Floor 1\",\r\n                                \"lineFour\": \"Suite 5\",\r\n                                \"lineFive\": \"Room 501\",\r\n                                \"cityName\": \"Ormiston\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"4160\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"12 Martens Place\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"Floor 1\",\r\n                                \"lineFour\": \"Suite 5\",\r\n                                \"lineFive\": \"Room 501\",\r\n                                \"cityName\": \"Ormiston\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"4160\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -178,12 +174,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -229,7 +223,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer 53ec7409-d079-433a-9ae4-de64d5c9dbb3"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -239,7 +233,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"12 Martens Place\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"Floor 1\",\r\n                                \"lineFour\": \"Suite 5\",\r\n                                \"lineFive\": \"Room 501\",\r\n                                \"cityName\": \"Ormiston\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"4160\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"12 Martens Place\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"Floor 1\",\r\n                                \"lineFour\": \"Suite 5\",\r\n                                \"lineFive\": \"Room 501\",\r\n                                \"cityName\": \"Ormiston\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"4160\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -247,12 +241,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -297,7 +289,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -308,7 +300,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"92938\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"abc\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"92938\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -316,12 +308,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -366,7 +356,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -377,7 +367,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"92938\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"92938\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -385,12 +375,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -436,7 +424,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -446,7 +434,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"\",\r\n                                    \"longName\": \"\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"92938\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"\",\r\n                                    \"longName\": \"\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"92938\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -454,12 +442,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -504,7 +490,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -515,7 +501,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -523,12 +509,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -573,7 +557,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -584,7 +568,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"09383\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"Parkway WindWard\",\r\n                                \"lineTwo\": \"Apt 12\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Pasadena\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Orange County\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"09383\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -592,12 +576,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -643,7 +625,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer 53ec7409-d079-433a-9ae4-de64d5c9dbb3"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -653,7 +635,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"2040 Dundas St. E,\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"1\",\r\n                                \"lineFour\": \"2\",\r\n                                \"lineFive\": \"3\",\r\n                                \"cityName\": \"Mississauga\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Alberta\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"L4X 2X8\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"legalAddress\": {\r\n                                \"lineOne\": \"2040 Dundas St. E,\",\r\n                                \"lineTwo\": \"Unit 1\",\r\n                                \"lineThree\": \"1\",\r\n                                \"lineFour\": \"2\",\r\n                                \"lineFive\": \"3\",\r\n                                \"cityName\": \"Mississauga\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countrySubdivisionLevel2\": {\r\n                                    \"longName\": \"Alberta\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"L4X 2X8\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -661,12 +643,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -692,7 +672,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer 93aa14ba-27ea-4696-9d0d-9f2a711d500e"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -702,7 +682,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GY19RVQ2Y5A5Q6\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"5800 Windward Pkwy\",\r\n                                \"lineTwo\": \"Tower 1\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"5800 Windward Pkwy\",\r\n                                \"lineTwo\": \"Tower 1\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -710,12 +690,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.add",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.add",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -761,7 +739,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -771,7 +749,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3FSPKPASVP67YQ4\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"1443 Eglinton Avenue\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Toronto\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"M4P 1A6\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"1443 Eglinton Avenue\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Toronto\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"M4P 1A6\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -779,12 +757,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.add",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.add",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -830,7 +806,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -840,7 +816,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GY19RVQ2Y5P1X8\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"69 Ashton Road\",\r\n                                \"lineTwo\": \"Street Road\",\r\n                                \"lineThree\": \"Tower 1\",\r\n                                \"lineFour\": \"Floor 2\",\r\n                                \"lineFive\": \"room 202 \",\r\n                                \"cityName\": \"Cordering\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"6393\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"69 Ashton Road\",\r\n                                \"lineTwo\": \"Street Road\",\r\n                                \"lineThree\": \"Tower 1\",\r\n                                \"lineFour\": \"Floor 2\",\r\n                                \"lineFive\": \"room 202 \",\r\n                                \"cityName\": \"Cordering\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"6393\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -848,12 +824,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.add",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.add",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -879,7 +853,7 @@
 							{
 								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
 								"key": "Authorization",
-								"value": "Bearer 52d90825-6728-4263-b644-2e1cdb5443ed",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -890,7 +864,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3EYJHSDACQQ49W6\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Tower 1\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Tower 1\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -898,12 +872,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -928,7 +900,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer f29d176e-e5a4-4cc5-b02f-501c464f5603"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -938,7 +910,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3EYJHSDACQQ49W6\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Tower 1\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"true\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Tower 1\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"true\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -946,12 +918,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -996,7 +966,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1007,7 +977,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G37G5WKJA08QG8JG\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"1443 Eglinton Avenue\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Toronto\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"M4P 1A6\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"1443 Eglinton Avenue\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Toronto\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"ON\",\r\n                                    \"longName\": \"Ontario\"\r\n                                },\r\n                                \"countryCode\": \"CA\",\r\n                                \"postalCode\": \"M4P 1A6\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1015,12 +985,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1065,7 +1033,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1076,7 +1044,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3P2VVR45T97B43G\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"69 Ashton Road\",\r\n                                \"lineTwo\": \"Street Road\",\r\n                                \"lineThree\": \"Tower 1\",\r\n                                \"lineFour\": \"Floor 2\",\r\n                                \"lineFive\": \"room 202 \",\r\n                                \"cityName\": \"Cordering\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"6393\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"69 Ashton Road\",\r\n                                \"lineTwo\": \"Street Road\",\r\n                                \"lineThree\": \"Tower 1\",\r\n                                \"lineFour\": \"Floor 2\",\r\n                                \"lineFive\": \"room 202 \",\r\n                                \"cityName\": \"Cordering\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"Province\",\r\n                                    \"codeValue\": \"WA\",\r\n                                    \"longName\": \"Western Australia\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"6393\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1084,12 +1052,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1134,7 +1100,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1145,7 +1111,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1153,12 +1119,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1203,7 +1167,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1214,7 +1178,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1222,12 +1186,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1272,7 +1234,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1283,7 +1245,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"\",\r\n                                    \"longName\": \"\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"\",\r\n                                    \"longName\": \"\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1291,12 +1253,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1341,7 +1301,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1352,7 +1312,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1360,12 +1320,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1410,7 +1368,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1421,7 +1379,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"12 Whitehall Street\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"\",\r\n                                \"lineFour\": \"\",\r\n                                \"lineFive\": \"\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"AU\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1429,12 +1387,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1479,7 +1435,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1490,7 +1446,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"1443 Eglinton Avenue\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"Floor 3\",\r\n                                \"lineFour\": \"Suite 2\",\r\n                                \"lineFive\": \"Room K\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"events\": [\r\n        {\r\n            \"data\": {\r\n                \"eventContext\": {\r\n                    \"worker\": {\r\n                        \"associateOID\": \"{{employeeAOID}}\"\r\n                    }\r\n                },\r\n                \"transform\": {\r\n                    \"worker\": {\r\n                        \"person\": {\r\n                            \"personalAddress\": {\r\n                                \"lineOne\": \"1443 Eglinton Avenue\",\r\n                                \"lineTwo\": \"Building 8\",\r\n                                \"lineThree\": \"Floor 3\",\r\n                                \"lineFour\": \"Suite 2\",\r\n                                \"lineFive\": \"Room K\",\r\n                                \"cityName\": \"Cypress\",\r\n                                \"countrySubdivisionLevel1\": {\r\n                                    \"subdivisionType\": \"State\",\r\n                                    \"codeValue\": \"CA\",\r\n                                    \"longName\": \"California\"\r\n                                },\r\n                                \"countryCode\": \"US\",\r\n                                \"postalCode\": \"03098\",\r\n                                \"sameAsAddressIndicator\": \"false\"\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1498,12 +1454,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1554,7 +1508,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1564,12 +1518,10 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-address.change/meta",
+							"raw": "{{service-root}}/events/hr/v1/worker.legal-address.change/meta",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1618,7 +1570,7 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5",
+								"value": "Bearer {{accessToken}}",
 								"type": "text"
 							},
 							{
@@ -1637,12 +1589,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.change/meta",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.change/meta",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1692,7 +1642,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer 27ef8e23-b0f7-4041-a622-824f2e6ca8d5"
+								"value": "Bearer {{accessToken}}"
 							},
 							{
 								"key": "accept",
@@ -1710,12 +1660,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-api.adp.com/events/hr/v1/worker.personal-address.add/meta",
+							"raw": "{{service-root}}/events/hr/v1/worker.personal-address.add/meta",
 							"protocol": "https",
 							"host": [
-								"iat-api",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",

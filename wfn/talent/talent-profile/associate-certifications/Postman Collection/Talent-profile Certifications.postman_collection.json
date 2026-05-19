@@ -36,18 +36,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-certifications",
+							"raw": "{{service-root}}/talent/v2/associates/{{employeeAOID}}/associate-certifications",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
 								"v2",
 								"associates",
-								"G34YJ69EMRR7N4VJ",
+								"{{employeeAOID}}",
 								"associate-certifications"
 							]
 						}
@@ -83,18 +81,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-certifications/169740212245_520",
+							"raw": "{{service-root}}/talent/v2/associates/{{employeeAOID}}/associate-certifications/169740212245_520",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
 								"v2",
 								"associates",
-								"G34YJ69EMRR7N4VJ",
+								"{{employeeAOID}}",
 								"associate-certifications",
 								"169740212245_520"
 							]
@@ -131,18 +127,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-certifications/1697402125_520",
+							"raw": "{{service-root}}/talent/v2/associates/{{employeeAOID}}/associate-certifications/1697402125_520",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
 								"v2",
 								"associates",
-								"G34YJ69EMRR7N4VJ",
+								"{{employeeAOID}}",
 								"associate-certifications",
 								"1697402125_520"
 							]
@@ -179,12 +173,10 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69RR7N4VJ/associate-certifications",
+							"raw": "{{service-root}}/talent/v2/associates/G34YJ69RR7N4VJ/associate-certifications",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
@@ -227,18 +219,16 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/talent/v2/associates/G34YJ69EMRR7N4VJ/associate-certifications/meta",
+							"raw": "{{service-root}}/talent/v2/associates/{{employeeAOID}}/associate-certifications/meta",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"talent",
 								"v2",
 								"associates",
-								"G34YJ69EMRR7N4VJ",
+								"{{employeeAOID}}",
 								"associate-certifications",
 								"meta"
 							]
@@ -289,7 +279,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -297,12 +287,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -351,7 +339,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -359,12 +347,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -413,7 +399,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CP23\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CP23\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -421,12 +407,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -475,7 +459,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -483,12 +467,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -537,7 +519,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \" #@$\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJEMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \" #@$\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJEMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -545,12 +527,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -599,7 +579,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"L\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -607,12 +587,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -661,7 +639,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"20-02-09\",\n                        \"expirationDate\": \"2010-02-09\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"20-02-09\",\n                        \"expirationDate\": \"2010-02-09\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -669,12 +647,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -723,7 +699,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"rtd\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-29\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124577\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"rtd\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-29\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.add\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -731,12 +707,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.add",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -783,12 +757,10 @@
 							}
 						],
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.add/meta",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.add/meta",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -844,7 +816,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124588\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test12\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"36756\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"20-09-2018\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing \",\n                        \"comments\": \"testing certificaion renewal from  add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_520\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124588\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"M\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test12\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"36756\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"20-09-2018\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing \",\n                        \"comments\": \"testing certificaion renewal from  add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_520\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -852,12 +824,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -906,7 +876,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_520\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \" \",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_520\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -914,12 +884,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -968,7 +936,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_520\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_520\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -976,12 +944,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1030,7 +996,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"j\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_520\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"j\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_520\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1038,12 +1004,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1092,7 +1056,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1100,12 +1064,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1154,7 +1116,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ697N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ697N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1162,12 +1124,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1216,7 +1176,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1224,12 +1184,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.change",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.change",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1281,7 +1239,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"G3JQE4RK5DMFV52J\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G3JQE4RK5DMFV52J\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"transform\": {\n                    \"associateCertification\": {\n                        \"certificationNameCode\": {\n                            \"codeValue\": \"CPR\",\n                            \"longName\": \"Certified to Perfon CPR\"\n                        },\n                        \"certificationID\": {\n                            \"idValue\": \"124590\"\n                        },\n                        \"categoryCode\": {\n                            \"codeValue\": \"C\",\n                            \"longName\": \"Certification\"\n                        },\n                        \"issuingParty\": {\n                            \"nameCode\": {\n                                \"codeValue\": \"test\"\n                            }\n                        },\n                        \"employerPaidAmount\": {\n                            \"amountValue\": \"367560\",\n                            \"currencyCode\": {\n                                \"codeValue\": \"USD\",\n                                \"longName\": \"United States Dollor\"\n                            }\n                        },\n                        \"firstIssueDate\": \"2019-09-21\",\n                        \"expirationDate\": \"2020-09-25\",\n                        \"renewalComments\": \"testing requiremen\",\n                        \"comments\": \"testing certificaion renewal from post add\"\n                    }\n                },\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"associate.ksaoc.certification.change\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1289,12 +1247,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.change/meta",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.change/meta",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1350,7 +1306,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740568292_183\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740568292_183\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1358,12 +1314,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.remove",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.remove",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1412,7 +1366,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ6\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740568292_183\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ6\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740568292_183\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1420,12 +1374,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.remove",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.remove",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1474,7 +1426,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"1697402245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"1697402245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1482,12 +1434,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.remove",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.remove",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1539,7 +1489,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"G34YJ69EMRR7N4VJ\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"G34YJ69EMRR7N4VJ\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"associateOID\": \"{{employeeAOID}}\",\n                    \"associateCertification\": {\n                        \"itemID\": \"169740212245_124\"\n                    }\n                }\n            },\n            \"actor\": {\n                \"associateOID\": \"{{employeeAOID}}\"\n            },\n            \"serviceCategoryCode\": {\n                \"codeValue\": \"workerTalentManagement\"\n            },\n            \"eventNameCode\": {\n                \"codeValue\": \"educationalDegree.remove\"\n            }\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1547,12 +1497,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://iat-accounts.adp.com/events/talent/v1/associate.ksaoc.certification.remove/meta",
+							"raw": "{{service-root}}/events/talent/v1/associate.ksaoc.certification.remove/meta",
 							"protocol": "https",
 							"host": [
-								"iat-accounts",
-								"adp",
-								"com"
+								"{{service-root}}"
 							],
 							"path": [
 								"events",
@@ -1614,23 +1562,21 @@
 						},
 						{
 							"key": "client_id",
-							"value": "fdfa0ac6-050f-4444-880b-6c0ce83a14f6",
+							"value": "{{client-id}}",
 							"type": "text"
 						},
 						{
 							"key": "client_secret",
-							"value": "725f6a05-746c-4749-a31f-72868dc69d5a",
+							"value": "{{client-secret}}",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "https://iat-accounts.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"iat-accounts",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",

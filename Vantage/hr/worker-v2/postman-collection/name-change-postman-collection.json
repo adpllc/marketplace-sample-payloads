@@ -25,23 +25,21 @@
 						},
 						{
 							"key": "client_id",
-							"value": "client_id",
+							"value": "{{client-id}}",
 							"type": "text"
 						},
 						{
 							"key": "client_secret",
-							"value": "client_secret",
+							"value": "{{client-secret}}",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",
@@ -63,7 +61,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eaaa7e84-3bc7-47b0-9adb-035cfa328759"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -81,15 +79,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Ryan\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Ryan\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change/meta",
+					"raw": "{{service-root}}/events/hr/v1/worker.legal-name.change/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -112,7 +108,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -130,15 +126,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [{\n        \"data\": {\n            \"eventContext\": {\n                \"worker\": {\n                    \"associateOID\": \"G3GSNCJ167241JBT\"\n                }\n            },\n            \"transform\": {\n                \"worker\": {\n                    \"person\": {\n                        \"formerName\": {\n                            \"familyName1\": \"Anderson\"\n                        }\n                    }\n                }\n            }\n        }\n    }]\n}"
+					"raw": "{\n    \"events\": [{\n        \"data\": {\n            \"eventContext\": {\n                \"worker\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"transform\": {\n                \"worker\": {\n                    \"person\": {\n                        \"formerName\": {\n                            \"familyName1\": \"Anderson\"\n                        }\n                    }\n                }\n            }\n        }\n    }]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.former-name.change/meta",
+					"raw": "{{service-root}}/events/hr/v1/worker.former-name.change/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -161,7 +155,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -179,15 +173,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William1\",\n                                \"middleName\": \"Algonquin\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William1\",\n                                \"middleName\": \"Algonquin\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change/meta",
+					"raw": "{{service-root}}/events/hr/v1/worker.preferred-name.change/meta",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -207,7 +199,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 9901223c-1adb-47ed-a5e6-7a3b8d563b50"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -225,15 +217,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3H9JT485EFM17SQ\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Jack1\",\n                                \"middleName\": \"\",\n                                \"familyName1\": \"MAtthew\",\n                                \"formattedName\": \"MAtthew Honour,Ryan\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Jack1\",\n                                \"middleName\": \"\",\n                                \"familyName1\": \"MAtthew\",\n                                \"formattedName\": \"MAtthew Honour,Ryan\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.legal-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -252,7 +242,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -270,15 +260,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \" \",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"June Mr,Z Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \" \",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"June Mr,Z Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.legal-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -297,7 +285,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -315,15 +303,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Ryana\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"\",\n                                \"formattedName\": \"June Mr,Z Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Ryana\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"\",\n                                \"formattedName\": \"June Mr,Z Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.legal-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -342,7 +328,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer cdad109e-f47a-4a3f-9203-cc1bd22006b6"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -360,15 +346,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Ryana\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"June, Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Ryana\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"June, Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.legal-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -387,7 +371,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 5002a8e8-2865-42aa-a342-2611c53fd932"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -405,15 +389,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JB0\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Mc'Nuñez12\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"June,Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"legalName\": {\n                                \"preferredSalutations\": [\n                                    {\n                                        \"salutationCode\": {\n                                            \"longName\": \"Mr.\"\n                                        }\n                                    }\n                                ],\n                                \"generationAffixCode\": {\n                                    \"longName\": \"Honourable\"\n                                },\n                                \"titleAffixCodes\": [\n                                    {\n                                        \"affixCode\": {\n                                            \"longName\": \"Dr.\"\n                                        }\n                                    }\n                                ],\n                                \"givenName\": \"Mc'Nuñez12\",\n                                \"middleName\": \"Z\",\n                                \"familyName1\": \"June\",\n                                \"formattedName\": \"June,Ryana\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.legal-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.legal-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -432,7 +414,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 9901223c-1adb-47ed-a5e6-7a3b8d563b50"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -450,15 +432,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [{\n        \"data\": {\n            \"eventContext\": {\n                \"worker\": {\n                    \"associateOID\": \"G3H9JT485EFM17SQ\"\n                }\n            },\n            \"transform\": {\n                \"worker\": {\n                    \"person\": {\n                        \"formerName\": {\n                            \"familyName1\": \"Jack\"\n                        }\n                    }\n                }\n            }\n        }\n    }]\n}"
+					"raw": "{\n    \"events\": [{\n        \"data\": {\n            \"eventContext\": {\n                \"worker\": {\n                    \"associateOID\": \"{{employeeAOID}}\"\n                }\n            },\n            \"transform\": {\n                \"worker\": {\n                    \"person\": {\n                        \"formerName\": {\n                            \"familyName1\": \"Jack\"\n                        }\n                    }\n                }\n            }\n        }\n    }]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.former-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.former-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -477,7 +457,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 9901223c-1adb-47ed-a5e6-7a3b8d563b50"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -495,15 +475,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3H9JT485EFM17SQ\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William\",\n                                \"middleName\": \"J\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William\",\n                                \"middleName\": \"J\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.preferred-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -522,7 +500,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer e6c0d299-741f-48f2-b4bd-975d84c203db"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -540,15 +518,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"\",\n                                \"middleName\": \"Algonquin\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"\",\n                                \"middleName\": \"Algonquin\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.preferred-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -567,7 +543,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer e6c0d299-741f-48f2-b4bd-975d84c203db"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -585,15 +561,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William\",\n                                \"middleName\": \"\",\n                                \"familyName1\": \"\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William\",\n                                \"middleName\": \"\",\n                                \"familyName1\": \"\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.preferred-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -612,7 +586,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer e6c0d299-741f-48f2-b4bd-975d84c203db"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -630,15 +604,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JBT\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William\",\n                                \"middleName\": \"\",\n                                \"familyName1\": \"Jack\",\n                                \"formattedName\": \"Jack, William\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William\",\n                                \"middleName\": \"\",\n                                \"familyName1\": \"Jack\",\n                                \"formattedName\": \"Jack, William\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.preferred-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -657,7 +629,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer 5002a8e8-2865-42aa-a342-2611c53fd932"
+						"value": "Bearer {{accessToken}}"
 					},
 					{
 						"key": "accept",
@@ -675,15 +647,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"G3GSNCJ167241JB0\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William1\",\n                                \"middleName\": \"Algonquin\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+					"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"worker\": {\n                        \"person\": {\n                            \"preferredName\": {\n                                \"givenName\": \"William1\",\n                                \"middleName\": \"Algonquin\",\n                                \"familyName1\": \"Aguilar\",\n                                \"formattedName\": \"Testing Jr.,Mr. formattedname\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/hr/v1/worker.preferred-name.change",
+					"raw": "{{service-root}}/events/hr/v1/worker.preferred-name.change",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",

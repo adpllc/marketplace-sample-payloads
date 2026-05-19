@@ -49,23 +49,21 @@
 						},
 						{
 							"key": "client_id",
-							"value": "1ce3e9b1-8679-4407-832f-731a68696896",
+							"value": "{{client-id}}",
 							"type": "text"
 						},
 						{
 							"key": "client_secret",
-							"value": "4adbebb2-c38c-490f-8b9b-711e51959f8b",
+							"value": "{{client-secret}}",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/auth/oauth/v2/token",
+					"raw": "{{service-root}}/auth/oauth/v2/token",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"auth",
@@ -126,15 +124,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFHRK9\",\n          \"workAssignmentID\": \"29850137_306\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT4H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    },\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MS4S7E\",\n          \"workAssignmentID\": \"29850137_300\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT4H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    }\n  ]\n}"
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_306\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT4H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    },\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_300\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT4H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    }\n  ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"raw": "{{service-root}}/events/time/v2/time-entries.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -183,15 +179,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFHRK9\",\n          \"workAssignmentID\": \"29850137_306\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT3H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    },\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MS4S7E\",\n          \"workAssignmentID\": \"29850137_300\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT3H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    }\n  ]\n}"
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_306\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT3H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    },\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_300\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"25\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-06T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT3H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    }\n  ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"raw": "{{service-root}}/events/time/v2/time-entries.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -240,15 +234,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MSC3HD\",\n          \"workAssignmentID\": \"29850137_294\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-21T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT0H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    },\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFA7V4\",\n          \"workAssignmentID\": \"29850137_288\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-21T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT0H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    }\n  ]\n}"
+					"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_294\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-21T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT0H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    },\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_288\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"hoursEntry\"\n              },\n              \"entryDate\": \"2015-12-21T08:00:00-0800\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"timeDuration\": \"PT0H\",\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      },\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      }\n    }\n  ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"raw": "{{service-root}}/events/time/v2/time-entries.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -297,15 +289,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"events\": [\n    {\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MSC3HD\",\n          \"workAssignmentID\": \"29850137_294\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-21\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-21T12:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFA7V4\",\n          \"workAssignmentID\": \"29850137_288\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-21\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-21T12:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
+					"raw": "{\n  \"events\": [\n    {\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_294\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-21\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-21T12:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_288\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"8\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-21\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-21T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-21T12:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"raw": "{{service-root}}/events/time/v2/time-entries.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -354,15 +344,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\n{\n  \"events\": [\n    {\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G31NDTRRT1MSC3HD\",\n          \"workAssignmentID\": \"29850137_294\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"21\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-06\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-06T11:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"G32N87KC6KSFA7V4\",\n          \"workAssignmentID\": \"29850137_288\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"21\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-07\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-07T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-07T11:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
+					"raw": "\n{\n  \"events\": [\n    {\n      \"eventID\": \"1\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_294\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"21\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-06\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-06T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-06T11:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"eventID\": \"2\",\n      \"serviceCategoryCode\": {\n        \"codeValue\": \"time\"\n      },\n      \"eventNameCode\": {\n        \"codeValue\": \"timeEntries.modify\"\n      },\n      \"data\": {\n        \"eventContext\": {\n          \"associateOID\": \"{{employeeAOID}}\",\n          \"workAssignmentID\": \"29850137_288\"\n        },\n        \"transform\": {\n          \"timeEntries\": [\n            {\n              \"entryID\": \"21\",\n              \"entryTypeCode\": {\n                \"codeValue\": \"timePairEntry\"\n              },\n              \"entryDate\": \"2015-12-07\",\n              \"startPeriod\": {\n                \"startDateTime\": \"2015-12-07T08:00:00-0800\"\n              },\n              \"endPeriod\": {\n                \"endDateTime\": \"2015-12-07T11:00:00-0800\"\n              },\n              \"_changeCode\": \"add\"\n            }\n          ]\n        }\n      }\n    }\n  ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"raw": "{{service-root}}/events/time/v2/time-entries.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -411,15 +399,13 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "\n{\n   \"events\" : [\n      {\n         \"eventID\" : \"1\",\n         \"serviceCategoryCode\" : {\n            \"codeValue\" : \"time\"\n         },\n         \"eventNameCode\" : {\n            \"codeValue\" : \"timeEntries.modify\"\n         },\n         \"data\" : {\n            \"eventContext\" : {\n               \"associateOID\" : \"G32N87KC6KSFHRK9\",\n               \"workAssignmentID\" : \"29850137_306\"\n            },\n            \"transform\" : {\n               \"timeEntries\" : [\n                  {\n                     \"entryID\" : \"3\",\n                     \"entryTypeCode\" : {\n                        \"codeValue\" : \"amountEntry\"\n                     },\n                     \"entryDate\" : \"2015-12-11T08:00:00-0800\",\n                     \"entryCode\" : {\n                        \"codeValue\" : \"TIPS\"\n                     },\n                     \"amount\" : {\n                        \"amountValue\" : 14.56\n                     },\n                     \"_changeCode\" : \"add\"\n                  }\n               ]\n            }\n         }\n      },\n      {\n         \"eventID\" : \"2\",\n         \"serviceCategoryCode\" : {\n            \"codeValue\" : \"time\"\n         },\n         \"eventNameCode\" : {\n            \"codeValue\" : \"timeEntries.modify\"\n         },\n         \"data\" : {\n            \"eventContext\" : {\n               \"associateOID\" : \"G31NDTRRT1MSC3HD\",\n               \"workAssignmentID\" : \"29850137_294\"\n            },\n            \"transform\" : {\n               \"timeEntries\" : [\n                  {\n                     \"entryID\" : \"3\",\n                     \"entryTypeCode\" : {\n                        \"codeValue\" : \"amountEntry\"\n                     },\n                     \"entryDate\" : \"2015-12-11T08:00:00-0800\",\n                     \"entryCode\" : {\n                        \"codeValue\" : \"TIPS\"\n                     },\n                     \"amount\" : {\n                        \"amountValue\" : 150\n                     },\n                     \"_changeCode\" : \"add\"\n                  }\n               ]\n            }\n         }\n      }\n   ]\n}"
+					"raw": "\n{\n   \"events\" : [\n      {\n         \"eventID\" : \"1\",\n         \"serviceCategoryCode\" : {\n            \"codeValue\" : \"time\"\n         },\n         \"eventNameCode\" : {\n            \"codeValue\" : \"timeEntries.modify\"\n         },\n         \"data\" : {\n            \"eventContext\" : {\n               \"associateOID\" : \"{{employeeAOID}}\",\n               \"workAssignmentID\" : \"29850137_306\"\n            },\n            \"transform\" : {\n               \"timeEntries\" : [\n                  {\n                     \"entryID\" : \"3\",\n                     \"entryTypeCode\" : {\n                        \"codeValue\" : \"amountEntry\"\n                     },\n                     \"entryDate\" : \"2015-12-11T08:00:00-0800\",\n                     \"entryCode\" : {\n                        \"codeValue\" : \"TIPS\"\n                     },\n                     \"amount\" : {\n                        \"amountValue\" : 14.56\n                     },\n                     \"_changeCode\" : \"add\"\n                  }\n               ]\n            }\n         }\n      },\n      {\n         \"eventID\" : \"2\",\n         \"serviceCategoryCode\" : {\n            \"codeValue\" : \"time\"\n         },\n         \"eventNameCode\" : {\n            \"codeValue\" : \"timeEntries.modify\"\n         },\n         \"data\" : {\n            \"eventContext\" : {\n               \"associateOID\" : \"{{employeeAOID}}\",\n               \"workAssignmentID\" : \"29850137_294\"\n            },\n            \"transform\" : {\n               \"timeEntries\" : [\n                  {\n                     \"entryID\" : \"3\",\n                     \"entryTypeCode\" : {\n                        \"codeValue\" : \"amountEntry\"\n                     },\n                     \"entryDate\" : \"2015-12-11T08:00:00-0800\",\n                     \"entryCode\" : {\n                        \"codeValue\" : \"TIPS\"\n                     },\n                     \"amount\" : {\n                        \"amountValue\" : 150\n                     },\n                     \"_changeCode\" : \"add\"\n                  }\n               ]\n            }\n         }\n      }\n   ]\n}"
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify",
+					"raw": "{{service-root}}/events/time/v2/time-entries.modify",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
@@ -455,12 +441,10 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "https://iat-api.adp.com/events/time/v2/time-entries.modify/{{ResourceSetID}}",
+					"raw": "{{service-root}}/events/time/v2/time-entries.modify/{{ResourceSetID}}",
 					"protocol": "https",
 					"host": [
-						"iat-api",
-						"adp",
-						"com"
+						"{{service-root}}"
 					],
 					"path": [
 						"events",
