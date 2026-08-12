@@ -1,0 +1,1234 @@
+{
+	"info": {
+		"_postman_id": "d5950d98-65e4-4477-9506-cdf05100d112",
+		"name": "WFN_CG_Worker_PayDistributions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "US clients - pay-distribution.change",
+			"item": [
+				{
+					"name": "200 - Add DD with Amount to deposit as Percent Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                \"distributionPercentage\": \"50\",\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"x\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Amount to deposit as Partial Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                \"distributionAmount\": {\n                  \"amountValue\":\"300\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"W\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Amount to deposit as Full Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"payDistribution\": {\n            \"effectiveDateTime\": \"2024-05-31\",\n            \"distributionInstructions\": [\n              {\n                \n                \"remainingBalanceIndicator\": true,\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"031207607\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"4172678660116\",\n                    \"typeCode\": {\n                      \"codeValue\": \"Z\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Prenote as No-Prenote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payDistribution\": {\n                        \"itemID\": \"{{workAssignmentID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"payDistribution\": {\n                        \"effectiveDateTime\": \"2024-05-31\",\n                        \"distributionInstructions\": [\n                            {\n                                \"prenoteBypassIndicator\": true,\n                                \"prenote\": {\n                                    \"prenoteOptionCode\": {\n                                        \"codeValue\": \"N\"\n                                    }\n                                },\n                                \"remainingBalanceIndicator\": true,\n                                \"depositAccount\": {\n                                    \"financialParty\": {\n                                        \"routingTransitID\": {\n                                            \"idValue\": \"031207607\"\n                                        }\n                                    },\n                                    \"financialAccount\": {\n                                        \"accountNumber\": \"4172678660116\",\n                                        \"typeCode\": {\n                                            \"codeValue\": \"y\"\n                                        }\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Prenote as Company Default",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payDistribution\": {\n                        \"itemID\": \"{{workAssignmentID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"payDistribution\": {\n                        \"effectiveDateTime\": \"2024-05-31\",\n                        \"distributionInstructions\": [\n                            {\n                                \"prenoteBypassIndicator\": true,\n                                 \"prenote\": {\n                                    \"prenoteOptionCode\": {\n                                        \"codeValue\": \"D\"\n                                    }\n                                },\n                                \"remainingBalanceIndicator\": true,\n                                \"depositAccount\": {\n                                    \"financialParty\": {\n                                        \"routingTransitID\": {\n                                            \"idValue\": \"031207607\"\n                                        }\n                                    },\n                                    \"financialAccount\": {\n                                        \"accountNumber\": \"4172678660116\",\n                                        \"typeCode\": {\n                                            \"codeValue\": \"X\"\n                                        }\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Multiple Deposit Codes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                \"distributionAmount\": {\n                  \"amountValue\":\"300\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"x\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              },\n              {\n                \n                \"distributionAmount\": {\n                  \"amountValue\":\"500\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"w\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Remove direct deposit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n            \t \n            ]\n          }\n        }\n      }\n    }\n  ]\n} "
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD from Active to Inactive",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n              \t\n                \"instructionStatusCode\": {\n                  \"codeValue\": \"I\",\n                  \"shortName\": \"Inactive\"\n                },\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"w\",\n                      \"shortName\": \"w\"\n                    }\n                  }\n                },\n                 \"remainingBalanceIndicator\": true\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Priority",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                  \"precedenceCode\": {\n                  \"codeValue\": \"1\"\n                },\n                \n                \"distributionAmount\": {\n                  \"amountValue\":\"300\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"X\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              },\n              {\n                \n                \"distributionAmount\": {\n                  \"amountValue\":\"500\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"Y\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD as Bonus Pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payDistribution\": {\n                        \"itemID\": \"{{workAssignmentID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2024-05-31\",\n                    \"payDistribution\": {\n                        \"distributionInstructions\": [\n                            {\n                                \"bonusOnlyIndicator\": true,\n                                \"distributionPercentage\": \"50\",\n                                \"depositAccount\": {\n                                    \"financialAccount\": {\n                                        \"accountNumber\": \"123456778\",\n                                        \"typeCode\": {\n                                            \"codeValue\": \"z\"\n                                        }\n                                    },\n                                    \"financialParty\": {\n                                        \"routingTransitID\": {\n                                            \"idValue\": \"823456789\"\n                                        }\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD with Amount to deposit as Percent Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                 \"itemID\": \"9201158803848_1\",\n                \"distributionPercentage\": \"50\",\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"x\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD with Amount to deposit as Partial Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \"itemID\": \"9201158803848_1\",\n                \n                \"distributionAmount\": {\n                  \"amountValue\":\"700\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"W\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD with Amount to deposit as Full Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"payDistribution\": {\n            \"effectiveDateTime\": \"2024-05-31\",\n            \"distributionInstructions\": [\n              {\n                \"itemID\": \"9201158803848_1\",\n                \"remainingBalanceIndicator\": true,\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"031207607\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"4172678660111\",\n                    \"typeCode\": {\n                      \"codeValue\": \"Z\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD with Multiple Deposit Codes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \"itemID\": \"9201158803848_1\",\n                \"distributionAmount\": {\n                  \"amountValue\":\"300\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"Z\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              },\n              {\n                \"itemID\": \"9201158803848_1\",\n                \"distributionAmount\": {\n                  \"amountValue\":\"500\"\n                },\n                \"depositAccount\": {\n                  \"financialAccount\": {\n                    \"accountNumber\": \"123456778\",\n                    \"typeCode\": {\n                      \"codeValue\": \"Y\"\n                    }\n                  },\n                  \"financialParty\": {\n                    \"routingTransitID\": {\n                      \"idValue\": \"823456789\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}\n"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Prenote as Custom",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payDistribution\": {\n                        \"itemID\": \"{{workAssignmentID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"payDistribution\": {\n                        \"effectiveDateTime\": \"2024-05-31\",\n                        \"distributionInstructions\": [\n                            {\n                                \"prenoteBypassIndicator\": true,\n                                \"prenote\": {\n                                    \"prenoteOptionCode\": {\n                                        \"codeValue\": \"C\",\n                                         \"prenoteDate\":\"2024-05-31\"\n                                         \n                                    },\n                                    \"prenoteDescription\" :\"This is partial net\",\n                                    \"prenoteDate\":\"2024-05-31\"\n                                },\n                                \"remainingBalanceIndicator\": true,\n                                \"depositAccount\": {\n                                    \"financialParty\": {\n                                        \"routingTransitID\": {\n                                            \"idValue\": \"031207607\"\n                                        }\n                                    },\n                                    \"financialAccount\": {\n                                        \"accountNumber\": \"4172678660116\",\n                                        \"typeCode\": {\n                                            \"codeValue\": \"x\"\n                                        }\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "canada clients - pay-distribution.change",
+			"item": [
+				{
+					"name": "200 - Add DD with Amount to deposit as Partial Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n               \n                 \"distributionAmount\": {\n                  \"amountValue\":\"300\"\n                },\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP1\",\n                      \"shortName\": \"DEPOSIT ACCT1\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD with Amount to deposit as Percentage net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-28\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n               \"itemID\": \"9201157949865_1\", \n                \"distributionPercentage\": \"60\",\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP5\",\n                      \"shortName\": \"DEPOSIT ACCT5\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with multiple deposit codes (one Full Net and one partial net)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-28\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                 \"distributionAmount\": {\n                  \"amountValue\":\"200\"\n                },\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP1\",\n                      \"shortName\": \"DEPOSIT ACCT1\"\n                    }\n                  }\n                }\n              },\n              {\n                \"remainingBalanceIndicator\": true,\n                 \n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP2\",\n                      \"shortName\": \"DEPOSIT ACCT2\"\n                    }\n                  }\n                }\n              }\n\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Amount to deposit as Full Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payDistribution\": {\n                        \"itemID\": \"{{workAssignmentID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2024-05-28\",\n                    \"payDistribution\": {\n                        \"distributionInstructions\": [\n                            {\n                                \"remainingBalanceIndicator\": true,\n                                \"depositAccount\": {\n                                    \"financialParty\": {\n                                        \"financialPartyID\": {\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"260\"\n                                            }\n                                        },\n                                        \"branchNameCode\": {\n                                            \"codeValue\": \"58956\"\n                                        }\n                                    },\n                                    \"financialAccount\": {\n                                        \"accountNumber\": \"11118167\",\n                                        \"typeCode\": {\n                                            \"codeValue\": \"DP2\",\n                                            \"shortName\": \"DEPOSIT ACCT2\"\n                                        }\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Multiple Deposit Codes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-28\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                 \"distributionAmount\": {\n                  \"amountValue\":\"200\"\n                },\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP1\",\n                      \"shortName\": \"DEPOSIT ACCT1\"\n                    }\n                  }\n                }\n              },\n              {\n                \n                 \"distributionAmount\": {\n                  \"amountValue\":\"300\"\n                },\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP2\",\n                      \"shortName\": \"DEPOSIT ACCT2\"\n                    }\n                  }\n                }\n              }\n\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Remove direct deposit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "If-None-Match",
+								"value": "true",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n            \t \n            ]\n          }\n        }\n      }\n    }\n  ]\n} "
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Priority",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payDistribution\": {\n                        \"itemID\": \"{{workAssignmentID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2024-05-28\",\n                    \"payDistribution\": {\n                        \"distributionInstructions\": [\n                            {\n                                \"distributionAmount\": {\n                                    \"amountValue\": \"100\"\n                                },\n                                \"depositAccount\": {\n                                    \"financialParty\": {\n                                        \"financialPartyID\": {\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"260\"\n                                            }\n                                        },\n                                        \"branchNameCode\": {\n                                            \"codeValue\": \"58956\"\n                                        }\n                                    },\n                                    \"financialAccount\": {\n                                        \"accountNumber\": \"11118167\",\n                                        \"typeCode\": {\n                                            \"codeValue\": \"DP5\",\n                                            \"shortName\": \"DEPOSIT ACCT5\"\n                                        }\n                                    }\n                                }\n                            },\n                            {\n                                \"precedenceCode\": {\n                                    \"codeValue\": \"1\"\n                                },\n                                \"distributionAmount\": {\n                                    \"amountValue\": \"500\"\n                                },\n                                \"depositAccount\": {\n                                    \"financialParty\": {\n                                        \"financialPartyID\": {\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"260\"\n                                            }\n                                        },\n                                        \"branchNameCode\": {\n                                            \"codeValue\": \"58956\"\n                                        }\n                                    },\n                                    \"financialAccount\": {\n                                        \"accountNumber\": \"11118167\",\n                                        \"typeCode\": {\n                                            \"codeValue\": \"DP3\",\n                                            \"shortName\": \"DEPOSIT ACCT3\"\n                                        }\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD as Bonus pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-28\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \"bonusOnlyIndicator\": true,\n                \"distributionPercentage\": \"50\",\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP5\",\n                      \"shortName\": \"DEPOSIT ACCT5\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD from Active to Inactive",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-28\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                  \"instructionStatusCode\": {\n                  \"codeValue\": \"I\",\n                  \"shortName\": \"Inactive\"\n                },\n                  \"distributionAmount\": {\n                  \"amountValue\":\"200\"\n                },\n                \n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP4\",\n                      \"shortName\": \"DEPOSIT ACCT4\"\n                    }\n                  }\n                }\n              }\n\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \"itemID\": \"9201157949865_1\", \n                \"distributionPercentage\": \"50\",\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118165\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP1\",\n                      \"shortName\": \"DEPOSIT ACCT1\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD with Amount to deposit as Partial Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-31\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n               \"itemID\": \"9201157949865_1\", \n                 \"distributionAmount\": {\n                  \"amountValue\":\"350\"\n                },\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP1\",\n                      \"shortName\": \"DEPOSIT ACCT1\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Add DD with Amount to deposit as Percentage net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-28\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                \n                \"distributionPercentage\": \"50\",\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP5\",\n                      \"shortName\": \"DEPOSIT ACCT5\"\n                    }\n                  }\n                }\n              }\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD with Amount to deposit as Full Net",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"events\": [\n        {\n            \"data\": {\n                \"eventContext\": {\n                    \"worker\": {\n                        \"associateOID\": \"{{employeeAOID}}\"\n                    },\n                    \"payDistribution\": {\n                        \"itemID\": \"{{workAssignmentID}}\"\n                    }\n                },\n                \"transform\": {\n                    \"effectiveDateTime\": \"2024-05-28\",\n                    \"payDistribution\": {\n                        \"distributionInstructions\": [\n                            {\n                                \"itemID\": \"9201157949865_1\", \n                                \"remainingBalanceIndicator\": true,\n                                \"depositAccount\": {\n                                    \"financialParty\": {\n                                        \"financialPartyID\": {\n                                            \"schemeCode\": {\n                                                \"codeValue\": \"260\"\n                                            }\n                                        },\n                                        \"branchNameCode\": {\n                                            \"codeValue\": \"58956\"\n                                        }\n                                    },\n                                    \"financialAccount\": {\n                                        \"accountNumber\": \"11118163\",\n                                        \"typeCode\": {\n                                            \"codeValue\": \"DP2\",\n                                            \"shortName\": \"DEPOSIT ACCT2\"\n                                        }\n                                    }\n                                }\n                            }\n                        ]\n                    }\n                }\n            }\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "200 - Update DD with Multiple Deposit Codes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{accessToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"events\": [\n    {\n      \"data\": {\n        \"eventContext\": {\n          \"worker\": {\n            \"associateOID\": \"{{employeeAOID}}\"\n          },\n          \"payDistribution\": {\n            \"itemID\": \"{{workAssignmentID}}\"\n          }\n        },\n        \"transform\": {\n          \"effectiveDateTime\": \"2024-05-28\",\n          \"payDistribution\": {\n            \"distributionInstructions\": [\n              {\n                 \"itemID\": \"9201157949865_1\",\n                 \"distributionAmount\": {\n                  \"amountValue\":\"100\"\n                },\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP1\",\n                      \"shortName\": \"DEPOSIT ACCT1\"\n                    }\n                  }\n                }\n              },\n              {\n                 \"itemID\": \"9201155250563_1\",\n                 \"distributionAmount\": {\n                  \"amountValue\":\"500\"\n                },\n                \"depositAccount\": {\n                  \"financialParty\": {\n                    \"financialPartyID\": {\n                      \"schemeCode\": {\n                        \"codeValue\": \"260\"\n                      }\n                    },\n                    \"branchNameCode\": {\n                      \"codeValue\": \"58956\"\n                    }\n                  },\n                  \"financialAccount\": {\n                    \"accountNumber\": \"11118167\",\n                    \"typeCode\": {\n                      \"codeValue\": \"DP2\",\n                      \"shortName\": \"DEPOSIT ACCT2\"\n                    }\n                  }\n                }\n              }\n\n            ]\n          }\n        }\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change",
+							"host": [
+								"{{service-root}}"
+							],
+							"path": [
+								"events",
+								"payroll",
+								"v1",
+								"worker.pay-distribution.change"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Workers API",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					}
+				],
+				"url": {
+					"raw": "{{service-root}}/hr/v2/workers/{{employeeAOID}}",
+					"host": [
+						"{{service-root}}"
+					],
+					"path": [
+						"hr",
+						"v2",
+						"workers",
+						"{{employeeAOID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay distribution AOID_Retrieve the Direct Deposits",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "If-None-Match",
+						"value": "true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{service-root}}/payroll/v2/workers/{{employeeAOID}}/pay-distributions",
+					"host": [
+						"{{service-root}}"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"workers",
+						"{{employeeAOID}}",
+						"pay-distributions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay distribution AOID_Retrieve the Direct Deposits_Unmasking",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;masked=false"
+					},
+					{
+						"key": "If-None-Match",
+						"type": "text",
+						"value": "true"
+					}
+				],
+				"url": {
+					"raw": "{{service-root}}/payroll/v2/workers/{{employeeAOID}}/pay-distributions",
+					"host": [
+						"{{service-root}}"
+					],
+					"path": [
+						"payroll",
+						"v2",
+						"workers",
+						"{{employeeAOID}}",
+						"pay-distributions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pay-distribution.change/meta call",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{service-root}}/events/payroll/v1/worker.pay-distribution.change/meta",
+					"host": [
+						"{{service-root}}"
+					],
+					"path": [
+						"events",
+						"payroll",
+						"v1",
+						"worker.pay-distribution.change",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - ACCESS TOKEN CALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"",
+							"// parse JSON data",
+							"let jsonData = pm.response.json()",
+							"console.log ('JSON response: ', jsonData)",
+							"",
+							"let access_token = jsonData.access_token",
+							"console.log (access_token)",
+							"pm.globals.set(\"accessToken\", access_token);",
+							"",
+							"// status code is 200",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client-id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client-secret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{service-root}}/auth/oauth/v2/token",
+					"host": [
+						"{{service-root}}"
+					],
+					"path": [
+						"auth",
+						"oauth",
+						"v2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
